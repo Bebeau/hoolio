@@ -1,0 +1,27 @@
+.icon {
+	width: 75px;
+	height: 75px;
+	display: inline-block;
+	position: relative;
+	top: 50%;
+	@include transform(translateY(-50%));
+
+	&.icon-bar-graph {
+		background: url('assets/images/icons/Service.svg') no-repeat scroll center / contain;
+	}
+	&.icon-ruler {
+		background: url('assets/images/icons/AdvocateScore.svg') no-repeat scroll center / contain;
+	}
+	&.icon-db {
+		background: url('assets/images/icons/ConsumerExperience.svg') no-repeat scroll center / contain;
+	}
+	&.icon-profile {
+		background: url('assets/images/icons/CustomerProfile.svg') no-repeat scroll center / contain;
+	}
+	&.icon-smile {
+		background: url('assets/images/icons/EmployeeHappiness.svg') no-repeat scroll center / contain;
+	}
+	&.icon-insights {
+		background: url('assets/images/icons/MarketResearch.svg') no-repeat scroll center / contain;
+	}
+}

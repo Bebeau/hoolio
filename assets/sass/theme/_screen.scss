@@ -1,0 +1,507 @@
+$blue: #1293cc;
+$green: #a7d661;
+
+$white:	#ffffff;
+$black: #111111;
+
+$grey: #919192;
+
+$orange: #f36235;
+$purp: #6c57a6;
+$pink: #ce5a82;
+$gold: #f0ba1a;
+
+@font-face {
+  font-family: 'Din';
+  src: url('assets/fonts/Din.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+html,body {
+	margin: 0;
+	padding: 0;
+}
+body {
+	background: $white;
+	text-rendering: optimizeLegibility !important;
+	-webkit-font-smoothing: antialiased !important;
+	-moz-font-smoothing: antialiased !important;
+	-o-font-smoothing: antialiased !important;
+	font-smoothing: antialiased !important;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.04);
+	font-family: 'Din';
+}
+button {
+	display: block;
+	margin: 0 auto;
+	background: $blue;
+	padding: 0 25px;
+	line-height: 60px;
+	font-size: 18pt;
+	color: $white;
+	border: none;
+	@include border-top-radius(3px);
+	@include border-bottom-radius(3px);
+	@include transition(all, 0.3s, ease-in-out);
+	&:hover {
+		cursor: pointer;
+		letter-spacing: 1px;
+		background: darken($blue, 5%);
+		@include transition(all, 0.3s, ease-in-out);
+	}
+}
+a, button {
+	&:hover, &:focus {
+		outline: none;
+	}
+}
+h1 {
+	color: $blue;
+	font-size: 36pt;
+}
+h3 {
+	font-size: 24pt;
+	color: $grey;
+}
+.outer {
+	/* W3C */
+	display: inline-flex !important;
+    box-pack: center !important;
+    box-align: center !important;
+	/* Safari, Opera, and Chrome */
+	display: -webkit-inline-flex !important;
+	-webkit-box-pack: center !important;
+	-webkit-box-align: center !important;
+	-webkit-align-items: center !important;
+	 /* Firefox */
+	display: -moz-inline-flexbox !important;
+	-moz-box-pack: center !important;
+	-moz-box-align: center !important;
+	-moz-align-items: center !important;
+	height: 100%;
+	width: 100%;
+	align-items: center !important;
+	overflow: hidden;
+	.inner {
+		margin: auto 0;
+		width: 100%;
+	}
+}
+header {
+	position: fixed;
+	z-index: 12;
+	padding: 15px 25px;
+	.logo {
+		padding: 5px 0;
+		display: inline-block;
+	}
+	#Menu {
+		position: fixed;
+		top: 15px;
+		right: 25px;
+		z-index: 13;
+		height: 58px;
+		display: inline-block;
+		margin: 0 0 0 -4px;
+		overflow: hidden;
+		vertical-align: top;
+		@include transition(all, 0.3s, ease-in-out);
+		.bar {
+			width: 40px;
+			height: 5px;
+			background: $blue;
+			display: block;
+			margin: 10px auto;
+			position: relative;
+			left: 0;
+			@include transition(all, 0.3s, ease-in-out);
+		}
+		&:hover {
+			cursor: pointer;
+		}
+		&.slidein {
+			width: 58px;
+			@include transition(all, 0.3s, ease-in-out);
+		}
+	}
+	.menu {
+		visibility: hidden;
+		background: url('assets/images/nav_bg.jpg') no-repeat scroll center / cover;
+		position: fixed;
+		z-index: 11;
+		width: 100%;
+		height: 100vh;
+		text-align: center;
+		font-size: 24pt;
+		color: $white;
+		top: 0;
+		left: 0;
+		opacity: 0;
+		@include transform(scale(0.98));
+		@include transition(all, 0.3s, ease-in-out);
+		&:before {
+			content: "";
+			position: fixed;
+			display: block;
+			width: 100%;
+			height: 100%;
+			background: rgba(0,0,0,0.9);
+			z-index: 1;
+		}
+		ul {
+			list-style: none;
+			position: relative;
+			z-index: 2;
+			padding: 0;
+			li {
+				position: relative;
+				top: 50px;
+				opacity: 0;
+				a {
+					color: $blue;
+					font-size: 48pt;
+					text-decoration: none;
+					text-align: center;
+					overflow: hidden;
+					@include transition(all, 0.3s, ease-in-out);
+					&:after {
+						content: "";
+						display: block;
+						height: 5px;
+						background: $white;
+						width: 0;
+						margin: 0 auto;
+						position: relative;
+						top: -10px;
+						@include transition(all, 0.3s, ease-in-out);
+					}
+					&:hover {
+						color: $white;
+						&:after {
+							width: 300px;
+							@include transition(all, 0.3s, ease-in-out);
+						}
+					}
+				}
+				&.in {
+					top: 0;
+					opacity: 1;
+					@include transition(all, 0.5s, ease-in-out);
+				}
+			}
+		}
+	}
+	&.open {
+		@include transition(all, 0.3s, ease-in-out);
+		#Menu {
+			.bar {
+				background: $white;
+				&:first-child {
+					margin-top: 30px;
+					margin-bottom: -16px;
+					@include transform(rotate(-45deg));
+					@include transition(all, 0.3s, ease-in-out);
+				}
+				&:nth-child(2) {
+					left: 70px;
+					@include transition(all, 0.3s, ease-in-out);
+				}
+				&:last-child {
+					margin-top: -14px;
+					@include transform(rotate(45deg));
+					@include transition(all, 0.3s, ease-in-out);
+				}
+			}
+		}
+		.menu {
+			visibility: visible;
+			min-height: 100vh;
+			opacity: 1;
+			@include transform(scale(1));
+			@include transition(all, 0.3s, ease-in-out);
+		}
+	}
+}
+.block {
+	height: 100vh;
+	text-align: center;
+	&.step {
+		p {
+			color: $white;
+		}
+		h2 {
+			color: $white;
+			font-size: 48pt;
+			text-transform: uppercase;
+			margin: 0;
+			line-height: 125px;
+		}
+		h3 {
+			color: $white;
+			font-size: 48pt;
+			margin: 0;
+		}
+		.outer {
+			margin-top: -125px;
+		}
+	}
+}
+.half {
+	width: 50%;
+	box-sizing: border-box;
+	padding: 50px;
+	display: inline-block;
+	margin: 0 0 0 -4px;
+}
+p {
+	color: $grey;
+	font-size: 21pt;
+}
+.copy {
+	width: 850px;
+	margin: 0 auto;
+}
+#top {
+	position: relative;
+	.path {
+		background: url('assets/images/circle.png') repeat-y;
+		height: 0px;
+		width: 5px;
+		position: absolute;
+		left: 50%;
+		top: 75%;
+		z-index: 9;
+		margin: 0 0 0 -5px;
+		&:before {
+			content: "";
+			width: 15px;
+			height: 15px;
+			background: $blue;
+			@include border-top-radius(50%);
+			@include border-bottom-radius(50%);
+			position: absolute;
+			top: 0;
+			left: -5px;
+			@include transform(scale(0));
+		}
+		&:after {
+			content: "";
+			width: 15px;
+			height: 15px;
+			background: $blue;
+			@include border-top-radius(50%);
+			@include border-bottom-radius(50%);
+			position: absolute;
+			bottom: 0;
+			left: -5px;
+			@include transform(scale(0));
+		}
+		&.show {
+			&:before {
+				@include transform(scale(1.1));
+				@include transition(all, 0.3s, $easeInOutBack);
+			}
+		}
+		&.line {
+			height: 400px;
+			@include transition(all, 1s, $easeInOutBack);
+			&:before {
+				@include transform(scale(1));
+				@include transition(all, 0.3s, $easeInOutBack);
+			}
+		}
+		&.in {
+			&:after {
+				@include transform(scale(1));
+				@include transition(all, 0.3s, $easeInOutBack);
+			}
+		}
+	}
+	.ipad {
+		display: inline-block;
+		width: 33.3333333%;
+		height: 100vh;
+		background: url('assets/images/ipad.png') no-repeat scroll right 50%;
+		margin: 0 0 0 -4px;
+	}
+	.iphone {
+		display: inline-block;
+		width: 33.3333333%;
+		height: 100vh;
+		background: url('assets/images/iphone.png') no-repeat scroll 50% 50%;
+		margin: 0 0 0 -4px;
+	}
+	.copy {
+		display: inline-block;
+		vertical-align: top;
+		position: relative;
+		z-index: 10;
+		width: 33.3333333%;
+		margin: 0 0 0 -4px;
+		height: 100vh;
+	}
+}
+#help {
+	background: darken($white, 5%);
+	color: $grey;
+	h4 {
+		letter-spacing: 5px;
+		text-transform: uppercase;
+		color: darken($blue, 25%);
+		font-size: 24pt;
+	}
+	.placeholder {
+		margin: 50px 0;
+	}
+}
+#meet {
+	position: relative;
+	ul {
+		list-style: none;
+		text-align: center;
+		margin-top: 150px;
+		li {
+			text-align: center;
+			display: inline-block;
+			width: 15%;
+			@include transition(all, 0.3s, ease-in-out);
+			.label {
+				color: $grey;
+			}
+			.frame {
+				visibility: hidden;
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				z-index: 11;
+				opacity: 0;
+				@include transition(all, 0.3s, ease-in-out);
+				h3 {
+					color: rgba(0,0,0,0.5);
+					text-transform: capitalize;
+				}
+				p {
+					color: $white;
+				}
+				.circleClose {
+					position: absolute;
+					bottom: 25%;
+					right: 50%;
+					background: $white;
+					width: 50px;
+					height: 50px;
+					line-height: 55px;
+					@include border-top-radius(50%);
+					@include border-bottom-radius(50%);
+					@include transform(scale(1));
+					@include transition(all, 0.1s, ease-in-out);
+					font-size: 24pt;
+					&:hover {
+						cursor: pointer;
+						@include transform(scale(1.1));
+						@include transition(all, 0.1s, ease-in-out);
+					}
+				}
+				&.in {
+					visibility: visible;
+					opacity: 1;
+					@include transition(all, 0.3s, ease-in-out);
+				}
+			}
+			.bubble {
+				position: relative;
+				display: block;
+				width: 150px;
+				height: 150px;
+				margin: 0 auto 25px;
+				@include border-top-radius(50%);
+				@include border-bottom-radius(50%);
+				text-align: center;
+				&:hover {
+					cursor: pointer;
+				}
+				i {
+					opacity: 1;
+					&.hide {
+						opacity: 0;
+					}
+				}
+			}
+			&:first-child{
+				.bubble, .frame {
+					background: $orange;
+				}
+				i {
+					color: $orange;
+				}
+			}
+			&:nth-child(2) {
+				.bubble, .frame {
+					background: $purp;
+				}
+			}
+			&:nth-child(3) {
+				.bubble, .frame {
+					background: $pink;
+				}
+			}
+			&:nth-child(4) {
+				.bubble, .frame {
+					background: lighten($blue, 25%);
+				}
+			}
+			&:nth-child(5) {
+				.bubble, .frame {
+					background: $gold;
+				}
+			}
+			&:last-child {
+				.bubble, .frame {
+					background: darken($green, 10%);
+				}
+			}
+			&.open {
+				.bubble {
+					position: relative;
+					z-index: 10;
+					@include transform(scale(50));
+					@include border-top-radius(0);
+					@include border-bottom-radius(0);
+					@include transition(all, 1s, ease-in-out);
+				}
+			}
+		}
+	}
+}
+#steps {
+	position: relative;
+	height: 100vh;
+	.block {
+		position: absolute;
+		width: 100%;
+		top: 0;
+		left: 0;
+		&:nth-child(2) {
+			top: 100px;
+		}
+		&:last-child {
+			top: 200px;
+		}
+	}
+	#ask {
+		background: $blue;
+	}
+	#engage {
+		background: $green;
+	}
+	#analyze {
+		background: darken($blue, 15%);
+	}
+}
+#cta {
+	height: 25vh;
+	text-align: center;
+}
