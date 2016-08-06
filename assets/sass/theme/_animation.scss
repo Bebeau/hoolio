@@ -2,51 +2,51 @@
 		position: relative;
 		top: 25px;
 		opacity: 0;
-		@include transition(all, 1s, ease-in-out);
+		@include transition(all, 0.5s, $easeInOutBack);
 	&.slideIn {
 		top: 0;
 		opacity: 1;
-		@include transition(all, 1s, ease-in-out);
+		@include transition(all, 0.5s, $easeInOutBack);
 	}
 }
 [data-animation="slideDown"] {
 	position: relative;
 	top: -25px;
 	opacity: 0;
-	@include transition(all, 1s, ease-in-out);
+	@include transition(all, 0.5s, $easeInOutBack);
 	&.slideIn {
 		top: 0;
 		opacity: 1;
-		@include transition(all, 1s, ease-in-out);
+		@include transition(all, 0.5s, $easeInOutBack);
 	}
 }
 [data-animation="slideInLeft"] {
 	position: relative;
 	left: -100% !important;
-	@include transition(all, 2s, ease-in-out);
+	@include transition(all, 1s, $easeInOutBack);
 	&.slideIn {
 		left: 0 !important;
-		@include transition(all, 2s, ease-in-out);
+		@include transition(all, 1s, $easeInOutBack);
 	}
 }
 [data-animation="slideInRight"] {
 	position: relative;
 	right: -100% !important;
-	@include transition(all, 2s, ease-in-out);
+	@include transition(all, 1s, $easeInOutBack);
 	&.slideIn {
 		right: 0 !important;
-		@include transition(all, 2s, ease-in-out);
+		@include transition(all, 1s, $easeInOutBack);
 	}
 }
 [data-animation="bubble"] {
 	box-sizing: border-box;
 	opacity: 0;
 	@include transform(scale(.75));
-	@include transition(all, 0.5s, ease-in-out);
+	@include transition(all, 0.5s, $easeInOutBack);
 	&.load {
 		opacity: 1;
 		@include transform(scale(1));
-		@include transition(all, 0.5s, ease-in-out);
+		@include transition(all, 0.5s, $easeInOutBack);
 	}
 
 }

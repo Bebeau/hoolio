@@ -103,5 +103,25 @@
 		<span class="bar middle"></span>
 		<span class="bar cross"></span>
 	</div>
-	<?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
+	<?php 
+		$menu_args = array(
+			'theme_location'  => 'main-menu',
+			'menu'            => 'Main Menu',
+			'container'       => 'div',
+			'container_class' => 'menu outer',
+			'container_id'    => '',
+			'menu_class'      => 'nav',
+			'menu_id'         => '',
+			'echo'            => true,
+			'fallback_cb'     => 'wp_page_menu',
+			'before'          => '',
+			'after'           => '',
+			'link_before'     => '',
+			'link_after'      => '',
+			'items_wrap'      => '<ul id="%1$s" class="%2$s inner">%3$s</ul>',
+			'depth'           => 0,
+			'walker'          => ''
+		);
+		wp_nav_menu($menu_args);
+	?>
 </header>

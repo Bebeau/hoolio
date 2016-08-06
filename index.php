@@ -46,8 +46,11 @@
 				</div>
 				<ul>
 					<li>
-						<div data-animation="bubble" class="bubble">
-							<i class="icon icon-bar-graph"></i>
+						<div class="bubblewrap">
+							<div data-animation="bubble" class="bubble">
+								<i class="icon icon-bar-graph"></i>
+							</div>
+							<span class="label" data-animation="slideUp">new products &amp; services</span>
 						</div>
 						<div class="frame">
 							<div class="circleClose"><i class="fa fa-close"></i></div>
@@ -60,11 +63,13 @@
 								</div>
 							</div>
 						</div>
-						<span class="label" data-animation="slideUp">new products &amp; services</span>
 					</li>
 					<li>
-						<div data-animation="bubble" class="bubble">
-							<i class="icon icon-ruler"></i>
+						<div class="bubblewrap">
+							<div data-animation="bubble" class="bubble">
+								<i class="icon icon-ruler"></i>
+							</div>
+							<span class="label" data-animation="slideUp">customer loyalty</span>
 						</div>
 						<div class="frame">
 							<div class="circleClose"><i class="fa fa-close"></i></div>
@@ -77,11 +82,13 @@
 								</div>
 							</div>
 						</div>
-						<span class="label" data-animation="slideUp">customer loyalty</span>
 					</li>
 					<li>
-						<div data-animation="bubble" class="bubble">
-							<i class="icon icon-db"></i>
+						<div class="bubblewrap">
+							<div data-animation="bubble" class="bubble">
+								<i class="icon icon-db"></i>
+							</div>
+							<span class="label" data-animation="slideUp">how to increase sales</span>
 						</div>
 						<div class="frame">
 							<div class="circleClose"><i class="fa fa-close"></i></div>
@@ -94,11 +101,13 @@
 								</div>
 							</div>
 						</div>
-						<span class="label" data-animation="slideUp">how to increase sales</span>
 					</li>
 					<li>
-						<div data-animation="bubble" class="bubble">
-							<i class="icon icon-profile"></i>
+						<div class="bubblewrap">
+							<div data-animation="bubble" class="bubble">
+								<i class="icon icon-profile"></i>
+							</div>
+							<span class="label" data-animation="slideUp">marketing message</span>
 						</div>
 						<div class="frame">
 							<div class="circleClose"><i class="fa fa-close"></i></div>
@@ -111,11 +120,13 @@
 								</div>
 							</div>
 						</div>
-						<span class="label" data-animation="slideUp">marketing message</span>
 					</li>
 					<li>
-						<div data-animation="bubble" class="bubble">
-							<i class="icon icon-smile"></i>
+						<div class="bubblewrap">
+							<div data-animation="bubble" class="bubble">
+								<i class="icon icon-smile"></i>
+							</div>
+							<span class="label" data-animation="slideUp">employee retention</span>
 						</div>
 						<div class="frame">
 							<div class="circleClose"><i class="fa fa-close"></i></div>
@@ -128,11 +139,13 @@
 								</div>
 							</div>
 						</div>
-						<span class="label" data-animation="slideUp">employee retention</span>
 					</li>
 					<li>
-						<div data-animation="bubble" class="bubble">
-							<i class="icon icon-insights"></i>
+						<div class="bubblewrap">
+							<div data-animation="bubble" class="bubble">
+								<i class="icon icon-insights"></i>
+							</div>
+							<span class="label" data-animation="slideUp">consumer insights</span>
 						</div>
 						<div class="frame">
 							<div class="circleClose"><i class="fa fa-close"></i></div>
@@ -145,42 +158,57 @@
 								</div>
 							</div>
 						</div>
-						<span class="label" data-animation="slideUp">consumer insights</span>
 					</li>
 				</ul>
+				<div class="line2"></div>
+				<div class="followUp">
+					<h2>How does Hoolio do that?</h2>
+					<p>The science of actively listening to customers. Hoolio is very smart. He actively listens to customers, the market, and employees. But here’s a breakdown of his strategy:</p>
+				</div>
 			</div>
 		</article>
 	</section>
 
 	<div id="steps">
 		<section id="ask" class="block step">
-			<h2>Ask</h2>
 			<article class="outer">
 				<div class="inner">
-					<div class="half">
-						<h3>Step 1</h3>
+					<div class="half" data-animation="slideInLeft">
+						<h3>Ask</h3>
 						<p>Hoolio helps you asks the right questions.</p>
 						<p>Our wizard takes all the guess work out of
 						creating your survey by simply asking what
 						you want to learn. Cuts down the creation
 						process from hours to minutes.</p>
 					</div>
-					<div class="half">
-						<img src="" alt="" />
+					<div class="half" data-animation="slideInRight">
+						<div class="speach_bubble">
+							<div class="outer">
+								<div class="inner">
+									<p>Hi, I'm Hooli.</p>
+									<p class="question">What's your name?</p>
+								</div>
+							</div>
+						</div>
+						<img src="<?php echo bloginfo('template_directory');?>/assets/images/owl.svg" alt="" />
 					</div>
 				</div>
 			</article>
 		</section>
 
 		<section id="engage" class="block step">
-			<h2>Engage</h2>
-			<article class="outer">
-				<div class="inner">
-					<div class="half">
-						<img src="" alt="" />
+			<article class="half">
+				<img id="arm" src="<?php echo bloginfo('template_directory');?>/assets/images/arm.svg" alt="" />
+				<div class="outer">
+					<div class="inner">
+						<img id="hand_icons" src="<?php echo bloginfo('template_directory');?>/assets/images/hand_icons.png" alt="" />
 					</div>
-					<div class="half">
-						<h3>Step 2</h3>
+				</div>
+			</article>
+			<article class="half" data-animation="slideInRight">
+				<div class="outer">
+					<div class="inner">
+						<h3>Engage</h3>
 						<p>Collect a lot of data.</p>
 						<p>Engage your consumers. Make it as
 						fun, fast, and easy as possible for your
@@ -192,11 +220,10 @@
 		</section>
 
 		<section id="analyze" class="block step">
-			<h2>Analyze</h2>
 			<article class="outer">
 				<div class="inner">
 					<div class="half">
-						<h3>Step 3</h3>
+						<h3>Analyze</h3>
 						<p>Hoolio is very quick.</p>
 						<p>He analyzes and process our data
 						 right away in real-time. Overtime,
@@ -214,8 +241,10 @@
 	<section id="cta">
 		<article class="outer">
 			<div class="inner">
-		<h2>Be Wyzerr, know more.</h2>
-		<button class="btn">Be A Wizard</button>
+				<h2>Be Wyzerr, know more.</h2>
+				<button class="btn">Be A Wizard</button>
+			</div>
+		</article>
 	</section>
 
 <?php get_footer(); ?>

@@ -131,6 +131,70 @@ var init = {
 		init.bubbleOpen();
 		init.pathAnimation();
 		init.stepAnimation();
+		init.lines();
+		init.speachBubble();
+		init.arm();
+	},
+	arm: function() {
+		jQuery(window).scroll(function(){
+			if(move.isOnScreen(jQuery('#engage'))) {
+				jQuery('#arm').addClass("show");
+				setTimeout(
+					function(){
+						jQuery('#hand_icons').addClass("show");
+					}, 500
+				)
+			} else {
+				jQuery('#arm').removeClass("show");
+				setTimeout(
+					function(){
+						jQuery('#hand_icons').removeClass("show");
+					}, 500
+				)
+			}
+		});
+	},
+	speachBubble: function() {
+		jQuery(window).scroll(function(){
+			if(move.isOnScreen(jQuery('.speach_bubble'))) {
+				setTimeout(
+					function(){
+						jQuery('.speach_bubble').addClass("in");
+					}, 300
+				);
+			} else {
+				jQuery('.speach_bubble').removeClass("in");
+			}
+		});
+	},
+	lines: function() {
+		jQuery(window).scroll(function(){
+			if(move.isOnScreen(jQuery('.label'))) {
+				jQuery('.label').addClass("in");
+				setTimeout(
+					function(){
+						jQuery('.line2').addClass("in");
+					}, 500
+				);
+				setTimeout(
+					function(){
+						jQuery('.followUp').addClass("in");
+					}, 1000
+				);
+			} else {
+				jQuery('.label').removeClass("in");
+				setTimeout(
+					function(){
+						jQuery('.line2').removeClass("in");
+					}, 500
+				);
+				setTimeout(
+					function(){
+						jQuery('.followUp').removeClass("in");
+					}, 1000
+				);
+			}
+		});
 	},
 	openMenu: function() {
 		jQuery('#Menu').click(function(){
@@ -150,7 +214,7 @@ var init = {
 	    jQuery('.menu ul').addClass("inner");
 	},
 	bubbleOpen: function() {
-		jQuery('.bubble').click(function(e){
+		jQuery('.bubblewrap').click(function(e){
 			e.preventDefault();
 			var item = jQuery(this).parent();
 			var icon = item.find("i");

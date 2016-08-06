@@ -27,7 +27,7 @@ add_theme_support( 'post-thumbnails', array('post') );
 // Load widget areas
 if ( function_exists('register_sidebar') ) {
 	register_sidebar(array(
-		'id'	=> 'sidebar',
+		'id' => 'sidebar',
 		'before_widget' => '<div class="widgetWrap">',
 		'after_widget' => '</div>',
 		'before_title' => '<h3 class="widgetTitle">',
@@ -36,7 +36,96 @@ if ( function_exists('register_sidebar') ) {
 }
 
 // Register Navigation Menu Areas
-add_action( 'INiT', 'register_my_menus' );
+add_action( 'after_setup_theme', 'register_my_menu' );
 function register_my_menu() {
-  register_nav_menu( 'primary', 'Primary Menu' );
+  register_nav_menu( 'main-menu', 'Main Menu' );
+  register_nav_menu( 'footer-menu', 'Footer Menu' );
+}
+
+add_action('admin_init', 'my_general_section');  
+function my_general_section() {  
+    add_settings_section(  
+        'my_settings_section', // Section ID 
+        'Social Media', // Section Title
+        'my_section_options_callback', // Callback
+        'general' // What Page?  This makes the section show up on the General Settings Page
+    );
+    add_settings_field( // Option 1
+        'facebook', // Option ID
+        'Facebook URL', // Label
+        'my_textbox_callback', // !important - This is where the args go!
+        'general', // Page it will be displayed
+        'my_settings_section', // Name of our section (General Settings)
+        array( // The $args
+            'facebook' // Should match Option ID
+        )  
+    );
+    add_settings_field( // Option 2
+        'twitter', // Option ID
+        'Twitter URL', // Label
+        'my_textbox_callback', // !important - This is where the args go!
+        'general', // Page it will be displayed
+        'my_settings_section', // Name of our section (General Settings)
+        array( // The $args
+            'twitter' // Should match Option ID
+        )  
+    );
+    add_settings_field( // Option 2
+        'instagram', // Option ID
+        'Instagram URL', // Label
+        'my_textbox_callback', // !important - This is where the args go!
+        'general', // Page it will be displayed
+        'my_settings_section', // Name of our section (General Settings)
+        array( // The $args
+            'instagram' // Should match Option ID
+        )  
+    );
+    add_settings_field( // Option 2
+        'pinterest', // Option ID
+        'Pinterest URL', // Label
+        'my_textbox_callback', // !important - This is where the args go!
+        'general', // Page it will be displayed
+        'my_settings_section', // Name of our section (General Settings)
+        array( // The $args
+            'pinterest' // Should match Option ID
+        )  
+    );
+    add_settings_field( // Option 2
+        'googleplus', // Option ID
+        'GooglePlus URL', // Label
+        'my_textbox_callback', // !important - This is where the args go!
+        'general', // Page it will be displayed
+        'my_settings_section', // Name of our section (General Settings)
+        array( // The $args
+            'googleplus' // Should match Option ID
+        )  
+    );
+    add_settings_field( // Option 2
+        'youtube', // Option ID
+        'Youtube URL', // Label
+        'my_textbox_callback', // !important - This is where the args go!
+        'general', // Page it will be displayed
+        'my_settings_section', // Name of our section (General Settings)
+        array( // The $args
+            'youtube' // Should match Option ID
+        )  
+    );
+
+
+    register_setting('general','facebook', 'esc_attr');
+    register_setting('general','twitter', 'esc_attr');
+    register_setting('general','instagram', 'esc_attr');
+    register_setting('general','pinterest', 'esc_attr');
+    register_setting('general','googleplus', 'esc_attr');
+    register_setting('general','youtube', 'esc_attr');
+
+}
+
+function my_section_options_callback() { // Section Callback
+    echo '<p>Enter your social media links to have them automatically display in the website footer.</p>';  
+}
+
+function my_textbox_callback($args) {  // Textbox Callback
+    $option = get_option($args[0]);
+    echo '<input type="text" class="regular-text" id="'. $args[0] .'" name="'. $args[0] .'" value="' . $option . '" />';
 }
