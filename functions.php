@@ -22,7 +22,7 @@ if (!function_exists( 'load_custom_scripts' ) ) {
 add_action( 'wp_print_styles', 'load_custom_scripts' );
 
 // Thumbnail Support
-add_theme_support( 'post-thumbnails', array('post') );
+add_theme_support( 'post-thumbnails', array('post', 'page') );
 
 // Load widget areas
 if ( function_exists('register_sidebar') ) {
@@ -128,4 +128,36 @@ function my_section_options_callback() { // Section Callback
 function my_textbox_callback($args) {  // Textbox Callback
     $option = get_option($args[0]);
     echo '<input type="text" class="regular-text" id="'. $args[0] .'" name="'. $args[0] .'" value="' . $option . '" />';
+}
+
+include(TEMPLATEPATH.'/partials/functions/user.php');
+
+function get_contact_form() { ?>
+    <form role="form" method="POST" action="<?php echo bloginfo('template_directory');?>/partials/forms/contact.php" id="contactfrm">
+        <div class="half">
+            <input type="text" name="firstname" id="firstname" class="form-control" placeholder="first name"/>
+            <input type="text" name="lastname" id="lastname" class="form-control" placeholder="last name"/>
+        </div>
+        <div class="half">
+            <input type="text" name="company" id="company" class="form-control" placeholder="company"/>
+            <input type="text" name="title" id="title" class="form-control" placeholder="title"/>
+        </div>
+        <div class="half">
+            <input type="text" name="emailaddress" id="emailaddress" class="form-control" placeholder="email"/>
+            <div id="dropdown">
+                <button>Area of interest <i class="fa fa-angle-down"></i></button>
+                <ul class="dropdown-menu">
+                    <li data-value="Enterprise">Enterprise</li>
+                    <li data-value="Partnerships">Partnerships</li>
+                    <li data-value="Press/Event">Press / Event Inquiry</li>
+                    <li data-value="Other">Other</li>
+                </ul>
+            </div>
+            <input type="hidden" name="interest" id="interest" class="form-control"/>
+        </div>
+        <textarea type="text" name="message" id="message" class="form-control" placeholder="comment"></textarea>
+        <button type="submit" class="btn btn-submit">Submit</button>
+        <input type="hidden" name="password" id="password" val="" />
+    </form>
+<?php 
 }

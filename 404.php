@@ -3,7 +3,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
-				Ops, something went wrong.
+				<h1>Ops, something went wrong.</h1>
 			</div>
 		</div>
 	</div>

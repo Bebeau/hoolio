@@ -92,11 +92,11 @@
     
 </head>
 
-<body>
+<body <?php body_class();?>>
 
 <header>
 	<a href="<?php echo site_url();?>" class="logo">
-		<img src="<?php echo bloginfo('template_directory');?>/assets/images/logo.svg" alt="hoolio" />
+		<img class="svg" src="<?php echo bloginfo('template_directory');?>/assets/images/logo.svg" alt="hoolio" />
 	</a>
 	<div id="Menu">
 		<span class="bar cross"></span>

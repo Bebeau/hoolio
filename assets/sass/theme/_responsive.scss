@@ -1,0 +1,353 @@
+@media(max-height:900px) {
+	.block {
+		min-height: auto;
+		height: auto;
+		padding: 100px 0;
+	}
+	#metrics {
+		padding-bottom: 0;
+		.half {
+			article {
+				vertical-align: bottom;
+			}
+		}
+	}
+	#testimonials, #cta {
+		padding: 100px 0;
+	}
+}
+@media(max-width: 1300px) {
+	.thirds {
+		width: auto;
+	}
+	#top {
+		#clientLogos {
+			span {
+				@include transform(scale(0.75));
+				margin: 0 5px;
+			}
+		}
+	}
+	#meet {
+		ul {
+			width: 900px;
+			li {
+				.bubblewrap {
+					&:after {
+						top: 108px;
+					}
+					.bubble {
+						width: 125px;
+						height: 125px;
+						.icon {
+							width: 50px;
+							height: 50px;
+						}
+					}
+				}
+			} 
+		}
+	}
+	#video {
+		padding: 0;
+	}
+	#metrics {
+		.half {
+			width: auto;
+			padding: 0 15px;
+		}
+	}
+}
+@media(max-width: 991px) {
+	#top {
+		#clientLogos {
+			span {
+				@include transform(scale(0.5));
+				margin: 0;
+			}
+		}
+	}
+	#meet {
+		ul {
+			width: auto;
+			li {
+				width: auto;
+				margin: 25px 0;
+			}
+		}
+	}
+	#metrics {
+		.half {
+			article {
+				width: auto;
+				.half {
+					article {
+						width: 50%;
+						vertical-align: top;
+					}
+				}
+			}
+		}
+	}
+	#testimonials {
+		blockquote {
+			width: auto;
+			padding: 0 15px;
+		}
+	}
+	.copy {
+		width: auto;
+		padding: 0 15px;
+	}
+}
+@media(max-width: 768px) {
+	.section {
+		h2{
+			font-size: 21pt;
+		}
+	}
+	header {
+		.menu {
+			ul {
+				li {
+					a {
+						font-size: 24pt;
+					}
+				}
+			}
+		}
+	}
+	h1 {
+		font-size: 28pt;
+	}
+	h3 {
+		font-size: 18pt;
+	}
+	p{
+		font-size: 16pt;
+	}
+	.block {
+		padding: 15px 0;
+	}
+	.thirds {
+		margin: 15px auto;
+		article {
+			width: auto;
+			margin: 25px auto;
+			display: block;
+			text-align: center;
+			p {
+				margin: 0;
+			}
+		}
+	}
+	body {
+		&.home {
+			header {
+				background: $blue;
+				width: 100%;
+				padding: 0;
+				#Menu {
+					top: 20px;
+					.bar {
+						background: $white;
+					}
+				}
+				.logo {
+					padding: 15px 0 15px 15px;
+					svg {
+						height: 58px;
+						width: auto;
+						path {
+							fill: white;
+						}
+					}
+				}
+			}
+		}
+		header {
+			background: $blue;
+			width: 100%;
+			padding: 0;
+			#Menu {
+				top: 20px;
+				.bar {
+					background: $white;
+				}
+			}
+			.logo {
+				padding: 15px 0 15px 15px;
+				svg {
+					height: 58px;
+					width: auto;
+					path {
+						fill: white;
+					}
+				}
+			}
+		}
+	}
+	#research {
+		.btn {
+			margin-bottom: 50px;
+		}
+	}
+	#top {
+		padding-top: 125px;
+		.half {
+			width: auto;
+		}
+		#clientLogos {
+			position: relative;
+			top: auto;
+			left: auto;
+			right: auto;
+			margin-top: 25px;
+			span {
+				width: 105px;
+				@include transform(scale(1));
+				padding: 15px;
+				box-sizing: border-box;
+				vertical-align: middle;
+				img {
+					vertical-align: middle;
+				}
+			}
+		}
+	}
+	#meet {
+		.copy {
+			padding: 0 15px 25px;
+			h1 {
+				padding: 25px 15px 15px;
+			} 
+		}
+		ul {
+			li {
+				width: 50%;
+				display: inline-block;
+				margin: 0 0 25px -4px;
+			}
+		}
+	}
+	#metrics {
+		.half {
+			article {
+				.half {
+					margin: 50px auto;
+				}
+				img {
+					padding: 0 15px;
+					box-sizing: border-box;
+				}
+				.stat {
+					padding: 0 15px;
+					span {
+						font-size: 24pt;
+					}
+				}
+			}
+		}
+	}
+	#testimonials {
+		padding: 25px 0;
+		blockquote {
+			font-size: 18pt;
+		}
+		cite {
+			margin-top: 25px;
+		}
+	}
+	#cta {
+		padding: 25px 0;
+		h2 {
+			line-height: normal;
+			font-size: 24pt;
+			margin-bottom: 25px;
+		}
+	}
+	footer {
+		height: auto;
+		padding: 25px 0;
+		.menu {
+			ul {
+				margin: 0;
+				padding: 0;
+				li {
+					display: block;
+					a {
+						&:after {
+							display: none;
+						}
+					}
+				}
+			}
+		}
+	}
+	#pageBanner {
+		height: 25vh;
+		padding-top: 94px;
+		h1 {
+			font-size: 32pt;
+		}
+		&.default {
+			height: 25vh;
+		}
+	}
+	#page {
+		padding: 15px;
+		h2 {
+			margin-bottom: 5px;
+		}
+	}
+	#team {
+		padding: 15px;
+	}
+	#apply {
+		padding: 25px 0;
+		p {
+			width: auto;
+			padding: 15px;
+			margin: 0 auto;
+		}
+	}
+	#contact {
+		height: auto;
+		h2 {
+			margin-bottom: 0;
+		}
+		form {
+			box-sizing: border-box;
+			padding: 0 15px;
+		}
+		textarea {
+			width: auto;
+			display: block;
+			box-sizing: border-box;
+			font-size: 14pt;
+		}
+		.half {
+			margin: 0;
+			padding: 0;
+			height: auto;
+			input {
+				width: 100%;
+				display: block;
+				font-size: 14pt;
+			}
+		}
+		#dropdown {
+			width: 100%;
+			display: block;
+			button {
+				font-size: 14pt;
+			}
+		}
+		.btn-submit {
+			margin: 25px 0;
+		}
+	}
+	.container {
+		width: auto;
+	}
+}
