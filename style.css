@@ -1833,7 +1833,7 @@ body {
     background: #1293cc; }
 
 .btn {
-  display: block;
+  display: inline-block;
   margin: 0 auto;
   padding: 0 25px;
   line-height: 60px;
@@ -1857,8 +1857,11 @@ body {
   .btn:active {
     background: linear-gradient(#1082b5, #1293cc); }
 
-a:hover, a:focus, button:hover, button:focus {
-  outline: none; }
+a, button {
+  text-decoration: none;
+  display: inline-block; }
+  a:hover, a:focus, button:hover, button:focus {
+    outline: none; }
 
 h1, h2, h3, h4, h5, h6 {
   color: #1293cc;
@@ -2668,7 +2671,8 @@ header {
     letter-spacing: 1px; }
 
 #apply {
-  padding: 100px 0; }
+  padding: 100px 0;
+  text-align: center; }
   #apply h2 {
     margin: 0; }
   #apply p {

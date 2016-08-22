@@ -55,7 +55,7 @@
 						<p>We use artificial intelligence for personalized experiences.</p>
 					</article>
 				</div>
-				<button class="btn">Learn More</button>
+				<a href="<?php echo site_url('contact'); ?>" class="btn">Learn More</a>
 			</div>
 		</article>
 	</section>
@@ -68,7 +68,6 @@
 					<p data-animation="slideUp">Pretty much anything an expert in market research, human resources, data science, technology, innovation, or branding would help you do. Your Wizard is the intersection of management consultancy, market research, and consumer engagement.</p>
 					<img class="mobile" src="<?php echo bloginfo('template_directory'); ?>/assets/images/placeholder.png" alt="" />
 				</div>
-				<!-- <img data-animation="bubble" class="placeholder" src="<?php echo bloginfo('template_directory');?>/assets/images/placeholder.png" alt="placeholder" /> -->
 				<video muted preload="auto">
 					<source src="<?php echo bloginfo('template_directory'); ?>/assets/videos/wizards.webm" type="video/webm">
 					<source src="<?php echo bloginfo('template_directory'); ?>/assets/videos/wizards.ogv" type="video/ogv">

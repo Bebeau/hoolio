@@ -81,7 +81,7 @@ body {
 	}
 }
 .btn {
-	display: block;
+	display: inline-block;
 	margin: 0 auto;
 	padding: 0 25px;
 	line-height: 60px;
@@ -102,6 +102,8 @@ body {
 	}
 }
 a, button {
+	text-decoration: none;
+	display: inline-block;
 	&:hover, &:focus {
 		outline: none;
 	}
@@ -1010,6 +1012,7 @@ header {
 }
 #apply {
 	padding: 100px 0;
+	text-align: center;
 	h2 {
 		margin: 0;
 	}

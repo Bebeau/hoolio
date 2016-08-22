@@ -89,7 +89,7 @@ get_header();
 		echo '<h2>Apply</h2>';
 		echo '<div class="container">';
 			echo '<p>If you’re ready to solve problems alongside some of the best engineers and data scientists in the world, we want to hear from you.</p>';
-			echo '<button href="" class="btn">Join The Team</button>';
+			echo '<a href="'.site_url('contact').'" class="btn">Join The Team</a>';
 		echo '</div>';
 	echo '</section>';
 
