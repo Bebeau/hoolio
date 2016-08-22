@@ -104,11 +104,12 @@
 		<span class="bar cross"></span>
 	</div>
 	<?php 
+	echo '<div class="menu outer">';
 		$menu_args = array(
 			'theme_location'  => 'main-menu',
 			'menu'            => 'Main Menu',
-			'container'       => 'div',
-			'container_class' => 'menu outer',
+			'container'       => '',
+			'container_class' => '',
 			'container_id'    => '',
 			'menu_class'      => 'nav',
 			'menu_id'         => '',
@@ -123,5 +124,10 @@
 			'walker'          => ''
 		);
 		wp_nav_menu($menu_args);
+		echo '<div class="socialNavWrap">';
+			get_template_part( 'partials/theme/social', 'icons' );
+			echo '<div class="legal">&copy; '.date("Y").' '.get_bloginfo("name").'. All Rights Reserved.</div>';
+		echo '</div>';
+	echo '</div>';
 	?>
 </header>

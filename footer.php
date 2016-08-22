@@ -29,6 +29,26 @@
 				</div>
 			</div>
 		</footer>
+
+		<section id="signUp">
+			<div class="close">
+				<span class="bar cross"></span>
+				<span class="bar middle"></span>
+				<span class="bar cross"></span>
+			</div>
+			<div class="outer">
+				<div class="inner">
+					<div class="copy">
+						<h2>Sign up to request access to our private beta.</h2>
+						<form role="form" method="POST" action="">
+							<input type="email" name="emailaddress" id="emailaddress" placeholder="email" />
+							<span class="enter">Press Enter</span>
+						</form>
+						<p>Schedule a meeting for premium (immediate) access.</p>
+					</div>
+				</div>
+			</div>
+		</section>
     
 	</body>
 </html>

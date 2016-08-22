@@ -101,6 +101,12 @@
 	}
 }
 @media(max-width: 768px) {
+	video {
+		display: none;
+	}
+	.mobile {
+		display: block;
+	}
 	.section {
 		h2{
 			font-size: 21pt;

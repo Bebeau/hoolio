@@ -1,0 +1,106 @@
+/*  Classes  on  outer  slideshow  wrapper:
+    either  NONE  or  'fraction'  or  'fraction'  +  one  of  'fraction1'...'fraction10'.
+        fraction  sets  box-sizing:  border-box,  so  that  padding  on  the  element  is  taken  out  ;
+    either  NONE  or  'center'  or  'right'
+
+*/
+.m-scooch  {
+    position:  relative;
+    overflow:  hidden;
+    -webkit-font-smoothing:  antialiased;
+    padding: 75px 0 125px;
+    &.m-left { 
+        text-align: left;
+    }
+    &.m-center {
+        text-align: center;
+    }
+    &.m-fluid {
+        .m-scooch-inner {
+            * {
+                box-sizing: border-box;
+            }
+        }
+    }
+    img  {
+        -ms-interpolation-mode:  bicubic;  
+    }
+    .m-item {
+        -webkit-transform: translate(0);
+        transform: translate(0);
+        width: 100%;
+    }
+    .m-scooch-inner  {
+        position:  relative;
+        white-space:  nowrap;
+        text-align:  center;
+        padding: 0 0 0 10px;
+        /*  Removes  inline-block  gaps  due  to  whitespace  */
+        font-size:  0;
+        /*  Configure  animations  */
+        -webkit-transition-property:  -webkit-transform;
+        -moz-transition-property:  -moz-transform;
+        -ms-transition-property:  -ms-transform;
+        -o-transition-property:  -o-transform;
+        transition-property:  transform;
+        /*  iOS  like  slide  timings  */
+        -webkit-transition-timing-function:  cubic-bezier(0.33,  0.66,  0.66,  1);
+        -moz-transition-timing-function:  cubic-bezier(0.33,  0.66,  0.66,  1);
+        -ms-transition-timing-function:  cubic-bezier(0.33,  0.66,  0.66,  1);
+        -o-transition-timing-function:  cubic-bezier(0.33,  0.66,  0.66,  1);
+        transition-timing-function:  cubic-bezier(0.33,  0.66,  0.66,  1);
+        -webkit-transition-duration:  0.5s;
+        -moz-transition-duration:  0.5s;
+        -ms-transition-duration:  0.5s;
+        -o-transition-duration:  0.5s;
+        transition-duration:  0.5s;
+        * {
+            display:  inline-block;
+            vertical-align:  top;
+            white-space:  normal;
+            /*  We  must  reset  the  font-size  here  */
+            font-size:  16px;
+        }
+    }
+}
+.m-scooch-controls {
+    position: absolute;
+    text-align: center;
+    width: 300px;
+    margin: 0 0 0 -150px;
+    left: 50%;
+    bottom: 25px;
+    a {
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        background: white;
+        @include border-top-radius(50%);
+        @include border-bottom-radius(50%);
+        margin: 0 1px;
+        &.m-active {
+            background: none;
+            border: 1px solid white;
+        }
+    }
+}
+.m-center:not(.m-fluid)  >  .m-scooch-inner  {
+    display:  inline-block;
+    margin-right:  -20000px  !important;
+    margin-left:  0  !important; 
+    *  {
+        position:  relative;
+        left:  -20000px;
+        &:first-child  {
+            float:  left;
+            margin-right:  20000px;
+            left:  0;  
+        }
+        &:first-child:last-child  {
+            margin-right:  0;  
+        }
+        &:last-child  {
+            margin-right:  -30000px;  
+        }
+    } 
+}

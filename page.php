@@ -17,7 +17,7 @@ get_header();
 			</div>
 		</div>
 		<?php
-		echo '<div id="page">';
+		echo '<div id="page" class="section">';
 			echo '<div class="container">';
 		    	the_content();
 		    echo '</div>';

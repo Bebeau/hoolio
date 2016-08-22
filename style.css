@@ -1692,6 +1692,97 @@ Author URI: http://theinitgroup.com
   .icon.icon-insights {
     background: url("assets/images/icons/insights.svg") no-repeat scroll center/contain; }
 
+/*  Classes  on  outer  slideshow  wrapper:
+    either  NONE  or  'fraction'  or  'fraction'  +  one  of  'fraction1'...'fraction10'.
+        fraction  sets  box-sizing:  border-box,  so  that  padding  on  the  element  is  taken  out  ;
+    either  NONE  or  'center'  or  'right'
+
+*/
+.m-scooch {
+  position: relative;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+  padding: 75px 0 125px; }
+  .m-scooch.m-left {
+    text-align: left; }
+  .m-scooch.m-center {
+    text-align: center; }
+  .m-scooch.m-fluid .m-scooch-inner * {
+    box-sizing: border-box; }
+  .m-scooch img {
+    -ms-interpolation-mode: bicubic; }
+  .m-scooch .m-item {
+    -webkit-transform: translate(0);
+    transform: translate(0);
+    width: 100%; }
+  .m-scooch .m-scooch-inner {
+    position: relative;
+    white-space: nowrap;
+    text-align: center;
+    padding: 0 0 0 10px;
+    /*  Removes  inline-block  gaps  due  to  whitespace  */
+    font-size: 0;
+    /*  Configure  animations  */
+    -webkit-transition-property: -webkit-transform;
+    -moz-transition-property: -moz-transform;
+    -ms-transition-property: -ms-transform;
+    -o-transition-property: -o-transform;
+    transition-property: transform;
+    /*  iOS  like  slide  timings  */
+    -webkit-transition-timing-function: cubic-bezier(0.33, 0.66, 0.66, 1);
+    -moz-transition-timing-function: cubic-bezier(0.33, 0.66, 0.66, 1);
+    -ms-transition-timing-function: cubic-bezier(0.33, 0.66, 0.66, 1);
+    -o-transition-timing-function: cubic-bezier(0.33, 0.66, 0.66, 1);
+    transition-timing-function: cubic-bezier(0.33, 0.66, 0.66, 1);
+    -webkit-transition-duration: 0.5s;
+    -moz-transition-duration: 0.5s;
+    -ms-transition-duration: 0.5s;
+    -o-transition-duration: 0.5s;
+    transition-duration: 0.5s; }
+    .m-scooch .m-scooch-inner * {
+      display: inline-block;
+      vertical-align: top;
+      white-space: normal;
+      /*  We  must  reset  the  font-size  here  */
+      font-size: 16px; }
+
+.m-scooch-controls {
+  position: absolute;
+  text-align: center;
+  width: 300px;
+  margin: 0 0 0 -150px;
+  left: 50%;
+  bottom: 25px; }
+  .m-scooch-controls a {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background: white;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    margin: 0 1px; }
+    .m-scooch-controls a.m-active {
+      background: none;
+      border: 1px solid white; }
+
+.m-center:not(.m-fluid) > .m-scooch-inner {
+  display: inline-block;
+  margin-right: -20000px  !important;
+  margin-left: 0  !important; }
+  .m-center:not(.m-fluid) > .m-scooch-inner * {
+    position: relative;
+    left: -20000px; }
+    .m-center:not(.m-fluid) > .m-scooch-inner *:first-child {
+      float: left;
+      margin-right: 20000px;
+      left: 0; }
+    .m-center:not(.m-fluid) > .m-scooch-inner *:first-child:last-child {
+      margin-right: 0; }
+    .m-center:not(.m-fluid) > .m-scooch-inner *:last-child {
+      margin-right: -30000px; }
+
 @font-face {
   font-family: 'din light';
   src: url("assets/fonts/Din_Light.otf") format("opentype");
@@ -1836,6 +1927,9 @@ p {
     clear: both;
     float: none; }
 
+.mobile {
+  display: none; }
+
 .social {
   margin: 25px auto; }
   .social a {
@@ -1863,6 +1957,104 @@ p {
     .thirds article p {
       box-sizing: border-box;
       padding: 15px; }
+
+#signUp {
+  background: rgba(0, 0, 0, 0.9);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  z-index: 9999;
+  display: none; }
+  #signUp .close {
+    position: fixed;
+    top: 15px;
+    right: 25px;
+    z-index: 13;
+    height: 58px;
+    display: inline-block;
+    margin: 0 0 0 -4px;
+    overflow: hidden;
+    vertical-align: top;
+    -webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    -moz-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+    #signUp .close .bar {
+      width: 40px;
+      height: 5px;
+      background: white;
+      display: block;
+      margin: 10px auto;
+      position: relative;
+      left: 0;
+      -webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      -moz-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+      #signUp .close .bar:first-child {
+        margin-top: 30px;
+        margin-bottom: -16px;
+        -webkit-transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+        -webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        -moz-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+      #signUp .close .bar:nth-child(2) {
+        left: 70px;
+        -webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        -moz-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+      #signUp .close .bar:last-child {
+        margin-top: -14px;
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+        transform: rotate(45deg);
+        -webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        -moz-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+    #signUp .close:hover {
+      cursor: pointer; }
+  #signUp .copy {
+    width: 600px;
+    margin: 0 auto; }
+    #signUp .copy h2 {
+      color: white;
+      font-size: 36pt; }
+    #signUp .copy input {
+      background: none;
+      border: none;
+      border-bottom: 1px solid white;
+      display: block;
+      height: 60px;
+      line-height: 60px;
+      font-size: 24pt;
+      width: 100%;
+      color: white; }
+      #signUp .copy input:focus {
+        outline: none; }
+    #signUp .copy p {
+      font-size: 16pt;
+      margin-top: 100px; }
+  #signUp form {
+    position: relative; }
+    #signUp form .enter {
+      color: white;
+      position: absolute;
+      bottom: -50px;
+      right: 0; }
+      #signUp form .enter:after {
+        content: "";
+        background: url("assets/images/arrow.png") no-repeat scroll center right;
+        width: 31px;
+        height: 21px;
+        display: inline-block;
+        padding-left: 15px; }
 
 header {
   position: fixed;
@@ -1933,6 +2125,22 @@ header {
       height: 100%;
       background: rgba(0, 0, 0, 0.9);
       z-index: 1; }
+    header .menu .socialNavWrap {
+      position: absolute;
+      bottom: 25px;
+      left: 50%;
+      width: 300px;
+      margin: 0 0 0 -150px;
+      z-index: 999; }
+      header .menu .socialNavWrap .social {
+        margin-bottom: 5px; }
+      header .menu .socialNavWrap a {
+        background: transparent;
+        font-size: 18pt; }
+        header .menu .socialNavWrap a i {
+          color: white; }
+      header .menu .socialNavWrap .legal {
+        font-size: 12pt; }
     header .menu ul {
       list-style: none;
       position: relative;
@@ -1943,6 +2151,7 @@ header {
         top: 50px;
         opacity: 0; }
         header .menu ul li a {
+          display: block;
           color: #1293cc;
           font-size: 48pt;
           text-decoration: none;
@@ -2023,7 +2232,7 @@ header {
 
 #top {
   position: relative;
-  background: radial-gradient(#ffffff, #f2f2f2);
+  background: white;
   box-sizing: border-box; }
   #top h1 {
     margin: 0; }
@@ -2035,7 +2244,7 @@ header {
     width: 50%;
     margin: 0 0 0 -4px;
     vertical-align: middle; }
-    #top .half img {
+    #top .half video {
       max-width: 100%;
       height: auto; }
   #top #clientLogos {
@@ -2055,10 +2264,19 @@ header {
   background: radial-gradient(#f2f2f2, #d9d9d9); }
 
 #video {
+  position: relative;
   background: url("assets/images/video_placeholder.jpg") no-repeat scroll center/cover; }
+  #video:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: 0px 0px 100px 25px rgba(0, 0, 0, 0.5) inset; }
 
 #help {
-  background: radial-gradient(#ffffff, #f2f2f2);
+  background: white;
   color: #919192; }
   #help h4 {
     letter-spacing: 5px;
@@ -2338,7 +2556,8 @@ header {
       #metrics .half article.phone img {
         position: absolute;
         bottom: 0;
-        left: 0; }
+        left: 50%;
+        margin: 0 0 0 -223px; }
       #metrics .half article p {
         color: white;
         box-sizing: border-box; }
@@ -2346,16 +2565,21 @@ header {
         color: white;
         margin: 25px 0; }
         #metrics .half article .stat span {
-          display: block;
           font-size: 48pt;
           text-align: center;
           font-weight: bold; }
+          #metrics .half article .stat span.abbr {
+            font-size: 18pt; }
+        #metrics .half article .stat p {
+          margin: 0;
+          padding: 0;
+          font-size: 12pt; }
 
 #testimonials {
   background: url("assets/images/testimonial_bg.jpg") no-repeat scroll center/cover;
-  height: 50vh;
   color: white;
-  text-align: center; }
+  text-align: center;
+  position: relative; }
   #testimonials blockquote {
     font-weight: bold;
     font-size: 32pt;
@@ -2488,9 +2712,16 @@ header {
     background: #f0f0f0;
     padding: 10px;
     margin-top: 25px;
-    color: #1293cc; }
+    color: #1293cc;
+    -webkit-transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    -moz-transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
     #contact textarea:focus {
-      outline: none; }
+      outline: none;
+      min-height: 250px;
+      -webkit-transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      -moz-transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
   #contact .btn-submit {
     float: right;
     margin-top: 25px; }
@@ -2498,6 +2729,10 @@ header {
       padding-right: 10px;
       margin: 0 10px 0 0;
       padding: 0; }
+    #contact .btn-submit.success {
+      background: linear-gradient(green, #006700); }
+    #contact .btn-submit.error {
+      background: linear-gradient(red, #e60000); }
   #contact #dropdown {
     position: relative;
     width: 48%;
@@ -2767,6 +3002,12 @@ footer {
     width: auto;
     padding: 0 15px; } }
 @media (max-width: 768px) {
+  video {
+    display: none; }
+
+  .mobile {
+    display: block; }
+
   .section h2 {
     font-size: 21pt; }
 

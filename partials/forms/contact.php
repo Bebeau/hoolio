@@ -1,8 +1,6 @@
 <?php 
 
-	require_once "Mail.php";
-
-	if( empty($_POST['password']) ) {
+if( empty($_POST['password']) ) {
 
 	$success = false;
 
@@ -14,16 +12,8 @@
 	$interest = isset( $_POST['interest'] ) ? preg_replace( "/[^\.\-\' a-zA-Z0-9]/", "", $_POST['interest'] ) : "";
 	$message = isset( $_POST['message'] ) ? preg_replace( "/[^\.\-\' a-zA-Z0-9]/", "", $_POST['message'] ) : "";
 
-	$from = 'Wyzerr <sophie@gorgeouslygreen.com>';
+	$email = 'Wyzerr <info@wyzerr.com>';
  	$to = $firstname.' '.$lastname.' <'.$emailaddress.'>';
-
- 	$smtp = Mail::factory('smtp', array(
-        'host' => 'sophieuliano.com',
-        'port' => '587',
-        'auth' => true,
-        'username' => 'kyle@sophieuliano.com',
-        'password' => 'zKq4w9^3'
-    ));
 
 	if ( $firstname && $lastname && $emailaddress && $message ) {
 
@@ -32,7 +22,7 @@
 		$headers = array(
 			    'From' => $to,
 			    'Subject' => $subject,
-			    'Reply-To' => $from,
+			    'Reply-To' => $email,
 			    'X-Mailer' => 'PHP/'.phpversion(),
 			    'MIME-Version' => '1.0',
 			    'Content-Type' => 'text/html',
@@ -49,7 +39,7 @@
 			$formcontent .= "<tr><td><strong>Message:</strong></td><td>" . $message . "</td></tr>";
 		$formcontent .= '</table></center></body></html>';
 
-		$success = $smtp->send($from, $headers, $formcontent );
+		wp_mail( $email, $subject, $formcontent, $headers );
 	}
 
 	// Return an appropriate response to the browser

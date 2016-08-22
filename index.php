@@ -6,13 +6,18 @@
 			<div class="inner">
 				<!-- <div class="ipad" data-animation="slideInLeft"></div> -->
 				<div class="ipad half" data-animation="slideInLeft">
-					<img src="<?php echo bloginfo('template_directory');?>/assets/images/ipad.png" alt="ipad" />
+					<video muted id="bgvid" preload="auto" autoplay loop>
+						<source src="<?php echo bloginfo('template_directory'); ?>/assets/videos/tablet.webm" type="video/webm">
+						<source src="<?php echo bloginfo('template_directory'); ?>/assets/videos/tablet.ogv" type="video/ogv">
+						<source src="<?php echo bloginfo('template_directory'); ?>/assets/videos/tablet.mp4" type="video/mp4">
+					</video>
+					<img class="mobile" src="<?php echo bloginfo('template_directory'); ?>/assets/images/ipad.png" alt="" />
 				</div>
 				<div class="copy half">
 					<h1 data-animation="slideDown">Wisdom Made Easy.</h1>
 					<span data-animation="slideUp">
 						<h3>Be Wyzerr, know more.</h3>
-						<button class="btn">Be a wizard</button>
+						<button class="btn btn-wizard">Be a wizard</button>
 					</span>
 				</div>
 				<!-- <div class="iphone" data-animation="slideInRight"></div> -->
@@ -61,8 +66,14 @@
 				<div class="copy" data-animation="slideUp">
 					<h1 data-animation="slideDown">What can your Wizard<br /> help you do?</h1>
 					<p data-animation="slideUp">Pretty much anything an expert in market research, human resources, data science, technology, innovation, or branding would help you do. Your Wizard is the intersection of management consultancy, market research, and consumer engagement.</p>
+					<img class="mobile" src="<?php echo bloginfo('template_directory'); ?>/assets/images/placeholder.png" alt="" />
 				</div>
-				<img data-animation="bubble" class="placeholder" src="<?php echo bloginfo('template_directory');?>/assets/images/placeholder.png" alt="placeholder" />
+				<!-- <img data-animation="bubble" class="placeholder" src="<?php echo bloginfo('template_directory');?>/assets/images/placeholder.png" alt="placeholder" /> -->
+				<video muted preload="auto">
+					<source src="<?php echo bloginfo('template_directory'); ?>/assets/videos/wizards.webm" type="video/webm">
+					<source src="<?php echo bloginfo('template_directory'); ?>/assets/videos/wizards.ogv" type="video/ogv">
+					<source src="<?php echo bloginfo('template_directory'); ?>/assets/videos/wizards.mp4" type="video/mp4">
+				</video>
 			</div>
 		</article>
 	</section>
@@ -194,90 +205,16 @@
 						</div>
 					</li>
 				</ul>
-				<!-- <div class="line2"></div>
-				<div class="followUp">
-					<h2>How does Hoolio do that?</h2>
-					<p>The science of actively listening to customers. Hoolio is very smart. He actively listens to customers, the market, and employees. But here’s a breakdown of his strategy:</p>
-				</div> -->
 			</div>
 		</article>
 	</section>
 
-	<!-- <div id="steps">
-		<section id="ask" class="block step">
-			<article class="outer">
-				<div class="inner">
-					<div class="half" data-animation="slideInLeft">
-						<h3>Ask</h3>
-						<p>Hoolio helps you asks the right questions.</p>
-						<p>Our wizard takes all the guess work out of
-						creating your survey by simply asking what
-						you want to learn. Cuts down the creation
-						process from hours to minutes.</p>
-					</div>
-					<div class="half" data-animation="slideInRight">
-						<div class="speach_bubble">
-							<div class="outer">
-								<div class="inner">
-									<p>Hi, I'm Hooli.</p>
-									<p class="question">What's your name?</p>
-								</div>
-							</div>
-						</div>
-						<img src="<?php echo bloginfo('template_directory');?>/assets/images/owl.svg" alt="" />
-					</div>
-				</div>
-			</article>
-		</section>
-
-		<section id="engage" class="block step">
-			<article class="half">
-				<img id="arm" src="<?php echo bloginfo('template_directory');?>/assets/images/arm.svg" alt="" />
-				<div class="outer">
-					<div class="inner">
-						<img id="hand_icons" src="<?php echo bloginfo('template_directory');?>/assets/images/hand_icons.png" alt="" />
-					</div>
-				</div>
-			</article>
-			<article class="half" data-animation="slideInRight">
-				<div class="outer">
-					<div class="inner">
-						<h3>Engage</h3>
-						<p>Collect a lot of data.</p>
-						<p>Engage your consumers. Make it as
-						fun, fast, and easy as possible for your
-						customers, employees, and the market 
-						place to give you feedback.</p>
-					</div>
-				</div>
-			</article>
-		</section>
-
-		<section id="analyze" class="block step">
-			<article class="outer">
-				<div class="inner">
-					<div class="half">
-						<h3>Analyze</h3>
-						<p>Hoolio is very quick.</p>
-						<p>He analyzes and process our data
-						 right away in real-time. Overtime,
-						Hoolio tells us a lot of things we never
-						 even thought we would learn.</p>
-					</div>
-					<div class="half">
-						<img src="" alt="" />
-					</div>
-				</div>
-			</article>
-		</section>
-	</div> -->
-
-	<section id="metrics" class="block">
+	<section id="metrics" class="block counting">
 		<div class="half">
 			<article class="phone">
 				<img src="<?php echo bloginfo('template_directory');?>/assets/images/iphone.png" alt="" />
 			</article>
-			<article>
+			<article data-animation="slideUp">
 				<div class="outer">
 					<div class="inner">
 						<h1>Success Metrics</h1>
@@ -289,15 +226,33 @@
 						<div class="half">
 							<article>
 								<img src="<?php echo bloginfo('template_directory');?>/assets/images/wyzerr_text.svg" alt="" />
-								<div class="stat"><span>87%</span> Average Completion Rate</div>
-								<div class="stat"><span>57 secs</span> secs Avergage Time to Complete</div>
-								<div class="stat"><span>12</span> Average Data Points Collected</div>
+								<div class="stat">
+									<span class="timer" data-from="0" data-to="87" data-speed="2000">87</span><span>%</span> 
+									<p>Average Completion Rate</p>
+								</div>
+								<div class="stat">
+									<span class="timer" data-from="0" data-to="57" data-speed="2000">57</span> <span class="abbr">secs</span> 
+									<p>Avergage Time to Complete</p>
+								</div>
+								<div class="stat">
+									<span class="timer" data-from="0" data-to="12" data-speed="2000">12</span> 
+									<p>Average Data Points Collected</p>
+								</div>
 							</article>
-							<article>
+							<article class="counting">
 								<img src="<?php echo bloginfo('template_directory');?>/assets/images/competitor.png" alt="" />
-								<div class="stat"><span>26%</span> Average Completion Rate</div>
-								<div class="stat"><span>6 min</span>Avergage Time to Complete</div>
-								<div class="stat"><span>12</span> Average Data Points Collected</div>
+								<div class="stat">
+									<span class="timer" data-from="0" data-to="26" data-speed="2000">26</span><span>%</span> 
+									<p>Average Completion Rate</p>
+								</div>
+								<div class="stat">
+									<span class="timer" data-from="0" data-to="6" data-speed="2000">6</span> <span class="abbr">min</span> 
+									<p>Avergage Time to Complete</p>
+								</div>
+								<div class="stat">
+									<span class="timer" data-from="0" data-to="12" data-speed="2000">12</span> 
+									<p>Average Data Points Collected</p>
+								</div>
 							</article>
 						</div>
 					</div>
@@ -308,26 +263,63 @@
 
 	<section id="testimonials">
 		<div class="outer">
-			<div class="inner">
-				<blockquote>
-					“We have incredible insight into our data thanks to Wyzerr 
-					and it’s vision for data collection. We recommend them 
-					for any of your survey needs.”
-				</blockquote>
-				<cite>
-					<span class="name">MICHAEL WATSON </span>
-					<span class="title">PRODUCT DESIGNER</span>
-					<span class="company">TIMES10 MEDIA</span>
-				</cite>
+			<div class="inner" data-animation="slideUp">
+				<!-- the viewport -->
+				<div class="m-scooch m-fluid m-scooch-testimonials">
+					<!-- the slider -->
+					<div class="m-scooch-inner">
+						<div class="m-item active">
+							<blockquote>
+								“We have incredible insight into our data thanks to Wyzerr 
+								and it’s vision for data collection. We recommend them 
+								for any of your survey needs.”
+							</blockquote>
+							<cite>
+								<span class="name">MICHAEL WATSON </span>
+								<span class="title">PRODUCT DESIGNER</span>
+								<span class="company">TIMES10 MEDIA</span>
+							</cite>
+						</div>
+						<div class="m-item">
+							<blockquote>
+								“We have incredible insight into our data thanks to Wyzerr 
+								and it’s vision for data collection. We recommend them 
+								for any of your survey needs.”
+							</blockquote>
+							<cite>
+								<span class="name">MICHAEL WATSON </span>
+								<span class="title">PRODUCT DESIGNER</span>
+								<span class="company">TIMES10 MEDIA</span>
+							</cite>
+						</div>
+						<div class="m-item">
+							<blockquote>
+								“We have incredible insight into our data thanks to Wyzerr 
+								and it’s vision for data collection. We recommend them 
+								for any of your survey needs.”
+							</blockquote>
+							<cite>
+								<span class="name">MICHAEL WATSON </span>
+								<span class="title">PRODUCT DESIGNER</span>
+								<span class="company">TIMES10 MEDIA</span>
+							</cite>
+						</div>
+					</div>
+					<div class="m-scooch-controls m-scooch-bulleted">
+						<a href="" data-m-slide="1"></a>
+						<a href="" data-m-slide="2"></a>
+						<a href="" data-m-slide="3"></a>
+					</div>
+				</div>
 			</div>
 		</div>
 	</section>
 
 	<section id="cta">
 		<article class="outer">
-			<div class="inner">
+			<div class="inner" data-animation="slideUp">
 				<h2>Be Wyzerr, know more.</h2>
-				<button class="btn">Be A Wizard</button>
+				<button class="btn btn-wizard">Be A Wizard</button>
 			</div>
 		</article>
 	</section>

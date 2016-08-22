@@ -42,6 +42,19 @@ function register_my_menu() {
   register_nav_menu( 'footer-menu', 'Footer Menu' );
 }
 
+// remove WordPress admin menu items
+function remove_menus(){
+    // remove_menu_page( 'edit.php' );
+    // remove_menu_page( 'edit.php?post_type=page' );
+    remove_menu_page( 'edit-comments.php' );
+    remove_menu_page( 'tools.php' );
+    // remove_menu_page( 'themes.php' );
+    remove_menu_page( 'plugins.php' );
+    // remove_menu_page( 'users.php' );
+    remove_menu_page( 'upload.php' );
+}
+add_action( 'admin_menu', 'remove_menus' );
+
 add_action('admin_init', 'my_general_section');  
 function my_general_section() {  
     add_settings_section(  
@@ -81,26 +94,6 @@ function my_general_section() {
         )  
     );
     add_settings_field( // Option 2
-        'pinterest', // Option ID
-        'Pinterest URL', // Label
-        'my_textbox_callback', // !important - This is where the args go!
-        'general', // Page it will be displayed
-        'my_settings_section', // Name of our section (General Settings)
-        array( // The $args
-            'pinterest' // Should match Option ID
-        )  
-    );
-    add_settings_field( // Option 2
-        'googleplus', // Option ID
-        'GooglePlus URL', // Label
-        'my_textbox_callback', // !important - This is where the args go!
-        'general', // Page it will be displayed
-        'my_settings_section', // Name of our section (General Settings)
-        array( // The $args
-            'googleplus' // Should match Option ID
-        )  
-    );
-    add_settings_field( // Option 2
         'youtube', // Option ID
         'Youtube URL', // Label
         'my_textbox_callback', // !important - This is where the args go!
@@ -115,8 +108,6 @@ function my_general_section() {
     register_setting('general','facebook', 'esc_attr');
     register_setting('general','twitter', 'esc_attr');
     register_setting('general','instagram', 'esc_attr');
-    register_setting('general','pinterest', 'esc_attr');
-    register_setting('general','googleplus', 'esc_attr');
     register_setting('general','youtube', 'esc_attr');
 
 }
