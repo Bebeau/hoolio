@@ -208,7 +208,7 @@
 		</article>
 	</section>
 
-	<section id="metrics" class="block counting">
+	<section id="metrics" class="block">
 		<div class="half">
 			<article class="phone">
 				<img src="<?php echo bloginfo('template_directory');?>/assets/images/iphone.png" alt="" />
@@ -222,34 +222,34 @@
 						fun, fast, and easy as possible for your
 						customers, employees, and the market 
 						place to give you feedback.</p>
-						<div class="half">
+						<div class="half counting">
 							<article>
 								<img src="<?php echo bloginfo('template_directory');?>/assets/images/wyzerr_text.svg" alt="" />
 								<div class="stat">
-									<span class="timer" data-from="0" data-to="87" data-speed="2000">87</span><span>%</span> 
+									<span class="timer" data-from="0" data-to="87" data-speed="1000">87</span><span>%</span> 
 									<p>Average Completion Rate</p>
 								</div>
 								<div class="stat">
-									<span class="timer" data-from="0" data-to="57" data-speed="2000">57</span> <span class="abbr">secs</span> 
+									<span class="timer" data-from="0" data-to="57" data-speed="1000">57</span> <span class="abbr">secs</span> 
 									<p>Avergage Time to Complete</p>
 								</div>
 								<div class="stat">
-									<span class="timer" data-from="0" data-to="12" data-speed="2000">12</span> 
+									<span class="timer" data-from="0" data-to="12" data-speed="1000">12</span> 
 									<p>Average Data Points Collected</p>
 								</div>
 							</article>
-							<article class="counting">
+							<article>
 								<img src="<?php echo bloginfo('template_directory');?>/assets/images/competitor.png" alt="" />
 								<div class="stat">
-									<span class="timer" data-from="0" data-to="26" data-speed="2000">26</span><span>%</span> 
+									<span class="timer" data-from="0" data-to="26" data-speed="1000">26</span><span>%</span> 
 									<p>Average Completion Rate</p>
 								</div>
 								<div class="stat">
-									<span class="timer" data-from="0" data-to="6" data-speed="2000">6</span> <span class="abbr">min</span> 
+									<span class="timer" data-from="0" data-to="6" data-speed="1000">6</span> <span class="abbr">min</span> 
 									<p>Avergage Time to Complete</p>
 								</div>
 								<div class="stat">
-									<span class="timer" data-from="0" data-to="12" data-speed="2000">12</span> 
+									<span class="timer" data-from="0" data-to="12" data-speed="1000">12</span> 
 									<p>Average Data Points Collected</p>
 								</div>
 							</article>

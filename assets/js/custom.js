@@ -178,16 +178,17 @@ var init = {
         }
     },
 	count: function() {
+		// activate rolling number effect
 		var numbers = jQuery('.counting');
-		jQuery(window).scroll(function() {
-			if( move.isOnScreen(numbers)){
-				jQuery('.timer').each(function(){
-					jQuery(this).countTo();
-					jQuery(window).off('scroll');
-		        	move.onMove();
-				});
-			}
-		});
+		var eventfired = false;
+		if( numbers.length) {
+			jQuery(window).on("scroll",function(){
+				if( move.isOnScreen(numbers) && eventfired === false ){
+					jQuery('.timer').countTo();
+					eventfired = true;
+				}
+			});
+		}
 	},
 	dropdown: function() {
 		jQuery('#dropdown button').click(function(e){
