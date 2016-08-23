@@ -1833,7 +1833,8 @@ body {
     background: #1293cc; }
 
 .btn {
-  display: inline-block;
+  width: 200px;
+  display: block;
   margin: 0 auto;
   padding: 0 25px;
   line-height: 60px;
@@ -3129,6 +3130,12 @@ footer {
       line-height: normal;
       font-size: 24pt;
       margin-bottom: 25px; }
+
+  #signUp .copy {
+    width: auto; }
+    #signUp .copy h2 {
+      font-size: 32pt;
+      line-height: 48px; }
 
   footer {
     height: auto;
