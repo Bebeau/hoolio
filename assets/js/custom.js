@@ -143,7 +143,7 @@ var init = {
 		init.SVG();
 		init.dropdown();
 		init.contactBtn();
-		// init.count();
+		init.count();
 		init.scooch();
 		init.wizard();
 		init.playVideo();
