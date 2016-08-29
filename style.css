@@ -2250,10 +2250,12 @@ header {
     box-sizing: border-box;
     display: inline-block;
     width: 50%;
+    padding: 0 25px;
     margin: 0 0 0 -4px;
     vertical-align: middle; }
     #top .half video {
       max-width: 100%;
+      max-height: 75vh;
       height: auto;
       display: none;
       float: right; }
@@ -2297,6 +2299,9 @@ header {
     font-size: 24pt; }
   #help .placeholder {
     margin: 50px 0; }
+  #help video {
+    width: 1000px;
+    height: auto; }
 
 #meet {
   min-height: 100vh;
