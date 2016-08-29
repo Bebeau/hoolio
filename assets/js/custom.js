@@ -138,6 +138,7 @@ var init = {
 	onReady: function() {
 		init.openMenu();
 		init.bubbleOpen();
+		init.bubbleClose();
 		init.stepAnimation();
 		init.speachBubble();
 		init.SVG();
@@ -149,18 +150,20 @@ var init = {
 		init.playVideo();
 	},
 	playVideo: function() {
-		jQuery(window).scroll(function() {
-		    jQuery('#help video').each(function(){
-		    	jQuery(this).prop('loop', false);
-		        if (move.isOnScreen(jQuery(this))) {
-		        	jQuery(this)[0].play();
-		        	jQuery(window).off('scroll');
-		        	move.onMove();
-		        } else {
-		            jQuery(this)[0].pause();
-		        }
-		    })
-		});
+		var vid = jQuery('#help video');
+    	vid.prop('loop', false);
+        if (move.isOnScreen(vid)) {
+        	vid[0].play();
+        	move.onMove();
+        } else {
+        	jQuery(window).scroll(function(){
+        		if (move.isOnScreen(vid)) {
+            		vid[0].play();
+            		jQuery(window).off('scroll');
+        			move.onMove();
+            	}
+            });
+        }
 	},
 	wizard: function() {
 		jQuery('.btn-wizard').click(function(e){
@@ -182,12 +185,18 @@ var init = {
 		var numbers = jQuery('.counting');
 		var eventfired = false;
 		if( numbers.length) {
-			jQuery(window).on("scroll",function(){
-				if( move.isOnScreen(numbers) && eventfired === false ){
-					jQuery('.timer').countTo();
-					eventfired = true;
-				}
-			});
+			if(move.isOnScreen(numbers) && eventfired === false) {
+				jQuery('.timer').countTo();
+				eventfired = true;
+			} else {
+				jQuery(window).scroll(function(){
+					if(move.isOnScreen(numbers) && eventfired === false) {
+						jQuery('.timer').countTo();
+						eventfired = true;
+						jQuery(window).off('scroll');
+					}
+				});
+			}
 		}
 	},
 	dropdown: function() {
@@ -279,21 +288,52 @@ var init = {
 				}, 250
 			);
 		});
-		jQuery('.circleClose').click(function(e){
+	},
+	bubbleClose: function() {
+		jQuery('.bubblenav li').click(function(e){
 			e.preventDefault();
-			var item = jQuery(this).parent().parent();
-			var icon = item.find("i");
-			jQuery('.frame',item).removeClass("in");
-			setTimeout(
-				function() {
-					item.removeClass("open");
-				}, 250
-			);
-			setTimeout(
-				function() {
-					icon.removeClass("hide");
-				}, 500
-			);
+
+			var numb = jQuery(this).attr("data-numb");
+			var tab = jQuery('.bubble-'+numb).parent();
+
+			var current = jQuery(this).parent().parent().parent();
+
+			if(jQuery(this).hasClass("circleClose")) {
+				jQuery('.frame').removeClass("in");
+				setTimeout(
+					function() {
+						current.removeClass("open");
+					}, 250
+				);
+				setTimeout(
+					function() {
+						current.find("i").removeClass("hide");
+					}, 500
+				);
+			} else {
+				jQuery('.frame').removeClass("in");
+				setTimeout(
+					function() {
+						current.removeClass("open");
+					}, 250
+				);
+				setTimeout(
+					function() {
+						current.find("i").removeClass("hide");
+					}, 500
+				);
+				setTimeout(
+					function() {
+						tab.addClass("open");
+						tab.find("i").addClass("hide");
+					}, 750
+				);
+				setTimeout(
+					function(){
+						jQuery('.frame',tab).addClass("in");
+					}, 1000
+				);
+			}
 		});
 	},
 	stepAnimation: function() {

@@ -6,10 +6,20 @@
 			<div class="inner">
 				<!-- <div class="ipad" data-animation="slideInLeft"></div> -->
 				<div class="ipad half" data-animation="slideInLeft">
-					<video muted id="bgvid" preload="auto" autoplay loop>
+					<video muted preload="auto" autoplay loop class="active">
+						<source src="<?php echo bloginfo('template_directory'); ?>/assets/videos/iphone.webm" type="video/webm">
+						<source src="<?php echo bloginfo('template_directory'); ?>/assets/videos/iphone.ogv" type="video/ogv">
+						<source src="<?php echo bloginfo('template_directory'); ?>/assets/videos/iphone.mp4" type="video/mp4">
+					</video>
+					<video muted preload="auto" autoplay loop>
 						<source src="<?php echo bloginfo('template_directory'); ?>/assets/videos/tablet.webm" type="video/webm">
 						<source src="<?php echo bloginfo('template_directory'); ?>/assets/videos/tablet.ogv" type="video/ogv">
 						<source src="<?php echo bloginfo('template_directory'); ?>/assets/videos/tablet.mp4" type="video/mp4">
+					</video>
+					<video muted preload="auto" autoplay loop>
+						<source src="<?php echo bloginfo('template_directory'); ?>/assets/videos/computer.webm" type="video/webm">
+						<source src="<?php echo bloginfo('template_directory'); ?>/assets/videos/computer.ogv" type="video/ogv">
+						<source src="<?php echo bloginfo('template_directory'); ?>/assets/videos/computer.mp4" type="video/mp4">
 					</video>
 					<img class="mobile" src="<?php echo bloginfo('template_directory'); ?>/assets/images/ipad.png" alt="" />
 				</div>
@@ -90,14 +100,22 @@
 				</div>
 				<ul>
 					<li>
-						<div class="bubblewrap">
+						<div class="bubblewrap bubble-1">
 							<div data-animation="bubble" class="bubble">
 								<i class="icon icon-bar-graph"></i>
 							</div>
 							<span class="label" data-animation="slideUp">new products &amp; services</span>
 						</div>
 						<div class="frame">
-							<div class="circleClose"><i class="fa fa-close"></i></div>
+							<ul class="bubblenav">
+								<li data-numb="1"></li>
+								<li data-numb="2"></li>
+								<li data-numb="3"></li>
+								<li data-numb="4"></li>
+								<li data-numb="5"></li>
+								<li data-numb="6"></li>
+								<li class="circleClose"><i class="fa fa-close"></i></li>
+							</ul>
 							<div class="outer">
 								<div class="inner">
 									<div class="copy">
@@ -109,14 +127,22 @@
 						</div>
 					</li>
 					<li>
-						<div class="bubblewrap">
+						<div class="bubblewrap bubble-2">
 							<div data-animation="bubble" class="bubble">
 								<i class="icon icon-ruler"></i>
 							</div>
 							<span class="label" data-animation="slideUp">customer loyalty</span>
 						</div>
 						<div class="frame">
-							<div class="circleClose"><i class="fa fa-close"></i></div>
+							<ul class="bubblenav">
+								<li data-numb="1"></li>
+								<li data-numb="2"></li>
+								<li data-numb="3"></li>
+								<li data-numb="4"></li>
+								<li data-numb="5"></li>
+								<li data-numb="6"></li>
+								<li class="circleClose"><i class="fa fa-close"></i></li>
+							</ul>
 							<div class="outer">
 								<div class="inner">
 									<div class="copy">
@@ -128,14 +154,22 @@
 						</div>
 					</li>
 					<li>
-						<div class="bubblewrap">
+						<div class="bubblewrap bubble-3">
 							<div data-animation="bubble" class="bubble">
 								<i class="icon icon-db"></i>
 							</div>
 							<span class="label" data-animation="slideUp">how to increase sales</span>
 						</div>
 						<div class="frame">
-							<div class="circleClose"><i class="fa fa-close"></i></div>
+							<ul class="bubblenav">
+								<li data-numb="1"></li>
+								<li data-numb="2"></li>
+								<li data-numb="3"></li>
+								<li data-numb="4"></li>
+								<li data-numb="5"></li>
+								<li data-numb="6"></li>
+								<li class="circleClose"><i class="fa fa-close"></i></li>
+							</ul>
 							<div class="outer">
 								<div class="inner">
 									<div class="copy">
@@ -147,14 +181,22 @@
 						</div>
 					</li>
 					<li>
-						<div class="bubblewrap">
+						<div class="bubblewrap bubble-4">
 							<div data-animation="bubble" class="bubble">
 								<i class="icon icon-profile"></i>
 							</div>
 							<span class="label" data-animation="slideUp">marketing message</span>
 						</div>
 						<div class="frame">
-							<div class="circleClose"><i class="fa fa-close"></i></div>
+							<ul class="bubblenav">
+								<li data-numb="1"></li>
+								<li data-numb="2"></li>
+								<li data-numb="3"></li>
+								<li data-numb="4"></li>
+								<li data-numb="5"></li>
+								<li data-numb="6"></li>
+								<li class="circleClose"><i class="fa fa-close"></i></li>
+							</ul>
 							<div class="outer">
 								<div class="inner">
 									<div class="copy">
@@ -166,14 +208,22 @@
 						</div>
 					</li>
 					<li>
-						<div class="bubblewrap">
+						<div class="bubblewrap bubble-5">
 							<div data-animation="bubble" class="bubble">
 								<i class="icon icon-smile"></i>
 							</div>
 							<span class="label" data-animation="slideUp">employee retention</span>
 						</div>
 						<div class="frame">
-							<div class="circleClose"><i class="fa fa-close"></i></div>
+							<ul class="bubblenav">
+								<li data-numb="1"></li>
+								<li data-numb="2"></li>
+								<li data-numb="3"></li>
+								<li data-numb="4"></li>
+								<li data-numb="5"></li>
+								<li data-numb="6"></li>
+								<li class="circleClose"><i class="fa fa-close"></i></li>
+							</ul>
 							<div class="outer">
 								<div class="inner">
 									<div class="copy">
@@ -185,14 +235,22 @@
 						</div>
 					</li>
 					<li>
-						<div class="bubblewrap">
+						<div class="bubblewrap bubble-6">
 							<div data-animation="bubble" class="bubble">
 								<i class="icon icon-insights"></i>
 							</div>
 							<span class="label" data-animation="slideUp">consumer insights</span>
 						</div>
 						<div class="frame">
-							<div class="circleClose"><i class="fa fa-close"></i></div>
+							<ul class="bubblenav">
+								<li data-numb="1"></li>
+								<li data-numb="2"></li>
+								<li data-numb="3"></li>
+								<li data-numb="4"></li>
+								<li data-numb="5"></li>
+								<li data-numb="6"></li>
+								<li class="circleClose"><i class="fa fa-close"></i></li>
+							</ul>
 							<div class="outer">
 								<div class="inner">
 									<div class="copy">

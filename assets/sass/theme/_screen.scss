@@ -311,7 +311,7 @@ p {
 	}
 }
 header {
-	position: fixed;
+	position: absolute;
 	z-index: 12;
 	padding: 15px 25px;
 	.logo {
@@ -491,6 +491,11 @@ header {
 		video {
 			max-width: 100%;
 			height: auto;
+			display: none;
+			float: right;
+			&.active {
+				display: block;
+			}
 		}
 	}
 	#clientLogos {
@@ -581,31 +586,58 @@ header {
 				p {
 					color: rgba(0,0,0,0.5);
 				}
-				.circleClose {
-					position: absolute;
-					bottom: 25%;
-					right: 50%;
-					background: $white;
-					width: 50px;
-					height: 50px;
-					margin: 0 -25px 0 0;
-					line-height: 55px;
-					@include border-top-radius(50%);
-					@include border-bottom-radius(50%);
-					@include transform(scale(1));
-					@include transition(all 0.1s ease-in-out);
-					font-size: 24pt;
-					opacity: 0.5;
-					&:hover {
-						cursor: pointer;
-						@include transform(scale(1.1));
-						@include transition(all 0.1s ease-in-out);
-					}
-				}
 				&.in {
 					visibility: visible;
 					opacity: 1;
 					@include transition(all 0.3s ease-in-out);
+				}
+				.bubblenav {
+					position: absolute;
+					top: 50px;
+					width: 100%;
+					text-align: center;
+					li {
+						@include border-top-radius(50%);
+						@include border-bottom-radius(50%);
+						width: 35px;
+						height: 35px;
+						display: inline-block;
+						border: 2px solid rgba(0,0,0,0.5);
+						&:first-child {
+							background: radial-gradient($orange, darken($orange, 10%));
+						}
+						&:nth-child(2) {
+							background: radial-gradient($purp, darken($purp, 10%));
+						}
+						&:nth-child(3) {
+							background: radial-gradient($pink, darken($pink, 10%));
+						}
+						&:nth-child(4) {
+							background: radial-gradient(lighten($blue, 25%), lighten($blue, 15%));
+						}
+						&:nth-child(5) {
+							background: radial-gradient(lighten($gold, 5%), darken($gold, 5%));
+						}
+						&:nth-child(6) {
+							background: radial-gradient(darken($green, 10%), darken($green, 20%));
+						}
+						&.circleClose {
+							background: $black;
+							line-height: 38px;
+							@include transform(scale(1));
+							@include transition(all 0.1s ease-in-out);
+							font-size: 14pt;
+							opacity: 0.5;
+							&:hover {
+								cursor: pointer;
+								@include transform(scale(1.1));
+								@include transition(all 0.1s ease-in-out);
+							}
+						}
+						&:hover {
+							cursor: pointer;
+						}
+					}
 				}
 			}
 			.bubblewrap {
@@ -732,7 +764,7 @@ header {
 		}
 	}
 	.copy {
-		padding-bottom: 100px;
+		padding-bottom: 150px;
 	}
 	.followUp {
 		width: 600px;
@@ -1122,5 +1154,11 @@ footer {
 				}
 			}
 		}
+	}
+	.social {
+		margin: 25px auto 0;
+	}
+	.legal {
+		margin-top: 25px;
 	}
 }
