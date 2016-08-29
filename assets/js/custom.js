@@ -136,6 +136,7 @@ var move = {
 
 var init = {
 	onReady: function() {
+		init.topVideos();
 		init.openMenu();
 		init.bubbleOpen();
 		init.bubbleClose();
@@ -148,6 +149,43 @@ var init = {
 		init.scooch();
 		init.wizard();
 		init.playVideo();
+	},
+	topVideos: function() {
+		jQuery('#videos .active')[0].play();
+		setTimeout(
+			function(){
+				jQuery('#videos').removeClass("slideIn");
+			}, 9000
+		);
+		setTimeout(
+			function(){
+				jQuery('#videos .active').removeClass("active").next().addClass("active")[0].play();
+				jQuery('#videos').addClass("slideIn");
+			}, 9500
+		);
+		setTimeout(
+			function(){
+				jQuery('#videos').removeClass("slideIn");
+			}, 22000
+		);
+		setTimeout(
+			function(){
+				jQuery('#videos .active').removeClass("active").next().addClass("active")[0].play();
+				jQuery('#videos').addClass("slideIn");
+			}, 22500
+		);
+		setTimeout(
+			function(){
+				jQuery('#videos').removeClass("slideIn");
+			}, 29000
+		);
+		setTimeout(
+			function(){
+				jQuery('#videos .active').removeClass("active").prev().prev().addClass("active");
+				jQuery('#videos').addClass("slideIn");
+				init.topVideos();
+			}, 29500
+		);
 	},
 	playVideo: function() {
 		var vid = jQuery('#help video');

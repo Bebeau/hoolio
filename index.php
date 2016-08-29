@@ -5,18 +5,18 @@
 		<article class="outer">
 			<div class="inner">
 				<!-- <div class="ipad" data-animation="slideInLeft"></div> -->
-				<div class="ipad half" data-animation="slideInLeft">
-					<video muted preload="auto" autoplay loop class="active">
+				<div class="half" data-animation="slideInLeft" id="videos">
+					<video muted preload="auto" loop class="active">
 						<source src="<?php echo bloginfo('template_directory'); ?>/assets/videos/iphone.webm" type="video/webm">
 						<source src="<?php echo bloginfo('template_directory'); ?>/assets/videos/iphone.ogv" type="video/ogv">
 						<source src="<?php echo bloginfo('template_directory'); ?>/assets/videos/iphone.mp4" type="video/mp4">
 					</video>
-					<video muted preload="auto" autoplay loop>
+					<video muted preload="auto" loop>
 						<source src="<?php echo bloginfo('template_directory'); ?>/assets/videos/tablet.webm" type="video/webm">
 						<source src="<?php echo bloginfo('template_directory'); ?>/assets/videos/tablet.ogv" type="video/ogv">
 						<source src="<?php echo bloginfo('template_directory'); ?>/assets/videos/tablet.mp4" type="video/mp4">
 					</video>
-					<video muted preload="auto" autoplay loop>
+					<video muted preload="auto" loop>
 						<source src="<?php echo bloginfo('template_directory'); ?>/assets/videos/computer.webm" type="video/webm">
 						<source src="<?php echo bloginfo('template_directory'); ?>/assets/videos/computer.ogv" type="video/ogv">
 						<source src="<?php echo bloginfo('template_directory'); ?>/assets/videos/computer.mp4" type="video/mp4">
