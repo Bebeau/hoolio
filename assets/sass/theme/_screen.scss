@@ -502,6 +502,10 @@ header {
 			&.active {
 				display: block;
 			}
+			&#laptop {
+				max-width: inherit;
+				max-height: 100%;
+			}
 		}
 	}
 	#clientLogos {
@@ -525,15 +529,31 @@ header {
 }
 #video {
 	position: relative;
-	background: url('assets/images/video_placeholder.jpg') no-repeat scroll center / cover;
-	&:after {
-		content: "";
+	video {
+		width: 100%;
+		height: 100%;
+		margin-bottom: -5px;
+	}
+	.playwrap {
+		width: 100px;
+		height: 100px;
 		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		box-shadow: 0px 0px 100px 25px rgba(0,0,0,0.5) inset;
+		top: 50%;
+		left: 50%;
+		margin: -50px 0 0 -50px;
+		z-index: 2;
+		background: url('assets/images/icons/play.svg') no-repeat scroll center / contain;
+		@include transform(scale(1));
+		@include transition(all 0.3s $easeInOutBack);
+		&:hover {
+			cursor: pointer;
+		}
+	}
+	&.playing {
+		.playwrap {
+			@include transform(scale(0));
+			@include transition(all 0.3s $easeInOutBack);
+		}
 	}
 }
 #help {
@@ -559,13 +579,16 @@ header {
 	position: relative;
 	background: radial-gradient($white, darken($white, 5%));
 	text-align: center;
-	ul {
+	.outer {
+		overflow: visible;
+	}
+	ul#bubbles {
 		list-style: none;
 		text-align: center;
 		margin-top: 150px;
 		display: inline-block;
 		padding: 0;
-		margin: 0 auto;
+		margin: 100px auto 0;
 		width: 1300px;
 		box-sizing: border-box;
 		li {
@@ -581,17 +604,18 @@ header {
 			}
 			.frame {
 				visibility: hidden;
-				position: absolute;
+				position: fixed;
 				top: 0;
 				left: 0;
 				width: 100%;
 				height: 100%;
-				z-index: 11;
+				z-index: 14;
 				opacity: 0;
 				@include transition(all 0.3s ease-in-out);
 				h3 {
 					color: $white;
 					text-transform: capitalize;
+					margin-top: 0;
 				}
 				p {
 					color: rgba(0,0,0,0.5);
@@ -632,16 +656,46 @@ header {
 							background: radial-gradient(darken($green, 10%), darken($green, 20%));
 						}
 						&.circleClose {
-							background: $black;
-							line-height: 38px;
-							@include transform(scale(1));
-							@include transition(all 0.1s ease-in-out);
-							font-size: 14pt;
-							opacity: 0.5;
+							position: fixed;
+							top: 15px;
+							right: 25px;
+							z-index: 13;
+							height: 58px;
+							display: inline-block;
+							margin: 0 0 0 -4px;
+							overflow: hidden;
+							vertical-align: top;
+							border: none;
+							@include border-top-radius(0);
+							@include border-bottom-radius(0);
+							@include transition(all 0.3s $easeInOutBack);
+							.bar {
+								width: 40px;
+								height: 5px;
+								background: white;
+								display: block;
+								margin: 10px auto;
+								position: relative;
+								left: 0;
+								@include transition(all 0.3s $easeInOutBack);
+								&:first-child {
+									margin-top: 30px;
+									margin-bottom: -16px;
+									@include transform(rotate(-45deg));
+									@include transition(all 0.3s $easeInOutBack);
+								}
+								&:nth-child(2) {
+									left: 70px;
+									@include transition(all 0.3s $easeInOutBack);
+								}
+								&:last-child {
+									margin-top: -14px;
+									@include transform(rotate(45deg));
+									@include transition(all 0.3s $easeInOutBack);
+								}
+							}
 							&:hover {
 								cursor: pointer;
-								@include transform(scale(1.1));
-								@include transition(all 0.1s ease-in-out);
 							}
 						}
 						&:hover {
@@ -711,54 +765,30 @@ header {
 				i {
 					color: $orange;
 				}
-				.circleClose {
-					color: $orange;
-					background: rgba(0,0,0,0.25);
-				}
 			}
 			&:nth-child(2) {
 				.bubble, .frame {
 					background: radial-gradient($purp, darken($purp, 10%));
-				}
-				.circleClose {
-					color: $purp;
-					background: rgba(0,0,0,0.25);
 				}
 			}
 			&:nth-child(3) {
 				.bubble, .frame {
 					background: radial-gradient($pink, darken($pink, 10%));
 				}
-				.circleClose {
-					color: $pink;
-					background: rgba(0,0,0,0.25);
-				}
 			}
 			&:nth-child(4) {
 				.bubble, .frame {
 					background: radial-gradient(lighten($blue, 25%), lighten($blue, 15%));
-				}
-				.circleClose {
-					color: lighten($blue, 25%);
-					background: rgba(0,0,0,0.25);
 				}
 			}
 			&:nth-child(5) {
 				.bubble, .frame {
 					background: radial-gradient(lighten($gold, 5%), darken($gold, 5%));
 				}
-				.circleClose {
-					color: $gold;
-					background: rgba(0,0,0,0.25);
-				}
 			}
 			&:last-child {
 				.bubble, .frame {
 					background: radial-gradient(darken($green, 10%), darken($green, 20%));
-				}
-				.circleClose {
-					color: darken($green, 10%);
-					background: rgba(0,0,0,0.25);
 				}
 			}
 			&.open {
@@ -774,7 +804,16 @@ header {
 		}
 	}
 	.copy {
-		padding-bottom: 100px;
+		width: 1170px;
+		.half {
+			width: 50%;
+			text-align: center;
+			display: inline-block;
+			box-sizing: border-box;
+			padding: 0 25px;
+			margin: 0 0 0 -4px;
+			vertical-align: middle;
+		}
 	}
 	.followUp {
 		width: 600px;

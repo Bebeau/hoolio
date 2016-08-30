@@ -136,12 +136,9 @@ var move = {
 
 var init = {
 	onReady: function() {
-		init.topVideos();
 		init.openMenu();
 		init.bubbleOpen();
 		init.bubbleClose();
-		init.stepAnimation();
-		init.speachBubble();
 		init.SVG();
 		init.dropdown();
 		init.contactBtn();
@@ -149,6 +146,8 @@ var init = {
 		init.scooch();
 		init.wizard();
 		init.playVideo();
+		init.contactBtn();
+		init.topVideos();
 	},
 	topVideos: function() {
 		jQuery('#videos .active')[0].play();
@@ -202,6 +201,10 @@ var init = {
             	}
             });
         }
+        jQuery('#video .playwrap').click(function(){
+        	jQuery('#video').addClass("playing");
+        	jQuery('#video video')[0].play();
+        });
 	},
 	wizard: function() {
 		jQuery('.btn-wizard').click(function(e){
@@ -283,19 +286,6 @@ var init = {
 
 	    });
 	},
-	speachBubble: function() {
-		jQuery(window).scroll(function(){
-			if(move.isOnScreen(jQuery('.speach_bubble'))) {
-				setTimeout(
-					function(){
-						jQuery('.speach_bubble').addClass("in");
-					}, 300
-				);
-			} else {
-				jQuery('.speach_bubble').removeClass("in");
-			}
-		});
-	},
 	openMenu: function() {
 		jQuery('#Menu').click(function(){
 	    	if(jQuery('header').hasClass("open")) {
@@ -349,10 +339,13 @@ var init = {
 					}, 500
 				);
 			} else {
-				jQuery('.frame').removeClass("in");
+				current.removeClass("open");
+				tab.addClass("open");
+				tab.find("i").addClass("hide");
 				setTimeout(
 					function() {
-						current.removeClass("open");
+						jQuery('.frame').removeClass("in");
+						jQuery('.frame',tab).addClass("in");
 					}, 250
 				);
 				setTimeout(
@@ -360,39 +353,8 @@ var init = {
 						current.find("i").removeClass("hide");
 					}, 500
 				);
-				setTimeout(
-					function() {
-						tab.addClass("open");
-						tab.find("i").addClass("hide");
-					}, 750
-				);
-				setTimeout(
-					function(){
-						jQuery('.frame',tab).addClass("in");
-					}, 1000
-				);
 			}
 		});
-	},
-	stepAnimation: function() {
-		var step = jQuery('.step');
-		if(step.length > 0) {
-			step.each(function(){
-				var section = jQuery(this);
-				var distance = section.offset().top;
-				var outerHeight = jQuery(this).outerHeight();
-				jQuery(window).scroll(function(){
-					var top = jQuery(window).scrollTop();
-					if (top >= distance ) {
-						var difference = top - distance;
-						var height = outerHeight - difference;
-						section.addClass("fixed");
-					} else {
-						section.removeClass("fixed");
-					}
-				});
-			});
-		}
 	},
 	contactSubmit: function() {
 		var Frm = jQuery('#contactfrm');
@@ -408,7 +370,7 @@ var init = {
 	contactResponse: function(response) {
         jQuery('.btn-submit i').remove();
         if (response === "Success") {
-        	jQuery('.btn-submit').replaceWith('<button class="btn btn-submit success"><i class="fa fa-check"></i> Success</button>');
+        	jQuery('.btn-submit').replaceWith('<button class="btn btn-submit success"><i class="fa fa-check"></i></button>');
             jQuery("input").val("");
             jQuery("textarea").val("");
             setTimeout(
@@ -418,7 +380,7 @@ var init = {
         	);
         }
         if (response === "E") {
-         	jQuery('.btn-submit').replaceWith('<button class="btn btn-submit error">Please fill out all fields</button>');
+         	jQuery('.btn-submit').replaceWith('<button class="btn btn-submit error"><i class="fa fa-ban"></i></button>');
          	setTimeout(
             	function() {
             		jQuery('.btn-submit').replaceWith('<button class="btn btn-submit">Submit</button>');

@@ -24,7 +24,7 @@
 }
 [data-animation="slideInLeft"] {
 	position: relative;
-	@include transform(translate(-100%,0));
+	@include transform(translate(-200%,0));
 	@include transition(all, 1s, $easeInOutBack);
 	&.slideIn {
 		@include transform(translate(0,0));
@@ -33,7 +33,7 @@
 }
 [data-animation="slideInRight"] {
 	position: relative;
-	@include transform(translate(100%,0));
+	@include transform(translate(200%,0));
 	@include transition(all, 1s, $easeInOutBack);
 	&.slideIn {
 		@include transform(translate(0,0));

@@ -2261,6 +2261,9 @@ header {
       float: right; }
       #top .half video.active {
         display: block; }
+      #top .half video#laptop {
+        max-width: inherit;
+        max-height: 100%; }
   #top #clientLogos {
     position: absolute;
     top: 90%;
@@ -2278,16 +2281,39 @@ header {
   background: radial-gradient(#f2f2f2, #d9d9d9); }
 
 #video {
-  position: relative;
-  background: url("assets/images/video_placeholder.jpg") no-repeat scroll center/cover; }
-  #video:after {
-    content: "";
+  position: relative; }
+  #video video {
+    width: 100%;
+    height: 100%;
+    margin-bottom: -5px; }
+  #video .playwrap {
+    width: 100px;
+    height: 100px;
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    box-shadow: 0px 0px 100px 25px rgba(0, 0, 0, 0.5) inset; }
+    top: 50%;
+    left: 50%;
+    margin: -50px 0 0 -50px;
+    z-index: 2;
+    background: url("assets/images/icons/play.svg") no-repeat scroll center/contain;
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    -moz-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+    #video .playwrap:hover {
+      cursor: pointer; }
+  #video.playing .playwrap {
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -ms-transform: scale(0);
+    -o-transform: scale(0);
+    transform: scale(0);
+    -webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    -moz-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
 
 #help {
   background: white;
@@ -2309,16 +2335,18 @@ header {
   position: relative;
   background: radial-gradient(#ffffff, #f2f2f2);
   text-align: center; }
-  #meet ul {
+  #meet .outer {
+    overflow: visible; }
+  #meet ul#bubbles {
     list-style: none;
     text-align: center;
     margin-top: 150px;
     display: inline-block;
     padding: 0;
-    margin: 0 auto;
+    margin: 100px auto 0;
     width: 1300px;
     box-sizing: border-box; }
-    #meet ul li {
+    #meet ul#bubbles li {
       text-align: center;
       display: inline-block;
       width: 15%;
@@ -2326,39 +2354,40 @@ header {
       -webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
       -moz-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
       transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
-      #meet ul li .label {
+      #meet ul#bubbles li .label {
         color: #919192;
         position: relative;
         z-index: 1; }
-      #meet ul li .frame {
+      #meet ul#bubbles li .frame {
         visibility: hidden;
-        position: absolute;
+        position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        z-index: 11;
+        z-index: 14;
         opacity: 0;
         -webkit-transition: all 0.3s ease-in-out;
         -moz-transition: all 0.3s ease-in-out;
         transition: all 0.3s ease-in-out; }
-        #meet ul li .frame h3 {
+        #meet ul#bubbles li .frame h3 {
           color: #ffffff;
-          text-transform: capitalize; }
-        #meet ul li .frame p {
+          text-transform: capitalize;
+          margin-top: 0; }
+        #meet ul#bubbles li .frame p {
           color: rgba(0, 0, 0, 0.5); }
-        #meet ul li .frame.in {
+        #meet ul#bubbles li .frame.in {
           visibility: visible;
           opacity: 1;
           -webkit-transition: all 0.3s ease-in-out;
           -moz-transition: all 0.3s ease-in-out;
           transition: all 0.3s ease-in-out; }
-        #meet ul li .frame .bubblenav {
+        #meet ul#bubbles li .frame .bubblenav {
           position: absolute;
           top: 50px;
           width: 100%;
           text-align: center; }
-          #meet ul li .frame .bubblenav li {
+          #meet ul#bubbles li .frame .bubblenav li {
             border-top-left-radius: 50%;
             border-top-right-radius: 50%;
             border-bottom-left-radius: 50%;
@@ -2367,49 +2396,83 @@ header {
             height: 35px;
             display: inline-block;
             border: 2px solid rgba(0, 0, 0, 0.5); }
-            #meet ul li .frame .bubblenav li:first-child {
+            #meet ul#bubbles li .frame .bubblenav li:first-child {
               background: radial-gradient(#f36235, #e7410e); }
-            #meet ul li .frame .bubblenav li:nth-child(2) {
+            #meet ul#bubbles li .frame .bubblenav li:nth-child(2) {
               background: radial-gradient(#6c57a6, #564585); }
-            #meet ul li .frame .bubblenav li:nth-child(3) {
+            #meet ul#bubbles li .frame .bubblenav li:nth-child(3) {
               background: radial-gradient(#ce5a82, #bd3866); }
-            #meet ul li .frame .bubblenav li:nth-child(4) {
+            #meet ul#bubbles li .frame .bubblenav li:nth-child(4) {
               background: radial-gradient(#6cc9f2, #3db8ee); }
-            #meet ul li .frame .bubblenav li:nth-child(5) {
+            #meet ul#bubbles li .frame .bubblenav li:nth-child(5) {
               background: radial-gradient(#f2c132, #e2ac0f); }
-            #meet ul li .frame .bubblenav li:nth-child(6) {
+            #meet ul#bubbles li .frame .bubblenav li:nth-child(6) {
               background: radial-gradient(#90cb39, #75a62b); }
-            #meet ul li .frame .bubblenav li.circleClose {
-              background: #111111;
-              line-height: 38px;
-              -webkit-transform: scale(1);
-              -moz-transform: scale(1);
-              -ms-transform: scale(1);
-              -o-transform: scale(1);
-              transform: scale(1);
-              -webkit-transition: all 0.1s ease-in-out;
-              -moz-transition: all 0.1s ease-in-out;
-              transition: all 0.1s ease-in-out;
-              font-size: 14pt;
-              opacity: 0.5; }
-              #meet ul li .frame .bubblenav li.circleClose:hover {
-                cursor: pointer;
-                -webkit-transform: scale(1.1);
-                -moz-transform: scale(1.1);
-                -ms-transform: scale(1.1);
-                -o-transform: scale(1.1);
-                transform: scale(1.1);
-                -webkit-transition: all 0.1s ease-in-out;
-                -moz-transition: all 0.1s ease-in-out;
-                transition: all 0.1s ease-in-out; }
-            #meet ul li .frame .bubblenav li:hover {
+            #meet ul#bubbles li .frame .bubblenav li.circleClose {
+              position: fixed;
+              top: 15px;
+              right: 25px;
+              z-index: 13;
+              height: 58px;
+              display: inline-block;
+              margin: 0 0 0 -4px;
+              overflow: hidden;
+              vertical-align: top;
+              border: none;
+              border-top-left-radius: 0;
+              border-top-right-radius: 0;
+              border-bottom-left-radius: 0;
+              border-bottom-right-radius: 0;
+              -webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+              -moz-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+              transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+              #meet ul#bubbles li .frame .bubblenav li.circleClose .bar {
+                width: 40px;
+                height: 5px;
+                background: white;
+                display: block;
+                margin: 10px auto;
+                position: relative;
+                left: 0;
+                -webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+                -moz-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+                transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+                #meet ul#bubbles li .frame .bubblenav li.circleClose .bar:first-child {
+                  margin-top: 30px;
+                  margin-bottom: -16px;
+                  -webkit-transform: rotate(-45deg);
+                  -moz-transform: rotate(-45deg);
+                  -ms-transform: rotate(-45deg);
+                  -o-transform: rotate(-45deg);
+                  transform: rotate(-45deg);
+                  -webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+                  -moz-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+                  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+                #meet ul#bubbles li .frame .bubblenav li.circleClose .bar:nth-child(2) {
+                  left: 70px;
+                  -webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+                  -moz-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+                  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+                #meet ul#bubbles li .frame .bubblenav li.circleClose .bar:last-child {
+                  margin-top: -14px;
+                  -webkit-transform: rotate(45deg);
+                  -moz-transform: rotate(45deg);
+                  -ms-transform: rotate(45deg);
+                  -o-transform: rotate(45deg);
+                  transform: rotate(45deg);
+                  -webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+                  -moz-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+                  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+              #meet ul#bubbles li .frame .bubblenav li.circleClose:hover {
+                cursor: pointer; }
+            #meet ul#bubbles li .frame .bubblenav li:hover {
               cursor: pointer; }
-      #meet ul li .bubblewrap {
+      #meet ul#bubbles li .bubblewrap {
         position: relative;
         -webkit-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         -moz-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
-        #meet ul li .bubblewrap .bubble {
+        #meet ul#bubbles li .bubblewrap .bubble {
           position: relative;
           z-index: 3;
           display: block;
@@ -2426,11 +2489,11 @@ header {
           -moz-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
           transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
           text-align: center; }
-          #meet ul li .bubblewrap .bubble i {
+          #meet ul#bubbles li .bubblewrap .bubble i {
             opacity: 1; }
-            #meet ul li .bubblewrap .bubble i.hide {
+            #meet ul#bubbles li .bubblewrap .bubble i.hide {
               opacity: 0; }
-        #meet ul li .bubblewrap:after {
+        #meet ul#bubbles li .bubblewrap:after {
           content: "";
           width: 100px;
           height: 25px;
@@ -2450,53 +2513,35 @@ header {
           -webkit-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
           -moz-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
           transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
-        #meet ul li .bubblewrap:hover {
+        #meet ul#bubbles li .bubblewrap:hover {
           cursor: pointer; }
-          #meet ul li .bubblewrap:hover .bubble {
+          #meet ul#bubbles li .bubblewrap:hover .bubble {
             top: -10px;
             -webkit-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             -moz-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
-          #meet ul li .bubblewrap:hover:after {
+          #meet ul#bubbles li .bubblewrap:hover:after {
             width: 125px;
             margin-left: -62.5px;
             opacity: 0.25;
             -webkit-transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             -moz-transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
-      #meet ul li:first-child .bubble, #meet ul li:first-child .frame {
+      #meet ul#bubbles li:first-child .bubble, #meet ul#bubbles li:first-child .frame {
         background: radial-gradient(#f36235, #e7410e); }
-      #meet ul li:first-child i {
+      #meet ul#bubbles li:first-child i {
         color: #f36235; }
-      #meet ul li:first-child .circleClose {
-        color: #f36235;
-        background: rgba(0, 0, 0, 0.25); }
-      #meet ul li:nth-child(2) .bubble, #meet ul li:nth-child(2) .frame {
+      #meet ul#bubbles li:nth-child(2) .bubble, #meet ul#bubbles li:nth-child(2) .frame {
         background: radial-gradient(#6c57a6, #564585); }
-      #meet ul li:nth-child(2) .circleClose {
-        color: #6c57a6;
-        background: rgba(0, 0, 0, 0.25); }
-      #meet ul li:nth-child(3) .bubble, #meet ul li:nth-child(3) .frame {
+      #meet ul#bubbles li:nth-child(3) .bubble, #meet ul#bubbles li:nth-child(3) .frame {
         background: radial-gradient(#ce5a82, #bd3866); }
-      #meet ul li:nth-child(3) .circleClose {
-        color: #ce5a82;
-        background: rgba(0, 0, 0, 0.25); }
-      #meet ul li:nth-child(4) .bubble, #meet ul li:nth-child(4) .frame {
+      #meet ul#bubbles li:nth-child(4) .bubble, #meet ul#bubbles li:nth-child(4) .frame {
         background: radial-gradient(#6cc9f2, #3db8ee); }
-      #meet ul li:nth-child(4) .circleClose {
-        color: #6cc9f2;
-        background: rgba(0, 0, 0, 0.25); }
-      #meet ul li:nth-child(5) .bubble, #meet ul li:nth-child(5) .frame {
+      #meet ul#bubbles li:nth-child(5) .bubble, #meet ul#bubbles li:nth-child(5) .frame {
         background: radial-gradient(#f2c132, #e2ac0f); }
-      #meet ul li:nth-child(5) .circleClose {
-        color: #f0ba1a;
-        background: rgba(0, 0, 0, 0.25); }
-      #meet ul li:last-child .bubble, #meet ul li:last-child .frame {
+      #meet ul#bubbles li:last-child .bubble, #meet ul#bubbles li:last-child .frame {
         background: radial-gradient(#90cb39, #75a62b); }
-      #meet ul li:last-child .circleClose {
-        color: #90cb39;
-        background: rgba(0, 0, 0, 0.25); }
-      #meet ul li.open .bubble {
+      #meet ul#bubbles li.open .bubble {
         position: relative;
         z-index: 10;
         -webkit-transform: scale(50);
@@ -2512,7 +2557,15 @@ header {
         -moz-transition: all 1s ease-in-out;
         transition: all 1s ease-in-out; }
   #meet .copy {
-    padding-bottom: 100px; }
+    width: 1170px; }
+    #meet .copy .half {
+      width: 50%;
+      text-align: center;
+      display: inline-block;
+      box-sizing: border-box;
+      padding: 0 25px;
+      margin: 0 0 0 -4px;
+      vertical-align: middle; }
   #meet .followUp {
     width: 600px;
     margin: 350px auto 150px;
@@ -2911,11 +2964,11 @@ footer {
 
 [data-animation="slideInLeft"] {
   position: relative;
-  -webkit-transform: translate(-100%, 0);
-  -moz-transform: translate(-100%, 0);
-  -ms-transform: translate(-100%, 0);
-  -o-transform: translate(-100%, 0);
-  transform: translate(-100%, 0);
+  -webkit-transform: translate(-200%, 0);
+  -moz-transform: translate(-200%, 0);
+  -ms-transform: translate(-200%, 0);
+  -o-transform: translate(-200%, 0);
+  transform: translate(-200%, 0);
   -webkit-transition: all, 1s, cubic-bezier(0.68, -0.55, 0.265, 1.55);
   -moz-transition: all, 1s, cubic-bezier(0.68, -0.55, 0.265, 1.55);
   transition: all, 1s, cubic-bezier(0.68, -0.55, 0.265, 1.55); }
@@ -2931,11 +2984,11 @@ footer {
 
 [data-animation="slideInRight"] {
   position: relative;
-  -webkit-transform: translate(100%, 0);
-  -moz-transform: translate(100%, 0);
-  -ms-transform: translate(100%, 0);
-  -o-transform: translate(100%, 0);
-  transform: translate(100%, 0);
+  -webkit-transform: translate(200%, 0);
+  -moz-transform: translate(200%, 0);
+  -ms-transform: translate(200%, 0);
+  -o-transform: translate(200%, 0);
+  transform: translate(200%, 0);
   -webkit-transition: all, 1s, cubic-bezier(0.68, -0.55, 0.265, 1.55);
   -moz-transition: all, 1s, cubic-bezier(0.68, -0.55, 0.265, 1.55);
   transition: all, 1s, cubic-bezier(0.68, -0.55, 0.265, 1.55); }

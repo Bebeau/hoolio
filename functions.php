@@ -122,6 +122,7 @@ function my_textbox_callback($args) {  // Textbox Callback
 }
 
 include(TEMPLATEPATH.'/partials/functions/user.php');
+include(TEMPLATEPATH.'/partials/functions/theme.php');
 
 function get_contact_form() { ?>
     <form role="form" method="POST" action="<?php echo bloginfo('template_directory');?>/partials/forms/contact.php" id="contactfrm">

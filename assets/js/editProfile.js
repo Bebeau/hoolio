@@ -3,7 +3,8 @@ var ajaxurl = meta_image.ajaxurl;
 var user = {
 	onReady: function() {
 		user.imageUploader();
-		user.removeImage();
+		user.removeUserImage();
+		user.removeVideo();
 	},
 	imageUploader: function() {
 		var meta_image_frame;
@@ -24,7 +25,7 @@ var user = {
 	        meta_image_frame = wp.media.frames.meta_image_frame = wp.media({
 	            title: meta_image.title,
 	            button: { text:  meta_image.button },
-	            library: { type: 'image' },
+	            library: { type: 'image, video' },
 	            multiple: true
 	        });
 
@@ -35,18 +36,41 @@ var user = {
 	            var media_attachment = meta_image_frame.state().get('selection').first().toJSON();
 	            // Sends the attachment URL to our custom image input field.
 	            img.find("img").remove();
-	            img.append('<img src="'+media_attachment.url+'" alt="" />' );
-	            input.val(media_attachment.url);
-	            elem.append('<button class="remove-image button button-large heard-btn">Remove</button>');
-	            button.remove();
-	            user.saveImage( val, userID, media_attachment.url );
+	            if(image === "bg_video") {
+	            	img.append('<video muted autoplay id="bgvid" loop><source src="'+media_attachment.url+'" type="video/webm"><source src="'+media_attachment.url+'" type="video/ogv"><source src="'+media_attachment.url+'" type="video/mp4"></video>');
+	            	input.val(media_attachment.url);
+	            	elem.append('<button class="remove-video button button-large">Remove</button>');
+		            button.remove();
+	            } else {
+	            	img.append('<img src="'+media_attachment.url+'" alt="" />' );
+	            	input.val(media_attachment.url);
+		            elem.append('<button class="remove-image button button-large">Remove</button>');
+		            button.remove();
+		            user.saveUserImage( val, userID, media_attachment.url );
+	            }
 	        });
 
 	        // Opens the media library frame.
 	        meta_image_frame.open();
 	    });
 	},
-	removeImage: function() {
+	removeVideo: function() {
+		jQuery('.remove-video').click(function(e){
+			e.preventDefault();
+
+			var val = jQuery(this).parent().attr("data-img");
+
+			jQuery('.'+val).html("");
+			jQuery('#custom_'+val).val("");
+
+			jQuery(this).parent().append('<button class="add button button-large upload-image" style="text-align:center;">Upload/Set Video</button>');
+			jQuery(this).remove();
+
+			user.imageUploader();
+
+		});
+	},
+	removeUserImage: function() {
 		jQuery('.remove-image').click(function(e){
 			e.preventDefault();
 
@@ -56,7 +80,7 @@ var user = {
 			jQuery(this).parent().find("input").val("");
 			jQuery(this).parent().find("img").remove();
 
-			user.saveImage(val,userID,"");
+			user.saveUserImage(val,userID,"");
 
 			jQuery(this).parent().append('<button class="add button button-large upload-image" id="upload-logo" style="text-align:center;" data-input="agent_image" data-img="profile" data-user="<?php echo $user_id; ?>">Upload/Set Profile Image</button>');
 			jQuery(this).remove();
@@ -65,7 +89,7 @@ var user = {
 
 		});
 	},
-	saveImage: function(field, userID, image) {
+	saveUserImage: function(field, userID, image) {
         jQuery.ajax({
             url: ajaxurl,
             type: "GET",
