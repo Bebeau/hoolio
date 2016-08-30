@@ -1,40 +1,42 @@
 [data-animation="slideUp"] {
+		display: block;
+		margin: 0 auto;
 		position: relative;
-		top: 25px;
 		opacity: 0;
+		@include transform(translate(0,50px));
 		@include transition(all, 0.5s, $easeInOutBack);
 	&.slideIn {
-		top: 0;
 		opacity: 1;
+		@include transform(translate(0,0));
 		@include transition(all, 0.5s, $easeInOutBack);
 	}
 }
 [data-animation="slideDown"] {
 	position: relative;
-	top: -25px;
 	opacity: 0;
+	@include transform(translate(0,-50px));
 	@include transition(all, 0.5s, $easeInOutBack);
 	&.slideIn {
-		top: 0;
 		opacity: 1;
+		@include transform(translate(0,0));
 		@include transition(all, 0.5s, $easeInOutBack);
 	}
 }
 [data-animation="slideInLeft"] {
 	position: relative;
-	left: -100% !important;
+	@include transform(translate(-100%,0));
 	@include transition(all, 1s, $easeInOutBack);
 	&.slideIn {
-		left: 0 !important;
+		@include transform(translate(0,0));
 		@include transition(all, 1s, $easeInOutBack);
 	}
 }
 [data-animation="slideInRight"] {
 	position: relative;
-	right: -100% !important;
+	@include transform(translate(100%,0));
 	@include transition(all, 1s, $easeInOutBack);
 	&.slideIn {
-		right: 0 !important;
+		@include transform(translate(0,0));
 		@include transition(all, 1s, $easeInOutBack);
 	}
 }
@@ -58,16 +60,16 @@
 	[data-animation="textFade"] {
 		opacity: 1;
 		@include transform(scale(1));
-		top: 0;
+		@include transform(translate(0,0));
 	}
 	[data-animation="slideDown"] {
 		margin: 0 !important;
 	}
 	[data-animation="slideInLeft"] {
-		left: 0 !important;
+		@include transform(translate(0,0));
 	}
 	[data-animation="slideInRight"] {
-		right: 0 !important;
+		@include transform(translate(0,0));
 	}
 	[data-animation="bubble"] {
 		opacity: 1;
