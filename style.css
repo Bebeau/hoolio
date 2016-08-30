@@ -3051,8 +3051,10 @@ footer {
   .section h2 {
     font-size: 21pt; }
 
-  header .menu ul li a {
-    font-size: 24pt; }
+  header {
+    position: fixed; }
+    header .menu ul li a {
+      font-size: 24pt; }
 
   h1 {
     font-size: 28pt; }
@@ -3114,6 +3116,8 @@ footer {
     padding-top: 125px; }
     #top .half {
       width: auto; }
+      #top .half video, #top .half video.active {
+        display: none; }
     #top #clientLogos {
       position: relative;
       top: auto;
@@ -3133,14 +3137,29 @@ footer {
         #top #clientLogos span img {
           vertical-align: middle; }
 
-  #meet .copy {
-    padding: 0 15px 25px; }
-    #meet .copy h1 {
-      padding: 25px 15px 15px; }
-  #meet ul li {
-    width: 50%;
-    display: inline-block;
-    margin: 0 0 25px -4px; }
+  #meet {
+    padding-bottom: 0; }
+    #meet .copy {
+      padding: 0 15px 25px; }
+      #meet .copy img {
+        width: 150px;
+        height: auto; }
+      #meet .copy h1 {
+        padding: 25px 15px 15px; }
+    #meet ul {
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
+      padding-top: 75px; }
+      #meet ul li {
+        width: 50%;
+        display: inline-block;
+        margin: 0 0 25px -4px; }
+      #meet ul.bubblenav {
+        padding-top: 0;
+        display: inherit; }
+        #meet ul.bubblenav li {
+          margin: 0; }
 
   #metrics .half article .half {
     margin: 50px auto; }

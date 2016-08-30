@@ -113,6 +113,7 @@
 		}
 	}
 	header {
+		position: fixed;
 		.menu {
 			ul {
 				li {
@@ -202,6 +203,9 @@
 		padding-top: 125px;
 		.half {
 			width: auto;
+			video, video.active {
+				display: none;
+			}
 		}
 		#clientLogos {
 			position: relative;
@@ -222,17 +226,33 @@
 		}
 	}
 	#meet {
+		padding-bottom: 0;
 		.copy {
 			padding: 0 15px 25px;
+			img {
+				width: 150px;
+				height: auto;
+			}
 			h1 {
 				padding: 25px 15px 15px;
 			} 
 		}
 		ul {
+			position: relative;
+			height: 100vh;
+			overflow: hidden;
+			padding-top: 75px;
 			li {
 				width: 50%;
 				display: inline-block;
 				margin: 0 0 25px -4px;
+			}
+			&.bubblenav {
+				padding-top: 0;
+				display: inherit;
+				li {
+					margin: 0;
+				}
 			}
 		}
 	}
