@@ -3170,6 +3170,8 @@ footer {
     padding: 0 15px; }
     #metrics .half article .stat span {
       font-size: 24pt; }
+  #metrics .phone {
+    display: none; }
 
   #testimonials {
     padding: 25px 0; }
