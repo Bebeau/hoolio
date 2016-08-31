@@ -1,5 +1,7 @@
 <?php 
 
+wp_head();
+
 if( empty($_POST['password']) ) {
 
 	$success = false;
