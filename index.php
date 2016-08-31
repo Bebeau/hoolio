@@ -92,7 +92,7 @@
 	$video = get_option('custom_bg_video');
 	if(!empty($video)) {
 		echo '<section id="video">';
-			echo '<video preload="auto" poster="" controls>';
+			echo '<video preload="auto" poster="'.get_bloginfo('template_directory').'/assets/images/video_placeholder.jpg">';
 				echo '<source src="'.$video.'" type="video/webm">';
 				echo '<source src="'.$video.'" type="video/ogv">';
 				echo '<source src="'.$video.'" type="video/mp4">';

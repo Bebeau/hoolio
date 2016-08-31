@@ -1,4 +1,12 @@
 @media(max-height:900px) {
+	#top {
+		min-height: 125vh;
+		height: 125vh;
+		padding: 0;
+		.inner {
+			@include transform(translate(0,-100px));
+		}
+	}
 	.block {
 		min-height: auto;
 		height: auto;
@@ -15,12 +23,26 @@
 	#testimonials, #cta {
 		padding: 100px 0;
 	}
+	#meet {
+		.copy {
+			.half {
+				img {
+					max-height: 600px;
+				}
+			}
+		}
+	}
 }
 @media(max-width: 1300px) {
 	.thirds {
 		width: auto;
 	}
 	#top {
+		min-height: auto;
+		height: auto;
+		.inner {
+			@include transform(translate(0,0));
+		}
 		#clientLogos {
 			span {
 				@include transform(scale(0.75));
@@ -49,7 +71,9 @@
 		}
 	}
 	#video {
-		padding: 0;
+		video {
+			display: block;
+		}
 	}
 	#metrics {
 		.half {
@@ -68,11 +92,17 @@
 		}
 	}
 	#meet {
-		ul {
+		ul#bubbles {
 			width: auto;
+			height: auto;
+			margin: 0 0 50px 0;
+			overflow: visible;
 			li {
-				width: auto;
-				margin: 25px 0;
+				width: 50%;
+				margin: 25px 0 0;
+				&:nth-child(even) {
+					margin-left:  -4px;
+				}
 			}
 		}
 	}
@@ -126,6 +156,7 @@
 	}
 	h1 {
 		font-size: 28pt;
+		margin-top: 0;
 	}
 	h3 {
 		font-size: 18pt;
@@ -194,6 +225,11 @@
 			}
 		}
 	}
+	#help {
+		img {
+			margin-top: 50px;
+		}
+	}
 	#research {
 		.btn {
 			margin-bottom: 50px;
@@ -234,7 +270,8 @@
 				height: auto;
 			}
 			h1 {
-				padding: 25px 15px 15px;
+				padding: 0;
+				margin-top: 25px;
 			} 
 		}
 		ul {

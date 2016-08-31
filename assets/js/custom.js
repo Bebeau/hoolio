@@ -202,6 +202,7 @@ var init = {
             });
         }
         jQuery('#video .playwrap').click(function(){
+        	jQuery('#video video').attr("controls", "controls");
         	jQuery('#video').addClass("playing");
         	jQuery('#video video')[0].play();
         });
@@ -223,15 +224,17 @@ var init = {
     },
 	count: function() {
 		// activate rolling number effect
-		var numbers = jQuery('.counting');
+		var numbers = jQuery('#metrics');
 		var eventfired = false;
 		if( numbers.length) {
 			if(move.isOnScreen(numbers) && eventfired === false) {
+				console.log("on screen");
 				jQuery('.timer').countTo();
 				eventfired = true;
 			} else {
 				jQuery(window).scroll(function(){
 					if(move.isOnScreen(numbers) && eventfired === false) {
+						console.log("trigger");
 						jQuery('.timer').countTo();
 						eventfired = true;
 						jQuery(window).off('scroll');

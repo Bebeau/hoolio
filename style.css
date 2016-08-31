@@ -1951,7 +1951,7 @@ p {
 
 .thirds {
   width: 1170px;
-  margin: 100px auto; }
+  margin: 100px auto 50px; }
   .thirds article {
     box-sizing: border-box;
     display: inline-block;
@@ -2266,7 +2266,7 @@ header {
         max-height: 100%; }
   #top #clientLogos {
     position: absolute;
-    top: 90%;
+    top: 85%;
     left: 0;
     right: 0; }
     #top #clientLogos span {
@@ -2281,7 +2281,8 @@ header {
   background: radial-gradient(#f2f2f2, #d9d9d9); }
 
 #video {
-  position: relative; }
+  position: relative;
+  background: black; }
   #video video {
     width: 100%;
     height: 100%;
@@ -2382,9 +2383,16 @@ header {
           -webkit-transition: all 0.3s ease-in-out;
           -moz-transition: all 0.3s ease-in-out;
           transition: all 0.3s ease-in-out; }
+        #meet ul#bubbles li .frame .copy {
+          width: 1170px;
+          -webkit-transform: translate(0, 25px);
+          -moz-transform: translate(0, 25px);
+          -ms-transform: translate(0, 25px);
+          -o-transform: translate(0, 25px);
+          transform: translate(0, 25px); }
         #meet ul#bubbles li .frame .bubblenav {
           position: absolute;
-          top: 50px;
+          top: 25px;
           width: 100%;
           text-align: center; }
           #meet ul#bubbles li .frame .bubblenav li {
@@ -2556,16 +2564,14 @@ header {
         -webkit-transition: all 1s ease-in-out;
         -moz-transition: all 1s ease-in-out;
         transition: all 1s ease-in-out; }
-  #meet .copy {
-    width: 1170px; }
-    #meet .copy .half {
-      width: 50%;
-      text-align: center;
-      display: inline-block;
-      box-sizing: border-box;
-      padding: 0 25px;
-      margin: 0 0 0 -4px;
-      vertical-align: middle; }
+  #meet .copy .half {
+    width: 50%;
+    text-align: center;
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 0 25px;
+    margin: 0 0 0 -4px;
+    vertical-align: middle; }
   #meet .followUp {
     width: 600px;
     margin: 350px auto 150px;
@@ -3025,6 +3031,17 @@ footer {
     transition: all, 0.5s, cubic-bezier(0.68, -0.55, 0.265, 1.55); }
 
 @media (max-width: 768px) {
+  [data-animation="slideUp"] {
+    opacity: 1;
+    -webkit-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0);
+    -webkit-transition: all, 0.5s, cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    -moz-transition: all, 0.5s, cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition: all, 0.5s, cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+
   [data-animation="textFade"] {
     opacity: 1;
     -webkit-transform: scale(1);
@@ -3039,7 +3056,15 @@ footer {
     transform: translate(0, 0); }
 
   [data-animation="slideDown"] {
-    margin: 0 !important; }
+    opacity: 1;
+    -webkit-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0);
+    -webkit-transition: all, 0.5s, cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    -moz-transition: all, 0.5s, cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition: all, 0.5s, cubic-bezier(0.68, -0.55, 0.265, 1.55); }
 
   [data-animation="slideInLeft"] {
     -webkit-transform: translate(0, 0);
@@ -3071,6 +3096,17 @@ footer {
  *   <link href="/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
  * <![endif]--> */
 @media (max-height: 900px) {
+  #top {
+    min-height: 125vh;
+    height: 125vh;
+    padding: 0; }
+    #top .inner {
+      -webkit-transform: translate(0, -100px);
+      -moz-transform: translate(0, -100px);
+      -ms-transform: translate(0, -100px);
+      -o-transform: translate(0, -100px);
+      transform: translate(0, -100px); }
+
   .block {
     min-height: auto;
     height: auto;
@@ -3082,18 +3118,30 @@ footer {
       vertical-align: bottom; }
 
   #testimonials, #cta {
-    padding: 100px 0; } }
+    padding: 100px 0; }
+
+  #meet .copy .half img {
+    max-height: 600px; } }
 @media (max-width: 1300px) {
   .thirds {
     width: auto; }
 
-  #top #clientLogos span {
-    -webkit-transform: scale(0.75);
-    -moz-transform: scale(0.75);
-    -ms-transform: scale(0.75);
-    -o-transform: scale(0.75);
-    transform: scale(0.75);
-    margin: 0 5px; }
+  #top {
+    min-height: auto;
+    height: auto; }
+    #top .inner {
+      -webkit-transform: translate(0, 0);
+      -moz-transform: translate(0, 0);
+      -ms-transform: translate(0, 0);
+      -o-transform: translate(0, 0);
+      transform: translate(0, 0); }
+    #top #clientLogos span {
+      -webkit-transform: scale(0.75);
+      -moz-transform: scale(0.75);
+      -ms-transform: scale(0.75);
+      -o-transform: scale(0.75);
+      transform: scale(0.75);
+      margin: 0 5px; }
 
   #meet ul {
     width: 900px; }
@@ -3106,8 +3154,8 @@ footer {
         width: 50px;
         height: 50px; }
 
-  #video {
-    padding: 0; }
+  #video video {
+    display: block; }
 
   #metrics .half {
     width: auto;
@@ -3121,11 +3169,16 @@ footer {
     transform: scale(0.5);
     margin: 0; }
 
-  #meet ul {
-    width: auto; }
-    #meet ul li {
-      width: auto;
-      margin: 25px 0; }
+  #meet ul#bubbles {
+    width: auto;
+    height: auto;
+    margin: 0 0 50px 0;
+    overflow: visible; }
+    #meet ul#bubbles li {
+      width: 50%;
+      margin: 25px 0 0; }
+      #meet ul#bubbles li:nth-child(even) {
+        margin-left: -4px; }
 
   #metrics .half article {
     width: auto; }
@@ -3156,7 +3209,8 @@ footer {
       font-size: 24pt; }
 
   h1 {
-    font-size: 28pt; }
+    font-size: 28pt;
+    margin-top: 0; }
 
   h3 {
     font-size: 18pt; }
@@ -3208,6 +3262,9 @@ footer {
         body header .logo svg path {
           fill: white; }
 
+  #help img {
+    margin-top: 50px; }
+
   #research .btn {
     margin-bottom: 50px; }
 
@@ -3244,7 +3301,8 @@ footer {
         width: 150px;
         height: auto; }
       #meet .copy h1 {
-        padding: 25px 15px 15px; }
+        padding: 0;
+        margin-top: 25px; }
     #meet ul {
       position: relative;
       height: 100vh;

@@ -203,7 +203,7 @@ p {
 }
 .thirds {
 	width: 1170px;
-	margin: 100px auto;
+	margin: 100px auto 50px;
 	article {
 		box-sizing: border-box;
 		display: inline-block;
@@ -510,7 +510,7 @@ header {
 	}
 	#clientLogos {
 		position: absolute;
-		top: 90%;
+		top: 85%;
 		left: 0;
 		right: 0;
 		span {
@@ -529,6 +529,7 @@ header {
 }
 #video {
 	position: relative;
+	background: black;
 	video {
 		width: 100%;
 		height: 100%;
@@ -625,9 +626,13 @@ header {
 					opacity: 1;
 					@include transition(all 0.3s ease-in-out);
 				}
+				.copy {
+					width: 1170px;
+					@include transform(translate(0,25px));
+				}
 				.bubblenav {
 					position: absolute;
-					top: 50px;
+					top: 25px;
 					width: 100%;
 					text-align: center;
 					li {
@@ -804,7 +809,6 @@ header {
 		}
 	}
 	.copy {
-		width: 1170px;
 		.half {
 			width: 50%;
 			text-align: center;
