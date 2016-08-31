@@ -396,67 +396,4 @@
 		</div>
 	</section>
 
-	<section id="testimonials">
-		<div class="outer">
-			<div class="inner" data-animation="slideUp">
-				<!-- the viewport -->
-				<div class="m-scooch m-fluid m-scooch-testimonials">
-					<!-- the slider -->
-					<div class="m-scooch-inner">
-						<div class="m-item active">
-							<blockquote>
-								“We have incredible insight into our data thanks to Wyzerr 
-								and it’s vision for data collection. We recommend them 
-								for any of your survey needs.”
-							</blockquote>
-							<cite>
-								<span class="name">MICHAEL WATSON </span>
-								<span class="title">PRODUCT DESIGNER</span>
-								<span class="company">TIMES10 MEDIA</span>
-							</cite>
-						</div>
-						<div class="m-item">
-							<blockquote>
-								“We have incredible insight into our data thanks to Wyzerr 
-								and it’s vision for data collection. We recommend them 
-								for any of your survey needs.”
-							</blockquote>
-							<cite>
-								<span class="name">MICHAEL WATSON </span>
-								<span class="title">PRODUCT DESIGNER</span>
-								<span class="company">TIMES10 MEDIA</span>
-							</cite>
-						</div>
-						<div class="m-item">
-							<blockquote>
-								“We have incredible insight into our data thanks to Wyzerr 
-								and it’s vision for data collection. We recommend them 
-								for any of your survey needs.”
-							</blockquote>
-							<cite>
-								<span class="name">MICHAEL WATSON </span>
-								<span class="title">PRODUCT DESIGNER</span>
-								<span class="company">TIMES10 MEDIA</span>
-							</cite>
-						</div>
-					</div>
-					<div class="m-scooch-controls m-scooch-bulleted">
-						<a href="" data-m-slide="1"></a>
-						<a href="" data-m-slide="2"></a>
-						<a href="" data-m-slide="3"></a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<section id="cta">
-		<article class="outer">
-			<div class="inner" data-animation="slideUp">
-				<h2>Be Wyzerr, know more.</h2>
-				<button class="btn btn-wizard">Be A Wizard</button>
-			</div>
-		</article>
-	</section>
-
 <?php get_footer(); ?>
