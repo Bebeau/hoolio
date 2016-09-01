@@ -1,11 +1,12 @@
 <?php get_header(); ?>
 
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
+	<section id="errorPage">
+		<div class="outer">
+			<div class="inner">
 				<h1>Ops, something went wrong.</h1>
+				<a href="<?php echo site_url(); ?>" class="btn">Back to Home</a>
 			</div>
 		</div>
-	</div>
+	</section>
 
 <?php get_footer(); ?>

@@ -2887,6 +2887,14 @@ header {
         -moz-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
         transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
 
+#errorPage {
+  height: 50vh;
+  background: #1293cc; }
+  #errorPage h1 {
+    text-align: center;
+    color: white;
+    margin: 0; }
+
 input[placeholder], [placeholder], *[placeholder] {
   text-transform: uppercase;
   letter-spacing: 1px; }
@@ -3126,22 +3134,19 @@ footer {
   .thirds {
     width: auto; }
 
-  #top {
-    min-height: auto;
-    height: auto; }
-    #top .inner {
-      -webkit-transform: translate(0, 0);
-      -moz-transform: translate(0, 0);
-      -ms-transform: translate(0, 0);
-      -o-transform: translate(0, 0);
-      transform: translate(0, 0); }
-    #top #clientLogos span {
-      -webkit-transform: scale(0.75);
-      -moz-transform: scale(0.75);
-      -ms-transform: scale(0.75);
-      -o-transform: scale(0.75);
-      transform: scale(0.75);
-      margin: 0 5px; }
+  #top .inner {
+    -webkit-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0); }
+  #top #clientLogos span {
+    -webkit-transform: scale(0.75);
+    -moz-transform: scale(0.75);
+    -ms-transform: scale(0.75);
+    -o-transform: scale(0.75);
+    transform: scale(0.75);
+    margin: 0 5px; }
 
   #meet ul {
     width: 900px; }

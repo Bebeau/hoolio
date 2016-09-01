@@ -7,6 +7,7 @@ $(function(){ParallaxScroll.init()});var ParallaxScroll={showLogs:!1,round:1e3,i
 
 // check to make sure it is not loaded on mobile device
 var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent);
+// var ajaxurl = meta.ajaxurl;
 
 var move = {
 	onMove: function() {
@@ -363,12 +364,16 @@ var init = {
 		var Frm = jQuery('#contactfrm');
     	jQuery('<i class="fa fa-spinner fa-spin"></i>').prependTo('.btn-submit');
         jQuery.ajax({
-            url: Frm.attr('action')+"?ajax=true",
+            url: ajaxurl,
             type: Frm.attr('method'),
-            data: Frm.serialize(),
-            success: init.contactResponse
+            data: {
+            	action: 'sendContact'
+            },
+            dataType: 'html',
+            success: function() {
+            	init.contactResponse();
+            }
         });
-        return false;
 	},
 	contactResponse: function(response) {
         jQuery('.btn-submit i').remove();
@@ -392,7 +397,7 @@ var init = {
         }
 	},
 	contactBtn: function() {
-		jQuery('#contactfrm').submit(init.contactSubmit);
+		jQuery('#contactfrm').submit();
 	},
 };
 

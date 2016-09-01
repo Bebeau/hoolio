@@ -5,48 +5,47 @@
 					<div class="m-scooch m-fluid m-scooch-testimonials">
 						<!-- the slider -->
 						<div class="m-scooch-inner">
-							<div class="m-item active">
-								<blockquote>
-									“We have incredible insight into our data thanks to Wyzerr 
-									and it’s vision for data collection. We recommend them 
-									for any of your survey needs.”
-								</blockquote>
-								<cite>
-									<span class="name">MICHAEL WATSON </span>
-									<span class="title">PRODUCT DESIGNER</span>
-									<span class="company">TIMES10 MEDIA</span>
-								</cite>
-							</div>
-							<div class="m-item">
-								<blockquote>
-									“We have incredible insight into our data thanks to Wyzerr 
-									and it’s vision for data collection. We recommend them 
-									for any of your survey needs.”
-								</blockquote>
-								<cite>
-									<span class="name">MICHAEL WATSON </span>
-									<span class="title">PRODUCT DESIGNER</span>
-									<span class="company">TIMES10 MEDIA</span>
-								</cite>
-							</div>
-							<div class="m-item">
-								<blockquote>
-									“We have incredible insight into our data thanks to Wyzerr 
-									and it’s vision for data collection. We recommend them 
-									for any of your survey needs.”
-								</blockquote>
-								<cite>
-									<span class="name">MICHAEL WATSON </span>
-									<span class="title">PRODUCT DESIGNER</span>
-									<span class="company">TIMES10 MEDIA</span>
-								</cite>
-							</div>
+							<?php 
+								query_posts( array(
+							            'posts_per_page' => 1,
+							            'order' => 'DESC',
+							            'post_type' => 'testimonials'
+							        )
+							    );
+							    if (have_posts()) : while (have_posts()) : the_post();
+
+							        $name = get_post_meta($post->ID,'testimonial_name', true);
+							        $title = get_post_meta($post->ID,'testimonial_title', true);
+							        $company = get_post_meta($post->ID,'testimonial_company', true);
+
+							        if(!empty($name) && !empty($title) && !empty($company)) {
+							            echo '<div class="m-item active">';
+							                echo '<blockquote>'.get_the_content().'</blockquote>';
+							                echo '<cite>';
+							                    echo '<span class="name">'.$name.'</span>';
+							                    echo '<span class="title">'.$title.'</span>';
+							                    echo '<span class="company">'.$company.'</span>';
+							                echo '</cite>';
+							            echo '</div>';
+							        }
+							        endwhile;
+							    endif;
+							?>
 						</div>
-						<div class="m-scooch-controls m-scooch-bulleted">
-							<a href="" data-m-slide="1"></a>
-							<a href="" data-m-slide="2"></a>
-							<a href="" data-m-slide="3"></a>
-						</div>
+
+						<?php 
+							$c = 1;
+						    if (have_posts()) : 
+						    	echo '<div class="m-scooch-controls m-scooch-bulleted">';
+						    	while (have_posts()) : the_post();
+						    	echo '<a href="" data-m-slide="'.$c.'"></a>';
+						    	$c++;
+						    	endwhile;
+						    	echo '</div>';
+						    endif;
+						    
+						    wp_reset_query();
+					    ?>
 					</div>
 				</div>
 			</div>

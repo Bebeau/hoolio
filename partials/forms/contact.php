@@ -1,6 +1,4 @@
-<?php 
-
-wp_head();
+<?php
 
 if( empty($_POST['password']) ) {
 
@@ -87,4 +85,5 @@ if( empty($_POST['password']) ) {
 
 	}
 }
+
 ?>

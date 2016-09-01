@@ -1167,6 +1167,15 @@ header {
 		}
 	}
 }
+#errorPage {
+	height: 50vh;
+	background: $blue;
+	h1 {
+		text-align: center;
+		color: white;
+		margin: 0;
+	}
+}
 input[placeholder], [placeholder], *[placeholder] {
 	text-transform: uppercase;
 	letter-spacing: 1px;

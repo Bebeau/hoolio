@@ -48,7 +48,7 @@
 		<article class="outer">
 			<div class="inner">
 				<div class="copy" data-animation="slideUp">
-					<h1 data-animation="slideDown">Market Research Reimagined.</h1>
+					<h1 data-animation="slideDown">Market research reimagined.</h1>
 					<p data-animation="slideUp">Wyzerr empowers businesses to make intelligent decisions by constantly listening to their customers and stakeholders.</p>
 				</div>
 				<div class="thirds">

@@ -38,8 +38,6 @@
 		width: auto;
 	}
 	#top {
-		min-height: auto;
-		height: auto;
 		.inner {
 			@include transform(translate(0,0));
 		}
