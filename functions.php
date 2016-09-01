@@ -147,7 +147,7 @@ function emailSubmit() {
         $company = isset( $_POST['company'] ) ? preg_replace( "/[^\.\-\' a-zA-Z0-9]/", "", $_POST['company'] ) : "";
         $title = isset( $_POST['title'] ) ? preg_replace( "/[^\.\-\' a-zA-Z0-9]/", "", $_POST['title'] ) : "";
         $emailaddress = filter_var($_POST['emailaddress'], FILTER_SANITIZE_EMAIL);
-        $interest = isset( $_POST['interest'] ) ? $_POST['interest'] ) : "";
+        $interest = isset( $_POST['interest'] ) ? $_POST['interest'] : "";
         $message = isset( $_POST['message'] ) ? preg_replace( "/[^\.\-\' a-zA-Z0-9]/", "", $_POST['message'] ) : "";
 
         $email = esc_attr(get_option('admin_email'));
