@@ -26,7 +26,7 @@ get_header();
 				echo '<div class="outer">';
 					echo '<div class="inner">';
 			    		the_content(); ?>
-			    		<form role="form" method="POST" action="<?php echo bloginfo('template_directory');?>/partials/forms/contact.php" id="contactfrm">
+			    		<form role="form" method="POST" action="" id="contactfrm">
 					        <div class="half">
 					            <input type="text" name="firstname" id="firstname" class="form-control" placeholder="first name"/>
 					            <input type="text" name="lastname" id="lastname" class="form-control" placeholder="last name"/>

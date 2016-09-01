@@ -7,7 +7,7 @@ $(function(){ParallaxScroll.init()});var ParallaxScroll={showLogs:!1,round:1e3,i
 
 // check to make sure it is not loaded on mobile device
 var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent);
-// var ajaxurl = meta.ajaxurl;
+var ajaxurl = meta.ajaxurl;
 
 var move = {
 	onMove: function() {
@@ -385,13 +385,24 @@ var init = {
             url: ajaxurl,
             type: Frm.attr('method'),
             data: {
+            	firstname: jQuery('#firstname').val(),
+            	lastname: jQuery('#lastname').val(),
+            	company: jQuery('#company').val(),
+            	title: jQuery('#title').val(),
+            	emailaddress: jQuery('#emailaddress').val(),
+            	interest: jQuery('#interest').val(),
+            	message: jQuery('#message').val(),
             	action: 'sendContact'
             },
             dataType: 'html',
-            success: function() {
-            	init.contactResponse();
+            beforeSubmit : function(arr, $form, options) {
+	            arr.push( { "name" : "nonce", "value" : meta.nonce });
+	        },
+            success: function(data) {
+            	init.contactResponse(data);
             }
         });
+        return false;
 	},
 	contactResponse: function(response) {
         jQuery('.btn-submit i').remove();
