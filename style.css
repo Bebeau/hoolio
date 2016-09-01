@@ -1883,7 +1883,7 @@ h3 {
 
 p {
   color: #919192;
-  font-size: 21pt; }
+  font-size: 18pt; }
 
 .outer {
   /* W3C */
@@ -1915,18 +1915,9 @@ p {
 .block {
   height: 100vh;
   text-align: center; }
-  .block.step p {
-    color: #ffffff; }
-  .block.step h2 {
-    color: #ffffff;
-    font-size: 48pt;
-    text-transform: uppercase;
-    margin: 0;
-    line-height: 110px; }
-  .block.step h3 {
-    color: #ffffff;
-    font-size: 48pt;
-    margin: 0; }
+  .block h1 {
+    margin: 0 0 25px;
+    line-height: 60px; }
   .block:after {
     content: "";
     clear: both;
@@ -1952,16 +1943,21 @@ p {
 
 .thirds {
   width: 1170px;
-  margin: 100px auto 50px; }
+  margin: 50px auto;
+  box-sizing: border-box;
+  padding: 0 100px; }
   .thirds article {
     box-sizing: border-box;
     display: inline-block;
     width: 33.33333333%;
     margin: 0 0 0 -4px;
     vertical-align: top; }
+    .thirds article img {
+      height: 150px;
+      width: auto; }
     .thirds article p {
       box-sizing: border-box;
-      padding: 15px; }
+      padding: 0 25px; }
 
 #signUp {
   background: rgba(0, 0, 0, 0.9);
@@ -2157,12 +2153,16 @@ header {
       padding: 0; }
       header .menu ul li {
         position: relative;
-        top: 50px;
-        opacity: 0; }
+        opacity: 0;
+        -webkit-transform: translate(0, 50px);
+        -moz-transform: translate(0, 50px);
+        -ms-transform: translate(0, 50px);
+        -o-transform: translate(0, 50px);
+        transform: translate(0, 50px); }
         header .menu ul li a {
           display: inline-block;
           color: #1293cc;
-          font-size: 48pt;
+          font-size: 36pt;
           text-decoration: none;
           text-align: center;
           overflow: hidden;
@@ -2177,20 +2177,24 @@ header {
             width: 0;
             margin: 0 auto;
             position: relative;
-            top: -10px;
+            top: -5px;
             -webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
             -moz-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
             transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
           header .menu ul li a:hover {
             color: #ffffff; }
             header .menu ul li a:hover:after {
-              width: 300px;
+              width: 200px;
               -webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
               -moz-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
               transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
         header .menu ul li.in {
-          top: 0;
           opacity: 1;
+          -webkit-transform: translate(0, 0);
+          -moz-transform: translate(0, 0);
+          -ms-transform: translate(0, 0);
+          -o-transform: translate(0, 0);
+          transform: translate(0, 0);
           -webkit-transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
           -moz-transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
           transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
@@ -2267,7 +2271,7 @@ header {
         max-height: 100%; }
   #top #clientLogos {
     position: absolute;
-    top: 85%;
+    top: 88%;
     left: 0;
     right: 0; }
     #top #clientLogos span {
@@ -2320,6 +2324,14 @@ header {
 #help {
   background: white;
   color: #919192; }
+  #help .copy {
+    position: relative;
+    z-index: 2;
+    -webkit-transform: translate(0, 50px);
+    -moz-transform: translate(0, 50px);
+    -ms-transform: translate(0, 50px);
+    -o-transform: translate(0, 50px);
+    transform: translate(0, 50px); }
   #help h4 {
     letter-spacing: 5px;
     text-transform: uppercase;
@@ -2328,8 +2340,10 @@ header {
   #help .placeholder {
     margin: 50px 0; }
   #help video {
-    width: 1000px;
-    height: auto; }
+    width: 800px;
+    height: auto;
+    position: relative;
+    z-index: 1; }
 
 #meet {
   min-height: 100vh;
@@ -2342,10 +2356,9 @@ header {
   #meet ul#bubbles {
     list-style: none;
     text-align: center;
-    margin-top: 150px;
     display: inline-block;
     padding: 0;
-    margin: 100px auto 0;
+    margin: 50px auto 0;
     width: 1300px;
     box-sizing: border-box; }
     #meet ul#bubbles li {
@@ -2616,6 +2629,10 @@ header {
     padding: 0 25px;
     margin: 0 0 0 -4px;
     vertical-align: middle; }
+  #meet .copy img {
+    max-height: 100px;
+    width: auto;
+    margin-bottom: 25px; }
   #meet .followUp {
     width: 600px;
     margin: 350px auto 150px;
@@ -2685,7 +2702,7 @@ header {
       #metrics .half article .half {
         width: auto;
         height: auto;
-        margin-top: 100px; }
+        margin-top: 50px; }
         #metrics .half article .half article {
           height: auto; }
       #metrics .half article h1 {
@@ -3149,8 +3166,6 @@ footer {
  * <![endif]--> */
 @media (max-height: 900px) {
   #top {
-    min-height: 125vh;
-    height: 125vh;
     padding: 0; }
     #top .inner {
       -webkit-transform: translate(0, -100px);
@@ -3159,18 +3174,13 @@ footer {
       -o-transform: translate(0, -100px);
       transform: translate(0, -100px); }
 
-  .block {
-    min-height: auto;
-    height: auto;
-    padding: 100px 0; }
-
   #metrics {
     padding-bottom: 0; }
     #metrics .half article {
       vertical-align: bottom; }
 
-  #testimonials, #cta {
-    padding: 100px 0; }
+  #cta {
+    padding: 50px 0; }
 
   #meet .copy .half img {
     max-height: 600px; } }

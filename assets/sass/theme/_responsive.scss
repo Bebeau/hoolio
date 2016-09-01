@@ -1,16 +1,9 @@
 @media(max-height:900px) {
 	#top {
-		min-height: 125vh;
-		height: 125vh;
 		padding: 0;
 		.inner {
 			@include transform(translate(0,-100px));
 		}
-	}
-	.block {
-		min-height: auto;
-		height: auto;
-		padding: 100px 0;
 	}
 	#metrics {
 		padding-bottom: 0;
@@ -20,8 +13,8 @@
 			}
 		}
 	}
-	#testimonials, #cta {
-		padding: 100px 0;
+	#cta {
+		padding: 50px 0;
 	}
 	#meet {
 		.copy {

@@ -248,6 +248,7 @@ var init = {
 		}
 	},
 	dropdown: function() {
+		removeClass = false;
 		jQuery('#dropdown button').click(function(e){
 			e.preventDefault();
 			jQuery('#dropdown ul').addClass("show");

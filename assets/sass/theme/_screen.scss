@@ -128,7 +128,7 @@ h3 {
 }
 p {
 	color: $grey;
-	font-size: 21pt;
+	font-size: 18pt;
 }
 .outer {
 	/* W3C */
@@ -161,22 +161,9 @@ p {
 .block {
 	height: 100vh;
 	text-align: center;
-	&.step {
-		p {
-			color: $white;
-		}
-		h2 {
-			color: $white;
-			font-size: 48pt;
-			text-transform: uppercase;
-			margin: 0;
-			line-height: 110px;
-		}
-		h3 {
-			color: $white;
-			font-size: 48pt;
-			margin: 0;
-		}
+	h1 {
+		margin: 0 0 25px;
+		line-height: 60px;
 	}
 	&:after {
 		content: "";
@@ -204,16 +191,22 @@ p {
 }
 .thirds {
 	width: 1170px;
-	margin: 100px auto 50px;
+	margin: 50px auto;
+	box-sizing: border-box;
+	padding: 0 100px;
 	article {
 		box-sizing: border-box;
 		display: inline-block;
 		width: 33.33333333%;
 		margin: 0 0 0 -4px;
 		vertical-align: top;
+		img {
+			height: 150px;
+			width: auto;
+		}
 		p {
 			box-sizing: border-box;
-			padding: 15px;
+			padding: 0 25px;
 		}
 	}
 }
@@ -409,12 +402,12 @@ header {
 			padding: 0;
 			li {
 				position: relative;
-				top: 50px;
 				opacity: 0;
+				@include transform(translate(0, 50px));
 				a {
 					display: inline-block;
 					color: $blue;
-					font-size: 48pt;
+					font-size: 36pt;
 					text-decoration: none;
 					text-align: center;
 					overflow: hidden;
@@ -427,20 +420,20 @@ header {
 						width: 0;
 						margin: 0 auto;
 						position: relative;
-						top: -10px;
+						top: -5px;
 						@include transition(all 0.3s $easeInOutBack);
 					}
 					&:hover {
 						color: $white;
 						&:after {
-							width: 300px;
+							width: 200px;
 							@include transition(all 0.3s $easeInOutBack);
 						}
 					}
 				}
 				&.in {
-					top: 0;
 					opacity: 1;
+					@include transform(translate(0,0));
 					@include transition(all 0.5s $easeInOutBack);
 				}
 			}
@@ -511,7 +504,7 @@ header {
 	}
 	#clientLogos {
 		position: absolute;
-		top: 85%;
+		top: 88%;
 		left: 0;
 		right: 0;
 		span {
@@ -561,6 +554,11 @@ header {
 #help {
 	background: white;
 	color: $grey;
+	.copy {
+		position: relative;
+		z-index: 2;
+		@include transform(translate(0,50px));
+	}
 	h4 {
 		letter-spacing: 5px;
 		text-transform: uppercase;
@@ -571,8 +569,10 @@ header {
 		margin: 50px 0;
 	}
 	video {
-		width: 1000px;
+		width: 800px;
 		height: auto;
+		position: relative;
+		z-index: 1;
 	}
 }
 #meet {
@@ -587,10 +587,9 @@ header {
 	ul#bubbles {
 		list-style: none;
 		text-align: center;
-		margin-top: 150px;
 		display: inline-block;
 		padding: 0;
-		margin: 100px auto 0;
+		margin: 50px auto 0;
 		width: 1300px;
 		box-sizing: border-box;
 		li {
@@ -854,6 +853,11 @@ header {
 			margin: 0 0 0 -4px;
 			vertical-align: middle;
 		}
+		img {
+			max-height: 100px;
+			width: auto;
+			margin-bottom: 25px;
+		}
 	}
 	.followUp {
 		width: 600px;
@@ -913,7 +917,7 @@ header {
 			.half {
 				width: auto;
 				height: auto;
-				margin-top: 100px;
+				margin-top: 50px;
 				article {
 					height: auto;
 				}
