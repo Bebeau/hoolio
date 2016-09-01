@@ -276,7 +276,6 @@
 		}
 		ul {
 			position: relative;
-			height: 100vh;
 			overflow: hidden;
 			padding-top: 75px;
 			li {
@@ -285,10 +284,34 @@
 				margin: 0 0 25px -4px;
 			}
 			&.bubblenav {
-				padding-top: 0;
+				padding: 0;
+				margin: 0;
 				display: inherit;
 				li {
 					margin: 0;
+				}
+			}
+			&#bubbles {
+				li {
+					&.open {
+						@include transform(scale(1));
+					}
+					.frame {
+						position: absolute;
+						width: 100%;
+						height: 100%;
+						top: 0;
+						left: 0;
+						right: 0;
+						bottom: 0;
+						.copy {
+							width: auto !important;
+							.half {
+								width: 100%;
+								float: none;
+							}
+						}
+					}
 				}
 			}
 		}

@@ -799,7 +799,7 @@ header {
 			&.open {
 				.bubble {
 					position: relative;
-					z-index: 10;
+					z-index: 14;
 					@include transform(scale(50));
 					@include border-top-radius(0);
 					@include border-bottom-radius(0);

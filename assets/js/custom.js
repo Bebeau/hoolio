@@ -46,8 +46,6 @@ var move = {
 					jQuery(window).scroll(function(){
 						if(move.isOnScreen(text)) {
 							text.addClass("slideIn");
-						} else {
-							text.removeClass("slideIn");
 						}
 					});
 				}
@@ -65,8 +63,6 @@ var move = {
 					jQuery(window).scroll(function(){
 						if(move.isOnScreen(slide)) {
 							slide.addClass("slideIn");
-						} else {
-							slide.removeClass("slideIn");
 						}
 					});
 				}
@@ -85,8 +81,6 @@ var move = {
 					jQuery(window).scroll(function(){
 						if(move.isOnScreen(parent)) {
 							section.addClass("slideIn");
-						} else {
-							section.removeClass("slideIn");
 						}
 					});
 				}
@@ -105,8 +99,6 @@ var move = {
 					jQuery(window).scroll(function(){
 						if(move.isOnScreen(parent)) {
 							section.addClass("slideIn");
-						} else {
-							section.removeClass("slideIn");
 						}
 					});
 				}
@@ -125,8 +117,6 @@ var move = {
 					jQuery(window).scroll(function(){
 						if(move.isOnScreen(parent)) {
 							section.addClass("load");
-						} else {
-							section.removeClass("load");
 						}
 					});
 				}
@@ -330,18 +320,25 @@ var init = {
 
 			var current = jQuery(this).parent().parent().parent();
 
+			jQuery('#Menu').hide();
+
 			if(jQuery(this).hasClass("circleClose")) {
-				jQuery('.frame').removeClass("in");
-				setTimeout(
-					function() {
-						current.removeClass("open");
-					}, 250
-				);
-				setTimeout(
-					function() {
-						current.find("i").removeClass("hide");
-					}, 500
-				);
+				jQuery('html,body').animate({
+				   scrollTop: jQuery("#meet").offset().top
+				}, function(){
+					jQuery('.frame').removeClass("in");
+					setTimeout(
+						function() {
+							current.removeClass("open");
+						}, 500
+					);
+					setTimeout(
+						function() {
+							current.find("i").removeClass("hide");
+						}, 750
+					);
+					jQuery('#Menu').show();
+				});
 			} else {
 				current.removeClass("open");
 				tab.addClass("open");
