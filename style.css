@@ -1829,8 +1829,6 @@ body {
   overflow-x: hidden; }
   body.home header .logo svg path, body.error404 header .logo svg path {
     fill: #1293cc; }
-  body.home header #Menu .bar, body.error404 header #Menu .bar {
-    background: #1293cc; }
 
 .btn {
   text-align: center;
@@ -2075,6 +2073,8 @@ header {
     margin: 0 0 0 -4px;
     overflow: hidden;
     vertical-align: top;
+    background: #1293cc;
+    padding: 5px 15px;
     -webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     -moz-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
@@ -2201,34 +2201,36 @@ header {
     -webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     -moz-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
-    header.open #Menu .bar {
-      background: #ffffff; }
-      header.open #Menu .bar:first-child {
-        margin-top: 30px;
-        margin-bottom: -16px;
-        -webkit-transform: rotate(-45deg);
-        -moz-transform: rotate(-45deg);
-        -ms-transform: rotate(-45deg);
-        -o-transform: rotate(-45deg);
-        transform: rotate(-45deg);
-        -webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        -moz-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
-      header.open #Menu .bar:nth-child(2) {
-        left: 70px;
-        -webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        -moz-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
-      header.open #Menu .bar:last-child {
-        margin-top: -14px;
-        -webkit-transform: rotate(45deg);
-        -moz-transform: rotate(45deg);
-        -ms-transform: rotate(45deg);
-        -o-transform: rotate(45deg);
-        transform: rotate(45deg);
-        -webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        -moz-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+    header.open #Menu {
+      padding-bottom: 10px; }
+      header.open #Menu .bar {
+        background: #ffffff; }
+        header.open #Menu .bar:first-child {
+          margin-top: 30px;
+          margin-bottom: -16px;
+          -webkit-transform: rotate(-45deg);
+          -moz-transform: rotate(-45deg);
+          -ms-transform: rotate(-45deg);
+          -o-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+          -webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+          -moz-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+          transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+        header.open #Menu .bar:nth-child(2) {
+          left: 70px;
+          -webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+          -moz-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+          transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+        header.open #Menu .bar:last-child {
+          margin-top: -14px;
+          -webkit-transform: rotate(45deg);
+          -moz-transform: rotate(45deg);
+          -ms-transform: rotate(45deg);
+          -o-transform: rotate(45deg);
+          transform: rotate(45deg);
+          -webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+          -moz-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+          transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
     header.open .menu {
       visibility: visible;
       min-height: 100vh;

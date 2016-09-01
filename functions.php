@@ -151,6 +151,7 @@ function emailSubmit() {
         $message = isset( $_POST['message'] ) ? preg_replace( "/[^\.\-\' a-zA-Z0-9]/", "", $_POST['message'] ) : "";
 
         $email = esc_attr(get_option('admin_email'));
+        var_dump($email);
         $to = $firstname.' '.$lastname.' <'.$emailaddress.'>';
 
         if ( $firstname && $lastname && $emailaddress && $message ) {
