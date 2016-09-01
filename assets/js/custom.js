@@ -139,6 +139,20 @@ var init = {
 		init.playVideo();
 		init.contactBtn();
 		init.topVideos();
+		init.tooltip();
+	},
+	tooltip: function() {
+		jQuery('.bubblenav li.nav').hover(function(){
+			var tip = jQuery(this).attr("title");
+			jQuery(this).append('<div class="tooltip">'+tip+'</div>');
+			setTimeout(
+				function(){
+					jQuery('.tooltip').addClass("in");
+				}, 50
+			);
+		}, function(){
+			jQuery('.tooltip').remove();
+		});
 	},
 	topVideos: function() {
 		jQuery('#videos .active')[0].play();

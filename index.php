@@ -120,12 +120,12 @@
 						</div>
 						<div class="frame">
 							<ul class="bubblenav">
-								<li data-numb="1"></li>
-								<li data-numb="2"></li>
-								<li data-numb="3"></li>
-								<li data-numb="4"></li>
-								<li data-numb="5"></li>
-								<li data-numb="6"></li>
+								<li class="nav" data-numb="1" title="New Products &amp; Services"></li>
+								<li class="nav" data-numb="2" title="Customer Loyalty"></li>
+								<li class="nav" data-numb="3" title="How To Increase Sales"></li>
+								<li class="nav" data-numb="4" title="Marketing Message"></li>
+								<li class="nav" data-numb="5" title="Employee Retention"></li>
+								<li class="nav" data-numb="6" title="Customer Insights"></li>
 								<li class="circleClose">
 									<span class="bar cross"></span>
 									<span class="bar middle"></span>
@@ -158,12 +158,12 @@
 						</div>
 						<div class="frame">
 							<ul class="bubblenav">
-								<li data-numb="1"></li>
-								<li data-numb="2"></li>
-								<li data-numb="3"></li>
-								<li data-numb="4"></li>
-								<li data-numb="5"></li>
-								<li data-numb="6"></li>
+								<li class="nav" data-numb="1" title="New Products &amp; Services"></li>
+								<li class="nav" data-numb="2" title="Customer Loyalty"></li>
+								<li class="nav" data-numb="3" title="How To Increase Sales"></li>
+								<li class="nav" data-numb="4" title="Marketing Message"></li>
+								<li class="nav" data-numb="5" title="Employee Retention"></li>
+								<li class="nav" data-numb="6" title="Customer Insights"></li>
 								<li class="circleClose">
 									<span class="bar cross"></span>
 									<span class="bar middle"></span>
@@ -196,12 +196,12 @@
 						</div>
 						<div class="frame">
 							<ul class="bubblenav">
-								<li data-numb="1"></li>
-								<li data-numb="2"></li>
-								<li data-numb="3"></li>
-								<li data-numb="4"></li>
-								<li data-numb="5"></li>
-								<li data-numb="6"></li>
+								<li class="nav" data-numb="1" title="New Products &amp; Services"></li>
+								<li class="nav" data-numb="2" title="Customer Loyalty"></li>
+								<li class="nav" data-numb="3" title="How To Increase Sales"></li>
+								<li class="nav" data-numb="4" title="Marketing Message"></li>
+								<li class="nav" data-numb="5" title="Employee Retention"></li>
+								<li class="nav" data-numb="6" title="Customer Insights"></li>
 								<li class="circleClose">
 									<span class="bar cross"></span>
 									<span class="bar middle"></span>
@@ -234,12 +234,12 @@
 						</div>
 						<div class="frame">
 							<ul class="bubblenav">
-								<li data-numb="1"></li>
-								<li data-numb="2"></li>
-								<li data-numb="3"></li>
-								<li data-numb="4"></li>
-								<li data-numb="5"></li>
-								<li data-numb="6"></li>
+								<li class="nav" data-numb="1" title="New Products &amp; Services"></li>
+								<li class="nav" data-numb="2" title="Customer Loyalty"></li>
+								<li class="nav" data-numb="3" title="How To Increase Sales"></li>
+								<li class="nav" data-numb="4" title="Marketing Message"></li>
+								<li class="nav" data-numb="5" title="Employee Retention"></li>
+								<li class="nav" data-numb="6" title="Customer Insights"></li>
 								<li class="circleClose">
 									<span class="bar cross"></span>
 									<span class="bar middle"></span>
@@ -272,12 +272,12 @@
 						</div>
 						<div class="frame">
 							<ul class="bubblenav">
-								<li data-numb="1"></li>
-								<li data-numb="2"></li>
-								<li data-numb="3"></li>
-								<li data-numb="4"></li>
-								<li data-numb="5"></li>
-								<li data-numb="6"></li>
+								<li class="nav" data-numb="1" title="New Products &amp; Services"></li>
+								<li class="nav" data-numb="2" title="Customer Loyalty"></li>
+								<li class="nav" data-numb="3" title="How To Increase Sales"></li>
+								<li class="nav" data-numb="4" title="Marketing Message"></li>
+								<li class="nav" data-numb="5" title="Employee Retention"></li>
+								<li class="nav" data-numb="6" title="Customer Insights"></li>
 								<li class="circleClose">
 									<span class="bar cross"></span>
 									<span class="bar middle"></span>
@@ -310,12 +310,12 @@
 						</div>
 						<div class="frame">
 							<ul class="bubblenav">
-								<li data-numb="1"></li>
-								<li data-numb="2"></li>
-								<li data-numb="3"></li>
-								<li data-numb="4"></li>
-								<li data-numb="5"></li>
-								<li data-numb="6"></li>
+								<li class="nav" data-numb="1" title="New Products &amp; Services"></li>
+								<li class="nav" data-numb="2" title="Customer Loyalty"></li>
+								<li class="nav" data-numb="3" title="How To Increase Sales"></li>
+								<li class="nav" data-numb="4" title="Marketing Message"></li>
+								<li class="nav" data-numb="5" title="Employee Retention"></li>
+								<li class="nav" data-numb="6" title="Customer Insights"></li>
 								<li class="circleClose">
 									<span class="bar cross"></span>
 									<span class="bar middle"></span>
