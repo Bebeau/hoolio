@@ -235,6 +235,8 @@
 	}
 	#top {
 		padding-top: 125px;
+		min-height: auto;
+		height: auto;
 		.half {
 			width: auto;
 			video, video.active {
@@ -294,6 +296,9 @@
 	#metrics {
 		.half {
 			article {
+				&.phone {
+					display: none;
+				}
 				.half {
 					margin: 50px auto;
 				}
@@ -308,9 +313,6 @@
 					}
 				}
 			}
-		}
-		.phone {
-			display: none;
 		}
 	}
 	#testimonials {

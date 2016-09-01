@@ -3274,7 +3274,9 @@ footer {
     margin-bottom: 50px; }
 
   #top {
-    padding-top: 125px; }
+    padding-top: 125px;
+    min-height: auto;
+    height: auto; }
     #top .half {
       width: auto; }
       #top .half video, #top .half video.active {
@@ -3323,6 +3325,8 @@ footer {
         #meet ul.bubblenav li {
           margin: 0; }
 
+  #metrics .half article.phone {
+    display: none; }
   #metrics .half article .half {
     margin: 50px auto; }
   #metrics .half article img {
@@ -3332,8 +3336,6 @@ footer {
     padding: 0 15px; }
     #metrics .half article .stat span {
       font-size: 24pt; }
-  #metrics .phone {
-    display: none; }
 
   #testimonials {
     padding: 25px 0; }
