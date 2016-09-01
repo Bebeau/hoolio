@@ -154,41 +154,43 @@ var init = {
 		});
 	},
 	topVideos: function() {
-		jQuery('#videos .active')[0].play();
-		setTimeout(
-			function(){
-				jQuery('#videos').removeClass("slideIn");
-			}, 9000
-		);
-		setTimeout(
-			function(){
-				jQuery('#videos .active').removeClass("active").next().addClass("active")[0].play();
-				jQuery('#videos').addClass("slideIn");
-			}, 9500
-		);
-		setTimeout(
-			function(){
-				jQuery('#videos').removeClass("slideIn");
-			}, 22000
-		);
-		setTimeout(
-			function(){
-				jQuery('#videos .active').removeClass("active").next().addClass("active")[0].play();
-				jQuery('#videos').addClass("slideIn");
-			}, 22500
-		);
-		setTimeout(
-			function(){
-				jQuery('#videos').removeClass("slideIn");
-			}, 29000
-		);
-		setTimeout(
-			function(){
-				jQuery('#videos .active').removeClass("active").prev().prev().addClass("active");
-				jQuery('#videos').addClass("slideIn");
-				init.topVideos();
-			}, 29500
-		);
+		if(jQuery('body').hasClass("home")) {
+			jQuery('#videos .active')[0].play();
+			setTimeout(
+				function(){
+					jQuery('#videos').removeClass("slideIn");
+				}, 9000
+			);
+			setTimeout(
+				function(){
+					jQuery('#videos .active').removeClass("active").next().addClass("active")[0].play();
+					jQuery('#videos').addClass("slideIn");
+				}, 9500
+			);
+			setTimeout(
+				function(){
+					jQuery('#videos').removeClass("slideIn");
+				}, 22000
+			);
+			setTimeout(
+				function(){
+					jQuery('#videos .active').removeClass("active").next().addClass("active")[0].play();
+					jQuery('#videos').addClass("slideIn");
+				}, 22500
+			);
+			setTimeout(
+				function(){
+					jQuery('#videos').removeClass("slideIn");
+				}, 29000
+			);
+			setTimeout(
+				function(){
+					jQuery('#videos .active').removeClass("active").prev().prev().addClass("active");
+					jQuery('#videos').addClass("slideIn");
+					init.topVideos();
+				}, 29500
+			);
+		}
 	},
 	playVideo: function() {
 		var vid = jQuery('#help video');
@@ -200,7 +202,6 @@ var init = {
         	jQuery(window).scroll(function(){
         		if (move.isOnScreen(vid)) {
             		vid[0].play();
-            		jQuery(window).off('scroll');
         			move.onMove();
             	}
             });
@@ -241,7 +242,6 @@ var init = {
 						console.log("trigger");
 						jQuery('.timer').countTo();
 						eventfired = true;
-						jQuery(window).off('scroll');
 					}
 				});
 			}

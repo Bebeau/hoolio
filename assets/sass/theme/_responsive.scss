@@ -26,9 +26,13 @@
 		}
 	}
 }
-@media(max-width: 1300px) {
+@media(max-width: 1280px) {
+	p {
+		font-size: 18pt;
+	}
 	.thirds {
 		width: auto;
+		margin: 50px auto;
 	}
 	#top {
 		.inner {
@@ -40,10 +44,23 @@
 				margin: 0 5px;
 			}
 		}
+		.half {
+			video {
+				&#laptop {
+					@include transform(translate(100px, 0));
+				}
+			}
+		}
+	}
+	#help {
+		video {
+			width: 800px;
+		}
 	}
 	#meet {
-		ul {
+		ul#bubbles {
 			width: 900px;
+			margin: 50px auto 0;
 			li {
 				.bubblewrap {
 					&:after {
@@ -59,6 +76,12 @@
 					}
 				}
 			} 
+		}
+		.copy {
+			img {
+				max-height: 100px;
+				margin-bottom: 25px;
+			}
 		}
 	}
 	#video {

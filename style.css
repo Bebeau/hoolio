@@ -1883,7 +1883,7 @@ h3 {
 
 p {
   color: #919192;
-  font-size: 18pt; }
+  font-size: 21pt; }
 
 .outer {
   /* W3C */
@@ -1943,9 +1943,8 @@ p {
 
 .thirds {
   width: 1170px;
-  margin: 50px auto;
-  box-sizing: border-box;
-  padding: 0 100px; }
+  margin: 100px auto 50px;
+  box-sizing: border-box; }
   .thirds article {
     box-sizing: border-box;
     display: inline-block;
@@ -2268,7 +2267,12 @@ header {
         display: block; }
       #top .half video#laptop {
         max-width: inherit;
-        max-height: 100%; }
+        max-height: 60vh;
+        -webkit-transform: translate(200px, 0);
+        -moz-transform: translate(200px, 0);
+        -ms-transform: translate(200px, 0);
+        -o-transform: translate(200px, 0);
+        transform: translate(200px, 0); }
   #top #clientLogos {
     position: absolute;
     top: 88%;
@@ -2340,7 +2344,7 @@ header {
   #help .placeholder {
     margin: 50px 0; }
   #help video {
-    width: 800px;
+    width: 1000px;
     height: auto;
     position: relative;
     z-index: 1; }
@@ -2358,7 +2362,7 @@ header {
     text-align: center;
     display: inline-block;
     padding: 0;
-    margin: 50px auto 0;
+    margin: 100px auto 0;
     width: 1300px;
     box-sizing: border-box; }
     #meet ul#bubbles li {
@@ -2404,6 +2408,11 @@ header {
           -ms-transform: translate(0, 25px);
           -o-transform: translate(0, 25px);
           transform: translate(0, 25px); }
+          #meet ul#bubbles li .frame .copy img {
+            max-width: 100%;
+            height: auto;
+            margin: 0;
+            max-height: 100%; }
         #meet ul#bubbles li .frame .btn {
           background: linear-gradient(white, #e6e6e6);
           color: black; }
@@ -2630,9 +2639,9 @@ header {
     margin: 0 0 0 -4px;
     vertical-align: middle; }
   #meet .copy img {
-    max-height: 100px;
+    max-height: 200px;
     width: auto;
-    margin-bottom: 25px; }
+    margin-bottom: 75px; }
   #meet .followUp {
     width: 600px;
     margin: 350px auto 150px;
@@ -3184,9 +3193,13 @@ footer {
 
   #meet .copy .half img {
     max-height: 600px; } }
-@media (max-width: 1300px) {
+@media (max-width: 1280px) {
+  p {
+    font-size: 18pt; }
+
   .thirds {
-    width: auto; }
+    width: auto;
+    margin: 50px auto; }
 
   #top .inner {
     -webkit-transform: translate(0, 0);
@@ -3201,17 +3214,30 @@ footer {
     -o-transform: scale(0.75);
     transform: scale(0.75);
     margin: 0 5px; }
+  #top .half video#laptop {
+    -webkit-transform: translate(100px, 0);
+    -moz-transform: translate(100px, 0);
+    -ms-transform: translate(100px, 0);
+    -o-transform: translate(100px, 0);
+    transform: translate(100px, 0); }
 
-  #meet ul {
-    width: 900px; }
-    #meet ul li .bubblewrap:after {
+  #help video {
+    width: 800px; }
+
+  #meet ul#bubbles {
+    width: 900px;
+    margin: 50px auto 0; }
+    #meet ul#bubbles li .bubblewrap:after {
       top: 108px; }
-    #meet ul li .bubblewrap .bubble {
+    #meet ul#bubbles li .bubblewrap .bubble {
       width: 125px;
       height: 125px; }
-      #meet ul li .bubblewrap .bubble .icon {
+      #meet ul#bubbles li .bubblewrap .bubble .icon {
         width: 50px;
         height: 50px; }
+  #meet .copy img {
+    max-height: 100px;
+    margin-bottom: 25px; }
 
   #video video {
     display: block; }

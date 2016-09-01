@@ -128,7 +128,7 @@ h3 {
 }
 p {
 	color: $grey;
-	font-size: 18pt;
+	font-size: 21pt;
 }
 .outer {
 	/* W3C */
@@ -191,9 +191,9 @@ p {
 }
 .thirds {
 	width: 1170px;
-	margin: 50px auto;
+	margin: 100px auto 50px;
 	box-sizing: border-box;
-	padding: 0 100px;
+	// padding: 0 100px;
 	article {
 		box-sizing: border-box;
 		display: inline-block;
@@ -498,7 +498,8 @@ header {
 			}
 			&#laptop {
 				max-width: inherit;
-				max-height: 100%;
+				max-height: 60vh;
+				@include transform(translate(200px, 0));
 			}
 		}
 	}
@@ -569,7 +570,7 @@ header {
 		margin: 50px 0;
 	}
 	video {
-		width: 800px;
+		width: 1000px;
 		height: auto;
 		position: relative;
 		z-index: 1;
@@ -589,7 +590,7 @@ header {
 		text-align: center;
 		display: inline-block;
 		padding: 0;
-		margin: 50px auto 0;
+		margin: 100px auto 0;
 		width: 1300px;
 		box-sizing: border-box;
 		li {
@@ -629,6 +630,12 @@ header {
 				.copy {
 					width: 1170px;
 					@include transform(translate(0,25px));
+					img {
+						max-width: 100%;
+						height: auto;
+						margin: 0;
+						max-height: 100%;
+					}
 				}
 				.btn {
 					background: linear-gradient(white, darken(white,10%));
@@ -854,9 +861,9 @@ header {
 			vertical-align: middle;
 		}
 		img {
-			max-height: 100px;
+			max-height: 200px;
 			width: auto;
-			margin-bottom: 25px;
+			margin-bottom: 75px;
 		}
 	}
 	.followUp {
