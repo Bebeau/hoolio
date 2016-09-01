@@ -25,9 +25,34 @@ get_header();
 			echo '<div class="container">';
 				echo '<div class="outer">';
 					echo '<div class="inner">';
-			    		the_content();
-			    		get_contact_form();
-			    	echo '</div>';
+			    		the_content(); ?>
+			    		<form role="form" method="POST" action="<?php echo bloginfo('template_directory');?>/partials/forms/contact.php" id="contactfrm">
+					        <div class="half">
+					            <input type="text" name="firstname" id="firstname" class="form-control" placeholder="first name"/>
+					            <input type="text" name="lastname" id="lastname" class="form-control" placeholder="last name"/>
+					        </div>
+					        <div class="half">
+					            <input type="text" name="company" id="company" class="form-control" placeholder="company"/>
+					            <input type="text" name="title" id="title" class="form-control" placeholder="title"/>
+					        </div>
+					        <div class="half">
+					            <input type="text" name="emailaddress" id="emailaddress" class="form-control" placeholder="email"/>
+					            <div id="dropdown">
+					                <button>Area of interest <i class="fa fa-angle-down"></i></button>
+					                <ul class="dropdown-menu">
+					                    <li data-value="Enterprise">Enterprise</li>
+					                    <li data-value="Partnerships">Partnerships</li>
+					                    <li data-value="Press/Event">Press / Event Inquiry</li>
+					                    <li data-value="Other">Other</li>
+					                </ul>
+					            </div>
+					            <input type="hidden" name="interest" id="interest" class="form-control"/>
+					        </div>
+					        <textarea type="text" name="message" id="message" class="form-control" placeholder="comment"></textarea>
+					        <button type="submit" class="btn btn-submit">Submit</button>
+					        <input type="hidden" name="password" id="password" val="" />
+					    </form>
+			    	<?php echo '</div>';
 			    echo '</div>';
 		    echo '</div>';
 		echo '</section>';

@@ -137,7 +137,6 @@ var init = {
 		init.scooch();
 		init.wizard();
 		init.playVideo();
-		init.contactBtn();
 		init.topVideos();
 		init.tooltip();
 	},
@@ -252,6 +251,13 @@ var init = {
 		jQuery('#dropdown button').click(function(e){
 			e.preventDefault();
 			jQuery('#dropdown ul').addClass("show");
+			removeClass = false;
+		});
+		jQuery("html").click(function () {
+		    if (removeClass) {
+		        jQuery("#dropdown ul").removeClass('show');
+		    }
+		    removeClass = true;
 		});
 		jQuery('#dropdown ul li').click(function(e) {
 			e.preventDefault();
@@ -408,7 +414,7 @@ var init = {
         }
 	},
 	contactBtn: function() {
-		jQuery('#contactfrm').submit();
+		jQuery('#contactfrm').submit(init.contactSubmit);
 	},
 };
 

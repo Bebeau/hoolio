@@ -133,36 +133,6 @@ include(TEMPLATEPATH.'/partials/functions/user.php');
 include(TEMPLATEPATH.'/partials/functions/theme.php');
 include(TEMPLATEPATH.'/partials/functions/testimonials.php');
 
-function get_contact_form() { ?>
-    <form role="form" method="POST" action="" id="contactfrm">
-        <div class="half">
-            <input type="text" name="firstname" id="firstname" class="form-control" placeholder="first name"/>
-            <input type="text" name="lastname" id="lastname" class="form-control" placeholder="last name"/>
-        </div>
-        <div class="half">
-            <input type="text" name="company" id="company" class="form-control" placeholder="company"/>
-            <input type="text" name="title" id="title" class="form-control" placeholder="title"/>
-        </div>
-        <div class="half">
-            <input type="text" name="emailaddress" id="emailaddress" class="form-control" placeholder="email"/>
-            <div id="dropdown">
-                <button>Area of interest <i class="fa fa-angle-down"></i></button>
-                <ul class="dropdown-menu">
-                    <li data-value="Enterprise">Enterprise</li>
-                    <li data-value="Partnerships">Partnerships</li>
-                    <li data-value="Press/Event">Press / Event Inquiry</li>
-                    <li data-value="Other">Other</li>
-                </ul>
-            </div>
-            <input type="hidden" name="interest" id="interest" class="form-control"/>
-        </div>
-        <textarea type="text" name="message" id="message" class="form-control" placeholder="comment"></textarea>
-        <button type="submit" class="btn btn-submit">Submit</button>
-        <input type="hidden" name="password" id="password" val="" />
-    </form>
-<?php 
-}
-
 // add_action('wp_ajax_sendContact', 'emailSubmit');
 // add_action('wp_ajax_nopriv_sendContact', 'emailSubmit');
 // function emailSubmit() {
