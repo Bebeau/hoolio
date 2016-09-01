@@ -63,7 +63,7 @@ body {
 	text-shadow: 1px 1px 1px rgba(0,0,0,0.04);
 	font-family: 'din light', sans-serif;
 	overflow-x: hidden;
-	&.home {
+	&.home, &.error404 {
 		header {
 			.logo {
 				svg {
@@ -81,9 +81,10 @@ body {
 	}
 }
 .btn {
+	text-align: center;
 	width: 200px;
 	display: block;
-	margin: 0 auto;
+	margin: 15px auto;
 	padding: 0 25px;
 	line-height: 60px;
 	font-size: 18pt;
@@ -1203,11 +1204,11 @@ header {
 	}
 }
 #errorPage {
-	height: 50vh;
-	background: $blue;
+	height: 100vh;
+	background: white;
 	h1 {
 		text-align: center;
-		color: white;
+		color: $blue;
 		margin: 0;
 	}
 }

@@ -1827,15 +1827,16 @@ body {
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.04);
   font-family: 'din light', sans-serif;
   overflow-x: hidden; }
-  body.home header .logo svg path {
+  body.home header .logo svg path, body.error404 header .logo svg path {
     fill: #1293cc; }
-  body.home header #Menu .bar {
+  body.home header #Menu .bar, body.error404 header #Menu .bar {
     background: #1293cc; }
 
 .btn {
+  text-align: center;
   width: 200px;
   display: block;
-  margin: 0 auto;
+  margin: 15px auto;
   padding: 0 25px;
   line-height: 60px;
   font-size: 18pt;
@@ -2931,11 +2932,11 @@ header {
         transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
 
 #errorPage {
-  height: 50vh;
-  background: #1293cc; }
+  height: 100vh;
+  background: white; }
   #errorPage h1 {
     text-align: center;
-    color: white;
+    color: #1293cc;
     margin: 0; }
 
 input[placeholder], [placeholder], *[placeholder] {
