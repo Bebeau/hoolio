@@ -222,6 +222,8 @@
 				padding: 0;
 				#Menu {
 					top: 20px;
+					padding: 0;
+					background: transparent;
 					.bar {
 						background: $white;
 					}
@@ -255,6 +257,13 @@
 					width: auto;
 					path {
 						fill: white;
+					}
+				}
+			}
+			.menu {
+				&.open {
+					#Menu {
+						padding: 0;
 					}
 				}
 			}

@@ -3360,7 +3360,9 @@ footer {
     width: 100%;
     padding: 0; }
     body.home header #Menu {
-      top: 20px; }
+      top: 20px;
+      padding: 0;
+      background: transparent; }
       body.home header #Menu .bar {
         background: #ffffff; }
     body.home header .logo {
@@ -3385,6 +3387,8 @@ footer {
         width: auto; }
         body header .logo svg path {
           fill: white; }
+    body header .menu.open #Menu {
+      padding: 0; }
 
   #help .copy {
     -webkit-transform: translate(0, 0);
