@@ -151,22 +151,18 @@ function emailSubmit() {
         $message = isset( $_POST['message'] ) ? preg_replace( "/[^\.\-\' a-zA-Z0-9]/", "", $_POST['message'] ) : "";
 
         $email = esc_attr(get_option('admin_email'));
-        var_dump($email);
         $to = $firstname.' '.$lastname.' <'.$emailaddress.'>';
 
         if ( $firstname && $lastname && $emailaddress && $message ) {
 
             $subject = "Wyzerr Contact Lead";
 
-            $headers = array(
-                    'From' => $to,
-                    'Subject' => $subject,
-                    'Reply-To' => $to,
-                    'X-Mailer' => 'PHP/'.phpversion(),
-                    'MIME-Version' => '1.0',
-                    'Content-Type' => 'text/html',
-                    'charset' => 'ISO-8859-1'
-                );
+            $headers = 'From:' . $email . "\r\n";
+            $headers .= 'Reply-To:' . $to . "\r\n";
+            $headers .= "MIME-Version: 1.0\r\n";
+            $headers .= "Content-Type: text/html\r\n";
+            $headers .= "charset: ISO-8859-1\r\n";
+            $headers .= "X-Mailer: PHP/".phpversion()."\r\n";
 
             $formcontent = '<html><body><center>';
                 $formcontent .= '<table rules="all" style="border: 1px solid #cccccc; width: 600px;" cellpadding="10">';
@@ -183,7 +179,7 @@ function emailSubmit() {
             $key = esc_attr(get_option('mailchimp_api'));
             $list = esc_attr(get_option('mailchimp_list'));
 
-            if(!empty($key) && !empty($list)) {
+            if($success && !empty($key) && !empty($list)) {
 
                 $auth = base64_encode( 'user:'.$key );
 

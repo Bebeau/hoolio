@@ -159,50 +159,51 @@ var init = {
 			setTimeout(
 				function(){
 					jQuery('#videos').removeClass("slideIn");
-				}, 9000
+				}, 7500
 			);
 			setTimeout(
 				function(){
 					jQuery('#videos .active').removeClass("active").next().addClass("active")[0].play();
 					jQuery('#videos').addClass("slideIn");
-				}, 9500
+				}, 8500
 			);
 			setTimeout(
 				function(){
 					jQuery('#videos').removeClass("slideIn");
-				}, 22000
-			);
-			setTimeout(
-				function(){
-					jQuery('#videos .active').removeClass("active").next().addClass("active")[0].play();
-					jQuery('#videos').addClass("slideIn");
 				}, 22500
 			);
 			setTimeout(
 				function(){
+					jQuery('#videos .active').removeClass("active").next().addClass("active")[0].play();
+					jQuery('#videos').addClass("slideIn");
+				}, 23500
+			);
+			setTimeout(
+				function(){
 					jQuery('#videos').removeClass("slideIn");
-				}, 29000
+				}, 31500
 			);
 			setTimeout(
 				function(){
 					jQuery('#videos .active').removeClass("active").prev().prev().addClass("active");
-					jQuery('#videos').addClass("slideIn");
 					init.topVideos();
-				}, 29500
+					jQuery('#videos').addClass("slideIn");
+				}, 33000
 			);
 		}
 	},
 	playVideo: function() {
 		var vid = jQuery('#help video');
     	vid.prop('loop', false);
+    	playing = false;
         if (move.isOnScreen(vid)) {
         	vid[0].play();
-        	move.onMove();
+        	playing = true;
         } else {
         	jQuery(window).scroll(function(){
-        		if (move.isOnScreen(vid)) {
+        		if (move.isOnScreen(vid) && !playing) {
             		vid[0].play();
-        			move.onMove();
+            		playing = true;
             	}
             });
         }

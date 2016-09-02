@@ -31,8 +31,13 @@
 		font-size: 18pt;
 	}
 	.thirds {
-		width: auto;
 		margin: 50px auto;
+		article {
+			p {
+				box-sizing: border-box;
+				padding: 0 25px;
+			}
+		}
 	}
 	#top {
 		.inner {
@@ -91,8 +96,15 @@
 	}
 	#metrics {
 		.half {
-			width: auto;
 			padding: 0 15px;
+			article {
+				&.phone {
+					img {
+						margin: 0 0 0 -175px;
+						max-height: 600px;
+					}
+				}
+			}
 		}
 	}
 }

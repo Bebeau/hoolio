@@ -1825,10 +1825,13 @@ body {
   -o-font-smoothing: antialiased !important;
   font-smoothing: antialiased !important;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.04);
-  font-family: 'din light', sans-serif;
+  font-family: 'din medium', sans-serif;
   overflow-x: hidden; }
   body.home header .logo svg path, body.error404 header .logo svg path {
     fill: #1293cc; }
+  body p {
+    font-family: 'pn regular';
+    line-height: 30px; }
 
 .btn {
   text-align: center;
@@ -1872,7 +1875,7 @@ img {
   max-width: 100%; }
 
 h1 {
-  font-size: 48pt; }
+  font-size: 38pt; }
 
 h3 {
   font-size: 24pt;
@@ -1952,9 +1955,6 @@ p {
     .thirds article img {
       height: 150px;
       width: auto; }
-    .thirds article p {
-      box-sizing: border-box;
-      padding: 0 25px; }
 
 #signUp {
   background: rgba(0, 0, 0, 0.9);
@@ -2275,6 +2275,18 @@ header {
         -ms-transform: translate(200px, 0);
         -o-transform: translate(200px, 0);
         transform: translate(200px, 0); }
+      #top .half video#iphone {
+        -webkit-transform: translate(-50px, 0);
+        -moz-transform: translate(-50px, 0);
+        -ms-transform: translate(-50px, 0);
+        -o-transform: translate(-50px, 0);
+        transform: translate(-50px, 0); }
+      #top .half video#tablet {
+        -webkit-transform: translate(50px, 0);
+        -moz-transform: translate(50px, 0);
+        -ms-transform: translate(50px, 0);
+        -o-transform: translate(50px, 0);
+        transform: translate(50px, 0); }
   #top #clientLogos {
     position: absolute;
     top: 88%;
@@ -2404,17 +2416,20 @@ header {
           -moz-transition: all 0.3s ease-in-out;
           transition: all 0.3s ease-in-out; }
         #meet ul#bubbles li .frame .copy {
-          width: 1170px;
+          width: 800px;
           -webkit-transform: translate(0, 25px);
           -moz-transform: translate(0, 25px);
           -ms-transform: translate(0, 25px);
           -o-transform: translate(0, 25px);
           transform: translate(0, 25px); }
           #meet ul#bubbles li .frame .copy img {
+            max-height: 600px;
             max-width: 100%;
             height: auto;
-            margin: 0;
-            max-height: 100%; }
+            width: auto;
+            margin: 0; }
+          #meet ul#bubbles li .frame .copy i {
+            top: 0; }
         #meet ul#bubbles li .frame .btn {
           background: linear-gradient(white, #e6e6e6);
           color: black; }
@@ -2726,10 +2741,11 @@ header {
         margin: 0 0 0 -223px; }
       #metrics .half article p {
         color: white;
-        box-sizing: border-box; }
+        box-sizing: border-box;
+        line-height: normal; }
       #metrics .half article .stat {
         color: white;
-        margin: 25px 0; }
+        margin: 15px 0; }
         #metrics .half article .stat span {
           font-size: 48pt;
           text-align: center;
@@ -2755,7 +2771,8 @@ header {
     display: block;
     text-transform: uppercase;
     margin-top: 50px;
-    line-height: 24px; }
+    line-height: 24px;
+    font-family: 'pn regular', sans-serif; }
     #testimonials cite span {
       display: block;
       letter-spacing: 3px; }
@@ -2978,7 +2995,8 @@ input[placeholder], [placeholder], *[placeholder] {
 footer {
   height: 25vh;
   background: #1293cc;
-  text-align: center; }
+  text-align: center;
+  font-family: 'pn regular', sans-serif; }
   footer .menu ul {
     list-style: none;
     display: block;
@@ -2990,7 +3008,7 @@ footer {
         color: white;
         text-decoration: none;
         text-transform: uppercase;
-        font-size: 18pt; }
+        font-size: 14pt; }
         footer .menu ul li a:after {
           content: "|";
           padding-left: 15px;
@@ -3000,7 +3018,8 @@ footer {
   footer .social {
     margin: 25px auto 0; }
   footer .legal {
-    margin-top: 25px; }
+    margin-top: 25px;
+    color: #083f57; }
 
 [data-animation="slideUp"] {
   display: block;
@@ -3200,8 +3219,10 @@ footer {
     font-size: 18pt; }
 
   .thirds {
-    width: auto;
     margin: 50px auto; }
+    .thirds article p {
+      box-sizing: border-box;
+      padding: 0 25px; }
 
   #top .inner {
     -webkit-transform: translate(0, 0);
@@ -3245,8 +3266,10 @@ footer {
     display: block; }
 
   #metrics .half {
-    width: auto;
-    padding: 0 15px; } }
+    padding: 0 15px; }
+    #metrics .half article.phone img {
+      margin: 0 0 0 -175px;
+      max-height: 600px; } }
 @media (max-width: 991px) {
   #top #clientLogos span {
     -webkit-transform: scale(0.5);
