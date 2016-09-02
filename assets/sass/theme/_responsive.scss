@@ -196,12 +196,17 @@
 	}
 	.block {
 		padding: 50px 0;
+		height: auto;
+		h1 {
+			line-height: 38px;
+		}
 	}
 	.thirds {
+		width: auto;
 		margin: 15px auto;
 		article {
 			width: auto;
-			margin: 25px auto;
+			margin: 50px auto;
 			display: block;
 			text-align: center;
 			p {
@@ -256,6 +261,9 @@
 		}
 	}
 	#help {
+		.copy {
+			@include transform(translate(0,0));
+		}
 		img {
 			margin-top: 50px;
 		}
@@ -350,6 +358,7 @@
 	}
 	#metrics {
 		.half {
+			width: auto;
 			article {
 				&.phone {
 					display: none;

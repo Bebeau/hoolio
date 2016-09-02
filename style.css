@@ -3339,13 +3339,17 @@ footer {
     font-size: 16pt; }
 
   .block {
-    padding: 50px 0; }
+    padding: 50px 0;
+    height: auto; }
+    .block h1 {
+      line-height: 38px; }
 
   .thirds {
+    width: auto;
     margin: 15px auto; }
     .thirds article {
       width: auto;
-      margin: 25px auto;
+      margin: 50px auto;
       display: block;
       text-align: center; }
       .thirds article p {
@@ -3382,6 +3386,12 @@ footer {
         body header .logo svg path {
           fill: white; }
 
+  #help .copy {
+    -webkit-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0); }
   #help img {
     margin-top: 50px; }
 
@@ -3459,17 +3469,19 @@ footer {
             width: 100%;
             float: none; }
 
-  #metrics .half article.phone {
-    display: none; }
-  #metrics .half article .half {
-    margin: 50px auto; }
-  #metrics .half article img {
-    padding: 0 15px;
-    box-sizing: border-box; }
-  #metrics .half article .stat {
-    padding: 0 15px; }
-    #metrics .half article .stat span {
-      font-size: 24pt; }
+  #metrics .half {
+    width: auto; }
+    #metrics .half article.phone {
+      display: none; }
+    #metrics .half article .half {
+      margin: 50px auto; }
+    #metrics .half article img {
+      padding: 0 15px;
+      box-sizing: border-box; }
+    #metrics .half article .stat {
+      padding: 0 15px; }
+      #metrics .half article .stat span {
+        font-size: 24pt; }
 
   #testimonials {
     padding: 25px 0; }
