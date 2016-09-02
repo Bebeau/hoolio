@@ -500,6 +500,7 @@ header {
 				@include transform(translate(200px, 0));
 			}
 			&#iphone {
+				max-height: 60vh;
 				@include transform(translate(-50px, 0));
 			}
 			&#tablet {
@@ -562,7 +563,7 @@ header {
 	.copy {
 		position: relative;
 		z-index: 2;
-		@include transform(translate(0,50px));
+		@include transform(translate(0,25px));
 	}
 	h4 {
 		letter-spacing: 5px;
@@ -578,6 +579,7 @@ header {
 		height: auto;
 		position: relative;
 		z-index: 1;
+		@include transform(translate(0,-25px));
 	}
 }
 #meet {
@@ -588,6 +590,131 @@ header {
 	text-align: center;
 	.outer {
 		overflow: visible;
+	}
+	.bubblenav {
+		position: fixed;
+		top: 25px;
+		width: 100%;
+		text-align: center;
+		padding: 0;
+		z-index: 999;
+		@include transform(translate(0,-100px));
+		@include transition(all 0.3s $authenticMotion);
+		&.in {
+			@include transform(translate(0,0));
+			@include transition(all 0.3s $authenticMotion);
+		}
+		li {
+			@include border-top-radius(50%);
+			@include border-bottom-radius(50%);
+			width: 35px;
+			height: 35px;
+			display: inline-block;
+			position: relative;
+			@include transform(scale(1));
+			@include transition(transform 0.5s $easeInOutBack);
+			@include transition(width 0.3s $easeInOutBack);
+			&.selected {
+				width: 0;
+				overflow: hidden;
+				@include transform(scale(0));
+				@include transition(transform 0.3s $easeInOutBack);
+				@include transition(width 0.5s $easeInOutBack);
+			}
+			.tooltip {
+				position: absolute;
+				top: 110%;
+				left: 50%;
+				text-align: center;
+				color: black;
+				background: white;
+				white-space: nowrap;
+				box-sizing: border-box;
+				padding: 5px 10px;
+				opacity: 0;
+				@include transform(translate(-50%,5px));
+				@include transition(all 0.3s ease-in-out);
+				&.in {
+					opacity: 1;
+					@include transform(translate(-50%,0));
+					@include transition(all 0.3s ease-in-out);
+				}
+				&:before {
+					content:"";
+					position: absolute;
+					top: -5px;
+					left: 50%;
+					border-right: 5px solid transparent;
+					border-left: 5px solid transparent;
+					border-bottom: 5px solid white;
+					margin: 0 0 0 -5px;
+				}
+			}
+			&:first-child {
+				background: $orange;
+			}
+			&:nth-child(2) {
+				background: $purp;
+			}
+			&:nth-child(3) {
+				background: $pink;
+			}
+			&:nth-child(4) {
+				background: $blue;
+			}
+			&:nth-child(5) {
+				background: $gold;
+			}
+			&:nth-child(6) {
+				background: $green;
+			}
+			&.circleClose {
+				position: fixed;
+				top: -15px;
+				right: 50px;
+				z-index: 13;
+				height: 58px;
+				display: inline-block;
+				margin: 0 0 0 -4px;
+				overflow: hidden;
+				vertical-align: top;
+				border: none;
+				@include border-top-radius(0);
+				@include border-bottom-radius(0);
+				@include transition(all 0.3s $easeInOutBack);
+				.bar {
+					width: 40px;
+					height: 5px;
+					background: white;
+					display: block;
+					margin: 10px auto;
+					position: relative;
+					left: 0;
+					@include transition(all 0.3s $easeInOutBack);
+					&:first-child {
+						margin-top: 30px;
+						margin-bottom: -16px;
+						@include transform(rotate(-45deg));
+						@include transition(all 0.3s $easeInOutBack);
+					}
+					&:nth-child(2) {
+						left: 70px;
+						@include transition(all 0.3s $easeInOutBack);
+					}
+					&:last-child {
+						margin-top: -14px;
+						@include transform(rotate(45deg));
+						@include transition(all 0.3s $easeInOutBack);
+					}
+				}
+				&:hover {
+					cursor: pointer;
+				}
+			}
+			&:hover {
+				cursor: pointer;
+			}
+		}
 	}
 	ul#bubbles {
 		list-style: none;
@@ -607,6 +734,11 @@ header {
 				color: $grey;
 				position: relative;
 				z-index: 1;
+				font-family: 'pn regular';
+				text-transform: uppercase;
+				font-size: 10pt;
+				letter-spacing: 2px;
+				line-height: 18px;
 			}
 			.frame {
 				visibility: hidden;
@@ -620,7 +752,8 @@ header {
 				@include transition(all 0.3s ease-in-out);
 				h3 {
 					color: $white;
-					text-transform: capitalize;
+					text-transform: uppercase;
+					letter-spacing: 2px;
 					margin-top: 0;
 				}
 				p {
@@ -648,115 +781,6 @@ header {
 				.btn {
 					background: linear-gradient(white, darken(white,10%));
 					color: black;
-				}
-				.bubblenav {
-					position: absolute;
-					top: 25px;
-					width: 100%;
-					text-align: center;
-					padding: 0;
-					li {
-						@include border-top-radius(50%);
-						@include border-bottom-radius(50%);
-						width: 35px;
-						height: 35px;
-						display: inline-block;
-						border: 2px solid rgba(250,250,250,0.5);
-						position: relative;
-						.tooltip {
-							position: absolute;
-							top: 110%;
-							left: 50%;
-							text-align: center;
-							color: black;
-							background: white;
-							white-space: nowrap;
-							box-sizing: border-box;
-							padding: 5px 10px;
-							opacity: 0;
-							@include transform(translate(-50%,5px));
-							@include transition(all 0.3s ease-in-out);
-							&.in {
-								opacity: 1;
-								@include transform(translate(-50%,0));
-								@include transition(all 0.3s ease-in-out);
-							}
-							&:before {
-								content:"";
-								position: absolute;
-								top: -5px;
-								left: 50%;
-								border-right: 5px solid transparent;
-								border-left: 5px solid transparent;
-								border-bottom: 5px solid white;
-								margin: 0 0 0 -5px;
-							}
-						}
-						&:first-child {
-							background: radial-gradient($orange, darken($orange, 10%));
-						}
-						&:nth-child(2) {
-							background: radial-gradient($purp, darken($purp, 10%));
-						}
-						&:nth-child(3) {
-							background: radial-gradient($pink, darken($pink, 10%));
-						}
-						&:nth-child(4) {
-							background: radial-gradient(lighten($blue, 25%), lighten($blue, 15%));
-						}
-						&:nth-child(5) {
-							background: radial-gradient(lighten($gold, 5%), darken($gold, 5%));
-						}
-						&:nth-child(6) {
-							background: radial-gradient(darken($green, 10%), darken($green, 20%));
-						}
-						&.circleClose {
-							position: fixed;
-							top: 15px;
-							right: 25px;
-							z-index: 13;
-							height: 58px;
-							display: inline-block;
-							margin: 0 0 0 -4px;
-							overflow: hidden;
-							vertical-align: top;
-							border: none;
-							@include border-top-radius(0);
-							@include border-bottom-radius(0);
-							@include transition(all 0.3s $easeInOutBack);
-							.bar {
-								width: 40px;
-								height: 5px;
-								background: white;
-								display: block;
-								margin: 10px auto;
-								position: relative;
-								left: 0;
-								@include transition(all 0.3s $easeInOutBack);
-								&:first-child {
-									margin-top: 30px;
-									margin-bottom: -16px;
-									@include transform(rotate(-45deg));
-									@include transition(all 0.3s $easeInOutBack);
-								}
-								&:nth-child(2) {
-									left: 70px;
-									@include transition(all 0.3s $easeInOutBack);
-								}
-								&:last-child {
-									margin-top: -14px;
-									@include transform(rotate(45deg));
-									@include transition(all 0.3s $easeInOutBack);
-								}
-							}
-							&:hover {
-								cursor: pointer;
-							}
-						}
-						&:hover {
-							cursor: pointer;
-						}
-					}
 				}
 			}
 			.bubblewrap {
@@ -867,6 +891,9 @@ header {
 			padding: 0 25px;
 			margin: 0 0 0 -4px;
 			vertical-align: middle;
+			.icon {
+				@include transform(translate(0,-10px));
+			}
 		}
 		img {
 			max-height: 200px;

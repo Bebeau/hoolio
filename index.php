@@ -110,28 +110,28 @@
 					<h1 data-animation="slideDown">Meet Hoolio, our personal wizard.</h1>
 					<p data-animation="slideUp">Hoolio is our AI wizard here at Wyzerr. We’re grooming Hoolio to be an expert on sales, R&D, and even HR. However, like a young child, Hoolio has to start with the basics first before he can take on more advanced topics. This is what Hoolio is currently working on:</p>
 				</div>
+				<ul class="bubblenav">
+					<li class="nav nav-1" data-numb="1" title="New Products &amp; Services"></li>
+					<li class="nav nav-2" data-numb="2" title="Customer Loyalty"></li>
+					<li class="nav nav-3" data-numb="3" title="How To Increase Sales"></li>
+					<li class="nav nav-4" data-numb="4" title="Marketing Message"></li>
+					<li class="nav nav-5" data-numb="5" title="Employee Retention"></li>
+					<li class="nav nav-6" data-numb="6" title="Customer Insights"></li>
+					<li class="circleClose">
+						<span class="bar cross"></span>
+						<span class="bar middle"></span>
+						<span class="bar cross"></span>
+					</li>
+				</ul>
 				<ul id="bubbles">
 					<li>
-						<div class="bubblewrap bubble-1">
+						<div class="bubblewrap bubble-1" data-numb="1">
 							<div data-animation="bubble" class="bubble">
 								<i class="icon icon-bar-graph"></i>
 							</div>
-							<span class="label" data-animation="slideUp">new products &amp; services</span>
+							<span class="label" data-animation="slideUp">new products<br />&amp; services</span>
 						</div>
 						<div class="frame">
-							<ul class="bubblenav">
-								<li class="nav" data-numb="1" title="New Products &amp; Services"></li>
-								<li class="nav" data-numb="2" title="Customer Loyalty"></li>
-								<li class="nav" data-numb="3" title="How To Increase Sales"></li>
-								<li class="nav" data-numb="4" title="Marketing Message"></li>
-								<li class="nav" data-numb="5" title="Employee Retention"></li>
-								<li class="nav" data-numb="6" title="Customer Insights"></li>
-								<li class="circleClose">
-									<span class="bar cross"></span>
-									<span class="bar middle"></span>
-									<span class="bar cross"></span>
-								</li>
-							</ul>
 							<div class="outer">
 								<div class="inner">
 									<div class="copy">
@@ -139,7 +139,7 @@
 											<i class="icon icon-bar-graph"></i>
 											<h3>New Products &amp; Services</h3>
 											<p>Hoolio is our personal wizard here at Wyzerr. Don’t worry, you can name your personal wizard yourself. Hoolio helps with the following:</p>
-											<a href="<?php echo site_url('contact'); ?>" class="btn">Learn More</a>
+											<a href="<?php echo site_url('contact'); ?>" class="btn">Be A Wizard</a>
 										</div>
 										<div class="half">
 											<img src="<?php echo bloginfo('template_directory');?>/assets/images/iphone2.png" alt="" />
@@ -150,26 +150,13 @@
 						</div>
 					</li>
 					<li>
-						<div class="bubblewrap bubble-2">
+						<div class="bubblewrap bubble-2" data-numb="2">
 							<div data-animation="bubble" class="bubble">
 								<i class="icon icon-ruler"></i>
 							</div>
-							<span class="label" data-animation="slideUp">customer loyalty</span>
+							<span class="label" data-animation="slideUp">customer<br />loyalty</span>
 						</div>
 						<div class="frame">
-							<ul class="bubblenav">
-								<li class="nav" data-numb="1" title="New Products &amp; Services"></li>
-								<li class="nav" data-numb="2" title="Customer Loyalty"></li>
-								<li class="nav" data-numb="3" title="How To Increase Sales"></li>
-								<li class="nav" data-numb="4" title="Marketing Message"></li>
-								<li class="nav" data-numb="5" title="Employee Retention"></li>
-								<li class="nav" data-numb="6" title="Customer Insights"></li>
-								<li class="circleClose">
-									<span class="bar cross"></span>
-									<span class="bar middle"></span>
-									<span class="bar cross"></span>
-								</li>
-							</ul>
 							<div class="outer">
 								<div class="inner">
 									<div class="copy">
@@ -188,26 +175,13 @@
 						</div>
 					</li>
 					<li>
-						<div class="bubblewrap bubble-3">
+						<div class="bubblewrap bubble-3" data-numb="3">
 							<div data-animation="bubble" class="bubble">
 								<i class="icon icon-db"></i>
 							</div>
-							<span class="label" data-animation="slideUp">how to increase sales</span>
+							<span class="label" data-animation="slideUp">increase<br />sales</span>
 						</div>
 						<div class="frame">
-							<ul class="bubblenav">
-								<li class="nav" data-numb="1" title="New Products &amp; Services"></li>
-								<li class="nav" data-numb="2" title="Customer Loyalty"></li>
-								<li class="nav" data-numb="3" title="How To Increase Sales"></li>
-								<li class="nav" data-numb="4" title="Marketing Message"></li>
-								<li class="nav" data-numb="5" title="Employee Retention"></li>
-								<li class="nav" data-numb="6" title="Customer Insights"></li>
-								<li class="circleClose">
-									<span class="bar cross"></span>
-									<span class="bar middle"></span>
-									<span class="bar cross"></span>
-								</li>
-							</ul>
 							<div class="outer">
 								<div class="inner">
 									<div class="copy">
@@ -215,7 +189,7 @@
 											<i class="icon icon-db"></i>
 											<h3>How To Increase Sales</h3>
 											<p>Hoolio is our personal wizard here at Wyzerr. Don’t worry, you can name your personal wizard yourself. Hoolio helps with the following:</p>
-											<a href="<?php echo site_url('contact'); ?>" class="btn">Learn More</a>
+											<a href="<?php echo site_url('contact'); ?>" class="btn">Be A Wizard</a>
 										</div>
 										<div class="half">
 											<img src="<?php echo bloginfo('template_directory');?>/assets/images/iphone2.png" alt="" />
@@ -226,26 +200,13 @@
 						</div>
 					</li>
 					<li>
-						<div class="bubblewrap bubble-4">
+						<div class="bubblewrap bubble-4" data-numb="4">
 							<div data-animation="bubble" class="bubble">
 								<i class="icon icon-profile"></i>
 							</div>
-							<span class="label" data-animation="slideUp">marketing message</span>
+							<span class="label" data-animation="slideUp">marketing<br />message</span>
 						</div>
 						<div class="frame">
-							<ul class="bubblenav">
-								<li class="nav" data-numb="1" title="New Products &amp; Services"></li>
-								<li class="nav" data-numb="2" title="Customer Loyalty"></li>
-								<li class="nav" data-numb="3" title="How To Increase Sales"></li>
-								<li class="nav" data-numb="4" title="Marketing Message"></li>
-								<li class="nav" data-numb="5" title="Employee Retention"></li>
-								<li class="nav" data-numb="6" title="Customer Insights"></li>
-								<li class="circleClose">
-									<span class="bar cross"></span>
-									<span class="bar middle"></span>
-									<span class="bar cross"></span>
-								</li>
-							</ul>
 							<div class="outer">
 								<div class="inner">
 									<div class="copy">
@@ -253,7 +214,7 @@
 											<i class="icon icon-profile"></i>
 											<h3>Marketing Message</h3>
 											<p>Hoolio is our personal wizard here at Wyzerr. Don’t worry, you can name your personal wizard yourself. Hoolio helps with the following:</p>
-											<a href="<?php echo site_url('contact'); ?>" class="btn">Learn More</a>
+											<a href="<?php echo site_url('contact'); ?>" class="btn">Be A Wizard</a>
 										</div>
 										<div class="half">
 											<img src="<?php echo bloginfo('template_directory');?>/assets/images/iphone2.png" alt="" />
@@ -264,26 +225,13 @@
 						</div>
 					</li>
 					<li>
-						<div class="bubblewrap bubble-5">
+						<div class="bubblewrap bubble-5" data-numb="5">
 							<div data-animation="bubble" class="bubble">
 								<i class="icon icon-smile"></i>
 							</div>
-							<span class="label" data-animation="slideUp">employee retention</span>
+							<span class="label" data-animation="slideUp">employee<br />retention</span>
 						</div>
 						<div class="frame">
-							<ul class="bubblenav">
-								<li class="nav" data-numb="1" title="New Products &amp; Services"></li>
-								<li class="nav" data-numb="2" title="Customer Loyalty"></li>
-								<li class="nav" data-numb="3" title="How To Increase Sales"></li>
-								<li class="nav" data-numb="4" title="Marketing Message"></li>
-								<li class="nav" data-numb="5" title="Employee Retention"></li>
-								<li class="nav" data-numb="6" title="Customer Insights"></li>
-								<li class="circleClose">
-									<span class="bar cross"></span>
-									<span class="bar middle"></span>
-									<span class="bar cross"></span>
-								</li>
-							</ul>
 							<div class="outer">
 								<div class="inner">
 									<div class="copy">
@@ -291,7 +239,7 @@
 											<i class="icon icon-smile"></i>
 											<h3>Employee Retention</h3>
 											<p>Hoolio is our personal wizard here at Wyzerr. Don’t worry, you can name your personal wizard yourself. Hoolio helps with the following:</p>
-											<a href="<?php echo site_url('contact'); ?>" class="btn">Learn More</a>
+											<a href="<?php echo site_url('contact'); ?>" class="btn">Be A Wizard</a>
 										</div>
 										<div class="half">
 											<img src="<?php echo bloginfo('template_directory');?>/assets/images/iphone2.png" alt="" />
@@ -302,26 +250,13 @@
 						</div>
 					</li>
 					<li>
-						<div class="bubblewrap bubble-6">
+						<div class="bubblewrap bubble-6" data-numb="6">
 							<div data-animation="bubble" class="bubble">
 								<i class="icon icon-insights"></i>
 							</div>
-							<span class="label" data-animation="slideUp">consumer insights</span>
+							<span class="label" data-animation="slideUp">consumer<br />insights</span>
 						</div>
 						<div class="frame">
-							<ul class="bubblenav">
-								<li class="nav" data-numb="1" title="New Products &amp; Services"></li>
-								<li class="nav" data-numb="2" title="Customer Loyalty"></li>
-								<li class="nav" data-numb="3" title="How To Increase Sales"></li>
-								<li class="nav" data-numb="4" title="Marketing Message"></li>
-								<li class="nav" data-numb="5" title="Employee Retention"></li>
-								<li class="nav" data-numb="6" title="Customer Insights"></li>
-								<li class="circleClose">
-									<span class="bar cross"></span>
-									<span class="bar middle"></span>
-									<span class="bar cross"></span>
-								</li>
-							</ul>
 							<div class="outer">
 								<div class="inner">
 									<div class="copy">
@@ -329,7 +264,7 @@
 											<i class="icon icon-insights"></i>
 											<h3>Consumer Insights</h3>
 											<p>Hoolio is our personal wizard here at Wyzerr. Don’t worry, you can name your personal wizard yourself. Hoolio helps with the following:</p>
-											<a href="<?php echo site_url('contact'); ?>" class="btn">Learn More</a>
+											<a href="<?php echo site_url('contact'); ?>" class="btn">Be A Wizard</a>
 										</div>
 										<div class="half">
 											<img src="<?php echo bloginfo('template_directory');?>/assets/images/iphone2.png" alt="" />

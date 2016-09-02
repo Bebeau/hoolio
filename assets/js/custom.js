@@ -322,13 +322,18 @@ var init = {
 	bubbleOpen: function() {
 		jQuery('.bubblewrap').click(function(e){
 			e.preventDefault();
+			
 			var item = jQuery(this).parent();
 			var icon = item.find("i");
+			var numb = jQuery(this).attr("data-numb");
+
 			item.addClass("open");
 			icon.addClass("hide");
 			setTimeout(
 				function() {
 					jQuery('.frame',item).addClass("in");
+					jQuery('.bubblenav').addClass("in");
+					jQuery('.nav-'+numb).addClass("selected");
 				}, 250
 			);
 		});
@@ -340,8 +345,6 @@ var init = {
 			var numb = jQuery(this).attr("data-numb");
 			var tab = jQuery('.bubble-'+numb).parent();
 
-			var current = jQuery(this).parent().parent().parent();
-
 			jQuery('#Menu').hide();
 
 			if(jQuery(this).hasClass("circleClose")) {
@@ -349,32 +352,30 @@ var init = {
 				   scrollTop: jQuery("#meet").offset().top
 				}, function(){
 					jQuery('.frame').removeClass("in");
+					jQuery('.bubblenav').removeClass("in");
 					setTimeout(
 						function() {
-							current.removeClass("open");
+							jQuery('#bubbles li').removeClass("open");
 						}, 500
 					);
 					setTimeout(
 						function() {
-							current.find("i").removeClass("hide");
+							jQuery('#bubbles li').find("i").removeClass("hide");
 						}, 750
 					);
 					jQuery('#Menu').show();
 				});
 			} else {
-				current.removeClass("open");
+				jQuery('.nav').removeClass("selected");
+				jQuery('#bubbles li').removeClass("open");
 				tab.addClass("open");
 				tab.find("i").addClass("hide");
 				setTimeout(
 					function() {
 						jQuery('.frame').removeClass("in");
 						jQuery('.frame',tab).addClass("in");
+						jQuery('.nav-'+numb).addClass("selected");
 					}, 250
-				);
-				setTimeout(
-					function() {
-						current.find("i").removeClass("hide");
-					}, 500
 				);
 			}
 		});
