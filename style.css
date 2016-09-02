@@ -3360,9 +3360,7 @@ footer {
     width: 100%;
     padding: 0; }
     body.home header #Menu {
-      top: 20px;
-      padding: 0;
-      background: transparent; }
+      top: 20px; }
       body.home header #Menu .bar {
         background: #ffffff; }
     body.home header .logo {
@@ -3377,7 +3375,9 @@ footer {
     width: 100%;
     padding: 0; }
     body header #Menu {
-      top: 20px; }
+      top: 20px;
+      padding: 0;
+      background: transparent; }
       body header #Menu .bar {
         background: #ffffff; }
     body header .logo {
