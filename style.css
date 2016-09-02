@@ -2584,26 +2584,6 @@ header {
             opacity: 1; }
             #meet ul#bubbles li .bubblewrap .bubble i.hide {
               opacity: 0; }
-        #meet ul#bubbles li .bubblewrap:after {
-          content: "";
-          width: 100px;
-          height: 25px;
-          background: radial-gradient(#999999, transparent);
-          opacity: 0.75;
-          position: absolute;
-          z-index: 1;
-          top: 135px;
-          left: 50%;
-          margin-left: -50px;
-          display: block;
-          vertical-align: top;
-          border-top-left-radius: 50%;
-          border-top-right-radius: 50%;
-          border-bottom-left-radius: 50%;
-          border-bottom-right-radius: 50%;
-          -webkit-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-          -moz-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
         #meet ul#bubbles li .bubblewrap:hover {
           cursor: pointer; }
           #meet ul#bubbles li .bubblewrap:hover .bubble {
@@ -2611,13 +2591,6 @@ header {
             -webkit-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             -moz-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
-          #meet ul#bubbles li .bubblewrap:hover:after {
-            width: 125px;
-            margin-left: -62.5px;
-            opacity: 0.25;
-            -webkit-transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            -moz-transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
       #meet ul#bubbles li:first-child .bubble, #meet ul#bubbles li:first-child .frame {
         background: radial-gradient(#f36235, #e7410e); }
       #meet ul#bubbles li:first-child i {

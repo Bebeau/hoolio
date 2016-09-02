@@ -782,35 +782,35 @@ header {
 						}
 					}
 				}
-				&:after {
-					content: "";
-					width: 100px;
-					height: 25px;
-					background: radial-gradient(#999999, transparent);
-					opacity: 0.75;
-					position: absolute;
-					z-index: 1;
-					top: 135px;
-					left: 50%;
-					margin-left: -50px;
-					display: block;
-					vertical-align: top;
-					@include border-top-radius(50%);
-					@include border-bottom-radius(50%);
-					@include transition(all 0.3s $authenticMotion);
-				}
+				// &:after {
+				// 	content: "";
+				// 	width: 100px;
+				// 	height: 25px;
+				// 	background: radial-gradient(#999999, transparent);
+				// 	opacity: 0.75;
+				// 	position: absolute;
+				// 	z-index: 1;
+				// 	top: 135px;
+				// 	left: 50%;
+				// 	margin-left: -50px;
+				// 	display: block;
+				// 	vertical-align: top;
+				// 	@include border-top-radius(50%);
+				// 	@include border-bottom-radius(50%);
+				// 	@include transition(all 0.3s $authenticMotion);
+				// }
 				&:hover {
 					cursor: pointer;
 					.bubble {
 						top: -10px;
 						@include transition(all 0.3s $authenticMotion);
 					}
-					&:after {
-						width: 125px;
-						margin-left: -62.5px;
-						opacity: 0.25;
-						@include transition(all 0.3s $easeInOutQuad);
-					}
+					// &:after {
+					// 	width: 125px;
+					// 	margin-left: -62.5px;
+					// 	opacity: 0.25;
+					// 	@include transition(all 0.3s $easeInOutQuad);
+					// }
 				}
 			}
 			&:first-child{
