@@ -411,6 +411,7 @@ var init = {
         	jQuery('.btn-submit').replaceWith('<button class="btn btn-submit success"><i class="fa fa-check"></i></button>');
             jQuery("input").val("");
             jQuery("textarea").val("");
+            jQuery('.dropdown button').html('Area of interest <i class="fa fa-angle-down"></i>');
             setTimeout(
             	function() {
             		jQuery('.btn-submit').replaceWith('<button class="btn btn-submit">Submit</button>');

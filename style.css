@@ -3269,7 +3269,11 @@ footer {
     padding: 0 15px; }
     #metrics .half article.phone img {
       margin: 0 0 0 -175px;
-      max-height: 600px; } }
+      max-height: 600px; }
+
+  #contact {
+    height: auto;
+    padding: 50px 0; } }
 @media (max-width: 991px) {
   #top #clientLogos span {
     -webkit-transform: scale(0.5);
