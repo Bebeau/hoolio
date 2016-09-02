@@ -350,19 +350,19 @@ var init = {
 			if(jQuery(this).hasClass("circleClose")) {
 				jQuery('html,body').animate({
 				   scrollTop: jQuery("#meet").offset().top
-				}, function(){
+				}, 100, function(){
 					jQuery('.frame').removeClass("in");
 					jQuery('.bubblenav').removeClass("in");
 					jQuery('.nav').removeClass("selected");
 					setTimeout(
 						function() {
 							jQuery('#bubbles li').removeClass("open");
-						}, 500
+						}, 250
 					);
 					setTimeout(
 						function() {
 							jQuery('#bubbles li').find("i").removeClass("hide");
-						}, 750
+						}, 500
 					);
 					jQuery('#Menu').show();
 				});
