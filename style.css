@@ -2914,9 +2914,13 @@ header {
       margin: 0 10px 0 0;
       padding: 0; }
     #contact .btn-submit.success {
-      background: linear-gradient(green, #006700); }
+      background: linear-gradient(green, #006700);
+      margin: 0;
+      padding: 0; }
     #contact .btn-submit.error {
-      background: linear-gradient(red, #e60000); }
+      background: linear-gradient(red, #e60000);
+      margin: 0;
+      padding: 0; }
   #contact #dropdown {
     position: relative;
     width: 48%;
