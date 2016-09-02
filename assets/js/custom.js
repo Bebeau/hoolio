@@ -353,6 +353,7 @@ var init = {
 				}, function(){
 					jQuery('.frame').removeClass("in");
 					jQuery('.bubblenav').removeClass("in");
+					jQuery('.nav').removeClass("selected");
 					setTimeout(
 						function() {
 							jQuery('#bubbles li').removeClass("open");
