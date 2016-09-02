@@ -72,6 +72,11 @@ body {
 					}
 				}
 			}
+			#Menu {
+				.bar {
+					background: $blue;
+				}
+			}
 		}
 	}
 	p {
@@ -322,8 +327,6 @@ header {
 		margin: 0 0 0 -4px;
 		overflow: hidden;
 		vertical-align: top;
-		background: $blue;
-		padding: 5px 15px;
 		@include transition(all 0.3s $easeInOutBack);
 		.bar {
 			width: 40px;
@@ -341,6 +344,11 @@ header {
 		&.slidein {
 			width: 58px;
 			@include transition(all 0.3s $easeInOutBack);
+		}
+		&.blue {
+			.bar {
+				background: $blue;
+			}
 		}
 	}
 	.menu {
@@ -439,7 +447,6 @@ header {
 	&.open {
 		@include transition(all 0.3s $easeInOutBack);
 		#Menu {
-			padding-bottom: 10px;
 			.bar {
 				background: $white;
 				&:first-child {

@@ -139,6 +139,18 @@ var init = {
 		init.playVideo();
 		init.topVideos();
 		init.tooltip();
+		init.subNav();
+	},
+	subNav: function() {
+		var height = jQuery('#pageBanner').outerHeight();
+		jQuery(window).scroll(function(){
+		    if(jQuery(window).scrollTop() > (height - 50)){
+		       jQuery("#Menu").addClass("blue");
+		    }
+		    else{
+		       jQuery("#Menu").removeClass("blue");
+		    }
+		});
 	},
 	tooltip: function() {
 		jQuery('.bubblenav li.nav').hover(function(){
