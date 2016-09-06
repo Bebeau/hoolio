@@ -3368,7 +3368,7 @@ footer {
       -moz-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
       #bubblesMobile .frame.open {
-        height: 668px;
+        height: 688px;
         -webkit-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         -moz-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
