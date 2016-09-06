@@ -166,14 +166,14 @@
 		.frame {
 			height: 80px;
 			overflow: hidden;
-			@include transition(all 0.3s $easeInOutBack);
+			@include transition(all 0.3s $authenticMotion);
 			&.open {
-				height: 100%;
-				@include transition(all 0.3s $easeInOutBack);
+				height: 668px;
+				@include transition(all 0.3s $authenticMotion);
 				.titleBar {
 					h3 {
 						text-align: center;
-						@include transition(all 0.3s $easeInOutBack);
+						@include transition(all 0.3s $authenticMotion);
 					}
 				}
 			}
@@ -199,7 +199,7 @@
 					vertical-align: middle;
 					padding: 15px 0;
 					text-align: left;
-					@include transition(all 0.3s $easeInOutBack);
+					@include transition(all 0.3s $authenticMotion);
 				}
 			}
 			p, h3 {

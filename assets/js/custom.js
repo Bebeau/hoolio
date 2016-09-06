@@ -143,14 +143,19 @@ var init = {
 		init.mobileBubbles();
 	},
 	mobileBubbles: function() {
-		jQuery('#bubblesMobile .frame').click(function(){
+		jQuery('#bubblesMobile .frame').click(function(e){
+			e.preventDefault();
+			var section = jQuery(this);
 			jQuery('#bubblesMobile .frame').removeClass("open");
-			jQuery('html,body').animate({
-			   scrollTop: jQuery(this).offset().top - 94
-			});
-
-			jQuery(this).addClass("open");
-			
+			setTimeout(
+				function(){
+					jQuery('html,body').animate({
+					   scrollTop: section.offset().top - 94
+					}, 250, function(){
+						section.addClass("open");
+					});
+				}, 500
+			);			
 		});
 	},
 	subNav: function() {
@@ -258,13 +263,11 @@ var init = {
 		var eventfired = false;
 		if( numbers.length) {
 			if(move.isOnScreen(numbers) && eventfired === false) {
-				console.log("on screen");
 				jQuery('.timer').countTo();
 				eventfired = true;
 			} else {
 				jQuery(window).scroll(function(){
 					if(move.isOnScreen(numbers) && eventfired === false) {
-						console.log("trigger");
 						jQuery('.timer').countTo();
 						eventfired = true;
 					}

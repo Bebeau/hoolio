@@ -3364,19 +3364,19 @@ footer {
     #bubblesMobile .frame {
       height: 80px;
       overflow: hidden;
-      -webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-      -moz-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-      transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+      -webkit-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      -moz-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
       #bubblesMobile .frame.open {
-        height: 100%;
-        -webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        -moz-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+        height: 668px;
+        -webkit-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        -moz-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
         #bubblesMobile .frame.open .titleBar h3 {
           text-align: center;
-          -webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-          -moz-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-          transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+          -webkit-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+          -moz-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
       #bubblesMobile .frame img {
         max-width: 50%;
         -webkit-transform: translate(0, 15px);
@@ -3401,9 +3401,9 @@ footer {
           vertical-align: middle;
           padding: 15px 0;
           text-align: left;
-          -webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-          -moz-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-          transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+          -webkit-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+          -moz-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
       #bubblesMobile .frame p, #bubblesMobile .frame h3 {
         color: white; }
       #bubblesMobile .frame p {
