@@ -1,52 +1,54 @@
-		<section id="testimonials">
-			<div class="outer">
-				<div class="inner" data-animation="slideUp">
-					<?php 
-						query_posts( array(
-					            'posts_per_page' => 1,
-					            'order' => 'DESC',
-					            'post_type' => 'testimonials'
-					        )
-					    );
-					    if (have_posts()) : 
-					    	echo '<div class="m-scooch m-fluid m-scooch-testimonials">';
-					    	echo '<div class="m-scooch-inner">';
-					    	while (have_posts()) : the_post();
+		
+		<?php 
+			query_posts( array(
+		            'posts_per_page' => 1,
+		            'order' => 'DESC',
+		            'post_type' => 'testimonials'
+		        )
+		    );
+		    if (have_posts()) : 
+		    	echo '<section id="testimonials">';
+					echo '<div class="outer">';
+						echo '<div class="inner" data-animation="slideUp">';
+		    	echo '<div class="m-scooch m-fluid m-scooch-testimonials">';
+		    	echo '<div class="m-scooch-inner">';
+		    	while (have_posts()) : the_post();
 
-					        $name = get_post_meta($post->ID,'testimonial_name', true);
-					        $title = get_post_meta($post->ID,'testimonial_title', true);
-					        $company = get_post_meta($post->ID,'testimonial_company', true);
+		        $name = get_post_meta($post->ID,'testimonial_name', true);
+		        $title = get_post_meta($post->ID,'testimonial_title', true);
+		        $company = get_post_meta($post->ID,'testimonial_company', true);
 
-					        if(!empty($name) && !empty($title) && !empty($company)) {
-					            echo '<div class="m-item active">';
-					                echo '<blockquote>'.get_the_content().'</blockquote>';
-					                echo '<cite>';
-					                    echo '<span class="name">'.$name.'</span>';
-					                    echo '<span class="title">'.$title.'</span>';
-					                    echo '<span class="company">'.$company.'</span>';
-					                echo '</cite>';
-					            echo '</div>';
-					        }
-					        endwhile;
-					        echo '</div>';
-					    endif;
-					?>
-					<?php 
-						$c = 1;
-					    if (have_posts()) : 
-					    	echo '<div class="m-scooch-controls m-scooch-bulleted">';
-					    	while (have_posts()) : the_post();
-					    	echo '<a href="" data-m-slide="'.$c.'"></a>';
-					    	$c++;
-					    	endwhile;
-					    	echo '</div>';
-					    	echo '</div>';
-					    endif;
-					    wp_reset_query();
-				    ?>
-				</div>
-			</div>
-		</section>
+		        if(!empty($name) && !empty($title) && !empty($company)) {
+		            echo '<div class="m-item active">';
+		                echo '<blockquote>'.get_the_content().'</blockquote>';
+		                echo '<cite>';
+		                    echo '<span class="name">'.$name.'</span>';
+		                    echo '<span class="title">'.$title.'</span>';
+		                    echo '<span class="company">'.$company.'</span>';
+		                echo '</cite>';
+		            echo '</div>';
+		        }
+		        endwhile;
+		        echo '</div>';
+		    endif;
+		?>
+		<?php 
+			$c = 1;
+		    if (have_posts()) : 
+		    	echo '<div class="m-scooch-controls m-scooch-bulleted">';
+		    	while (have_posts()) : the_post();
+		    	echo '<a href="" data-m-slide="'.$c.'"></a>';
+		    	$c++;
+		    	endwhile;
+		    	echo '</div>';
+		    	echo '</div>';
+		    	
+		    	echo '</div>';
+		        echo '</div>';
+		        echo '</section>';
+		    endif;
+		    wp_reset_query();
+	    ?>
 
 		<section id="cta">
 			<article class="outer">

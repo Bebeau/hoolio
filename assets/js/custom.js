@@ -140,6 +140,18 @@ var init = {
 		init.topVideos();
 		init.tooltip();
 		init.subNav();
+		init.mobileBubbles();
+	},
+	mobileBubbles: function() {
+		jQuery('#bubblesMobile .frame').click(function(){
+			jQuery('#bubblesMobile .frame').removeClass("open");
+			jQuery('html,body').animate({
+			   scrollTop: jQuery(this).offset().top - 94
+			});
+
+			jQuery(this).addClass("open");
+			
+		});
 	},
 	subNav: function() {
 		var height = jQuery('#pageBanner').outerHeight();

@@ -161,6 +161,86 @@
 	}
 }
 @media(max-width: 768px) {
+	#bubblesMobile {
+		display: block !important;
+		.frame {
+			height: 80px;
+			overflow: hidden;
+			@include transition(all 0.3s $easeInOutBack);
+			&.open {
+				height: 100%;
+				@include transition(all 0.3s $easeInOutBack);
+				.titleBar {
+					h3 {
+						text-align: center;
+						@include transition(all 0.3s $easeInOutBack);
+					}
+				}
+			}
+			img {
+				max-width: 50%;
+				@include transform(translate(0,15px));
+			}
+			.titleBar {
+				position: relative;
+				.icon {
+					display: inline-block;
+					height: 50px;
+					width: auto;
+					max-width: 100px;
+					min-width: 50px;
+					vertical-align: middle;
+					margin-right: 15px;
+					margin-left: 25px;
+				}
+				h3 {
+					margin: 0;
+					line-height: 50px;
+					vertical-align: middle;
+					padding: 15px 0;
+					text-align: left;
+					@include transition(all 0.3s $easeInOutBack);
+				}
+			}
+			p, h3 {
+				color: white;
+			}
+			p {
+				box-sizing: border-box;
+				padding: 0 25px;
+				line-height: normal;
+				font-size: 14pt;
+			}
+			&:first-child {
+				background: radial-gradient($orange, darken($orange, 10%));
+			}
+			&:nth-child(2) {
+				background: radial-gradient($purp, darken($purp, 10%));
+			}
+			&:nth-child(3) {
+				background: radial-gradient($pink, darken($pink, 10%));
+			}
+			&:nth-child(4) {
+				background: radial-gradient(lighten($blue, 25%), lighten($blue, 15%));
+			}
+			&:nth-child(5) {
+				background: radial-gradient(lighten($gold, 5%), darken($gold, 5%));
+			}
+			&:last-child {
+				background: radial-gradient(darken($green, 10%), darken($green, 20%));
+			}
+			.icon {
+				top: 0;
+				@include transform(translate(0,0));
+			}
+			.btn {
+				display: block;
+			}
+		}
+	}
+	#bubbles {
+		display: none !important;
+	}
 	video {
 		display: none;
 	}
@@ -321,7 +401,7 @@
 			h1 {
 				padding: 0;
 				margin-top: 25px;
-			} 
+			}
 		}
 		ul {
 			position: relative;

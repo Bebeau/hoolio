@@ -81,8 +81,11 @@ body {
 	}
 	p {
 		font-family: 'pn regular';
-		line-height: 30px;
+		line-height: 32px;
 	}
+}
+#bubblesMobile {
+	display: none !important;
 }
 .btn {
 	text-align: center;
@@ -91,10 +94,12 @@ body {
 	margin: 15px auto;
 	padding: 0 25px;
 	line-height: 60px;
-	font-size: 18pt;
+	font-size: 24pt;
 	color: $white;
 	border: none;
 	background: linear-gradient($blue, darken($blue, 5%));
+	font-family: 'din condensed';
+	letter-spacing: 0;
 	@include border-top-radius(3px);
 	@include border-bottom-radius(3px);
 	@include transition(all 0.3s $easeInOutBack);
@@ -204,6 +209,9 @@ p {
 		width: 33.33333333%;
 		margin: 0 0 0 -4px;
 		vertical-align: top;
+		p {
+			font-style: italic;
+		}
 		img {
 			height: 150px;
 			width: auto;

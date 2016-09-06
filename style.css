@@ -1833,7 +1833,10 @@ body {
     background: #1293cc; }
   body p {
     font-family: 'pn regular';
-    line-height: 30px; }
+    line-height: 32px; }
+
+#bubblesMobile {
+  display: none !important; }
 
 .btn {
   text-align: center;
@@ -1842,10 +1845,12 @@ body {
   margin: 15px auto;
   padding: 0 25px;
   line-height: 60px;
-  font-size: 18pt;
+  font-size: 24pt;
   color: #ffffff;
   border: none;
   background: linear-gradient(#1293cc, #1082b5);
+  font-family: 'din condensed';
+  letter-spacing: 0;
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
   border-bottom-left-radius: 3px;
@@ -1954,6 +1959,8 @@ p {
     width: 33.33333333%;
     margin: 0 0 0 -4px;
     vertical-align: top; }
+    .thirds article p {
+      font-style: italic; }
     .thirds article img {
       height: 150px;
       width: auto; }
@@ -3352,6 +3359,83 @@ footer {
     width: auto;
     padding: 0 15px; } }
 @media (max-width: 768px) {
+  #bubblesMobile {
+    display: block !important; }
+    #bubblesMobile .frame {
+      height: 80px;
+      overflow: hidden;
+      -webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      -moz-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+      #bubblesMobile .frame.open {
+        height: 100%;
+        -webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        -moz-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+        #bubblesMobile .frame.open .titleBar h3 {
+          text-align: center;
+          -webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+          -moz-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+          transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+      #bubblesMobile .frame img {
+        max-width: 50%;
+        -webkit-transform: translate(0, 15px);
+        -moz-transform: translate(0, 15px);
+        -ms-transform: translate(0, 15px);
+        -o-transform: translate(0, 15px);
+        transform: translate(0, 15px); }
+      #bubblesMobile .frame .titleBar {
+        position: relative; }
+        #bubblesMobile .frame .titleBar .icon {
+          display: inline-block;
+          height: 50px;
+          width: auto;
+          max-width: 100px;
+          min-width: 50px;
+          vertical-align: middle;
+          margin-right: 15px;
+          margin-left: 25px; }
+        #bubblesMobile .frame .titleBar h3 {
+          margin: 0;
+          line-height: 50px;
+          vertical-align: middle;
+          padding: 15px 0;
+          text-align: left;
+          -webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+          -moz-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+          transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+      #bubblesMobile .frame p, #bubblesMobile .frame h3 {
+        color: white; }
+      #bubblesMobile .frame p {
+        box-sizing: border-box;
+        padding: 0 25px;
+        line-height: normal;
+        font-size: 14pt; }
+      #bubblesMobile .frame:first-child {
+        background: radial-gradient(#f36235, #e7410e); }
+      #bubblesMobile .frame:nth-child(2) {
+        background: radial-gradient(#6c57a6, #564585); }
+      #bubblesMobile .frame:nth-child(3) {
+        background: radial-gradient(#ce5a82, #bd3866); }
+      #bubblesMobile .frame:nth-child(4) {
+        background: radial-gradient(#6cc9f2, #3db8ee); }
+      #bubblesMobile .frame:nth-child(5) {
+        background: radial-gradient(#f2c132, #e2ac0f); }
+      #bubblesMobile .frame:last-child {
+        background: radial-gradient(#90cb39, #75a62b); }
+      #bubblesMobile .frame .icon {
+        top: 0;
+        -webkit-transform: translate(0, 0);
+        -moz-transform: translate(0, 0);
+        -ms-transform: translate(0, 0);
+        -o-transform: translate(0, 0);
+        transform: translate(0, 0); }
+      #bubblesMobile .frame .btn {
+        display: block; }
+
+  #bubbles {
+    display: none !important; }
+
   video {
     display: none; }
 
