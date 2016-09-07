@@ -515,15 +515,13 @@ var init = {
 		    // Insert the token ID into the form so it gets submitted to the server:
 		    frm.append(jQuery('<input type="hidden" name="stripeToken" id="stripeToken">').val(token));
 		    // Submit the form:
-		    
-		    // frm.get(0).submit(
-		    // 	function(e){
-		    // 		e.preventDefault();
-		    // 		init.checkoutSubmit(frm);
-		    // 		return false;
-	    	// 	}
-    		// );
-			init.checkoutSubmit(frm);
+		    frm.get(0).submit(
+		    	function(e){
+		    		e.preventDefault();
+		    		init.checkoutSubmit(frm);
+		    		return false;
+	    		}
+    		);
         }
 	},
 	checkoutBtn: function() {
