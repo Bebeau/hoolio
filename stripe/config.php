@@ -9,12 +9,4 @@ $stripe = array(
 
 \Stripe\Stripe::setApiKey($stripe['secret_key']);
 
-\Stripe\Plan::create(array(
-    "amount" => 22000,
-    "interval" => "year",
-    "name" => "Pre-paid Subscription",
-    "currency" => "usd",
-    "id" => "pps"
-));
-
 ?>
