@@ -229,27 +229,24 @@ add_action('wp_ajax_charge', 'checkout');
 add_action('wp_ajax_nopriv_charge', 'checkout');
 function checkout() {
     require_once('stripe/config.php');
-
     // Get the credit card details submitted by the form
     $token = $_POST['stripeToken'];
-
-    // Create a charge: this will charge the user's card
-    try {
-      $charge = \Stripe\Charge::create(array(
-        "amount" => 22000, // Amount in cents
-        "currency" => "usd",
-        "source" => $token,
-        "description" => "Example charge"
+    
+    if(!empty($token)) {
+        // Create a charge: this will charge the user's card
+        $charge = \Stripe\Charge::create(array(
+            "amount" => 22000, // Amount in cents
+            "currency" => "usd",
+            "source" => $token,
+            "description" => "Example charge"
         ));
-    } catch(\Stripe\Error\Card $e) {
-      // The card has been declined
-        echo "E";
+        // Return an appropriate response to the browser
+        if ( defined( 'DOING_AJAX' ) ) {
+            echo $charge ? "Success" : "E";
+        }
     }
 
-    // Return an appropriate response to the browser
-    if ( defined( 'DOING_AJAX' ) ) {
-        echo $charge ? "Success" : "E";
-    }
+    echo "E";
 
     die();
 }
