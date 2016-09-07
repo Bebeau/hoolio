@@ -145,13 +145,13 @@ function emailSubmit() {
 
         $success = false;
 
-        $firstname = isset( $_POST['firstname'] ) ? preg_replace( "/[^\.\-\' a-zA-Z0-9]/", "", $_POST['firstname'] ) : "";
-        $lastname = isset( $_POST['lastname'] ) ? preg_replace( "/[^\.\-\' a-zA-Z0-9]/", "", $_POST['lastname'] ) : "";
-        // $company = isset( $_POST['company'] ) ? preg_replace( "/[^\.\-\' a-zA-Z0-9]/", "", $_POST['company'] ) : "";
-        $title = isset( $_POST['title'] ) ? preg_replace( "/[^\.\-\' a-zA-Z0-9]/", "", $_POST['title'] ) : "";
+        $firstname = isset( $_POST['firstname'] ) ? $_POST['firstname'] : "";
+        $lastname = isset( $_POST['lastname'] ) ? $_POST['lastname'] : "";
+        $company = isset( $_POST['company'] ) ? $_POST['company'] : "";
+        $title = isset( $_POST['title'] ) ? $_POST['title'] : "";
         $emailaddress = filter_var($_POST['emailaddress'], FILTER_SANITIZE_EMAIL);
         $interest = isset( $_POST['interest'] ) ? $_POST['interest'] : "";
-        $message = isset( $_POST['message'] ) ? preg_replace( "/[^\.\-\' a-zA-Z0-9]/", "", $_POST['message'] ) : "";
+        $message = isset( $_POST['message'] ) ? $_POST['message'] : "";
 
         $email = esc_attr(get_option('admin_email'));
         $to = $firstname.' '.$lastname.' <'.$emailaddress.'>';
