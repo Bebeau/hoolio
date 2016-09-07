@@ -233,6 +233,8 @@ function checkout() {
     // Get the credit card details submitted by the form
     $token = $_POST['stripeToken'];
 
+    var_dump($token);
+
     // Create a charge: this will charge the user's card
     try {
       $charge = \Stripe\Charge::create(array(

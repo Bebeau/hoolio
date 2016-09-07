@@ -474,7 +474,7 @@ var init = {
             },
             dataType: 'html',
             beforeSubmit : function(arr, $form, options) {
-	            arr.push( { "charge" : "charge_nonce", "value" : meta.nonce2 });
+	            arr.push( { "charge" : "charge_nonce", "value" : meta.charge_nonce });
 	        },
             success: function(data) {
             	init.checkoutResponse(data);
@@ -515,7 +515,13 @@ var init = {
 		    // Insert the token ID into the form so it gets submitted to the server:
 		    frm.append(jQuery('<input type="hidden" name="stripeToken" id="stripeToken">').val(token));
 		    // Submit the form:
-		    init.checkoutSubmit(frm);
+		    
+		    frm.get(0).submit(
+		    	function(e){
+		    		init.checkoutSubmit(frm);
+		    		return false;
+	    		}
+    		);
         }
 	},
 	checkoutBtn: function() {
