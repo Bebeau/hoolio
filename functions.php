@@ -233,8 +233,6 @@ function checkout() {
     // Get the credit card details submitted by the form
     $token = $_POST['stripeToken'];
 
-    var_dump($token);
-
     // Create a charge: this will charge the user's card
     try {
       $charge = \Stripe\Charge::create(array(
@@ -245,12 +243,12 @@ function checkout() {
         ));
     } catch(\Stripe\Error\Card $e) {
       // The card has been declined
-        var_dump($e);
+        echo "E";
     }
 
     // Return an appropriate response to the browser
     if ( defined( 'DOING_AJAX' ) ) {
-        echo $success ? "Success" : "E";
+        echo $charge ? "Success" : "E";
     }
 
     die();

@@ -516,12 +516,14 @@ var init = {
 		    frm.append(jQuery('<input type="hidden" name="stripeToken" id="stripeToken">').val(token));
 		    // Submit the form:
 		    
-		    frm.get(0).submit(
-		    	function(e){
-		    		init.checkoutSubmit(frm);
-		    		return false;
-	    		}
-    		);
+		    // frm.get(0).submit(
+		    // 	function(e){
+		    // 		e.preventDefault();
+		    // 		init.checkoutSubmit(frm);
+		    // 		return false;
+	    	// 	}
+    		// );
+			init.checkoutSubmit(frm);
         }
 	},
 	checkoutBtn: function() {
