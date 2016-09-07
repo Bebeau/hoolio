@@ -231,15 +231,20 @@ function checkout() {
     require_once('stripe/config.php');
     // Get the credit card details submitted by the form
     $token = $_POST['stripeToken'];
-    
+    $emailaddress = filter_var($_POST['emailaddress'], FILTER_SANITIZE_EMAIL);
+
     if(!empty($token)) {
-        // Create a charge: this will charge the user's card
+        $customer = \Stripe\Customer::create(array(
+            "source" => $token,
+            "plan" => "prepaid",
+            "email" => $emailaddress
+        ));
+        // Charge the Customer instead of the card
         $charge = \Stripe\Charge::create(array(
             "amount" => 22000, // Amount in cents
             "currency" => "usd",
-            "source" => $token,
-            "description" => "Example charge"
-        ));
+            "customer" => $customer->id)
+        );
         // Return an appropriate response to the browser
         if ( defined( 'DOING_AJAX' ) ) {
             echo $charge ? "Success" : "E";
