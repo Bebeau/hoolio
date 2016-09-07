@@ -240,12 +240,17 @@ function checkout() {
             "plan" => "pps",
             "email" => $emailaddress
         ));
-        // Charge the Customer instead of the card
-        $charge = \Stripe\Charge::create(array(
-            "amount" => 22000, // Amount in cents
-            "currency" => "usd",
-            "customer" => $customer->id)
-        );
+        
+        try {
+            $charge = \Stripe\Charge::create(array(
+                "amount" => 22000, // Amount in cents
+                "currency" => "usd",
+                "customer" => $customer->id)
+            );
+        } catch(\Stripe\Error\Card $e) {
+            // The card has been declined
+        }
+
         // Return an appropriate response to the browser
         if ( defined( 'DOING_AJAX' ) ) {
             echo $charge ? "Success" : "E";
