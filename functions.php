@@ -234,9 +234,10 @@ function checkout() {
     $emailaddress = filter_var($_POST['emailaddress'], FILTER_SANITIZE_EMAIL);
 
     if(!empty($token)) {
+
         $customer = \Stripe\Customer::create(array(
             "source" => $token,
-            "plan" => "prepaid",
+            "plan" => "pps",
             "email" => $emailaddress
         ));
         // Charge the Customer instead of the card
