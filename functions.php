@@ -11,17 +11,20 @@ if (!function_exists( 'load_custom_scripts' ) ) {
 
 		// Load default Wordpress jQuery
 		wp_deregister_script('jquery');
-		wp_register_script('jquery', ("http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"), false, '', false);
+		wp_register_script('jquery', ("https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"), false, '', false);
 		wp_enqueue_script('jquery');
 
 		// Load custom scripts
 		// wp_enqueue_script('custom', get_bloginfo( 'template_url' ) . '/assets/js/custom.js', array('jquery'), null, true);
         // Registers and enqueues the required javascript.
+        wp_enqueue_script( 'stripe', 'https://js.stripe.com/v2/', array( 'jquery' ), null, true );
+
         wp_register_script( 'custom', get_bloginfo( 'template_url' ) . '/assets/js/custom.js', array( 'jquery' ), null, true );
         wp_localize_script( 'custom', 'meta',
             array(
                 'ajaxurl' => admin_url( 'admin-ajax.php' ),
-                'nonce' => wp_create_nonce( "contact" )
+                'nonce' => wp_create_nonce( "contact" ),
+                'charge_nonce' => wp_create_nonce( "charge" )
             )
         );
         wp_enqueue_script( 'custom' );
@@ -227,20 +230,22 @@ add_action('wp_ajax_nopriv_charge', 'checkout');
 function checkout() {
     require_once('stripe/config.php');
 
-    $emailaddress = filter_var($_POST['emailaddress'], FILTER_SANITIZE_EMAIL);
-    $token = isset( $_POST['card'] ) ? preg_replace( "/[^\.\-\' a-zA-Z0-9]/", "", $_POST['card'] ) : "";
-    
-    $customer = \Stripe\Customer::create(array(
-      'email' => $emailaddress,
-      'card'  => $token
-    ));
-    
-    $charge = \Stripe\Charge::create(array(
-      'customer' => $customer->id,
-      'amount'   => 22000,
-      'currency' => 'usd'
-    ));
-    
+    // Get the credit card details submitted by the form
+    $token = $_POST['stripeToken'];
+
+    // Create a charge: this will charge the user's card
+    try {
+      $charge = \Stripe\Charge::create(array(
+        "amount" => 22000, // Amount in cents
+        "currency" => "usd",
+        "source" => $token,
+        "description" => "Example charge"
+        ));
+    } catch(\Stripe\Error\Card $e) {
+      // The card has been declined
+        echo $e;
+    }
+
     // Return an appropriate response to the browser
     if ( defined( 'DOING_AJAX' ) ) {
         echo $success ? "Success" : "E";

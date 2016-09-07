@@ -250,16 +250,24 @@ p {
 			float: left;
 		}
 	}
-	.price {
+	.payment {
+		text-align: right;
+		background: #ebebeb;
 		display: inline-block;
-		color: $blue;
-		font-size: 36pt;
-		float: left;
-		@include transform(translate(0,20px));
-	}
-	.btn {
-		display: inline-block;
-		float: right;
+		margin-top: 25px;
+		.price {
+			display: inline-block;
+			color: $blue;
+			font-size: 24pt;
+			vertical-align: middle;
+			box-sizing: border-box;
+			padding: 5px 15px;
+		}
+		.btn {
+			display: inline-block;
+			vertical-align: middle;
+			margin: 0;
+		}
 	}
 	.close {
 		position: fixed;
@@ -321,9 +329,14 @@ p {
 			width: 150px;
 			height: 110%;
 			background: $blue;
+			z-index: 1;
 			@include border-top-radius(50%);
 			@include border-bottom-radius(50%);
 			@include transform(translate(50px,-5%));
+		}
+		img {
+			position: relative;
+			z-index: 2;
 		}
 	}
 	.right {
@@ -366,6 +379,23 @@ p {
 			font-size: 18pt;
 			&:focus {
 				outline: none;
+			}
+		}
+		button {
+			padding: 0 15px 0 0;
+			&.success {
+				background: linear-gradient(green, darken(green, 5%));
+				i {
+					padding: 0;
+					margin: 0;
+				}
+			}
+			&.error {
+				background: linear-gradient(red, darken(red, 5%));
+				i {
+					padding: 0;
+					margin: 0;
+				}
 			}
 		}
 		.cvc {

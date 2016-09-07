@@ -463,24 +463,18 @@ var init = {
 	contactBtn: function() {
 		jQuery('#contactfrm').submit(init.contactSubmit);
 	},
-	checkoutSubmit: function() {
-		var Frm = jQuery('#contactfrm');
-    	jQuery('<i class="fa fa-spinner fa-spin"></i>').prependTo('.btn-submit');
+	checkoutSubmit: function(frm) {
         jQuery.ajax({
             url: ajaxurl,
-            type: Frm.attr('method'),
+            type: frm.attr('method'),
             data: {
-            	firstname: jQuery('#name').val(),
-            	firstname: jQuery('#card').val(),
-            	lastname: jQuery('#expire_month').val(),
-            	company: jQuery('#expire_year').val(),
-            	title: jQuery('#cvc').val(),
             	emailaddress: jQuery('#emailaddress').val(),
+            	token: jQuery('#stripeToken').val(),
             	action: 'charge'
             },
             dataType: 'html',
             beforeSubmit : function(arr, $form, options) {
-	            arr.push( { "name" : "nonce", "value" : meta.nonce });
+	            arr.push( { "charge" : "charge_nonce", "value" : meta.nonce2 });
 	        },
             success: function(data) {
             	init.checkoutResponse(data);
@@ -488,30 +482,56 @@ var init = {
         });
         return false;
 	},
-	checkoutResponse: function(response) {
-        jQuery('.btn-submit i').remove();
-        if (response === "Success") {
-        	jQuery('.btn-submit').replaceWith('<button class="btn btn-submit success"><i class="fa fa-check"></i></button>');
+	checkoutResponse: function(data) {
+		jQuery('.btn-submit i').remove();
+		if(data === "Success") {
+			jQuery('.btn-submit').replaceWith('<button class="btn btn-submit error"><i class="fa fa-ban"></i></button>');
+         	setTimeout(
+            	function() {
+            		jQuery('.btn-submit').replaceWith('<button class="btn btn-submit">Pay Now</button>');
+            	}, 2500
+        	);
+		} else {
+			jQuery('.btn-submit').replaceWith('<button class="btn btn-submit success"><i class="fa fa-check"></i></button>');
             jQuery("input").val("");
             jQuery('.month button').html('Month <i class="fa fa-angle-down"></i>');
             jQuery('.year button').html('Year <i class="fa fa-angle-down"></i>');
             setTimeout(
             	function() {
-            		jQuery('.btn-submit').replaceWith('<button class="btn btn-submit">Submit</button>');
+            		jQuery('.btn-submit').replaceWith('<button class="btn btn-submit">Pay Now</button>');
             	}, 2500
         	);
-        }
-        if (response === "E") {
-         	jQuery('.btn-submit').replaceWith('<button class="btn btn-submit error"><i class="fa fa-ban"></i></button>');
-         	setTimeout(
-            	function() {
-            		jQuery('.btn-submit').replaceWith('<button class="btn btn-submit">Submit</button>');
-            	}, 2500
-        	);
+		}
+	},
+	stripeResponseHandler: function(status, response) {
+		var frm = jQuery('#checkoutFrm');
+        if (response.error) {
+        	// Show the errors on the form:
+		    frm.find('.payment-errors').text(response.error.message);
+		    jQuery('.btn-submit').prop('disabled', false); // Re-enable submission
+        } else {
+			// Get the token ID:
+		    var token = response.id;
+		    // Insert the token ID into the form so it gets submitted to the server:
+		    frm.append(jQuery('<input type="hidden" name="stripeToken" id="stripeToken">').val(token));
+		    // Submit the form:
+		    init.checkoutSubmit(frm);
         }
 	},
 	checkoutBtn: function() {
-		jQuery('#checkoutFrm').submit(init.checkoutSubmit);
+		Stripe.setPublishableKey('pk_test_ByoJucUkS7YYjs6OMlbtlA7x');
+		var frm = jQuery('#checkoutFrm');
+		frm.submit(
+			function(e) {
+				jQuery('<i class="fa fa-spinner fa-spin"></i>').prependTo('.btn-submit');
+				// Disable the submit button to prevent repeated clicks:
+				frm.find('.btn-submit').prop('disabled', true);
+				// Request a token from Stripe:
+    			Stripe.card.createToken(frm, init.stripeResponseHandler);
+    			// Prevent the form from being submitted:
+    			return false;
+			}
+		);
 	}
 };
 

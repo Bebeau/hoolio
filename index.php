@@ -334,7 +334,7 @@
 			<article class="phone">
 				<img src="<?php echo bloginfo('template_directory');?>/assets/images/iphone.png" alt="" />
 			</article>
-			<article data-animation="slideUp">
+			<article data-animation="slideUp" class="statsWrap">
 				<div class="outer">
 					<div class="inner">
 						<h1>Success Metrics</h1>

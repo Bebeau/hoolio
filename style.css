@@ -1992,19 +1992,22 @@ p {
     border-bottom: 1px solid #919192; }
     #checkout .dropdown.month {
       float: left; }
-  #checkout .price {
+  #checkout .payment {
+    text-align: right;
+    background: #ebebeb;
     display: inline-block;
-    color: #1293cc;
-    font-size: 36pt;
-    float: left;
-    -webkit-transform: translate(0, 20px);
-    -moz-transform: translate(0, 20px);
-    -ms-transform: translate(0, 20px);
-    -o-transform: translate(0, 20px);
-    transform: translate(0, 20px); }
-  #checkout .btn {
-    display: inline-block;
-    float: right; }
+    margin-top: 25px; }
+    #checkout .payment .price {
+      display: inline-block;
+      color: #1293cc;
+      font-size: 24pt;
+      vertical-align: middle;
+      box-sizing: border-box;
+      padding: 5px 15px; }
+    #checkout .payment .btn {
+      display: inline-block;
+      vertical-align: middle;
+      margin: 0; }
   #checkout .close {
     position: fixed;
     top: 15px;
@@ -2076,6 +2079,7 @@ p {
       width: 150px;
       height: 110%;
       background: #1293cc;
+      z-index: 1;
       border-top-left-radius: 50%;
       border-top-right-radius: 50%;
       border-bottom-left-radius: 50%;
@@ -2085,6 +2089,9 @@ p {
       -ms-transform: translate(50px, -5%);
       -o-transform: translate(50px, -5%);
       transform: translate(50px, -5%); }
+    #checkout .left img {
+      position: relative;
+      z-index: 2; }
   #checkout .right {
     background: white; }
     #checkout .right .copy {
@@ -2120,6 +2127,18 @@ p {
       font-size: 18pt; }
       #checkout form input:focus {
         outline: none; }
+    #checkout form button {
+      padding: 0 15px 0 0; }
+      #checkout form button.success {
+        background: linear-gradient(green, #006700); }
+        #checkout form button.success i {
+          padding: 0;
+          margin: 0; }
+      #checkout form button.error {
+        background: linear-gradient(red, #e60000); }
+        #checkout form button.error i {
+          padding: 0;
+          margin: 0; }
     #checkout form .cvc {
       width: 20%;
       display: inline-block; }
@@ -3309,19 +3328,20 @@ footer {
  *   <link href="/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
  * <![endif]--> */
 @media (max-height: 900px) {
+  .block {
+    height: auto;
+    padding: 100px 0; }
+
   #top {
-    padding: 0; }
-    #top .inner {
-      -webkit-transform: translate(0, -100px);
-      -moz-transform: translate(0, -100px);
-      -ms-transform: translate(0, -100px);
-      -o-transform: translate(0, -100px);
-      transform: translate(0, -100px); }
+    padding: 0;
+    height: 100vh; }
 
   #metrics {
     padding-bottom: 0; }
     #metrics .half article {
       vertical-align: bottom; }
+      #metrics .half article.statsWrap {
+        padding-bottom: 100px; }
 
   #cta {
     padding: 50px 0; }

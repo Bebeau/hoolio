@@ -117,13 +117,14 @@
 							</ul>
 							<?php require_once('stripe/config.php'); ?>
 							<form action="" method="post" id="checkoutFrm">
+								<span class="payment-errors"></span>
 								<div class="group">
-									<label for="name">Name</label>
-									<input type="text" name="name" id="name" placeholder="name" />
+									<label for="name">Email</label>
+									<input type="text" name="emailaddress" id="emailaddress" placeholder="email@address.." />
 								</div>
 								<div class="group">
 									<label for="name">Card Number</label>
-									<input type="text" name="card_numb" id="card_numb" placeholder="*****************" />
+									<input type="text" id="card_numb" placeholder="*****************" data-stripe="number" />
 								</div>
 								<div class="group dropdowns">
 									<label for="expire_month">Expiration Date</label>
@@ -145,7 +146,7 @@
 							                    <li data-value="12">December</li>
 							                </ul>
 							            </div>
-							            <input type="hidden" name="expire_month" id="expire_month" />
+							            <input type="hidden" id="expire_month" data-stripe="exp_month" />
 							        </span>
 							        <span>
 										<div class="dropdown year">
@@ -165,14 +166,17 @@
 							                    <li data-value="2026">2028</li>
 							                </ul>
 							            </div>
-										<input type="hidden" name="expire_year" id="expire_year" />
+										<input type="hidden" id="expire_year" data-stripe="exp_year" />
 									</span>
 								</div>
 								<div class="cvc">
 									<label for="cvc">CVC</label>
-									<input type="text" name="cvc" id="cvc" placeholder="***" />
+									<input type="text" id="cvc" placeholder="***" data-stripe="cvc" />
 								</div>
-								<span class="price">$220/year</span> <button type="submit" class="btn">Pay Now</button>
+								<div class="payment">
+									<span class="price">$220/year</span>
+									<button type="submit" class="btn btn-submit">Pay Now</button>
+								</div>
 							</form>
 						</div>
 					</div>
