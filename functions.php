@@ -147,7 +147,7 @@ function emailSubmit() {
 
         $firstname = isset( $_POST['firstname'] ) ? preg_replace( "/[^\.\-\' a-zA-Z0-9]/", "", $_POST['firstname'] ) : "";
         $lastname = isset( $_POST['lastname'] ) ? preg_replace( "/[^\.\-\' a-zA-Z0-9]/", "", $_POST['lastname'] ) : "";
-        $company = isset( $_POST['company'] ) ? preg_replace( "/[^\.\-\' a-zA-Z0-9]/", "", $_POST['company'] ) : "";
+        // $company = isset( $_POST['company'] ) ? preg_replace( "/[^\.\-\' a-zA-Z0-9]/", "", $_POST['company'] ) : "";
         $title = isset( $_POST['title'] ) ? preg_replace( "/[^\.\-\' a-zA-Z0-9]/", "", $_POST['title'] ) : "";
         $emailaddress = filter_var($_POST['emailaddress'], FILTER_SANITIZE_EMAIL);
         $interest = isset( $_POST['interest'] ) ? $_POST['interest'] : "";
@@ -243,7 +243,7 @@ function checkout() {
         ));
     } catch(\Stripe\Error\Card $e) {
       // The card has been declined
-        echo $e;
+        var_dump($e);
     }
 
     // Return an appropriate response to the browser
