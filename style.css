@@ -1965,7 +1965,7 @@ p {
       height: 150px;
       width: auto; }
 
-#signUp {
+#checkout {
   background: rgba(0, 0, 0, 0.9);
   position: fixed;
   top: 0;
@@ -1975,7 +1975,37 @@ p {
   text-align: center;
   z-index: 9999;
   display: none; }
-  #signUp .close {
+  #checkout .group {
+    margin: 25px auto; }
+  #checkout .dropdowns {
+    display: inline-block;
+    width: 78%;
+    margin-top: 0;
+    float: left; }
+    #checkout .dropdowns label {
+      width: 100%; }
+  #checkout .dropdown {
+    float: none;
+    width: 48%;
+    display: inline-block;
+    line-height: 60px;
+    border-bottom: 1px solid #919192; }
+    #checkout .dropdown.month {
+      float: left; }
+  #checkout .price {
+    display: inline-block;
+    color: #1293cc;
+    font-size: 36pt;
+    float: left;
+    -webkit-transform: translate(0, 20px);
+    -moz-transform: translate(0, 20px);
+    -ms-transform: translate(0, 20px);
+    -o-transform: translate(0, 20px);
+    transform: translate(0, 20px); }
+  #checkout .btn {
+    display: inline-block;
+    float: right; }
+  #checkout .close {
     position: fixed;
     top: 15px;
     right: 25px;
@@ -1988,10 +2018,10 @@ p {
     -webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     -moz-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
-    #signUp .close .bar {
+    #checkout .close .bar {
       width: 40px;
       height: 5px;
-      background: white;
+      background: #1293cc;
       display: block;
       margin: 10px auto;
       position: relative;
@@ -1999,7 +2029,7 @@ p {
       -webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
       -moz-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
       transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
-      #signUp .close .bar:first-child {
+      #checkout .close .bar:first-child {
         margin-top: 30px;
         margin-bottom: -16px;
         -webkit-transform: rotate(-45deg);
@@ -2010,12 +2040,12 @@ p {
         -webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
         -moz-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
         transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
-      #signUp .close .bar:nth-child(2) {
+      #checkout .close .bar:nth-child(2) {
         left: 70px;
         -webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
         -moz-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
         transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
-      #signUp .close .bar:last-child {
+      #checkout .close .bar:last-child {
         margin-top: -14px;
         -webkit-transform: rotate(45deg);
         -moz-transform: rotate(45deg);
@@ -2025,43 +2055,74 @@ p {
         -webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
         -moz-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
         transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
-    #signUp .close:hover {
+    #checkout .close:hover {
       cursor: pointer; }
-  #signUp .copy {
-    width: 600px;
-    margin: 0 auto; }
-    #signUp .copy h2 {
-      color: white;
-      font-size: 36pt; }
-    #signUp .copy input {
-      background: none;
-      border: none;
-      border-bottom: 1px solid white;
-      display: block;
-      height: 60px;
-      line-height: 60px;
-      font-size: 24pt;
-      width: 100%;
-      color: white; }
-      #signUp .copy input:focus {
-        outline: none; }
-    #signUp .copy p {
-      font-size: 16pt;
-      margin-top: 100px; }
-  #signUp form {
+  #checkout .left, #checkout .right {
+    width: 50%;
+    height: 100%;
+    display: inline-block;
+    box-sizing: border-box;
+    vertical-align: top;
+    margin: 0 0 0 -4px; }
+  #checkout .left {
+    background: #1293cc;
     position: relative; }
-    #signUp form .enter {
-      color: white;
+    #checkout .left:after {
+      content: "";
       position: absolute;
-      bottom: -50px;
-      right: 0; }
-      #signUp form .enter:after {
-        content: "";
-        background: url("assets/images/arrow.png") no-repeat scroll center right;
-        width: 31px;
-        height: 21px;
-        display: inline-block;
-        padding-left: 15px; }
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 150px;
+      height: 110%;
+      background: #1293cc;
+      border-top-left-radius: 50%;
+      border-top-right-radius: 50%;
+      border-bottom-left-radius: 50%;
+      border-bottom-right-radius: 50%;
+      -webkit-transform: translate(50px, -5%);
+      -moz-transform: translate(50px, -5%);
+      -ms-transform: translate(50px, -5%);
+      -o-transform: translate(50px, -5%);
+      transform: translate(50px, -5%); }
+  #checkout .right {
+    background: white; }
+    #checkout .right .copy {
+      box-sizing: border-box;
+      padding: 0 100px; }
+      #checkout .right .copy h2 {
+        color: #1293cc;
+        font-size: 36pt; }
+      #checkout .right .copy ul {
+        text-align: left;
+        color: #919192;
+        font-family: 'din light', sans-serif;
+        font-size: 18pt; }
+  #checkout form {
+    position: relative;
+    margin: 50px auto; }
+    #checkout form label {
+      display: block;
+      text-align: left;
+      text-transform: uppercase;
+      color: #ababab;
+      letter-spacing: 3px;
+      font-size: 10pt; }
+    #checkout form input {
+      display: block;
+      width: 100%;
+      border: none;
+      box-shadow: 0 0 0 0;
+      border-bottom: 2px solid #919192;
+      line-height: 60px;
+      vertical-align: top;
+      padding: 0;
+      font-size: 18pt; }
+      #checkout form input:focus {
+        outline: none; }
+    #checkout form .cvc {
+      width: 20%;
+      display: inline-block; }
 
 header {
   position: absolute;
@@ -2968,64 +3029,66 @@ header {
       #contact .btn-submit.error i {
         padding: 0;
         margin: 0; }
-  #contact #dropdown {
-    position: relative;
-    width: 48%;
+
+.dropdown {
+  position: relative;
+  width: 48%;
+  height: 60px;
+  line-height: 60px;
+  float: right; }
+  .dropdown button {
+    border: none;
+    background: transparent;
+    text-align: left;
+    display: block;
+    width: 100%;
     height: 60px;
     line-height: 60px;
-    float: right; }
-    #contact #dropdown button {
-      border: none;
-      background: transparent;
-      text-align: left;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #919192;
+    font-size: 18pt;
+    padding: 0 10px;
+    border-bottom: 1px solid #919192; }
+    .dropdown button i {
+      float: right;
+      margin-top: 15px; }
+    .dropdown button.selected {
+      color: #1293cc; }
+  .dropdown ul {
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background: white;
+    border: 1px solid #919192;
+    border-top: none;
+    box-sizing: border-box;
+    -webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    -moz-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+    .dropdown ul li {
+      font-size: 14pt;
+      line-height: 40px;
       display: block;
-      width: 100%;
-      height: 60px;
-      line-height: 60px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: #919192;
-      font-size: 18pt;
-      padding: 0 10px;
-      border-bottom: 1px solid #919192; }
-      #contact #dropdown button i {
-        float: right;
-        margin-top: 15px; }
-      #contact #dropdown button.selected {
-        color: #1293cc; }
-    #contact #dropdown ul {
-      opacity: 0;
-      height: 0;
-      overflow: hidden;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      width: 100%;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      background: white;
-      border: 1px solid #919192;
-      border-top: none;
-      box-sizing: border-box;
+      padding: 0 10px; }
+      .dropdown ul li:hover {
+        color: white;
+        background: #1293cc;
+        cursor: pointer; }
+    .dropdown ul.show {
+      opacity: 1;
+      height: 160px;
+      overflow: scroll;
       -webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
       -moz-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
       transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
-      #contact #dropdown ul li {
-        font-size: 14pt;
-        line-height: 40px;
-        display: block;
-        padding: 0 10px; }
-        #contact #dropdown ul li:hover {
-          color: white;
-          background: #1293cc;
-          cursor: pointer; }
-      #contact #dropdown ul.show {
-        opacity: 1;
-        height: 160px;
-        -webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        -moz-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
 
 #errorPage {
   height: 100vh;

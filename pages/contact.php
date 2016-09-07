@@ -37,9 +37,9 @@ get_header();
 					        </div>
 					        <div class="half">
 					            <input type="text" name="emailaddress" id="emailaddress" class="form-control" placeholder="email"/>
-					            <div id="dropdown">
+					            <div class="dropdown">
 					                <button>Area of interest <i class="fa fa-angle-down"></i></button>
-					                <ul class="dropdown-menu">
+					                <ul class="dropdown-menu" data-input="interest">
 					                    <li data-value="Enterprise">Enterprise</li>
 					                    <li data-value="Partnerships">Partnerships</li>
 					                    <li data-value="Press/Event">Press / Event Inquiry</li>

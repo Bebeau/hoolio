@@ -42,7 +42,7 @@
 		    	endwhile;
 		    	echo '</div>';
 		    	echo '</div>';
-		    	
+
 		    	echo '</div>';
 		        echo '</div>';
 		        echo '</section>';
@@ -91,21 +91,90 @@
 			</div>
 		</footer>
 
-		<section id="signUp">
+		<section id="checkout">
 			<div class="close">
 				<span class="bar cross"></span>
 				<span class="bar middle"></span>
 				<span class="bar cross"></span>
 			</div>
-			<div class="outer">
-				<div class="inner">
-					<div class="copy">
-						<h2>Sign up to request access to our private beta.</h2>
-						<form role="form" method="POST" action="">
-							<input type="email" name="emailaddress" id="emailaddress" placeholder="email" />
-							<span class="enter">Press Enter</span>
-						</form>
-						<p>Schedule a meeting for premium (immediate) access.</p>
+			<div class="left">
+				<div class="outer">
+					<div class="inner">
+						<img src="<?php echo bloginfo('template_directory'); ?>/assets/images/ipad.png" alt="" />
+					</div>
+				</div>
+			</div>
+			<div class="right">
+				<div class="outer">
+					<div class="inner">
+						<div class="copy">
+							<h2>Become A Wizard</h2>
+							<ul>
+								<li>1 year pre-paid subscription to Wyzerr</li>
+								<li>Full priority access to our campaign wizard</li>
+								<li>Unlimited responses</li>
+								<li>Locked-in rate of $5/month (reguarly $39)</li>
+							</ul>
+							<?php require_once('stripe/config.php'); ?>
+							<form action="" method="post" id="checkoutFrm">
+								<div class="group">
+									<label for="name">Name</label>
+									<input type="text" name="name" id="name" placeholder="name" />
+								</div>
+								<div class="group">
+									<label for="name">Card Number</label>
+									<input type="text" name="card_numb" id="card_numb" placeholder="*****************" />
+								</div>
+								<div class="group dropdowns">
+									<label for="expire_month">Expiration Date</label>
+									<span>
+										<div class="dropdown month">
+							                <button>Month <i class="fa fa-angle-down"></i></button>
+							                <ul class="dropdown-menu" data-input="expire_month">
+							                    <li data-value="01">January</li>
+							                    <li data-value="02">February</li>
+							                    <li data-value="03">March</li>
+							                    <li data-value="04">April</li>
+							                    <li data-value="05">May</li>
+							                    <li data-value="06">June</li>
+							                    <li data-value="07">July</li>
+							                    <li data-value="08">August</li>
+							                    <li data-value="09">September</li>
+							                    <li data-value="10">October</li>
+							                    <li data-value="11">November</li>
+							                    <li data-value="12">December</li>
+							                </ul>
+							            </div>
+							            <input type="hidden" name="expire_month" id="expire_month" />
+							        </span>
+							        <span>
+										<div class="dropdown year">
+							                <button>Year <i class="fa fa-angle-down"></i></button>
+							                <ul class="dropdown-menu" data-input="expire_year">
+							                    <li data-value="2016">2016</li>
+							                    <li data-value="2017">2017</li>
+							                    <li data-value="2018">2018</li>
+							                    <li data-value="2019">2019</li>
+							                    <li data-value="2020">2020</li>
+							                    <li data-value="2021">2021</li>
+							                    <li data-value="2022">2022</li>
+							                    <li data-value="2023">2023</li>
+							                    <li data-value="2024">2024</li>
+							                    <li data-value="2025">2025</li>
+							                    <li data-value="2026">2026</li>
+							                    <li data-value="2026">2028</li>
+							                </ul>
+							            </div>
+										<input type="hidden" name="expire_year" id="expire_year" />
+									</span>
+								</div>
+								<div class="cvc">
+									<label for="cvc">CVC</label>
+									<input type="text" name="cvc" id="cvc" placeholder="***" />
+								</div>
+								<span class="price">$220/year</span> <button type="submit" class="btn">Pay Now</button>
+							</form>
+						</div>
 					</div>
 				</div>
 			</div>

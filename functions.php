@@ -215,11 +215,36 @@ function emailSubmit() {
 
         // Return an appropriate response to the browser
         if ( defined( 'DOING_AJAX' ) ) {
-            
             echo $success ? "Success" : "E";
-
         }
     }
     die();
 
+}
+
+add_action('wp_ajax_charge', 'checkout');
+add_action('wp_ajax_nopriv_charge', 'checkout');
+function checkout() {
+    require_once('stripe/config.php');
+
+    $emailaddress = filter_var($_POST['emailaddress'], FILTER_SANITIZE_EMAIL);
+    $token = isset( $_POST['card'] ) ? preg_replace( "/[^\.\-\' a-zA-Z0-9]/", "", $_POST['card'] ) : "";
+    
+    $customer = \Stripe\Customer::create(array(
+      'email' => $emailaddress,
+      'card'  => $token
+    ));
+    
+    $charge = \Stripe\Charge::create(array(
+      'customer' => $customer->id,
+      'amount'   => 22000,
+      'currency' => 'usd'
+    ));
+    
+    // Return an appropriate response to the browser
+    if ( defined( 'DOING_AJAX' ) ) {
+        echo $success ? "Success" : "E";
+    }
+
+    die();
 }

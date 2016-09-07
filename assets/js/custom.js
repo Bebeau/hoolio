@@ -141,6 +141,7 @@ var init = {
 		init.tooltip();
 		init.subNav();
 		init.mobileBubbles();
+		init.checkoutBtn();
 	},
 	mobileBubbles: function() {
 		jQuery('#bubblesMobile .frame').click(function(e){
@@ -245,10 +246,10 @@ var init = {
 	wizard: function() {
 		jQuery('.btn-wizard').click(function(e){
 			e.preventDefault();
-			jQuery('#signUp').fadeIn();
+			jQuery('#checkout').fadeIn();
 		});
-		jQuery('#signUp .close').click(function() {
-			jQuery('#signUp').fadeOut();
+		jQuery('#checkout .close').click(function() {
+			jQuery('#checkout').fadeOut();
 		});
 	},
 	scooch: function() {
@@ -277,26 +278,29 @@ var init = {
 	},
 	dropdown: function() {
 		removeClass = false;
-		jQuery('#dropdown button').click(function(e){
+		jQuery('.dropdown button').click(function(e){
 			e.preventDefault();
-			jQuery('#dropdown ul').addClass("show");
+			jQuery(".dropdown ul").removeClass('show');
+			jQuery(this).next().addClass("show");
 			removeClass = false;
 		});
 		jQuery("html").click(function () {
 		    if (removeClass) {
-		        jQuery("#dropdown ul").removeClass('show');
+		        jQuery(".dropdown ul").removeClass('show');
 		    }
 		    removeClass = true;
 		});
-		jQuery('#dropdown ul li').click(function(e) {
+		jQuery('.dropdown ul li').click(function(e) {
 			e.preventDefault();
 			var value = jQuery(this).attr("data-value");
+			var input = jQuery(this).parent().attr("data-input");
+			var button = jQuery(this).parent().prev();
 			var text = jQuery(this).text();
-			jQuery('#interest').val(value);
-			jQuery('#dropdown ul').removeClass("show");
-			jQuery('#dropdown button').addClass("selected");
-			jQuery('#dropdown button').text(text);
-			jQuery('#dropdown button').append('<i class="fa fa-angle-down"></i>');
+			jQuery('#'+input).val(value);
+			jQuery('.dropdown ul').removeClass("show");
+			jQuery(button).addClass("selected");
+			jQuery(button).text(text);
+			jQuery(button).append('<i class="fa fa-angle-down"></i>');
 		});
 	},
 	SVG: function() {
@@ -459,6 +463,56 @@ var init = {
 	contactBtn: function() {
 		jQuery('#contactfrm').submit(init.contactSubmit);
 	},
+	checkoutSubmit: function() {
+		var Frm = jQuery('#contactfrm');
+    	jQuery('<i class="fa fa-spinner fa-spin"></i>').prependTo('.btn-submit');
+        jQuery.ajax({
+            url: ajaxurl,
+            type: Frm.attr('method'),
+            data: {
+            	firstname: jQuery('#name').val(),
+            	firstname: jQuery('#card').val(),
+            	lastname: jQuery('#expire_month').val(),
+            	company: jQuery('#expire_year').val(),
+            	title: jQuery('#cvc').val(),
+            	emailaddress: jQuery('#emailaddress').val(),
+            	action: 'charge'
+            },
+            dataType: 'html',
+            beforeSubmit : function(arr, $form, options) {
+	            arr.push( { "name" : "nonce", "value" : meta.nonce });
+	        },
+            success: function(data) {
+            	init.checkoutResponse(data);
+            }
+        });
+        return false;
+	},
+	checkoutResponse: function(response) {
+        jQuery('.btn-submit i').remove();
+        if (response === "Success") {
+        	jQuery('.btn-submit').replaceWith('<button class="btn btn-submit success"><i class="fa fa-check"></i></button>');
+            jQuery("input").val("");
+            jQuery('.month button').html('Month <i class="fa fa-angle-down"></i>');
+            jQuery('.year button').html('Year <i class="fa fa-angle-down"></i>');
+            setTimeout(
+            	function() {
+            		jQuery('.btn-submit').replaceWith('<button class="btn btn-submit">Submit</button>');
+            	}, 2500
+        	);
+        }
+        if (response === "E") {
+         	jQuery('.btn-submit').replaceWith('<button class="btn btn-submit error"><i class="fa fa-ban"></i></button>');
+         	setTimeout(
+            	function() {
+            		jQuery('.btn-submit').replaceWith('<button class="btn btn-submit">Submit</button>');
+            	}, 2500
+        	);
+        }
+	},
+	checkoutBtn: function() {
+		jQuery('#checkoutFrm').submit(init.checkoutSubmit);
+	}
 };
 
 jQuery(document).ready(function() {
