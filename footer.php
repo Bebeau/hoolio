@@ -118,6 +118,16 @@
 							<?php require_once('stripe/config.php'); ?>
 							<form action="" method="post" id="checkoutFrm">
 								<span class="payment-errors"></span>
+								<div class="group half">
+									<article>
+										<label for="firstname">First</label>
+										<input type="text" name="firstname" id="firstname" placeholder="john" />
+									</article>
+									<article>
+										<label for="lastname">Last</label>
+										<input type="text" name="lastname" id="lastname" placeholder="doe" />
+									</article>
+								</div>
 								<div class="group">
 									<label for="name">Email</label>
 									<input type="text" name="emailaddress" id="emailaddress" placeholder="email@address.." />

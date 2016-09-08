@@ -230,6 +230,21 @@ p {
 	display: none;
 	.group {
 		margin: 25px auto;
+		&.half {
+			article {
+				width: 49%;
+				display: inline-block;
+				float: left;
+				&:last-child {
+					float: right;
+				}
+			}
+			&:after {
+				content: "";
+				clear: both;
+				display: block;
+			}
+		}
 	}
 	.dropdowns {
 		display: inline-block;

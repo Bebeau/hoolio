@@ -1977,6 +1977,16 @@ p {
   display: none; }
   #checkout .group {
     margin: 25px auto; }
+    #checkout .group.half article {
+      width: 49%;
+      display: inline-block;
+      float: left; }
+      #checkout .group.half article:last-child {
+        float: right; }
+    #checkout .group.half:after {
+      content: "";
+      clear: both;
+      display: block; }
   #checkout .dropdowns {
     display: inline-block;
     width: 78%;

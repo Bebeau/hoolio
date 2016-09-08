@@ -231,6 +231,9 @@ function checkout() {
     require_once('stripe/config.php');
     // Get the credit card details submitted by the form
     $token = $_POST['stripeToken'];
+
+    $firstname = isset( $_POST['firstname'] ) ? $_POST['firstname'] : "";
+    $lastname = isset( $_POST['lastname'] ) ? $_POST['lastname'] : "";
     $emailaddress = filter_var($_POST['emailaddress'], FILTER_SANITIZE_EMAIL);
 
     if(!empty($token)) {
@@ -240,20 +243,50 @@ function checkout() {
             "plan" => "pps",
             "email" => $emailaddress
         ));
-        
-        try {
-            $charge = \Stripe\Charge::create(array(
-                "amount" => 22000, // Amount in cents
-                "currency" => "usd",
-                "customer" => $customer->id)
-            );
-        } catch(\Stripe\Error\Card $e) {
-            // The card has been declined
-        }
+
+        $charge = \Stripe\Charge::create(array(
+            "amount" => 22000, // Amount in cents
+            "currency" => "usd",
+            "customer" => $customer->id)
+        );
 
         // Return an appropriate response to the browser
         if ( defined( 'DOING_AJAX' ) ) {
             echo $charge ? "Success" : "E";
+        }
+
+        $key = esc_attr(get_option('mailchimp_api'));
+        $list = esc_attr(get_option('mailchimp_list'));
+
+        if($charge && !empty($key) && !empty($list)) {
+
+            $auth = base64_encode( 'user:'.$key );
+
+            $data = array(
+                'apikey'        => $key,
+                'email_address' => $emailaddress,
+                'status'        => 'subscribed',
+                'merge_fields'  => array(
+                    'FNAME'     => $firstname,
+                    'LNAME'     => $lastname,
+                    'INTEREST'  => 'Pre-paid Subscriber'
+                )
+            );
+
+            $json_data = json_encode($data);
+
+            $ch = curl_init();
+            curl_setopt($ch, CURLOPT_URL, 'https://us8.api.mailchimp.com/3.0/lists/'.$list.'/members/');
+            curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json',
+                                                        'Authorization: Basic '.$auth));
+            curl_setopt($ch, CURLOPT_USERAGENT, 'PHP-MCAPI/2.0');
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+            curl_setopt($ch, CURLOPT_POST, true);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $json_data);                                                                                                                  
+
+            $result = curl_exec($ch);
         }
     }
 
