@@ -262,6 +262,7 @@ var init = {
 		jQuery('#checkout .close').click(function() {
 			jQuery('#checkout').fadeOut();
 			jQuery('body').removeClass("freeze");
+			jQuery('.right').removeClass("confirm");
 		});
 	},
 	scooch: function() {
@@ -482,6 +483,7 @@ var init = {
             setTimeout(
             	function() {
             		jQuery('.btn-submit').removeClass("success").html('Pay Now');
+            		jQuery('.right').addClass("confirm");
             	}, 1500
         	);
 		} else {

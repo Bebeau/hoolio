@@ -2122,7 +2122,10 @@ p {
     margin: 0; }
     #checkout .right .copy {
       box-sizing: border-box;
-      padding: 0 100px; }
+      padding: 0 100px;
+      -webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      -moz-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
       #checkout .right .copy h2 {
         color: #1293cc;
         font-size: 36pt; }
@@ -2131,6 +2134,45 @@ p {
         color: #919192;
         font-family: 'din light', sans-serif;
         font-size: 18pt; }
+    #checkout .right .successMessage {
+      box-sizing: border-box;
+      padding: 0 100px;
+      opacity: 0;
+      height: 0;
+      overflow: hidden;
+      -webkit-transform: translate(0, 1000px);
+      -moz-transform: translate(0, 1000px);
+      -ms-transform: translate(0, 1000px);
+      -o-transform: translate(0, 1000px);
+      transform: translate(0, 1000px);
+      -webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      -moz-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+      #checkout .right .successMessage h2 {
+        font-size: 36pt;
+        color: #a7d661; }
+    #checkout .right.confirm .copy {
+      height: 0;
+      opacity: 0;
+      -webkit-transform: translate(0, -1000px);
+      -moz-transform: translate(0, -1000px);
+      -ms-transform: translate(0, -1000px);
+      -o-transform: translate(0, -1000px);
+      transform: translate(0, -1000px);
+      -webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      -moz-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+    #checkout .right.confirm .successMessage {
+      height: auto;
+      opacity: 1;
+      -webkit-transform: translate(0, 0);
+      -moz-transform: translate(0, 0);
+      -ms-transform: translate(0, 0);
+      -o-transform: translate(0, 0);
+      transform: translate(0, 0);
+      -webkit-transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      -moz-transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
   #checkout form {
     position: relative;
     margin: 50px auto; }

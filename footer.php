@@ -188,6 +188,11 @@
 								<span class="payment-errors"></span>
 							</form>
 						</div>
+						<div class="successMessage">
+							<h2>Success!</h2>
+							<p>Thank you for purchasing your pre-paid subscription to Wyzerr!</p>
+							<p>A confirmation email of your order will be sent to you, along with additional information, special perks, and progress updates leading up to our great unveil.</p>
+						</div>
 					</div>
 				</div>
 			</div>
