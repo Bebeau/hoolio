@@ -2116,7 +2116,8 @@ p {
       position: relative;
       z-index: 2; }
   #checkout .right {
-    background: white; }
+    background: white;
+    margin: 0; }
     #checkout .right .copy {
       box-sizing: border-box;
       padding: 0 100px; }
@@ -2142,7 +2143,7 @@ p {
       display: block;
       width: 100%;
       border: none;
-      box-shadow: 0 0 0 0;
+      box-shadow: none;
       border-bottom: 2px solid #919192;
       line-height: 60px;
       vertical-align: top;
@@ -3352,6 +3353,29 @@ footer {
 
   #meet .copy .half img {
     max-height: 600px; } }
+@media (max-width: 1440px) {
+  #checkout .right .copy {
+    padding: 0 100px;
+    width: auto; }
+    #checkout .right .copy h2 {
+      margin: 15px auto; }
+    #checkout .right .copy ul {
+      font-size: 14pt; }
+  #checkout form input, #checkout form button, #checkout form .dropdown {
+    line-height: 40px;
+    height: 40px;
+    font-size: 14pt; }
+  #checkout form label {
+    font-size: 8pt;
+    letter-spacing: 2px; }
+  #checkout .payment {
+    margin-top: 25px; }
+    #checkout .payment .price {
+      line-height: 100px;
+      font-size: 32pt; }
+    #checkout .payment .btn {
+      width: 100px;
+      height: 100px; } }
 @media (max-width: 1280px) {
   p {
     font-size: 18pt; }
@@ -3411,7 +3435,30 @@ footer {
 
   #contact {
     height: auto;
-    padding: 50px 0; } }
+    padding: 50px 0; }
+
+  #checkout .right .copy {
+    padding: 0 100px;
+    width: auto; }
+    #checkout .right .copy h2 {
+      margin: 15px auto; }
+    #checkout .right .copy ul {
+      font-size: 14pt; }
+  #checkout form input, #checkout form button, #checkout form .dropdown {
+    line-height: 40px;
+    height: 40px;
+    font-size: 14pt; }
+  #checkout form label {
+    font-size: 8pt;
+    letter-spacing: 2px; }
+  #checkout .payment {
+    margin-top: 25px; }
+    #checkout .payment .price {
+      line-height: 100px;
+      font-size: 32pt; }
+    #checkout .payment .btn {
+      width: 100px;
+      height: 100px; } }
 @media (max-width: 991px) {
   #top #clientLogos span {
     -webkit-transform: scale(0.5);
@@ -3445,6 +3492,9 @@ footer {
   .copy {
     width: auto;
     padding: 0 15px; } }
+@media (max-width: 414px) {
+  #bubblesMobile .frame.open {
+    height: 688px; } }
 @media (max-width: 768px) {
   #bubblesMobile {
     display: block !important; }
@@ -3455,15 +3505,10 @@ footer {
       -moz-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
       #bubblesMobile .frame.open {
-        height: 688px;
+        height: 745px;
         -webkit-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         -moz-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
-        #bubblesMobile .frame.open .titleBar h3 {
-          text-align: center;
-          -webkit-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-          -moz-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
       #bubblesMobile .frame img {
         max-width: 50%;
         -webkit-transform: translate(0, 15px);
@@ -3608,13 +3653,12 @@ footer {
   #help img {
     margin-top: 50px; }
 
-  #research .btn {
-    margin-bottom: 50px; }
-
   #top {
     padding-top: 125px;
     min-height: auto;
     height: auto; }
+    #top h1 {
+      margin: 25px 0 0; }
     #top .half {
       width: auto; }
       #top .half video, #top .half video.active {
@@ -3624,7 +3668,7 @@ footer {
       top: auto;
       left: auto;
       right: auto;
-      margin-top: 25px; }
+      margin: 25px auto; }
       #top #clientLogos span {
         width: 105px;
         -webkit-transform: scale(1);
@@ -3695,6 +3739,8 @@ footer {
       padding: 0 15px; }
       #metrics .half article .stat span {
         font-size: 24pt; }
+    #metrics .half article.statsWrap {
+      padding-bottom: 0; }
 
   #testimonials {
     padding: 25px 0; }
@@ -3779,4 +3825,30 @@ footer {
       margin: 25px 0; }
 
   .container {
-    width: auto; } }
+    width: auto; }
+
+  #checkout {
+    overflow: scroll; }
+    #checkout .close {
+      top: 5px;
+      right: 15px; }
+    #checkout .left, #checkout .right {
+      float: none;
+      width: 100%;
+      margin: 0; }
+    #checkout .left {
+      display: none; }
+    #checkout .right {
+      height: 100vh; }
+      #checkout .right .copy {
+        padding: 0 25px; }
+        #checkout .right .copy h2 {
+          font-size: 24pt;
+          text-align: left; }
+        #checkout .right .copy ul {
+          font-size: 12pt;
+          padding: 0 0 0 15px; }
+        #checkout .right .copy .payment .price {
+          font-size: 24pt; }
+    #checkout form {
+      margin: 25px auto 0; } }
