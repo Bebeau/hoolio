@@ -250,11 +250,6 @@ function checkout() {
             "customer" => $customer->id)
         );
 
-        // Return an appropriate response to the browser
-        if ( defined( 'DOING_AJAX' ) ) {
-            echo $charge ? "Success" : "E";
-        }
-
         $key = esc_attr(get_option('mailchimp_api'));
         $list = esc_attr(get_option('mailchimp_list'));
 
@@ -288,6 +283,12 @@ function checkout() {
 
             $result = curl_exec($ch);
         }
+
+        // Return an appropriate response to the browser
+        if ( defined( 'DOING_AJAX' ) ) {
+            echo $charge ? "Success" : "E";
+        }
+        
     }
 
     echo "E";

@@ -487,18 +487,18 @@ var init = {
 	checkoutResponse: function(data) {
 		jQuery('.btn-submit i').remove();
 		if(data === "Success") {
-			jQuery('.btn-submit').replaceWith('<button class="btn btn-submit error"><i class="fa fa-ban"></i></button>');
-         	setTimeout(
-            	function() {
-            		jQuery('.btn-submit').replaceWith('<button class="btn btn-submit">Pay Now</button>');
-            	}, 2500
-        	);
-		} else {
 			jQuery('.btn-submit').replaceWith('<button class="btn btn-submit success"><i class="fa fa-check"></i></button>');
             jQuery("input").val("");
             jQuery('.month button').html('Month <i class="fa fa-angle-down"></i>');
             jQuery('.year button').html('Year <i class="fa fa-angle-down"></i>');
             setTimeout(
+            	function() {
+            		jQuery('.btn-submit').replaceWith('<button class="btn btn-submit">Pay Now</button>');
+            	}, 2500
+        	);
+		} else {
+        	jQuery('.btn-submit').replaceWith('<button class="btn btn-submit error"><i class="fa fa-ban"></i></button>');
+         	setTimeout(
             	function() {
             		jQuery('.btn-submit').replaceWith('<button class="btn btn-submit">Pay Now</button>');
             	}, 2500
