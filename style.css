@@ -1834,6 +1834,8 @@ body {
   body p {
     font-family: 'pn regular';
     line-height: 32px; }
+  body.freeze {
+    overflow: hidden; }
 
 #bubblesMobile {
   display: none !important; }
@@ -3053,6 +3055,9 @@ header {
       #contact .btn-submit.error i {
         padding: 0;
         margin: 0; }
+
+.payment-errors {
+  color: #ff8080; }
 
 .dropdown {
   position: relative;

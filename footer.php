@@ -116,7 +116,6 @@
 							</ul>
 							<?php require_once('stripe/config.php'); ?>
 							<form action="" method="POST" id="checkoutFrm">
-								<span class="payment-errors"></span>
 								<div class="group half">
 									<article>
 										<label for="firstname">First</label>
@@ -186,6 +185,7 @@
 									<span class="price">$220/year</span>
 									<button type="submit" class="btn btn-submit">Pay Now</button>
 								</div>
+								<span class="payment-errors"></span>
 							</form>
 						</div>
 					</div>

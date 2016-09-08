@@ -83,6 +83,9 @@ body {
 		font-family: 'pn regular';
 		line-height: 32px;
 	}
+	&.freeze {
+		overflow: hidden;
+	}
 }
 #bubblesMobile {
 	display: none !important;
@@ -1337,6 +1340,9 @@ header {
 			}
 		}
 	}
+}
+.payment-errors {
+	color: lighten(red,25%);
 }
 .dropdown {
 	position: relative;

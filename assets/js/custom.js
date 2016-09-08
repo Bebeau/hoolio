@@ -8,6 +8,7 @@ $(function(){ParallaxScroll.init()});var ParallaxScroll={showLogs:!1,round:1e3,i
 // check to make sure it is not loaded on mobile device
 var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent);
 var ajaxurl = meta.ajaxurl;
+var pKey = meta.publishable_key;
 
 var move = {
 	onMove: function() {
@@ -247,9 +248,11 @@ var init = {
 		jQuery('.btn-wizard').click(function(e){
 			e.preventDefault();
 			jQuery('#checkout').fadeIn();
+			jQuery('body').addClass("freeze");
 		});
 		jQuery('#checkout .close').click(function() {
 			jQuery('#checkout').fadeOut();
+			jQuery('body').removeClass("freeze");
 		});
 	},
 	scooch: function() {
@@ -360,6 +363,7 @@ var init = {
 
 			item.addClass("open");
 			icon.addClass("hide");
+			jQuery('body').addClass("freeze");
 			setTimeout(
 				function() {
 					jQuery('.frame',item).addClass("in");
@@ -379,24 +383,21 @@ var init = {
 			jQuery('#Menu').hide();
 
 			if(jQuery(this).hasClass("circleClose")) {
-				jQuery('html,body').animate({
-				   scrollTop: jQuery("#meet").offset().top
-				}, 100, function(){
-					jQuery('.frame').removeClass("in");
-					jQuery('.bubblenav').removeClass("in");
-					jQuery('.nav').removeClass("selected");
-					setTimeout(
-						function() {
-							jQuery('#bubbles li').removeClass("open");
-						}, 250
-					);
-					setTimeout(
-						function() {
-							jQuery('#bubbles li').find("i").removeClass("hide");
-						}, 500
-					);
-					jQuery('#Menu').show();
-				});
+				jQuery('.frame').removeClass("in");
+				jQuery('.bubblenav').removeClass("in");
+				jQuery('.nav').removeClass("selected");
+				setTimeout(
+					function() {
+						jQuery('#bubbles li').removeClass("open");
+					}, 250
+				);
+				setTimeout(
+					function() {
+						jQuery('#bubbles li').find("i").removeClass("hide");
+					}, 500
+				);
+				jQuery('#Menu').show();
+				jQuery('body').removeClass("freeze");
 			} else {
 				jQuery('.nav').removeClass("selected");
 				jQuery('#bubbles li').removeClass("open");
@@ -464,22 +465,21 @@ var init = {
 		jQuery('#contactfrm').submit(init.contactSubmit);
 	},
 	checkoutResponse: function(data) {
-		jQuery('.btn-submit').remove();
 		if(data === "Success") {
-			jQuery('.btn-submit').replaceWith('<button class="btn btn-submit success"><i class="fa fa-check"></i></button>');
+            jQuery('.btn-submit').addClass("success").html('<i class="fa fa-check"></i>');
             jQuery("input").val("");
             jQuery('.month button').html('Month <i class="fa fa-angle-down"></i>');
             jQuery('.year button').html('Year <i class="fa fa-angle-down"></i>');
             setTimeout(
             	function() {
-            		jQuery('.btn-submit').replaceWith('<button class="btn btn-submit">Pay Now</button>');
+            		jQuery('.btn-submit').removeClass("success").html('Pay Now');
             	}, 1500
         	);
 		} else {
-        	jQuery('.btn-submit').replaceWith('<button class="btn btn-submit error"><i class="fa fa-ban"></i></button>');
+        	jQuery('.btn-submit').addClass("error").html('<i class="fa fa-ban"></i>');
          	setTimeout(
             	function() {
-            		jQuery('.btn-submit').replaceWith('<button class="btn btn-submit">Pay Now</button>');
+            		jQuery('.btn-submit').removeClass("error").html('Pay Now');
             	}, 1500
         	);
 		}
@@ -489,7 +489,14 @@ var init = {
         if (response.error) {
         	// Show the errors on the form:
 		    frm.find('.payment-errors').text(response.error.message);
-		    jQuery('.btn-submit').prop('disabled', false); // Re-enable submission
+		    jQuery('.btn-submit').addClass("error").html('<i class="fa fa-ban"></i>');
+         	setTimeout(
+            	function() {
+            		jQuery('.btn-submit').removeClass("error").html('Pay Now');
+            		jQuery('.btn-submit').prop('disabled', false); // Re-enable submission
+            		frm.find('.payment-errors').html("");
+            	}, 1500
+        	);
         } else {
 			// Get the token ID:
 		    var token = response.id;
@@ -515,7 +522,7 @@ var init = {
         }
 	},
 	checkoutBtn: function() {
-		Stripe.setPublishableKey('pk_test_ByoJucUkS7YYjs6OMlbtlA7x');
+		Stripe.setPublishableKey(pKey);
 		var frm = jQuery('#checkoutFrm');
 		frm.submit(
 			function(e) {

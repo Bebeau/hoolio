@@ -24,7 +24,8 @@ if (!function_exists( 'load_custom_scripts' ) ) {
             array(
                 'ajaxurl' => admin_url( 'admin-ajax.php' ),
                 'nonce' => wp_create_nonce( "contact" ),
-                'charge_nonce' => wp_create_nonce( "charge" )
+                'charge_nonce' => wp_create_nonce( "charge" ),
+                'publishable_key' => esc_attr(get_option('stripe_publish_key'))
             )
         );
         wp_enqueue_script( 'custom' );
