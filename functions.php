@@ -237,8 +237,8 @@ function checkout() {
     $emailaddress = filter_var($_POST['emailaddress'], FILTER_SANITIZE_EMAIL);
 
     if(!empty($token)) {
-        
-        $success = false;
+
+        $charge = false;
         // create customer from user email
         $customer = \Stripe\Customer::create(array(
             "source" => $token,
@@ -246,10 +246,11 @@ function checkout() {
             "email" => $emailaddress
         ));
         // charge customer by ID
-        \Stripe\Charge::create(array(
+        $charge = \Stripe\Charge::create(array(
             "amount" => 22000, // Amount in cents
             "currency" => "usd",
-            "customer" => $customer->id)
+            "source" => $token,
+            "description" => "Pre-paid Subscription"
         );
         // get mailchimp api and list
         $key = esc_attr(get_option('mailchimp_api'));
@@ -288,7 +289,7 @@ function checkout() {
 
         // Return an appropriate response to the browser
         if ( defined( 'DOING_AJAX' ) ) {
-            echo $success ? "Success" : "E";
+            echo $charge ? "Success" : "E";
         }
 
     }
