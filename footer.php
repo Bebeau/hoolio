@@ -132,7 +132,7 @@
 								</div>
 								<div class="group">
 									<label for="name">Card Number</label>
-									<input type="number" id="card_numb" placeholder="*****************" maxlength="16" data-stripe="number" />
+									<input type="number" id="card_numb" placeholder="*****************" pattern="\d*" maxlength="16" data-stripe="number" />
 								</div>
 								<div class="group dropdowns">
 									<label for="expire_month">Expiration Date</label>
@@ -178,7 +178,7 @@
 								</div>
 								<div class="cvc">
 									<label for="cvc">CVC</label>
-									<input type="number" id="cvc" placeholder="***" maxlength="4" data-stripe="cvc" />
+									<input type="number" id="cvc" placeholder="***" pattern="\d*" maxlength="4" data-stripe="cvc" />
 								</div>
 								<div class="payment">
 									<span class="price">$220/year</span>
