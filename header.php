@@ -89,10 +89,34 @@
 	<!-- WP Generated Header
 	================================================== --> 
 	<?php wp_head(); ?>
+
+	<style>
+		#loader{
+			position: fixed;
+			width: 100%;
+			height: 100%;
+			z-index: 9999;
+			background: #1293cc;
+			top: 0;
+		}
+		#loader i {
+			display: block;
+			position: fixed;
+			font-size: 48pt;
+			top: 50%;
+			left: 50%;
+			margin: -32.5px 0 0 -28px;
+			color: white;
+		}
+	</style>
     
 </head>
 
-<body <?php body_class();?>>
+<body <?php body_class("freeze");?>>
+
+	<div id="loader">
+		<i class="fa fa-spinner fa-spin"></i>
+	</div>
 
 <header>
 	<a href="<?php echo site_url();?>" class="logo">

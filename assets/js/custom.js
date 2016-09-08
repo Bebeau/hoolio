@@ -128,6 +128,7 @@ var move = {
 
 var init = {
 	onReady: function() {
+		init.preLoad();
 		init.openMenu();
 		init.bubbleOpen();
 		init.bubbleClose();
@@ -144,6 +145,14 @@ var init = {
 		init.mobileBubbles();
 		init.checkoutBtn();
 	},
+	preLoad: function() {
+        // Wait for window load
+        jQuery(window).load(function() {
+            // Animate loader off screen
+            jQuery("#loader").fadeOut();
+            jQuery('body').removeClass("freeze");
+        });
+    },
 	mobileBubbles: function() {
 		jQuery('#bubblesMobile .frame').click(function(e){
 			e.preventDefault();
