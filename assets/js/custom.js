@@ -468,6 +468,8 @@ var init = {
             url: ajaxurl,
             type: frm.attr('method'),
             data: {
+            	firstname: jQuery('#firstname').val(),
+            	lastname: jQuery('#lastname').val(),
             	emailaddress: jQuery('#emailaddress').val(),
             	token: jQuery('#stripeToken').val(),
             	action: 'charge'
