@@ -17,7 +17,7 @@ if (!function_exists( 'load_custom_scripts' ) ) {
 		// Load custom scripts
 		// wp_enqueue_script('custom', get_bloginfo( 'template_url' ) . '/assets/js/custom.js', array('jquery'), null, true);
         // Registers and enqueues the required javascript.
-        wp_enqueue_script( 'stripe', 'https://js.stripe.com/v2/', array( 'jquery' ), null, true );
+        wp_enqueue_script( 'stripe', 'https://js.stripe.com/v2/stripe-debug.js', array( 'jquery' ), null, true );
 
         wp_register_script( 'custom', get_bloginfo( 'template_url' ) . '/assets/js/custom.js', array( 'jquery' ), null, true );
         wp_localize_script( 'custom', 'meta',
@@ -237,8 +237,7 @@ function checkout() {
     $emailaddress = filter_var($_POST['emailaddress'], FILTER_SANITIZE_EMAIL);
 
     if(!empty($token)) {
-
-        $charge = false;
+        $success = false;
         // create customer from user email
         $customer = \Stripe\Customer::create(array(
             "source" => $token,
@@ -246,12 +245,11 @@ function checkout() {
             "email" => $emailaddress
         ));
         // charge customer by ID
-        $charge = \Stripe\Charge::create(array(
+        \Stripe\Charge::create(array(
             "amount" => 22000, // Amount in cents
             "currency" => "usd",
-            "source" => $token,
-            "description" => "Pre-paid Subscription"
-        ));
+            "customer" => $customer->id)
+        );
         // get mailchimp api and list
         $key = esc_attr(get_option('mailchimp_api'));
         $list = esc_attr(get_option('mailchimp_list'));
@@ -289,7 +287,7 @@ function checkout() {
 
         // Return an appropriate response to the browser
         if ( defined( 'DOING_AJAX' ) ) {
-            echo $charge ? "Success" : "E";
+            echo $success ? "Success" : "E";
         }
 
     }

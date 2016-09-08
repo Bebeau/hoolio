@@ -494,14 +494,14 @@ var init = {
             setTimeout(
             	function() {
             		jQuery('.btn-submit').replaceWith('<button class="btn btn-submit">Pay Now</button>');
-            	}, 2500
+            	}, 1500
         	);
 		} else {
         	jQuery('.btn-submit').replaceWith('<button class="btn btn-submit error"><i class="fa fa-ban"></i></button>');
          	setTimeout(
             	function() {
             		jQuery('.btn-submit').replaceWith('<button class="btn btn-submit">Pay Now</button>');
-            	}, 2500
+            	}, 1500
         	);
 		}
 	},
