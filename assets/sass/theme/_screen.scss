@@ -413,7 +413,7 @@ p {
 			.successMessage {
 				height: auto;
 				opacity: 1;
-				@include transform(translate(0, 0));
+				@include transform(translate(0, 150px));
 				@include transition(all 0.5s $easeInOutBack);
 			}
 		}

@@ -2165,11 +2165,11 @@ p {
     #checkout .right.confirm .successMessage {
       height: auto;
       opacity: 1;
-      -webkit-transform: translate(0, 0);
-      -moz-transform: translate(0, 0);
-      -ms-transform: translate(0, 0);
-      -o-transform: translate(0, 0);
-      transform: translate(0, 0);
+      -webkit-transform: translate(0, 150px);
+      -moz-transform: translate(0, 150px);
+      -ms-transform: translate(0, 150px);
+      -o-transform: translate(0, 150px);
+      transform: translate(0, 150px);
       -webkit-transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
       -moz-transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
       transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55); }

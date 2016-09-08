@@ -160,7 +160,6 @@
 										<div class="dropdown year">
 							                <button>Year <i class="fa fa-angle-down"></i></button>
 							                <ul class="dropdown-menu" data-input="expire_year">
-							                    <li data-value="2016">2016</li>
 							                    <li data-value="2017">2017</li>
 							                    <li data-value="2018">2018</li>
 							                    <li data-value="2019">2019</li>
