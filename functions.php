@@ -239,11 +239,14 @@ function checkout() {
     if(!empty($token)) {
         $success = false;
         // create customer from user email
+        echo $token;
+        echo $emailaddress;
         $customer = \Stripe\Customer::create(array(
             "source" => $token,
             "plan" => "pps",
             "email" => $emailaddress
         ));
+        echo $customer->id;
         // charge customer by ID
         \Stripe\Charge::create(array(
             "amount" => 22000, // Amount in cents
