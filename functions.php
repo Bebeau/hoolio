@@ -230,7 +230,7 @@ add_action('wp_ajax_nopriv_charge', 'checkout');
 function checkout() {
     require_once('stripe/config.php');
     // Get the credit card details submitted by the form
-    $token = $_POST['stripeToken'];
+    $token = $_POST['token'];
 
     $firstname = isset( $_POST['firstname'] ) ? $_POST['firstname'] : "";
     $lastname = isset( $_POST['lastname'] ) ? $_POST['lastname'] : "";
