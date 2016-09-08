@@ -251,7 +251,7 @@ function checkout() {
             "currency" => "usd",
             "source" => $token,
             "description" => "Pre-paid Subscription"
-        );
+        ));
         // get mailchimp api and list
         $key = esc_attr(get_option('mailchimp_api'));
         $list = esc_attr(get_option('mailchimp_list'));
