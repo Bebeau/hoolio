@@ -463,7 +463,8 @@ var init = {
 	contactBtn: function() {
 		jQuery('#contactfrm').submit(init.contactSubmit);
 	},
-	checkoutSubmit: function(frm) {
+	checkoutSubmit: function() {
+		var frm = jQuery('#checkoutFrm');
         jQuery.ajax({
             url: ajaxurl,
             type: frm.attr('method'),
@@ -517,7 +518,7 @@ var init = {
 		    // Insert the token ID into the form so it gets submitted to the server:
 		    frm.append(jQuery('<input type="hidden" name="stripeToken" id="stripeToken">').val(token));
 		    // Submit the form:
-		    init.checkoutSubmit(frm);
+		    Stripe.card.createCharge(frm, init.checkoutSubmit);
         }
 	},
 	checkoutBtn: function() {
