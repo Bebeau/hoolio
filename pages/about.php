@@ -53,37 +53,41 @@ get_header();
 	
 	$agents = get_users($args);
 
-	if(!empty($agents)) {
-		echo '<section id="team" class="section">';
-			echo '<div class="container">';
-				echo '<h2>Leadership Team</h2>';
-				echo '<div class="thirds">';
-					foreach($agents as $agent) {
+	// if(!empty($agents)) {
+	// 	echo '<section id="team" class="section">';
+	// 		echo '<div class="container">';
+	// 			echo '<h2>Leadership Team</h2>';
+	// 			echo '<div class="thirds">';
+	// 				foreach($agents as $agent) {
 
-						$userID = $agent->ID;
-						$email = $agent->user_email;
-						$title = $agent->jobTitle;
+	// 					$userID = $agent->ID;
+	// 					$email = $agent->user_email;
+	// 					$title = $agent->jobTitle;
 
-						echo '<article>';
-							if(!empty($agent->agent_image)) {
-								echo '<img src="'.$agent->agent_image.'" alt="" />';
-							} else {
-								echo '<img src="" alt="" />';
-							}
-							echo '<div class="agent-info">';
-								echo '<div class="outer">';
-									echo '<div class="inner">';
-										echo '<h3 class="name">'.$agent->display_name.'</h3>';
-										echo '<div class="title">'.$title.'</div>';
-									echo '</div>';
-								echo '</div>';
-							echo '</div>';
-						echo '</article>';
-					}
-				echo '</div>';
-			echo '</div>';
-		echo '</section>';
-	}
+	// 					echo '<article>';
+	// 						if(!empty($agent->agent_image)) {
+	// 							echo '<img src="'.$agent->agent_image.'" alt="" />';
+	// 						} else {
+	// 							echo '<img src="" alt="" />';
+	// 						}
+	// 						echo '<div class="agent-info">';
+	// 							echo '<div class="outer">';
+	// 								echo '<div class="inner">';
+	// 									echo '<h3 class="name">'.$agent->display_name.'</h3>';
+	// 									echo '<div class="title">'.$title.'</div>';
+	// 								echo '</div>';
+	// 							echo '</div>';
+	// 						echo '</div>';
+	// 					echo '</article>';
+	// 				}
+	// 			echo '</div>';
+	// 		echo '</div>';
+	// 	echo '</section>';
+	// }
+
+	echo '<section id="team">';
+		echo '<img src="'.get_bloginfo('template_directory').'/assets/images/team.png" alt="" />';
+	echo '</section>';
 
 	echo '<section id="apply" class="section">';
 		echo '<h2>Apply</h2>';

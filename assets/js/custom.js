@@ -464,7 +464,7 @@ var init = {
 		jQuery('#contactfrm').submit(init.contactSubmit);
 	},
 	checkoutResponse: function(data) {
-		jQuery('.btn-submit i').remove();
+		jQuery('.btn-submit').remove();
 		if(data === "Success") {
 			jQuery('.btn-submit').replaceWith('<button class="btn btn-submit success"><i class="fa fa-check"></i></button>');
             jQuery("input").val("");
@@ -519,7 +519,7 @@ var init = {
 		var frm = jQuery('#checkoutFrm');
 		frm.submit(
 			function(e) {
-				jQuery('<i class="fa fa-spinner fa-spin"></i>').prependTo('.btn-submit');
+				jQuery('.btn-submit').html('<i class="fa fa-spinner fa-spin"></i>');
 				// Disable the submit button to prevent repeated clicks:
 				frm.find('.btn-submit').prop('disabled', true);
 				// Request a token from Stripe:

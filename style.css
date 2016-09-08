@@ -2004,20 +2004,33 @@ p {
       float: left; }
   #checkout .payment {
     text-align: right;
-    background: #ebebeb;
-    display: inline-block;
-    margin-top: 25px; }
+    display: block;
+    margin-top: 75px; }
+    #checkout .payment:after {
+      content: "";
+      clear: both;
+      display: block; }
     #checkout .payment .price {
       display: inline-block;
       color: #1293cc;
-      font-size: 24pt;
+      font-size: 36pt;
       vertical-align: middle;
       box-sizing: border-box;
-      padding: 5px 15px; }
+      padding: 5px 15px;
+      float: left;
+      line-height: 150px; }
     #checkout .payment .btn {
       display: inline-block;
       vertical-align: middle;
-      margin: 0; }
+      margin: 0;
+      padding: 0;
+      width: 150px;
+      height: 150px;
+      float: right;
+      border-top-left-radius: 50%;
+      border-top-right-radius: 50%;
+      border-bottom-left-radius: 50%;
+      border-bottom-right-radius: 50%; }
   #checkout .close {
     position: fixed;
     top: 15px;
@@ -2707,8 +2720,8 @@ header {
           #meet ul#bubbles li .frame .copy i {
             top: 0; }
         #meet ul#bubbles li .frame .btn {
-          background: linear-gradient(white, #e6e6e6);
-          color: black; }
+          background: rgba(0, 0, 0, 0.3);
+          color: white; }
       #meet ul#bubbles li .bubblewrap {
         position: relative;
         -webkit-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -2743,19 +2756,19 @@ header {
             -moz-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
       #meet ul#bubbles li:first-child .bubble, #meet ul#bubbles li:first-child .frame {
-        background: radial-gradient(#f36235, #e7410e); }
+        background: #f36235; }
       #meet ul#bubbles li:first-child i {
         color: #f36235; }
       #meet ul#bubbles li:nth-child(2) .bubble, #meet ul#bubbles li:nth-child(2) .frame {
-        background: radial-gradient(#6c57a6, #564585); }
+        background: #6c57a6; }
       #meet ul#bubbles li:nth-child(3) .bubble, #meet ul#bubbles li:nth-child(3) .frame {
-        background: radial-gradient(#ce5a82, #bd3866); }
+        background: #ce5a82; }
       #meet ul#bubbles li:nth-child(4) .bubble, #meet ul#bubbles li:nth-child(4) .frame {
-        background: radial-gradient(#6cc9f2, #3db8ee); }
+        background: #1293cc; }
       #meet ul#bubbles li:nth-child(5) .bubble, #meet ul#bubbles li:nth-child(5) .frame {
-        background: radial-gradient(#f2c132, #e2ac0f); }
+        background: #f0ba1a; }
       #meet ul#bubbles li:last-child .bubble, #meet ul#bubbles li:last-child .frame {
-        background: radial-gradient(#90cb39, #75a62b); }
+        background: #a7d661; }
       #meet ul#bubbles li.open .bubble {
         position: relative;
         z-index: 14;
@@ -2952,7 +2965,7 @@ header {
 
 #page {
   padding: 100px 0;
-  background: radial-gradient(#ffffff, #f2f2f2);
+  background: #ffffff;
   position: relative;
   z-index: 10; }
   #page h2 {
@@ -2963,27 +2976,8 @@ header {
   font-size: 36pt;
   text-align: center; }
 
-#team {
-  background: radial-gradient(#0e719d, #0a4f6e);
-  padding: 100px 0; }
-  #team .thirds {
-    margin: 0; }
-  #team h2 {
-    margin: 0 0 50px;
-    color: white; }
-  #team img {
-    margin: 0 auto;
-    display: block; }
-  #team h3 {
-    text-align: center;
-    margin: 10px 0;
-    color: white; }
-  #team .title {
-    text-align: center;
-    font-weight: bold;
-    color: #a7d661;
-    text-transform: uppercase;
-    letter-spacing: 1px; }
+#team img {
+  width: 100%; }
 
 #apply {
   padding: 100px 0;

@@ -45,19 +45,18 @@
 
 		    	echo '</div>';
 		        echo '</div>';
-		        echo '</section>';
-		    endif;
+		        echo '</section>'; ?>
+		        <section id="cta">
+					<article class="outer">
+						<div class="inner" data-animation="slideUp">
+							<h2>Be Wyzerr, know more.</h2>
+							<button class="btn btn-wizard">Be A Wizard</button>
+						</div>
+					</article>
+				</section>
+		    <?php endif;
 		    wp_reset_query();
 	    ?>
-
-		<section id="cta">
-			<article class="outer">
-				<div class="inner" data-animation="slideUp">
-					<h2>Be Wyzerr, know more.</h2>
-					<button class="btn btn-wizard">Be A Wizard</button>
-				</div>
-			</article>
-		</section>
 
 		<footer>
 			<div class="outer">

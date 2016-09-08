@@ -267,21 +267,33 @@ p {
 	}
 	.payment {
 		text-align: right;
-		background: #ebebeb;
-		display: inline-block;
-		margin-top: 25px;
+		display: block;
+		margin-top: 75px;
+		&:after {
+			content: "";
+			clear: both;
+			display: block;
+		}
 		.price {
 			display: inline-block;
 			color: $blue;
-			font-size: 24pt;
+			font-size: 36pt;
 			vertical-align: middle;
 			box-sizing: border-box;
 			padding: 5px 15px;
+			float: left;
+			line-height: 150px;
 		}
 		.btn {
 			display: inline-block;
 			vertical-align: middle;
 			margin: 0;
+			padding: 0;
+			width: 150px;
+			height: 150px;
+			float: right;
+			@include border-top-radius(50%);
+			@include border-bottom-radius(50%);
 		}
 	}
 	.close {
@@ -901,8 +913,8 @@ header {
 					}
 				}
 				.btn {
-					background: linear-gradient(white, darken(white,10%));
-					color: black;
+					background: rgba(0,0,0,0.3);
+					color: white;
 				}
 			}
 			.bubblewrap {
@@ -961,7 +973,7 @@ header {
 			}
 			&:first-child{
 				.bubble, .frame {
-					background: radial-gradient($orange, darken($orange, 10%));
+					background: $orange;
 				}
 				i {
 					color: $orange;
@@ -969,27 +981,27 @@ header {
 			}
 			&:nth-child(2) {
 				.bubble, .frame {
-					background: radial-gradient($purp, darken($purp, 10%));
+					background: $purp;
 				}
 			}
 			&:nth-child(3) {
 				.bubble, .frame {
-					background: radial-gradient($pink, darken($pink, 10%));
+					background: $pink;
 				}
 			}
 			&:nth-child(4) {
 				.bubble, .frame {
-					background: radial-gradient(lighten($blue, 25%), lighten($blue, 15%));
+					background: $blue;
 				}
 			}
 			&:nth-child(5) {
 				.bubble, .frame {
-					background: radial-gradient(lighten($gold, 5%), darken($gold, 5%));
+					background: $gold;
 				}
 			}
 			&:last-child {
 				.bubble, .frame {
-					background: radial-gradient(darken($green, 10%), darken($green, 20%));
+					background: $green;
 				}
 			}
 			&.open {
@@ -1194,7 +1206,7 @@ header {
 }
 #page {
 	padding: 100px 0;
-	background: radial-gradient($white, darken($white, 5%));
+	background: $white;
 	position: relative;
 	z-index: 10;
 	h2 {
@@ -1208,31 +1220,36 @@ header {
 		text-align: center;
 	}
 }
+// #team {
+// 	background: radial-gradient(darken($blue, 10%), darken($blue, 20%));
+// 	padding: 100px 0;
+// 	.thirds {
+// 		margin: 0;
+// 	}
+// 	h2 {
+// 		margin: 0 0 50px;
+// 		color: white;
+// 	}
+// 	img {
+// 		margin: 0 auto;
+// 		display: block;
+// 	}
+// 	h3 {
+// 		text-align: center;
+// 		margin: 10px 0;
+// 		color: white;
+// 	}
+// 	.title {
+// 		text-align: center;
+// 		font-weight: bold;
+// 		color: $green;
+// 		text-transform: uppercase;
+// 		letter-spacing: 1px;
+// 	}
+// }
 #team {
-	background: radial-gradient(darken($blue, 10%), darken($blue, 20%));
-	padding: 100px 0;
-	.thirds {
-		margin: 0;
-	}
-	h2 {
-		margin: 0 0 50px;
-		color: white;
-	}
 	img {
-		margin: 0 auto;
-		display: block;
-	}
-	h3 {
-		text-align: center;
-		margin: 10px 0;
-		color: white;
-	}
-	.title {
-		text-align: center;
-		font-weight: bold;
-		color: $green;
-		text-transform: uppercase;
-		letter-spacing: 1px;
+		width: 100%;
 	}
 }
 #apply {
