@@ -232,11 +232,13 @@ function checkout() {
     // Get the credit card details submitted by the form
     $token = $_POST['stripeToken'];
 
+    echo $token;
+
     $firstname = isset( $_POST['firstname'] ) ? $_POST['firstname'] : "";
     $lastname = isset( $_POST['lastname'] ) ? $_POST['lastname'] : "";
     $emailaddress = filter_var($_POST['emailaddress'], FILTER_SANITIZE_EMAIL);
 
-    if(!empty($token)) {
+    if(isset($token)) {
         $charge = false;
         // create customer from user email
         echo $token;

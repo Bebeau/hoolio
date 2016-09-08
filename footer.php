@@ -116,7 +116,7 @@
 								<li>Locked-in rate of $5/month (reguarly $39)</li>
 							</ul>
 							<?php require_once('stripe/config.php'); ?>
-							<form action="" method="post" id="checkoutFrm">
+							<form action="" method="POST" id="checkoutFrm">
 								<span class="payment-errors"></span>
 								<div class="group half">
 									<article>
