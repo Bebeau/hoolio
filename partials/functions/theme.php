@@ -32,6 +32,9 @@ function theme_setup_page() {
 	settings_fields( 'theme_setup_options' );
     do_settings_sections( 'theme_setup_options' );
 
+    $secret = get_option('stripe_secret_key');
+	$publish = get_option('stripe_publish_key');
+
     $api = get_option('mailchimp_api');
 	$list = get_option('mailchimp_list');
 
@@ -43,6 +46,15 @@ function theme_setup_page() {
 
 			echo "<h1>Theme Options</h1>";
 
+			echo '<section id="Stripe">';
+			echo '<h2>Stripe Integration</h2>';
+			echo '<p>Add your Stripe API keys to connect the pre-paid subscription form.</p>';
+				echo '<label for="stripe_secret_key">Secret Key</label>';
+				echo '<input type="text" name="stripe_secret_key" id="stripe_secret_key" value="'.$secret.'" />';
+				echo '<label for="stripe_publish_key">Publisher Key</label>';
+				echo '<input type="text" name="stripe_publish_key" id="stripe_publish_key" value="'.$publish.'" />';
+			echo '</section>';
+
 			echo '<section id="MailChimp">';
 			echo '<h2>Mailchimp Integration</h2>';
 			echo '<p>Add your MailChimp API and list ID below to connect the newsletter form to your MailChimp list.</p>';
@@ -53,7 +65,7 @@ function theme_setup_page() {
 			echo '</section>';
 
 			echo '<section id="bgVideo" data-img="bg_video" data-input="custom_bg_video">';
-				echo '<h2>Background Video</h2>';
+				echo '<h2>Home Video</h2>';
 				echo '<p>Upload a video to display on the homepage of the theme.</p>';
 				echo '<div class="image-placeholder bg_video">'; 
 					if ( !empty($bg_video) ) {
@@ -102,14 +114,18 @@ function save_custom_theme_options() {
 		if ( isset( $_POST['custom_bg_video'] ) ) {
 			update_option('custom_bg_video', $_POST['custom_bg_video']);
 		}
-
 		if ( isset( $_POST['mailchimp_api'] ) ) {
 			update_option('mailchimp_api', $_POST['mailchimp_api']);
 		}
 		if ( isset( $_POST['mailchimp_list'] ) ) {
 			update_option('mailchimp_list', $_POST['mailchimp_list']);
 		}
-
+		if ( isset( $_POST['stripe_secret_key'] ) ) {
+			update_option('stripe_secret_key', $_POST['stripe_secret_key']);
+		}
+		if ( isset( $_POST['stripe_publish_key'] ) ) {
+			update_option('stripe_publish_key', $_POST['stripe_publish_key']);
+		}
 		echo '<div id="message" class="updated">Settings saved</div>';
 
 	}

@@ -10,9 +10,9 @@
     max-width: 100%;
     height: auto; }
 
-#MailChimp label {
+#MailChimp label, #Stripe label {
   display: block; }
-#MailChimp input {
+#MailChimp input, #Stripe input {
   display: block;
   width: 400px;
   line-height: 40px;
