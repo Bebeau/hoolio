@@ -463,28 +463,6 @@ var init = {
 	contactBtn: function() {
 		jQuery('#contactfrm').submit(init.contactSubmit);
 	},
-	checkoutSubmit: function() {
-		var frm = jQuery('#checkoutFrm');
-        jQuery.ajax({
-            url: ajaxurl,
-            type: frm.attr('method'),
-            data: {
-            	firstname: jQuery('#firstname').val(),
-            	lastname: jQuery('#lastname').val(),
-            	emailaddress: jQuery('#emailaddress').val(),
-            	token: jQuery('#stripeToken').val(),
-            	action: 'charge'
-            },
-            dataType: 'html',
-            beforeSubmit : function(arr, $form, options) {
-	            arr.push( { "charge" : "charge_nonce", "value" : meta.charge_nonce });
-	        },
-            success: function(data) {
-            	init.checkoutResponse(data);
-            }
-        });
-        return false;
-	},
 	checkoutResponse: function(data) {
 		jQuery('.btn-submit i').remove();
 		if(data === "Success") {
@@ -515,10 +493,25 @@ var init = {
         } else {
 			// Get the token ID:
 		    var token = response.id;
-		    // Insert the token ID into the form so it gets submitted to the server:
-		    frm.append(jQuery('<input type="hidden" name="stripeToken" id="stripeToken">').val(token));
 		    // Submit the form:
-		    Stripe.card.createCharge(frm, init.checkoutSubmit);
+		    jQuery.ajax({
+	            url: ajaxurl,
+	            type: frm.attr('method'),
+	            data: {
+	            	firstname: jQuery('#firstname').val(),
+	            	lastname: jQuery('#lastname').val(),
+	            	emailaddress: jQuery('#emailaddress').val(),
+	            	token: token,
+	            	action: 'charge'
+	            },
+	            dataType: 'html',
+	            beforeSubmit : function(arr, $form, options) {
+		            arr.push( { "charge" : "charge_nonce", "value" : meta.charge_nonce });
+		        },
+	            success: function(data) {
+	            	init.checkoutResponse(data);
+	            }
+	        });
         }
 	},
 	checkoutBtn: function() {

@@ -237,7 +237,7 @@ function checkout() {
     $emailaddress = filter_var($_POST['emailaddress'], FILTER_SANITIZE_EMAIL);
 
     if(!empty($token)) {
-        $success = false;
+        $charge = false;
         // create customer from user email
         echo $token;
         echo $emailaddress;
@@ -248,16 +248,17 @@ function checkout() {
         ));
         echo $customer->id;
         // charge customer by ID
-        \Stripe\Charge::create(array(
+        $charge = \Stripe\Charge::create(array(
             "amount" => 22000, // Amount in cents
             "currency" => "usd",
             "customer" => $customer->id)
         );
+
         // get mailchimp api and list
         $key = esc_attr(get_option('mailchimp_api'));
         $list = esc_attr(get_option('mailchimp_list'));
 
-        if(!empty($key) && !empty($list)) {
+        if($charge && !empty($key) && !empty($list)) {
 
             $auth = base64_encode( 'user:'.$key );
 
@@ -290,12 +291,12 @@ function checkout() {
 
         // Return an appropriate response to the browser
         if ( defined( 'DOING_AJAX' ) ) {
-            echo $success ? "Success" : "E";
+            echo $charge ? "Success" : "E";
         }
 
     }
 
-    echo "E";
+    echo "Pass";
 
     die();
 }
