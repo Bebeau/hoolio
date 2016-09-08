@@ -249,13 +249,13 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/assets\/images\/team.png": {
-		"fileType": 32768,
+	"\/assets\/images\/team.jpg": {
+		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 0,
-		"inputAbbreviatedPath": "\/assets\/images\/team.png",
-		"outputAbbreviatedPath": "\/assets\/images\/team.png",
+		"inputAbbreviatedPath": "\/assets\/images\/team.jpg",
+		"outputAbbreviatedPath": "\/assets\/images\/team.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0

@@ -86,7 +86,7 @@ get_header();
 	// }
 
 	echo '<section id="team">';
-		echo '<img src="'.get_bloginfo('template_directory').'/assets/images/team.png" alt="" />';
+		echo '<img src="'.get_bloginfo('template_directory').'/assets/images/team.jpg" alt="" />';
 	echo '</section>';
 
 	echo '<section id="apply" class="section">';
