@@ -191,6 +191,63 @@
 		}
 	}
 }
+@media(max-width: 1170px) {
+	.container {
+		width: 100%;
+		box-sizing: border-box;
+		padding: 0 25px;
+	}
+}
+@media(max-width: 1024px) {
+	#metrics {
+		.half {
+			width: 100%;
+			padding: 0;
+			article.statsWrap {
+				position: relative;
+				left: -50px;
+			}
+		}
+	}
+	.thirds {
+		width: 100%;
+		article {
+			p {
+				padding: 0;
+			}
+		}
+	}
+	#checkout {
+		.right {
+			.copy {
+				padding: 0 50px 0 100px;
+				font-size: 12pt;
+				ul {
+					padding: 0 0 0 15px;
+					font-size: 12pt;
+				}
+				h2 {
+					font-size: 24pt;
+				}
+			}
+			.payment {
+				.price {
+					font-size: 24pt;
+				}
+			}
+			form {
+				margin: 25px auto 0;
+			}
+		}
+	}
+	#apply {
+		.container {
+			p {
+				width: auto;
+			}
+		}
+	}
+}
 @media(max-width: 991px) {
 	#top {
 		#clientLogos {
@@ -239,16 +296,91 @@
 		padding: 0 15px;
 	}
 }
-@media(max-width: 414px) {
-	#bubblesMobile {
-		.frame {
-			&.open {
-				height: 688px;
+@media(max-width: 768px) {
+	video {
+		display: none;
+	}
+	.mobile {
+		display: block;
+	}
+	.block {
+		height: auto;
+		padding: 100px 0; 
+	}
+	#top {
+		padding-top: 125px;
+		min-height: auto;
+		height: auto;
+		h1 {
+			margin: 25px 0 0;
+		}
+		.half {
+			width: auto;
+			video, video.active {
+				display: none;
+			}
+		}
+		#clientLogos {
+			position: relative;
+			top: auto;
+			left: auto;
+			right: auto;
+			margin: 25px auto;
+			span {
+				width: 105px;
+				@include transform(scale(1));
+				padding: 15px;
+				box-sizing: border-box;
+				vertical-align: middle;
+				img {
+					vertical-align: middle;
+				}
+			}
+		}
+		#clientLogos {
+			margin: 0;
+			top: 25px;
+		}
+	}
+	#help {
+		.copy {
+			img {
+				display: block;
+				margin: 50px auto 0;
+			}
+		}
+	}
+	#metrics {
+		.half {
+			article {
+				&.statsWrap {
+					margin: 0;
+					left: 0;
+					padding: 0 15px;
+				}
+			}
+		}
+	}
+	#meet {
+		ul#bubbles {
+			margin-top: 50px;
+			li {
+				width: 33.333333%;
+				margin: 25px 0 0 -4px;
+			}
+		}
+	}
+	.thirds {
+		article {
+			padding: 0 10px;
+			p {
+				font-size: 14pt;
+				line-height: normal;
 			}
 		}
 	}
 }
-@media(max-width: 768px) {
+@media(max-width: 414px) {
 	#bubblesMobile {
 		display: block !important;
 		.frame {
@@ -256,7 +388,7 @@
 			overflow: hidden;
 			@include transition(all 0.3s $authenticMotion);
 			&.open {
-				height: 745px;
+				height: 688px;
 				@include transition(all 0.3s $authenticMotion);
 			}
 			img {
