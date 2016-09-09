@@ -128,49 +128,61 @@
 						<div class="titleBar">
 							<h3><i class="icon icon-bar-graph"></i> New Products &amp; Services</h3>
 						</div>
-						<img src="<?php echo bloginfo('template_directory');?>/assets/images/iphone2.png" alt="" />
-						<p>Hoolio is our personal wizard here at Wyzerr. Don’t worry, you can name your personal wizard yourself. Hoolio helps with the following:</p>
-						<a href="<?php echo site_url('contact'); ?>" class="btn">Be A Wizard</a>
+						<div class="frameCopy">
+							<img src="<?php echo bloginfo('template_directory');?>/assets/images/iphone2.png" alt="" />
+							<p>Hoolio is our personal wizard here at Wyzerr. Don’t worry, you can name your personal wizard yourself. Hoolio helps with the following:</p>
+							<a href="<?php echo site_url('contact'); ?>" class="btn">Be A Wizard</a>
+						</div>
 					</div>
 					<div class="frame">
 						<div class="titleBar">
 							<h3><i class="icon icon-ruler"></i> Customer Loyalty</h3>
 						</div>
-						<img src="<?php echo bloginfo('template_directory');?>/assets/images/iphone2.png" alt="" />
-						<p>Hoolio is our personal wizard here at Wyzerr. Don’t worry, you can name your personal wizard yourself. Hoolio helps with the following:</p>
-						<a href="<?php echo site_url('contact'); ?>" class="btn">Learn More</a>
+						<div class="frameCopy">
+							<img src="<?php echo bloginfo('template_directory');?>/assets/images/iphone2.png" alt="" />
+							<p>Hoolio is our personal wizard here at Wyzerr. Don’t worry, you can name your personal wizard yourself. Hoolio helps with the following:</p>
+							<a href="<?php echo site_url('contact'); ?>" class="btn">Learn More</a>
+						</div>
 					</div>
 					<div class="frame">
 						<div class="titleBar">
 							<h3><i class="icon icon-db"></i> How To Increase Sales</h3>
 						</div>
-						<img src="<?php echo bloginfo('template_directory');?>/assets/images/iphone2.png" alt="" />
-						<p>Hoolio is our personal wizard here at Wyzerr. Don’t worry, you can name your personal wizard yourself. Hoolio helps with the following:</p>
-						<a href="<?php echo site_url('contact'); ?>" class="btn">Be A Wizard</a>
+						<div class="frameCopy">
+							<img src="<?php echo bloginfo('template_directory');?>/assets/images/iphone2.png" alt="" />
+							<p>Hoolio is our personal wizard here at Wyzerr. Don’t worry, you can name your personal wizard yourself. Hoolio helps with the following:</p>
+							<a href="<?php echo site_url('contact'); ?>" class="btn">Be A Wizard</a>
+						</div>
 					</div>
 					<div class="frame">
 						<div class="titleBar">
 							<h3><i class="icon icon-profile"></i> Marketing Message</h3>
 						</div>
-						<img src="<?php echo bloginfo('template_directory');?>/assets/images/iphone2.png" alt="" />
-						<p>Hoolio is our personal wizard here at Wyzerr. Don’t worry, you can name your personal wizard yourself. Hoolio helps with the following:</p>
-						<a href="<?php echo site_url('contact'); ?>" class="btn">Be A Wizard</a>
+						<div class="frameCopy">
+							<img src="<?php echo bloginfo('template_directory');?>/assets/images/iphone2.png" alt="" />
+							<p>Hoolio is our personal wizard here at Wyzerr. Don’t worry, you can name your personal wizard yourself. Hoolio helps with the following:</p>
+							<a href="<?php echo site_url('contact'); ?>" class="btn">Be A Wizard</a>
+						</div>
 					</div>
 					<div class="frame">
 						<div class="titleBar">
 							<h3><i class="icon icon-smile"></i> Employee Retention</h3>
 						</div>
-						<img src="<?php echo bloginfo('template_directory');?>/assets/images/iphone2.png" alt="" />
-						<p>Hoolio is our personal wizard here at Wyzerr. Don’t worry, you can name your personal wizard yourself. Hoolio helps with the following:</p>
-						<a href="<?php echo site_url('contact'); ?>" class="btn">Be A Wizard</a>
+						<div class="frameCopy">
+							<img src="<?php echo bloginfo('template_directory');?>/assets/images/iphone2.png" alt="" />
+							<p>Hoolio is our personal wizard here at Wyzerr. Don’t worry, you can name your personal wizard yourself. Hoolio helps with the following:</p>
+							<a href="<?php echo site_url('contact'); ?>" class="btn">Be A Wizard</a>
+						</div>
 					</div>
 					<div class="frame">
 						<div class="titleBar">
 							<h3><i class="icon icon-insights"></i> Consumer Insights</h3>
 						</div>
-						<img src="<?php echo bloginfo('template_directory');?>/assets/images/iphone2.png" alt="" />
-						<p>Hoolio is our personal wizard here at Wyzerr. Don’t worry, you can name your personal wizard yourself. Hoolio helps with the following:</p>
-						<a href="<?php echo site_url('contact'); ?>" class="btn">Be A Wizard</a>
+						<div class="frameCopy">
+							<img src="<?php echo bloginfo('template_directory');?>/assets/images/iphone2.png" alt="" />
+							<p>Hoolio is our personal wizard here at Wyzerr. Don’t worry, you can name your personal wizard yourself. Hoolio helps with the following:</p>
+							<a href="<?php echo site_url('contact'); ?>" class="btn">Be A Wizard</a>
+						</div>
 					</div>
 				</div>
 				<ul id="bubbles">

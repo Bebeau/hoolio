@@ -156,14 +156,15 @@ var init = {
 	mobileBubbles: function() {
 		jQuery('#bubblesMobile .frame').click(function(e){
 			e.preventDefault();
-			var section = jQuery(this);
-			jQuery('#bubblesMobile .frame').removeClass("open");
+			var frame = jQuery(this);
+			var section = jQuery('.frameCopy',this);
+			jQuery('#bubblesMobile .frame .frameCopy').slideUp();
 			setTimeout(
 				function(){
 					jQuery('html,body').animate({
-					   scrollTop: section.offset().top - 94
+					   scrollTop: frame.offset().top - 94
 					}, 250, function(){
-						section.addClass("open");
+						section.slideDown();
 					});
 				}, 500
 			);			

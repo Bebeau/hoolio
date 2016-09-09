@@ -384,13 +384,7 @@
 	#bubblesMobile {
 		display: block !important;
 		.frame {
-			height: 80px;
-			overflow: hidden;
 			@include transition(all 0.3s $authenticMotion);
-			&.open {
-				height: 688px;
-				@include transition(all 0.3s $authenticMotion);
-			}
 			img {
 				max-width: 50%;
 				@include transform(translate(0,15px));
@@ -415,6 +409,10 @@
 					text-align: left;
 					@include transition(all 0.3s $authenticMotion);
 				}
+			}
+			.frameCopy {
+				display: none;
+				padding-bottom: 25px;
 			}
 			p, h3 {
 				color: white;

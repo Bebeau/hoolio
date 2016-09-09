@@ -3639,16 +3639,9 @@ footer {
   #bubblesMobile {
     display: block !important; }
     #bubblesMobile .frame {
-      height: 80px;
-      overflow: hidden;
       -webkit-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       -moz-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
-      #bubblesMobile .frame.open {
-        height: 688px;
-        -webkit-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        -moz-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
       #bubblesMobile .frame img {
         max-width: 50%;
         -webkit-transform: translate(0, 15px);
@@ -3676,6 +3669,9 @@ footer {
           -webkit-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
           -moz-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
           transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+      #bubblesMobile .frame .frameCopy {
+        display: none;
+        padding-bottom: 25px; }
       #bubblesMobile .frame p, #bubblesMobile .frame h3 {
         color: white; }
       #bubblesMobile .frame p {
