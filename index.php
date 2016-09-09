@@ -6,22 +6,25 @@
 			<div class="inner">
 				<!-- <div class="ipad" data-animation="slideInLeft"></div> -->
 				<div class="half" data-animation="slideInLeft" id="videos">
-					<video muted preload="auto" loop class="active" id="iphone">
-						<source src="<?php echo bloginfo('template_directory'); ?>/assets/videos/iphone.webm" type="video/webm">
-						<source src="<?php echo bloginfo('template_directory'); ?>/assets/videos/iphone.ogv" type="video/ogv">
-						<source src="<?php echo bloginfo('template_directory'); ?>/assets/videos/iphone.mp4" type="video/mp4">
-					</video>
-					<video muted preload="auto" loop id="tablet">
-						<source src="<?php echo bloginfo('template_directory'); ?>/assets/videos/tablet.webm" type="video/webm">
-						<source src="<?php echo bloginfo('template_directory'); ?>/assets/videos/tablet.ogv" type="video/ogv">
-						<source src="<?php echo bloginfo('template_directory'); ?>/assets/videos/tablet.mp4" type="video/mp4">
-					</video>
-					<video muted preload="auto" loop id="laptop">
-						<source src="<?php echo bloginfo('template_directory'); ?>/assets/videos/computer.webm" type="video/webm">
-						<source src="<?php echo bloginfo('template_directory'); ?>/assets/videos/computer.ogv" type="video/ogv">
-						<source src="<?php echo bloginfo('template_directory'); ?>/assets/videos/computer.mp4" type="video/mp4">
-					</video>
-					<img class="mobile" src="<?php echo bloginfo('template_directory'); ?>/assets/images/ipad.png" alt="" />
+					<?php if(wp_is_mobile()) { ?>
+						<img src="<?php echo bloginfo('template_directory'); ?>/assets/images/ipad.png" alt="" />
+					<?php  } else { ?>
+						<video muted preload="auto" loop class="active" id="iphone">
+							<source src="<?php echo bloginfo('template_directory'); ?>/assets/videos/iphone.webm" type="video/webm">
+							<source src="<?php echo bloginfo('template_directory'); ?>/assets/videos/iphone.ogv" type="video/ogv">
+							<source src="<?php echo bloginfo('template_directory'); ?>/assets/videos/iphone.mp4" type="video/mp4">
+						</video>
+						<video muted preload="auto" loop id="tablet">
+							<source src="<?php echo bloginfo('template_directory'); ?>/assets/videos/tablet.webm" type="video/webm">
+							<source src="<?php echo bloginfo('template_directory'); ?>/assets/videos/tablet.ogv" type="video/ogv">
+							<source src="<?php echo bloginfo('template_directory'); ?>/assets/videos/tablet.mp4" type="video/mp4">
+						</video>
+						<video muted preload="auto" loop id="laptop">
+							<source src="<?php echo bloginfo('template_directory'); ?>/assets/videos/computer.webm" type="video/webm">
+							<source src="<?php echo bloginfo('template_directory'); ?>/assets/videos/computer.ogv" type="video/ogv">
+							<source src="<?php echo bloginfo('template_directory'); ?>/assets/videos/computer.mp4" type="video/mp4">
+						</video>
+					<?php } ?>
 				</div>
 				<div class="copy half">
 					<h1 data-animation="slideDown">Wisdom Made Easy.</h1>
@@ -76,13 +79,17 @@
 				<div class="copy" data-animation="slideUp">
 					<h1 data-animation="slideDown">What can your Wizard<br /> help you do?</h1>
 					<p data-animation="slideUp">Pretty much anything an expert in market research, human resources, data science, technology, innovation, or branding would help you do. Your Wizard is the intersection of management consultancy, market research, and consumer engagement.</p>
-					<img class="mobile" src="<?php echo bloginfo('template_directory'); ?>/assets/images/placeholder.png" alt="" />
+					<?php if(wp_is_mobile()) { ?>
+						<img src="<?php echo bloginfo('template_directory'); ?>/assets/images/placeholder.png" alt="" />
+					<?php } ?>
 				</div>
-				<video muted preload="auto">
-					<source src="<?php echo bloginfo('template_directory'); ?>/assets/videos/wizards.webm" type="video/webm">
-					<source src="<?php echo bloginfo('template_directory'); ?>/assets/videos/wizards.ogv" type="video/ogv">
-					<source src="<?php echo bloginfo('template_directory'); ?>/assets/videos/wizards.mp4" type="video/mp4">
-				</video>
+				<?php if(!wp_is_mobile()) { ?>
+					<video muted preload="auto">
+						<source src="<?php echo bloginfo('template_directory'); ?>/assets/videos/wizards.webm" type="video/webm">
+						<source src="<?php echo bloginfo('template_directory'); ?>/assets/videos/wizards.ogv" type="video/ogv">
+						<source src="<?php echo bloginfo('template_directory'); ?>/assets/videos/wizards.mp4" type="video/mp4">
+					</video>
+				<?php } ?>
 			</div>
 		</article>
 	</section>
