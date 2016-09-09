@@ -134,6 +134,11 @@
 					<div class="frame">
 						<div class="titleBar">
 							<h3><i class="icon icon-bar-graph"></i> New Products &amp; Services</h3>
+							<div class="circleClose">
+								<span class="bar cross"></span>
+								<span class="bar middle"></span>
+								<span class="bar cross"></span>
+							</div>
 						</div>
 						<div class="frameCopy">
 							<img src="<?php echo bloginfo('template_directory');?>/assets/images/iphone2.png" alt="" />
@@ -144,6 +149,11 @@
 					<div class="frame">
 						<div class="titleBar">
 							<h3><i class="icon icon-ruler"></i> Customer Loyalty</h3>
+							<div class="circleClose">
+								<span class="bar cross"></span>
+								<span class="bar middle"></span>
+								<span class="bar cross"></span>
+							</div>
 						</div>
 						<div class="frameCopy">
 							<img src="<?php echo bloginfo('template_directory');?>/assets/images/iphone2.png" alt="" />
@@ -154,6 +164,11 @@
 					<div class="frame">
 						<div class="titleBar">
 							<h3><i class="icon icon-db"></i> How To Increase Sales</h3>
+							<div class="circleClose">
+								<span class="bar cross"></span>
+								<span class="bar middle"></span>
+								<span class="bar cross"></span>
+							</div>
 						</div>
 						<div class="frameCopy">
 							<img src="<?php echo bloginfo('template_directory');?>/assets/images/iphone2.png" alt="" />
@@ -164,6 +179,11 @@
 					<div class="frame">
 						<div class="titleBar">
 							<h3><i class="icon icon-profile"></i> Marketing Message</h3>
+							<div class="circleClose">
+								<span class="bar cross"></span>
+								<span class="bar middle"></span>
+								<span class="bar cross"></span>
+							</div>
 						</div>
 						<div class="frameCopy">
 							<img src="<?php echo bloginfo('template_directory');?>/assets/images/iphone2.png" alt="" />
@@ -174,6 +194,11 @@
 					<div class="frame">
 						<div class="titleBar">
 							<h3><i class="icon icon-smile"></i> Employee Retention</h3>
+							<div class="circleClose">
+								<span class="bar cross"></span>
+								<span class="bar middle"></span>
+								<span class="bar cross"></span>
+							</div>
 						</div>
 						<div class="frameCopy">
 							<img src="<?php echo bloginfo('template_directory');?>/assets/images/iphone2.png" alt="" />
@@ -184,6 +209,11 @@
 					<div class="frame">
 						<div class="titleBar">
 							<h3><i class="icon icon-insights"></i> Consumer Insights</h3>
+							<div class="circleClose">
+								<span class="bar cross"></span>
+								<span class="bar middle"></span>
+								<span class="bar cross"></span>
+							</div>
 						</div>
 						<div class="frameCopy">
 							<img src="<?php echo bloginfo('template_directory');?>/assets/images/iphone2.png" alt="" />

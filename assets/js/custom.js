@@ -139,7 +139,9 @@ var init = {
 		init.scooch();
 		init.wizard();
 		init.playVideo();
-		init.topVideos();
+		if(!isMobile) {
+			init.topVideos();
+		}
 		init.tooltip();
 		init.subNav();
 		init.mobileBubbles();
@@ -158,16 +160,22 @@ var init = {
 			e.preventDefault();
 			var frame = jQuery(this);
 			var section = jQuery('.frameCopy',this);
-			jQuery('#bubblesMobile .frame .frameCopy').slideUp();
-			setTimeout(
-				function(){
-					jQuery('html,body').animate({
-					   scrollTop: frame.offset().top - 94
-					}, 250, function(){
-						section.slideDown();
-					});
-				}, 500
-			);			
+			if(!frame.hasClass("open")) {
+				jQuery('#bubblesMobile .frame .frameCopy').slideUp();
+				setTimeout(
+					function(){
+						jQuery('html,body').animate({
+						   scrollTop: frame.offset().top - 94
+						}, 250, function(){
+							section.slideDown();
+							frame.addClass("open");
+						});
+					}, 500
+				);
+			} else {
+				section.slideUp();
+				frame.removeClass("open");
+			}	
 		});
 	},
 	subNav: function() {
