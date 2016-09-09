@@ -3623,6 +3623,8 @@ footer {
     margin: 0;
     left: 0;
     padding: 0 15px; }
+  #metrics .half article.phone {
+    display: none; }
 
   #meet ul#bubbles {
     margin-top: 50px; }
