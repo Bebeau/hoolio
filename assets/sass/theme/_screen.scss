@@ -372,6 +372,9 @@ p {
 	.right {
 		background: white;
 		margin: 0;
+		.outer {
+			overflow: scroll;
+		}
 		.copy {
 			box-sizing: border-box;
 			padding: 0 100px;
@@ -934,7 +937,7 @@ header {
 					@include transition(all 0.3s ease-in-out);
 				}
 				.copy {
-					width: 800px;
+					width: 1170px;
 					@include transform(translate(0,25px));
 					img {
 						max-height: 600px;
@@ -942,6 +945,8 @@ header {
 						height: auto;
 						width: auto;
 						margin: 0;
+						padding: 50px 0 0;
+						box-sizing: border-box;
 					}
 					i {
 						top: 0;

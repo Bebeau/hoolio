@@ -2120,6 +2120,8 @@ p {
   #checkout .right {
     background: white;
     margin: 0; }
+    #checkout .right .outer {
+      overflow: scroll; }
     #checkout .right .copy {
       box-sizing: border-box;
       padding: 0 100px;
@@ -2750,7 +2752,7 @@ header {
           -moz-transition: all 0.3s ease-in-out;
           transition: all 0.3s ease-in-out; }
         #meet ul#bubbles li .frame .copy {
-          width: 800px;
+          width: 1170px;
           -webkit-transform: translate(0, 25px);
           -moz-transform: translate(0, 25px);
           -ms-transform: translate(0, 25px);
@@ -2761,7 +2763,9 @@ header {
             max-width: 100%;
             height: auto;
             width: auto;
-            margin: 0; }
+            margin: 0;
+            padding: 50px 0 0;
+            box-sizing: border-box; }
           #meet ul#bubbles li .frame .copy i {
             top: 0; }
         #meet ul#bubbles li .frame .btn {
@@ -3399,7 +3403,11 @@ footer {
     padding: 50px 0; }
 
   #meet .copy .half img {
-    max-height: 600px; } }
+    max-height: 600px; }
+
+  #contact {
+    height: auto;
+    padding: 100px 0; } }
 @media (max-width: 1440px) {
   #checkout .right .copy {
     padding: 0 100px;
@@ -3510,7 +3518,10 @@ footer {
   .container {
     width: 100%;
     box-sizing: border-box;
-    padding: 0 25px; } }
+    padding: 0 25px; }
+
+  #meet ul#bubbles li .frame .copy {
+    width: 991px; } }
 @media (max-width: 1024px) {
   #metrics .half {
     width: 100%;
@@ -3558,6 +3569,8 @@ footer {
       margin: 25px 0 0; }
       #meet ul#bubbles li:nth-child(even) {
         margin-left: -4px; }
+      #meet ul#bubbles li .frame .copy {
+        width: auto; }
 
   #metrics .half article {
     width: auto; }

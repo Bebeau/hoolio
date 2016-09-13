@@ -30,6 +30,10 @@
 			}
 		}
 	}
+	#contact {
+		height: auto;
+		padding: 100px 0;
+	}
 }
 @media(max-width: 1440px) {
 	#checkout {
@@ -197,6 +201,17 @@
 		box-sizing: border-box;
 		padding: 0 25px;
 	}
+	#meet {
+		ul#bubbles {
+			li {
+				.frame {
+					.copy {
+						width: 991px;
+					}
+				}
+			}
+		}
+	}
 }
 @media(max-width: 1024px) {
 	#metrics {
@@ -268,6 +283,11 @@
 				margin: 25px 0 0;
 				&:nth-child(even) {
 					margin-left:  -4px;
+				}
+				.frame {
+					.copy {
+						width: auto;
+					}
 				}
 			}
 		}
