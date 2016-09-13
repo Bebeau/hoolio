@@ -7,8 +7,6 @@ $(function(){ParallaxScroll.init()});var ParallaxScroll={showLogs:!1,round:1e3,i
 
 // check to make sure it is not loaded on mobile device
 var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent);
-var ajaxurl = meta.ajaxurl;
-var pKey = meta.publishable_key;
 
 var move = {
 	onMove: function() {
@@ -128,6 +126,10 @@ var move = {
 
 var init = {
 	onReady: function() {
+
+		var ajaxurl = meta.ajaxurl;
+		var pKey = meta.publishable_key;
+		
 		init.preLoad();
 		init.openMenu();
 		init.bubbleOpen();
