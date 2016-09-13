@@ -68,7 +68,7 @@
 						<p>We use artificial intelligence<br />for personalized experiences.</p>
 					</article>
 				</div>
-				<a href="<?php echo site_url('contact'); ?>" class="btn">Be Wyzerr Now</a>
+				<button class="btn btn-wizard">Be Wyzerr Now</button>
 			</div>
 		</article>
 	</section>
