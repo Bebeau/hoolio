@@ -25,10 +25,10 @@
 [data-animation="slideInLeft"] {
 	position: relative;
 	@include transform(translate(-200%,0));
-	@include transition(transform 1s $easeInOutBack);
+	@include transition(transform 1s $authenticMotion);
 	&.slideIn {
 		@include transform(translate(0,0));
-		@include transition(transform 1s $easeInOutBack);
+		@include transition(transform 1s $authenticMotion);
 	}
 }
 [data-animation="slideInRight"] {
