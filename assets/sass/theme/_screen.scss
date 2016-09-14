@@ -690,6 +690,7 @@ header {
 			display: inline-block;
 			text-align: center;
 			margin: 0 25px;
+			vertical-align: middle;
 			img {
 				max-width: 100%;
 			}
@@ -930,6 +931,21 @@ header {
 				}
 				p {
 					color: white;
+					&.leftText {
+						text-align: left;
+						margin-bottom: 5px;
+					}
+				}
+				ul {
+					list-style: circle;
+					margin: 0;
+					padding: 0;
+					li {
+						display: block;
+						text-align: left;
+						width: 100%;
+						color: white;
+					}
 				}
 				&.in {
 					visibility: visible;

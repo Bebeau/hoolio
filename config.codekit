@@ -95,6 +95,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/assets\/images\/client_logos\/uc.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 14197,
+		"inputAbbreviatedPath": "\/assets\/images\/client_logos\/uc.png",
+		"outputAbbreviatedPath": "\/assets\/images\/client_logos\/uc.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/assets\/images\/client_logos\/unilever.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -183,6 +194,50 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/assets\/images\/icons\/png\/Behavior.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 37024,
+		"inputAbbreviatedPath": "\/assets\/images\/icons\/png\/Behavior.png",
+		"outputAbbreviatedPath": "\/assets\/images\/icons\/png\/Behavior.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/assets\/images\/icons\/png\/Life.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 73222,
+		"inputAbbreviatedPath": "\/assets\/images\/icons\/png\/Life.png",
+		"outputAbbreviatedPath": "\/assets\/images\/icons\/png\/Life.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/assets\/images\/icons\/png\/Pulse.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 41279,
+		"inputAbbreviatedPath": "\/assets\/images\/icons\/png\/Pulse.png",
+		"outputAbbreviatedPath": "\/assets\/images\/icons\/png\/Pulse.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/assets\/images\/icons\/png\/Voice.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 34919,
+		"inputAbbreviatedPath": "\/assets\/images\/icons\/png\/Voice.png",
+		"outputAbbreviatedPath": "\/assets\/images\/icons\/png\/Voice.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/assets\/images\/ipad.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -245,6 +300,72 @@
 		"initialSize": 65213,
 		"inputAbbreviatedPath": "\/assets\/images\/placeholder.png",
 		"outputAbbreviatedPath": "\/assets\/images\/placeholder.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/assets\/images\/screens\/BehavioralStudy.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 464981,
+		"inputAbbreviatedPath": "\/assets\/images\/screens\/BehavioralStudy.png",
+		"outputAbbreviatedPath": "\/assets\/images\/screens\/BehavioralStudy.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/assets\/images\/screens\/EmployeeHappinessSurveys.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 301971,
+		"inputAbbreviatedPath": "\/assets\/images\/screens\/EmployeeHappinessSurveys.png",
+		"outputAbbreviatedPath": "\/assets\/images\/screens\/EmployeeHappinessSurveys.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/assets\/images\/screens\/PulseSurveys.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 238185,
+		"inputAbbreviatedPath": "\/assets\/images\/screens\/PulseSurveys.png",
+		"outputAbbreviatedPath": "\/assets\/images\/screens\/PulseSurveys.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/assets\/images\/screens\/QualityOfLife.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 413135,
+		"inputAbbreviatedPath": "\/assets\/images\/screens\/QualityOfLife.png",
+		"outputAbbreviatedPath": "\/assets\/images\/screens\/QualityOfLife.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/assets\/images\/screens\/ScreeningTool.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 391091,
+		"inputAbbreviatedPath": "\/assets\/images\/screens\/ScreeningTool.png",
+		"outputAbbreviatedPath": "\/assets\/images\/screens\/ScreeningTool.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/assets\/images\/screens\/Voiceofcustomer.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 301285,
+		"inputAbbreviatedPath": "\/assets\/images\/screens\/Voiceofcustomer.png",
+		"outputAbbreviatedPath": "\/assets\/images\/screens\/Voiceofcustomer.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0

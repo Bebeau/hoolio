@@ -40,8 +40,7 @@
 			<span><img src="<?php echo bloginfo('template_directory');?>/assets/images/client_logos/walmart.png" alt="" /></span>
 			<span><img src="<?php echo bloginfo('template_directory');?>/assets/images/client_logos/kroger.png" alt="" /></span>
 			<span><img src="<?php echo bloginfo('template_directory');?>/assets/images/client_logos/unilever.png" alt="" /></span>
-			<span><img src="<?php echo bloginfo('template_directory');?>/assets/images/client_logos/vw.png" alt="" /></span>
-			<span><img src="<?php echo bloginfo('template_directory');?>/assets/images/client_logos/pg.png" alt="" /></span>
+			<span><img src="<?php echo bloginfo('template_directory');?>/assets/images/client_logos/uc.png" alt="" /></span>
 			<span><img src="<?php echo bloginfo('template_directory');?>/assets/images/client_logos/shopper.png" alt="" /></span>
 			<span><img src="<?php echo bloginfo('template_directory');?>/assets/images/client_logos/cac.png" alt="" /></span>
 		</div>
@@ -61,7 +60,7 @@
 					</article>
 					<article>
 						<img src="<?php echo bloginfo('template_directory');?>/assets/images/icons/market2.svg" alt="" />
-						<p>We use neroscience to<br />keep users engaged.</p>
+						<p>We use neuroscience to<br />keep users engaged.</p>
 					</article>
 					<article>
 						<img src="<?php echo bloginfo('template_directory');?>/assets/images/icons/market3.svg" alt="" />
@@ -133,7 +132,7 @@
 				<div id="bubblesMobile">
 					<div class="frame">
 						<div class="titleBar">
-							<h3><i class="icon icon-bar-graph"></i> New Products &amp; Services</h3>
+							<h3><i class="icon icon-pulse"></i> Pulse Surveys</h3>
 							<div class="circleClose">
 								<span class="bar cross"></span>
 								<span class="bar middle"></span>
@@ -142,13 +141,13 @@
 						</div>
 						<div class="frameCopy">
 							<img src="<?php echo bloginfo('template_directory');?>/assets/images/iphone2.png" alt="" />
-							<p>Hoolio is our personal wizard here at Wyzerr. Don’t worry, you can name your personal wizard yourself. Hoolio helps with the following:</p>
+							<p>Quick and frequent surveys that provide insight on the health of a company, employees, or consumer base.</p>
 							<a href="<?php echo site_url('contact'); ?>" class="btn">Be A Wizard</a>
 						</div>
 					</div>
 					<div class="frame">
 						<div class="titleBar">
-							<h3><i class="icon icon-ruler"></i> Customer Loyalty</h3>
+							<h3><i class="icon icon-voice"></i> Voice of customer (VoC)</h3>
 							<div class="circleClose">
 								<span class="bar cross"></span>
 								<span class="bar middle"></span>
@@ -157,13 +156,22 @@
 						</div>
 						<div class="frameCopy">
 							<img src="<?php echo bloginfo('template_directory');?>/assets/images/iphone2.png" alt="" />
-							<p>Hoolio is our personal wizard here at Wyzerr. Don’t worry, you can name your personal wizard yourself. Hoolio helps with the following:</p>
+							<p>An on-going study to enhance customer experience.</p>
+							<p class="leftText">
+								Our VoC program:
+								<ul>
+									<li>Captures large volumes of customer feedback</li>
+									<li>Interprets resulting data in real time</li>
+									<li>Provides actionable tasks to improve customer experience</li>
+									<li>Monitor results</li>
+								</ul>
+							</p>
 							<a href="<?php echo site_url('contact'); ?>" class="btn">Learn More</a>
 						</div>
 					</div>
 					<div class="frame">
 						<div class="titleBar">
-							<h3><i class="icon icon-db"></i> How To Increase Sales</h3>
+							<h3><i class="icon icon-db"></i> Employee Happiness</h3>
 							<div class="circleClose">
 								<span class="bar cross"></span>
 								<span class="bar middle"></span>
@@ -172,13 +180,13 @@
 						</div>
 						<div class="frameCopy">
 							<img src="<?php echo bloginfo('template_directory');?>/assets/images/iphone2.png" alt="" />
-							<p>Hoolio is our personal wizard here at Wyzerr. Don’t worry, you can name your personal wizard yourself. Hoolio helps with the following:</p>
+							<p>Happy employees are critical to growing and scaling a successful business. We’ve developed several tools to identify issues in the workplace, and provide actionable tasks to improve employee satisfaction. The output is a simple dashboard that anyone in the company can use to determine course of action.</p>
 							<a href="<?php echo site_url('contact'); ?>" class="btn">Be A Wizard</a>
 						</div>
 					</div>
 					<div class="frame">
 						<div class="titleBar">
-							<h3><i class="icon icon-profile"></i> Marketing Message</h3>
+							<h3><i class="icon icon-behavior"></i> Consumer Behavior Study (market research study)</h3>
 							<div class="circleClose">
 								<span class="bar cross"></span>
 								<span class="bar middle"></span>
@@ -187,13 +195,13 @@
 						</div>
 						<div class="frameCopy">
 							<img src="<?php echo bloginfo('template_directory');?>/assets/images/iphone2.png" alt="" />
-							<p>Hoolio is our personal wizard here at Wyzerr. Don’t worry, you can name your personal wizard yourself. Hoolio helps with the following:</p>
+							<p>A Wyzerr consumer behavior study is a deep dive into understanding the beliefs, ideologies, preferences, and trends within different communities, social groups, and demographics. Use this insight to develop new products, find product market fit, or create targeted marketing messages.</p>
 							<a href="<?php echo site_url('contact'); ?>" class="btn">Be A Wizard</a>
 						</div>
 					</div>
 					<div class="frame">
 						<div class="titleBar">
-							<h3><i class="icon icon-smile"></i> Employee Retention</h3>
+							<h3><i class="icon icon-smile"></i> Screening Tool</h3>
 							<div class="circleClose">
 								<span class="bar cross"></span>
 								<span class="bar middle"></span>
@@ -202,13 +210,13 @@
 						</div>
 						<div class="frameCopy">
 							<img src="<?php echo bloginfo('template_directory');?>/assets/images/iphone2.png" alt="" />
-							<p>Hoolio is our personal wizard here at Wyzerr. Don’t worry, you can name your personal wizard yourself. Hoolio helps with the following:</p>
+							<p>Whether you’re a Venture Capitalist, or an HR manager, screening applicants is a time-consuming process. Our screening tool allows you to quickly identify people that meet your criteria.</p>
 							<a href="<?php echo site_url('contact'); ?>" class="btn">Be A Wizard</a>
 						</div>
 					</div>
 					<div class="frame">
 						<div class="titleBar">
-							<h3><i class="icon icon-insights"></i> Consumer Insights</h3>
+							<h3><i class="icon icon-life"></i> Quality of Life Study</h3>
 							<div class="circleClose">
 								<span class="bar cross"></span>
 								<span class="bar middle"></span>
@@ -217,7 +225,7 @@
 						</div>
 						<div class="frameCopy">
 							<img src="<?php echo bloginfo('template_directory');?>/assets/images/iphone2.png" alt="" />
-							<p>Hoolio is our personal wizard here at Wyzerr. Don’t worry, you can name your personal wizard yourself. Hoolio helps with the following:</p>
+							<p>This study uncovers satisfaction levels with education, housing, employment, government, and businesses to better understand a community.</p>
 							<a href="<?php echo site_url('contact'); ?>" class="btn">Be A Wizard</a>
 						</div>
 					</div>
@@ -226,22 +234,22 @@
 					<li>
 						<div class="bubblewrap bubble-1" data-numb="1">
 							<div data-animation="bubble" class="bubble">
-								<i class="icon icon-bar-graph"></i>
+								<i class="icon icon-pulse"></i>
 							</div>
-							<span class="label" data-animation="slideUp">new products<br />&amp; services</span>
+							<span class="label" data-animation="slideUp">Pulse<br />Surveys</span>
 						</div>
 						<div class="frame">
 							<div class="outer">
 								<div class="inner">
 									<div class="copy">
 										<div class="half">
-											<i class="icon icon-bar-graph"></i>
-											<h3>New Products &amp; Services</h3>
-											<p>Hoolio is our personal wizard here at Wyzerr. Don’t worry, you can name your personal wizard yourself. Hoolio helps with the following:</p>
+											<i class="icon icon-pulse"></i>
+											<h3>Pulse Surveys</h3>
+											<p>Quick and frequent surveys that provide insight on the health of a company, employees, or consumer base.</p>
 											<a href="<?php echo site_url('contact'); ?>" class="btn">Be A Wizard</a>
 										</div>
 										<div class="half">
-											<img src="<?php echo bloginfo('template_directory');?>/assets/images/iphone2.png" alt="" />
+											<img src="<?php echo bloginfo('template_directory');?>/assets/images/screens/PulseSurveys.png" alt="" />
 										</div>
 									</div>
 								</div>
@@ -251,9 +259,9 @@
 					<li>
 						<div class="bubblewrap bubble-2" data-numb="2">
 							<div data-animation="bubble" class="bubble">
-								<i class="icon icon-ruler"></i>
+								<i class="icon icon-voice"></i>
 							</div>
-							<span class="label" data-animation="slideUp">customer<br />loyalty</span>
+							<span class="label" data-animation="slideUp">Voice of<br />customer (VoC)</span>
 						</div>
 						<div class="frame">
 							<div class="outer">
@@ -261,12 +269,21 @@
 									<div class="copy">
 										<div class="half">
 											<i class="icon icon-ruler"></i>
-											<h3>Customer Loyalty</h3>
-											<p>Hoolio is our personal wizard here at Wyzerr. Don’t worry, you can name your personal wizard yourself. Hoolio helps with the following:</p>
+											<h3>Voice of customer (VoC)</h3>
+											<p>An on-going study to enhance customer experience.</p>
+											<p class="leftText">
+												Our VoC program:
+												<ul>
+													<li>Captures large volumes of customer feedback</li>
+													<li>Interprets resulting data in real time</li>
+													<li>Provides actionable tasks to improve customer experience</li>
+													<li>Monitor results</li>
+												</ul>
+											</p>
 											<a href="<?php echo site_url('contact'); ?>" class="btn">Learn More</a>
 										</div>
 										<div class="half">
-											<img src="<?php echo bloginfo('template_directory');?>/assets/images/iphone2.png" alt="" />
+											<img src="<?php echo bloginfo('template_directory');?>/assets/images/screens/Voiceofcustomer.png" alt="" />
 										</div>
 									</div>
 								</div>
@@ -278,7 +295,7 @@
 							<div data-animation="bubble" class="bubble">
 								<i class="icon icon-db"></i>
 							</div>
-							<span class="label" data-animation="slideUp">increase<br />sales</span>
+							<span class="label" data-animation="slideUp">Employee<br />Happiness</span>
 						</div>
 						<div class="frame">
 							<div class="outer">
@@ -286,12 +303,12 @@
 									<div class="copy">
 										<div class="half">
 											<i class="icon icon-db"></i>
-											<h3>How To Increase Sales</h3>
-											<p>Hoolio is our personal wizard here at Wyzerr. Don’t worry, you can name your personal wizard yourself. Hoolio helps with the following:</p>
+											<h3>Employee Happiness</h3>
+											<p>Happy employees are critical to growing and scaling a successful business. We’ve developed several tools to identify issues in the workplace, and provide actionable tasks to improve employee satisfaction. The output is a simple dashboard that anyone in the company can use to determine course of action.</p>
 											<a href="<?php echo site_url('contact'); ?>" class="btn">Be A Wizard</a>
 										</div>
 										<div class="half">
-											<img src="<?php echo bloginfo('template_directory');?>/assets/images/iphone2.png" alt="" />
+											<img src="<?php echo bloginfo('template_directory');?>/assets/images/screens/EmployeeHappinessSurveys.png" alt="" />
 										</div>
 									</div>
 								</div>
@@ -301,22 +318,22 @@
 					<li>
 						<div class="bubblewrap bubble-4" data-numb="4">
 							<div data-animation="bubble" class="bubble">
-								<i class="icon icon-profile"></i>
+								<i class="icon icon-behavior"></i>
 							</div>
-							<span class="label" data-animation="slideUp">marketing<br />message</span>
+							<span class="label" data-animation="slideUp">Consumer Behavior Study (market research study)</span>
 						</div>
 						<div class="frame">
 							<div class="outer">
 								<div class="inner">
 									<div class="copy">
 										<div class="half">
-											<i class="icon icon-profile"></i>
-											<h3>Marketing Message</h3>
-											<p>Hoolio is our personal wizard here at Wyzerr. Don’t worry, you can name your personal wizard yourself. Hoolio helps with the following:</p>
+											<i class="icon icon-behavior"></i>
+											<h3>Consumer Behavior Study (market research study)</h3>
+											<p>A Wyzerr consumer behavior study is a deep dive into understanding the beliefs, ideologies, preferences, and trends within different communities, social groups, and demographics. Use this insight to develop new products, find product market fit, or create targeted marketing messages.</p>
 											<a href="<?php echo site_url('contact'); ?>" class="btn">Be A Wizard</a>
 										</div>
 										<div class="half">
-											<img src="<?php echo bloginfo('template_directory');?>/assets/images/iphone2.png" alt="" />
+											<img src="<?php echo bloginfo('template_directory');?>/assets/images/screens/BehavioralStudy.png" alt="" />
 										</div>
 									</div>
 								</div>
@@ -328,7 +345,7 @@
 							<div data-animation="bubble" class="bubble">
 								<i class="icon icon-smile"></i>
 							</div>
-							<span class="label" data-animation="slideUp">employee<br />retention</span>
+							<span class="label" data-animation="slideUp">Screening<br />Tool</span>
 						</div>
 						<div class="frame">
 							<div class="outer">
@@ -336,12 +353,12 @@
 									<div class="copy">
 										<div class="half">
 											<i class="icon icon-smile"></i>
-											<h3>Employee Retention</h3>
-											<p>Hoolio is our personal wizard here at Wyzerr. Don’t worry, you can name your personal wizard yourself. Hoolio helps with the following:</p>
+											<h3>Screening Tool</h3>
+											<p>Whether you’re a Venture Capitalist, or an HR manager, screening applicants is a time-consuming process. Our screening tool allows you to quickly identify people that meet your criteria.</p>
 											<a href="<?php echo site_url('contact'); ?>" class="btn">Be A Wizard</a>
 										</div>
 										<div class="half">
-											<img src="<?php echo bloginfo('template_directory');?>/assets/images/iphone2.png" alt="" />
+											<img src="<?php echo bloginfo('template_directory');?>/assets/images/screens/ScreeningTool.png" alt="" />
 										</div>
 									</div>
 								</div>
@@ -351,22 +368,22 @@
 					<li>
 						<div class="bubblewrap bubble-6" data-numb="6">
 							<div data-animation="bubble" class="bubble">
-								<i class="icon icon-insights"></i>
+								<i class="icon icon-life"></i>
 							</div>
-							<span class="label" data-animation="slideUp">consumer<br />insights</span>
+							<span class="label" data-animation="slideUp">Quality of<br />Life Study</span>
 						</div>
 						<div class="frame">
 							<div class="outer">
 								<div class="inner">
 									<div class="copy">
 										<div class="half">
-											<i class="icon icon-insights"></i>
-											<h3>Consumer Insights</h3>
-											<p>Hoolio is our personal wizard here at Wyzerr. Don’t worry, you can name your personal wizard yourself. Hoolio helps with the following:</p>
+											<i class="icon icon-life"></i>
+											<h3>Quality of Life Study</h3>
+											<p>This study uncovers satisfaction levels with education, housing, employment, government, and businesses to better understand a community.</p>
 											<a href="<?php echo site_url('contact'); ?>" class="btn">Be A Wizard</a>
 										</div>
 										<div class="half">
-											<img src="<?php echo bloginfo('template_directory');?>/assets/images/iphone2.png" alt="" />
+											<img src="<?php echo bloginfo('template_directory');?>/assets/images/screens/QualityOfLife.png" alt="" />
 										</div>
 									</div>
 								</div>

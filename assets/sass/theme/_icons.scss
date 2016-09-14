@@ -6,22 +6,22 @@
 	top: 50%;
 	@include transform(translateY(-50%));
 
-	&.icon-bar-graph {
-		background: url('assets/images/icons/Service.svg') no-repeat scroll center / contain;
+	&.icon-pulse {
+		background: url('assets/images/icons/png/Pulse.png') no-repeat scroll center / contain;
 	}
-	&.icon-ruler {
-		background: url('assets/images/icons/ruler.svg') no-repeat scroll center / contain;
+	&.icon-voice {
+		background: url('assets/images/icons/png/Voice.png') no-repeat scroll center / contain;
 	}
 	&.icon-db {
 		background: url('assets/images/icons/db.svg') no-repeat scroll center / contain;
 	}
-	&.icon-profile {
-		background: url('assets/images/icons/profile.svg') no-repeat scroll center / contain;
+	&.icon-behavior {
+		background: url('assets/images/icons/png/Behavior.png') no-repeat scroll center / contain;
 	}
 	&.icon-smile {
 		background: url('assets/images/icons/smile.svg') no-repeat scroll center / contain;
 	}
-	&.icon-insights {
-		background: url('assets/images/icons/insights.svg') no-repeat scroll center / contain;
+	&.icon-life {
+		background: url('assets/images/icons/png/Life.png') no-repeat scroll center / contain;
 	}
 }
