@@ -12,6 +12,7 @@
 	<title><?php wp_title(); ?></title>
 	<meta name="keywords" content="" />
 	<meta name="author" content="The INiT Group">
+	<meta name="google-site-verification" content="srAWtbf9ElqyZlh0Q8Grl4j1TsnQSVqBs-0Rjs-_gXU" />
 	
 	<!-- Mobile Specific Metas
   	================================================== -->
