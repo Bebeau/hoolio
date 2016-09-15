@@ -109,10 +109,10 @@
 						<div class="copy">
 							<h2>Become A Wizard</h2>
 							<ul>
-								<li>1 year pre-paid subscription to Wyzerr</li>
-								<li>Full priority access to our campaign wizard</li>
+								<li>1 year full pre-paid subscription to Wyzerr Pulse</li>
+								<li>Early priority access to AI Wizard</li>
 								<li>Unlimited responses</li>
-								<li>Locked-in rate of $5/month (reguarly $39)</li>
+								<li>Locked-in rate of $20/month (regularly $199)</li>
 							</ul>
 							<?php require_once('stripe/config.php'); ?>
 							<form action="" method="POST" id="checkoutFrm">

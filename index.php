@@ -27,7 +27,7 @@
 					<?php } ?>
 				</div>
 				<div class="copy half">
-					<h1 data-animation="slideDown">Wisdom Made Easy.</h1>
+					<h1 data-animation="slideDown">Wisdom made easy.</h1>
 					<span data-animation="slideUp">
 						<h3>Be Wyzerr, know more.</h3>
 						<button class="btn btn-wizard">Be a wizard</button>
@@ -50,21 +50,21 @@
 		<article class="outer">
 			<div class="inner">
 				<div class="copy" data-animation="slideUp">
-					<h1 data-animation="slideDown">Market research reimagined.</h1>
-					<p data-animation="slideUp">Wyzerr empowers businesses to make intelligent decisions by constantly listening to their customers and stakeholders.</p>
+					<h1 data-animation="slideDown">Market research in a box.</h1>
+					<p data-animation="slideUp">Wyzerr allows you to do high quality market research on your own. Our technology:</p>
 				</div>
 				<div class="thirds">
 					<article>
 						<img src="<?php echo bloginfo('template_directory');?>/assets/images/icons/market1.svg" alt="" />
-						<p>We use color theory<br />to get honest feedback.</p>
+						<p>Guides you in creating beautiful, smart feedback campaigns.</p>
 					</article>
 					<article>
 						<img src="<?php echo bloginfo('template_directory');?>/assets/images/icons/market2.svg" alt="" />
-						<p>We use neuroscience to<br />keep users engaged.</p>
+						<p>Turns ordinary people into experts on the science of quality data.</p>
 					</article>
 					<article>
 						<img src="<?php echo bloginfo('template_directory');?>/assets/images/icons/market3.svg" alt="" />
-						<p>We use artificial intelligence<br />for personalized experiences.</p>
+						<p>Uses Artificial intelligence to perform tedious tasks most market researchers do manually.</p>
 					</article>
 				</div>
 				<button class="btn btn-wizard">Be Wyzerr Now</button>
@@ -76,8 +76,8 @@
 		<article class="outer">
 			<div class="inner">
 				<div class="copy" data-animation="slideUp">
-					<h1 data-animation="slideDown">What can your Wizard<br /> help you do?</h1>
-					<p data-animation="slideUp">Pretty much anything an expert in market research, human resources, data science, technology, innovation, or branding would help you do. Your Wizard is the intersection of management consultancy, market research, and consumer engagement.</p>
+					<h1 data-animation="slideDown">Your customers and employees are your experts.</h1>
+					<p data-animation="slideUp">Whether you’re a small business owner, or a marketer at a large enterprise, we help you make intelligent decisions by constantly listening to the people that know your company best. We call it the science of active listening.</p>
 					<?php if(wp_is_mobile()) { ?>
 						<img src="<?php echo bloginfo('template_directory'); ?>/assets/images/placeholder.png" alt="" />
 					<?php } ?>
@@ -113,8 +113,8 @@
 			<div class="inner">
 				<div class="copy">
 					<img data-animation="slideUp" src="<?php echo bloginfo('template_directory');?>/assets/images/logo_icon.svg" alt="Hoolio" />
-					<h1 data-animation="slideDown">Meet Hoolio, our personal wizard.</h1>
-					<p data-animation="slideUp">Hoolio is our AI wizard here at Wyzerr. We’re grooming Hoolio to be an expert on sales, R&D, and even HR. However, like a young child, Hoolio has to start with the basics first before he can take on more advanced topics. This is what Hoolio is currently working on:</p>
+					<h1 data-animation="slideDown">Meet Hoolio.</h1>
+					<p data-animation="slideUp">Hoolio is our AI wizard here at Wyzerr. He takes in feedback data and turns it into real-time insight. His insight helps us understand our customers, develop new products, identify sales opportunities, create targeted marketing messages, and ultimately stay ahead of our competitors. Check out what Hoolio is currently working on:</p>
 				</div>
 				<ul class="bubblenav">
 					<li class="nav nav-1" data-numb="1" title="New Products &amp; Services"></li>
@@ -147,7 +147,7 @@
 					</div>
 					<div class="frame">
 						<div class="titleBar">
-							<h3><i class="icon icon-voice"></i> Voice of customer (VoC)</h3>
+							<h3><i class="icon icon-voice"></i> Voice Of Customer</h3>
 							<div class="circleClose">
 								<span class="bar cross"></span>
 								<span class="bar middle"></span>
@@ -186,7 +186,7 @@
 					</div>
 					<div class="frame">
 						<div class="titleBar">
-							<h3><i class="icon icon-behavior"></i> Consumer Behavior Study (market research study)</h3>
+							<h3><i class="icon icon-behavior"></i> Consumer Behavior Study</h3>
 							<div class="circleClose">
 								<span class="bar cross"></span>
 								<span class="bar middle"></span>
@@ -261,7 +261,7 @@
 							<div data-animation="bubble" class="bubble">
 								<i class="icon icon-voice"></i>
 							</div>
-							<span class="label" data-animation="slideUp">Voice of<br />customer (VoC)</span>
+							<span class="label" data-animation="slideUp">Voice Of<br />Customer</span>
 						</div>
 						<div class="frame">
 							<div class="outer">
@@ -320,7 +320,7 @@
 							<div data-animation="bubble" class="bubble">
 								<i class="icon icon-behavior"></i>
 							</div>
-							<span class="label" data-animation="slideUp">Consumer Behavior Study (market research study)</span>
+							<span class="label" data-animation="slideUp">Consumer Behavior Study</span>
 						</div>
 						<div class="frame">
 							<div class="outer">
@@ -403,12 +403,9 @@
 			<article data-animation="slideUp" class="statsWrap">
 				<div class="outer">
 					<div class="inner">
-						<h1>Success Metrics</h1>
-						<p>Collect a lot of data.</p>
-						<p>Engage your consumers. Make it as
-						fun, fast, and easy as possible for your
-						customers, employees, and the market 
-						place to give you feedback.</p>
+						<h1>Introducing the Smartform.</h1>
+						<p>A new standard for data collection.</p>
+						<p>Collecting quality feedback data in today’s digital age is difficult to do with a static survey. So we invented the Smartform, a survey that is playful, engaging, and highly adaptive. They get smarter over time. And, they work better than any survey in the marketplace.</p>
 						<div class="half counting">
 							<article>
 								<img src="<?php echo bloginfo('template_directory');?>/assets/images/wyzerr_text.svg" alt="" />
@@ -417,11 +414,11 @@
 									<p>Average Completion Rate</p>
 								</div>
 								<div class="stat">
-									<span class="timer" data-from="0" data-to="57" data-speed="1000">57</span> <span class="abbr">secs</span> 
+									<span class="timer" data-from="0" data-to="58" data-speed="1000">58</span> <span class="abbr">secs</span> 
 									<p>Avergage Time to Complete</p>
 								</div>
 								<div class="stat">
-									<span class="timer" data-from="0" data-to="12" data-speed="1000">12</span> 
+									<span class="timer" data-from="0" data-to="25" data-speed="1000">25</span> 
 									<p>Average Data Points Collected</p>
 								</div>
 							</article>
@@ -432,7 +429,7 @@
 									<p>Average Completion Rate</p>
 								</div>
 								<div class="stat">
-									<span class="timer" data-from="0" data-to="6" data-speed="1000">6</span> <span class="abbr">min</span> 
+									<span class="timer" data-from="0" data-to="12" data-speed="1000">12</span> <span class="abbr">min</span> 
 									<p>Avergage Time to Complete</p>
 								</div>
 								<div class="stat">
