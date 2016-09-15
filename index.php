@@ -171,21 +171,6 @@
 					</div>
 					<div class="frame">
 						<div class="titleBar">
-							<h3><i class="icon icon-db"></i> Employee Happiness</h3>
-							<div class="circleClose">
-								<span class="bar cross"></span>
-								<span class="bar middle"></span>
-								<span class="bar cross"></span>
-							</div>
-						</div>
-						<div class="frameCopy">
-							<img src="<?php echo bloginfo('template_directory');?>/assets/images/iphone2.png" alt="" />
-							<p>Happy employees are critical to growing and scaling a successful business. We’ve developed several tools to identify issues in the workplace, and provide actionable tasks to improve employee satisfaction. The output is a simple dashboard that anyone in the company can use to determine course of action.</p>
-							<a href="<?php echo site_url('contact'); ?>" class="btn">Be A Wizard</a>
-						</div>
-					</div>
-					<div class="frame">
-						<div class="titleBar">
 							<h3><i class="icon icon-behavior"></i> Consumer Behavior Study</h3>
 							<div class="circleClose">
 								<span class="bar cross"></span>
@@ -211,6 +196,21 @@
 						<div class="frameCopy">
 							<img src="<?php echo bloginfo('template_directory');?>/assets/images/iphone2.png" alt="" />
 							<p>Whether you’re a Venture Capitalist, or an HR manager, screening applicants is a time-consuming process. Our screening tool allows you to quickly identify people that meet your criteria.</p>
+							<a href="<?php echo site_url('contact'); ?>" class="btn">Be A Wizard</a>
+						</div>
+					</div>
+					<div class="frame">
+						<div class="titleBar">
+							<h3><i class="icon icon-db"></i> Employee Happiness</h3>
+							<div class="circleClose">
+								<span class="bar cross"></span>
+								<span class="bar middle"></span>
+								<span class="bar cross"></span>
+							</div>
+						</div>
+						<div class="frameCopy">
+							<img src="<?php echo bloginfo('template_directory');?>/assets/images/iphone2.png" alt="" />
+							<p>Happy employees are critical to growing and scaling a successful business. We’ve developed several tools to identify issues in the workplace, and provide actionable tasks to improve employee satisfaction. The output is a simple dashboard that anyone in the company can use to determine course of action.</p>
 							<a href="<?php echo site_url('contact'); ?>" class="btn">Be A Wizard</a>
 						</div>
 					</div>
@@ -291,31 +291,6 @@
 						</div>
 					</li>
 					<li>
-						<div class="bubblewrap bubble-3" data-numb="3">
-							<div data-animation="bubble" class="bubble">
-								<i class="icon icon-db"></i>
-							</div>
-							<span class="label" data-animation="slideUp">Employee<br />Happiness</span>
-						</div>
-						<div class="frame">
-							<div class="outer">
-								<div class="inner">
-									<div class="copy">
-										<div class="half">
-											<i class="icon icon-db"></i>
-											<h3>Employee Happiness</h3>
-											<p>Happy employees are critical to growing and scaling a successful business. We’ve developed several tools to identify issues in the workplace, and provide actionable tasks to improve employee satisfaction. The output is a simple dashboard that anyone in the company can use to determine course of action.</p>
-											<a href="<?php echo site_url('contact'); ?>" class="btn">Be A Wizard</a>
-										</div>
-										<div class="half">
-											<img src="<?php echo bloginfo('template_directory');?>/assets/images/screens/EmployeeHappinessSurveys.png" alt="" />
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</li>
-					<li>
 						<div class="bubblewrap bubble-4" data-numb="4">
 							<div data-animation="bubble" class="bubble">
 								<i class="icon icon-behavior"></i>
@@ -359,6 +334,31 @@
 										</div>
 										<div class="half">
 											<img src="<?php echo bloginfo('template_directory');?>/assets/images/screens/ScreeningTool.png" alt="" />
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="bubblewrap bubble-3" data-numb="3">
+							<div data-animation="bubble" class="bubble">
+								<i class="icon icon-db"></i>
+							</div>
+							<span class="label" data-animation="slideUp">Employee<br />Happiness</span>
+						</div>
+						<div class="frame">
+							<div class="outer">
+								<div class="inner">
+									<div class="copy">
+										<div class="half">
+											<i class="icon icon-db"></i>
+											<h3>Employee Happiness</h3>
+											<p>Happy employees are critical to growing and scaling a successful business. We’ve developed several tools to identify issues in the workplace, and provide actionable tasks to improve employee satisfaction. The output is a simple dashboard that anyone in the company can use to determine course of action.</p>
+											<a href="<?php echo site_url('contact'); ?>" class="btn">Be A Wizard</a>
+										</div>
+										<div class="half">
+											<img src="<?php echo bloginfo('template_directory');?>/assets/images/screens/EmployeeHappinessSurveys.png" alt="" />
 										</div>
 									</div>
 								</div>
