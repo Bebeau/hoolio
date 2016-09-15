@@ -268,7 +268,7 @@
 								<div class="inner">
 									<div class="copy">
 										<div class="half">
-											<i class="icon icon-ruler"></i>
+											<i class="icon icon-voice"></i>
 											<h3>Voice of customer (VoC)</h3>
 											<p>An on-going study to enhance customer experience.</p>
 											<p class="leftText">
