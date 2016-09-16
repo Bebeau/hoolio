@@ -291,7 +291,7 @@
 						</div>
 					</li>
 					<li>
-						<div class="bubblewrap bubble-4" data-numb="4">
+						<div class="bubblewrap bubble-3" data-numb="3">
 							<div data-animation="bubble" class="bubble">
 								<i class="icon icon-behavior"></i>
 							</div>
@@ -316,7 +316,7 @@
 						</div>
 					</li>
 					<li>
-						<div class="bubblewrap bubble-5" data-numb="5">
+						<div class="bubblewrap bubble-4" data-numb="4">
 							<div data-animation="bubble" class="bubble">
 								<i class="icon icon-db"></i>
 							</div>
@@ -341,7 +341,7 @@
 						</div>
 					</li>
 					<li>
-						<div class="bubblewrap bubble-3" data-numb="3">
+						<div class="bubblewrap bubble-5" data-numb="5">
 							<div data-animation="bubble" class="bubble">
 								<i class="icon icon-smile"></i>
 							</div>
