@@ -166,7 +166,7 @@
 									<li>Monitor results</li>
 								</ul>
 							</p>
-							<a href="<?php echo site_url('contact'); ?>" class="btn">Learn More</a>
+							<a href="<?php echo site_url('contact'); ?>" class="btn">Be A Wizard</a>
 						</div>
 					</div>
 					<div class="frame">
@@ -186,7 +186,7 @@
 					</div>
 					<div class="frame">
 						<div class="titleBar">
-							<h3><i class="icon icon-smile"></i> Screening Tool</h3>
+							<h3><i class="icon icon-db"></i> Screening Tool</h3>
 							<div class="circleClose">
 								<span class="bar cross"></span>
 								<span class="bar middle"></span>
@@ -201,7 +201,7 @@
 					</div>
 					<div class="frame">
 						<div class="titleBar">
-							<h3><i class="icon icon-db"></i> Employee Happiness</h3>
+							<h3><i class="icon icon-smile"></i> Employee Happiness</h3>
 							<div class="circleClose">
 								<span class="bar cross"></span>
 								<span class="bar middle"></span>
@@ -280,7 +280,7 @@
 													<li>Monitor results</li>
 												</ul>
 											</p>
-											<a href="<?php echo site_url('contact'); ?>" class="btn">Learn More</a>
+											<a href="<?php echo site_url('contact'); ?>" class="btn">Be A Wizard</a>
 										</div>
 										<div class="half">
 											<img src="<?php echo bloginfo('template_directory');?>/assets/images/screens/Voiceofcustomer.png" alt="" />
@@ -318,7 +318,7 @@
 					<li>
 						<div class="bubblewrap bubble-5" data-numb="5">
 							<div data-animation="bubble" class="bubble">
-								<i class="icon icon-smile"></i>
+								<i class="icon icon-db"></i>
 							</div>
 							<span class="label" data-animation="slideUp">Screening<br />Tool</span>
 						</div>
@@ -327,7 +327,7 @@
 								<div class="inner">
 									<div class="copy">
 										<div class="half">
-											<i class="icon icon-smile"></i>
+											<i class="icon icon-db"></i>
 											<h3>Screening Tool</h3>
 											<p>Whether you’re a Venture Capitalist, or an HR manager, screening applicants is a time-consuming process. Our screening tool allows you to quickly identify people that meet your criteria.</p>
 											<a href="<?php echo site_url('contact'); ?>" class="btn">Be A Wizard</a>
@@ -343,7 +343,7 @@
 					<li>
 						<div class="bubblewrap bubble-3" data-numb="3">
 							<div data-animation="bubble" class="bubble">
-								<i class="icon icon-db"></i>
+								<i class="icon icon-smile"></i>
 							</div>
 							<span class="label" data-animation="slideUp">Employee<br />Happiness</span>
 						</div>
@@ -352,7 +352,7 @@
 								<div class="inner">
 									<div class="copy">
 										<div class="half">
-											<i class="icon icon-db"></i>
+											<i class="icon icon-smile"></i>
 											<h3>Employee Happiness</h3>
 											<p>Happy employees are critical to growing and scaling a successful business. We’ve developed several tools to identify issues in the workplace, and provide actionable tasks to improve employee satisfaction. The output is a simple dashboard that anyone in the company can use to determine course of action.</p>
 											<a href="<?php echo site_url('contact'); ?>" class="btn">Be A Wizard</a>
