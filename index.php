@@ -93,7 +93,7 @@
 		</article>
 	</section>
 
-	<?php 
+	<?php
 
 	$video = get_option('custom_bg_video');
 	if(!empty($video)) {
@@ -410,30 +410,30 @@
 							<article>
 								<img src="<?php echo bloginfo('template_directory');?>/assets/images/wyzerr_text.svg" alt="" />
 								<div class="stat">
-									<span class="timer" data-from="0" data-to="87" data-speed="1000">87</span><span>%</span> 
+									<span class="timer" data-from="0" data-to="87" data-speed="1000">87</span><span>%</span>
 									<p>Average Completion Rate</p>
 								</div>
 								<div class="stat">
-									<span class="timer" data-from="0" data-to="58" data-speed="1000">58</span> <span class="abbr">secs</span> 
+									<span class="timer" data-from="0" data-to="58" data-speed="1000">58</span> <span class="abbr">secs</span>
 									<p>Avergage Time to Complete</p>
 								</div>
 								<div class="stat">
-									<span class="timer" data-from="0" data-to="25" data-speed="1000">25</span> 
+									<span class="timer" data-from="0" data-to="25" data-speed="1000">25</span>
 									<p>Average Data Points Collected</p>
 								</div>
 							</article>
 							<article>
 								<img src="<?php echo bloginfo('template_directory');?>/assets/images/competitor.png" alt="" />
 								<div class="stat">
-									<span class="timer" data-from="0" data-to="26" data-speed="1000">26</span><span>%</span> 
+									<span class="timer" data-from="0" data-to="26" data-speed="1000">26</span><span>%</span>
 									<p>Average Completion Rate</p>
 								</div>
 								<div class="stat">
-									<span class="timer" data-from="0" data-to="12" data-speed="1000">12</span> <span class="abbr">min</span> 
+									<span class="timer" data-from="0" data-to="12" data-speed="1000">12</span> <span class="abbr">min</span>
 									<p>Avergage Time to Complete</p>
 								</div>
 								<div class="stat">
-									<span class="timer" data-from="0" data-to="12" data-speed="1000">12</span> 
+									<span class="timer" data-from="0" data-to="12" data-speed="1000">12</span>
 									<p>Average Data Points Collected</p>
 								</div>
 							</article>
