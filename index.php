@@ -93,7 +93,7 @@
 		</article>
 	</section>
 
-	<?php 
+	<?php
 
 	$video = get_option('custom_bg_video');
 	if(!empty($video)) {
@@ -201,7 +201,7 @@
 					</div>
 					<div class="frame">
 						<div class="titleBar">
-							<h3><i class="icon icon-db"></i> Employee Happiness</h3>
+							<h3><i class="icon icon-smile"></i> Employee Happiness</h3>
 							<div class="circleClose">
 								<span class="bar cross"></span>
 								<span class="bar middle"></span>
@@ -327,7 +327,7 @@
 								<div class="inner">
 									<div class="copy">
 										<div class="half">
-											<i class="icon icon-smile"></i>
+											<i class="icon icon-db"></i>
 											<h3>Screening Tool</h3>
 											<p>Whether you’re a Venture Capitalist, or an HR manager, screening applicants is a time-consuming process. Our screening tool allows you to quickly identify people that meet your criteria.</p>
 											<a href="<?php echo site_url('contact'); ?>" class="btn">Be A Wizard</a>
@@ -410,30 +410,30 @@
 							<article>
 								<img src="<?php echo bloginfo('template_directory');?>/assets/images/wyzerr_text.svg" alt="" />
 								<div class="stat">
-									<span class="timer" data-from="0" data-to="87" data-speed="1000">87</span><span>%</span> 
+									<span class="timer" data-from="0" data-to="87" data-speed="1000">87</span><span>%</span>
 									<p>Average Completion Rate</p>
 								</div>
 								<div class="stat">
-									<span class="timer" data-from="0" data-to="58" data-speed="1000">58</span> <span class="abbr">secs</span> 
+									<span class="timer" data-from="0" data-to="58" data-speed="1000">58</span> <span class="abbr">secs</span>
 									<p>Avergage Time to Complete</p>
 								</div>
 								<div class="stat">
-									<span class="timer" data-from="0" data-to="25" data-speed="1000">25</span> 
+									<span class="timer" data-from="0" data-to="25" data-speed="1000">25</span>
 									<p>Average Data Points Collected</p>
 								</div>
 							</article>
 							<article>
 								<img src="<?php echo bloginfo('template_directory');?>/assets/images/competitor.png" alt="" />
 								<div class="stat">
-									<span class="timer" data-from="0" data-to="26" data-speed="1000">26</span><span>%</span> 
+									<span class="timer" data-from="0" data-to="26" data-speed="1000">26</span><span>%</span>
 									<p>Average Completion Rate</p>
 								</div>
 								<div class="stat">
-									<span class="timer" data-from="0" data-to="12" data-speed="1000">12</span> <span class="abbr">min</span> 
+									<span class="timer" data-from="0" data-to="12" data-speed="1000">12</span> <span class="abbr">min</span>
 									<p>Avergage Time to Complete</p>
 								</div>
 								<div class="stat">
-									<span class="timer" data-from="0" data-to="12" data-speed="1000">12</span> 
+									<span class="timer" data-from="0" data-to="12" data-speed="1000">12</span>
 									<p>Average Data Points Collected</p>
 								</div>
 							</article>
