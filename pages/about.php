@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 /*
 Template Name: About
@@ -8,7 +8,7 @@ get_header();
 
 	if (have_posts()) : while (have_posts()) : the_post();
 		// get image and set it as background of parallax div
-		$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID), 'large' ); 
+		$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID), 'large' );
 		if(!empty($image)) { ?>
 			<div id="pageBanner" data-parallax='{"y" : 230, "smoothness": 1}' style="background:url(<?php echo $image[0]; ?>) no-repeat scroll center / cover">
 		<?php } else { ?>
@@ -38,7 +38,7 @@ get_header();
 		'meta_value'   => '',
 		'meta_compare' => '',
 		'meta_query'   => array(),
-		'date_query'   => array(),        
+		'date_query'   => array(),
 		'include'      => '',
 		'exclude'      => array(),
 		'orderby'      => 'login',
@@ -49,8 +49,8 @@ get_header();
 		'count_total'  => false,
 		'fields'       => 'all',
 		'who'          => ''
-	); 
-	
+	);
+
 	$agents = get_users($args);
 
 	// if(!empty($agents)) {
@@ -93,7 +93,7 @@ get_header();
 		echo '<h2>Apply</h2>';
 		echo '<div class="container">';
 			echo '<p>If you’re ready to solve problems alongside some of the best engineers and data scientists in the world, we want to hear from you.</p>';
-			echo '<a href="'.site_url('contact').'" class="btn">Join The Team</a>';
+			echo '<a href="https://smartforms.wyzerr.com/#/surveys/106/2qQYIGezt8vEVNRI9uZZIN" class="btn">Join The Team</a>';
 		echo '</div>';
 	echo '</section>';
 
