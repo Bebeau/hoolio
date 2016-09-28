@@ -159,12 +159,12 @@
 							<p>An on-going study to enhance customer experience.</p>
 							<p class="leftText">
 								Our VoC program:
-								<ul>
+								<br>
 									<li>Captures large volumes of customer feedback</li>
 									<li>Interprets resulting data in real time</li>
 									<li>Provides actionable tasks to improve customer experience</li>
 									<li>Monitor results</li>
-								</ul>
+			
 							</p>
 							<a href="<?php echo site_url('contact'); ?>" class="btn">Be A Wizard</a>
 						</div>

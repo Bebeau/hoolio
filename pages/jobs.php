@@ -1,7 +1,7 @@
 <?php
 
 /*
-Template Name: About
+Template Name: Jobs
 */
 
 get_header();
@@ -85,15 +85,11 @@ get_header();
 	// 	echo '</section>';
 	// }
 
-	echo '<section id="team">';
-		echo '<img src="'.get_bloginfo('template_directory').'/assets/images/team.jpg" alt="" />';
-	echo '</section>';
-
 	echo '<section id="apply" class="section">';
-		echo '<h2>Apply</h2>';
+		//echo '<h2>Apply</h2>';
 		echo '<div class="container">';
-			echo '<p>If you’re ready to solve problems alongside some of the best engineers and data scientists in the world, we want to hear from you.</p>';
-			echo '<a href="https://smartforms.wyzerr.com/#/surveys/106/2qQYIGezt8vEVNRI9uZZIN" class="btn">Join The Team</a>';
+			//echo '<p>If you’re ready to solve problems alongside some of the best engineers and data scientists in the world, we want to hear from you.</p>';
+			echo '<a href="https://smartforms.wyzerr.com/#/surveys/106/2qQYIGezt8vEVNRI9uZZIN" class="btn">Apply Now</a>';
 		echo '</div>';
 	echo '</section>';
 
