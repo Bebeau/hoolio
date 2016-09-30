@@ -183,7 +183,7 @@ function emailSubmit() {
             $key = esc_attr(get_option('mailchimp_api'));
             $list = esc_attr(get_option('mailchimp_list'));
 
-            if($success && !empty($key) && !empty($list)) {
+            if(!empty($key) && !empty($list)) {
 
                 $auth = base64_encode( 'user:'.$key );
 
