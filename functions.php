@@ -243,9 +243,14 @@ function checkout() {
         // create customer from user email
         $customer = \Stripe\Customer::create(array(
             "source" => $token,
-            "plan" => "pps",
             "email" => $emailaddress
         ));
+        // charge customer by ID
+        $charge = \Stripe\Charge::create(array(
+            "amount" => 22000, // Amount in cents
+            "currency" => "usd",
+            "customer" => $customer->id)
+        );
         // get mailchimp api and list
         $key = esc_attr(get_option('mailchimp_api'));
         $list = esc_attr(get_option('mailchimp_list'));
