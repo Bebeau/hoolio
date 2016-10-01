@@ -203,7 +203,7 @@ function emailSubmit() {
                 $json_data = json_encode($data);
 
                 $ch = curl_init();
-                curl_setopt($ch, CURLOPT_URL, 'https://us8.api.mailchimp.com/3.0/lists/'.$list.'/members/');
+                curl_setopt($ch, CURLOPT_URL, 'https://us11.api.mailchimp.com/3.0/lists/'.$list.'/members/');
                 curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json',
                                                             'Authorization: Basic '.$auth));
                 curl_setopt($ch, CURLOPT_USERAGENT, 'PHP-MCAPI/2.0');
@@ -273,7 +273,7 @@ function checkout() {
             $json_data = json_encode($data);
 
             $ch = curl_init();
-            curl_setopt($ch, CURLOPT_URL, 'https://us8.api.mailchimp.com/3.0/lists/'.$list.'/members/');
+            curl_setopt($ch, CURLOPT_URL, 'https://us11.api.mailchimp.com/3.0/lists/'.$list.'/members/');
             curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json',
                                                         'Authorization: Basic '.$auth));
             curl_setopt($ch, CURLOPT_USERAGENT, 'PHP-MCAPI/2.0');
