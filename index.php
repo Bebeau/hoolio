@@ -160,11 +160,12 @@
 							<p class="leftText">
 								Our VoC program:
 								<br>
+                <ul>
 									<li>Captures large volumes of customer feedback</li>
 									<li>Interprets resulting data in real time</li>
 									<li>Provides actionable tasks to improve customer experience</li>
 									<li>Monitor results</li>
-			
+			          </ul>
 							</p>
 							<a href="<?php echo site_url('contact'); ?>" class="btn">Be A Wizard</a>
 						</div>

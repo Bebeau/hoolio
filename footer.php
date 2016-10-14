@@ -1,11 +1,11 @@
-		
-		<?php 
+
+		<?php
 			query_posts( array(
 		            'order' => 'DESC',
 		            'post_type' => 'testimonials'
 		        )
 		    );
-		    if (have_posts()) : 
+		    if (have_posts()) :
 		    	echo '<section id="testimonials">';
 					echo '<div class="outer">';
 						echo '<div class="inner" data-animation="slideUp">';
@@ -31,9 +31,9 @@
 		        echo '</div>';
 		    endif;
 		?>
-		<?php 
+		<?php
 			$c = 1;
-		    if (have_posts()) : 
+		    if (have_posts()) :
 		    	echo '<div class="m-scooch-controls m-scooch-bulleted">';
 		    	while (have_posts()) : the_post();
 		    	echo '<a href="" data-m-slide="'.$c.'"></a>';
@@ -60,7 +60,7 @@
 		<footer>
 			<div class="outer">
 				<div class="inner">
-					<?php 
+					<?php
 						$menu_args = array(
 							'theme_location'  => 'footer-menu',
 							'menu'            => 'Footer Menu',
@@ -106,12 +106,12 @@
 				<div class="outer">
 					<div class="inner">
 						<div class="copy">
-							<h2>Become A Wizard</h2>
+							<h2>Become a Beta Wizard!</h2>
 							<ul>
-								<li>1 year full pre-paid subscription to Wyzerr Pulse</li>
-								<li>Early priority access to AI Wizard</li>
-								<li>Unlimited responses</li>
-								<li>Locked-in rate of $20/month (regularly $199)</li>
+								<li>Annual Subscription to Smartform Workspace</li>
+								<li>Early access to wizard.ai</li>
+								<li>Membership in Wizard.ai Think Tank</li>
+								<li>Unlimited Market Research Studies</li>
 							</ul>
 							<?php require_once('stripe/config.php'); ?>
 							<form action="" method="POST" id="checkoutFrm">
@@ -180,7 +180,7 @@
 									<input type="number" id="cvc" placeholder="***" pattern="\d*" maxlength="4" data-stripe="cvc" />
 								</div>
 								<div class="payment">
-									<span class="price">$220/year</span>
+									<span class="price">[Limited] Early Wizard Price - $220</span>
 									<button type="submit" class="btn btn-submit">Pay Now</button>
 								</div>
 								<span class="payment-errors"></span>
@@ -195,7 +195,7 @@
 				</div>
 			</div>
 		</section>
-    
+
 	</body>
 </html>
 
@@ -210,4 +210,4 @@
 
 </script>
 
-<?php wp_footer(); ?>  
+<?php wp_footer(); ?>
