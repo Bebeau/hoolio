@@ -400,7 +400,7 @@
 	<section id="metrics" class="block">
 		<div class="half">
 			<article class="phone">
-				<img class="smart-form-images" data-src="<?php echo bloginfo('template_directory');?>/assets/images/iphone.png" src="" alt="" />
+				<img class="smart-form-images" data-src="<?php echo bloginfo('template_directory');?>/assets/images/iphone.png" src="<?php echo bloginfo('template_directory');?>/assets/images/iphone.png" alt="" />
 			</article>
 			<article data-animation="slideUp" class="statsWrap">
 				<div class="outer">
@@ -452,7 +452,8 @@
 
 	$(document).ready(function() {
 		$(".market-research-images").unveil(50);
-		$(".smart-form-images").unveil(50);
+
+		//$(".smart-form-images").unveil();
 	});
 
 	</script>
