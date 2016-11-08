@@ -48,7 +48,7 @@
 		        <section id="cta">
 					<article class="outer">
 						<div class="inner" data-animation="slideUp">
-							<h2>Be Wyzerr, know more.</h2>
+							<h2>We empower businesses to make better decisions.</h2>
 							<button class="btn btn-wizard">Sign Up</button>
 						</div>
 					</article>
@@ -106,12 +106,12 @@
 				<div class="outer">
 					<div class="inner">
 						<div class="copy">
-							<h2>Signup Now!</h2>
+							<h2>Become a Beta Wizard!</h2>
 							<ul>
-								<li>Annual Subscription to Smartform Workspace</li>
-								<li>Early access to wizard.ai</li>
-								<li>Membership in Wizard.ai Think Tank</li>
-								<li>Unlimited Market Research Studies</li>
+								<li>Locked in Rate of $8.25/month (Normally $49)</li>
+                <li>Unlimited Surveys</li>
+                <li>Unlimited Market Research Templates</li>
+                <li>Early Access to Future AI Platform</li>
 							</ul>
 							<?php require_once('stripe/config.php'); ?>
 							<form action="" method="POST" id="checkoutFrm">
@@ -197,11 +197,6 @@
 		</section>
 
 	</body>
-
-
-
-	
-
 </html>
 
 <script>

@@ -30,7 +30,7 @@
 					<h1 data-animation="slideDown">Wisdom made easy.</h1>
 					<span data-animation="slideUp">
 						<h3>Be Wyzerr, know more.</h3>
-						<button class="btn btn-wizard">Be a wizard</button>
+						<button class="btn btn-wizard">Sign Up</button>
 					</span>
 				</div>
 				<!-- <div class="iphone" data-animation="slideInRight"></div> -->
