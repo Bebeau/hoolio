@@ -114,7 +114,7 @@
 				<div class="copy">
 					<img data-animation="slideUp" src="<?php echo bloginfo('template_directory');?>/assets/images/logo_icon.svg" alt="Hoolio" />
 					<h1 data-animation="slideDown">Meet Hoolio.</h1>
-					<p data-animation="slideUp">Hoolio is our AI wizard here at Wyzerr. He takes in feedback data and turns it into real-time insight. His insight helps us understand our customers, develop new products, identify sales opportunities, create targeted marketing messages, and ultimately stay ahead of our competitors. Check out what Hoolio is currently working on:</p>
+					<p data-animation="slideUp">Hoolio is the AI wizard here at Wyzerr. He takes in feedback data and turns it into real-time insight.  The more data you feed Hoolio, the smarter he becomes.  His insight helps you understand your customers, develop new products, identify sales opportunities, create targeted marketing messages, and ultimately stay ahead of your competitors. Check out what Hoolio is currently working on:</p>
 				</div>
 				<ul class="bubblenav">
 					<li class="nav nav-1" data-numb="1" title="New Products &amp; Services"></li>
@@ -202,7 +202,7 @@
 					</div>
 					<div class="frame">
 						<div class="titleBar">
-							<h3><i class="icon icon-smile"></i> Employee Happiness</h3>
+							<h3><i class="icon icon-smile"></i> Voice of Employees</h3>
 							<div class="circleClose">
 								<span class="bar cross"></span>
 								<span class="bar middle"></span>
