@@ -49,7 +49,7 @@
 					<article class="outer">
 						<div class="inner" data-animation="slideUp">
 							<h2>Be Wyzerr, know more.</h2>
-							<button class="btn btn-wizard">Be A Wizard</button>
+							<button class="btn btn-wizard">Sign Up</button>
 						</div>
 					</article>
 				</section>
@@ -106,7 +106,7 @@
 				<div class="outer">
 					<div class="inner">
 						<div class="copy">
-							<h2>Become a Beta Wizard!</h2>
+							<h2>Signup Now!</h2>
 							<ul>
 								<li>Annual Subscription to Smartform Workspace</li>
 								<li>Early access to wizard.ai</li>
@@ -180,7 +180,7 @@
 									<input type="number" id="cvc" placeholder="***" pattern="\d*" maxlength="4" data-stripe="cvc" />
 								</div>
 								<div class="payment">
-									<span class="price">[Limited] Early Wizard Price - $220</span>
+									<span class="price">Price - $99</span>
 									<button type="submit" class="btn btn-submit">Pay Now</button>
 								</div>
 								<span class="payment-errors"></span>

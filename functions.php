@@ -68,10 +68,10 @@ function register_my_menu() {
 // }
 // add_action( 'admin_menu', 'remove_menus' );
 
-add_action('admin_init', 'my_general_section');  
-function my_general_section() {  
-    add_settings_section(  
-        'my_settings_section', // Section ID 
+add_action('admin_init', 'my_general_section');
+function my_general_section() {
+    add_settings_section(
+        'my_settings_section', // Section ID
         'Social Media', // Section Title
         'my_section_options_callback', // Callback
         'general' // What Page?  This makes the section show up on the General Settings Page
@@ -84,7 +84,7 @@ function my_general_section() {
         'my_settings_section', // Name of our section (General Settings)
         array( // The $args
             'facebook' // Should match Option ID
-        )  
+        )
     );
     add_settings_field( // Option 2
         'twitter', // Option ID
@@ -94,7 +94,7 @@ function my_general_section() {
         'my_settings_section', // Name of our section (General Settings)
         array( // The $args
             'twitter' // Should match Option ID
-        )  
+        )
     );
     add_settings_field( // Option 2
         'instagram', // Option ID
@@ -104,7 +104,7 @@ function my_general_section() {
         'my_settings_section', // Name of our section (General Settings)
         array( // The $args
             'instagram' // Should match Option ID
-        )  
+        )
     );
     add_settings_field( // Option 2
         'youtube', // Option ID
@@ -114,7 +114,7 @@ function my_general_section() {
         'my_settings_section', // Name of our section (General Settings)
         array( // The $args
             'youtube' // Should match Option ID
-        )  
+        )
     );
 
 
@@ -126,7 +126,7 @@ function my_general_section() {
 }
 
 function my_section_options_callback() { // Section Callback
-    echo '<p>Enter your social media links to have them automatically display in the website footer.</p>';  
+    echo '<p>Enter your social media links to have them automatically display in the website footer.</p>';
 }
 
 function my_textbox_callback($args) {  // Textbox Callback
@@ -211,7 +211,7 @@ function emailSubmit() {
                 curl_setopt($ch, CURLOPT_TIMEOUT, 10);
                 curl_setopt($ch, CURLOPT_POST, true);
                 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-                curl_setopt($ch, CURLOPT_POSTFIELDS, $json_data);                                                                                                                  
+                curl_setopt($ch, CURLOPT_POSTFIELDS, $json_data);
 
                 $result = curl_exec($ch);
             }
@@ -237,7 +237,7 @@ function checkout() {
     $firstname = isset( $_POST['firstname'] ) ? $_POST['firstname'] : "";
     $lastname = isset( $_POST['lastname'] ) ? $_POST['lastname'] : "";
     $emailaddress = filter_var($_POST['emailaddress'], FILTER_SANITIZE_EMAIL);
-    
+
     if(!empty($token) && !empty($emailaddress)) {
         $customer = false;
         // create customer from user email
@@ -247,7 +247,7 @@ function checkout() {
         ));
         // charge customer by ID
         $charge = \Stripe\Charge::create(array(
-            "amount" => 22000, // Amount in cents
+            "amount" => 9900, // Amount in cents
             "currency" => "usd",
             "customer" => $customer->id)
         );
@@ -281,7 +281,7 @@ function checkout() {
             curl_setopt($ch, CURLOPT_TIMEOUT, 10);
             curl_setopt($ch, CURLOPT_POST, true);
             curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-            curl_setopt($ch, CURLOPT_POSTFIELDS, $json_data);                                                                                                                  
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $json_data);
 
             $result = curl_exec($ch);
         }
