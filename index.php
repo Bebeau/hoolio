@@ -29,7 +29,7 @@
 				<div class="copy half">
 					<h1 data-animation="slideDown">Wisdom made easy.</h1>
 					<span data-animation="slideUp">
-						<h3>Be Wyzerr, know more.</h3>
+						<h3>We empower businesses to make better decisions.</h3>
 						<button class="btn btn-wizard">Sign Up</button>
 					</span>
 				</div>
@@ -68,7 +68,8 @@
 						<p>Uses Artificial intelligence to perform tedious tasks most market researchers do manually.</p>
 					</article>
 				</div>
-				<button class="btn btn-wizard">Be Wyzerr Now</button>
+        <a href="<?php echo site_url('contact'); ?>" class="btn">Contact Us</a>
+				<!-- <button class="btn btn-wizard">Be Wyzerr Now</button> -->
 			</div>
 		</article>
 	</section>

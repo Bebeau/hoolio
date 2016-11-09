@@ -48,7 +48,7 @@
 		        <section id="cta">
 					<article class="outer">
 						<div class="inner" data-animation="slideUp">
-							<h2>We empower businesses to make better decisions.</h2>
+							<h2>Be Wyzerr, know more.</h2>
 							<button class="btn btn-wizard">Sign Up</button>
 						</div>
 					</article>
