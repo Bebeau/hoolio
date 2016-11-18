@@ -18,6 +18,7 @@ var user = {
 	    	var image = elem.attr("data-img");
 	    	var val = elem.attr("data-input");
 	    	var userID = elem.attr("data-user");
+	    	var post = elem.attr("data-post");
 	    	var input = jQuery('#'+val);
 	    	var img = jQuery('.'+image);
 
@@ -39,8 +40,9 @@ var user = {
 	            if(image === "bg_video") {
 	            	img.append('<video muted autoplay id="bgvid" loop><source src="'+media_attachment.url+'" type="video/webm"><source src="'+media_attachment.url+'" type="video/ogv"><source src="'+media_attachment.url+'" type="video/mp4"></video>');
 	            	input.val(media_attachment.url);
-	            	elem.append('<button class="remove-video button button-large">Remove</button>');
+	            	elem.append('<span class="button button-remove remove-video">X</span>');
 		            button.remove();
+		            user.saveFeaturedVideo(post, media_attachment.url);
 	            } else {
 	            	img.append('<img src="'+media_attachment.url+'" alt="" />' );
 	            	input.val(media_attachment.url);
@@ -59,13 +61,15 @@ var user = {
 			e.preventDefault();
 
 			var val = jQuery(this).parent().attr("data-img");
+			var post = jQuery(this).parent().attr("data-post");
 
 			jQuery('.'+val).html("");
 			jQuery('#custom_'+val).val("");
 
-			jQuery(this).parent().append('<button class="add button button-large upload-image" style="text-align:center;">Upload/Set Video</button>');
+			jQuery('.bg_video').append('<a href="" class="upload-image upload-banner">Set featured video</a>');
 			jQuery(this).remove();
-
+			
+			user.saveFeaturedVideo(post, "");
 			user.imageUploader();
 
 		});
@@ -102,6 +106,24 @@ var user = {
             dataType: 'html',
             success : function() {
             	user.removeImage();
+            },
+            error : function(jqXHR, textStatus, errorThrown) {
+                window.alert(jqXHR + " :: " + textStatus + " :: " + errorThrown);
+            }
+        }); 
+    },
+    saveFeaturedVideo: function(post, video) {
+        jQuery.ajax({
+            url: ajaxurl,
+            type: "GET",
+            data: {
+            	postID: post,
+                fieldVal: video,
+                action: 'setVideo'
+            },
+            dataType: 'html',
+            success : function() {
+            	user.removeVideo();
             },
             error : function(jqXHR, textStatus, errorThrown) {
                 window.alert(jqXHR + " :: " + textStatus + " :: " + errorThrown);

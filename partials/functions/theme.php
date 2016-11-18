@@ -64,27 +64,8 @@ function theme_setup_page() {
 				echo '<input type="text" name="mailchimp_list" id="mailchimp_list" value="'.$list.'" />';
 			echo '</section>';
 
-			echo '<section id="bgVideo" data-img="bg_video" data-input="custom_bg_video">';
-				echo '<h2>Home Video</h2>';
-				echo '<p>Upload a video to display on the homepage of the theme.</p>';
-				echo '<div class="image-placeholder bg_video">'; 
-					if ( !empty($bg_video) ) {
-				?>
-					<video muted autoplay id="bgvid" loop>
-						<source src="<?php echo $bg_video; ?>" type="video/webm">
-						<source src="<?php echo $bg_video; ?>" type="video/ogv">
-						<source src="<?php echo $bg_video; ?>" type="video/mp4">
-					</video>
-				<?php }
-				echo '</div>';
-			    if ( !empty($bg_video) ) {
-			    	echo '<button class="remove-video button button-large">Remove</button>';
-				} else {
-					echo '<button class="add button button-large upload-image" id="upload-bg" style="text-align:center;">Upload/Set Video</button>';
-				}
-			    echo '<input type="hidden" name="custom_bg_video" id="custom_bg_video" value="'.$bg_video.'" />';
-			echo '</section>';
-
+			echo '<br />';
+			
 			echo '<input type="submit" value="Save settings" class="button button-large button-primary button-submit"/>';
 			echo '<input type="hidden" name="update_settings" value="Y" />';
 			wp_nonce_field( 'theme_setup_options_save', 'theme_setup_options_save_nonce' );

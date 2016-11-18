@@ -56,17 +56,17 @@ function register_my_menu() {
 }
 
 // remove WordPress admin menu items
-// function remove_menus(){
+function remove_menus(){
     // remove_menu_page( 'edit.php' );
     // remove_menu_page( 'edit.php?post_type=page' );
-    // remove_menu_page( 'edit-comments.php' );
+    remove_menu_page( 'edit-comments.php' );
     // remove_menu_page( 'tools.php' );
     // remove_menu_page( 'themes.php' );
     // remove_menu_page( 'plugins.php' );
     // remove_menu_page( 'users.php' );
     // remove_menu_page( 'upload.php' );
-// }
-// add_action( 'admin_menu', 'remove_menus' );
+}
+add_action( 'admin_menu', 'remove_menus' );
 
 add_action('admin_init', 'my_general_section');
 function my_general_section() {
@@ -133,10 +133,6 @@ function my_textbox_callback($args) {  // Textbox Callback
     $option = get_option($args[0]);
     echo '<input type="text" class="regular-text" id="'. $args[0] .'" name="'. $args[0] .'" value="' . $option . '" />';
 }
-
-include(TEMPLATEPATH.'/partials/functions/user.php');
-include(TEMPLATEPATH.'/partials/functions/theme.php');
-include(TEMPLATEPATH.'/partials/functions/testimonials.php');
 
 add_action('wp_ajax_sendContact', 'emailSubmit');
 add_action('wp_ajax_nopriv_sendContact', 'emailSubmit');
@@ -296,3 +292,9 @@ function checkout() {
 
     die();
 }
+
+include(TEMPLATEPATH.'/partials/functions/user.php');
+include(TEMPLATEPATH.'/partials/functions/theme.php');
+include(TEMPLATEPATH.'/partials/functions/testimonials.php');
+include(TEMPLATEPATH.'/partials/functions/homepage.php');
+
