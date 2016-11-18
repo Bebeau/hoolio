@@ -167,13 +167,13 @@ get_header(); ?>
 
 	<?php
 
-	$video = get_option('custom_bg_video');
+	$video = get_post_meta($post->ID,'featured_video', true);
 	if(!empty($video)) {
 		echo '<section id="video">';
-			echo '<video preload="auto" poster="'.get_bloginfo('template_directory').'/assets/images/video_placeholder.jpg">';
-				echo '<source src="'.$video.'" type="video/webm">';
-				echo '<source src="'.$video.'" type="video/ogv">';
-				echo '<source src="'.$video.'" type="video/mp4">';
+			echo '<video preload="metadata">';
+				echo '<source src="'.$video.'#t=1" type="video/webm">';
+				echo '<source src="'.$video.'#t=1" type="video/ogv">';
+				echo '<source src="'.$video.'#t=1" type="video/mp4">';
 			echo '</video>';
 			echo '<div class="playwrap"></div>';
 		echo '</section>';
