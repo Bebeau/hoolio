@@ -413,16 +413,16 @@
 							<article>
 								<img src="<?php echo bloginfo('template_directory');?>/assets/images/wyzerr_text.svg" alt="" />
 								<div class="stat">
-									<span class="timer" data-from="0" data-to="87" data-speed="1000">87</span><span>%</span>
+									<span class="timer" data-from="0" data-to="70" data-speed="1000">70</span><span>%</span>
 									<p>Average Completion Rate</p>
 								</div>
 								<div class="stat">
-									<span class="timer" data-from="0" data-to="58" data-speed="1000">58</span> <span class="abbr">secs</span>
+									<span class="timer" data-from="0" data-to="60" data-speed="1000">60</span> <span class="abbr">secs</span>
 									<p>Avergage Time to Complete</p>
 								</div>
 								<div class="stat">
-									<span class="timer" data-from="0" data-to="25" data-speed="1000">25</span>
-									<p>Average Data Points Collected</p>
+									<span class="timer" data-from="0" data-to="13" data-speed="1000">13</span>
+									<p>Average Questions Collected</p>
 								</div>
 							</article>
 							<article>
@@ -437,7 +437,7 @@
 								</div>
 								<div class="stat">
 									<span class="timer" data-from="0" data-to="12" data-speed="1000">12</span>
-									<p>Average Data Points Collected</p>
+									<p>Average Questions Collected</p>
 								</div>
 							</article>
 						</div>
