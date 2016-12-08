@@ -381,8 +381,6 @@ var init = {
 			var icon = item.find("i");
 			var numb = jQuery(this).attr("data-numb");
 
-			$(".load-later").unveil();
-
 			item.addClass("open");
 			icon.addClass("hide");
 			jQuery('body').addClass("freeze");

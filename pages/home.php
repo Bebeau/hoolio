@@ -542,16 +542,4 @@ get_header(); ?>
 		</div>
 	</section>
 
-	<script src="<?php echo bloginfo('template_directory');?>/assets/js/jquery.unveil.js"></script>
-
-	<script>
-
-	$(document).ready(function() {
-		$(".market-research-images").unveil(50);
-
-		//$(".smart-form-images").unveil();
-	});
-
-	</script>
-
 <?php get_footer(); ?>
