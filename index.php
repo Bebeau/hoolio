@@ -56,15 +56,15 @@
 				<div class="thirds">
 					<article>
 
-						<img class="market-research-images" data-src="<?php echo bloginfo('template_directory');?>/assets/images/icons/market1.svg" src="" alt="" />
+						<img class="market-research-images" src="<?php echo bloginfo('template_directory');?>/assets/images/icons/market1.svg" src="" alt="" />
 						<p>Guides you in creating beautiful, smart feedback campaigns.</p>
 					</article>
 					<article>
-						<img class="market-research-images" data-src="<?php echo bloginfo('template_directory');?>/assets/images/icons/market2.svg" src="" alt="" />
+						<img class="market-research-images" src="<?php echo bloginfo('template_directory');?>/assets/images/icons/market2.svg" src="" alt="" />
 						<p>Turns ordinary people into experts on the science of quality data.</p>
 					</article>
 					<article>
-						<img class="market-research-images" data-src="<?php echo bloginfo('template_directory');?>/assets/images/icons/market3.svg" src="" alt="" />
+						<img class="market-research-images" src="<?php echo bloginfo('template_directory');?>/assets/images/icons/market3.svg" src="" alt="" />
 						<p>Uses Artificial intelligence to perform tedious tasks most market researchers do manually.</p>
 					</article>
 				</div>
@@ -252,7 +252,7 @@
 											<a href="<?php echo site_url('contact'); ?>" class="btn">Be A Wizard</a>
 										</div>
 										<div class="half">
-											<img class="load-later" data-src="<?php echo bloginfo('template_directory');?>/assets/images/screens/PulseSurveys.png" src="" alt="" />
+											<img class="load-later" src="<?php echo bloginfo('template_directory');?>/assets/images/screens/PulseSurveys.png" src="" alt="" />
 										</div>
 									</div>
 								</div>
@@ -286,7 +286,7 @@
 											<a href="<?php echo site_url('contact'); ?>" class="btn">Be A Wizard</a>
 										</div>
 										<div class="half">
-											<img class="load-later" data-src="<?php echo bloginfo('template_directory');?>/assets/images/screens/Voiceofcustomer.png" src="" alt="" />
+											<img class="load-later" src="<?php echo bloginfo('template_directory');?>/assets/images/screens/Voiceofcustomer.png" src="" alt="" />
 										</div>
 									</div>
 								</div>
@@ -311,7 +311,7 @@
 											<a href="<?php echo site_url('contact'); ?>" class="btn">Be A Wizard</a>
 										</div>
 										<div class="half">
-											<img class="load-later" data-src="<?php echo bloginfo('template_directory');?>/assets/images/screens/BehavioralStudy.png" src="" alt="" />
+											<img class="load-later" src="<?php echo bloginfo('template_directory');?>/assets/images/screens/BehavioralStudy.png" src="" alt="" />
 										</div>
 									</div>
 								</div>
@@ -336,7 +336,7 @@
 											<a href="<?php echo site_url('contact'); ?>" class="btn">Be A Wizard</a>
 										</div>
 										<div class="half">
-											<img class="load-later" data-src="<?php echo bloginfo('template_directory');?>/assets/images/screens/ScreeningTool.png" src="" alt="" />
+											<img class="load-later" src="<?php echo bloginfo('template_directory');?>/assets/images/screens/ScreeningTool.png" src="" alt="" />
 										</div>
 									</div>
 								</div>
@@ -361,7 +361,7 @@
 											<a href="<?php echo site_url('contact'); ?>" class="btn">Be A Wizard</a>
 										</div>
 										<div class="half">
-											<img class="load-later" data-src="<?php echo bloginfo('template_directory');?>/assets/images/screens/EmployeeHappinessSurveys.png" src="" alt="" />
+											<img class="load-later" src="<?php echo bloginfo('template_directory');?>/assets/images/screens/EmployeeHappinessSurveys.png" src="" alt="" />
 										</div>
 									</div>
 								</div>
@@ -386,7 +386,7 @@
 											<a href="<?php echo site_url('contact'); ?>" class="btn">Be A Wizard</a>
 										</div>
 										<div class="half">
-											<img class="load-later" data-src="<?php echo bloginfo('template_directory');?>/assets/images/screens/QualityOfLife.png" src="" alt="" />
+											<img class="load-later" src="<?php echo bloginfo('template_directory');?>/assets/images/screens/QualityOfLife.png" src="" alt="" />
 										</div>
 									</div>
 								</div>
@@ -401,7 +401,7 @@
 	<section id="metrics" class="block">
 		<div class="half">
 			<article class="phone">
-				<img class="smart-form-images" data-src="<?php echo bloginfo('template_directory');?>/assets/images/iphone.png" src="<?php echo bloginfo('template_directory');?>/assets/images/iphone.png" alt="" />
+				<img class="smart-form-images" src="<?php echo bloginfo('template_directory');?>/assets/images/iphone.png" src="<?php echo bloginfo('template_directory');?>/assets/images/iphone.png" alt="" />
 			</article>
 			<article data-animation="slideUp" class="statsWrap">
 				<div class="outer">
