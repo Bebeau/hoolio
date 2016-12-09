@@ -13,7 +13,7 @@ if (!function_exists( 'load_custom_scripts' ) ) {
 		wp_deregister_script('jquery');
 		wp_register_script('jquery', ("https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"), false, '', true);
 		wp_enqueue_script('jquery');
-        
+
         wp_enqueue_script( 'stripe', 'https://js.stripe.com/v2/', array( 'jquery' ), null, true );
 
         wp_register_script( 'custom', get_bloginfo( 'template_url' ) . '/assets/js/custom.min.js', array( 'jquery' ), null, true );
@@ -289,6 +289,18 @@ function checkout() {
 
     die();
 }
+
+// Custom Scripting to Move JavaScript from the Head to the Footer
+function remove_head_scripts() { 
+   remove_action('wp_head', 'wp_print_scripts'); 
+   remove_action('wp_head', 'wp_print_head_scripts', 9); 
+   remove_action('wp_head', 'wp_enqueue_scripts', 1);
+
+   add_action('wp_footer', 'wp_print_scripts', 5);
+   add_action('wp_footer', 'wp_enqueue_scripts', 5);
+   add_action('wp_footer', 'wp_print_head_scripts', 5); 
+} 
+add_action( 'wp_enqueue_scripts', 'remove_head_scripts' );
 
 include(TEMPLATEPATH.'/partials/functions/user.php');
 include(TEMPLATEPATH.'/partials/functions/theme.php');

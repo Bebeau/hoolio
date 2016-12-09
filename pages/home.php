@@ -295,7 +295,7 @@ get_header(); ?>
 							</div>
 						</div>
 						<div class="frameCopy">
-							<img src="<?php echo bloginfo('template_directory');?>/assets/images/EmployeeHappinessSurveys.png" alt="" />
+							<img src="<?php echo bloginfo('template_directory');?>/assets/images/screens/EmployeeHappinessSurveys.png" alt="" />
 							<p>Happy employees are critical to growing and scaling a successful business. We’ve developed several tools to identify issues in the workplace, and provide actionable tasks to improve employee satisfaction. The output is a simple dashboard that anyone in the company can use to determine course of action.</p>
 							<a href="<?php echo site_url('contact'); ?>" class="btn">Be A Wizard</a>
 						</div>
@@ -310,7 +310,7 @@ get_header(); ?>
 							</div>
 						</div>
 						<div class="frameCopy">
-							<img src="<?php echo bloginfo('template_directory');?>/assets/images/QualityOfLife.png" alt="" />
+							<img src="<?php echo bloginfo('template_directory');?>/assets/images/screens/QualityOfLife.png" alt="" />
 							<p>This study uncovers satisfaction levels with education, housing, employment, government, and businesses to better understand a community.</p>
 							<a href="<?php echo site_url('contact'); ?>" class="btn">Be A Wizard</a>
 						</div>
