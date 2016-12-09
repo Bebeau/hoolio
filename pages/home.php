@@ -13,7 +13,7 @@ get_header(); ?>
 				<!-- <div class="ipad" data-animation="slideInLeft"></div> -->
 				<div class="half" data-animation="slideInLeft" id="videos">
 					<?php if(wp_is_mobile()) { ?>
-						<img src="<?php echo bloginfo('template_directory'); ?>/assets/images/ipad.png" alt="" />
+						<img src="<?php echo bloginfo('template_directory'); ?>/assets/images/ipad_mobile.jpg" alt="" />
 					<?php  } else { ?>
 						<video muted preload="auto" loop class="active" id="iphone">
 							<source src="<?php echo bloginfo('template_directory'); ?>/assets/videos/iphone.webm" type="video/webm">
@@ -225,7 +225,7 @@ get_header(); ?>
 							</div>
 						</div>
 						<div class="frameCopy">
-							<img src="<?php echo bloginfo('template_directory');?>/assets/images/iphone2.png" alt="" />
+							<img src="<?php echo bloginfo('template_directory');?>/assets/images/screens/PulseSurveys.png" alt="" />
 							<p>Quick and frequent surveys that provide insight on the health of a company, employees, or consumer base.</p>
 							<a href="<?php echo site_url('contact'); ?>" class="btn">Be A Wizard</a>
 						</div>
@@ -240,7 +240,7 @@ get_header(); ?>
 							</div>
 						</div>
 						<div class="frameCopy">
-							<img src="<?php echo bloginfo('template_directory');?>/assets/images/iphone2.png" alt="" />
+							<img src="<?php echo bloginfo('template_directory');?>/assets/images/screens/Voiceofcustomer.png" alt="" />
 							<p>An on-going study to enhance customer experience.</p>
 							<p class="leftText">
 								Our VoC program:
@@ -265,7 +265,7 @@ get_header(); ?>
 							</div>
 						</div>
 						<div class="frameCopy">
-							<img src="<?php echo bloginfo('template_directory');?>/assets/images/iphone2.png" alt="" />
+							<img src="<?php echo bloginfo('template_directory');?>/assets/images/screens/BehavioralStudy.png" alt="" />
 							<p>A Wyzerr consumer behavior study is a deep dive into understanding the beliefs, ideologies, preferences, and trends within different communities, social groups, and demographics. Use this insight to develop new products, find product market fit, or create targeted marketing messages.</p>
 							<a href="<?php echo site_url('contact'); ?>" class="btn">Be A Wizard</a>
 						</div>
@@ -280,7 +280,7 @@ get_header(); ?>
 							</div>
 						</div>
 						<div class="frameCopy">
-							<img src="<?php echo bloginfo('template_directory');?>/assets/images/iphone2.png" alt="" />
+							<img src="<?php echo bloginfo('template_directory');?>/assets/images/screens/ScreeningTool.png" alt="" />
 							<p>Whether you’re a Venture Capitalist, or an HR manager, screening applicants is a time-consuming process. Our screening tool allows you to quickly identify people that meet your criteria.</p>
 							<a href="<?php echo site_url('contact'); ?>" class="btn">Be A Wizard</a>
 						</div>
@@ -295,7 +295,7 @@ get_header(); ?>
 							</div>
 						</div>
 						<div class="frameCopy">
-							<img src="<?php echo bloginfo('template_directory');?>/assets/images/iphone2.png" alt="" />
+							<img src="<?php echo bloginfo('template_directory');?>/assets/images/EmployeeHappinessSurveys.png" alt="" />
 							<p>Happy employees are critical to growing and scaling a successful business. We’ve developed several tools to identify issues in the workplace, and provide actionable tasks to improve employee satisfaction. The output is a simple dashboard that anyone in the company can use to determine course of action.</p>
 							<a href="<?php echo site_url('contact'); ?>" class="btn">Be A Wizard</a>
 						</div>
@@ -310,7 +310,7 @@ get_header(); ?>
 							</div>
 						</div>
 						<div class="frameCopy">
-							<img src="<?php echo bloginfo('template_directory');?>/assets/images/iphone2.png" alt="" />
+							<img src="<?php echo bloginfo('template_directory');?>/assets/images/QualityOfLife.png" alt="" />
 							<p>This study uncovers satisfaction levels with education, housing, employment, government, and businesses to better understand a community.</p>
 							<a href="<?php echo site_url('contact'); ?>" class="btn">Be A Wizard</a>
 						</div>

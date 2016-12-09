@@ -7,16 +7,13 @@ add_filter('show_admin_bar', '__return_false');
 if (!function_exists( 'load_custom_scripts' ) ) {
 	function load_custom_scripts() {
 		// Styles
-		wp_enqueue_style( 'Style CSS', get_bloginfo( 'template_url' ) . '/style.css', false, '', 'all' );
+		wp_enqueue_style( 'Style CSS', get_bloginfo( 'template_url' ) . '/style.css', true, '', 'all' );
 
 		// Load default Wordpress jQuery
 		wp_deregister_script('jquery');
 		wp_register_script('jquery', ("https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"), false, '', true);
 		wp_enqueue_script('jquery');
-
-		// Load custom scripts
-		// wp_enqueue_script('custom', get_bloginfo( 'template_url' ) . '/assets/js/custom.js', array('jquery'), null, true);
-        // Registers and enqueues the required javascript.
+        
         wp_enqueue_script( 'stripe', 'https://js.stripe.com/v2/', array( 'jquery' ), null, true );
 
         wp_register_script( 'custom', get_bloginfo( 'template_url' ) . '/assets/js/custom.min.js', array( 'jquery' ), null, true );
