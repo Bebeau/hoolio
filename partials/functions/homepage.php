@@ -2,7 +2,7 @@
 global $post;
 add_action('admin_init','wyzerr_manage_homepage');
 function wyzerr_manage_homepage() {
-    if(isset($_GET['action']) && $_GET['action'] === "edit" && $_POST['post_ID']) {
+    if(isset($_GET['action']) && $_GET['action'] === "edit" && isset($_POST['post_ID'])) {
         // Add custom meta boxes to display photo management
         $post_id = $_GET['post'] ? $_GET['post'] : $_POST['post_ID'];
         $pageName = get_the_title($post_id);
