@@ -14,7 +14,7 @@ if (!function_exists( 'load_custom_scripts' ) ) {
 		wp_register_script('jquery', ("https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"), false, '', true);
 		wp_enqueue_script('jquery');
 
-        // wp_enqueue_script( 'stripe', 'https://js.stripe.com/v2/', array( 'jquery' ), null, true );
+        wp_enqueue_script( 'stripe', 'https://js.stripe.com/v2/', array( 'jquery' ), null, true );
 
         wp_register_script( 'custom', get_bloginfo( 'template_url' ) . '/assets/js/custom.min.js', array( 'jquery' ), null, true );
         wp_localize_script( 'custom', 'meta',
