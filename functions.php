@@ -290,12 +290,13 @@ function checkout() {
     die();
 }
 
-wp_deregister_style('buttons');
 // Custom Scripting to Move JavaScript from the Head to the Footer
 function remove_head_scripts() { 
    remove_action('wp_head', 'wp_print_scripts'); 
    remove_action('wp_head', 'wp_print_head_scripts', 9); 
    remove_action('wp_head', 'wp_enqueue_scripts', 1);
+
+   wp_deregister_style('buttons');
 
    add_action('wp_footer', 'wp_print_scripts', 5);
    add_action('wp_footer', 'wp_enqueue_scripts', 5);
