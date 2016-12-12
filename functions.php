@@ -324,4 +324,3 @@ include(TEMPLATEPATH.'/partials/functions/user.php');
 include(TEMPLATEPATH.'/partials/functions/theme.php');
 include(TEMPLATEPATH.'/partials/functions/testimonials.php');
 include(TEMPLATEPATH.'/partials/functions/homepage.php');
-
