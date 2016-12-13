@@ -1981,7 +1981,8 @@ p {
   background: rgba(0, 0, 0, 0.9);
   text-align: center;
   height: 100vh;
-  overflow: hidden; }
+  overflow: hidden;
+  margin-top: 75px; }
   #checkout .group {
     margin: 25px auto; }
     #checkout .group.half article {
