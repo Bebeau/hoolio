@@ -510,7 +510,7 @@ header {
 			@include border-top-radius(10px);
 			@include border-bottom-radius(10px);
 			overflow: hidden;
-			border: 3px solid $blue;
+			border: 1px solid $blue;
 			vertical-align: middle;
 			width: 300px;
 			position: relative;
