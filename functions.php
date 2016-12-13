@@ -1,5 +1,7 @@
 <?php
 
+require_once('stripe/config.php');
+
 // Hide admin bar
 add_filter('show_admin_bar', '__return_false');
 
@@ -218,6 +220,60 @@ function emailSubmit() {
     die();
 
 }
+
+add_action('wp_ajax_newsletterSubmit', 'newsletterSubmit');
+add_action('wp_ajax_nopriv_newsletterSubmit', 'newsletterSubmit');
+function newsletterSubmit() {
+
+    if(!empty($_POST['email'])) {
+
+        $emailaddress = $_POST['email'];
+
+        $key = esc_attr(get_option('mailchimp_api'));
+        $list = esc_attr(get_option('mailchimp_list'));
+
+        if(!empty($key) && !empty($list)) {
+
+            $auth = base64_encode( 'user:'.$key );
+
+            $data = array(
+                'apikey'        => $key,
+                'email_address' => $emailaddress,
+                'status'        => 'subscribed',
+                'merge_fields'  => array(
+                    'FNAME'     => '',
+                    'LNAME'     => '',
+                    'INTEREST'  => 'Newsletter'
+                )
+            );
+
+            $json_data = json_encode($data);
+
+            $ch = curl_init();
+            curl_setopt($ch, CURLOPT_URL, 'https://us11.api.mailchimp.com/3.0/lists/'.$list.'/members/');
+            curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json',
+                                                        'Authorization: Basic '.$auth));
+            curl_setopt($ch, CURLOPT_USERAGENT, 'PHP-MCAPI/2.0');
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+            curl_setopt($ch, CURLOPT_POST, true);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $json_data);
+
+            $result = curl_exec($ch);
+
+            // Return an appropriate response to the browser
+            if ( defined( 'DOING_AJAX' ) ) {
+                echo $result ? "Success" : "E";
+            }
+        }
+
+    } else {
+        echo "E";
+    }
+
+    die();
+}   
 
 add_action('wp_ajax_charge', 'checkout');
 add_action('wp_ajax_nopriv_charge', 'checkout');

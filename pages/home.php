@@ -6,7 +6,7 @@ Template Name: Home
 
 get_header(); ?>
 
-	<section id="top" class="block">
+	<section id="top" class="block" data-parallax='{"y" : 230, "smoothness": 1}'>
 		<!-- <span class="path"></span> -->
 		<article class="outer">
 			<div class="inner">
@@ -50,9 +50,9 @@ get_header(); ?>
 			                	echo '<h3>We empower businesses to make better decisions.</h3>';
 			                }
 			                if(!empty($section1_button)) {
-			                	echo '<button class="btn btn-wizard">'.$section1_button.'</button>';
+			                	echo '<a href="'.site_url('checkout').'" class="btn">'.$section1_button.'</a>';
 			                } else {
-			                	echo '<button class="btn btn-wizard">Sign Up</button>';
+			                	echo '<a href="'.site_url('checkout').'" class="btn">Sign Up</a>';
 			                }
 			            echo '</span>';
 					?>

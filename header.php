@@ -133,13 +133,37 @@
 	</div>
 
 <header>
-	<a href="<?php echo site_url();?>" class="logo">
-		<img class="svg" src="<?php echo bloginfo('template_directory');?>/assets/images/logo.svg" alt="hoolio" />
-	</a>
-	<div id="Menu">
-		<span class="bar cross"></span>
-		<span class="bar middle"></span>
-		<span class="bar cross"></span>
+	<div class="header-left">
+		<a href="<?php echo site_url();?>" class="logo">
+			<img class="svg" src="<?php echo bloginfo('template_directory');?>/assets/images/logo.svg" alt="hoolio" />
+		</a>
+		<a href="https://smartforms.wyzerr.com/#/surveys/106/2qQYIGezt8vEVNRI9uZZIN" class="hiring">
+			We're Hiring
+		</a>
+	</div>
+	<div class="header-right">
+
+		<span class="hide_mobile">
+			<a href="<?php echo site_url('about');?>" class="nav-link">
+				About
+			</a>
+			<!-- <a href="<?php // echo site_url('Use Cases');?>" class="nav-link">
+				Use Cases
+			</a> -->
+			<form role="form" method="POST" action="" id="newsletterFrm">
+				<input type="email" name="newsletteremail" id="newsletteremail" placeholder="email@address.." />
+				<button type="submit" class="btn btn-submit"><i class="fa fa-envelope"></i></button>
+			</form>
+			<a href="<?php echo site_url('checkout'); ?>" class="btn">
+				Buy Presale
+			</a>
+		</span>
+
+		<div id="Menu">
+			<span class="bar cross"></span>
+			<span class="bar middle"></span>
+			<span class="bar cross"></span>
+		</div>
 	</div>
 	<?php 
 	echo '<div class="menu outer">';

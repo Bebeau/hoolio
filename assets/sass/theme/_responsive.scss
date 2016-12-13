@@ -316,6 +316,11 @@
 		padding: 0 15px;
 	}
 }
+@media(max-width: 800px) {
+	.hide_mobile {
+		display: none;
+	}
+}
 @media(max-width: 768px) {
 	video {
 		display: none;
@@ -583,13 +588,13 @@
 				width: 100%;
 				padding: 0;
 				#Menu {
-					top: 20px;
+					top: 30px;
 					.bar {
 						background: $white;
 					}
 				}
 				.logo {
-					padding: 15px 0 15px 15px;
+					padding: 15px;
 					svg {
 						height: 58px;
 						width: auto;
@@ -604,9 +609,15 @@
 			background: $blue;
 			width: 100%;
 			padding: 0;
+			.header-left {
+				.hiring {
+					margin-left: -4px;
+					color: white;
+				}
+			}
 			#Menu {
-				top: 20px;
-				padding: 0;
+				top: 30px;
+				margin: 0 15px 0 0;
 				background: transparent;
 				.bar {
 					background: $white;

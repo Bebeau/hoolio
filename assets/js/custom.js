@@ -149,9 +149,9 @@ var init = {
 			init.topVideos();
 		}
 		init.tooltip();
-		init.subNav();
 		init.mobileBubbles();
 		init.checkoutBtn();
+		init.newsletterBtn();
 	},
 	preLoad: function() {
         // Wait for window load
@@ -183,17 +183,6 @@ var init = {
 				section.slideUp();
 				frame.removeClass("open");
 			}
-		});
-	},
-	subNav: function() {
-		var height = jQuery('#pageBanner').outerHeight();
-		jQuery(window).scroll(function(){
-		    if(jQuery(window).scrollTop() > (height - 50)){
-		       jQuery("#Menu").addClass("blue");
-		    }
-		    else{
-		       jQuery("#Menu").removeClass("blue");
-		    }
 		});
 	},
 	tooltip: function() {
@@ -439,9 +428,48 @@ var init = {
 			}
 		});
 	},
+	newsletterSubmit: function() {
+		var Frm = jQuery('#newsletterFrm');
+		jQuery('#newsletterFrm .btn-submit').html('<i class="fa fa-spinner fa-spin"></i>');
+        jQuery.ajax({
+            url: ajaxurl,
+            type: Frm.attr('method'),
+            data: {
+            	email: jQuery('#newsletteremail').val(),
+            	action: 'newsletterSubmit'
+            },
+            dataType: 'html',
+            success: function(data) {
+            	init.newsletterResponse(data);
+            }
+        });
+        return false;
+	},
+	newsletterResponse: function(response) {
+        if (response === "Success") {
+        	jQuery('#newsletterFrm .btn-submit').addClass("success").html('<i class="fa fa-check"></i>');
+        	jQuery("#newsletteremail").val("");
+            setTimeout(
+            	function() {
+            		jQuery('#newsletterFrm .btn-submit').removeClass("success").html('<i class="fa fa-envelope"></i>');
+            	}, 2500
+        	);
+        }
+        if (response === "E") {
+         	jQuery('#newsletterFrm .btn-submit').addClass('error').html('<i class="fa fa-ban"></i>');
+         	setTimeout(
+            	function() {
+            		jQuery('#newsletterFrm .btn-submit').removeClass('error').html('<i class="fa fa-envelope"></i>');
+            	}, 2500
+        	);
+        }
+	},
+	newsletterBtn: function() {
+		jQuery('#newsletterFrm').submit(init.newsletterSubmit);
+	},
 	contactSubmit: function() {
 		var Frm = jQuery('#contactfrm');
-    	jQuery('<i class="fa fa-spinner fa-spin"></i>').prependTo('.btn-submit');
+    	jQuery('#contactfrm .btn-submit').html('<i class="fa fa-spinner fa-spin"></i>');
         jQuery.ajax({
             url: ajaxurl,
             type: Frm.attr('method'),
@@ -466,23 +494,23 @@ var init = {
         return false;
 	},
 	contactResponse: function(response) {
-        jQuery('.btn-submit i').remove();
+        jQuery('#contactfrm .btn-submit i').remove();
         if (response === "Success") {
-        	jQuery('.btn-submit').replaceWith('<button class="btn btn-submit success"><i class="fa fa-check"></i></button>');
+        	jQuery('#contactfrm .btn-submit').replaceWith('<button class="btn btn-submit success"><i class="fa fa-check"></i></button>');
             jQuery("input").val("");
             jQuery("textarea").val("");
             jQuery('.dropdown button').html('Area of interest <i class="fa fa-angle-down"></i>');
             setTimeout(
             	function() {
-            		jQuery('.btn-submit').replaceWith('<button class="btn btn-submit">Submit</button>');
+            		jQuery('#contactfrm .btn-submit').replaceWith('<button class="btn btn-submit">Submit</button>');
             	}, 2500
         	);
         }
         if (response === "E") {
-         	jQuery('.btn-submit').replaceWith('<button class="btn btn-submit error"><i class="fa fa-ban"></i></button>');
+         	jQuery('#contactfrm .btn-submit').replaceWith('<button class="btn btn-submit error"><i class="fa fa-ban"></i></button>');
          	setTimeout(
             	function() {
-            		jQuery('.btn-submit').replaceWith('<button class="btn btn-submit">Submit</button>');
+            		jQuery('#contactfrm .btn-submit').replaceWith('<button class="btn btn-submit">Submit</button>');
             	}, 2500
         	);
         }
@@ -492,21 +520,21 @@ var init = {
 	},
 	checkoutResponse: function(data) {
 		if(data === "Success") {
-            jQuery('.btn-submit').addClass("success").html('<i class="fa fa-check"></i>');
+            jQuery('#checkoutFrm .btn-submit').addClass("success").html('<i class="fa fa-check"></i>');
             jQuery("input").val("");
             jQuery('.month button').html('Month <i class="fa fa-angle-down"></i>');
             jQuery('.year button').html('Year <i class="fa fa-angle-down"></i>');
             setTimeout(
             	function() {
-            		jQuery('.btn-submit').removeClass("success").html('Pay Now');
+            		jQuery('#checkoutFrm .btn-submit').removeClass("success").html('Pay Now');
             		jQuery('.right').addClass("confirm");
             	}, 1500
         	);
 		} else {
-        	jQuery('.btn-submit').addClass("error").html('<i class="fa fa-ban"></i>');
+        	jQuery('#checkoutFrm .btn-submit').addClass("error").html('<i class="fa fa-ban"></i>');
          	setTimeout(
             	function() {
-            		jQuery('.btn-submit').removeClass("error").html('Pay Now');
+            		jQuery('#checkoutFrm .btn-submit').removeClass("error").html('Pay Now');
             	}, 1500
         	);
 		}
@@ -516,11 +544,11 @@ var init = {
         if (response.error) {
         	// Show the errors on the form:
 		    frm.find('.payment-errors').text(response.error.message);
-		    jQuery('.btn-submit').addClass("error").html('<i class="fa fa-ban"></i>');
+		    jQuery('#checkoutFrm .btn-submit').addClass("error").html('<i class="fa fa-ban"></i>');
          	setTimeout(
             	function() {
-            		jQuery('.btn-submit').removeClass("error").html('Pay Now');
-            		jQuery('.btn-submit').prop('disabled', false); // Re-enable submission
+            		jQuery('#checkoutFrm .btn-submit').removeClass("error").html('Pay Now');
+            		jQuery('#checkoutFrm .btn-submit').prop('disabled', false); // Re-enable submission
             		frm.find('.payment-errors').html("");
             	}, 1500
         	);
@@ -553,7 +581,8 @@ var init = {
 		var frm = jQuery('#checkoutFrm');
 		frm.submit(
 			function(e) {
-				jQuery('.btn-submit').html('<i class="fa fa-spinner fa-spin"></i>');
+				e.preventDefault();
+				jQuery('#checkoutFrm .btn-submit').html('<i class="fa fa-spinner fa-spin"></i>');
 				// Disable the submit button to prevent repeated clicks:
 				frm.find('.btn-submit').prop('disabled', true);
 				// Request a token from Stripe:
