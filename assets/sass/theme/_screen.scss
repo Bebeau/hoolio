@@ -74,9 +74,34 @@ body {
 					}
 				}
 			}
-			#Menu {
+			.Menu {
 				.bar {
 					background: $blue;
+				}
+			}
+		}
+	}
+	&.page-template-pages {
+		header {
+			background: transparent;
+			position: absolute;
+			width: 100%;
+			top: 0;
+			left: 0;
+			z-index: 999;
+			.short {
+				background: transparent;
+				.logo {
+					svg {
+						path {
+							fill: white;
+						}
+					}
+				}
+				.Menu {
+					.bar {
+						background: white;
+					}
 				}
 			}
 		}
@@ -468,14 +493,84 @@ p {
 	}
 }
 header {
-	position: fixed;
-	top: 0;
-	z-index: 12;
-	padding: 5px 25px;
-	box-sizing: border-box;
-	width: 100%;
-	background: white;
-	border-bottom: 1px solid #ebebeb;
+	.extended {
+		position: fixed;
+		top: 0;
+		width: 100%;
+		z-index: 100;
+		background: white;
+		padding: 5px 25px 0;
+		box-sizing: border-box;
+		border-bottom: 1px solid #ebebeb;
+		@include transform(translate(0,-100%));
+		@include transition(all 0.3s $authenticMotion);
+		&.in {
+			@include transform(translate(0,0));
+			@include transition(all 0.3s $authenticMotion);
+		}
+		#menu-header-menu {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			display: inline-block;
+			li {
+				display: inline-block;
+				margin-left: 25px;
+				position: relative;
+				ul {
+					height: 0;
+					overflow: hidden;
+					position: absolute;
+					top: 103px;
+					left: 0;
+					z-index: 1;
+					margin: 0;
+					padding: 0;
+					list-style: none;
+					width: 300px;
+					background: $blue;
+					box-sizing: border-box;
+					@include transition(all 0.3s $authenticMotion);
+					li {
+						margin: 0;
+						padding: 0;
+						display: block;
+						a {
+							line-height: 40px;
+							color: white;
+							padding: 0 15px;
+							display: block;
+							&:hover {
+								background: darken($blue, 5%);
+							}
+						}
+					}
+				}
+				&:hover {
+					ul {
+						height: 120%;
+						@include transition(all 0.3s $authenticMotion);
+					}
+				}
+			}
+		}
+	}
+	.short {
+		padding: 5px 25px;
+		box-sizing: border-box;
+		.header-left {
+			.logo {
+				border: none;
+			}
+		}
+		.header-right {
+			.Menu {
+				position: absolute;
+				top: 30px;
+				right: 25px;
+			}
+		}
+	}
 	.header-left {
 		display: inline-block;
 		.logo {
@@ -568,38 +663,38 @@ header {
 				letter-spacing: 0;
 			}
 		}
-		#Menu {
+	}
+	.Menu {
+		position: relative;
+		z-index: 13;
+		width: 35px;
+		display: inline-block;
+		vertical-align: middle;
+		margin-left: 25px;
+		@include transition(all 0.3s $easeInOutBack);
+		.bar {
+			background: $blue;
+			display: block;
+			width: 100%;
+			height: 5px;
+			margin: 5px auto;
 			position: relative;
-			z-index: 13;
-			width: 35px;
-			display: inline-block;
-			vertical-align: middle;
-			margin-left: 25px;
 			@include transition(all 0.3s $easeInOutBack);
+		}
+		&:hover {
+			cursor: pointer;
+		}
+		&.slidein {
+			width: 58px;
+			@include transition(all 0.3s $easeInOutBack);
+		}
+		&.blue {
 			.bar {
 				background: $blue;
-				display: block;
-				width: 100%;
-				height: 5px;
-				margin: 5px auto;
-				position: relative;
-				@include transition(all 0.3s $easeInOutBack);
-			}
-			&:hover {
-				cursor: pointer;
-			}
-			&.slidein {
-				width: 58px;
-				@include transition(all 0.3s $easeInOutBack);
-			}
-			&.blue {
-				.bar {
-					background: $blue;
-				}
 			}
 		}
 	}
-	.menu {
+	.menu-dropdown {
 		visibility: hidden;
 		background: url('assets/images/nav_bg.jpg') no-repeat scroll center / cover;
 		position: fixed;
@@ -697,10 +792,11 @@ header {
 	}
 	&.open {
 		@include transition(all 0.3s $easeInOutBack);
-		#Menu {
+		.Menu {
 			.bar {
 				background: white !important;
 				&:first-child {
+					margin-top: 16px;
 					margin-bottom: -5px;
 					@include transform(rotate(-45deg));
 					@include transition(all 0.3s $easeInOutBack);
@@ -716,7 +812,14 @@ header {
 				}
 			}
 		}
-		.menu {
+		.extended {
+			.Menu {
+				.bar {
+					background: $blue !important;
+				}
+			}
+		}
+		.menu-dropdown {
 			visibility: visible;
 			min-height: 100vh;
 			opacity: 1;

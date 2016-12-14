@@ -133,40 +133,71 @@
 	</div>
 
 <header>
-	<div class="header-left">
-		<a href="<?php echo site_url();?>" class="logo">
-			<img class="svg" src="<?php echo bloginfo('template_directory');?>/assets/images/logo.svg" alt="hoolio" />
-		</a>
-		<a href="https://smartforms.wyzerr.com/#/surveys/106/2qQYIGezt8vEVNRI9uZZIN" class="hiring">
-			We're Hiring
-		</a>
+	<div class="short">
+		<div class="header-left">
+			<a href="<?php echo site_url();?>" class="logo">
+				<img class="svg" src="<?php echo bloginfo('template_directory');?>/assets/images/logo.svg" alt="hoolio" />
+			</a>
+		</div>
+		<div class="header-right">
+			<div class="Menu">
+				<span class="bar cross"></span>
+				<span class="bar middle"></span>
+				<span class="bar cross"></span>
+			</div>
+		</div>
 	</div>
-	<div class="header-right">
-
-		<span class="hide_mobile">
-			<a href="<?php echo site_url('about');?>" class="nav-link">
-				About
+	<div class="extended">
+		<div class="header-left">
+			<a href="<?php echo site_url();?>" class="logo">
+				<img class="svg" src="<?php echo bloginfo('template_directory');?>/assets/images/logo.svg" alt="hoolio" />
 			</a>
-			<!-- <a href="<?php // echo site_url('Use Cases');?>" class="nav-link">
-				Use Cases
-			</a> -->
-			<form role="form" method="POST" action="" id="newsletterFrm">
-				<input type="email" name="newsletteremail" id="newsletteremail" placeholder="email@address.." />
-				<button type="submit" class="btn btn-submit"><i class="fa fa-envelope"></i></button>
-			</form>
-			<a href="<?php echo site_url('checkout'); ?>" class="btn">
-				Buy Presale
+			<a href="https://smartforms.wyzerr.com/#/surveys/106/2qQYIGezt8vEVNRI9uZZIN" class="hiring">
+				We're Hiring
 			</a>
-		</span>
+		</div>
+		<div class="header-right">
 
-		<div id="Menu">
-			<span class="bar cross"></span>
-			<span class="bar middle"></span>
-			<span class="bar cross"></span>
+			<span class="hide_mobile">
+				<?php
+					$menu_args = array(
+						'theme_location'  => 'header-menu',
+						'menu'            => 'Header Menu',
+						'container'       => '',
+						'container_class' => '',
+						'container_id'    => '',
+						'menu_class'      => 'nav',
+						'menu_id'         => '',
+						'echo'            => true,
+						'fallback_cb'     => 'wp_page_menu',
+						'before'          => '',
+						'after'           => '',
+						'link_before'     => '',
+						'link_after'      => '',
+						'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+						'depth'           => 0,
+						'walker'          => ''
+					);
+					wp_nav_menu($menu_args);
+				?>
+				<form role="form" method="POST" action="" id="newsletterFrm">
+					<input type="email" name="newsletteremail" id="newsletteremail" placeholder="email@address.." />
+					<button type="submit" class="btn btn-submit"><i class="fa fa-envelope"></i></button>
+				</form>
+				<a href="<?php echo site_url('checkout'); ?>" class="btn">
+					Buy Presale
+				</a>
+			</span>
+
+			<div class="Menu">
+				<span class="bar cross"></span>
+				<span class="bar middle"></span>
+				<span class="bar cross"></span>
+			</div>
 		</div>
 	</div>
 	<?php 
-	echo '<div class="menu outer">';
+	echo '<div class="menu-dropdown outer">';
 		$menu_args = array(
 			'theme_location'  => 'main-menu',
 			'menu'            => 'Main Menu',

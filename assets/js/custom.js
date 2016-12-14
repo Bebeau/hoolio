@@ -152,6 +152,17 @@ var init = {
 		init.mobileBubbles();
 		init.checkoutBtn();
 		init.newsletterBtn();
+		init.showHeader();
+	},
+	showHeader: function() {
+		jQuery(window).scroll(function() {    
+			var scroll = jQuery(window).scrollTop();
+			if (scroll >= 500) {
+			    jQuery('.extended').addClass("in");
+			} else {
+			    jQuery('.extended').removeClass("in");
+			}
+		});
 	},
 	preLoad: function() {
         // Wait for window load
@@ -352,21 +363,21 @@ var init = {
 	    });
 	},
 	openMenu: function() {
-		jQuery('#Menu').click(function(){
+		jQuery('.Menu').click(function(){
 	    	if(jQuery('header').hasClass("open")) {
 	    		jQuery('header').removeClass("open");
-	    		jQuery('.menu ul li').removeClass("in").dequeue();
+	    		jQuery('.menu-dropdown ul li').removeClass("in").dequeue();
 	    	} else {
 	    		jQuery('header').addClass("open");
-	    		jQuery('.menu ul li').each(function(e){
+	    		jQuery('.menu-dropdown ul li').each(function(e){
 	    			jQuery(this).delay(50*e).queue(function(){
 	    				jQuery(this).addClass("in");
 	    			});
 	    		});
 	    	}
 	    });
-	    jQuery('.menu').addClass("outer");
-	    jQuery('.menu ul').addClass("inner");
+	    jQuery('.menu-dropdown').addClass("outer");
+	    jQuery('.menu-dropdown ul').addClass("inner");
 	},
 	bubbleOpen: function() {
 		jQuery('.bubblewrap').click(function(e){

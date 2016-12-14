@@ -1839,8 +1839,21 @@ body {
   overflow-x: hidden; }
   body.home header .logo svg path, body.error404 header .logo svg path {
     fill: #1293cc; }
-  body.home header #Menu .bar, body.error404 header #Menu .bar {
+  body.home header .Menu .bar, body.error404 header .Menu .bar {
     background: #1293cc; }
+  body.page-template-pages header {
+    background: transparent;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 999; }
+    body.page-template-pages header .short {
+      background: transparent; }
+      body.page-template-pages header .short .logo svg path {
+        fill: white; }
+      body.page-template-pages header .short .Menu .bar {
+        background: white; }
   body p {
     font-family: 'pn regular';
     line-height: 34px; }
@@ -2219,282 +2232,358 @@ p {
       width: 20%;
       display: inline-block; }
 
-header {
+header .extended {
   position: fixed;
   top: 0;
-  z-index: 12;
-  padding: 5px 25px;
-  box-sizing: border-box;
   width: 100%;
+  z-index: 100;
   background: white;
-  border-bottom: 1px solid #ebebeb; }
-  header .header-left {
+  padding: 5px 25px 0;
+  box-sizing: border-box;
+  border-bottom: 1px solid #ebebeb;
+  -webkit-transform: translate(0, -100%);
+  -moz-transform: translate(0, -100%);
+  -ms-transform: translate(0, -100%);
+  -o-transform: translate(0, -100%);
+  transform: translate(0, -100%);
+  -webkit-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  -moz-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+  header .extended.in {
+    -webkit-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0);
+    -webkit-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    -moz-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+  header .extended #menu-header-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
     display: inline-block; }
-    header .header-left .logo {
-      padding: 5px 15px 5px 0;
+    header .extended #menu-header-menu li {
       display: inline-block;
-      vertical-align: middle;
-      border-right: 1px solid #ebebeb; }
-    header .header-left .hiring {
-      text-transform: uppercase;
-      border-bottom-right-radius: 10px;
-      border-top-right-radius: 10px;
-      border-top: 1px solid #ebebeb;
-      border-bottom: 1px solid #ebebeb;
-      border-right: 1px solid #ebebeb;
-      line-height: 40px;
-      padding: 0 15px;
-      margin-left: -1px;
-      color: #ccc; }
-  header .header-right {
-    float: right; }
-    header .header-right .nav-link {
-      margin-left: 25px; }
-    header .header-right a {
-      color: #1293cc;
-      text-transform: uppercase;
-      line-height: 101px; }
-    header .header-right form {
-      display: inline-block;
-      border-top-left-radius: 10px;
-      border-top-right-radius: 10px;
-      border-bottom-left-radius: 10px;
-      border-bottom-right-radius: 10px;
-      overflow: hidden;
-      border: 1px solid #1293cc;
-      vertical-align: middle;
-      width: 300px;
-      position: relative;
-      margin: 0 25px; }
-      header .header-right form input {
-        display: inline-block;
-        border: none;
-        line-height: 40px;
-        width: 100%;
-        padding: 0 60px 0 10px;
-        box-sizing: border-box;
-        font-size: 14pt;
-        text-transform: none;
-        letter-spacing: normal;
-        color: #1293cc; }
-        header .header-right form input:focus {
-          outline: none; }
-      header .header-right form .btn {
+      margin-left: 25px;
+      position: relative; }
+      header .extended #menu-header-menu li ul {
+        height: 0;
+        overflow: hidden;
         position: absolute;
-        top: 0;
-        right: 0;
-        width: 50px;
-        color: white;
-        border: none;
-        line-height: 40px;
-        background: #b6d764;
-        font-size: 18pt;
-        margin-left: -50px;
+        top: 103px;
+        left: 0;
+        z-index: 1;
+        margin: 0;
         padding: 0;
-        display: block;
+        list-style: none;
+        width: 300px;
+        background: #1293cc;
+        box-sizing: border-box;
         -webkit-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         -moz-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
-        header .header-right form .btn:hover {
-          background: #a3cd3b;
-          -webkit-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-          -moz-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
-        header .header-right form .btn.error {
-          background: #ff8080;
-          -webkit-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-          -moz-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
-    header .header-right .btn {
+        header .extended #menu-header-menu li ul li {
+          margin: 0;
+          padding: 0;
+          display: block; }
+          header .extended #menu-header-menu li ul li a {
+            line-height: 40px;
+            color: white;
+            padding: 0 15px;
+            display: block; }
+            header .extended #menu-header-menu li ul li a:hover {
+              background: #1082b5; }
+      header .extended #menu-header-menu li:hover ul {
+        height: 120%;
+        -webkit-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        -moz-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+
+header .short {
+  padding: 5px 25px;
+  box-sizing: border-box; }
+  header .short .header-left .logo {
+    border: none; }
+  header .short .header-right .Menu {
+    position: absolute;
+    top: 30px;
+    right: 25px; }
+
+header .header-left {
+  display: inline-block; }
+  header .header-left .logo {
+    padding: 5px 15px 5px 0;
+    display: inline-block;
+    vertical-align: middle;
+    border-right: 1px solid #ebebeb; }
+  header .header-left .hiring {
+    text-transform: uppercase;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    border-top: 1px solid #ebebeb;
+    border-bottom: 1px solid #ebebeb;
+    border-right: 1px solid #ebebeb;
+    line-height: 40px;
+    padding: 0 15px;
+    margin-left: -1px;
+    color: #ccc; }
+
+header .header-right {
+  float: right; }
+  header .header-right .nav-link {
+    margin-left: 25px; }
+  header .header-right a {
+    color: #1293cc;
+    text-transform: uppercase;
+    line-height: 101px; }
+  header .header-right form {
+    display: inline-block;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #1293cc;
+    vertical-align: middle;
+    width: 300px;
+    position: relative;
+    margin: 0 25px; }
+    header .header-right form input {
       display: inline-block;
-      width: auto;
-      font-size: 16pt;
-      text-transform: uppercase;
+      border: none;
       line-height: 40px;
-      margin: 0 auto;
-      vertical-align: middle;
-      color: white; }
-      header .header-right .btn:hover {
-        letter-spacing: 0; }
-    header .header-right #Menu {
-      position: relative;
-      z-index: 13;
-      width: 35px;
-      display: inline-block;
-      vertical-align: middle;
-      margin-left: 25px;
-      -webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-      -moz-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-      transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
-      header .header-right #Menu .bar {
-        background: #1293cc;
-        display: block;
-        width: 100%;
-        height: 5px;
-        margin: 5px auto;
-        position: relative;
-        -webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        -moz-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
-      header .header-right #Menu:hover {
-        cursor: pointer; }
-      header .header-right #Menu.slidein {
-        width: 58px;
-        -webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        -moz-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
-      header .header-right #Menu.blue .bar {
-        background: #1293cc; }
-  header .menu {
-    visibility: hidden;
-    background: url("assets/images/nav_bg.jpg") no-repeat scroll center/cover;
-    position: fixed;
-    z-index: 11;
+      width: 100%;
+      padding: 0 60px 0 10px;
+      box-sizing: border-box;
+      font-size: 14pt;
+      text-transform: none;
+      letter-spacing: normal;
+      color: #1293cc; }
+      header .header-right form input:focus {
+        outline: none; }
+    header .header-right form .btn {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 50px;
+      color: white;
+      border: none;
+      line-height: 40px;
+      background: #b6d764;
+      font-size: 18pt;
+      margin-left: -50px;
+      padding: 0;
+      display: block;
+      -webkit-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      -moz-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+      header .header-right form .btn:hover {
+        background: #a3cd3b;
+        -webkit-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        -moz-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+      header .header-right form .btn.error {
+        background: #ff8080;
+        -webkit-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        -moz-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+  header .header-right .btn {
+    display: inline-block;
+    width: auto;
+    font-size: 16pt;
+    text-transform: uppercase;
+    line-height: 40px;
+    margin: 0 auto;
+    vertical-align: middle;
+    color: white; }
+    header .header-right .btn:hover {
+      letter-spacing: 0; }
+
+header .Menu {
+  position: relative;
+  z-index: 13;
+  width: 35px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 25px;
+  -webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  -moz-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+  header .Menu .bar {
+    background: #1293cc;
+    display: block;
     width: 100%;
-    height: 100vh;
-    text-align: center;
-    font-size: 24pt;
-    color: #ffffff;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    -webkit-transform: scale(0.98);
-    -moz-transform: scale(0.98);
-    -ms-transform: scale(0.98);
-    -o-transform: scale(0.98);
-    transform: scale(0.98);
+    height: 5px;
+    margin: 5px auto;
+    position: relative;
     -webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     -moz-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
-    header .menu:before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      display: block;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.9);
-      z-index: 1; }
-    header .menu .socialNavWrap {
-      position: absolute;
-      bottom: 25px;
-      left: 50%;
-      width: 300px;
-      margin: 0 0 0 -150px;
-      z-index: 999; }
-      header .menu .socialNavWrap .social {
-        margin-bottom: 5px; }
-      header .menu .socialNavWrap a {
-        background: transparent;
-        font-size: 18pt; }
-        header .menu .socialNavWrap a i {
-          color: white; }
-      header .menu .socialNavWrap .legal {
-        font-size: 12pt; }
-    header .menu .nav {
-      width: 100%; }
-    header .menu ul {
-      list-style: none;
+  header .Menu:hover {
+    cursor: pointer; }
+  header .Menu.slidein {
+    width: 58px;
+    -webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    -moz-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+  header .Menu.blue .bar {
+    background: #1293cc; }
+
+header .menu-dropdown {
+  visibility: hidden;
+  background: url("assets/images/nav_bg.jpg") no-repeat scroll center/cover;
+  position: fixed;
+  z-index: 11;
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  font-size: 24pt;
+  color: #ffffff;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  -webkit-transform: scale(0.98);
+  -moz-transform: scale(0.98);
+  -ms-transform: scale(0.98);
+  -o-transform: scale(0.98);
+  transform: scale(0.98);
+  -webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  -moz-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+  header .menu-dropdown:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 1; }
+  header .menu-dropdown .socialNavWrap {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    width: 300px;
+    margin: 0 0 0 -150px;
+    z-index: 999; }
+    header .menu-dropdown .socialNavWrap .social {
+      margin-bottom: 5px; }
+    header .menu-dropdown .socialNavWrap a {
+      background: transparent;
+      font-size: 18pt; }
+      header .menu-dropdown .socialNavWrap a i {
+        color: white; }
+    header .menu-dropdown .socialNavWrap .legal {
+      font-size: 12pt; }
+  header .menu-dropdown .nav {
+    width: 100%; }
+  header .menu-dropdown ul {
+    list-style: none;
+    position: relative;
+    z-index: 2;
+    padding: 0; }
+    header .menu-dropdown ul li {
       position: relative;
-      z-index: 2;
-      padding: 0; }
-      header .menu ul li {
-        position: relative;
-        opacity: 0;
-        -webkit-transform: translate(0, 50px);
-        -moz-transform: translate(0, 50px);
-        -ms-transform: translate(0, 50px);
-        -o-transform: translate(0, 50px);
-        transform: translate(0, 50px); }
-        header .menu ul li a {
-          display: inline-block;
-          color: #1293cc;
-          font-size: 36pt;
-          text-decoration: none;
-          text-align: center;
-          overflow: hidden;
+      opacity: 0;
+      -webkit-transform: translate(0, 50px);
+      -moz-transform: translate(0, 50px);
+      -ms-transform: translate(0, 50px);
+      -o-transform: translate(0, 50px);
+      transform: translate(0, 50px); }
+      header .menu-dropdown ul li a {
+        display: inline-block;
+        color: #1293cc;
+        font-size: 36pt;
+        text-decoration: none;
+        text-align: center;
+        overflow: hidden;
+        -webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        -moz-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+        header .menu-dropdown ul li a:after {
+          content: "";
+          display: block;
+          height: 5px;
+          background: #ffffff;
+          width: 0;
+          margin: 0 auto;
+          position: relative;
+          top: -5px;
           -webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
           -moz-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
           transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
-          header .menu ul li a:after {
-            content: "";
-            display: block;
-            height: 5px;
-            background: #ffffff;
-            width: 0;
-            margin: 0 auto;
-            position: relative;
-            top: -5px;
+        header .menu-dropdown ul li a:hover {
+          color: #ffffff; }
+          header .menu-dropdown ul li a:hover:after {
+            width: 200px;
             -webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
             -moz-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
             transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
-          header .menu ul li a:hover {
-            color: #ffffff; }
-            header .menu ul li a:hover:after {
-              width: 200px;
-              -webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-              -moz-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-              transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
-        header .menu ul li.in {
-          opacity: 1;
-          -webkit-transform: translate(0, 0);
-          -moz-transform: translate(0, 0);
-          -ms-transform: translate(0, 0);
-          -o-transform: translate(0, 0);
-          transform: translate(0, 0);
-          -webkit-transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-          -moz-transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-          transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
-  header.open {
-    -webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    -moz-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
-    header.open #Menu .bar {
-      background: white !important; }
-      header.open #Menu .bar:first-child {
-        margin-bottom: -5px;
-        -webkit-transform: rotate(-45deg);
-        -moz-transform: rotate(-45deg);
-        -ms-transform: rotate(-45deg);
-        -o-transform: rotate(-45deg);
-        transform: rotate(-45deg);
-        -webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        -moz-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
-      header.open #Menu .bar:nth-child(2) {
-        -webkit-transform: translate(70px, 0);
-        -moz-transform: translate(70px, 0);
-        -ms-transform: translate(70px, 0);
-        -o-transform: translate(70px, 0);
-        transform: translate(70px, 0);
-        -webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        -moz-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
-      header.open #Menu .bar:last-child {
-        margin-top: -14px;
-        -webkit-transform: rotate(45deg);
-        -moz-transform: rotate(45deg);
-        -ms-transform: rotate(45deg);
-        -o-transform: rotate(45deg);
-        transform: rotate(45deg);
-        -webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        -moz-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
-    header.open .menu {
-      visibility: visible;
-      min-height: 100vh;
-      opacity: 1;
-      -webkit-transform: scale(1);
-      -moz-transform: scale(1);
-      -ms-transform: scale(1);
-      -o-transform: scale(1);
-      transform: scale(1);
+      header .menu-dropdown ul li.in {
+        opacity: 1;
+        -webkit-transform: translate(0, 0);
+        -moz-transform: translate(0, 0);
+        -ms-transform: translate(0, 0);
+        -o-transform: translate(0, 0);
+        transform: translate(0, 0);
+        -webkit-transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        -moz-transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+
+header.open {
+  -webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  -moz-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+  header.open .Menu .bar {
+    background: white !important; }
+    header.open .Menu .bar:first-child {
+      margin-top: 16px;
+      margin-bottom: -5px;
+      -webkit-transform: rotate(-45deg);
+      -moz-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+      -o-transform: rotate(-45deg);
+      transform: rotate(-45deg);
       -webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
       -moz-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
       transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+    header.open .Menu .bar:nth-child(2) {
+      -webkit-transform: translate(70px, 0);
+      -moz-transform: translate(70px, 0);
+      -ms-transform: translate(70px, 0);
+      -o-transform: translate(70px, 0);
+      transform: translate(70px, 0);
+      -webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      -moz-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+    header.open .Menu .bar:last-child {
+      margin-top: -14px;
+      -webkit-transform: rotate(45deg);
+      -moz-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      -o-transform: rotate(45deg);
+      transform: rotate(45deg);
+      -webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      -moz-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+  header.open .extended .Menu .bar {
+    background: #1293cc !important; }
+  header.open .menu-dropdown {
+    visibility: visible;
+    min-height: 100vh;
+    opacity: 1;
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    -moz-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
 
 #top {
   position: relative;

@@ -50,8 +50,9 @@ if ( function_exists('register_sidebar') ) {
 // Register Navigation Menu Areas
 add_action( 'after_setup_theme', 'register_my_menu' );
 function register_my_menu() {
-  register_nav_menu( 'main-menu', 'Main Menu' );
-  register_nav_menu( 'footer-menu', 'Footer Menu' );
+    register_nav_menu( 'header-menu', 'Header Menu' );
+    register_nav_menu( 'main-menu', 'Main Menu' );
+    register_nav_menu( 'footer-menu', 'Footer Menu' );
 }
 
 // remove WordPress admin menu items
