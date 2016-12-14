@@ -65,23 +65,7 @@ body {
 	text-shadow: 1px 1px 1px rgba(0,0,0,0.04);
 	font-family: 'din medium', sans-serif;
 	overflow-x: hidden;
-	&.home, &.error404 {
-		header {
-			.logo {
-				svg {
-					path {
-						fill: $blue;
-					}
-				}
-			}
-			.Menu {
-				.bar {
-					background: $blue;
-				}
-			}
-		}
-	}
-	&.page-template-pages {
+	&.page {
 		header {
 			background: transparent;
 			position: absolute;
@@ -101,6 +85,24 @@ body {
 				.Menu {
 					.bar {
 						background: white;
+					}
+				}
+			}
+		}
+	}
+	&.home, &.error404 {
+		header {
+			.short {
+				.logo {
+					svg {
+						path {
+							fill: $blue;
+						}
+					}
+				}
+				.Menu {
+					.bar {
+						background: $blue;
 					}
 				}
 			}

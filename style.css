@@ -1837,23 +1837,23 @@ body {
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.04);
   font-family: 'din medium', sans-serif;
   overflow-x: hidden; }
-  body.home header .logo svg path, body.error404 header .logo svg path {
-    fill: #1293cc; }
-  body.home header .Menu .bar, body.error404 header .Menu .bar {
-    background: #1293cc; }
-  body.page-template-pages header {
+  body.page header {
     background: transparent;
     position: absolute;
     width: 100%;
     top: 0;
     left: 0;
     z-index: 999; }
-    body.page-template-pages header .short {
+    body.page header .short {
       background: transparent; }
-      body.page-template-pages header .short .logo svg path {
+      body.page header .short .logo svg path {
         fill: white; }
-      body.page-template-pages header .short .Menu .bar {
+      body.page header .short .Menu .bar {
         background: white; }
+  body.home header .short .logo svg path, body.error404 header .short .logo svg path {
+    fill: #1293cc; }
+  body.home header .short .Menu .bar, body.error404 header .short .Menu .bar {
+    background: #1293cc; }
   body p {
     font-family: 'pn regular';
     line-height: 34px; }
