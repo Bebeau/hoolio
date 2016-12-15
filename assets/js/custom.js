@@ -136,8 +136,8 @@ var init = {
 	onReady: function() {
 		init.preLoad();
 		init.openMenu();
-		init.bubbleOpen();
-		init.bubbleClose();
+		// init.bubbleOpen();
+		// init.bubbleClose();
 		init.SVG();
 		init.dropdown();
 		init.contactBtn();
@@ -153,6 +153,7 @@ var init = {
 		init.checkoutBtn();
 		init.newsletterBtn();
 		init.showHeader();
+		init.bubbleTab();
 	},
 	showHeader: function() {
 		jQuery(window).scroll(function() {    
@@ -379,64 +380,78 @@ var init = {
 	    jQuery('.menu-dropdown').addClass("outer");
 	    jQuery('.menu-dropdown ul').addClass("inner");
 	},
-	bubbleOpen: function() {
+	// bubbleOpen: function() {
+	// 	jQuery('.bubblewrap').click(function(e){
+	// 		e.preventDefault();
+
+	// 		var item = jQuery(this).parent();
+	// 		var icon = item.find("i");
+	// 		var numb = jQuery(this).attr("data-numb");
+
+	// 		item.addClass("open");
+	// 		icon.addClass("hide");
+	// 		jQuery('body').addClass("freeze");
+	// 		setTimeout(
+	// 			function() {
+	// 				jQuery('.frame',item).addClass("in");
+	// 				jQuery('.bubblenav').addClass("in");
+	// 				jQuery('.nav-'+numb).addClass("selected");
+	// 			}, 250
+	// 		);
+	// 	});
+	// },
+	// bubbleClose: function() {
+	// 	jQuery('.bubblenav li').click(function(e){
+	// 		e.preventDefault();
+
+	// 		var numb = jQuery(this).attr("data-numb");
+	// 		var tab = jQuery('.bubble-'+numb).parent();
+
+	// 		jQuery('#Menu').hide();
+
+	// 		if(jQuery(this).hasClass("circleClose")) {
+	// 			jQuery('.frame').removeClass("in");
+	// 			jQuery('.bubblenav').removeClass("in");
+	// 			jQuery('.nav').removeClass("selected");
+	// 			setTimeout(
+	// 				function() {
+	// 					jQuery('#bubbles li').removeClass("open");
+	// 				}, 250
+	// 			);
+	// 			setTimeout(
+	// 				function() {
+	// 					jQuery('#bubbles li').find("i").removeClass("hide");
+	// 				}, 500
+	// 			);
+	// 			jQuery('#Menu').show();
+	// 			jQuery('body').removeClass("freeze");
+	// 		} else {
+	// 			jQuery('.nav').removeClass("selected");
+	// 			jQuery('#bubbles li').removeClass("open");
+	// 			tab.addClass("open");
+	// 			tab.find("i").addClass("hide");
+	// 			setTimeout(
+	// 				function() {
+	// 					jQuery('.frame').removeClass("in");
+	// 					jQuery('.frame',tab).addClass("in");
+	// 					jQuery('.nav-'+numb).addClass("selected");
+	// 				}, 250
+	// 			);
+	// 		}
+	// 	});
+	// },
+	bubbleTab: function() {
 		jQuery('.bubblewrap').click(function(e){
 			e.preventDefault();
-
-			var item = jQuery(this).parent();
-			var icon = item.find("i");
 			var numb = jQuery(this).attr("data-numb");
-
-			item.addClass("open");
-			icon.addClass("hide");
-			jQuery('body').addClass("freeze");
-			setTimeout(
-				function() {
-					jQuery('.frame',item).addClass("in");
-					jQuery('.bubblenav').addClass("in");
-					jQuery('.nav-'+numb).addClass("selected");
-				}, 250
-			);
-		});
-	},
-	bubbleClose: function() {
-		jQuery('.bubblenav li').click(function(e){
-			e.preventDefault();
-
-			var numb = jQuery(this).attr("data-numb");
-			var tab = jQuery('.bubble-'+numb).parent();
-
-			jQuery('#Menu').hide();
-
-			if(jQuery(this).hasClass("circleClose")) {
-				jQuery('.frame').removeClass("in");
-				jQuery('.bubblenav').removeClass("in");
-				jQuery('.nav').removeClass("selected");
-				setTimeout(
-					function() {
-						jQuery('#bubbles li').removeClass("open");
-					}, 250
-				);
-				setTimeout(
-					function() {
-						jQuery('#bubbles li').find("i").removeClass("hide");
-					}, 500
-				);
-				jQuery('#Menu').show();
-				jQuery('body').removeClass("freeze");
-			} else {
-				jQuery('.nav').removeClass("selected");
-				jQuery('#bubbles li').removeClass("open");
-				tab.addClass("open");
-				tab.find("i").addClass("hide");
-				setTimeout(
-					function() {
-						jQuery('.frame').removeClass("in");
-						jQuery('.frame',tab).addClass("in");
-						jQuery('.nav-'+numb).addClass("selected");
-					}, 250
-				);
-			}
+			jQuery('.bubblewrap').removeClass("active");
+			jQuery(this).addClass("active");
+			jQuery('html,body').animate({
+			   scrollTop: jQuery("#bubbles").offset().top - 125
+			}, function(){
+				jQuery('#frameTabs .frame').removeClass("open");
+				jQuery('.frame-'+numb).addClass("open");
+			});
 		});
 	},
 	newsletterSubmit: function() {

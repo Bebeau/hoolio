@@ -2722,335 +2722,6 @@ header.open {
   text-align: center; }
   #meet .outer {
     overflow: visible; }
-  #meet .bubblenav {
-    position: fixed;
-    top: 25px;
-    width: 100%;
-    text-align: center;
-    padding: 0;
-    z-index: 999;
-    -webkit-transform: translate(0, -100px);
-    -moz-transform: translate(0, -100px);
-    -ms-transform: translate(0, -100px);
-    -o-transform: translate(0, -100px);
-    transform: translate(0, -100px);
-    -webkit-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    -moz-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
-    #meet .bubblenav.in {
-      -webkit-transform: translate(0, 0);
-      -moz-transform: translate(0, 0);
-      -ms-transform: translate(0, 0);
-      -o-transform: translate(0, 0);
-      transform: translate(0, 0);
-      -webkit-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      -moz-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
-    #meet .bubblenav li {
-      border-top-left-radius: 50%;
-      border-top-right-radius: 50%;
-      border-bottom-left-radius: 50%;
-      border-bottom-right-radius: 50%;
-      width: 35px;
-      height: 35px;
-      display: inline-block;
-      position: relative;
-      -webkit-transform: scale(1);
-      -moz-transform: scale(1);
-      -ms-transform: scale(1);
-      -o-transform: scale(1);
-      transform: scale(1);
-      -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-      -moz-transition: -moz-transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-      transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-      -webkit-transition: width 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-      -moz-transition: width 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-      transition: width 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
-      #meet .bubblenav li.selected {
-        width: 0;
-        overflow: hidden;
-        -webkit-transform: scale(0);
-        -moz-transform: scale(0);
-        -ms-transform: scale(0);
-        -o-transform: scale(0);
-        transform: scale(0);
-        -webkit-transition: -webkit-transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        -moz-transition: -moz-transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        -webkit-transition: width 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        -moz-transition: width 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        transition: width 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
-      #meet .bubblenav li .tooltip {
-        position: absolute;
-        top: 110%;
-        left: 50%;
-        text-align: center;
-        color: black;
-        background: white;
-        white-space: nowrap;
-        box-sizing: border-box;
-        padding: 5px 10px;
-        opacity: 0;
-        -webkit-transform: translate(-50%, 5px);
-        -moz-transform: translate(-50%, 5px);
-        -ms-transform: translate(-50%, 5px);
-        -o-transform: translate(-50%, 5px);
-        transform: translate(-50%, 5px);
-        -webkit-transition: all 0.3s ease-in-out;
-        -moz-transition: all 0.3s ease-in-out;
-        transition: all 0.3s ease-in-out; }
-        #meet .bubblenav li .tooltip.in {
-          opacity: 1;
-          -webkit-transform: translate(-50%, 0);
-          -moz-transform: translate(-50%, 0);
-          -ms-transform: translate(-50%, 0);
-          -o-transform: translate(-50%, 0);
-          transform: translate(-50%, 0);
-          -webkit-transition: all 0.3s ease-in-out;
-          -moz-transition: all 0.3s ease-in-out;
-          transition: all 0.3s ease-in-out; }
-        #meet .bubblenav li .tooltip:before {
-          content: "";
-          position: absolute;
-          top: -5px;
-          left: 50%;
-          border-right: 5px solid transparent;
-          border-left: 5px solid transparent;
-          border-bottom: 5px solid white;
-          margin: 0 0 0 -5px; }
-      #meet .bubblenav li:first-child {
-        background: #f36235; }
-      #meet .bubblenav li:nth-child(2) {
-        background: #6c57a6; }
-      #meet .bubblenav li:nth-child(3) {
-        background: #ce5a82; }
-      #meet .bubblenav li:nth-child(4) {
-        background: #1293cc; }
-      #meet .bubblenav li:nth-child(5) {
-        background: #f0ba1a; }
-      #meet .bubblenav li:nth-child(6) {
-        background: #b6d764; }
-      #meet .bubblenav li.circleClose {
-        position: fixed;
-        top: -15px;
-        right: 50px;
-        z-index: 13;
-        height: 58px;
-        display: inline-block;
-        margin: 0 0 0 -4px;
-        overflow: hidden;
-        vertical-align: top;
-        border: none;
-        border-top-left-radius: 0;
-        border-top-right-radius: 0;
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0;
-        -webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        -moz-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
-        #meet .bubblenav li.circleClose .bar {
-          width: 40px;
-          height: 5px;
-          background: white;
-          display: block;
-          margin: 10px auto;
-          position: relative;
-          left: 0;
-          -webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-          -moz-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-          transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
-          #meet .bubblenav li.circleClose .bar:first-child {
-            margin-top: 30px;
-            margin-bottom: -16px;
-            -webkit-transform: rotate(-45deg);
-            -moz-transform: rotate(-45deg);
-            -ms-transform: rotate(-45deg);
-            -o-transform: rotate(-45deg);
-            transform: rotate(-45deg);
-            -webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-            -moz-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-            transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
-          #meet .bubblenav li.circleClose .bar:nth-child(2) {
-            left: 70px;
-            -webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-            -moz-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-            transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
-          #meet .bubblenav li.circleClose .bar:last-child {
-            margin-top: -14px;
-            -webkit-transform: rotate(45deg);
-            -moz-transform: rotate(45deg);
-            -ms-transform: rotate(45deg);
-            -o-transform: rotate(45deg);
-            transform: rotate(45deg);
-            -webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-            -moz-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-            transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
-        #meet .bubblenav li.circleClose:hover {
-          cursor: pointer; }
-      #meet .bubblenav li:hover {
-        cursor: pointer; }
-  #meet ul#bubbles {
-    list-style: none;
-    text-align: center;
-    display: inline-block;
-    padding: 0;
-    margin: 100px auto 0;
-    width: 1300px;
-    box-sizing: border-box; }
-    #meet ul#bubbles li {
-      text-align: center;
-      display: inline-block;
-      width: 15%;
-      vertical-align: top;
-      -webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-      -moz-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-      transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
-      #meet ul#bubbles li .label {
-        color: #919192;
-        position: relative;
-        z-index: 1;
-        font-family: 'pn regular';
-        text-transform: uppercase;
-        font-size: 10pt;
-        letter-spacing: 2px;
-        line-height: 18px; }
-      #meet ul#bubbles li .frame {
-        visibility: hidden;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 14;
-        opacity: 0;
-        -webkit-transition: all 0.3s ease-in-out;
-        -moz-transition: all 0.3s ease-in-out;
-        transition: all 0.3s ease-in-out; }
-        #meet ul#bubbles li .frame h3 {
-          color: #ffffff;
-          text-transform: uppercase;
-          letter-spacing: 2px;
-          margin-top: 0; }
-        #meet ul#bubbles li .frame p {
-          color: white; }
-          #meet ul#bubbles li .frame p.leftText {
-            text-align: left;
-            margin-bottom: 5px; }
-        #meet ul#bubbles li .frame ul {
-          list-style: circle;
-          margin: 0;
-          padding: 0; }
-          #meet ul#bubbles li .frame ul li {
-            display: block;
-            text-align: left;
-            width: 100%;
-            color: white; }
-        #meet ul#bubbles li .frame.in {
-          visibility: visible;
-          opacity: 1;
-          -webkit-transition: all 0.3s ease-in-out;
-          -moz-transition: all 0.3s ease-in-out;
-          transition: all 0.3s ease-in-out; }
-        #meet ul#bubbles li .frame .copy {
-          width: 1170px;
-          -webkit-transform: translate(0, 25px);
-          -moz-transform: translate(0, 25px);
-          -ms-transform: translate(0, 25px);
-          -o-transform: translate(0, 25px);
-          transform: translate(0, 25px); }
-          #meet ul#bubbles li .frame .copy img {
-            max-height: 600px;
-            max-width: 100%;
-            height: auto;
-            width: auto;
-            margin: 0;
-            padding: 50px 0 0;
-            box-sizing: border-box; }
-          #meet ul#bubbles li .frame .copy i {
-            top: 0; }
-        #meet ul#bubbles li .frame .btn {
-          background: rgba(0, 0, 0, 0.3);
-          color: white; }
-      #meet ul#bubbles li .bubblewrap {
-        position: relative;
-        -webkit-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        -moz-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
-        #meet ul#bubbles li .bubblewrap .bubble {
-          position: relative;
-          z-index: 3;
-          display: block;
-          width: 150px;
-          height: 150px;
-          top: 0;
-          margin: 0 auto 25px;
-          vertical-align: top;
-          border-top-left-radius: 50%;
-          border-top-right-radius: 50%;
-          border-bottom-left-radius: 50%;
-          border-bottom-right-radius: 50%;
-          -webkit-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-          -moz-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-          text-align: center; }
-          #meet ul#bubbles li .bubblewrap .bubble i {
-            opacity: 1; }
-            #meet ul#bubbles li .bubblewrap .bubble i.hide {
-              opacity: 0; }
-        #meet ul#bubbles li .bubblewrap:hover {
-          cursor: pointer; }
-          #meet ul#bubbles li .bubblewrap:hover .bubble {
-            top: -10px;
-            -webkit-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            -moz-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
-      #meet ul#bubbles li:first-child .bubble, #meet ul#bubbles li:first-child .frame {
-        background: #f36235; }
-      #meet ul#bubbles li:first-child i {
-        color: #f36235; }
-      #meet ul#bubbles li:nth-child(2) .bubble, #meet ul#bubbles li:nth-child(2) .frame {
-        background: #6c57a6; }
-      #meet ul#bubbles li:nth-child(3) .bubble, #meet ul#bubbles li:nth-child(3) .frame {
-        background: #ce5a82; }
-      #meet ul#bubbles li:nth-child(4) .bubble, #meet ul#bubbles li:nth-child(4) .frame {
-        background: #1293cc; }
-      #meet ul#bubbles li:nth-child(5) .bubble, #meet ul#bubbles li:nth-child(5) .frame {
-        background: #f0ba1a; }
-      #meet ul#bubbles li:last-child .bubble, #meet ul#bubbles li:last-child .frame {
-        background: #b6d764; }
-      #meet ul#bubbles li.open .bubble {
-        position: relative;
-        z-index: 14;
-        -webkit-transform: scale(50);
-        -moz-transform: scale(50);
-        -ms-transform: scale(50);
-        -o-transform: scale(50);
-        transform: scale(50);
-        border-top-left-radius: 0;
-        border-top-right-radius: 0;
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0;
-        -webkit-transition: all 1s ease-in-out;
-        -moz-transition: all 1s ease-in-out;
-        transition: all 1s ease-in-out; }
-  #meet .copy .half {
-    width: 50%;
-    text-align: center;
-    display: inline-block;
-    box-sizing: border-box;
-    padding: 0 25px;
-    margin: 0 0 0 -4px;
-    vertical-align: middle; }
-    #meet .copy .half .icon {
-      -webkit-transform: translate(0, -10px);
-      -moz-transform: translate(0, -10px);
-      -ms-transform: translate(0, -10px);
-      -o-transform: translate(0, -10px);
-      transform: translate(0, -10px); }
-  #meet .copy img {
-    max-height: 200px;
-    width: auto;
-    margin-bottom: 75px; }
   #meet .followUp {
     width: 600px;
     margin: 350px auto 150px;
@@ -3102,6 +2773,233 @@ header.open {
       -webkit-transition: all 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
       -moz-transition: all 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
       transition: all 1s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+
+.page-template-use-cases #page {
+  padding-bottom: 0; }
+  .page-template-use-cases #page h2 {
+    margin-top: 50px;
+    color: #1293cc; }
+
+#frameTabs {
+  position: relative; }
+  #frameTabs .frame {
+    height: 0;
+    overflow: hidden;
+    -webkit-transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    -moz-transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+    #frameTabs .frame.open {
+      height: 75vh;
+      -webkit-transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      -moz-transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+    #frameTabs .frame h3, #frameTabs .frame p, #frameTabs .frame ul {
+      color: white; }
+    #frameTabs .frame h3 {
+      margin-top: 5px; }
+    #frameTabs .frame p {
+      font-size: 16pt;
+      line-height: 21pt; }
+    #frameTabs .frame .btn {
+      margin-top: 1em; }
+    #frameTabs .frame:nth-child(1) {
+      background: #f36235; }
+    #frameTabs .frame:nth-child(2) {
+      background: #6c57a6; }
+    #frameTabs .frame:nth-child(3) {
+      background: #ce5a82; }
+    #frameTabs .frame:nth-child(4) {
+      background: #1293cc; }
+    #frameTabs .frame:nth-child(5) {
+      background: #f0ba1a; }
+    #frameTabs .frame:nth-child(6) {
+      background: #b6d764; }
+  #frameTabs .copy .half {
+    width: 50%;
+    text-align: center;
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 0 25px;
+    margin: 0 0 0 -4px;
+    vertical-align: middle; }
+    #frameTabs .copy .half .icon {
+      -webkit-transform: translate(0, -10px);
+      -moz-transform: translate(0, -10px);
+      -ms-transform: translate(0, -10px);
+      -o-transform: translate(0, -10px);
+      transform: translate(0, -10px); }
+
+ul#bubbles {
+  list-style: none;
+  text-align: center;
+  display: block;
+  padding: 0;
+  margin: 75px auto 0;
+  width: 1300px;
+  box-sizing: border-box; }
+  ul#bubbles li {
+    text-align: center;
+    display: inline-block;
+    width: 15%;
+    vertical-align: top;
+    -webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    -moz-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+    ul#bubbles li .label {
+      color: #919192;
+      position: relative;
+      z-index: 1;
+      font-family: 'pn regular';
+      text-transform: uppercase;
+      font-size: 10pt;
+      letter-spacing: 2px;
+      line-height: 18px; }
+    ul#bubbles li .frame {
+      visibility: hidden;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 14;
+      opacity: 0;
+      -webkit-transition: all 0.3s ease-in-out;
+      -moz-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out; }
+      ul#bubbles li .frame h3 {
+        color: #ffffff;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-top: 0; }
+      ul#bubbles li .frame p {
+        color: white; }
+        ul#bubbles li .frame p.leftText {
+          text-align: left;
+          margin-bottom: 5px; }
+      ul#bubbles li .frame ul {
+        list-style: circle;
+        margin: 0;
+        padding: 0; }
+        ul#bubbles li .frame ul li {
+          display: block;
+          text-align: left;
+          width: 100%;
+          color: white; }
+      ul#bubbles li .frame.in {
+        visibility: visible;
+        opacity: 1;
+        -webkit-transition: all 0.3s ease-in-out;
+        -moz-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out; }
+      ul#bubbles li .frame .copy {
+        width: 1170px;
+        -webkit-transform: translate(0, 25px);
+        -moz-transform: translate(0, 25px);
+        -ms-transform: translate(0, 25px);
+        -o-transform: translate(0, 25px);
+        transform: translate(0, 25px); }
+        ul#bubbles li .frame .copy img {
+          max-height: 600px;
+          max-width: 100%;
+          height: auto;
+          width: auto;
+          margin: 0;
+          padding: 50px 0 0;
+          box-sizing: border-box; }
+        ul#bubbles li .frame .copy i {
+          top: 0; }
+      ul#bubbles li .frame .btn {
+        background: rgba(0, 0, 0, 0.3);
+        color: white; }
+    ul#bubbles li .bubblewrap {
+      position: relative;
+      -webkit-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      -moz-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-sizing: border-box;
+      padding-bottom: 25px; }
+      ul#bubbles li .bubblewrap:after {
+        content: "";
+        width: 100%;
+        height: 5px;
+        background: #1293cc;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        -webkit-transform: translate(0, 6px);
+        -moz-transform: translate(0, 6px);
+        -ms-transform: translate(0, 6px);
+        -o-transform: translate(0, 6px);
+        transform: translate(0, 6px);
+        -webkit-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        -moz-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+      ul#bubbles li .bubblewrap.active:after {
+        -webkit-transform: translate(0, 0);
+        -moz-transform: translate(0, 0);
+        -ms-transform: translate(0, 0);
+        -o-transform: translate(0, 0);
+        transform: translate(0, 0);
+        -webkit-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        -moz-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+      ul#bubbles li .bubblewrap .bubble {
+        position: relative;
+        z-index: 3;
+        display: block;
+        width: 150px;
+        height: 150px;
+        top: 0;
+        margin: 0 auto 25px;
+        vertical-align: top;
+        border-top-left-radius: 50%;
+        border-top-right-radius: 50%;
+        border-bottom-left-radius: 50%;
+        border-bottom-right-radius: 50%;
+        -webkit-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        -moz-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        text-align: center; }
+        ul#bubbles li .bubblewrap .bubble i {
+          opacity: 1; }
+          ul#bubbles li .bubblewrap .bubble i.hide {
+            opacity: 0; }
+      ul#bubbles li .bubblewrap:hover {
+        cursor: pointer; }
+        ul#bubbles li .bubblewrap:hover .bubble {
+          top: -10px;
+          -webkit-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+          -moz-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+    ul#bubbles li:first-child .bubble, ul#bubbles li:first-child .frame {
+      background: #f36235; }
+    ul#bubbles li:first-child i {
+      color: #f36235; }
+    ul#bubbles li:nth-child(2) .bubble, ul#bubbles li:nth-child(2) .frame {
+      background: #6c57a6; }
+    ul#bubbles li:nth-child(3) .bubble, ul#bubbles li:nth-child(3) .frame {
+      background: #ce5a82; }
+    ul#bubbles li:nth-child(4) .bubble, ul#bubbles li:nth-child(4) .frame {
+      background: #1293cc; }
+    ul#bubbles li:nth-child(5) .bubble, ul#bubbles li:nth-child(5) .frame {
+      background: #f0ba1a; }
+    ul#bubbles li:last-child .bubble, ul#bubbles li:last-child .frame {
+      background: #b6d764; }
+    ul#bubbles li.open .bubble {
+      position: relative;
+      z-index: 14;
+      -webkit-transform: scale(50);
+      -moz-transform: scale(50);
+      -ms-transform: scale(50);
+      -o-transform: scale(50);
+      transform: scale(50);
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      -webkit-transition: all 1s ease-in-out;
+      -moz-transition: all 1s ease-in-out;
+      transition: all 1s ease-in-out; }
 
 #metrics {
   background: radial-gradient(#1293cc, #0e719d); }
