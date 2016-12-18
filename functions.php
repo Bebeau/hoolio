@@ -34,7 +34,7 @@ if (!function_exists( 'load_custom_scripts' ) ) {
 add_action( 'wp_print_styles', 'load_custom_scripts' );
 
 // Thumbnail Support
-add_theme_support( 'post-thumbnails', array('post', 'page') );
+add_theme_support( 'post-thumbnails', array('post', 'page', 'usecases') );
 
 // Load widget areas
 if ( function_exists('register_sidebar') ) {
@@ -381,3 +381,5 @@ include(TEMPLATEPATH.'/partials/functions/user.php');
 include(TEMPLATEPATH.'/partials/functions/theme.php');
 include(TEMPLATEPATH.'/partials/functions/testimonials.php');
 include(TEMPLATEPATH.'/partials/functions/homepage.php');
+
+include(TEMPLATEPATH.'/partials/functions/use-cases.php');

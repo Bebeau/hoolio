@@ -7,7 +7,7 @@
 		"uuidString": "BF56B957-43F7-42D5-A8FA-38826A0C2F9F"
 		}
 	],
-"creatorBuild": "25444",
+"creatorBuild": "25479",
 "files": {
 	"\/.gitignore": {
 		"ft": 8192,
@@ -263,56 +263,6 @@
 		"oF": 0,
 		"opt": 0
 		},
-	"\/assets\/images\/icons\/building.svg": {
-		"ft": 2097152,
-		"miP": 0,
-		"oA": 2,
-		"oAP": "\/assets\/images\/icons\/building.svg",
-		"oF": 0,
-		"opt": 0,
-		"plM": 3758088159,
-		"prP": 0
-		},
-	"\/assets\/images\/icons\/db.svg": {
-		"ft": 2097152,
-		"miP": 0,
-		"oA": 2,
-		"oAP": "\/assets\/images\/icons\/db.svg",
-		"oF": 0,
-		"opt": 0,
-		"plM": 3758088159,
-		"prP": 0
-		},
-	"\/assets\/images\/icons\/gov_building.svg": {
-		"ft": 2097152,
-		"miP": 0,
-		"oA": 2,
-		"oAP": "\/assets\/images\/icons\/gov_building.svg",
-		"oF": 0,
-		"opt": 0,
-		"plM": 3758088159,
-		"prP": 0
-		},
-	"\/assets\/images\/icons\/heart.svg": {
-		"ft": 2097152,
-		"miP": 0,
-		"oA": 2,
-		"oAP": "\/assets\/images\/icons\/heart.svg",
-		"oF": 0,
-		"opt": 0,
-		"plM": 3758088159,
-		"prP": 0
-		},
-	"\/assets\/images\/icons\/insights.svg": {
-		"ft": 2097152,
-		"miP": 0,
-		"oA": 2,
-		"oAP": "\/assets\/images\/icons\/insights.svg",
-		"oF": 0,
-		"opt": 0,
-		"plM": 3758088159,
-		"prP": 0
-		},
 	"\/assets\/images\/icons\/market1.svg": {
 		"ft": 2097152,
 		"miP": 0,
@@ -343,103 +293,11 @@
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/assets\/images\/icons\/money.svg": {
-		"ft": 2097152,
-		"miP": 0,
-		"oA": 2,
-		"oAP": "\/assets\/images\/icons\/money.svg",
-		"oF": 0,
-		"opt": 0,
-		"plM": 3758088159,
-		"prP": 0
-		},
 	"\/assets\/images\/icons\/play.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
 		"oAP": "\/assets\/images\/icons\/play.svg",
-		"oF": 0,
-		"opt": 0,
-		"plM": 3758088159,
-		"prP": 0
-		},
-	"\/assets\/images\/icons\/png\/Behavior.png": {
-		"ft": 32768,
-		"iS": 37024,
-		"oA": 0,
-		"oAP": "\/assets\/images\/icons\/png\/Behavior.png",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/assets\/images\/icons\/png\/Life.png": {
-		"ft": 32768,
-		"iS": 73222,
-		"oA": 0,
-		"oAP": "\/assets\/images\/icons\/png\/Life.png",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/assets\/images\/icons\/png\/Pulse.png": {
-		"ft": 32768,
-		"iS": 41279,
-		"oA": 0,
-		"oAP": "\/assets\/images\/icons\/png\/Pulse.png",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/assets\/images\/icons\/png\/Voice.png": {
-		"ft": 32768,
-		"iS": 34919,
-		"oA": 0,
-		"oAP": "\/assets\/images\/icons\/png\/Voice.png",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/assets\/images\/icons\/Product\/Service.svg": {
-		"ft": 2097152,
-		"miP": 0,
-		"oA": 2,
-		"oAP": "\/assets\/images\/icons\/Product\/Service.svg",
-		"oF": 0,
-		"opt": 0,
-		"plM": 3758088159,
-		"prP": 0
-		},
-	"\/assets\/images\/icons\/profile.svg": {
-		"ft": 2097152,
-		"miP": 0,
-		"oA": 2,
-		"oAP": "\/assets\/images\/icons\/profile.svg",
-		"oF": 0,
-		"opt": 0,
-		"plM": 3758088159,
-		"prP": 0
-		},
-	"\/assets\/images\/icons\/ruler.svg": {
-		"ft": 2097152,
-		"miP": 0,
-		"oA": 2,
-		"oAP": "\/assets\/images\/icons\/ruler.svg",
-		"oF": 0,
-		"opt": 0,
-		"plM": 3758088159,
-		"prP": 0
-		},
-	"\/assets\/images\/icons\/Service.svg": {
-		"ft": 2097152,
-		"miP": 0,
-		"oA": 2,
-		"oAP": "\/assets\/images\/icons\/Service.svg",
-		"oF": 0,
-		"opt": 0,
-		"plM": 3758088159,
-		"prP": 0
-		},
-	"\/assets\/images\/icons\/smile.svg": {
-		"ft": 2097152,
-		"miP": 0,
-		"oA": 2,
-		"oAP": "\/assets\/images\/icons\/smile.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
@@ -460,6 +318,14 @@
 		"oAP": "\/assets\/images\/ipad.png",
 		"oF": 0,
 		"opt": 0
+		},
+	"\/assets\/images\/ipad_mobile.jpg": {
+		"ft": 16384,
+		"iS": 54284,
+		"oA": 0,
+		"oAP": "\/assets\/images\/ipad_mobile.jpg",
+		"oF": 0,
+		"opt": 1
 		},
 	"\/assets\/images\/iphone.png": {
 		"ft": 32768,
@@ -503,7 +369,7 @@
 		"oA": 0,
 		"oAP": "\/assets\/images\/nav_bg.jpg",
 		"oF": 0,
-		"opt": 0
+		"opt": 1
 		},
 	"\/assets\/images\/owl.svg": {
 		"ft": 2097152,
@@ -537,7 +403,7 @@
 		"oA": 0,
 		"oAP": "\/assets\/images\/screens\/EmployeeHappinessSurveys.png",
 		"oF": 0,
-		"opt": 0
+		"opt": 1
 		},
 	"\/assets\/images\/screens\/PulseSurveys.png": {
 		"ft": 32768,
@@ -545,7 +411,7 @@
 		"oA": 0,
 		"oAP": "\/assets\/images\/screens\/PulseSurveys.png",
 		"oF": 0,
-		"opt": 0
+		"opt": 1
 		},
 	"\/assets\/images\/screens\/QualityOfLife.png": {
 		"ft": 32768,
@@ -561,7 +427,7 @@
 		"oA": 0,
 		"oAP": "\/assets\/images\/screens\/ScreeningTool.png",
 		"oF": 0,
-		"opt": 0
+		"opt": 1
 		},
 	"\/assets\/images\/screens\/Voiceofcustomer.png": {
 		"ft": 32768,
@@ -569,7 +435,7 @@
 		"oA": 0,
 		"oAP": "\/assets\/images\/screens\/Voiceofcustomer.png",
 		"oF": 0,
-		"opt": 0
+		"opt": 1
 		},
 	"\/assets\/images\/team.jpg": {
 		"ft": 16384,
@@ -585,7 +451,7 @@
 		"oA": 0,
 		"oAP": "\/assets\/images\/testimonial_bg.jpg",
 		"oF": 0,
-		"opt": 0
+		"opt": 1
 		},
 	"\/assets\/images\/video_placeholder.jpg": {
 		"ft": 16384,
@@ -604,15 +470,6 @@
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
-		},
-	"\/assets\/js\/custom-min.js": {
-		"ft": 64,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "\/assets\/js\/custom-min.min.js",
-		"oF": 0,
-		"sC": 1,
-		"tS": 0
 		},
 	"\/assets\/js\/custom.js": {
 		"ft": 64,
@@ -646,24 +503,6 @@
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/assets\/js\/editProfile.min.min.js",
-		"oF": 0,
-		"sC": 1,
-		"tS": 0
-		},
-	"\/assets\/js\/jquery.unveil.js": {
-		"ft": 64,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "\/assets\/js\/jquery.unveil.min.js",
-		"oF": 0,
-		"sC": 1,
-		"tS": 0
-		},
-	"\/assets\/js\/min\/editProfile-min.js": {
-		"ft": 64,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "\/assets\/js\/min\/editProfile-min.min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -2659,6 +2498,218 @@
 		"oAP": "\/assets\/videos\/wizards.webm",
 		"oF": 0
 		},
+	"\/favicon\/android-icon-144x144.png": {
+		"ft": 32768,
+		"iS": 8371,
+		"oA": 0,
+		"oAP": "\/favicon\/android-icon-144x144.png",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/favicon\/android-icon-192x192.png": {
+		"ft": 32768,
+		"iS": 3275,
+		"oA": 0,
+		"oAP": "\/favicon\/android-icon-192x192.png",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/favicon\/android-icon-36x36.png": {
+		"ft": 32768,
+		"iS": 2227,
+		"oA": 0,
+		"oAP": "\/favicon\/android-icon-36x36.png",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/favicon\/android-icon-48x48.png": {
+		"ft": 32768,
+		"iS": 2938,
+		"oA": 0,
+		"oAP": "\/favicon\/android-icon-48x48.png",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/favicon\/android-icon-72x72.png": {
+		"ft": 32768,
+		"iS": 4178,
+		"oA": 0,
+		"oAP": "\/favicon\/android-icon-72x72.png",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/favicon\/android-icon-96x96.png": {
+		"ft": 32768,
+		"iS": 5562,
+		"oA": 0,
+		"oAP": "\/favicon\/android-icon-96x96.png",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/favicon\/apple-icon-114x114.png": {
+		"ft": 32768,
+		"iS": 6616,
+		"oA": 0,
+		"oAP": "\/favicon\/apple-icon-114x114.png",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/favicon\/apple-icon-120x120.png": {
+		"ft": 32768,
+		"iS": 6955,
+		"oA": 0,
+		"oAP": "\/favicon\/apple-icon-120x120.png",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/favicon\/apple-icon-144x144.png": {
+		"ft": 32768,
+		"iS": 8371,
+		"oA": 0,
+		"oAP": "\/favicon\/apple-icon-144x144.png",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/favicon\/apple-icon-152x152.png": {
+		"ft": 32768,
+		"iS": 8942,
+		"oA": 0,
+		"oAP": "\/favicon\/apple-icon-152x152.png",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/favicon\/apple-icon-180x180.png": {
+		"ft": 32768,
+		"iS": 10762,
+		"oA": 0,
+		"oAP": "\/favicon\/apple-icon-180x180.png",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/favicon\/apple-icon-57x57.png": {
+		"ft": 32768,
+		"iS": 3355,
+		"oA": 0,
+		"oAP": "\/favicon\/apple-icon-57x57.png",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/favicon\/apple-icon-60x60.png": {
+		"ft": 32768,
+		"iS": 3562,
+		"oA": 0,
+		"oAP": "\/favicon\/apple-icon-60x60.png",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/favicon\/apple-icon-72x72.png": {
+		"ft": 32768,
+		"iS": 4178,
+		"oA": 0,
+		"oAP": "\/favicon\/apple-icon-72x72.png",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/favicon\/apple-icon-76x76.png": {
+		"ft": 32768,
+		"iS": 4407,
+		"oA": 0,
+		"oAP": "\/favicon\/apple-icon-76x76.png",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/favicon\/apple-icon-precomposed.png": {
+		"ft": 32768,
+		"iS": 3483,
+		"oA": 0,
+		"oAP": "\/favicon\/apple-icon-precomposed.png",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/favicon\/apple-icon.png": {
+		"ft": 32768,
+		"iS": 3483,
+		"oA": 0,
+		"oAP": "\/favicon\/apple-icon.png",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/favicon\/browserconfig.xml": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/favicon\/browserconfig.xml",
+		"oF": 0
+		},
+	"\/favicon\/favicon-16x16.png": {
+		"ft": 32768,
+		"iS": 1620,
+		"oA": 0,
+		"oAP": "\/favicon\/favicon-16x16.png",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/favicon\/favicon-32x32.png": {
+		"ft": 32768,
+		"iS": 2022,
+		"oA": 0,
+		"oAP": "\/favicon\/favicon-32x32.png",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/favicon\/favicon-96x96.png": {
+		"ft": 32768,
+		"iS": 5562,
+		"oA": 0,
+		"oAP": "\/favicon\/favicon-96x96.png",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/favicon\/favicon.ico": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/favicon\/favicon.ico",
+		"oF": 0
+		},
+	"\/favicon\/manifest.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "\/favicon\/manifest-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"\/favicon\/ms-icon-144x144.png": {
+		"ft": 32768,
+		"iS": 8371,
+		"oA": 0,
+		"oAP": "\/favicon\/ms-icon-144x144.png",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/favicon\/ms-icon-150x150.png": {
+		"ft": 32768,
+		"iS": 8909,
+		"oA": 0,
+		"oAP": "\/favicon\/ms-icon-150x150.png",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/favicon\/ms-icon-310x310.png": {
+		"ft": 32768,
+		"iS": 23791,
+		"oA": 0,
+		"oAP": "\/favicon\/ms-icon-310x310.png",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/favicon\/ms-icon-70x70.png": {
+		"ft": 32768,
+		"iS": 4047,
+		"oA": 0,
+		"oAP": "\/favicon\/ms-icon-70x70.png",
+		"oF": 0,
+		"opt": 0
+		},
 	"\/footer.php": {
 		"ft": 8192,
 		"oA": 0,
@@ -2719,6 +2770,18 @@
 		"oAP": "\/pages\/jobs.php",
 		"oF": 0
 		},
+	"\/pages\/pricing.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/pages\/pricing.php",
+		"oF": 0
+		},
+	"\/pages\/use-cases.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/pages\/use-cases.php",
+		"oF": 0
+		},
 	"\/partials\/forms\/config.ini.php": {
 		"ft": 8192,
 		"oA": 0,
@@ -2747,6 +2810,12 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/partials\/functions\/theme.php",
+		"oF": 0
+		},
+	"\/partials\/functions\/use-cases.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/partials\/functions\/use-cases.php",
 		"oF": 0
 		},
 	"\/partials\/functions\/user.php": {
@@ -3960,6 +4029,10 @@
 			"active": 0,
 			"optionString": "{'properties': 'always'}"
 			},
+		"capitalized-comments": {
+			"active": 0,
+			"optionString": "'always', {'ignoreInlineComments': false, 'ignoreConsecutiveComments': false}"
+			},
 		"class-methods-use-this": {
 			"active": 0,
 			"optionString": "{'exceptMethods': []}"
@@ -4123,6 +4196,10 @@
 		"max-statements": {
 			"active": 0,
 			"optionString": "{'max': 10}, {'ignoreTopLevelFunctions': true}"
+			},
+		"max-statements-per-line": {
+			"active": 0,
+			"optionString": "{'max': 1}"
 			},
 		"multiline-ternary": {
 			"active": 0,
@@ -4488,6 +4565,10 @@
 			"active": 0,
 			"optionString": "'except-parens'"
 			},
+		"no-return-await": {
+			"active": 0,
+			"optionString": ""
+			},
 		"no-script-url": {
 			"active": 0,
 			"optionString": ""
@@ -4719,6 +4800,10 @@
 		"radix": {
 			"active": 0,
 			"optionString": "'always'"
+			},
+		"require-await": {
+			"active": 0,
+			"optionString": ""
 			},
 		"require-jsdoc": {
 			"active": 0,
@@ -5552,6 +5637,10 @@
 			},
 		"space-colon": {
 			"active": 1,
+			"flagValue": -1
+			},
+		"support-ie8": {
+			"active": 0,
 			"flagValue": -1
 			},
 		"toplevel": {

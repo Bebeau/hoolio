@@ -108,6 +108,17 @@ body {
 			}
 		}
 	}
+	&.page-template-pricing {
+		header {
+			.short {
+				.Menu {
+					.bar {
+						background: $blue;
+					}
+				}
+			}
+		}
+	}
 	p {
 		font-family: 'pn regular';
 		line-height: 34px;
@@ -255,7 +266,6 @@ p {
 	text-align: center;
 	height: 100vh;
 	overflow: hidden;
-	margin-top: 75px;
 	.group {
 		margin: 25px auto;
 		&.half {
@@ -1020,6 +1030,9 @@ header {
 		h3, p, ul {
 			color: white;
 		}
+		ul {
+			text-align: left;
+		}
 		h3 {
 			margin-top: 5px;
 		}
@@ -1061,6 +1074,12 @@ header {
 			.icon {
 				@include transform(translate(0,-10px));
 			}
+			.frame-icon {
+				width: 100px;
+				height: auto;
+				display: block;
+				margin: 0 auto 25px;
+			}
 		}
 	}
 }
@@ -1068,15 +1087,16 @@ ul#bubbles {
 	list-style: none;
 	text-align: center;
 	display: block;
-	padding: 0;
-	margin: 75px auto 0;
+	padding: 75px 0 0;
+	margin: 0 auto;
 	width: 1300px;
 	box-sizing: border-box;
+	overflow: hidden;
 	li {
 		text-align: center;
 		display: inline-block;
 		width: 15%;
-		vertical-align: top;
+		vertical-align: bottom;
 		@include transition(all 0.3s $easeInOutBack);
 		.label {
 			color: $grey;
@@ -1085,8 +1105,8 @@ ul#bubbles {
 			font-family: 'pn regular';
 			text-transform: uppercase;
 			font-size: 10pt;
-			letter-spacing: 2px;
 			line-height: 18px;
+			letter-spacing: 1px;
 		}
 		.frame {
 			visibility: hidden;
@@ -1139,9 +1159,7 @@ ul#bubbles {
 					padding: 50px 0 0;
 					box-sizing: border-box;
 				}
-				i {
-					top: 0;
-				}
+
 			}
 			.btn {
 				background: rgba(0,0,0,0.3);
@@ -1178,47 +1196,26 @@ ul#bubbles {
 				height: 150px;
 				top: 0;
 				margin: 0 auto 25px;
-				vertical-align: top;
+				vertical-align: middle;
 				@include border-top-radius(50%);
 				@include border-bottom-radius(50%);
 				@include transition(all 0.3s $authenticMotion);
 				text-align: center;
-				i {
-					opacity: 1;
-					&.hide {
-						opacity: 0;
-					}
+				img {
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					width: 50%;
+					height: auto;
+					@include transform(translate(-50%,-50%));
 				}
 			}
-			// &:after {
-			// 	content: "";
-			// 	width: 100px;
-			// 	height: 25px;
-			// 	background: radial-gradient(#999999, transparent);
-			// 	opacity: 0.75;
-			// 	position: absolute;
-			// 	z-index: 1;
-			// 	top: 135px;
-			// 	left: 50%;
-			// 	margin-left: -50px;
-			// 	display: block;
-			// 	vertical-align: top;
-			// 	@include border-top-radius(50%);
-			// 	@include border-bottom-radius(50%);
-			// 	@include transition(all 0.3s $authenticMotion);
-			// }
 			&:hover {
 				cursor: pointer;
 				.bubble {
 					top: -10px;
 					@include transition(all 0.3s $authenticMotion);
 				}
-				// &:after {
-				// 	width: 125px;
-				// 	margin-left: -62.5px;
-				// 	opacity: 0.25;
-				// 	@include transition(all 0.3s $easeInOutQuad);
-				// }
 			}
 		}
 		&:first-child{

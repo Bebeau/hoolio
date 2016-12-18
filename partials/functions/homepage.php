@@ -2,10 +2,11 @@
 global $post;
 add_action('admin_init','wyzerr_manage_homepage');
 function wyzerr_manage_homepage() {
-    if(isset($_GET['action']) && $_GET['action'] === "edit" && isset($_POST['post_ID'])) {
+    if(isset($_GET['action']) && $_GET['action'] === "edit") {
         // Add custom meta boxes to display photo management
         $post_id = $_GET['post'] ? $_GET['post'] : $_POST['post_ID'];
         $pageName = get_the_title($post_id);
+
         // checks for post/page ID
         if ($pageName === "Home" && get_post_type($post_id) === "page") {
             
@@ -238,10 +239,10 @@ function save_homepage_section_content( $post_id ) {
 // ajax response to save download track
 add_action('wp_ajax_setVideo', 'setFeaturedVideo');
 add_action('wp_ajax_nopriv_setVideo', 'setFeaturedVideo');
-function setFeaturedVideo($post_id) {
+function setFeaturedVideo() {
 
-    $postID = (isset($_GET['postID'])) ? $_GET['postID'] : 0;
     $imageURL = (isset($_GET['fieldVal'])) ? $_GET['fieldVal'] : 0;
+    $postID = (isset($_GET['postID'])) ? $_GET['postID'] : 0;
 
     if($imageURL !== "") {
         update_post_meta( $postID, 'featured_video', $imageURL);

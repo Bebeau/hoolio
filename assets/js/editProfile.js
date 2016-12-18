@@ -3,7 +3,7 @@ var ajaxurl = meta_image.ajaxurl;
 var user = {
 	onReady: function() {
 		user.imageUploader();
-		user.removeUserImage();
+		user.removeImage();
 		user.removeVideo();
 	},
 	imageUploader: function() {
@@ -13,14 +13,13 @@ var user = {
 
 	    	// Prevents the default action from occuring.
 	        e.preventDefault();
+
+	        // define variables --- this should be cleaned up
 	        var button = jQuery(this);
-	        var elem = jQuery(this).parent();
-	    	var image = elem.attr("data-img");
-	    	var val = elem.attr("data-input");
-	    	var userID = elem.attr("data-user");
-	    	var post = elem.attr("data-post");
-	    	var input = jQuery('#'+val);
-	    	var img = jQuery('.'+image);
+	        var wrap = button.parent();
+	    	var image = wrap.attr("data-img");
+	    	var field = wrap.attr("data-input");
+	    	var postID = wrap.attr('data-post');
 
 	        // Sets up the media library frame
 	        meta_image_frame = wp.media.frames.meta_image_frame = wp.media({
@@ -30,30 +29,41 @@ var user = {
 	            multiple: true
 	        });
 
+	        // Opens the media library frame.
+	        meta_image_frame.open();
+
 	        // Runs when an image is selected.
 	        meta_image_frame.on('select', function(){
 
 	            // Grabs the attachment selection and creates a JSON representation of the model.
 	            var media_attachment = meta_image_frame.state().get('selection').first().toJSON();
-	            // Sends the attachment URL to our custom image input field.
-	            img.find("img").remove();
+
 	            if(image === "bg_video") {
-	            	img.append('<video muted autoplay id="bgvid" loop><source src="'+media_attachment.url+'" type="video/webm"><source src="'+media_attachment.url+'" type="video/ogv"><source src="'+media_attachment.url+'" type="video/mp4"></video>');
-	            	input.val(media_attachment.url);
-	            	elem.append('<span class="button button-remove remove-video">X</span>');
+	            	// append user selected video
+	            	button.parent().append('<video muted autoplay id="bgvid" loop><source src="'+media_attachment.url+'" type="video/webm"><source src="'+media_attachment.url+'" type="video/ogv"><source src="'+media_attachment.url+'" type="video/mp4"></video>');
+	            	// change value of input to video url
+	            	jQuery('#'+field).val(media_attachment.url);
+	            	// append remove button
+	            	button.parent().append('<span class="button button-remove remove-video">X</span>');
+		            // remove add button
 		            button.remove();
-		            user.saveFeaturedVideo(post, media_attachment.url);
+		            // ajax call to save featured video
+		            user.saveFeaturedVideo(postID, media_attachment.url);
 	            } else {
-	            	img.append('<img src="'+media_attachment.url+'" alt="" />' );
-	            	input.val(media_attachment.url);
-		            elem.append('<button class="remove-image button button-large">Remove</button>');
+	            	// append user selected icon
+	            	button.parent().append('<img src="'+media_attachment.url+'" alt="" />' );
+	            	// change value of input to icon url
+	            	jQuery('#'+field).val(media_attachment.url);
+		            // append remove button
+		            button.parent().append('<a href="#" class="remove-image">Remove icon</a>');
+		            // remove add button
 		            button.remove();
-		            user.saveUserImage( val, userID, media_attachment.url );
+		            // ajax call to save icon
+		            user.saveImage( postID, field, media_attachment.url );
 	            }
+
 	        });
 
-	        // Opens the media library frame.
-	        meta_image_frame.open();
 	    });
 	},
 	removeVideo: function() {
@@ -74,33 +84,33 @@ var user = {
 
 		});
 	},
-	removeUserImage: function() {
+	removeImage: function() {
 		jQuery('.remove-image').click(function(e){
 			e.preventDefault();
 
-			var val = jQuery(this).parent().attr("data-input");
-	    	var userID = jQuery(this).parent().attr("data-user");
+			var field = jQuery(this).parent().attr("data-input");
+	    	var postID = jQuery(this).parent().attr("data-post");
 
 			jQuery(this).parent().find("input").val("");
 			jQuery(this).parent().find("img").remove();
 
-			user.saveUserImage(val,userID,"");
+			user.saveImage(postID, field,"");
 
-			jQuery(this).parent().append('<button class="add button button-large upload-image" id="upload-logo" style="text-align:center;" data-input="agent_image" data-img="profile" data-user="<?php echo $user_id; ?>">Upload/Set Profile Image</button>');
+			jQuery(this).parent().append('<a class="upload-image" data-input="'+field+'" data-post="'+postID+'">Upload/Set Use Case icon</a>');
 			jQuery(this).remove();
 
 			user.imageUploader();
 
 		});
 	},
-	saveUserImage: function(field, userID, image) {
+	saveImage: function(postID, field, image) {
         jQuery.ajax({
             url: ajaxurl,
             type: "GET",
             data: {
                 imageField: field,
                 fieldVal: image,
-                userID: userID,
+                postID: postID,
                 action: 'setImage'
             },
             dataType: 'html',
@@ -112,13 +122,13 @@ var user = {
             }
         }); 
     },
-    saveFeaturedVideo: function(post, video) {
+    saveFeaturedVideo: function(postID, video) {
         jQuery.ajax({
             url: ajaxurl,
             type: "GET",
             data: {
-            	postID: post,
                 fieldVal: video,
+                postID: postID,
                 action: 'setVideo'
             },
             dataType: 'html',

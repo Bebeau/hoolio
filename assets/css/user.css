@@ -74,3 +74,15 @@
       padding: 10px;
       box-sizing: border-box;
       display: block; }
+
+#icon .inside {
+  margin: 0;
+  padding: 0; }
+  #icon .inside img {
+    max-width: 100%;
+    background: black; }
+
+#icon a {
+  display: block;
+  padding: 10px;
+  box-sizing: border-box; }

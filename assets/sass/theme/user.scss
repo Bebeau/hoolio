@@ -91,3 +91,18 @@
 		}
 	}
 }
+#icon {
+	.inside {
+		margin: 0;
+		padding: 0;
+		img {
+			max-width: 100%;
+			background: black;
+		}
+	}
+	a {
+		display: block;
+		padding: 10px;
+		box-sizing: border-box;
+	}
+}

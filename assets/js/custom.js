@@ -158,10 +158,18 @@ var init = {
 	showHeader: function() {
 		jQuery(window).scroll(function() {    
 			var scroll = jQuery(window).scrollTop();
-			if (scroll >= 500) {
-			    jQuery('.extended').addClass("in");
-			} else {
-			    jQuery('.extended').removeClass("in");
+			if(isMobile) {
+				if (scroll >= 100) {
+				    jQuery('.extended').addClass("in");
+				} else {
+				    jQuery('.extended').removeClass("in");
+				}
+			} else{
+				if (scroll >= 500) {
+				    jQuery('.extended').addClass("in");
+				} else {
+				    jQuery('.extended').removeClass("in");
+				}
 			}
 		});
 	},
@@ -447,7 +455,7 @@ var init = {
 			jQuery('.bubblewrap').removeClass("active");
 			jQuery(this).addClass("active");
 			jQuery('html,body').animate({
-			   scrollTop: jQuery("#bubbles").offset().top - 125
+			   scrollTop: jQuery("#bubbles").offset().top - 50
 			}, function(){
 				jQuery('#frameTabs .frame').removeClass("open");
 				jQuery('.frame-'+numb).addClass("open");

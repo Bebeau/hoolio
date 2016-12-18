@@ -1854,6 +1854,8 @@ body {
     fill: #1293cc; }
   body.home header .short .Menu .bar, body.error404 header .short .Menu .bar {
     background: #1293cc; }
+  body.page-template-pricing header .short .Menu .bar {
+    background: #1293cc; }
   body p {
     font-family: 'pn regular';
     line-height: 34px; }
@@ -1994,8 +1996,7 @@ p {
   background: rgba(0, 0, 0, 0.9);
   text-align: center;
   height: 100vh;
-  overflow: hidden;
-  margin-top: 75px; }
+  overflow: hidden; }
   #checkout .group {
     margin: 25px auto; }
     #checkout .group.half article {
@@ -2795,6 +2796,8 @@ header.open {
       transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
     #frameTabs .frame h3, #frameTabs .frame p, #frameTabs .frame ul {
       color: white; }
+    #frameTabs .frame ul {
+      text-align: left; }
     #frameTabs .frame h3 {
       margin-top: 5px; }
     #frameTabs .frame p {
@@ -2828,20 +2831,26 @@ header.open {
       -ms-transform: translate(0, -10px);
       -o-transform: translate(0, -10px);
       transform: translate(0, -10px); }
+    #frameTabs .copy .half .frame-icon {
+      width: 100px;
+      height: auto;
+      display: block;
+      margin: 0 auto 25px; }
 
 ul#bubbles {
   list-style: none;
   text-align: center;
   display: block;
-  padding: 0;
-  margin: 75px auto 0;
+  padding: 75px 0 0;
+  margin: 0 auto;
   width: 1300px;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  overflow: hidden; }
   ul#bubbles li {
     text-align: center;
     display: inline-block;
     width: 15%;
-    vertical-align: top;
+    vertical-align: bottom;
     -webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     -moz-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
@@ -2852,8 +2861,8 @@ ul#bubbles {
       font-family: 'pn regular';
       text-transform: uppercase;
       font-size: 10pt;
-      letter-spacing: 2px;
-      line-height: 18px; }
+      line-height: 18px;
+      letter-spacing: 1px; }
     ul#bubbles li .frame {
       visibility: hidden;
       position: fixed;
@@ -2906,8 +2915,6 @@ ul#bubbles {
           margin: 0;
           padding: 50px 0 0;
           box-sizing: border-box; }
-        ul#bubbles li .frame .copy i {
-          top: 0; }
       ul#bubbles li .frame .btn {
         background: rgba(0, 0, 0, 0.3);
         color: white; }
@@ -2951,7 +2958,7 @@ ul#bubbles {
         height: 150px;
         top: 0;
         margin: 0 auto 25px;
-        vertical-align: top;
+        vertical-align: middle;
         border-top-left-radius: 50%;
         border-top-right-radius: 50%;
         border-bottom-left-radius: 50%;
@@ -2960,10 +2967,17 @@ ul#bubbles {
         -moz-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         text-align: center; }
-        ul#bubbles li .bubblewrap .bubble i {
-          opacity: 1; }
-          ul#bubbles li .bubblewrap .bubble i.hide {
-            opacity: 0; }
+        ul#bubbles li .bubblewrap .bubble img {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 50%;
+          height: auto;
+          -webkit-transform: translate(-50%, -50%);
+          -moz-transform: translate(-50%, -50%);
+          -ms-transform: translate(-50%, -50%);
+          -o-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%); }
       ul#bubbles li .bubblewrap:hover {
         cursor: pointer; }
         ul#bubbles li .bubblewrap:hover .bubble {
@@ -3796,22 +3810,11 @@ footer {
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
       #bubblesMobile .frame img {
         max-width: 50%;
-        -webkit-transform: translate(0, 15px);
-        -moz-transform: translate(0, 15px);
-        -ms-transform: translate(0, 15px);
-        -o-transform: translate(0, 15px);
-        transform: translate(0, 15px); }
+        height: auto;
+        margin: 0 auto;
+        display: block; }
       #bubblesMobile .frame .titleBar {
         position: relative; }
-        #bubblesMobile .frame .titleBar .icon {
-          display: inline-block;
-          height: 50px;
-          width: auto;
-          max-width: 100px;
-          min-width: 50px;
-          vertical-align: middle;
-          margin-right: 15px;
-          margin-left: 25px; }
         #bubblesMobile .frame .titleBar h3 {
           margin: 0;
           line-height: 50px;
@@ -3821,10 +3824,19 @@ footer {
           -webkit-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
           -moz-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
           transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+          #bubblesMobile .frame .titleBar h3 img {
+            display: inline-block;
+            height: 50px;
+            width: auto;
+            max-width: 100px;
+            min-width: 50px;
+            vertical-align: middle;
+            margin-right: 15px;
+            margin-left: 25px; }
       #bubblesMobile .frame .frameCopy {
         display: none;
         padding-bottom: 25px; }
-      #bubblesMobile .frame p, #bubblesMobile .frame h3 {
+      #bubblesMobile .frame p, #bubblesMobile .frame h3, #bubblesMobile .frame ul {
         color: white; }
       #bubblesMobile .frame p {
         box-sizing: border-box;
@@ -3896,42 +3908,47 @@ footer {
       .thirds article p {
         margin: 0; }
   body.home header {
-    background: #1293cc;
     width: 100%;
     padding: 0; }
     body.home header #Menu {
       top: 30px; }
-      body.home header #Menu .bar {
-        background: #ffffff; }
     body.home header .logo {
       padding: 15px; }
       body.home header .logo svg {
         height: 58px;
         width: auto; }
-        body.home header .logo svg path {
-          fill: white; }
   body header {
     background: #1293cc;
     width: 100%;
     padding: 0; }
+    body header .short, body header .extended {
+      padding: 0; }
+    body header .header-left .logo {
+      padding: 15px !important; }
     body header .header-left .hiring {
-      margin-left: -4px;
-      color: white; }
-    body header #Menu {
-      top: 30px;
+      color: #ccc;
+      margin-left: -4px; }
+    body header .short .header-right .Menu {
+      right: 0; }
+    body header .Menu {
+      top: 0 !important;
+      padding: 30px 0;
       margin: 0 15px 0 0;
-      background: transparent; }
-      body header #Menu .bar {
-        background: #ffffff; }
+      background: transparent;
+      overflow-x: hidden; }
+      body header .Menu .bar {
+        background: #1293cc; }
     body header .logo {
       padding: 15px 0 15px 15px; }
       body header .logo svg {
         height: 58px;
         width: auto; }
         body header .logo svg path {
-          fill: white; }
+          fill: #1293cc; }
     body header .menu.open #Menu {
       padding: 0; }
+    body header .menu-dropdown ul li a {
+      font-size: 18pt; }
   #help .copy {
     -webkit-transform: translate(0, 0);
     -moz-transform: translate(0, 0);

@@ -456,20 +456,12 @@
 			@include transition(all 0.3s $authenticMotion);
 			img {
 				max-width: 50%;
-				@include transform(translate(0,15px));
+				height: auto;
+				margin: 0 auto;
+				display: block;
 			}
 			.titleBar {
 				position: relative;
-				.icon {
-					display: inline-block;
-					height: 50px;
-					width: auto;
-					max-width: 100px;
-					min-width: 50px;
-					vertical-align: middle;
-					margin-right: 15px;
-					margin-left: 25px;
-				}
 				h3 {
 					margin: 0;
 					line-height: 50px;
@@ -477,13 +469,23 @@
 					padding: 15px 0;
 					text-align: left;
 					@include transition(all 0.3s $authenticMotion);
+					img {
+						display: inline-block;
+						height: 50px;
+						width: auto;
+						max-width: 100px;
+						min-width: 50px;
+						vertical-align: middle;
+						margin-right: 15px;
+						margin-left: 25px;
+					}
 				}
 			}
 			.frameCopy {
 				display: none;
 				padding-bottom: 25px;
 			}
-			p, h3 {
+			p, h3, ul {
 				color: white;
 			}
 			p {
@@ -584,23 +586,16 @@
 	body {
 		&.home {
 			header {
-				background: $blue;
 				width: 100%;
 				padding: 0;
 				#Menu {
 					top: 30px;
-					.bar {
-						background: $white;
-					}
 				}
 				.logo {
 					padding: 15px;
 					svg {
 						height: 58px;
 						width: auto;
-						path {
-							fill: white;
-						}
 					}
 				}
 			}
@@ -609,18 +604,33 @@
 			background: $blue;
 			width: 100%;
 			padding: 0;
+			.short, .extended {
+				padding: 0;
+			}
 			.header-left {
+				.logo {
+					padding: 15px !important;
+				}
 				.hiring {
+					color: #ccc;
 					margin-left: -4px;
-					color: white;
 				}
 			}
-			#Menu {
-				top: 30px;
+			.short {
+				.header-right {
+					.Menu {
+						right: 0;
+					}
+				}
+			}
+			.Menu {
+				top: 0 !important;
+				padding: 30px 0;
 				margin: 0 15px 0 0;
 				background: transparent;
+				overflow-x: hidden;
 				.bar {
-					background: $white;
+					background: $blue;
 				}
 			}
 			.logo {
@@ -629,7 +639,7 @@
 					height: 58px;
 					width: auto;
 					path {
-						fill: white;
+						fill: $blue;
 					}
 				}
 			}
@@ -637,6 +647,15 @@
 				&.open {
 					#Menu {
 						padding: 0;
+					}
+				}
+			}
+			.menu-dropdown {
+				ul {
+					li {
+						a {
+							font-size: 18pt;
+						}
 					}
 				}
 			}
