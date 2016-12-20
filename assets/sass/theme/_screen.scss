@@ -207,7 +207,7 @@ p {
 	}
 }
 .copy {
-	width: 800px;
+	width: 815px;
 	margin: 0 auto;
 }
 .block {
@@ -881,22 +881,6 @@ header {
 			}
 		}
 	}
-	#clientLogos {
-		position: absolute;
-		top: 88%;
-		left: 0;
-		right: 0;
-		span {
-			box-sizing: border-box;
-			display: inline-block;
-			text-align: center;
-			margin: 0 25px;
-			vertical-align: middle;
-			img {
-				max-width: 100%;
-			}
-		}
-	}
 }
 #research {
 	background: radial-gradient(darken($white, 5%), darken($white, 15%));
@@ -962,6 +946,7 @@ header {
 	min-height: 100vh;
 	box-sizing: border-box;
 	position: relative;
+	z-index: 10;
 	background: radial-gradient($white, darken($white, 5%));
 	text-align: center;
 	.outer {
@@ -1005,6 +990,11 @@ header {
 				@include transform(scale(1));
 				@include transition(all 1s $easeInOutBack);
 			}
+		}
+	}
+	.copy {
+		img {
+			margin: 75px auto 25px;
 		}
 	}
 }
@@ -1606,6 +1596,31 @@ input[placeholder], [placeholder], *[placeholder] {
 .container {
 	width: 1170px;
 	margin: 0 auto;
+}
+#clientLogos {
+	background: darken($blue, 25%);
+	text-align: center;
+	padding: 25px 0;
+	h3 {
+		margin: 0;
+		padding: 0 0 15px;
+		text-transform: uppercase;
+		font-size: 18pt;
+		color: white;
+		opacity: 0.5;
+		font-weight: bold;
+		letter-spacing: 1px;
+	}
+	span {
+		box-sizing: border-box;
+		display: inline-block;
+		text-align: center;
+		margin: 0 25px;
+		vertical-align: middle;
+		img {
+			max-width: 100%;
+		}
+	}
 }
 footer {
 	height: 25vh;

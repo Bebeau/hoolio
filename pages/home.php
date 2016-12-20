@@ -60,14 +60,32 @@ get_header(); ?>
 				<!-- <div class="iphone" data-animation="slideInRight"></div> -->
 			</div>
 		</article>
-		<div id="clientLogos" data-animation="slideUp">
-			<span><img src="<?php echo bloginfo('template_directory');?>/assets/images/client_logos/walmart.png" alt="" /></span>
-			<span><img src="<?php echo bloginfo('template_directory');?>/assets/images/client_logos/kroger.png" alt="" /></span>
-			<span><img src="<?php echo bloginfo('template_directory');?>/assets/images/client_logos/unilever.png" alt="" /></span>
-			<span><img src="<?php echo bloginfo('template_directory');?>/assets/images/client_logos/uc.png" alt="" /></span>
-			<span><img src="<?php echo bloginfo('template_directory');?>/assets/images/client_logos/shopper.png" alt="" /></span>
-			<span><img src="<?php echo bloginfo('template_directory');?>/assets/images/client_logos/cac.png" alt="" /></span>
-		</div>
+	</section>
+
+	<section id="meet" class="block">
+		<article class="outer">
+			<div class="inner">
+				<?php
+					$section4_title = get_post_meta($post->ID,'section4_title',true);
+                    $section4_desc = get_post_meta($post->ID,'section4_desc',true);
+
+                    echo '<div class="copy">';
+                    	echo '<h1>The Science of Actively Listening to Your Customers</h1>';
+                    	echo '<img data-animation="slideUp" src="'.get_bloginfo('template_directory').'/assets/images/logo_icon.svg" alt="Hoolio" />';
+                    	if(!empty($section4_title)) {
+                    		echo '<h1 data-animation="slideDown">'.$section4_title.'</h1>';
+                    	} else {
+                    		echo '<h1 data-animation="slideDown">Meet Hoolio.</h1>';
+                    	}
+                    	if(!empty($section4_desc)) {
+                    		echo '<p data-animation="slideUp">'.$section4_desc.'</p>';
+                    	} else {
+                    		echo '<p data-animation="slideUp">Hoolio is the AI wizard here at Wyzerr. He takes in feedback data and turns it into real-time insight.  The more data you feed Hoolio, the smarter he becomes.  His insight helps you understand your customers, develop new products, identify sales opportunities, create targeted marketing messages, and ultimately stay ahead of your competitors. Check out what Hoolio is currently working on:</p>';
+                    	}
+                    echo '</div>';
+				?>
+			</div>
+		</article>
 	</section>
 
 	<section id="research" class="block">
@@ -97,35 +115,18 @@ get_header(); ?>
                     echo '<div class="thirds">';
                     	echo '<article>';
                     		echo '<img data-src="'.get_bloginfo('template_directory').'/assets/images/icons/market1.svg" src="" alt="" />';
-                    		if(!empty($icon1)) {
-                    			echo '<p>'.$icon1.'</p>';
-                    		} else {
-                    			echo '<p>Guides you in creating beautiful, smart feedback campaigns.</p>';
-                    		}
+                    		echo '<p>Smartforms</p>';
                     	echo '</article>';
                     	echo '<article>';
                     		echo '<img data-src="'.get_bloginfo('template_directory').'/assets/images/icons/market2.svg" src="" alt="" />';
-                    		if(!empty($icon2)) {
-                    			echo '<p>'.$icon2.'</p>';
-                    		} else {
-                    			echo '<p>Turns ordinary people into experts on the science of quality data.</p>';
-                    		}
+                    		echo '<p>Builder</p>';
                     	echo '</article>';
                     	echo '<article>';
                     		echo '<img data-src="'.get_bloginfo('template_directory').'/assets/images/icons/market3.svg" src="" alt="" />';
-                    		if(!empty($icon3)) {
-                    			echo '<p>'.$icon3.'</p>';
-                    		} else {
-                    			echo '<p>Uses Artificial intelligence to perform tedious tasks most market researchers do manually.</p>';
-                    		}
+                    		echo '<p>Insights</p>';
                     	echo '</article>';
                     echo '</div>';
-
-                    if(!empty($section2_button)) {
-                    	echo '<a href="'.get_site_url('contact').'" class="btn">'.$section2_button.'</a>';
-                    } else {
-                    	echo '<a href="'.get_site_url('contact').'" class="btn">Contact Us</a>';
-                    }
+                    
 				?>
 			</div>
 		</article>
@@ -179,91 +180,5 @@ get_header(); ?>
 		echo '</section>';
 	}
 	?>
-
-	<section id="meet" class="block">
-		<article class="outer">
-			<div class="inner">
-				<?php
-					$section4_title = get_post_meta($post->ID,'section4_title',true);
-                    $section4_desc = get_post_meta($post->ID,'section4_desc',true);
-
-                    echo '<div class="copy">';
-                    	echo '<img data-animation="slideUp" src="'.get_bloginfo('template_directory').'/assets/images/logo_icon.svg" alt="Hoolio" />';
-                    	if(!empty($section4_title)) {
-                    		echo '<h1 data-animation="slideDown">'.$section4_title.'</h1>';
-                    	} else {
-                    		echo '<h1 data-animation="slideDown">Meet Hoolio.</h1>';
-                    	}
-                    	if(!empty($section4_desc)) {
-                    		echo '<p data-animation="slideUp">'.$section4_desc.'</p>';
-                    	} else {
-                    		echo '<p data-animation="slideUp">Hoolio is the AI wizard here at Wyzerr. He takes in feedback data and turns it into real-time insight.  The more data you feed Hoolio, the smarter he becomes.  His insight helps you understand your customers, develop new products, identify sales opportunities, create targeted marketing messages, and ultimately stay ahead of your competitors. Check out what Hoolio is currently working on:</p>';
-                    	}
-                    echo '</div>';
-				?>
-			</div>
-		</article>
-	</section>
-
-	<section id="metrics" class="block">
-		<div class="half">
-			<article class="phone">
-				<img class="smart-form-images" src="<?php echo bloginfo('template_directory');?>/assets/images/iphone.png" src="<?php echo bloginfo('template_directory');?>/assets/images/iphone.png" alt="" />
-			</article>
-			<article data-animation="slideUp" class="statsWrap">
-				<div class="outer">
-					<div class="inner">
-						<?php 
-							$section5_title = get_post_meta($post->ID,'section5_title',true);
-                    		$section5_desc = get_post_meta($post->ID,'section5_desc',true);
-
-                    		if(!empty($section5_title)) {
-                    			echo '<h1>'.$section5_title.'</h1>';
-                    		} else {
-                    			echo '<h1>Introducing the Smartform.</h1>';
-                    		}
-                    		if(!empty($section5_desc)) {
-                    			echo '<p>'.$section5_desc.'</p>';
-                    		} else {
-                    			echo '<p>A new standard for data collection.</p><p>Collecting quality feedback data in today’s digital age is difficult to do with a static survey. So we invented the Smartform, a survey that is playful, engaging, and highly adaptive. They get smarter over time. And, they work better than any survey in the marketplace.</p>';
-                    		}
-						?>
-						<div class="half counting">
-							<article>
-								<img src="<?php echo bloginfo('template_directory');?>/assets/images/wyzerr_text.svg" alt="" />
-								<div class="stat">
-									<span class="timer" data-from="0" data-to="70" data-speed="1000">70</span><span>%</span>
-									<p>Average Completion Rate</p>
-								</div>
-								<div class="stat">
-									<span class="timer" data-from="0" data-to="60" data-speed="1000">60</span> <span class="abbr">secs</span>
-									<p>Avergage Time to Complete</p>
-								</div>
-								<div class="stat">
-									<span class="timer" data-from="0" data-to="13" data-speed="1000">13</span>
-									<p>Average Questions Completed</p>
-								</div>
-							</article>
-							<article>
-								<img src="<?php echo bloginfo('template_directory');?>/assets/images/competitor.png" alt="" />
-								<div class="stat">
-									<span class="timer" data-from="0" data-to="26" data-speed="1000">26</span><span>%</span>
-									<p>Average Completion Rate</p>
-								</div>
-								<div class="stat">
-									<span class="timer" data-from="0" data-to="12" data-speed="1000">12</span> <span class="abbr">min</span>
-									<p>Avergage Time to Complete</p>
-								</div>
-								<div class="stat">
-									<span class="timer" data-from="0" data-to="12" data-speed="1000">12</span>
-									<p>Average Questions Completed</p>
-								</div>
-							</article>
-						</div>
-					</div>
-				</div>
-			</article>
-		</div>
-	</section>
 
 <?php get_footer(); ?>

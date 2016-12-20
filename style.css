@@ -1944,7 +1944,7 @@ p {
     width: 100%; }
 
 .copy {
-  width: 800px;
+  width: 815px;
   margin: 0 auto; }
 
 .block {
@@ -2631,19 +2631,6 @@ header.open {
         -ms-transform: translate(50px, 0);
         -o-transform: translate(50px, 0);
         transform: translate(50px, 0); }
-  #top #clientLogos {
-    position: absolute;
-    top: 88%;
-    left: 0;
-    right: 0; }
-    #top #clientLogos span {
-      box-sizing: border-box;
-      display: inline-block;
-      text-align: center;
-      margin: 0 25px;
-      vertical-align: middle; }
-      #top #clientLogos span img {
-        max-width: 100%; }
 
 #research {
   background: radial-gradient(#f2f2f2, #d9d9d9);
@@ -2719,6 +2706,7 @@ header.open {
   min-height: 100vh;
   box-sizing: border-box;
   position: relative;
+  z-index: 10;
   background: radial-gradient(#ffffff, #f2f2f2);
   text-align: center; }
   #meet .outer {
@@ -2774,6 +2762,8 @@ header.open {
       -webkit-transition: all 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
       -moz-transition: all 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
       transition: all 1s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+  #meet .copy img {
+    margin: 75px auto 25px; }
 
 .page-template-use-cases #page {
   padding-bottom: 0; }
@@ -3292,6 +3282,28 @@ input[placeholder], [placeholder], *[placeholder] {
 .container {
   width: 1170px;
   margin: 0 auto; }
+
+#clientLogos {
+  background: #083f57;
+  text-align: center;
+  padding: 25px 0; }
+  #clientLogos h3 {
+    margin: 0;
+    padding: 0 0 15px;
+    text-transform: uppercase;
+    font-size: 18pt;
+    color: white;
+    opacity: 0.5;
+    font-weight: bold;
+    letter-spacing: 1px; }
+  #clientLogos span {
+    box-sizing: border-box;
+    display: inline-block;
+    text-align: center;
+    margin: 0 25px;
+    vertical-align: middle; }
+    #clientLogos span img {
+      max-width: 100%; }
 
 footer {
   height: 25vh;
