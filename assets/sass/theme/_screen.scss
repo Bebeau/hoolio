@@ -298,7 +298,10 @@ p {
 		width: 48%;
 		display: inline-block;
 		line-height: 60px;
-		border-bottom: 1px solid $grey;
+		border: 1px solid $grey;
+		background: lighten($grey, 35%);
+		@include border-top-radius(3px);
+		@include border-bottom-radius(3px);
 		&.month {
 			float: left;
 		}
@@ -389,15 +392,10 @@ p {
 			content: "";
 			position: absolute;
 			right:0;
-			top: 0;
-			bottom: 0;
-			width: 150px;
-			height: 110%;
+			bottom: 50px;
+			width: 50px;
 			background: $blue;
 			z-index: 1;
-			@include border-top-radius(50%);
-			@include border-bottom-radius(50%);
-			@include transform(translate(50px,-5%));
 		}
 		img {
 			position: relative;
@@ -472,17 +470,22 @@ p {
 			width: 100%;
 			border: none;
 			box-shadow: none;
-			border-bottom: 2px solid $grey;
+			border: 1px solid $grey;
+			background: lighten($grey, 35%);
+			@include border-top-radius(3px);
+			@include border-bottom-radius(3px);
 			line-height: 60px;
 			vertical-align: top;
-			padding: 0;
+			padding: 0 5px;
 			font-size: 18pt;
+			box-sizing: border-box;
 			&:focus {
 				outline: none;
 			}
 		}
 		button {
-			padding: 0 15px 0 0;
+			padding: 0 15px 0 5px;
+			border: none;
 			&.success {
 				background: linear-gradient(green, darken(green, 5%));
 				i {
@@ -997,10 +1000,8 @@ header {
 			}
 		}
 	}
-	.copy {
-		img {
-			margin: 75px auto 25px;
-		}
+	.btn {
+		margin-top: 35px;
 	}
 }
 .page-template-use-cases {

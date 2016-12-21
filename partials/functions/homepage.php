@@ -4,7 +4,9 @@ add_action('admin_init','wyzerr_manage_homepage');
 function wyzerr_manage_homepage() {
     if(isset($_GET['action']) && $_GET['action'] === "edit") {
         // Add custom meta boxes to display photo management
-        $post_id = $_GET['post'] ? $_GET['post'] : $_POST['post_ID'];
+        if(isset($_GET['post'])) {
+            $post_id = $_GET['post'] ? $_GET['post'] : $_POST['post_ID'];
+        }
         $pageName = get_the_title($post_id);
 
         // checks for post/page ID
@@ -55,9 +57,6 @@ function wyzerr_manage_homepage() {
 
                     $section2_title = get_post_meta($post->ID,'section2_title',true);
                     $section2_desc = get_post_meta($post->ID,'section2_desc',true);
-                    $icon1 = get_post_meta($post->ID,'icon1',true);
-                    $icon2 = get_post_meta($post->ID,'icon2',true);
-                    $icon3 = get_post_meta($post->ID,'icon3',true);
                     $section2_button = get_post_meta($post->ID,'section2_button',true);
 
                     echo '<h3>Section 2</h3>';
@@ -68,28 +67,15 @@ function wyzerr_manage_homepage() {
                     echo '<label for="section2_desc">Description</label>';
                     echo '<textarea type="text" name="section2_desc" id="section2_desc">'.$section2_desc.'</textarea>';
 
-                    echo '<label for="icon1">Icon 1 Text</label>';
-                    echo '<textarea type="text" name="icon1" id="icon1">'.$icon1.'</textarea>';
-
-                    echo '<label for="icon2">Icon 2 Text</label>';
-                    echo '<textarea type="text" name="icon2" id="icon2">'.$icon2.'</textarea>';
-
-                    echo '<label for="icon3">Icon 3 Text</label>';
-                    echo '<textarea type="text" name="icon3" id="icon3">'.$icon3.'</textarea>';
-
-                    echo '<label for="section2_button">Button Text</label>';
+                    echo '<label for="section1_button">Button Text</label>';
                     echo '<input type="text" name="section2_button" id="section2_button" value="'.$section2_button.'" />';
 
                     $section3_title = get_post_meta($post->ID,'section3_title',true);
-                    $section3_desc = get_post_meta($post->ID,'section3_desc',true);
 
                     echo '<h3>Section 3</h3>';
 
                     echo '<label for="section3_title">Headline</label>';
                     echo '<input type="text" name="section3_title" id="section3_title" value="'.$section3_title.'" />';
-
-                    echo '<label for="section3_desc">Description</label>';
-                    echo '<textarea type="text" name="section3_desc" id="section3_desc">'.$section3_desc.'</textarea>';
 
                     $section4_title = get_post_meta($post->ID,'section4_title',true);
                     $section4_desc = get_post_meta($post->ID,'section4_desc',true);
@@ -101,17 +87,6 @@ function wyzerr_manage_homepage() {
 
                     echo '<label for="section4_desc">Description</label>';
                     echo '<textarea type="text" name="section4_desc" id="section4_desc">'.$section4_desc.'</textarea>';
-
-                    $section5_title = get_post_meta($post->ID,'section5_title',true);
-                    $section5_desc = get_post_meta($post->ID,'section5_desc',true);
-
-                    echo '<h3>Section 5</h3>';
-
-                    echo '<label for="section5_title">Headline</label>';
-                    echo '<input type="text" name="section5_title" id="section5_title" value="'.$section5_title.'" />';
-
-                    echo '<label for="section5_desc">Description</label>';
-                    echo '<textarea type="text" name="section5_desc" id="section5_desc">'.$section5_desc.'</textarea>';
 
                 echo '</form>';
             }
@@ -181,9 +156,6 @@ function save_homepage_section_content( $post_id ) {
 
     $section2_title = $_POST['section2_title'];
     $section2_desc = $_POST['section2_desc'];
-    $icon1 = $_POST['icon1'];
-    $icon2 = $_POST['icon2'];
-    $icon3 = $_POST['icon3'];
     $section2_button = $_POST['section2_button'];
 
     if(!empty($section2_title)) {
@@ -192,27 +164,14 @@ function save_homepage_section_content( $post_id ) {
     if(!empty($section2_desc)) {
         update_post_meta($post_id,'section2_desc',$section2_desc);
     }
-    if(!empty($icon1)) {
-        update_post_meta($post_id,'icon1',$icon1);
-    }
-    if(!empty($icon2)) {
-        update_post_meta($post_id,'icon2',$icon2);
-    }
-    if(!empty($icon3)) {
-        update_post_meta($post_id,'icon3',$icon3);
-    }
     if(!empty($section2_button)) {
         update_post_meta($post_id,'section2_button',$section2_button);
     }
 
     $section3_title = $_POST['section3_title'];
-    $section3_desc = $_POST['section3_desc'];
 
     if(!empty($section3_title)) {
         update_post_meta($post_id,'section3_title',$section3_title);
-    }
-    if(!empty($section3_desc)) {
-        update_post_meta($post_id,'section3_desc',$section3_desc);
     }
 
     $section4_title = $_POST['section4_title'];
@@ -223,16 +182,6 @@ function save_homepage_section_content( $post_id ) {
     }
     if(!empty($section4_desc)) {
         update_post_meta($post_id,'section4_desc',$section4_desc);
-    }
-
-    $section5_title = $_POST['section5_title'];
-    $section5_desc = $_POST['section5_desc'];
-
-    if(!empty($section5_title)) {
-        update_post_meta($post_id,'section5_title',$section5_title);
-    }
-    if(!empty($section5_desc)) {
-        update_post_meta($post_id,'section5_desc',$section5_desc);
     }
 }
 

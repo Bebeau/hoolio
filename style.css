@@ -2021,7 +2021,12 @@ p {
     width: 48%;
     display: inline-block;
     line-height: 60px;
-    border-bottom: 1px solid #919192; }
+    border: 1px solid #919192;
+    background: #ebebeb;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px; }
     #checkout .dropdown.month {
       float: left; }
   #checkout .payment {
@@ -2119,21 +2124,10 @@ p {
       content: "";
       position: absolute;
       right: 0;
-      top: 0;
-      bottom: 0;
-      width: 150px;
-      height: 110%;
+      bottom: 50px;
+      width: 50px;
       background: #1293cc;
-      z-index: 1;
-      border-top-left-radius: 50%;
-      border-top-right-radius: 50%;
-      border-bottom-left-radius: 50%;
-      border-bottom-right-radius: 50%;
-      -webkit-transform: translate(50px, -5%);
-      -moz-transform: translate(50px, -5%);
-      -ms-transform: translate(50px, -5%);
-      -o-transform: translate(50px, -5%);
-      transform: translate(50px, -5%); }
+      z-index: 1; }
     #checkout .left img {
       position: relative;
       z-index: 2; }
@@ -2210,15 +2204,22 @@ p {
       width: 100%;
       border: none;
       box-shadow: none;
-      border-bottom: 2px solid #919192;
+      border: 1px solid #919192;
+      background: #ebebeb;
+      border-top-left-radius: 3px;
+      border-top-right-radius: 3px;
+      border-bottom-left-radius: 3px;
+      border-bottom-right-radius: 3px;
       line-height: 60px;
       vertical-align: top;
-      padding: 0;
-      font-size: 18pt; }
+      padding: 0 5px;
+      font-size: 18pt;
+      box-sizing: border-box; }
       #checkout form input:focus {
         outline: none; }
     #checkout form button {
-      padding: 0 15px 0 0; }
+      padding: 0 15px 0 5px;
+      border: none; }
       #checkout form button.success {
         background: linear-gradient(green, #006700); }
         #checkout form button.success i {
@@ -2766,8 +2767,8 @@ header.open {
       -webkit-transition: all 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
       -moz-transition: all 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
       transition: all 1s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
-  #meet .copy img {
-    margin: 75px auto 25px; }
+  #meet .btn {
+    margin-top: 35px; }
 
 .page-template-use-cases #page {
   padding-bottom: 0; }

@@ -66,22 +66,27 @@ get_header(); ?>
 		<article class="outer">
 			<div class="inner">
 				<?php
-					$section4_title = get_post_meta($post->ID,'section4_title',true);
-                    $section4_desc = get_post_meta($post->ID,'section4_desc',true);
-
+					$section2_title = get_post_meta($post->ID,'section2_title',true);
+                    $section2_desc = get_post_meta($post->ID,'section2_desc',true);
+                    $section2_button = get_post_meta($post->ID,'section2_button',true);
                     echo '<div class="copy">';
-                    	echo '<h1>The Science of Actively Listening to Your Customers</h1>';
-                    	echo '<img data-animation="slideUp" src="'.get_bloginfo('template_directory').'/assets/images/logo_icon.svg" alt="Hoolio" />';
-                    	if(!empty($section4_title)) {
-                    		echo '<h1 data-animation="slideDown">'.$section4_title.'</h1>';
+                    	if(!empty($section2_title)) {
+                    		echo '<h1 data-animation="slideDown">'.$section2_title.'</h1>';
                     	} else {
-                    		echo '<h1 data-animation="slideDown">Meet Hoolio.</h1>';
+                    		echo '<h1 data-animation="slideDown">The Science of Actively Listening to Your Customers</h1>';
                     	}
-                    	if(!empty($section4_desc)) {
-                    		echo '<p data-animation="slideUp">'.$section4_desc.'</p>';
+                    	echo '<img data-animation="slideUp" src="'.get_bloginfo('template_directory').'/assets/images/logo_icon.svg" alt="Hoolio" />';
+                    	echo '<h1 data-animation="slideDown">Meet Hoolio.</h1>';
+                    	if(!empty($section2_desc)) {
+                    		echo '<p data-animation="slideUp">'.$section2_desc.'</p>';
                     	} else {
                     		echo '<p data-animation="slideUp">Hoolio is the AI wizard here at Wyzerr. He takes in feedback data and turns it into real-time insight.  The more data you feed Hoolio, the smarter he becomes.  His insight helps you understand your customers, develop new products, identify sales opportunities, create targeted marketing messages, and ultimately stay ahead of your competitors. Check out what Hoolio is currently working on:</p>';
                     	}
+                    	if(!empty($section2_button)) {
+		                	echo '<a href="'.site_url('use-cases').'" class="btn">'.$section2_button.'</a>';
+		                } else {
+		                	echo '<a href="'.site_url('use-cases').'" class="btn">View Use Cases</a>';
+		                }
                     echo '</div>';
 				?>
 			</div>
@@ -92,23 +97,13 @@ get_header(); ?>
 		<article class="outer">
 			<div class="inner">
 				<?php 
-					$section2_title = get_post_meta($post->ID,'section2_title',true);
-                    $section2_desc = get_post_meta($post->ID,'section2_desc',true);
-                    $icon1 = get_post_meta($post->ID,'icon1',true);
-                    $icon2 = get_post_meta($post->ID,'icon2',true);
-                    $icon3 = get_post_meta($post->ID,'icon3',true);
-                    $section2_button = get_post_meta($post->ID,'section2_button',true);
+					$section3_title = get_post_meta($post->ID,'section3_title',true);
 
                     echo '<div class="copy" data-animation="slideUp">';
-                    	if(!empty($section2_title)) {
-                    		echo '<h1 data-animation="slideDown">'.$section2_title.'</h1>';
+                    	if(!empty($section3_title)) {
+                    		echo '<h1 data-animation="slideDown">'.$section3_title.'</h1>';
                     	} else {
                     		echo '<h1 data-animation="slideDown">Market research in a box.</h1>';
-                    	}
-                    	if(!empty($section2_desc)) {
-                    		echo '<p data-animation="slideUp">'.$section2_desc.'</p>';
-                    	} else {
-                    		echo '<p data-animation="slideUp">Wyzerr allows you to do high quality market research on your own. Our technology:</p>';
                     	}
                     echo '</div>';
 
@@ -136,17 +131,17 @@ get_header(); ?>
 		<article class="outer">
 			<div class="inner">
 				<?php
-					$section3_title = get_post_meta($post->ID,'section3_title',true);
-                    $section3_desc = get_post_meta($post->ID,'section3_desc',true);
+					$section4_title = get_post_meta($post->ID,'section4_title',true);
+					$section4_desc = get_post_meta($post->ID,'section4_desc',true);
 
                     echo '<div class="copy" data-animation="slideUp">';
-                    	if(!empty($section3_title)) {
-                    		echo '<h1 data-animation="slideDown">'.$section3_title.'</h1>';
+                    	if(!empty($section4_title)) {
+                    		echo '<h1 data-animation="slideDown">'.$section4_title.'</h1>';
                     	} else {
                     		echo '<h1 data-animation="slideDown">Your customers and employees are your experts.</h1>';
                     	}
-                    	if(!empty($section3_desc)) {
-                    		echo '<p data-animation="slideUp">'.$section3_desc.'</p>';
+                    	if(!empty($section4_desc)) {
+                    		echo '<p data-animation="slideUp">'.$section4_desc.'</p>';
                     	} else {
                     		echo '<p data-animation="slideUp">Whether you’re a small business owner, or a marketer at a large enterprise, we help you make intelligent decisions by constantly listening to the people that know your company best. We call it the science of active listening.</p>';
                     	}
