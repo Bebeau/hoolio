@@ -158,18 +158,10 @@ var init = {
 	showHeader: function() {
 		jQuery(window).scroll(function() {    
 			var scroll = jQuery(window).scrollTop();
-			if(isMobile) {
-				if (scroll >= 100) {
-				    jQuery('.extended').addClass("in");
-				} else {
-				    jQuery('.extended').removeClass("in");
-				}
-			} else{
-				if (scroll >= 500) {
-				    jQuery('.extended').addClass("in");
-				} else {
-				    jQuery('.extended').removeClass("in");
-				}
+			if (scroll >= 50) {
+			    jQuery('.extended').addClass("in");
+			} else {
+			    jQuery('.extended').removeClass("in");
 			}
 		});
 	},

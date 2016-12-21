@@ -511,7 +511,7 @@ header {
 		width: 100%;
 		z-index: 100;
 		background: white;
-		padding: 5px 25px 0;
+		padding: 0 25px 0;
 		box-sizing: border-box;
 		border-bottom: 1px solid #ebebeb;
 		@include transform(translate(0,-100%));
@@ -527,7 +527,7 @@ header {
 			display: inline-block;
 			li {
 				display: inline-block;
-				margin-left: 25px;
+				margin-left: 15px;
 				position: relative;
 				ul {
 					height: 0;
@@ -568,7 +568,7 @@ header {
 		}
 	}
 	.short {
-		padding: 5px 25px;
+		padding: 0 25px;
 		box-sizing: border-box;
 		.header-left {
 			.logo {
@@ -578,7 +578,7 @@ header {
 		.header-right {
 			.Menu {
 				position: absolute;
-				top: 30px;
+				top: 15px;
 				right: 25px;
 			}
 		}
@@ -590,6 +590,10 @@ header {
 			display: inline-block;
 			vertical-align: middle;
 			border-right: 1px solid #ebebeb;
+			svg {
+				height: 50px;
+				width: auto;
+			}
 		}
 		.hiring {
 			text-transform: uppercase;
@@ -597,10 +601,11 @@ header {
 			border-top: 1px solid #ebebeb;
 			border-bottom: 1px solid #ebebeb;
 			border-right: 1px solid #ebebeb;
-			line-height: 40px;
-			padding: 0 15px;
-			margin-left: -1px;
+			line-height: 30px;
+			padding: 0 10px;
+			margin-left: -4px;
 			color: #ccc;
+			font-size: 12pt;
 		}
 	}
 	.header-right {
@@ -611,18 +616,18 @@ header {
 		a {
 			color: $blue;
 			text-transform: uppercase;
-			line-height: 101px;
+			line-height: 66px;
 		}
 		form {
 			display: inline-block;
 			@include border-top-radius(10px);
 			@include border-bottom-radius(10px);
 			overflow: hidden;
-			border: 1px solid $blue;
+			border: 2px solid $blue;
 			vertical-align: middle;
 			width: 300px;
 			position: relative;
-			margin: 0 25px;
+			margin: 0 15px;
 			input {
 				display: inline-block;
 				border: none;
@@ -682,7 +687,7 @@ header {
 		width: 35px;
 		display: inline-block;
 		vertical-align: middle;
-		margin-left: 25px;
+		margin-left: 15px;
 		@include transition(all 0.3s $easeInOutBack);
 		.bar {
 			background: $blue;
@@ -1343,7 +1348,6 @@ ul#bubbles {
 	}
 }
 #cta {
-	height: 25vh;
 	text-align: center;
 	h2 {
 		color: $grey;
@@ -1605,7 +1609,7 @@ input[placeholder], [placeholder], *[placeholder] {
 		margin: 0;
 		padding: 0 0 15px;
 		text-transform: uppercase;
-		font-size: 18pt;
+		font-size: 14pt;
 		color: white;
 		opacity: 0.5;
 		font-weight: bold;
@@ -1617,6 +1621,8 @@ input[placeholder], [placeholder], *[placeholder] {
 		text-align: center;
 		margin: 0 25px;
 		vertical-align: middle;
+		width: 100px;
+		height: auto;
 		img {
 			max-width: 100%;
 		}

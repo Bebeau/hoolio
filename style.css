@@ -2239,7 +2239,7 @@ header .extended {
   width: 100%;
   z-index: 100;
   background: white;
-  padding: 5px 25px 0;
+  padding: 0 25px 0;
   box-sizing: border-box;
   border-bottom: 1px solid #ebebeb;
   -webkit-transform: translate(0, -100%);
@@ -2266,7 +2266,7 @@ header .extended {
     display: inline-block; }
     header .extended #menu-header-menu li {
       display: inline-block;
-      margin-left: 25px;
+      margin-left: 15px;
       position: relative; }
       header .extended #menu-header-menu li ul {
         height: 0;
@@ -2302,13 +2302,13 @@ header .extended {
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
 
 header .short {
-  padding: 5px 25px;
+  padding: 0 25px;
   box-sizing: border-box; }
   header .short .header-left .logo {
     border: none; }
   header .short .header-right .Menu {
     position: absolute;
-    top: 30px;
+    top: 15px;
     right: 25px; }
 
 header .header-left {
@@ -2318,6 +2318,9 @@ header .header-left {
     display: inline-block;
     vertical-align: middle;
     border-right: 1px solid #ebebeb; }
+    header .header-left .logo svg {
+      height: 50px;
+      width: auto; }
   header .header-left .hiring {
     text-transform: uppercase;
     border-bottom-right-radius: 10px;
@@ -2325,10 +2328,11 @@ header .header-left {
     border-top: 1px solid #ebebeb;
     border-bottom: 1px solid #ebebeb;
     border-right: 1px solid #ebebeb;
-    line-height: 40px;
-    padding: 0 15px;
-    margin-left: -1px;
-    color: #ccc; }
+    line-height: 30px;
+    padding: 0 10px;
+    margin-left: -4px;
+    color: #ccc;
+    font-size: 12pt; }
 
 header .header-right {
   float: right; }
@@ -2337,7 +2341,7 @@ header .header-right {
   header .header-right a {
     color: #1293cc;
     text-transform: uppercase;
-    line-height: 101px; }
+    line-height: 66px; }
   header .header-right form {
     display: inline-block;
     border-top-left-radius: 10px;
@@ -2345,11 +2349,11 @@ header .header-right {
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     overflow: hidden;
-    border: 1px solid #1293cc;
+    border: 2px solid #1293cc;
     vertical-align: middle;
     width: 300px;
     position: relative;
-    margin: 0 25px; }
+    margin: 0 15px; }
     header .header-right form input {
       display: inline-block;
       border: none;
@@ -2407,7 +2411,7 @@ header .Menu {
   width: 35px;
   display: inline-block;
   vertical-align: middle;
-  margin-left: 25px;
+  margin-left: 15px;
   -webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   -moz-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
@@ -3081,7 +3085,6 @@ ul#bubbles {
         font-weight: bold; }
 
 #cta {
-  height: 25vh;
   text-align: center; }
   #cta h2 {
     color: #919192;
@@ -3291,7 +3294,7 @@ input[placeholder], [placeholder], *[placeholder] {
     margin: 0;
     padding: 0 0 15px;
     text-transform: uppercase;
-    font-size: 18pt;
+    font-size: 14pt;
     color: white;
     opacity: 0.5;
     font-weight: bold;
@@ -3301,7 +3304,9 @@ input[placeholder], [placeholder], *[placeholder] {
     display: inline-block;
     text-align: center;
     margin: 0 25px;
-    vertical-align: middle; }
+    vertical-align: middle;
+    width: 100px;
+    height: auto; }
     #clientLogos span img {
       max-width: 100%; }
 
