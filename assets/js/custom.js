@@ -154,6 +154,33 @@ var init = {
 		init.newsletterBtn();
 		init.showHeader();
 		init.bubbleTab();
+		init.tabDisplay();
+	},
+	tabDisplay: function() {
+		jQuery('.thirds li').click(function(e){
+			e.preventDefault();
+			var pageID = jQuery(this).attr("data-page");
+			jQuery('.thirds li').removeClass("active");
+			jQuery(this).addClass("active");
+			jQuery.ajax({
+	            url: ajaxurl,
+	            type: "GET",
+	            data: {
+	                postID: pageID,
+	                action: 'showTab'
+	            },
+	            dataType: 'html',
+	            beforeSend: function() {
+	            	jQuery('#Preview').removeClass("display");
+	            },
+	            error : function(jqXHR, textStatus, errorThrown) {
+	                window.alert(jqXHR + " :: " + textStatus + " :: " + errorThrown);
+	            },
+	            success: function(data) {
+	            	jQuery('#Preview').html(data).addClass("display");
+	            }
+	        });
+		})
 	},
 	showHeader: function() {
 		jQuery(window).scroll(function() {    

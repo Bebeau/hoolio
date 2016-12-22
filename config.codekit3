@@ -257,36 +257,6 @@
 		"oF": 0,
 		"opt": 0
 		},
-	"\/assets\/images\/icons\/market1.svg": {
-		"ft": 2097152,
-		"miP": 0,
-		"oA": 2,
-		"oAP": "\/assets\/images\/icons\/market1.svg",
-		"oF": 0,
-		"opt": 0,
-		"plM": 3758088159,
-		"prP": 0
-		},
-	"\/assets\/images\/icons\/market2.svg": {
-		"ft": 2097152,
-		"miP": 0,
-		"oA": 2,
-		"oAP": "\/assets\/images\/icons\/market2.svg",
-		"oF": 0,
-		"opt": 0,
-		"plM": 3758088159,
-		"prP": 0
-		},
-	"\/assets\/images\/icons\/market3.svg": {
-		"ft": 2097152,
-		"miP": 0,
-		"oA": 2,
-		"oAP": "\/assets\/images\/icons\/market3.svg",
-		"oF": 0,
-		"opt": 0,
-		"plM": 3758088159,
-		"prP": 0
-		},
 	"\/assets\/images\/icons\/play.svg": {
 		"ft": 2097152,
 		"miP": 0,
@@ -2164,6 +2134,12 @@
 		"oAP": "\/pages\/pricing.php",
 		"oF": 0
 		},
+	"\/pages\/research.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/pages\/research.php",
+		"oF": 0
+		},
 	"\/pages\/use-cases.php": {
 		"ft": 8192,
 		"oA": 2,
@@ -2186,6 +2162,12 @@
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/partials\/functions\/homepage.php",
+		"oF": 0
+		},
+	"\/partials\/functions\/research.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/partials\/functions\/research.php",
 		"oF": 0
 		},
 	"\/partials\/functions\/testimonials.php": {

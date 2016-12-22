@@ -72,11 +72,100 @@ function wyzerr_manage_homepage() {
 
                     $section3_title = get_post_meta($post->ID,'section3_title',true);
 
-                    echo '<h3>Section 3</h3>';
+                    $section3_tab1_icon = get_post_meta($post->ID,'section3_tab1_icon',true);
+                    $section3_tab1_text = get_post_meta($post->ID,'section3_tab1_text',true);
+                    $section3_tab1_page = get_post_meta($post->ID,'section3_tab1_page',true);
 
-                    echo '<label for="section3_title">Headline</label>';
-                    echo '<input type="text" name="section3_title" id="section3_title" value="'.$section3_title.'" />';
+                    $section3_tab2_icon = get_post_meta($post->ID,'section3_tab2_icon',true);
+                    $section3_tab2_text = get_post_meta($post->ID,'section3_tab2_text',true);
+                    $section3_tab2_page = get_post_meta($post->ID,'section3_tab2_page',true);
 
+                    $section3_tab3_icon = get_post_meta($post->ID,'section3_tab3_icon',true);
+                    $section3_tab3_text = get_post_meta($post->ID,'section3_tab3_text',true);
+                    $section3_tab3_page = get_post_meta($post->ID,'section3_tab3_page',true);
+
+                    echo '<section id="tabs">';
+
+                        echo '<h3>Section 3</h3>';
+
+                        echo '<label for="section3_title">Headline</label>';
+                        echo '<input type="text" name="section3_title" id="section3_title" value="'.$section3_title.'" />';
+
+                        echo '<div class="tab" data-tab="1">';
+                            echo '<div class="icon" data-img="icon" data-input="section3_tab1_icon" data-post="'.$post->ID.'">';
+                                // var_dump($section3_tab1_icon);
+                                if(!empty($section3_tab1_icon)) {
+                                    echo '<img src="'.$section3_tab1_icon.'" alt="" /><span class="remove-image button-remove" data-text="icon">X</span>';
+                                } else {
+                                    echo '<a href="#" class="upload-image">Upload/Set Icon</a>';
+                                }
+                                echo '<input type="hidden" name="section3_tab1_icon" id="" />';
+                            echo '</div>';
+
+                            echo '<div class="copy">';
+                                echo '<label for="tab1_text">Tab Title</label>';
+                                echo '<input type="text" name="section3_tab1_text" id="section3_tab1_text" value="'.$section3_tab1_text.'" />';
+                                
+                                echo '<label for="tab1_page">Tab Page</label>';
+                                $args = array(
+                                    'selected' => $section3_tab1_page
+                                );
+                                wp_dropdown_pages($args);
+                                echo '<input type="hidden" name="section3_tab1_page" id="section3_tab1_page" />';
+                            echo '</div>';
+
+                        echo '</div>';
+
+                        echo '<div class="tab" data-tab="2">';
+                            echo '<div class="icon" data-img="icon" data-input="section3_tab2_icon" data-post="'.$post->ID.'">';
+                                if(!empty($section3_tab2_icon)) {
+                                    echo '<img src="'.$section3_tab2_icon.'" alt="" /><span class="remove-image button-remove" data-text="icon">X</span>';
+                                } else {
+                                    echo '<a href="#" class="upload-image">Upload/Set Icon</a>';
+                                }
+                                echo '<input type="hidden" name="section3_tab2_icon" id="" />';
+                            echo '</div>';
+
+                            echo '<div class="copy">';
+                                echo '<label for="section3_tab2_text">Tab Title</label>';
+                                echo '<input type="text" name="section3_tab2_text" id="section3_tab2_text" value="'.$section3_tab2_text.'" />';
+                                
+                                echo '<label for="section3_tab2_page">Tab Page</label>';
+                                $args = array(
+                                    'selected' => $section3_tab2_page
+                                );
+                                wp_dropdown_pages($args);
+                                echo '<input type="hidden" name="section3_tab2_page" id="section3_tab2_page" />';
+                            echo '</div>';
+
+                        echo '</div>';
+
+                        echo '<div class="tab" data-tab="3">';
+                            echo '<div class="icon" data-img="icon" data-input="section3_tab3_icon" data-post="'.$post->ID.'">';
+                                if(!empty($section3_tab3_icon)) {
+                                    echo '<img src="'.$section3_tab3_icon.'" alt="" /><span class="remove-image button-remove" data-text="icon">X</span>';
+                                } else {
+                                    echo '<a href="#" class="upload-image">Upload/Set Icon</a>';
+                                }
+                                echo '<input type="hidden" name="section3_tab3_icon" id="" />';
+                            echo '</div>';
+
+                            echo '<div class="copy">';
+                                echo '<label for="section3_tab3_text">Tab Title</label>';
+                                echo '<input type="text" name="section3_tab3_text" id="section3_tab3_text" value="'.$section3_tab3_text.'" />';
+                                
+                                echo '<label for="section3_tab3_page">Tab Page</label>';
+                                $args = array(
+                                    'selected' => $section3_tab3_page
+                                );
+                                wp_dropdown_pages($args);
+                                echo '<input type="hidden" name="section3_tab3_page" id="section3_tab3_page" />';
+                            echo '</div>';
+
+                        echo '</div>';
+
+                    echo '</section>';
+                    
                     $section4_title = get_post_meta($post->ID,'section4_title',true);
                     $section4_desc = get_post_meta($post->ID,'section4_desc',true);
 
@@ -170,8 +259,50 @@ function save_homepage_section_content( $post_id ) {
 
     $section3_title = $_POST['section3_title'];
 
+    $section3_tab1_icon = $_POST['section3_tab1_icon'];
+    $section3_tab1_text = $_POST['section3_tab1_text'];
+    $section3_tab1_page = $_POST['section3_tab1_page'];
+
+    $section3_tab2_icon = $_POST['section3_tab2_icon'];
+    $section3_tab2_text = $_POST['section3_tab2_text'];
+    $section3_tab2_page = $_POST['section3_tab2_page'];
+
+    $section3_tab3_icon = $_POST['section3_tab3_icon'];
+    $section3_tab3_text = $_POST['section3_tab3_text'];
+    $section3_tab3_page = $_POST['section3_tab3_page'];
+
     if(!empty($section3_title)) {
         update_post_meta($post_id,'section3_title',$section3_title);
+    }
+
+    if(!empty($section3_tab1_icon)) {
+        update_post_meta($post_id,'section3_tab1_icon',$section3_tab1_icon);
+    }
+    if(!empty($section3_tab1_text)) {
+        update_post_meta($post_id,'section3_tab1_text',$section3_tab1_text);
+    }
+    if(!empty($section3_tab1_page)) {
+        update_post_meta($post_id,'section3_tab1_page',$section3_tab1_page);
+    }
+
+    if(!empty($section3_tab2_icon)) {
+        update_post_meta($post_id,'section3_tab2_icon',$section3_tab2_icon);
+    }
+    if(!empty($section3_tab2_text)) {
+        update_post_meta($post_id,'section3_tab2_text',$section3_tab2_text);
+    }
+    if(!empty($section3_tab2_page)) {
+        update_post_meta($post_id,'section3_tab2_page',$section3_tab2_page);
+    }
+
+    if(!empty($section3_tab3_icon)) {
+        update_post_meta($post_id,'section3_tab3_icon',$section3_tab3_icon);
+    }
+    if(!empty($section3_tab3_text)) {
+        update_post_meta($post_id,'section3_tab3_text',$section3_tab3_text);
+    }
+    if(!empty($section3_tab3_page)) {
+        update_post_meta($post_id,'section3_tab3_page',$section3_tab3_page);
     }
 
     $section4_title = $_POST['section4_title'];

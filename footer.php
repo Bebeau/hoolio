@@ -10,6 +10,7 @@
 		</div>
 
 		<?php
+		if(is_front_page()) {
 			query_posts( array(
 		            'order' => 'DESC',
 		            'post_type' => 'testimonials'
@@ -54,18 +55,20 @@
 
 		    	echo '</div>';
 		        echo '</div>';
-		        echo '</section>'; ?>
-		        <section id="cta">
-					<article class="outer">
-						<div class="inner" data-animation="slideUp">
-							<h2>Be Wyzerr, know more.</h2>
-							<a href="<?php echo site_url('checkout'); ?>" class="btn">Sign Up</a>
-						</div>
-					</article>
-				</section>
-		    <?php endif;
+		        echo '</section>';
+		    endif;
 		    wp_reset_query();
+	    }
 	    ?>
+
+	    <section id="cta">
+			<article class="outer">
+				<div class="inner" data-animation="slideUp">
+					<h2>Be Wyzerr, know more.</h2>
+					<a href="<?php echo site_url('checkout'); ?>" class="btn">Sign Up</a>
+				</div>
+			</article>
+		</section>
 
 		<footer>
 			<div class="outer">

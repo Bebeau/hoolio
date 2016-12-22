@@ -59,7 +59,7 @@ function use_case_icon($post) {
     echo '<div data-post="'.$post->ID.'">';
         if ( !empty($icon) ) {
             echo '<div class="iconWrap" data-post="'.$post->ID.'" data-input="use_case_icon">';
-                echo '<img src="'.$icon.'" alt="" /><a href="#" class="remove-image">Remove icon</a>';
+                echo '<img src="'.$icon.'" alt="" /><a href="#" class="remove-image" data-text="Use Case icon">Remove icon</a>';
                 echo '<input type="hidden" name="use_case_icon" id="use_case_icon" value="'.$icon.'" />';
             echo '</div>';
         } else {

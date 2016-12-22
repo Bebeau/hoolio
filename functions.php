@@ -56,6 +56,7 @@ function register_my_menu() {
 }
 
 // remove WordPress admin menu items
+add_action( 'admin_menu', 'remove_menus' );
 function remove_menus(){
     // remove_menu_page( 'edit.php' );
     // remove_menu_page( 'edit.php?post_type=page' );
@@ -66,7 +67,6 @@ function remove_menus(){
     // remove_menu_page( 'users.php' );
     // remove_menu_page( 'upload.php' );
 }
-add_action( 'admin_menu', 'remove_menus' );
 
 add_action('admin_init', 'my_general_section');
 function my_general_section() {
@@ -383,3 +383,4 @@ include(TEMPLATEPATH.'/partials/functions/testimonials.php');
 include(TEMPLATEPATH.'/partials/functions/homepage.php');
 
 include(TEMPLATEPATH.'/partials/functions/use-cases.php');
+include(TEMPLATEPATH.'/partials/functions/research.php');

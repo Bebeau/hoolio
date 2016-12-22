@@ -5,6 +5,8 @@ var user = {
 		user.imageUploader();
 		user.removeImage();
 		user.removeVideo();
+		user.selectTabPage();
+		user.sectionBtn();
 	},
 	imageUploader: function() {
 		var meta_image_frame;
@@ -53,13 +55,15 @@ var user = {
 	            	// append user selected icon
 	            	button.parent().append('<img src="'+media_attachment.url+'" alt="" />' );
 	            	// change value of input to icon url
-	            	jQuery('#'+field).val(media_attachment.url);
+	            	jQuery('input', wrap).val(media_attachment.url);
 		            // append remove button
-		            button.parent().append('<a href="#" class="remove-image">Remove icon</a>');
+		            button.parent().append('<a href="#" class="button-remove remove-image">Remove icon</a>');
 		            // remove add button
 		            button.remove();
 		            // ajax call to save icon
-		            user.saveImage( postID, field, media_attachment.url );
+		            if(image !== "section") {
+		            	user.saveImage( postID, field, media_attachment.url );
+		            }
 	            }
 
 	        });
@@ -90,13 +94,14 @@ var user = {
 
 			var field = jQuery(this).parent().attr("data-input");
 	    	var postID = jQuery(this).parent().attr("data-post");
+	    	var text = jQuery(this).attr("data-text");
 
 			jQuery(this).parent().find("input").val("");
 			jQuery(this).parent().find("img").remove();
 
 			user.saveImage(postID, field,"");
 
-			jQuery(this).parent().append('<a class="upload-image" data-input="'+field+'" data-post="'+postID+'">Upload/Set Use Case icon</a>');
+			jQuery(this).parent().append('<a class="upload-image" data-input="'+field+'" data-post="'+postID+'">Upload/Set '+text+'</a>');
 			jQuery(this).remove();
 
 			user.imageUploader();
@@ -139,7 +144,58 @@ var user = {
                 window.alert(jqXHR + " :: " + textStatus + " :: " + errorThrown);
             }
         }); 
-    }
+    },
+    selectTabPage: function() {
+    	jQuery('.copy select').change(function(){
+    		var tab = jQuery(this).parent().parent().attr("data-tab");
+    		console.log(tab);
+    		jQuery('#section3_tab'+tab+'_page').val(this.value);
+    	});
+    },
+    addSection: function(count) {
+	    jQuery.ajax({
+	        url: ajaxurl,
+	        type: "GET",
+	        data: {
+	            action: 'addSection',
+	            count: count
+	        },
+	        dataType: 'html',
+	        success: function(data) {
+	        	jQuery('#sectionWrap').append(data);
+	        },
+	        error : function(jqXHR, textStatus, errorThrown) {
+	            window.alert(jqXHR + " :: " + textStatus + " :: " + errorThrown);
+	        },
+	        complete: function() {
+	        	user.imageUploader();
+	        	user.sectionRemove();
+	        }
+	    });
+	},
+	removeSection: function() {
+		jQuery.ajax({
+	        url: ajaxurl,
+	        type: "GET",
+	        data: {
+	            action: 'removeSection'
+	        },
+	        dataType: 'html',
+	        error : function(jqXHR, textStatus, errorThrown) {
+	            window.alert(jqXHR + " :: " + textStatus + " :: " + errorThrown);
+	        }
+	    });
+	},
+	sectionBtn: function() {
+		jQuery(".btn-section").click(function(e){
+			var count = jQuery("#sectionWrap section").length;
+			e.preventDefault();
+			user.addSection(count);
+		});
+		jQuery('.remove_section').click(function(){
+			jQuery(this).parent().parent().remove();
+		});
+	}
 };
 
 jQuery(document).ready(function() {

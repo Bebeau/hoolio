@@ -99,6 +99,18 @@ get_header(); ?>
 				<?php 
 					$section3_title = get_post_meta($post->ID,'section3_title',true);
 
+					$section3_tab1_icon = get_post_meta($post->ID,'section3_tab1_icon',true);
+					$section3_tab1_text = get_post_meta($post->ID,'section3_tab1_text',true);
+					$section3_tab1_page = get_post_meta($post->ID,'section3_tab1_page',true);
+
+					$section3_tab2_icon = get_post_meta($post->ID,'section3_tab2_icon',true);
+					$section3_tab2_text = get_post_meta($post->ID,'section3_tab2_text',true);
+					$section3_tab2_page = get_post_meta($post->ID,'section3_tab2_page',true);
+
+					$section3_tab3_icon = get_post_meta($post->ID,'section3_tab3_icon',true);
+					$section3_tab3_text = get_post_meta($post->ID,'section3_tab3_text',true);
+					$section3_tab3_page = get_post_meta($post->ID,'section3_tab3_page',true);
+
                     echo '<div class="copy" data-animation="slideUp">';
                     	if(!empty($section3_title)) {
                     		echo '<h1 data-animation="slideDown">'.$section3_title.'</h1>';
@@ -107,20 +119,28 @@ get_header(); ?>
                     	}
                     echo '</div>';
 
-                    echo '<div class="thirds">';
-                    	echo '<article>';
-                    		echo '<img data-src="'.get_bloginfo('template_directory').'/assets/images/icons/market1.svg" src="" alt="" />';
-                    		echo '<p>Smartforms</p>';
-                    	echo '</article>';
-                    	echo '<article>';
-                    		echo '<img data-src="'.get_bloginfo('template_directory').'/assets/images/icons/market2.svg" src="" alt="" />';
-                    		echo '<p>Builder</p>';
-                    	echo '</article>';
-                    	echo '<article>';
-                    		echo '<img data-src="'.get_bloginfo('template_directory').'/assets/images/icons/market3.svg" src="" alt="" />';
-                    		echo '<p>Insights</p>';
-                    	echo '</article>';
-                    echo '</div>';
+                    echo '<ul class="thirds">';
+                    	if(!empty($section3_tab1_icon) && !empty($section3_tab1_text) && !empty($section3_tab1_page)) {
+                    		echo '<li data-page="'.$section3_tab1_page.'">';
+                				echo '<img src="'.$section3_tab1_icon.'" alt="" />';
+                				echo '<p>'.$section3_tab1_text.'</p>';
+                			echo '</li>';
+                		}
+                		if(!empty($section3_tab2_icon) && !empty($section3_tab2_text) && !empty($section3_tab2_page)) {
+                			echo '<li data-page="'.$section3_tab2_page.'">';
+                				echo '<img data-src="'.$section3_tab2_icon.'" src="'.$section3_tab2_icon.'" alt="" />';
+                				echo '<p>'.$section3_tab2_text.'</p>';
+                			echo '</li>';
+                		}
+                		if(!empty($section3_tab3_icon) && !empty($section3_tab3_text) && !empty($section3_tab3_page)) {
+                			echo '<li data-page="'.$section3_tab3_page.'">';
+                				echo '<img data-src="'.$section3_tab3_icon.'" src="'.$section3_tab3_icon.'" alt="" />';
+                				echo '<p>'.$section3_tab3_text.'</p>';
+                			echo '</li>';
+                		}
+                    echo '</ul>';
+
+                    echo '<div id="Preview"></div>';
                     
 				?>
 			</div>
