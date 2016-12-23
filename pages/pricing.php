@@ -6,7 +6,7 @@ Template Name: Buy Now
 
 get_header(); ?>
 
-<section id="checkout">
+<section id="checkout" data-parallax='{"y" : 230, "smoothness": 1}'>
 	<div class="left">
 		<div class="outer">
 			<div class="inner">
@@ -98,6 +98,13 @@ get_header(); ?>
 				</div>
 			</div>
 		</div>
+	</div>
+</section>
+
+<section id="page" class="section checkoutPage">
+	<div class="container">
+		<h2>Here Are The Perks To Being A Beta Wizard</h2>
+		<?php list_perks($post); ?>
 	</div>
 </section>
 

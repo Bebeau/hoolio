@@ -384,3 +384,4 @@ include(TEMPLATEPATH.'/partials/functions/homepage.php');
 
 include(TEMPLATEPATH.'/partials/functions/use-cases.php');
 include(TEMPLATEPATH.'/partials/functions/research.php');
+include(TEMPLATEPATH.'/partials/functions/checkout.php');

@@ -2115,7 +2115,8 @@ p {
       z-index: 2; }
   #checkout .right {
     background: white;
-    margin: 0 0 0 -4px; }
+    margin: 0 0 0 -4px;
+    background: #f5f5f5; }
     #checkout .right .outer {
       overflow: scroll; }
     #checkout .right .copy {
@@ -2216,6 +2217,19 @@ p {
     #checkout form .cvc {
       width: 20%;
       display: inline-block; }
+
+.checkoutPage h2 {
+  color: #1293cc !important; }
+
+.checkoutPage article {
+  width: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 50px;
+  vertical-align: top; }
+  .checkoutPage article h3 {
+    color: #b6d764;
+    font-weight: bold; }
 
 header .extended {
   position: fixed;

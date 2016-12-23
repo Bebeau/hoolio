@@ -248,3 +248,44 @@
 		}
 	}
 }
+#checkoutPerk {
+	.inside {
+		margin: 0;
+		padding: 0;
+	}
+	.btn-checkout {
+		display: block;
+		width: 100%;
+	}
+	section {
+		box-sizing: border-box;
+		padding: 25px;
+		vertical-align: top;
+		position: relative;
+		&:after {
+			content: "";
+			clear: both;
+			display: block;
+		}
+		&:nth-child(odd)  {
+			background: darken(white, 3%);
+		}
+		input {
+			line-height: 40px;
+			height: 40px;
+			display: inline-block;
+			margin: 0 auto 15px;
+			font-size: 14pt;
+			width: 100%;
+			padding: 10px 50px 10px 10px;
+			vertical-align: top;
+			box-shadow: 0px 0px 0px 0px;
+		}
+		textarea {
+			width: 100%;
+			padding: 10px;
+			min-height: 149px;
+			box-shadow: 0px 0px 0px 0px;
+		}
+	}
+}

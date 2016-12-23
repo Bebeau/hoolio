@@ -173,6 +173,27 @@ var user = {
 	        }
 	    });
 	},
+	addCheckoutPerk: function(count) {
+	    jQuery.ajax({
+	        url: ajaxurl,
+	        type: "GET",
+	        data: {
+	            action: 'addCheckoutPerk',
+	            count: count
+	        },
+	        dataType: 'html',
+	        success: function(data) {
+	        	jQuery('#sectionWrap').append(data);
+	        },
+	        error : function(jqXHR, textStatus, errorThrown) {
+	            window.alert(jqXHR + " :: " + textStatus + " :: " + errorThrown);
+	        },
+	        complete: function() {
+	        	user.imageUploader();
+	        	user.sectionRemove();
+	        }
+	    });
+	},
 	removeSection: function() {
 		jQuery.ajax({
 	        url: ajaxurl,
@@ -191,6 +212,11 @@ var user = {
 			var count = jQuery("#sectionWrap section").length;
 			e.preventDefault();
 			user.addSection(count);
+		});
+		jQuery(".btn-checkout").click(function(e){
+			var count = jQuery("#sectionWrap section").length;
+			e.preventDefault();
+			user.addCheckoutPerk(count);
 		});
 		jQuery('.remove_section').click(function(){
 			jQuery(this).parent().parent().remove();

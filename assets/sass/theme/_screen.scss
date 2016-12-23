@@ -385,6 +385,7 @@ p {
 	.right {
 		background: white;
 		margin: 0 0 0 -4px;
+		background: #f5f5f5;
 		.outer {
 			overflow: scroll;
 		}
@@ -485,6 +486,22 @@ p {
 		.cvc {
 			width: 20%;
 			display: inline-block;
+		}
+	}
+}
+.checkoutPage {
+	h2 {
+		color: $blue !important;
+	}
+	article {
+		width: 50%;
+		display: inline-block;
+		box-sizing: border-box;
+		padding: 50px;
+		vertical-align: top;
+		h3 {
+			color: $green;
+			font-weight: bold;
 		}
 	}
 }
