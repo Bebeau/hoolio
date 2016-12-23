@@ -18,7 +18,7 @@ function wyzerr_manage_homepage() {
             add_action( 'add_meta_boxes', 'home_meta_box', 1 );
             function home_meta_box($post) {
                 add_meta_box(
-                    'sections', 
+                    'homepage_sections', 
                     'Manage Homepage Section Content', 
                     'homepage_sections',
                     'page', 

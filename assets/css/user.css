@@ -37,7 +37,7 @@
 .column-cite {
   width: 175px; }
 
-#sections input, #sections textarea {
+#sections input, #sections textarea, #homepage_sections input, #homepage_sections textarea {
   display: block;
   width: 100%; }
 
