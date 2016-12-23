@@ -56,12 +56,12 @@ var user = {
 	            	button.parent().append('<img src="'+media_attachment.url+'" alt="" />' );
 	            	// change value of input to icon url
 	            	jQuery('input', wrap).val(media_attachment.url);
-		            // append remove button
-		            button.parent().append('<a href="#" class="button-remove remove-image">Remove icon</a>');
-		            // remove add button
+	            	// remove add button
 		            button.remove();
-		            // ajax call to save icon
 		            if(image !== "section") {
+		            	// append remove button
+		            	button.parent().append('<a href="#" class="button-remove remove-image">Remove icon</a>');
+		            	// save image/icon via ajax
 		            	user.saveImage( postID, field, media_attachment.url );
 		            }
 	            }

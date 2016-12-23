@@ -1982,7 +1982,7 @@ p {
   height: 100vh;
   overflow: hidden; }
   #checkout .group {
-    margin: 25px auto; }
+    margin: 15px auto; }
     #checkout .group.half article {
       width: 49%;
       display: inline-block;
@@ -2024,24 +2024,22 @@ p {
     #checkout .payment .price {
       display: inline-block;
       color: #1293cc;
-      font-size: 36pt;
+      font-size: 48pt;
       vertical-align: middle;
       box-sizing: border-box;
       padding: 5px 15px;
       float: left;
-      line-height: 150px; }
+      line-height: 60px; }
     #checkout .payment .btn {
       display: inline-block;
       vertical-align: middle;
       margin: 0;
-      padding: 0;
-      width: 150px;
-      height: 150px;
+      padding: 0 15px;
+      line-height: 60px;
+      height: auto;
       float: right;
-      border-top-left-radius: 50%;
-      border-top-right-radius: 50%;
-      border-bottom-left-radius: 50%;
-      border-bottom-right-radius: 50%; }
+      font-size: 24pt;
+      width: 150px; }
   #checkout .close {
     position: fixed;
     top: 15px;
@@ -2099,11 +2097,11 @@ p {
     height: 100%;
     display: inline-block;
     box-sizing: border-box;
-    vertical-align: top;
-    margin: 0 0 0 -4px; }
+    vertical-align: top; }
   #checkout .left {
     background: #1293cc;
-    position: relative; }
+    position: relative;
+    margin: 0; }
     #checkout .left:after {
       content: "";
       position: absolute;
@@ -2117,18 +2115,19 @@ p {
       z-index: 2; }
   #checkout .right {
     background: white;
-    margin: 0; }
+    margin: 0 0 0 -4px; }
     #checkout .right .outer {
       overflow: scroll; }
     #checkout .right .copy {
       box-sizing: border-box;
-      padding: 0 100px;
+      padding: 0 50px;
       -webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
       -moz-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
       transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
       #checkout .right .copy h2 {
         color: #1293cc;
-        font-size: 36pt; }
+        font-size: 24pt;
+        margin: 0; }
       #checkout .right .copy ul {
         text-align: left;
         color: #919192;
@@ -2175,7 +2174,7 @@ p {
       transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
   #checkout form {
     position: relative;
-    margin: 50px auto; }
+    margin: 0 auto; }
     #checkout form label {
       display: block;
       text-align: left;
@@ -2673,17 +2672,9 @@ header.open {
         height: 150px;
         width: auto; }
   #research #Preview {
-    height: 0;
+    display: none;
     overflow: hidden;
-    background: #1293cc;
-    -webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    -moz-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
-    #research #Preview.display {
-      height: auto;
-      -webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-      -moz-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-      transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+    background: #1293cc; }
     #research #Preview .half {
       width: 50%;
       display: inline-block;
@@ -3665,11 +3656,7 @@ footer {
   #checkout .payment {
     margin-top: 25px; }
     #checkout .payment .price {
-      line-height: 100px;
-      font-size: 32pt; }
-    #checkout .payment .btn {
-      width: 100px;
-      height: 100px; } }
+      font-size: 32pt; } }
 
 @media (max-width: 1280px) {
   p {
@@ -3741,11 +3728,7 @@ footer {
   #checkout .payment {
     margin-top: 25px; }
     #checkout .payment .price {
-      line-height: 100px;
-      font-size: 32pt; }
-    #checkout .payment .btn {
-      width: 100px;
-      height: 100px; } }
+      font-size: 32pt; } }
 
 @media (max-width: 1170px) {
   .container {

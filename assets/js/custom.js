@@ -171,13 +171,13 @@ var init = {
 	            },
 	            dataType: 'html',
 	            beforeSend: function() {
-	            	jQuery('#Preview').removeClass("display");
+	            	jQuery('#Preview').slideUp();
 	            },
 	            error : function(jqXHR, textStatus, errorThrown) {
 	                window.alert(jqXHR + " :: " + textStatus + " :: " + errorThrown);
 	            },
 	            success: function(data) {
-	            	jQuery('#Preview').html(data).addClass("display");
+	            	jQuery('#Preview').html(data).slideDown();
 	            }
 	        });
 		})

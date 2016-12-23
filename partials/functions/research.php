@@ -71,14 +71,15 @@ function wyzerr_research_pages() {
 						    echo '<section data-post="'.$post->ID.'" data-type="sections" data-key="'.$key.'">';
 						        echo '<div class="layout" data-post="'.$post->ID.'" data-img="section" data-input="section['.$c.'][image]">';
 						            if(!empty($image)) {
-						                echo '<div class="upload-image upload-section uploaded" data-numb="'.$c.'"><div class="section_image" style="background:url('.$image.') no-repeat scroll center / cover;"></div><input type="hidden" name="section['.$c.'][image]" value="'.$image.'" /></div>';
+						                echo '<a href="#" class="upload-image upload-section" data-numb="'.$c.'"><img src="'.$image.'" alt="" /></a><input type="hidden" name="section['.$c.'][image]" value="'.$image.'" />';
 						            } else {
-						                echo '<a href="#" class="upload-image upload-section" data-numb="'.$c.'">Upload/Set image</a><input type="hidden" name="section['.$c.'][image]" id="section['.$c.'][image]" value="" />';
+						                echo '<a href="#" class="upload-image upload-section" data-numb="'.$c.'">Upload/Set image</a><input type="hidden" name="section['.$c.'][image]" value="" />';
 						            }
 						        echo '</div>';
 						        echo '<div class="details">';
+                                    echo '<i class="remove_section">X</i>';
 						        	echo '<label for="section['.$c.'][title]">Title</label>';
-						            echo '<input type="text" name="section['.$c.'][title]" placeholder="title" value="'.$title.'" /><i class="remove_section">X</i>';
+						            echo '<input type="text" name="section['.$c.'][title]" placeholder="title" value="'.$title.'" />';
 						            echo '<label for="section['.$c.'][desc]">Description</label>';
 						            echo '<textarea type="text" name="section['.$c.'][desc]">'.$desc.'</textarea>';
 						        echo '</div>';
@@ -88,7 +89,7 @@ function wyzerr_research_pages() {
 			        } else {
 			            echo '<section>';
 			                echo '<div class="layout" data-post="'.$post->ID.'" data-img="section" data-input="section[0][image]">';
-			                    echo '<a href="" class="upload-image upload-section">Upload/Set image</a><input type="hidden" name="section[0][image]" id="section[0][image]" value="" />';
+			                    echo '<a href="" class="upload-image upload-section">Upload/Set image</a><input type="hidden" name="section[0][image]" value="" />';
 			                echo '</div>';
 			                echo '<div class="details">';
 			                	echo '<label for="section[0][title]">Title</label>';
@@ -150,7 +151,7 @@ add_action('wp_ajax_nopriv_addSection', 'newSection');
 function newSection() {
     echo '<section>';
         echo '<div class="layout">';
-            echo '<div class="upload-image upload-section">Upload/Set image<input type="hidden" name="section['.$_GET['count'].'][image]" id="section['.$_GET['count'].'][image]" value="" /></div>';
+            echo '<a href="#" class="upload-image upload-section" data-numb="'.$_GET['count'].'">Upload/Set image<input type="hidden" name="section['.$_GET['count'].'][image]" id="section['.$_GET['count'].'][image]" value="" /></a>';
         echo '</div>';
         echo '<div class="details">';
         	echo '<label for="section['.$_GET['count'].'][title]">Title</label>';

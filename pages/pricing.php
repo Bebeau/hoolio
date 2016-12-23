@@ -19,12 +19,6 @@ get_header(); ?>
 			<div class="inner">
 				<div class="copy">
 					<h2>Become a Beta Wizard!</h2>
-					<ul>
-						<li>Locked in Rate of $8.25/month (Normally $49)</li>
-				        <li>Unlimited Surveys</li>
-				        <li>Unlimited Market Research Templates</li>
-				        <li>Early Access to Future AI Platform</li>
-					</ul>
 					<form action="" method="POST" id="checkoutFrm">
 						<div class="group half">
 							<article>
@@ -91,7 +85,7 @@ get_header(); ?>
 							<input type="number" id="cvc" placeholder="***" pattern="\d*" maxlength="4" data-stripe="cvc" />
 						</div>
 						<div class="payment">
-							<span class="price">Price - $99</span>
+							<span class="price">$99</span>
 							<button type="submit" class="btn btn-submit">Pay Now</button>
 						</div>
 						<span class="payment-errors"></span>
