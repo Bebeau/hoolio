@@ -2297,7 +2297,7 @@ header .extended {
             header .extended #menu-header-menu li ul li a:hover {
               background: #1082b5; }
       header .extended #menu-header-menu li:hover ul {
-        height: 120%;
+        height: 120px;
         -webkit-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         -moz-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
