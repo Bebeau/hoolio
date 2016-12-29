@@ -60,6 +60,7 @@ get_header(); ?>
 				<!-- <div class="iphone" data-animation="slideInRight"></div> -->
 			</div>
 		</article>
+		<div class="arrow"><i class="fa fa-angle-down"></i></div>
 	</section>
 
 	<section id="meet" class="block">
@@ -121,7 +122,7 @@ get_header(); ?>
 
                     echo '<ul class="thirds">';
                     	if(!empty($section3_tab1_icon) && !empty($section3_tab1_text) && !empty($section3_tab1_page)) {
-                    		echo '<li data-page="'.$section3_tab1_page.'">';
+                    		echo '<li data-page="'.$section3_tab1_page.'" class="active">';
                 				echo '<img src="'.$section3_tab1_icon.'" alt="" />';
                 				echo '<p>'.$section3_tab1_text.'</p>';
                 			echo '</li>';
@@ -140,7 +141,18 @@ get_header(); ?>
                 		}
                     echo '</ul>';
 
-                    echo '<div id="Preview"></div>';
+                    echo '<div id="Preview">';
+	                    echo '<div class="previewWrap">';
+					        echo '<div class="half previewText in">';
+					            echo '<h3>'.get_post_meta($section3_tab1_page,'sub_title', true).'</h3>';
+					            echo '<p>'.get_post_meta($section3_tab1_page,'quote', true).'</p>';
+					            echo '<a href="'.get_the_permalink($section3_tab1_page).'" class="btn">Learn More</a>';
+					        echo '</div>';
+					        echo '<div class="half previewImage in">';
+					            echo '<span>'.get_the_post_thumbnail($section3_tab1_page).'</span>';
+					        echo '</div>';
+					    echo '</div>';
+					echo '</div>';
                     
 				?>
 			</div>
@@ -177,6 +189,7 @@ get_header(); ?>
 							<source src="<?php echo bloginfo('template_directory'); ?>/assets/videos/wizards.mp4" type="video/mp4">
 						</video>
 				<?php } ?>
+				<div class="vidPlay"></div>
 			</div>
 		</article>
 	</section>

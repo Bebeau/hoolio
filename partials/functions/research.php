@@ -172,15 +172,17 @@ function tabContent() {
     $subTitle = get_post_meta($pageID,'sub_title', true);
     $quote = get_post_meta($pageID,'quote', true);
 
-    echo '<div class="half previewText">';
-        echo '<h3>'.$subTitle.'</h3>';
-        echo '<p>'.$quote.'</p>';
-        echo '<a href="'.get_the_permalink($pageID).'" class="btn">Learn More</a>';
+    echo '<div class="previewWrap">';
+        echo '<div class="half previewText">';
+            echo '<h3>'.$subTitle.'</h3>';
+            echo '<p>'.$quote.'</p>';
+            echo '<a href="'.get_the_permalink($pageID).'" class="btn">Learn More</a>';
+        echo '</div>';
+        echo '<div class="half previewImage">';
+            echo '<span>'.get_the_post_thumbnail($pageID).'</span>';
+        echo '</div>';
     echo '</div>';
-
-    echo '<div class="half previewImage">';
-        echo '<span>'.get_the_post_thumbnail($pageID).'</span>';
-    echo '</div>';
+    
     exit();
 }
 

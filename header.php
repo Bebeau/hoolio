@@ -181,7 +181,7 @@
 					wp_nav_menu($menu_args);
 				?>
 				<form role="form" method="POST" action="" id="newsletterFrm">
-					<input type="email" name="newsletteremail" id="newsletteremail" placeholder="email@address.." />
+					<input type="email" name="newsletteremail" id="newsletteremail" placeholder="Enter Email For Updates" />
 					<button type="submit" class="btn btn-submit"><i class="fa fa-envelope"></i></button>
 				</form>
 				<a href="<?php echo site_url('checkout'); ?>" class="btn">

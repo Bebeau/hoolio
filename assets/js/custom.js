@@ -171,13 +171,22 @@ var init = {
 	            },
 	            dataType: 'html',
 	            beforeSend: function() {
-	            	jQuery('#Preview').slideUp();
+	            	jQuery('#Preview .previewText').removeClass("in");
+	            	jQuery('#Preview .previewImage').removeClass("in");
 	            },
 	            error : function(jqXHR, textStatus, errorThrown) {
 	                window.alert(jqXHR + " :: " + textStatus + " :: " + errorThrown);
 	            },
 	            success: function(data) {
-	            	jQuery('#Preview').html(data).slideDown();
+	            	jQuery('#Preview').html(data);
+	            },
+	            complete: function() {
+	            	setTimeout(
+	            		function(){
+	            			jQuery('#Preview .previewText').addClass("in");
+	            			jQuery('#Preview .previewImage').addClass("in");
+	            		}, 250
+            		);
 	            }
 	        });
 		})
@@ -280,12 +289,12 @@ var init = {
 		var vid = jQuery('#help video');
     	vid.prop('loop', false);
     	playing = false;
-        if (move.isOnScreen(vid)) {
+        if (move.isOnScreen(jQuery('#help .vidPlay'))) {
         	vid[0].play();
         	playing = true;
         } else {
         	jQuery(window).scroll(function(){
-        		if (move.isOnScreen(vid) && !playing) {
+        		if (move.isOnScreen(jQuery('#help .vidPlay')) && !playing) {
             		vid[0].play();
             		playing = true;
             	}

@@ -1,7 +1,7 @@
 @media(max-height:900px) {
 	.block {
 		height: auto;
-		padding: 100px 0;
+		padding: 50px 0;
 	}
 	#top {
 		padding: 0;
@@ -69,9 +69,6 @@
 	}
 }
 @media(max-width: 1280px) {
-	p {
-		font-size: 18pt;
-	}
 	.thirds {
 		margin: 50px auto;
 		article {
@@ -187,7 +184,7 @@
 }
 @media(max-width: 1170px) {
 	.container {
-		width: 100%;
+		width: 800px;
 		box-sizing: border-box;
 		padding: 0 25px;
 	}
