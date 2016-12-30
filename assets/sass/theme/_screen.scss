@@ -1127,21 +1127,28 @@ header {
 .page-template-use-cases {
 	#page {
 		padding-bottom: 0;
+		padding-top: 25px;
 		h2 {
-			margin-top: 50px;
+			margin-top: 25px;
 			color: $blue;
 		}
 	}
 }
 #frameTabs {
 	position: relative;
+	height: 75vh;
 	.frame {
-		height: 0;
+		height: 100%;
 		overflow: hidden;
-		@include transition(all 0.5s $easeInOutBack);
-		&.open {
-			height: 75vh;
-			@include transition(all 0.5s $easeInOutBack);
+		@include transition(all 0.5s $authenticMotion);
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		opacity: 0;
+		&.in {
+			opacity: 1;
+			@include transition(all 0.5s $authenticMotion);
 		}
 		h3, p, ul {
 			color: white;
@@ -1153,8 +1160,8 @@ header {
 			margin-top: 5px;
 		}
 		p {
-			font-size: 16pt;
-			line-height: 21pt;
+			font-size: 14pt;
+			line-height: 18pt;
 		}
 		.btn {
 			margin-top: 1em;
@@ -1179,7 +1186,9 @@ header {
 		}
 	}
 	.copy {
+		height: 100%;
 		.half {
+			height: 100%;
 			width: 50%;
 			text-align: center;
 			display: inline-block;
@@ -1187,14 +1196,41 @@ header {
 			padding: 0 25px;
 			margin: 0 0 0 -4px;
 			vertical-align: middle;
+			&.frameCopy {
+				opacity: 0;
+				@include transform(translate(-100%,0));
+				@include transition(all 0.3s $authenticMotion);
+				&.in {
+					opacity: 1;
+					@include transform(translate(0,0));
+					@include transition(all 0.3s $authenticMotion);
+				}
+			}
+			&.frameImage {
+				opacity: 0;
+				@include transform(translate(100%,0));
+				@include transition(all 0.3s $authenticMotion);
+				&.in {
+					opacity: 1;
+					@include transform(translate(0,0));
+					@include transition(all 0.3s $authenticMotion);
+				}
+			}
 			.icon {
 				@include transform(translate(0,-10px));
 			}
 			.frame-icon {
-				width: 100px;
+				width: 50px;
 				height: auto;
 				display: block;
-				margin: 0 auto 25px;
+				margin: 0 auto 15px;
+			}
+			img {
+				max-height: 450px;
+				max-width: 100%;
+				width: auto;
+				height: auto;
+				@include transform(translate(0,15px));
 			}
 		}
 	}
@@ -1203,15 +1239,14 @@ ul#bubbles {
 	list-style: none;
 	text-align: center;
 	display: block;
-	padding: 75px 0 0;
+	padding: 25px 0 0;
 	margin: 0 auto;
-	width: 1300px;
 	box-sizing: border-box;
 	overflow: hidden;
 	li {
 		text-align: center;
 		display: inline-block;
-		width: 15%;
+		width: 150px;
 		vertical-align: bottom;
 		@include transition(all 0.3s $easeInOutBack);
 		.label {
@@ -1223,6 +1258,8 @@ ul#bubbles {
 			font-size: 10pt;
 			line-height: 18px;
 			letter-spacing: 1px;
+			box-sizing: border-box;
+			padding: 0 20px;
 		}
 		.frame {
 			visibility: hidden;
@@ -1308,13 +1345,13 @@ ul#bubbles {
 				position: relative;
 				z-index: 3;
 				display: block;
-				width: 150px;
-				height: 150px;
-				top: 0;
+				width: 125px;
+				height: 125px;
 				margin: 0 auto 25px;
 				vertical-align: middle;
 				@include border-top-radius(50%);
 				@include border-bottom-radius(50%);
+				@include transform(translate(0,0));
 				@include transition(all 0.3s $authenticMotion);
 				text-align: center;
 				img {
@@ -1329,7 +1366,7 @@ ul#bubbles {
 			&:hover {
 				cursor: pointer;
 				.bubble {
-					top: -10px;
+					@include transform(translate(0,-10px));
 					@include transition(all 0.3s $authenticMotion);
 				}
 			}
@@ -1365,16 +1402,6 @@ ul#bubbles {
 		&:last-child {
 			.bubble, .frame {
 				background: $green;
-			}
-		}
-		&.open {
-			.bubble {
-				position: relative;
-				z-index: 14;
-				@include transform(scale(50));
-				@include border-top-radius(0);
-				@include border-bottom-radius(0);
-				@include transition(all 1s ease-in-out);
 			}
 		}
 	}
@@ -1484,7 +1511,7 @@ ul#bubbles {
 	text-align: center;
 	&.default {
 		background: $blue;
-		height: 50vh;
+		height: 25vh;
 		&:after {
 			display: none;
 		}
@@ -1504,6 +1531,7 @@ ul#bubbles {
 		position: relative;
 		z-index: 2;
 		font-size: 72pt;
+		margin: 0;
 	}
 }
 #page {
@@ -1513,6 +1541,10 @@ ul#bubbles {
 	z-index: 10;
 	h2 {
 		margin-top: 0;
+	}
+	.hoolio_logo {
+		height: 100px;
+		width: auto;
 	}
 }
 .section {

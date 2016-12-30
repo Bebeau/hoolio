@@ -477,16 +477,28 @@ var init = {
 	// 	});
 	// },
 	bubbleTab: function() {
+
+		jQuery('.bubble-1').addClass("active");
+		jQuery('.frame-1 .frameCopy').addClass("in");
+		jQuery('.frame-1 .frameImage').addClass("in");
+		jQuery('.frame-1').addClass("in");
+
 		jQuery('.bubblewrap').click(function(e){
 			e.preventDefault();
 			var numb = jQuery(this).attr("data-numb");
 			jQuery('.bubblewrap').removeClass("active");
 			jQuery(this).addClass("active");
+
+			jQuery('.frameCopy').removeClass("in");
+			jQuery('.frameImage').removeClass("in");
+
 			jQuery('html,body').animate({
-			   scrollTop: jQuery("#bubbles").offset().top - 50
+			   scrollTop: jQuery("#bubbles").offset().top + 65
 			}, function(){
-				jQuery('#frameTabs .frame').removeClass("open");
-				jQuery('.frame-'+numb).addClass("open");
+				jQuery('.frame').removeClass("in");
+				jQuery('.frame-'+numb).addClass("in");
+				jQuery('.frame-'+numb+' .frameCopy').addClass("in");
+				jQuery('.frame-'+numb+' .frameImage').addClass("in");
 			});
 		});
 	},

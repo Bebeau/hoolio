@@ -24,7 +24,7 @@ if (have_posts()) : while (have_posts()) : the_post();
 endwhile; endif; ?>
 
 <section id="page" class="section">
-	<img data-animation="slideUp" src="<?php echo bloginfo('template_directory'); ?>/assets/images/logo_icon.svg" alt="Hoolio" />
+	<img class="hoolio_logo" data-animation="slideUp" src="<?php echo bloginfo('template_directory'); ?>/assets/images/logo_icon.svg" alt="Hoolio" />
 	<h2>Hoolio is here to guide<br />you through the use cases.</h2>
 	<?php
 		$args=array(
@@ -54,7 +54,7 @@ endwhile; endif; ?>
 								echo '<span class="bar cross"></span>';
 							echo '</div>';
 							echo '<div class="frameCopy">';
-								the_post_thumbnail('large');
+								the_post_thumbnail();
 								the_content();
 								echo '<a href="'.get_site_url('checkout').'" class="btn">Be a Wizard</a>';
 							echo '</div>';
@@ -86,14 +86,17 @@ endwhile; endif; ?>
 					echo '<div class="frame frame-'.$frame.'">';
 						echo '<div class="outer"><div class="inner">';
 							echo '<div class="copy">';
-								echo '<div class="half">';
+								echo '<div class="half frameCopy">';
 									echo '<img class="frame-icon" src="'.$iconURL.'" alt="'.get_the_title().'" />';
 									the_title("<h3>","</h3>");
 									the_content();
-									echo '<a href="'.get_site_url('checkout').'" class="btn">Be a Wizard</a>';
+									echo '<a href="'.site_url('checkout').'" class="btn">Be a Wizard</a>';
 								echo '</div>';
-								echo '<div class="half">';
-									the_post_thumbnail('large');
+								echo '<div class="half frameImage">';
+									$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID), 'large' );
+									if(!empty($image)) {
+										echo '<img src="'.$image[0].'" alt="" />';
+									}
 								echo '</div>';
 							echo '</div>';
 						echo '</div></div>';
