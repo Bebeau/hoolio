@@ -498,7 +498,7 @@ p {
 		width: 50%;
 		display: inline-block;
 		box-sizing: border-box;
-		padding: 50px;
+		padding: 25px;
 		vertical-align: top;
 		h3 {
 			color: $green;
@@ -895,6 +895,27 @@ header {
 				@include transform(translate(50px, 0));
 			}
 		}
+		.brandVideo {
+			color: $blue;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			margin-bottom: 25px;
+			i {
+				text-align: center;
+				width: 35px;
+				height: 35px;
+				background: $green;
+				color: white;
+				line-height: 35px;
+				margin-right: 10px;
+				display: inline-block;
+				@include border-top-radius(50%);
+				@include border-bottom-radius(50%);
+			}
+			&:hover {
+				cursor: pointer;
+			}
+		}
 	}
 	.arrow {
 		position: absolute;
@@ -905,8 +926,45 @@ header {
         @include animation-duration(2s);
         @include animation-iteration-count(infinite);
 		i {
-			font-size: 16pt;
+			font-size: 24pt;
 			color: $blue;
+		}
+	}
+}
+.brandVideoWrap {
+	background: rgba(12,147,204,0.9);
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	opacity: 0;
+	@include transform(scale(0.8));
+	@include transition(all 0.3s $authenticMotion);
+	&.in {
+		opacity: 1;
+		@include transform(scale(1));
+		@include transition(all 0.3s $authenticMotion);
+		z-index: 999;
+	}
+	i {
+		position: absolute;
+		top: 15px;
+		right: 15px;
+		font-size: 24pt;
+		color: white;
+		&:hover {
+			cursor: pointer;
+		}
+	}
+	.videoWrap {
+		@include transform(translate(0,25%));
+		text-align: center;
+		iframe {
+			margin: 0 auto;
+		}
+		.btn {
+			background: $green;
 		}
 	}
 }

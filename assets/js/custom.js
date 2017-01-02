@@ -155,6 +155,17 @@ var init = {
 		init.showHeader();
 		init.bubbleTab();
 		init.tabDisplay();
+		init.brandVideo();
+	},
+	brandVideo: function() {
+		jQuery('.brandVideo').click(function(){
+			jQuery('.brandVideoWrap').addClass("in");
+			jQuery('.videoWrap').prepend('<iframe src="https://player.vimeo.com/video/192497090?&amp;autoplay=true" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>');
+		});
+		jQuery('.brandVideoWrap .fa-times').click(function(){
+			jQuery('.brandVideoWrap').removeClass("in");
+			jQuery('.videoWrap iframe').remove();
+		});
 	},
 	tabDisplay: function() {
 		jQuery('.thirds li').click(function(e){

@@ -10,7 +10,7 @@ get_header(); ?>
 	<div class="left">
 		<div class="outer">
 			<div class="inner">
-				<img src="<?php echo bloginfo('template_directory'); ?>/assets/images/ipad.png" alt="" />
+				<img src="<?php echo bloginfo('template_directory'); ?>/assets/images/ipad.jpg" alt="" />
 			</div>
 		</div>
 	</div>
