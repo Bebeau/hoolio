@@ -1,4 +1,4 @@
-$blue: #1293cc;
+$blue: #1393cc;
 $green: #a7d661;
 
 $white:	#ffffff;
@@ -132,7 +132,7 @@ body {
 }
 .btn {
 	text-align: center;
-	width: 250px;
+	width: 200px;
 	display: block;
 	margin: 15px auto;
 	padding: 0 15px;
@@ -532,6 +532,14 @@ header {
 				margin-left: 15px;
 				position: relative;
 				font-size: 12pt;
+				a {
+					color: $blue;
+					@include transition(all 0.3s $authenticMotion);
+					&:hover {
+						color: darken($blue, 10%);
+						@include transition(all 0.3s $authenticMotion);
+					}
+				}
 				&:first-child {
 					margin-left: 0;
 				}
@@ -539,7 +547,7 @@ header {
 					height: 0;
 					overflow: hidden;
 					position: absolute;
-					top: 67px;
+					top: 81px;
 					left: 0;
 					z-index: 1;
 					margin: 0;
@@ -560,12 +568,11 @@ header {
 							display: block;
 							&:hover {
 								background: darken($blue, 5%);
+								color: white;
 							}
 						}
 					}
-				}
-				&:hover {
-					ul {
+					&.down {
 						height: 120px;
 						@include transition(all 0.3s $authenticMotion);
 					}
@@ -604,25 +611,32 @@ header {
 		.hiring {
 			text-transform: uppercase;
 			@include border-right-radius(10px);
-			border-top: 1px solid #ebebeb;
-			border-bottom: 1px solid #ebebeb;
-			border-right: 1px solid #ebebeb;
+			border: 1px solid $blue;
+			border-left: none;
 			line-height: 30px;
 			padding: 0 10px;
 			margin-left: -4px;
-			color: #ccc;
+			color: $blue;
 			font-size: 10pt;
+			@include transition(all 0.3s $authenticMotion);
+			&:hover {
+				border: 1px solid $green;
+				border-left: none;
+				background: $green;
+				color: white;
+				@include transition(all 0.3s $authenticMotion);
+			}
 		}
 	}
 	.header-right {
 		float: right;
+		line-height: 81px;
 		.nav-link {
 			margin-left: 25px;
 		}
 		a {
 			color: $blue;
 			text-transform: uppercase;
-			line-height: 81px;
 		}
 		form {
 			display: inline-block;
@@ -634,6 +648,7 @@ header {
 			width: 255px;
 			position: relative;
 			margin: 0 15px;
+			line-height: normal;
 			input {
 				display: inline-block;
 				border: none;
@@ -781,7 +796,7 @@ header {
 				a {
 					display: inline-block;
 					color: $blue;
-					font-size: 36pt;
+					font-size: 32pt;
 					text-decoration: none;
 					text-align: center;
 					overflow: hidden;
@@ -819,7 +834,7 @@ header {
 			.bar {
 				background: white !important;
 				&:first-child {
-					margin-top: 16px;
+					margin-top: 5px;
 					margin-bottom: -5px;
 					@include transform(rotate(-45deg));
 					@include transition(all 0.3s $easeInOutBack);
@@ -911,6 +926,8 @@ header {
 				display: inline-block;
 				@include border-top-radius(50%);
 				@include border-bottom-radius(50%);
+				padding-left: 5px;
+				box-sizing: border-box;
 			}
 			&:hover {
 				cursor: pointer;
@@ -932,7 +949,7 @@ header {
 	}
 }
 .brandVideoWrap {
-	background: rgba(12,147,204,0.9);
+	background: $blue;
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -947,21 +964,50 @@ header {
 		@include transition(all 0.3s $authenticMotion);
 		z-index: 999;
 	}
-	i {
+	.exit {
 		position: absolute;
-		top: 15px;
-		right: 15px;
-		font-size: 24pt;
-		color: white;
+	    top: 15px;
+	    right: 25px;
+	    width: 35px;
+	    height: 35px;
+	    display: block;
+		.bar {
+			display: block;
+			width: 100%;
+			height: 5px;
+			margin: 5px auto;
+			position: relative;
+			background: white !important;
+			&:first-child {
+				margin-top: 16px;
+				margin-bottom: -5px;
+				@include transform(rotate(-45deg));
+				@include transition(all 0.3s $easeInOutBack);
+			}
+			&:nth-child(2) {
+				@include transform(translate(70px, 0));
+				@include transition(all 0.3s $easeInOutBack);
+			}
+			&:last-child {
+				margin-top: -14px;
+				@include transform(rotate(45deg));
+				@include transition(all 0.3s $easeInOutBack);
+			}
+		}
 		&:hover {
 			cursor: pointer;
 		}
 	}
 	.videoWrap {
-		@include transform(translate(0,25%));
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		@include transform(translate(-50%,-50%));
 		text-align: center;
 		iframe {
 			margin: 0 auto;
+			width: 835px;
+			height: 479px;
 		}
 		.btn {
 			background: $green;
@@ -969,12 +1015,12 @@ header {
 	}
 }
 #research {
-	background: radial-gradient(darken($white, 5%), darken($white, 15%));
+	background: linear-gradient(darken($white, 10%), white);
 	position: relative;
 	z-index: 10;
 	padding-bottom: 0;
 	.thirds {
-		margin: 50px 0 0;
+		margin: 25px 0 0;
 		padding: 0;
 		box-sizing: border-box;
 		text-align: center;
@@ -1017,8 +1063,25 @@ header {
 	}
 	#Preview {
 		overflow: hidden;
-		background: $blue;
-		height: 75vh;
+		background: linear-gradient();
+		height: 431px;
+		position: relative;
+		.fa-spin {
+			position: absolute;
+			font-size: 24pt;
+			top: 50%;
+			left: 50%;
+			@include transform(translate(-50%,-50%));
+			color: $grey;
+			opacity: 0;
+			@include transform(scale(0));
+			@include transition(all 0.3s $authenticMotion);
+			&.load {
+				opacity: 1;
+				@include transform(scale(1));
+				@include transition(all 0.3s $authenticMotion);
+			}
+		}
 		.previewWrap {
 			width: 1170px;
 			height: 100%;
@@ -1040,20 +1103,14 @@ header {
 					@include transform(translate(0,0));
 					@include transition(all 0.3s $authenticMotion);
 				}
-				p, h3 {
-					color: white;
-				}
 				h3 {
 					font-weight: bold;
 				}
 				.btn {
-					background: white;
-					color: $blue;
 					display: inline-block;
 				}
 			}
 			&.previewImage {
-				height: 100%;
 				vertical-align: middle;
 				opacity: 0;
 				@include transform(translate(100%,0));
@@ -1064,7 +1121,7 @@ header {
 					@include transition(all 0.3s $authenticMotion);
 				}
 				img {
-					max-height: 100%;
+					max-height: 375px;
 					max-width: 100%;
 					height: auto;
 					width: auto;
@@ -1106,6 +1163,7 @@ header {
 #help {
 	background: white;
 	color: $grey;
+	padding-bottom: 0;
 	.copy {
 		position: relative;
 		z-index: 2;
@@ -1125,11 +1183,10 @@ header {
 		height: auto;
 		position: relative;
 		z-index: 1;
-		@include transform(translate(0,-25px));
+		@include transform(translate(0,-50px));
 	}
 }
 #meet {
-	min-height: 100vh;
 	box-sizing: border-box;
 	position: relative;
 	z-index: 10;
@@ -1198,15 +1255,17 @@ header {
 	.frame {
 		height: 100%;
 		overflow: hidden;
-		@include transition(all 0.5s $authenticMotion);
 		position: absolute;
 		top: 0;
 		left: 0;
 		right: 0;
 		opacity: 0;
+		z-index: 1;
+		@include transition(all 1s $authenticMotion);
 		&.in {
+			z-index: 99;
 			opacity: 1;
-			@include transition(all 0.5s $authenticMotion);
+			@include transition(all 1s $authenticMotion);
 		}
 		h3, p, ul {
 			color: white;
@@ -1215,7 +1274,7 @@ header {
 			text-align: left;
 		}
 		h3 {
-			margin-top: 5px;
+			margin: 30px 0 0;
 		}
 		p {
 			font-size: 14pt;
@@ -1223,24 +1282,43 @@ header {
 		}
 		.btn {
 			margin-top: 1em;
+			background: white;
 		}
 		&:nth-child(1) {
-			background: $orange;
+			background: $blue;
+			.btn {
+				color: $blue;
+			}
 		}
 		&:nth-child(2) {
 			background: $purp;
+			.btn {
+				color: $purp;
+			}
 		}
 		&:nth-child(3) {
 			background: $pink;
+			.btn {
+				color: $pink;
+			}
 		}
 		&:nth-child(4) {
-			background: $blue;
+			background: $orange;
+			.btn {
+				color: $orange;
+			}
 		}
 		&:nth-child(5) {
 			background: $gold;
+			.btn {
+				color: $gold;
+			}
 		}
 		&:nth-child(6) {
 			background: $green;
+			.btn {
+				color: $green;
+			}
 		}
 	}
 	.copy {
@@ -1386,7 +1464,7 @@ ul#bubbles {
 				content: "";
 				width: 100%;
 				height: 5px;
-				background: $blue;
+				background: darken($blue, 10%);
 				position: absolute;
 				bottom: 0;
 				left: 0;
@@ -1431,10 +1509,7 @@ ul#bubbles {
 		}
 		&:first-child{
 			.bubble, .frame {
-				background: $orange;
-			}
-			i {
-				color: $orange;
+				background: $blue;
 			}
 		}
 		&:nth-child(2) {
@@ -1449,7 +1524,7 @@ ul#bubbles {
 		}
 		&:nth-child(4) {
 			.bubble, .frame {
-				background: $blue;
+				background: $orange;
 			}
 		}
 		&:nth-child(5) {
@@ -1529,16 +1604,19 @@ ul#bubbles {
 	color: white;
 	text-align: center;
 	position: relative;
+	.m-item {
+		vertical-align: middle;
+	}
 	blockquote {
 		font-weight: bold;
-		font-size: 24pt;
+		font-size: 21pt;
 		width: 800px;
 		margin: 0 auto;
 	}
 	cite {
 		display: block;
 		text-transform: uppercase;
-		margin-top: 50px;
+		margin-top: 25px;
 		line-height: 24px;
 		font-family: 'pn regular', sans-serif;
 		span {
@@ -1864,17 +1942,21 @@ input[placeholder], [placeholder], *[placeholder] {
 }
 #sectionWrap {
 	section {
+		width: 1170px;
+		margin: 0 auto;
 		.layout {
 			width: 50%;
 			box-sizing: border-box;
 			display: inline-block;
 			vertical-align: middle;
 			padding: 25px;
+			drop-shadow: 1px 1px 1px black;
 			img {
 				max-width: 100%;
 				height: auto;
 				margin: 0 auto;
 				display: block;
+				box-shadow: 0 0 10px rgba(0,0,0,0.2);
 			}
 		}
 		.details {
@@ -1905,6 +1987,8 @@ footer {
 	text-align: center;
 	font-family: 'pn regular', sans-serif;
 	.menu {
+		position: relative;
+		z-index: 999;
 		ul {
 			list-style: none;
 			display: block;

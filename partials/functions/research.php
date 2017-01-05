@@ -172,6 +172,7 @@ function tabContent() {
     $subTitle = get_post_meta($pageID,'sub_title', true);
     $quote = get_post_meta($pageID,'quote', true);
 
+    echo '<i class="fa fa-spinner fa-spin"></i>';
     echo '<div class="previewWrap">';
         echo '<div class="half previewText">';
             echo '<h3>'.$subTitle.'</h3>';

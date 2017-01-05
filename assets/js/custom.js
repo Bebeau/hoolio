@@ -156,50 +156,71 @@ var init = {
 		init.bubbleTab();
 		init.tabDisplay();
 		init.brandVideo();
+		init.headerDropdown();
+	},
+	headerDropdown: function() {
+		jQuery('.drop a').click(function(e){
+			e.preventDefault();
+			if(jQuery('.drop .sub-menu').hasClass("down")) {
+				jQuery('.drop .sub-menu').removeClass("down");
+				var link = jQuery(this).attr("href");
+				if(link != "#") {
+					jQuery(location).attr("href", link);
+				}
+			} else {
+				jQuery('.drop .sub-menu').addClass("down");
+			}
+		});
 	},
 	brandVideo: function() {
 		jQuery('.brandVideo').click(function(){
 			jQuery('.brandVideoWrap').addClass("in");
-			jQuery('.videoWrap').prepend('<iframe src="https://player.vimeo.com/video/192497090?&amp;autoplay=true" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>');
+			jQuery('.videoWrap').prepend('<iframe src="https://player.vimeo.com/video/192497090?&amp;autoplay=true" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>');
+			jQuery('body').addClass("freeze");		
 		});
-		jQuery('.brandVideoWrap .fa-times').click(function(){
+		jQuery('.brandVideoWrap .exit').click(function(){
 			jQuery('.brandVideoWrap').removeClass("in");
 			jQuery('.videoWrap iframe').remove();
+			jQuery('body').removeClass("freeze");
 		});
 	},
 	tabDisplay: function() {
 		jQuery('.thirds li').click(function(e){
 			e.preventDefault();
 			var pageID = jQuery(this).attr("data-page");
-			jQuery('.thirds li').removeClass("active");
-			jQuery(this).addClass("active");
-			jQuery.ajax({
-	            url: ajaxurl,
-	            type: "GET",
-	            data: {
-	                postID: pageID,
-	                action: 'showTab'
-	            },
-	            dataType: 'html',
-	            beforeSend: function() {
-	            	jQuery('#Preview .previewText').removeClass("in");
-	            	jQuery('#Preview .previewImage').removeClass("in");
-	            },
-	            error : function(jqXHR, textStatus, errorThrown) {
-	                window.alert(jqXHR + " :: " + textStatus + " :: " + errorThrown);
-	            },
-	            success: function(data) {
-	            	jQuery('#Preview').html(data);
-	            },
-	            complete: function() {
-	            	setTimeout(
-	            		function(){
-	            			jQuery('#Preview .previewText').addClass("in");
-	            			jQuery('#Preview .previewImage').addClass("in");
-	            		}, 250
-            		);
-	            }
-	        });
+			if(!jQuery(this).hasClass("active")) {
+				jQuery('#Preview .fa-spin').addClass("load");
+				jQuery('.thirds li').removeClass("active");
+				jQuery(this).addClass("active");
+				jQuery.ajax({
+		            url: ajaxurl,
+		            type: "GET",
+		            data: {
+		                postID: pageID,
+		                action: 'showTab'
+		            },
+		            dataType: 'html',
+		            beforeSend: function() {
+		            	jQuery('#Preview .previewText').removeClass("in");
+		            	jQuery('#Preview .previewImage').removeClass("in");
+		            },
+		            error : function(jqXHR, textStatus, errorThrown) {
+		                window.alert(jqXHR + " :: " + textStatus + " :: " + errorThrown);
+		            },
+		            success: function(data) {
+		            	jQuery('#Preview .fa-spin').removeClass("load");
+		            	jQuery('#Preview').html(data);
+		            },
+		            complete: function() {
+		            	setTimeout(
+		            		function(){
+		            			jQuery('#Preview .previewText').addClass("in");
+		            			jQuery('#Preview .previewImage').addClass("in");
+		            		}, 250
+	            		);
+		            }
+		        });
+			}
 		})
 	},
 	showHeader: function() {
@@ -497,20 +518,21 @@ var init = {
 		jQuery('.bubblewrap').click(function(e){
 			e.preventDefault();
 			var numb = jQuery(this).attr("data-numb");
+			// change active tab
 			jQuery('.bubblewrap').removeClass("active");
 			jQuery(this).addClass("active");
-
+			// remove current tab content
 			jQuery('.frameCopy').removeClass("in");
 			jQuery('.frameImage').removeClass("in");
-
+			jQuery('.frame').removeClass("in");
+			// scroll into position
 			jQuery('html,body').animate({
-			   scrollTop: jQuery("#bubbles").offset().top + 65
-			}, function(){
-				jQuery('.frame').removeClass("in");
-				jQuery('.frame-'+numb).addClass("in");
-				jQuery('.frame-'+numb+' .frameCopy').addClass("in");
-				jQuery('.frame-'+numb+' .frameImage').addClass("in");
+			   	scrollTop: jQuery("#bubbles").offset().top + 65;
 			});
+			// animate change
+			jQuery('.frame-'+numb).addClass("in");
+			jQuery('.frame-'+numb+' .frameCopy').addClass("in");
+			jQuery('.frame-'+numb+' .frameImage').addClass("in");
 		});
 	},
 	newsletterSubmit: function() {

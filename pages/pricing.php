@@ -4,7 +4,13 @@
 Template Name: Buy Now
 */
 
-get_header(); ?>
+get_header(); 
+
+global $post;
+$pricingTitle = get_post_meta($post->ID,'pricingTitle', true);
+$contentTitle = get_post_meta($post->ID,'contentTitle', true);
+
+?>
 
 <section id="checkout" data-parallax='{"y" : 230, "smoothness": 1}'>
 	<div class="left">
@@ -18,7 +24,7 @@ get_header(); ?>
 		<div class="outer">
 			<div class="inner">
 				<div class="copy">
-					<h2>Become a Beta Wizard!</h2>
+					<h2><?php echo $pricingTitle; ?></h2>
 					<form action="" method="POST" id="checkoutFrm">
 						<div class="group half">
 							<article>
@@ -103,7 +109,7 @@ get_header(); ?>
 
 <section id="page" class="section checkoutPage">
 	<div class="container">
-		<h2>Here Are The Perks To Being A Beta Wizard</h2>
+		<h2><?php echo $contentTitle; ?></h2>
 		<?php list_perks($post); ?>
 	</div>
 </section>

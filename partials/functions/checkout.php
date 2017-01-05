@@ -17,6 +17,14 @@ function wyzerr_checkout_page() {
         	add_action( 'add_meta_boxes', 'checkout_meta_box', 1 );
         	function checkout_meta_box($post) {
                 add_meta_box(
+                    'sectionTitles',
+                    'Page Titles', 
+                    'page_titles',
+                    'page', 
+                    'normal', 
+                    'high'
+                );
+                add_meta_box(
                     'checkoutPerk',
                     'Perks to Being a Beta Wizard', 
                     'checkout_sections',
@@ -24,6 +32,19 @@ function wyzerr_checkout_page() {
                     'normal', 
                     'low'
                 );
+            }
+            function page_titles($post) {
+                wp_nonce_field( 'titles', 'titles_noncename' );
+
+                $pricingTitle = get_post_meta($post->ID,'pricingTitle', true);
+                $contentTitle = get_post_meta($post->ID,'contentTitle', true);
+
+                echo '<form role="form">';
+                    echo '<label for="pricingTitle">Pricing Form Title</label>';
+                    echo '<input type="text" name="pricingTitle" id="pricingTitle" value="'.$pricingTitle.'" />';
+                    echo '<label for="contentTitle">Content Page Title</label>';
+                    echo '<input type="text" name="contentTitle" id="contentTitle" value="'.$contentTitle.'" />';
+                echo '</form>';
             }
             function checkout_sections($post) {
             	wp_nonce_field( 'checkout', 'checkout_noncename' );
@@ -77,6 +98,18 @@ add_action( 'save_post', 'save_checkout_section_content' );
 function save_checkout_section_content( $post_id ) {
     if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) 
         return;
+
+    if ( !isset( $_POST['titles_noncename'] ) || !wp_verify_nonce( $_POST['titles_noncename'], 'titles' ) )
+        return;
+
+    $pricingTitle = $_POST['pricingTitle'];
+    if(!empty($pricingTitle)) {
+        update_post_meta($post_id,'pricingTitle',$pricingTitle);
+    }
+    $contentTitle = $_POST['contentTitle'];
+    if(!empty($contentTitle)) {
+        update_post_meta($post_id,'contentTitle',$contentTitle);
+    }
 
     if ( !isset( $_POST['checkout_noncename'] ) || !wp_verify_nonce( $_POST['checkout_noncename'], 'checkout' ) )
         return;

@@ -24,20 +24,20 @@
 }
 [data-animation="slideInLeft"] {
 	position: relative;
-	@include transform(translate(-200%,0));
-	@include transition(transform 1s $authenticMotion);
+	@include transform(translate(-100%,0));
+	@include transition(transform 0.5s $authenticMotion);
 	&.slideIn {
 		@include transform(translate(0,0));
-		@include transition(transform 1s $authenticMotion);
+		@include transition(transform 0.5s $authenticMotion);
 	}
 }
 [data-animation="slideInRight"] {
 	position: relative;
-	@include transform(translate(200%,0));
-	@include transition(transform 1s $authenticMotion);
+	@include transform(translate(100%,0));
+	@include transition(transform 0.5s $authenticMotion);
 	&.slideIn {
 		@include transform(translate(0,0));
-		@include transition(transform 1s $authenticMotion);
+		@include transition(transform 0.5s $authenticMotion);
 	}
 }
 [data-animation="bubble"] {

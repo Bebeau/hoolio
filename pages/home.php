@@ -13,7 +13,7 @@ get_header(); ?>
 				<!-- <div class="ipad" data-animation="slideInLeft"></div> -->
 				<div class="half" data-animation="slideInLeft" id="videos">
 					<?php if(wp_is_mobile()) { ?>
-						<img src="<?php echo bloginfo('template_directory'); ?>/assets/images/ipad_mobile.jpg" alt="" />
+						<iframe src="https://player.vimeo.com/video/192497090?&amp;autoplay=true" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 					<?php  } else { ?>
 						<video muted preload="auto" loop class="active" id="iphone">
 							<source src="<?php echo bloginfo('template_directory'); ?>/assets/videos/iphone.webm" type="video/webm">
@@ -67,8 +67,12 @@ get_header(); ?>
 		<div class="arrow"><i class="fa fa-angle-down"></i></div>
 	</section>
 
-	<div class="brandVideoWrap">
-		<i class="fa fa-times"></i>
+	<div class="brandVideoWrap open">
+		<div class="exit">
+			<span class="bar cross"></span>
+			<span class="bar middle"></span>
+			<span class="bar cross"></span>
+		</div>
 		<div class="videoWrap">
 			<a href="<?php echo site_url('checkout'); ?>" class="btn">Buy Presale</a>
 		</div>
@@ -89,7 +93,6 @@ get_header(); ?>
 	                    		echo '<h1>The Science of Actively Listening to Your Customers</h1>';
 	                    	}
 	                    	echo '<img src="'.get_bloginfo('template_directory').'/assets/images/logo_icon.svg" alt="Hoolio" />';
-	                    	echo '<h1>Meet Hoolio.</h1>';
 	                    echo '</div>';
                     	if(!empty($section2_desc)) {
                     		echo '<p data-animation="slideUp">'.$section2_desc.'</p>';
@@ -133,39 +136,79 @@ get_header(); ?>
                     	}
                     echo '</div>';
 
-                    echo '<ul class="thirds">';
-                    	if(!empty($section3_tab1_icon) && !empty($section3_tab1_text) && !empty($section3_tab1_page)) {
-                    		echo '<li data-page="'.$section3_tab1_page.'" class="active">';
-                				echo '<img src="'.$section3_tab1_icon.'" alt="" />';
-                				echo '<p>'.$section3_tab1_text.'</p>';
-                			echo '</li>';
-                		}
-                		if(!empty($section3_tab2_icon) && !empty($section3_tab2_text) && !empty($section3_tab2_page)) {
-                			echo '<li data-page="'.$section3_tab2_page.'">';
-                				echo '<img data-src="'.$section3_tab2_icon.'" src="'.$section3_tab2_icon.'" alt="" />';
-                				echo '<p>'.$section3_tab2_text.'</p>';
-                			echo '</li>';
-                		}
-                		if(!empty($section3_tab3_icon) && !empty($section3_tab3_text) && !empty($section3_tab3_page)) {
-                			echo '<li data-page="'.$section3_tab3_page.'">';
-                				echo '<img data-src="'.$section3_tab3_icon.'" src="'.$section3_tab3_icon.'" alt="" />';
-                				echo '<p>'.$section3_tab3_text.'</p>';
-                			echo '</li>';
-                		}
-                    echo '</ul>';
+                    echo '<div class="hide_mobile">';
 
-                    echo '<div id="Preview">';
-	                    echo '<div class="previewWrap">';
-					        echo '<div class="half previewText in">';
-					            echo '<h3>'.get_post_meta($section3_tab1_page,'sub_title', true).'</h3>';
-					            echo '<p>'.get_post_meta($section3_tab1_page,'quote', true).'</p>';
-					            echo '<a href="'.get_the_permalink($section3_tab1_page).'" class="btn">Learn More</a>';
-					        echo '</div>';
-					        echo '<div class="half previewImage in">';
-					            echo '<span>'.get_the_post_thumbnail($section3_tab1_page).'</span>';
-					        echo '</div>';
-					    echo '</div>';
+	                    echo '<ul class="thirds">';
+	                    	if(!empty($section3_tab1_icon) && !empty($section3_tab1_text) && !empty($section3_tab1_page)) {
+	                    		echo '<li data-page="'.$section3_tab1_page.'" class="active">';
+	                				echo '<img src="'.$section3_tab1_icon.'" alt="" />';
+	                				echo '<p>'.$section3_tab1_text.'</p>';
+	                			echo '</li>';
+	                		}
+	                		if(!empty($section3_tab2_icon) && !empty($section3_tab2_text) && !empty($section3_tab2_page)) {
+	                			echo '<li data-page="'.$section3_tab2_page.'">';
+	                				echo '<img data-src="'.$section3_tab2_icon.'" src="'.$section3_tab2_icon.'" alt="" />';
+	                				echo '<p>'.$section3_tab2_text.'</p>';
+	                			echo '</li>';
+	                		}
+	                		if(!empty($section3_tab3_icon) && !empty($section3_tab3_text) && !empty($section3_tab3_page)) {
+	                			echo '<li data-page="'.$section3_tab3_page.'">';
+	                				echo '<img data-src="'.$section3_tab3_icon.'" src="'.$section3_tab3_icon.'" alt="" />';
+	                				echo '<p>'.$section3_tab3_text.'</p>';
+	                			echo '</li>';
+	                		}
+	                    echo '</ul>';
+
+	                    echo '<div id="Preview">';
+	                    	echo '<i class="fa fa-spinner fa-spin"></i>';
+		                    echo '<div class="previewWrap">';
+						        echo '<div class="half previewText in">';
+						            echo '<h3>'.get_post_meta($section3_tab1_page,'sub_title', true).'</h3>';
+						            echo '<p>'.get_post_meta($section3_tab1_page,'quote', true).'</p>';
+						            echo '<a href="'.get_the_permalink($section3_tab1_page).'" class="btn">Learn More</a>';
+						        echo '</div>';
+						        echo '<div class="half previewImage in">';
+						            echo '<span>'.get_the_post_thumbnail($section3_tab1_page).'</span>';
+						        echo '</div>';
+						    echo '</div>';
+						echo '</div>';
+
 					echo '</div>';
+
+					if(wp_is_mobile()) {
+						echo '<div id="Preview">';
+		                    echo '<div class="previewWrap">';
+		                    	echo '<div class="half previewImage in">';
+						            echo '<span>'.get_the_post_thumbnail($section3_tab1_page).'</span>';
+						        echo '</div>';
+						        echo '<div class="half previewText in">';
+						            echo '<h3>'.get_post_meta($section3_tab1_page,'sub_title', true).'</h3>';
+						            echo '<p>'.get_post_meta($section3_tab1_page,'quote', true).'</p>';
+						            echo '<a href="'.get_the_permalink($section3_tab1_page).'" class="btn">Learn More</a>';
+						        echo '</div>';
+						    echo '</div>';
+						    echo '<div class="previewWrap">';
+						    	echo '<div class="half previewImage in">';
+						            echo '<span>'.get_the_post_thumbnail($section3_tab2_page).'</span>';
+						        echo '</div>';
+						        echo '<div class="half previewText in">';
+						            echo '<h3>'.get_post_meta($section3_tab2_page,'sub_title', true).'</h3>';
+						            echo '<p>'.get_post_meta($section3_tab2_page,'quote', true).'</p>';
+						            echo '<a href="'.get_the_permalink($section3_tab2_page).'" class="btn">Learn More</a>';
+						        echo '</div>';
+						    echo '</div>';
+						    echo '<div class="previewWrap">';
+						        echo '<div class="half previewImage in">';
+						            echo '<span>'.get_the_post_thumbnail($section3_tab3_page).'</span>';
+						        echo '</div>';
+						        echo '<div class="half previewText in">';
+						            echo '<h3>'.get_post_meta($section3_tab3_page,'sub_title', true).'</h3>';
+						            echo '<p>'.get_post_meta($section3_tab3_page,'quote', true).'</p>';
+						            echo '<a href="'.get_the_permalink($section3_tab3_page).'" class="btn">Learn More</a>';
+						        echo '</div>';
+						    echo '</div>';
+						echo '</div>';
+					}
                     
 				?>
 			</div>
