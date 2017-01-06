@@ -1713,6 +1713,8 @@ Author URI: http://theinitgroup.com
     text-align: center; }
   .m-scooch.m-fluid .m-scooch-inner * {
     box-sizing: border-box; }
+  .m-scooch.m-scooch-checkout .m-item {
+    padding: 0 25px 0 15px; }
   .m-scooch img {
     -ms-interpolation-mode: bicubic; }
   .m-scooch .m-item {
@@ -1855,7 +1857,7 @@ body {
   body.home header .short .Menu .bar, body.error404 header .short .Menu .bar {
     background: #1393cc; }
   body.page-template-pricing header .short .Menu .bar {
-    background: #1393cc; }
+    background: #ffffff; }
   body p {
     font-family: 'pn regular';
     line-height: 28px; }
@@ -1982,6 +1984,7 @@ p {
   bottom: 25px;
   left: 50%;
   z-index: 10;
+  margin: 0 0 -10px;
   -webkit-animation: bounce;
   -moz-animation: bounce;
   animation: bounce;
@@ -2000,6 +2003,11 @@ p {
   text-align: center;
   height: 100vh;
   overflow: hidden; }
+  #checkout .arrow {
+    left: 25%;
+    z-index: 99; }
+    #checkout .arrow i {
+      color: white; }
   #checkout .group {
     margin: 15px auto; }
     #checkout .group.half article {
@@ -2120,7 +2128,8 @@ p {
   #checkout .left {
     background: #1393cc;
     position: relative;
-    margin: 0; }
+    margin: 0;
+    z-index: 1; }
     #checkout .left:after {
       content: "";
       position: absolute;
@@ -3700,7 +3709,7 @@ input[placeholder], [placeholder], *[placeholder] {
     padding: 25px 0;
     margin: 0 auto; }
   #introWrap img {
-    max-width: 100%;
+    max-width: 1170px;
     height: auto;
     padding: 15px 15px 50px;
     box-sizing: border-box; }
@@ -4113,7 +4122,9 @@ footer {
   #meet ul#bubbles li .frame .copy {
     width: 991px; }
   #research #Preview .previewWrap {
-    width: 100%; } }
+    width: 100%; }
+  #introWrap img {
+    max-width: 100%; } }
 
 @media (max-width: 1024px) {
   #metrics .half {
@@ -4726,20 +4737,26 @@ footer {
     #contact .btn-submit {
       margin: 25px 0; }
   .container {
-    width: auto; }
+    width: auto;
+    padding: 0; }
   #checkout {
-    overflow: scroll; }
+    overflow: scroll;
+    height: auto; }
     #checkout .close {
       top: 5px;
       right: 15px; }
+    #checkout .m-scooch {
+      padding: 101px 15px 75px; }
     #checkout .left, #checkout .right {
       float: none;
       width: 100%;
+      height: auto;
       margin: 0; }
-    #checkout .left {
+    #checkout .arrow {
       display: none; }
     #checkout .right {
-      height: 100vh; }
+      height: auto;
+      padding-bottom: 200px; }
       #checkout .right .copy {
         padding: 0 25px; }
         #checkout .right .copy h2 {
@@ -4751,4 +4768,7 @@ footer {
         #checkout .right .copy .payment .price {
           font-size: 24pt; }
     #checkout form {
-      margin: 25px auto 0; } }
+      margin: 25px auto 0; }
+  .checkoutPage article {
+    width: auto;
+    padding: 25px 0 0; } }

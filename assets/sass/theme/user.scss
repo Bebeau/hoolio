@@ -302,3 +302,53 @@
 		}
 	}
 }
+#sectionCarousel {
+	.photoWrap {
+		-webkit-column-count: 3;
+		-webkit-column-gap: 0;
+		-moz-column-count: 3;
+		-moz-column-gap: 0;
+		column-count: 3;
+		column-gap: 0;
+		.photo {
+			position: relative;
+			margin: 0;
+			padding: 0;
+			vertical-align: top;
+			line-height: 0;
+			font-size: 0;
+			text-align: center;
+			img {
+				max-width: 100%;
+				height: auto;
+				width: auto;
+				box-sizing: border-box;
+				padding: 15px;
+			}
+			&:hover {
+				cursor: move;
+				.button-remove {
+					opacity: 1;
+				}
+			}
+			.button-remove {
+				opacity: 0;
+				position: absolute;
+				top: 5px;
+				right: 5px;
+				color: red;
+				font-weight: bold;
+				-webkit-border-radius: 50%;
+				-moz-border-radius: 50%;
+				-o-border-radius: 50%;
+				border-radius: 50%;
+				background: white;
+				border: none;
+				-webkit-box-shadow: none;
+				-moz-box-shadow: none;
+				-o-box-shadow: none;
+				box-shadow: none;
+			}
+		}
+	}
+}

@@ -3,6 +3,9 @@ var ajaxurl = meta_image.ajaxurl;
 var user = {
 	onReady: function() {
 		user.imageUploader();
+		user.carouselImageUploader();
+		user.removeItem();
+
 		user.removeImage();
 		user.removeVideo();
 		user.selectTabPage();
@@ -39,7 +42,6 @@ var user = {
 
 	            // Grabs the attachment selection and creates a JSON representation of the model.
 	            var media_attachment = meta_image_frame.state().get('selection').first().toJSON();
-
 	            if(image === "bg_video") {
 	            	// append user selected video
 	            	button.parent().append('<video muted autoplay id="bgvid" loop><source src="'+media_attachment.url+'" type="video/webm"><source src="'+media_attachment.url+'" type="video/ogv"><source src="'+media_attachment.url+'" type="video/mp4"></video>');
@@ -127,6 +129,97 @@ var user = {
             }
         }); 
     },
+    carouselImageUploader: function() {
+    	var meta_image_frame;
+     	// Runs when the image button is clicked.
+	    jQuery('.upload-carousel').click(function(e){
+
+	    	// Prevents the default action from occuring.
+	        e.preventDefault();
+	        var button = jQuery(this);
+	        var id = jQuery(this).parent().attr("data-post");
+	        var type = jQuery(this).parent().attr("data-type");
+	        var key = jQuery('.photoWrap').children().length;
+
+	        var photo = jQuery(this).hasClass("upload-photo");
+	        var screencast = jQuery(this).hasClass("upload-screencast");
+	        var banner = jQuery(this).hasClass("upload-banner");
+	        var section = jQuery(this).hasClass("upload-section");
+
+	        // Sets up the media library frame
+	        meta_image_frame = wp.media.frames.meta_image_frame = wp.media({
+	            title: meta_image.title,
+	            button: { text:  meta_image.button },
+	            library: { type: 'image, video' },
+	            multiple: false
+	        });
+
+	        // Opens the media library frame.
+	        meta_image_frame.open();
+
+	        // Runs when an image is selected.
+	        meta_image_frame.on('select', function(){
+
+	            // Grabs the attachment selection and creates a JSON representation of the model.
+	            var media_attachment = meta_image_frame.state().get('selection').first().toJSON();
+
+	            jQuery('.photoWrap').append('<li class="photo ui-state-default" data-order="'+key+'"><img src="'+media_attachment.url+'" alt="" /><span class="button button-remove remove-photo">X</span></li>' );
+            	user.saveCarouselImage(id, type, media_attachment.url);
+
+	            // Opens the media library frame.
+	        	meta_image_frame.close();
+
+	        });
+
+	    });
+    },
+    saveCarouselImage: function(id, type, url) {
+        jQuery.ajax({
+            url: ajaxurl,
+            type: "GET",
+            data: {
+            	postID: id,
+            	type: type,
+                fieldVal: url,
+                action: 'setCarouselImage'
+            },
+            dataType: 'html',
+            success : function() {
+            	user.removeItem();
+            	jQuery('.banner-image').remove();
+            },
+            error : function(jqXHR, textStatus, errorThrown) {
+                window.alert(jqXHR + " :: " + textStatus + " :: " + errorThrown);
+            }
+        }); 
+    },
+    removeItem: function(postID, key, type) {
+		jQuery.ajax({
+	        url: ajaxurl,
+	        type: "GET",
+	        data: {
+	            action: 'removeItem',
+	            postID: postID,
+	            type: type,
+	            key: key
+	        },
+	        dataType: 'html',
+	        error : function(jqXHR, textStatus, errorThrown) {
+	            window.alert(jqXHR + " :: " + textStatus + " :: " + errorThrown);
+	        }
+	    });
+	    jQuery(".button-remove").click(function(e){
+            e.preventDefault();
+            var postID = jQuery(this).parent().parent().attr("data-post");
+            var type = jQuery(this).parent().parent().attr("data-type");
+            var key = jQuery(this).parent().attr("data-key");
+
+            jQuery(this).parent().remove();
+            
+            user.removeItem(postID, key, type);
+            user.carouselImageUploader();
+        });
+	},
     saveFeaturedVideo: function(postID, video) {
         jQuery.ajax({
             url: ajaxurl,

@@ -209,6 +209,11 @@
 			}
 		}
 	}
+	#introWrap {
+		img {
+			max-width: 100%;
+		}
+	}
 }
 @media(max-width: 1024px) {
 	#metrics {
@@ -1042,23 +1047,30 @@
 	}
 	.container {
 		width: auto;
+		padding: 0;
 	}
 	#checkout {
 		overflow: scroll;
+		height: auto;
 		.close {
 			top: 5px;
 			right: 15px;
 		}
+		.m-scooch {
+			padding: 101px 15px 75px;
+		}
 		.left,.right {
 			float: none;
 			width: 100%;
+			height: auto;
 			margin: 0;
 		}
-		.left {
+		.arrow {
 			display: none;
 		}
 		.right {
-			height: 100vh;
+			height: auto;
+			padding-bottom: 200px;
 			.copy {
 				padding: 0 25px;
 				h2 {
@@ -1078,6 +1090,12 @@
 		}
 		form {
 			margin: 25px auto 0;
+		}
+	}
+	.checkoutPage {
+		article {
+			width: auto;
+			padding: 25px 0 0;
 		}
 	}
 }

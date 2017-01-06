@@ -25,6 +25,14 @@ function wyzerr_checkout_page() {
                     'high'
                 );
                 add_meta_box(
+                    'sectionCarousel',
+                    'Checkout Carousel', 
+                    'checkout_carousel',
+                    'page', 
+                    'normal', 
+                    'high'
+                );
+                add_meta_box(
                     'checkoutPerk',
                     'Perks to Being a Beta Wizard', 
                     'checkout_sections',
@@ -32,6 +40,29 @@ function wyzerr_checkout_page() {
                     'normal', 
                     'low'
                 );
+            }
+            function checkout_carousel($post) {
+                // Use nonce for verification
+                wp_nonce_field( 'photos', 'photos_noncename' );
+
+                $photos = get_post_meta($post->ID,'photos', true);
+
+                echo '<div data-post="'.$post->ID.'" data-type="photos">';
+                    echo '<p>Use the button below to upload portfolio photos. Drag and drop photos to change the order.</p>';
+                    echo '<a href="#" class="button upload-carousel upload-photo">Upload Photos</a>';
+                    if ( !empty($photos) ) {
+                        echo '<ul class="photoWrap sortable" data-post="'.$post->ID.'" data-type="photos">';
+                            foreach( $photos as $key => $photo ) { ?>
+                                <li class="photo ui-state-default" data-key="<?php echo $key; ?>" data-order="<?php echo $photo; ?>">
+                                    <img src="<?php echo $photo; ?>" alt="" />
+                                    <span class="button button-remove remove-photo">X</span>
+                                </li>
+                            <?php }
+                        echo '</ul>';
+                    } else {
+                        echo '<ul class="photoWrap sortable" data-post="'.$post->ID.'" data-type="photos"></ul>';
+                    }
+                echo '</div>';
             }
             function page_titles($post) {
                 wp_nonce_field( 'titles', 'titles_noncename' );
@@ -92,6 +123,50 @@ function wyzerr_checkout_page() {
     	echo '</section>';
 	    exit;
 	}
+
+    // ajax response to save download track
+    add_action('wp_ajax_setCarouselImage', 'setCustomImage');
+    add_action('wp_ajax_nopriv_setCarouselImage', 'setCustomImage');
+    function setCustomImage($post_id) {
+        // get response variables
+        $postID = (isset($_GET['postID'])) ? $_GET['postID'] : 0;
+        $imageURL = (isset($_GET['fieldVal'])) ? $_GET['fieldVal'] : 0;
+        $type = (isset($_GET['type'])) ? $_GET['type'] : 0;
+        // get saved photos
+        $photos = get_post_meta($postID, $type, true);
+        // save photos
+        if(!empty($imageURL)) {
+            if( $type === "photos" || $type === "screens") {
+                if(!empty($photos)) {
+                    $image[] = $imageURL;
+                    $photos = array_merge($photos, $image);
+                    update_post_meta( $postID, $type, $photos);
+                } else {
+                    $new[] = $imageURL;
+                    update_post_meta( $postID, $type, $new);
+                }   
+            } else {
+                update_post_meta( $postID, $type, $imageURL);
+            }
+        }
+    }
+
+    // ajax response to save download track
+    add_action('wp_ajax_removeItem', 'removeItem');
+    add_action('wp_ajax_nopriv_removeItem', 'removeItem');
+    function removeItem() {
+        $postID = (isset($_GET['postID'])) ? $_GET['postID'] : 0;
+        $key = (isset($_GET['key'])) ? $_GET['key'] : 0;
+        $type = (isset($_GET['type'])) ? $_GET['type'] : 0;
+
+        if(!empty($key) & $key !== "0") {
+            $array = get_post_meta($postID, $type, true );
+            unset($array[$key]);
+            update_post_meta($postID, $type, $array);
+        } elseif(empty($key) || $key === "0") {
+            update_post_meta($postID, $type, "");
+        }
+    }
 }
 /* When the post is saved, saves our custom data */
 add_action( 'save_post', 'save_checkout_section_content' );

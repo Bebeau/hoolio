@@ -17,7 +17,27 @@ $contentTitle = get_post_meta($post->ID,'contentTitle', true);
 	<div class="left">
 		<div class="outer">
 			<div class="inner">
-				<img src="<?php echo bloginfo('template_directory'); ?>/assets/images/ipad.jpg" alt="" />
+				<?php 
+					$photos = get_post_meta($post->ID,'photos', true);
+					if(!empty($photos)) {
+						echo '<div class="m-scooch m-fluid m-scooch-checkout">';
+		    				echo '<div class="m-scooch-inner">';
+							foreach($photos as $photo) {
+								echo '<div class="m-item">';
+									echo '<img src="'.$photo.'" alt="" />';
+								echo '</div>';
+							}
+							echo '</div>';
+							echo '<div class="m-scooch-controls m-scooch-bulleted">';
+								$c = 1;
+								foreach($photos as $photo) {
+									echo '<a href="" data-m-slide="'.$c.'"></a>';
+			    					$c++;
+								}
+							echo '</div>';
+						echo '</div>';
+					}
+				?>
 			</div>
 		</div>
 	</div>

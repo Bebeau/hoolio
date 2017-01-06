@@ -113,7 +113,7 @@ body {
 			.short {
 				.Menu {
 					.bar {
-						background: $blue;
+						background: $white;
 					}
 				}
 			}
@@ -247,6 +247,7 @@ p {
 	bottom: 25px;
 	left: 50%;
 	z-index: 10;
+	margin: 0 0 -10px;
 	@include animation(bounce);
     @include animation-duration(2s);
     @include animation-iteration-count(infinite);
@@ -260,6 +261,13 @@ p {
 	text-align: center;
 	height: 100vh;
 	overflow: hidden;
+	.arrow {
+		left: 25%;
+		z-index: 99;
+		i {
+			color: white;
+		}
+	}
 	.group {
 		margin: 15px auto;
 		&.half {
@@ -382,6 +390,7 @@ p {
 		background: $blue;
 		position: relative;
 		margin: 0;
+		z-index: 1;
 		&:after {
 			content: "";
 			position: absolute;
@@ -1942,7 +1951,7 @@ input[placeholder], [placeholder], *[placeholder] {
 		margin: 0 auto;
 	}
 	img {
-		max-width: 100%;
+		max-width: 1170px;
 		height: auto;
 		padding: 15px 15px 50px;
 		box-sizing: border-box;

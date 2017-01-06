@@ -22,6 +22,11 @@
             }
         }
     }
+    &.m-scooch-checkout {
+        .m-item {
+            padding: 0 25px 0 15px;
+        }
+    }
     img  {
         -ms-interpolation-mode:  bicubic;  
     }
