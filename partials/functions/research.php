@@ -110,7 +110,6 @@ function list_sections($post) {
     $sections = get_post_meta($post->ID,'sections', true);
 
     echo '<div id="sectionWrap">';
-        $c = 0;
         if ( !empty($sections) ) {
             foreach( $sections as $key => $section ) {
 
@@ -118,29 +117,15 @@ function list_sections($post) {
                 $desc = $section['desc'];
                 $image = $section['image'];
 
-                if($c % 2 === 0) {
-                    echo '<section>';
-                        echo '<div class="layout" data-animation="slideInLeft">';
-                            echo '<img src="'.$image.'" alt="" />';
-                        echo '</div>';
-                        echo '<div class="details" data-animation="slideUp">';
-                            echo '<h3>'.$title.'</h3>';
-                            echo '<p>'.$desc.'</p>';
-                        echo '</div>';
-                    echo '</section>';
-                } else {
-                    echo '<section>';
-                        echo '<div class="details" data-animation="slideUp">';
-                            echo '<h3>'.$title.'</h3>';
-                            echo '<p>'.$desc.'</p>';
-                        echo '</div>';
-                        echo '<div class="layout" data-animation="slideInRight">';
-                            echo '<img src="'.$image.'" alt="" />';
-                        echo '</div>';
-                    echo '</section>';
-                }
-
-                $c++;
+                echo '<section>';
+                    echo '<div class="layout">';
+                        echo '<img src="'.$image.'" alt="" />';
+                    echo '</div>';
+                    echo '<div class="details" data-animation="slideUp">';
+                        echo '<h3>'.$title.'</h3>';
+                        echo '<p>'.$desc.'</p>';
+                    echo '</div>';
+                echo '</section>';
             }
         }
     echo '</div>';

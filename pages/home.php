@@ -13,7 +13,7 @@ get_header(); ?>
 				<!-- <div class="ipad" data-animation="slideInLeft"></div> -->
 				<div class="half" data-animation="slideInLeft" id="videos">
 					<?php if(wp_is_mobile()) { ?>
-						<iframe src="https://player.vimeo.com/video/192497090?&amp;autoplay=true" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+						<iframe src="https://player.vimeo.com/video/192497090" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 					<?php  } else { ?>
 						<video muted preload="auto" loop class="active" id="iphone">
 							<source src="<?php echo bloginfo('template_directory'); ?>/assets/videos/iphone.webm" type="video/webm">

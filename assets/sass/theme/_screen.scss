@@ -212,7 +212,7 @@ p {
 	margin: 0 auto;
 }
 .block {
-	height: 100vh;
+	padding: 100px 0;
 	text-align: center;
 	h1 {
 		margin: 0 0 25px;
@@ -240,6 +240,19 @@ p {
 		i {
 			color: $blue;
 		}
+	}
+}
+.arrow {
+	position: absolute;
+	bottom: 25px;
+	left: 50%;
+	z-index: 10;
+	@include animation(bounce);
+    @include animation-duration(2s);
+    @include animation-iteration-count(infinite);
+	i {
+		font-size: 24pt;
+		color: $blue;
 	}
 }
 #checkout {
@@ -867,6 +880,7 @@ header {
 	}
 }
 #top {
+	height: 100vh;
 	position: relative;
 	background: white;
 	box-sizing: border-box;
@@ -932,19 +946,6 @@ header {
 			&:hover {
 				cursor: pointer;
 			}
-		}
-	}
-	.arrow {
-		position: absolute;
-		bottom: 25px;
-		left: 50%;
-		z-index: 10;
-		@include animation(bounce);
-        @include animation-duration(2s);
-        @include animation-iteration-count(infinite);
-		i {
-			font-size: 24pt;
-			color: $blue;
 		}
 	}
 }
@@ -1242,6 +1243,13 @@ header {
 	}
 	.btn {
 		margin-top: 35px;
+	}
+	.copy {
+		img {
+			height: 125px;
+			padding: 25px 0;
+			width: auto;
+		}
 	}
 }
 .page-template-use-cases {
@@ -1637,6 +1645,7 @@ ul#bubbles {
 	}
 }
 #cta {
+	padding: 50px 0;
 	text-align: center;
 	h2 {
 		color: $grey;
@@ -1926,15 +1935,17 @@ input[placeholder], [placeholder], *[placeholder] {
 	background: white;
 	position: relative;
 	z-index: 2;
+	padding-top: 50px;
 	h2.introTitle {
 		font-size: 32pt;
 		padding: 25px 0;
-		width: 800px;
 		margin: 0 auto;
 	}
 	img {
 		max-width: 100%;
 		height: auto;
+		padding: 15px 15px 50px;
+		box-sizing: border-box;
 	}
 	blockquote {
 		background: $blue;
@@ -1949,19 +1960,18 @@ input[placeholder], [placeholder], *[placeholder] {
 	section {
 		width: 1170px;
 		margin: 0 auto;
+		padding: 100px 0;
 		.layout {
 			width: 50%;
 			box-sizing: border-box;
 			display: inline-block;
 			vertical-align: middle;
-			padding: 25px;
-			drop-shadow: 1px 1px 1px black;
+			padding: 0 25px;
 			img {
 				max-width: 100%;
 				height: auto;
 				margin: 0 auto;
 				display: block;
-				box-shadow: 0 0 10px rgba(0,0,0,0.2);
 			}
 		}
 		.details {
@@ -1969,7 +1979,7 @@ input[placeholder], [placeholder], *[placeholder] {
 			box-sizing: border-box;
 			display: inline-block;
 			vertical-align: middle;
-			padding: 25px;
+			padding: 0 25px;
 			&:nth-child(even) {
 				padding-right: 100px;
 			}
@@ -1982,6 +1992,14 @@ input[placeholder], [placeholder], *[placeholder] {
 			h3 {
 				font-weight: bold;
 				color: $blue;
+			}
+		}
+		&:nth-child(even) {
+			.layout {
+				@include transform(translate(100%,0));
+			}
+			.details {
+				@include transform(translate(-100%,0));
 			}
 		}
 	}

@@ -801,10 +801,11 @@
 			img {
 				width: 150px;
 				height: auto;
+				padding: 0;
 			}
 			h1 {
 				padding: 0;
-				margin-top: 25px;
+				margin-top: 0px;
 			}
 		}
 		ul {
@@ -938,13 +939,52 @@
 		}
 	}
 	#pageBanner {
-		height: 25vh;
+		height: auto;
 		padding-top: 94px;
 		h1 {
 			font-size: 32pt;
 		}
 		&.default {
-			height: 25vh;
+			height: auto;
+		}
+	}
+	#introWrap {
+		padding-top: 0;
+		h2 {
+			&.introTitle {
+				padding: 15px 0 0;
+				font-size: 24pt;
+			}
+		}
+		blockquote {
+			padding: 25px;
+			font-size: 18pt;
+			line-height: 21pt;
+		}
+	}
+	#sectionWrap {
+		section {
+			width: auto;
+			padding: 15px;
+			.layout, .details {
+				width: 100%;
+				padding: 0;
+				img {
+					padding: 0;
+					text-align: center;
+				}
+			}
+			.details {
+				padding: 0;
+				&:nth-child(odd), &:nth-child(even) {
+					padding: 15px;
+				}
+			}
+			&:nth-child(even) {
+				.layout, .details {
+					@include transform(translate(0,0));
+				}
+			}
 		}
 	}
 	#page {

@@ -13,6 +13,7 @@ $contentTitle = get_post_meta($post->ID,'contentTitle', true);
 ?>
 
 <section id="checkout" data-parallax='{"y" : 230, "smoothness": 1}'>
+	<div class="arrow"><i class="fa fa-angle-down"></i></div>
 	<div class="left">
 		<div class="outer">
 			<div class="inner">

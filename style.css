@@ -1949,7 +1949,7 @@ p {
   margin: 0 auto; }
 
 .block {
-  height: 100vh;
+  padding: 100px 0;
   text-align: center; }
   .block h1 {
     margin: 0 0 25px;
@@ -1976,6 +1976,24 @@ p {
     border-bottom-right-radius: 50%; }
     .social a i {
       color: #1393cc; }
+
+.arrow {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  z-index: 10;
+  -webkit-animation: bounce;
+  -moz-animation: bounce;
+  animation: bounce;
+  -webkit-animation-duration: 2s;
+  -moz-animation-duration: 2s;
+  animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
+  animation-iteration-count: infinite; }
+  .arrow i {
+    font-size: 24pt;
+    color: #1393cc; }
 
 #checkout {
   background: rgba(0, 0, 0, 0.9);
@@ -2615,6 +2633,7 @@ header.open {
     transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
 
 #top {
+  height: 100vh;
   position: relative;
   background: white;
   box-sizing: border-box;
@@ -2684,23 +2703,6 @@ header.open {
         box-sizing: border-box; }
       #top .half .brandVideo:hover {
         cursor: pointer; }
-  #top .arrow {
-    position: absolute;
-    bottom: 25px;
-    left: 50%;
-    z-index: 10;
-    -webkit-animation: bounce;
-    -moz-animation: bounce;
-    animation: bounce;
-    -webkit-animation-duration: 2s;
-    -moz-animation-duration: 2s;
-    animation-duration: 2s;
-    -webkit-animation-iteration-count: infinite;
-    -moz-animation-iteration-count: infinite;
-    animation-iteration-count: infinite; }
-    #top .arrow i {
-      font-size: 24pt;
-      color: #1393cc; }
 
 .brandVideoWrap {
   background: #1393cc;
@@ -3068,6 +3070,10 @@ header.open {
       transition: all 1s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
   #meet .btn {
     margin-top: 35px; }
+  #meet .copy img {
+    height: 125px;
+    padding: 25px 0;
+    width: auto; }
 
 .page-template-use-cases #page {
   padding-bottom: 0;
@@ -3454,6 +3460,7 @@ ul#bubbles {
         font-weight: bold; }
 
 #cta {
+  padding: 50px 0;
   text-align: center; }
   #cta h2 {
     color: #919192;
@@ -3686,15 +3693,17 @@ input[placeholder], [placeholder], *[placeholder] {
   text-align: center;
   background: white;
   position: relative;
-  z-index: 2; }
+  z-index: 2;
+  padding-top: 50px; }
   #introWrap h2.introTitle {
     font-size: 32pt;
     padding: 25px 0;
-    width: 800px;
     margin: 0 auto; }
   #introWrap img {
     max-width: 100%;
-    height: auto; }
+    height: auto;
+    padding: 15px 15px 50px;
+    box-sizing: border-box; }
   #introWrap blockquote {
     background: #1393cc;
     padding: 50px;
@@ -3705,26 +3714,25 @@ input[placeholder], [placeholder], *[placeholder] {
 
 #sectionWrap section {
   width: 1170px;
-  margin: 0 auto; }
+  margin: 0 auto;
+  padding: 100px 0; }
   #sectionWrap section .layout {
     width: 50%;
     box-sizing: border-box;
     display: inline-block;
     vertical-align: middle;
-    padding: 25px;
-    drop-shadow: 1px 1px 1px black; }
+    padding: 0 25px; }
     #sectionWrap section .layout img {
       max-width: 100%;
       height: auto;
       margin: 0 auto;
-      display: block;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); }
+      display: block; }
   #sectionWrap section .details {
     width: 50%;
     box-sizing: border-box;
     display: inline-block;
     vertical-align: middle;
-    padding: 25px; }
+    padding: 0 25px; }
     #sectionWrap section .details:nth-child(even) {
       padding-right: 100px; }
     #sectionWrap section .details:nth-child(odd) {
@@ -3734,6 +3742,18 @@ input[placeholder], [placeholder], *[placeholder] {
     #sectionWrap section .details h3 {
       font-weight: bold;
       color: #1393cc; }
+  #sectionWrap section:nth-child(even) .layout {
+    -webkit-transform: translate(100%, 0);
+    -moz-transform: translate(100%, 0);
+    -ms-transform: translate(100%, 0);
+    -o-transform: translate(100%, 0);
+    transform: translate(100%, 0); }
+  #sectionWrap section:nth-child(even) .details {
+    -webkit-transform: translate(-100%, 0);
+    -moz-transform: translate(-100%, 0);
+    -ms-transform: translate(-100%, 0);
+    -o-transform: translate(-100%, 0);
+    transform: translate(-100%, 0); }
 
 footer {
   height: 25vh;
@@ -4541,10 +4561,11 @@ footer {
       padding: 0 15px 25px; }
       #meet .copy img {
         width: 150px;
-        height: auto; }
+        height: auto;
+        padding: 0; }
       #meet .copy h1 {
         padding: 0;
-        margin-top: 25px; }
+        margin-top: 0px; }
     #meet ul {
       position: relative;
       overflow: hidden;
@@ -4631,12 +4652,40 @@ footer {
         footer .menu ul li a:after {
           display: none; }
   #pageBanner {
-    height: 25vh;
+    height: auto;
     padding-top: 94px; }
     #pageBanner h1 {
       font-size: 32pt; }
     #pageBanner.default {
-      height: 25vh; }
+      height: auto; }
+  #introWrap {
+    padding-top: 0; }
+    #introWrap h2.introTitle {
+      padding: 15px 0 0;
+      font-size: 24pt; }
+    #introWrap blockquote {
+      padding: 25px;
+      font-size: 18pt;
+      line-height: 21pt; }
+  #sectionWrap section {
+    width: auto;
+    padding: 15px; }
+    #sectionWrap section .layout, #sectionWrap section .details {
+      width: 100%;
+      padding: 0; }
+      #sectionWrap section .layout img, #sectionWrap section .details img {
+        padding: 0;
+        text-align: center; }
+    #sectionWrap section .details {
+      padding: 0; }
+      #sectionWrap section .details:nth-child(odd), #sectionWrap section .details:nth-child(even) {
+        padding: 15px; }
+    #sectionWrap section:nth-child(even) .layout, #sectionWrap section:nth-child(even) .details {
+      -webkit-transform: translate(0, 0);
+      -moz-transform: translate(0, 0);
+      -ms-transform: translate(0, 0);
+      -o-transform: translate(0, 0);
+      transform: translate(0, 0); }
   #page {
     padding: 15px; }
     #page h2 {

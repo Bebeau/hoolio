@@ -144,9 +144,9 @@ var init = {
 		init.count();
 		init.scooch();
 		init.wizard();
-		init.playVideo();
 		if(!isMobile) {
 			init.topVideos();
+			init.playVideo();
 		}
 		init.tooltip();
 		init.mobileBubbles();
@@ -527,7 +527,7 @@ var init = {
 			jQuery('.frame').removeClass("in");
 			// scroll into position
 			jQuery('html,body').animate({
-			   	scrollTop: jQuery("#bubbles").offset().top + 65;
+			   	scrollTop: jQuery("#bubbles").offset().top + 65
 			});
 			// animate change
 			jQuery('.frame-'+numb).addClass("in");
