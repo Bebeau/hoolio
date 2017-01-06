@@ -3093,7 +3093,7 @@ header.open {
 
 #frameTabs {
   position: relative;
-  height: 75vh; }
+  height: 500px; }
   #frameTabs .frame {
     height: 100%;
     overflow: hidden;
