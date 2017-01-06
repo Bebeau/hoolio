@@ -65,8 +65,8 @@
 		    <section id="cta">
 				<article class="outer">
 					<div class="inner" data-animation="slideUp">
-						<h2>Be Wyzerr, know more.</h2>
-						<a href="<?php echo site_url('checkout'); ?>" class="btn">Sign Up</a>
+						<h2>A New Way To Do Market Research</h2>
+						<a href="<?php echo site_url('checkout'); ?>" class="btn">Buy Presale</a>
 					</div>
 				</article>
 			</section>

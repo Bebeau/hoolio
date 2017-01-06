@@ -2976,7 +2976,8 @@ header.open {
 #help {
   background: white;
   color: #919192;
-  padding-bottom: 0; }
+  padding-bottom: 0;
+  position: relative; }
   #help .copy {
     position: relative;
     z-index: 2;
@@ -2992,6 +2993,9 @@ header.open {
     font-size: 24pt; }
   #help .placeholder {
     margin: 50px 0; }
+  #help .vidPlay {
+    position: absolute;
+    top: 50%; }
   #help video {
     width: 1000px;
     height: auto;

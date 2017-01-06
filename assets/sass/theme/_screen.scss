@@ -1164,6 +1164,7 @@ header {
 	background: white;
 	color: $grey;
 	padding-bottom: 0;
+	position: relative;
 	.copy {
 		position: relative;
 		z-index: 2;
@@ -1177,6 +1178,10 @@ header {
 	}
 	.placeholder {
 		margin: 50px 0;
+	}
+	.vidPlay {
+		position: absolute;
+		top: 50%;
 	}
 	video {
 		width: 1000px;

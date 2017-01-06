@@ -23,7 +23,7 @@ $quote = get_post_meta($post->ID,'quote', true);
 
 echo '<section id="introWrap">';
 	echo '<h2 class="introTitle" data-animation="slideUp">'.$subTitle.'</h2>';
-	echo '<span data-animation="slideUp">'.the_post_thumbnail('large').'</span>';
+	echo '<span data-animation="slideUp">'.the_post_thumbnail().'</span>';
 	echo '<blockquote data-animation="slideUp">'.$quote.'</blockquote>';
 echo '</section>';
 
