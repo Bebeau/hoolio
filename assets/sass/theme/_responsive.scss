@@ -490,6 +490,12 @@
 	}
 }
 @media(max-width: 414px) {
+	.dropdown {
+		width: 100%;
+		button {
+			font-size: 14pt;
+		}
+	}
 	.circleClose {
 		position: absolute;
 		top: 5px;
