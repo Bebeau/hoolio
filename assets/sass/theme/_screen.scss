@@ -1025,7 +1025,6 @@ header {
 	}
 }
 #research {
-	background: linear-gradient(darken($white, 10%), white);
 	position: relative;
 	z-index: 10;
 	padding-bottom: 0;
@@ -1072,8 +1071,8 @@ header {
 		}
 	}
 	#Preview {
+		background: linear-gradient(darken($white, 10%), white);
 		overflow: hidden;
-		background: linear-gradient();
 		height: 431px;
 		position: relative;
 		.fa-spin {
