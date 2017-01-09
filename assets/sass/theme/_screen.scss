@@ -2017,6 +2017,8 @@ footer {
 	background: $blue;
 	text-align: center;
 	font-family: 'pn regular', sans-serif;
+	position: relative;
+	z-index: 9;
 	.menu {
 		position: relative;
 		z-index: 999;

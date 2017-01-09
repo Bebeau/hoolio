@@ -3767,7 +3767,9 @@ footer {
   height: 25vh;
   background: #1393cc;
   text-align: center;
-  font-family: 'pn regular', sans-serif; }
+  font-family: 'pn regular', sans-serif;
+  position: relative;
+  z-index: 9; }
   footer .menu {
     position: relative;
     z-index: 999; }
