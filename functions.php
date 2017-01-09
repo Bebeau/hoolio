@@ -244,7 +244,6 @@ function newsletterSubmit() {
                 'merge_fields'  => array(
                     'FNAME'     => '',
                     'LNAME'     => '',
-                    'INTEREST'  => 'Newsletter'
                 )
             );
 

@@ -113,7 +113,7 @@ body {
 			.short {
 				.Menu {
 					.bar {
-						background: $white;
+						background: $blue;
 					}
 				}
 			}
@@ -433,28 +433,29 @@ p {
 		}
 		.successMessage {
 			box-sizing: border-box;
-			padding: 0 100px;
+			padding: 0 25px;
 			opacity: 0;
 			height: 0;
 			overflow: hidden;
-			@include transform(translate(0, 1000px));
+			@include transform(translate(0, 100%));
 			@include transition(all 0.3s $easeInOutBack);
 			h2 {
 				font-size: 36pt;
 				color: $green;
+				margin-top: 0;
 			}
 		}
 		&.confirm {
 			.copy {
 				height: 0;
 				opacity: 0;
-				@include transform(translate(0, -1000px));
+				@include transform(translate(0, -100%));
 				@include transition(all 0.3s $easeInOutBack);
 			}
 			.successMessage {
 				height: auto;
 				opacity: 1;
-				@include transform(translate(0, 150px));
+				@include transform(translate(0, 0));
 				@include transition(all 0.5s $easeInOutBack);
 			}
 		}

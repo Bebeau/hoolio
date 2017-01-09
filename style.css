@@ -1857,7 +1857,7 @@ body {
   body.home header .short .Menu .bar, body.error404 header .short .Menu .bar {
     background: #1393cc; }
   body.page-template-pricing header .short .Menu .bar {
-    background: #ffffff; }
+    background: #1393cc; }
   body p {
     font-family: 'pn regular';
     line-height: 28px; }
@@ -2164,40 +2164,41 @@ p {
         font-size: 18pt; }
     #checkout .right .successMessage {
       box-sizing: border-box;
-      padding: 0 100px;
+      padding: 0 25px;
       opacity: 0;
       height: 0;
       overflow: hidden;
-      -webkit-transform: translate(0, 1000px);
-      -moz-transform: translate(0, 1000px);
-      -ms-transform: translate(0, 1000px);
-      -o-transform: translate(0, 1000px);
-      transform: translate(0, 1000px);
+      -webkit-transform: translate(0, 100%);
+      -moz-transform: translate(0, 100%);
+      -ms-transform: translate(0, 100%);
+      -o-transform: translate(0, 100%);
+      transform: translate(0, 100%);
       -webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
       -moz-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
       transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
       #checkout .right .successMessage h2 {
         font-size: 36pt;
-        color: #b6d764; }
+        color: #b6d764;
+        margin-top: 0; }
     #checkout .right.confirm .copy {
       height: 0;
       opacity: 0;
-      -webkit-transform: translate(0, -1000px);
-      -moz-transform: translate(0, -1000px);
-      -ms-transform: translate(0, -1000px);
-      -o-transform: translate(0, -1000px);
-      transform: translate(0, -1000px);
+      -webkit-transform: translate(0, -100%);
+      -moz-transform: translate(0, -100%);
+      -ms-transform: translate(0, -100%);
+      -o-transform: translate(0, -100%);
+      transform: translate(0, -100%);
       -webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
       -moz-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
       transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
     #checkout .right.confirm .successMessage {
       height: auto;
       opacity: 1;
-      -webkit-transform: translate(0, 150px);
-      -moz-transform: translate(0, 150px);
-      -ms-transform: translate(0, 150px);
-      -o-transform: translate(0, 150px);
-      transform: translate(0, 150px);
+      -webkit-transform: translate(0, 0);
+      -moz-transform: translate(0, 0);
+      -ms-transform: translate(0, 0);
+      -o-transform: translate(0, 0);
+      transform: translate(0, 0);
       -webkit-transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
       -moz-transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
       transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
