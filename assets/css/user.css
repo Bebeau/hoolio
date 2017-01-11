@@ -37,9 +37,30 @@
 .column-cite {
   width: 175px; }
 
-#sections input, #sections textarea {
+#sections input, #sections textarea, #homepage_sections input, #homepage_sections textarea {
   display: block;
   width: 100%; }
+
+.button-remove {
+  opacity: 0;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  color: red;
+  font-weight: bold;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  background: white;
+  border: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  -o-box-shadow: none;
+  box-shadow: none; }
 
 #homepage_video {
   position: relative; }
@@ -47,23 +68,6 @@
     cursor: move; }
     #homepage_video:hover .button-remove {
       opacity: 1; }
-  #homepage_video .button-remove {
-    opacity: 0;
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    color: red;
-    font-weight: bold;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -o-border-radius: 50%;
-    border-radius: 50%;
-    background: white;
-    border: none;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    -o-box-shadow: none;
-    box-shadow: none; }
   #homepage_video .inside {
     margin: 0;
     padding: 0; }
@@ -74,3 +78,215 @@
       padding: 10px;
       box-sizing: border-box;
       display: block; }
+
+#icon .inside {
+  margin: 0;
+  padding: 0; }
+  #icon .inside img {
+    max-width: 100%;
+    background: black; }
+
+#icon a {
+  display: block;
+  padding: 10px;
+  box-sizing: border-box; }
+
+#tabs .tab {
+  padding: 25px;
+  box-sizing: border-box;
+  vertical-align: middle; }
+  #tabs .tab:nth-child(even) {
+    background: #ebebeb; }
+  #tabs .tab .icon {
+    width: 200px;
+    border: 1px dashed #ccc;
+    height: 200px;
+    line-height: 200px;
+    text-align: center;
+    margin: 0 15px 0 0;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle; }
+    #tabs .tab .icon:hover .remove-image {
+      opacity: 1; }
+      #tabs .tab .icon:hover .remove-image:hover {
+        cursor: pointer; }
+    #tabs .tab .icon img {
+      max-height: 100%;
+      max-width: 100%;
+      width: auto;
+      padding: 15px;
+      box-sizing: border-box; }
+  #tabs .tab .copy {
+    width: 50%;
+    display: inline-block;
+    vertical-align: middle; }
+    #tabs .tab .copy label {
+      display: block; }
+
+#content input, #content label {
+  display: block; }
+
+#content input, #content textarea {
+  width: 100%; }
+
+#sections .inside {
+  margin: 0;
+  padding: 0; }
+
+#sections .btn-section {
+  display: block;
+  width: 100%; }
+
+#sectionTitles input {
+  line-height: 40px;
+  height: 40px;
+  display: block;
+  margin: 0 auto 5px;
+  font-size: 14pt;
+  width: 100%;
+  padding: 10px 50px 10px 10px;
+  vertical-align: top;
+  box-shadow: 0px 0px 0px 0px; }
+
+#sectionWrap section {
+  box-sizing: border-box;
+  padding: 25px;
+  vertical-align: top;
+  position: relative; }
+  #sectionWrap section:after {
+    content: "";
+    clear: both;
+    display: block; }
+  #sectionWrap section:nth-child(odd) {
+    background: #f7f7f7; }
+  #sectionWrap section .details {
+    width: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    vertical-align: top; }
+    #sectionWrap section .details input {
+      line-height: 40px;
+      height: 40px;
+      display: inline-block;
+      margin: 0 auto 15px;
+      font-size: 14pt;
+      width: 100%;
+      padding: 10px 50px 10px 10px;
+      vertical-align: top;
+      box-shadow: 0px 0px 0px 0px; }
+    #sectionWrap section .details textarea {
+      width: 100%;
+      padding: 10px;
+      min-height: 149px;
+      box-shadow: 0px 0px 0px 0px; }
+  #sectionWrap section .layout {
+    width: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    vertical-align: top;
+    margin-top: 20px;
+    padding: 0 25px 0 0; }
+    #sectionWrap section .layout .upload-image {
+      height: 220px;
+      line-height: 220px;
+      border: 1px dotted black;
+      text-align: center;
+      overflow: hidden;
+      display: block; }
+    #sectionWrap section .layout img {
+      max-height: 100%;
+      max-width: 100%; }
+    #sectionWrap section .layout .section_image {
+      width: 100%;
+      height: 100%; }
+  #sectionWrap section .remove_section {
+    color: #ff4d4d;
+    display: block;
+    text-align: center;
+    line-height: 40px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    font-style: normal; }
+    #sectionWrap section .remove_section:hover {
+      cursor: pointer; }
+
+#checkoutPerk .inside {
+  margin: 0;
+  padding: 0; }
+
+#checkoutPerk .btn-checkout {
+  display: block;
+  width: 100%; }
+
+#checkoutPerk section {
+  box-sizing: border-box;
+  padding: 25px;
+  vertical-align: top;
+  position: relative; }
+  #checkoutPerk section:after {
+    content: "";
+    clear: both;
+    display: block; }
+  #checkoutPerk section:nth-child(odd) {
+    background: #f7f7f7; }
+  #checkoutPerk section input {
+    line-height: 40px;
+    height: 40px;
+    display: inline-block;
+    margin: 0 auto 15px;
+    font-size: 14pt;
+    width: 100%;
+    padding: 10px 50px 10px 10px;
+    vertical-align: top;
+    box-shadow: 0px 0px 0px 0px; }
+  #checkoutPerk section textarea {
+    width: 100%;
+    padding: 10px;
+    min-height: 149px;
+    box-shadow: 0px 0px 0px 0px; }
+
+#sectionCarousel .photoWrap {
+  -webkit-column-count: 3;
+  -webkit-column-gap: 0;
+  -moz-column-count: 3;
+  -moz-column-gap: 0;
+  column-count: 3;
+  column-gap: 0; }
+  #sectionCarousel .photoWrap .photo {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    vertical-align: top;
+    line-height: 0;
+    font-size: 0;
+    text-align: center; }
+    #sectionCarousel .photoWrap .photo img {
+      max-width: 100%;
+      height: auto;
+      width: auto;
+      box-sizing: border-box;
+      padding: 15px; }
+    #sectionCarousel .photoWrap .photo:hover {
+      cursor: move; }
+      #sectionCarousel .photoWrap .photo:hover .button-remove {
+        opacity: 1; }
+    #sectionCarousel .photoWrap .photo .button-remove {
+      opacity: 0;
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      color: red;
+      font-weight: bold;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -o-border-radius: 50%;
+      border-radius: 50%;
+      background: white;
+      border: none;
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      -o-box-shadow: none;
+      box-shadow: none; }

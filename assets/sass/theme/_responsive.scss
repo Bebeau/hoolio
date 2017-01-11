@@ -1,7 +1,7 @@
 @media(max-height:900px) {
 	.block {
 		height: auto;
-		padding: 100px 0;
+		padding: 50px 0;
 	}
 	#top {
 		padding: 0;
@@ -63,20 +63,12 @@
 		.payment {
 			margin-top: 25px;
 			.price {
-				line-height: 100px;
 				font-size: 32pt;
-			}
-			.btn {
-				width: 100px;
-				height: 100px;
 			}
 		}
 	}
 }
 @media(max-width: 1280px) {
-	p {
-		font-size: 18pt;
-	}
 	.thirds {
 		margin: 50px auto;
 		article {
@@ -185,17 +177,15 @@
 		.payment {
 			margin-top: 25px;
 			.price {
-				line-height: 100px;
 				font-size: 32pt;
-			}
-			.btn {
-				width: 100px;
-				height: 100px;
 			}
 		}
 	}
 }
 @media(max-width: 1170px) {
+	#checkout {
+		height: 100vh;
+	}
 	.container {
 		width: 100%;
 		box-sizing: border-box;
@@ -210,6 +200,18 @@
 					}
 				}
 			}
+		}
+	}
+	#research {
+		#Preview {
+			.previewWrap {
+				width: 100%;
+			}
+		}
+	}
+	#introWrap {
+		img {
+			max-width: 100%;
 		}
 	}
 }
@@ -232,10 +234,20 @@
 			}
 		}
 	}
+	.checkoutPage {
+		article {
+			h3 {
+				margin-top: 0;
+			}
+		}
+	}
 	#checkout {
+		height: 530px;
 		.right {
+			height: 100%;
+			padding: 50px 0;
 			.copy {
-				padding: 0 50px 0 100px;
+				padding: 0 25px;
 				font-size: 12pt;
 				ul {
 					padding: 0 0 0 15px;
@@ -255,10 +267,21 @@
 			}
 		}
 	}
+	#page {
+		padding: 50px 0;
+	}
 	#apply {
 		.container {
 			p {
 				width: auto;
+			}
+		}
+	}
+	#help {
+		.copy {
+			padding-bottom: 75px;
+			img {
+				padding-top: 25px;
 			}
 		}
 	}
@@ -316,6 +339,20 @@
 		padding: 0 15px;
 	}
 }
+@media(max-width: 941px) {
+	header {
+		.extended {
+			#menu-header-menu {
+				display: none;
+			}
+		}
+	}
+}
+@media(max-width: 800px) {
+	.hide_mobile {
+		display: none;
+	}
+}
 @media(max-width: 768px) {
 	video {
 		display: none;
@@ -325,7 +362,7 @@
 	}
 	.block {
 		height: auto;
-		padding: 100px 0; 
+		padding: 50px 0; 
 	}
 	#top {
 		padding-top: 125px;
@@ -338,6 +375,9 @@
 			width: auto;
 			video, video.active {
 				display: none;
+			}
+			&:last-child {
+				padding-bottom: 25px;
 			}
 		}
 		#clientLogos {
@@ -362,6 +402,19 @@
 			top: 25px;
 		}
 	}
+	.brandVideoWrap {
+		.videoWrap {
+			iframe {
+				width: 640px;
+				height: 364px;
+			}
+		}
+	}
+	#research {
+		#Preview {
+			height: auto;
+		}
+	}
 	#help {
 		.copy {
 			img {
@@ -384,12 +437,45 @@
 			}
 		}
 	}
-	#meet {
-		ul#bubbles {
-			margin-top: 50px;
-			li {
-				width: 33.333333%;
-				margin: 25px 0 0 -4px;
+	ul#bubbles {
+		display: none;
+	}
+	#frameTabs {
+		height: auto;
+		.frame {
+			position: relative;
+			box-sizing: border-box;
+			padding: 50px 0;
+			opacity: 1;
+			.copy {
+				.half {
+					&.frameCopy {
+						opacity: 1;
+						@include transform(translate(0,0));
+						@include transition(all 0.3s $authenticMotion);
+					}
+					&.frameImage {
+						opacity: 1;
+						@include transform(translate(0,0));
+						@include transition(all 0.3s $authenticMotion);
+					}
+				}
+			}
+			&:nth-child(even) {
+				.copy {
+					.half {
+						&.frameCopy {
+							opacity: 1;
+							@include transform(translate(100%,0));
+							@include transition(all 0.3s $authenticMotion);
+						}
+						&.frameImage {
+							opacity: 1;
+							@include transform(translate(-100%,0));
+							@include transition(all 0.3s $authenticMotion);
+						}
+					}
+				}
 			}
 		}
 	}
@@ -404,6 +490,12 @@
 	}
 }
 @media(max-width: 414px) {
+	.dropdown {
+		width: 100%;
+		button {
+			font-size: 14pt;
+		}
+	}
 	.circleClose {
 		position: absolute;
 		top: 5px;
@@ -447,24 +539,17 @@
 	}
 	#bubblesMobile {
 		display: block !important;
+		margin: 20px -15px 0;
 		.frame {
 			@include transition(all 0.3s $authenticMotion);
 			img {
 				max-width: 50%;
-				@include transform(translate(0,15px));
+				height: auto;
+				margin: 0 auto;
+				display: block;
 			}
 			.titleBar {
 				position: relative;
-				.icon {
-					display: inline-block;
-					height: 50px;
-					width: auto;
-					max-width: 100px;
-					min-width: 50px;
-					vertical-align: middle;
-					margin-right: 15px;
-					margin-left: 25px;
-				}
 				h3 {
 					margin: 0;
 					line-height: 50px;
@@ -472,13 +557,23 @@
 					padding: 15px 0;
 					text-align: left;
 					@include transition(all 0.3s $authenticMotion);
+					img {
+						display: inline-block;
+						height: 50px;
+						width: auto;
+						max-width: 100px;
+						min-width: 50px;
+						vertical-align: middle;
+						margin-right: 15px;
+						margin-left: 25px;
+					}
 				}
 			}
 			.frameCopy {
 				display: none;
 				padding-bottom: 25px;
 			}
-			p, h3 {
+			p, h3, ul {
 				color: white;
 			}
 			p {
@@ -488,22 +583,40 @@
 				font-size: 14pt;
 			}
 			&:first-child {
-				background: radial-gradient($orange, darken($orange, 10%));
+				background: $blue;
+				.btn {
+					color: $blue;
+				}
 			}
 			&:nth-child(2) {
-				background: radial-gradient($purp, darken($purp, 10%));
+				background: $purp;
+				.btn {
+					color: $purp;
+				}
 			}
 			&:nth-child(3) {
-				background: radial-gradient($pink, darken($pink, 10%));
+				background: $pink;
+				.btn {
+					color: $pink;
+				}
 			}
 			&:nth-child(4) {
-				background: radial-gradient(lighten($blue, 25%), lighten($blue, 15%));
+				background: $orange;
+				.btn {
+					color: $orange;
+				}
 			}
 			&:nth-child(5) {
-				background: radial-gradient(lighten($gold, 5%), darken($gold, 5%));
+				background: $gold;
+				.btn {
+					color: $gold;
+				}
 			}
 			&:last-child {
-				background: radial-gradient(darken($green, 10%), darken($green, 20%));
+				background: $green;
+				.btn {
+					color: $green;
+				}
 			}
 			.icon {
 				top: 0;
@@ -511,6 +624,7 @@
 			}
 			.btn {
 				display: block;
+				background: white;
 			}
 			&.open {
 				.circleClose {
@@ -520,7 +634,7 @@
 			}
 		}
 	}
-	#bubbles {
+	#bubbles, #frameTabs {
 		display: none !important;
 	}
 	video {
@@ -579,23 +693,16 @@
 	body {
 		&.home {
 			header {
-				background: $blue;
 				width: 100%;
 				padding: 0;
 				#Menu {
-					top: 20px;
-					.bar {
-						background: $white;
-					}
+					top: 30px;
 				}
 				.logo {
-					padding: 15px 0 15px 15px;
+					padding: 15px;
 					svg {
 						height: 58px;
 						width: auto;
-						path {
-							fill: white;
-						}
 					}
 				}
 			}
@@ -604,12 +711,33 @@
 			background: $blue;
 			width: 100%;
 			padding: 0;
-			#Menu {
-				top: 20px;
+			.short, .extended {
 				padding: 0;
+			}
+			.header-left {
+				.logo {
+					padding: 15px !important;
+				}
+				.hiring {
+					color: #ccc;
+					margin-left: -4px;
+				}
+			}
+			.short {
+				.header-right {
+					.Menu {
+						right: 0;
+					}
+				}
+			}
+			.Menu {
+				top: 0 !important;
+				padding: 30px 0;
+				margin: 0 15px 0 0;
 				background: transparent;
+				overflow-x: hidden;
 				.bar {
-					background: $white;
+					background: $blue;
 				}
 			}
 			.logo {
@@ -618,7 +746,7 @@
 					height: 58px;
 					width: auto;
 					path {
-						fill: white;
+						fill: $blue;
 					}
 				}
 			}
@@ -626,6 +754,15 @@
 				&.open {
 					#Menu {
 						padding: 0;
+					}
+				}
+			}
+			.menu-dropdown {
+				ul {
+					li {
+						a {
+							font-size: 18pt;
+						}
 					}
 				}
 			}
@@ -640,33 +777,31 @@
 		}
 	}
 	#top {
-		padding-top: 125px;
+		padding: 100px 0 25px;
 		min-height: auto;
 		height: auto;
+		.arrow {
+			display: none;
+		}
 		h1 {
 			margin: 25px 0 0;
 		}
+		.brandVideo {
+			display: none;
+		}
 		.half {
 			width: auto;
+			margin: 0;
+			padding: 0;
+			iframe {
+				width: 360px;
+				height: 200px;
+			}
 			video, video.active {
 				display: none;
 			}
-		}
-		#clientLogos {
-			position: relative;
-			top: auto;
-			left: auto;
-			right: auto;
-			margin: 25px auto;
-			span {
-				width: 105px;
-				@include transform(scale(1));
-				padding: 15px;
-				box-sizing: border-box;
-				vertical-align: middle;
-				img {
-					vertical-align: middle;
-				}
+			&:last-child {
+				padding: 0 15px;
 			}
 		}
 	}
@@ -677,10 +812,11 @@
 			img {
 				width: 150px;
 				height: auto;
+				padding: 0;
 			}
 			h1 {
 				padding: 0;
-				margin-top: 25px;
+				margin-top: 0px;
 			}
 		}
 		ul {
@@ -720,6 +856,24 @@
 								float: none;
 							}
 						}
+					}
+				}
+			}
+		}
+	}
+	#research {
+		#Preview {
+			.previewWrap {
+				margin-top: 50px;
+				&:first-child {
+					margin-top: 0;
+				}
+				.half {
+					width: 100%;
+					padding: 0 15px;
+					.btn {
+						margin: 0 auto;
+						display: block;
 					}
 				}
 			}
@@ -796,13 +950,52 @@
 		}
 	}
 	#pageBanner {
-		height: 25vh;
+		height: auto;
 		padding-top: 94px;
 		h1 {
 			font-size: 32pt;
 		}
 		&.default {
-			height: 25vh;
+			height: auto;
+		}
+	}
+	#introWrap {
+		padding-top: 0;
+		h2 {
+			&.introTitle {
+				padding: 15px 0 0;
+				font-size: 24pt;
+			}
+		}
+		blockquote {
+			padding: 25px;
+			font-size: 18pt;
+			line-height: 21pt;
+		}
+	}
+	#sectionWrap {
+		section {
+			width: auto;
+			padding: 15px;
+			.layout, .details {
+				width: 100%;
+				padding: 0;
+				img {
+					padding: 0;
+					text-align: center;
+				}
+			}
+			.details {
+				padding: 0;
+				&:nth-child(odd), &:nth-child(even) {
+					padding: 15px;
+				}
+			}
+			&:nth-child(even) {
+				.layout, .details {
+					@include transform(translate(0,0));
+				}
+			}
 		}
 	}
 	#page {
@@ -860,23 +1053,30 @@
 	}
 	.container {
 		width: auto;
+		padding: 0;
 	}
 	#checkout {
 		overflow: scroll;
+		height: auto;
 		.close {
 			top: 5px;
 			right: 15px;
 		}
+		.m-scooch {
+			padding: 101px 15px 75px;
+		}
 		.left,.right {
 			float: none;
 			width: 100%;
+			height: auto;
 			margin: 0;
 		}
-		.left {
+		.arrow {
 			display: none;
 		}
 		.right {
-			height: 100vh;
+			height: auto;
+			padding-bottom: 200px;
 			.copy {
 				padding: 0 25px;
 				h2 {
@@ -896,6 +1096,12 @@
 		}
 		form {
 			margin: 25px auto 0;
+		}
+	}
+	.checkoutPage {
+		article {
+			width: auto;
+			padding: 25px 0 0;
 		}
 	}
 }

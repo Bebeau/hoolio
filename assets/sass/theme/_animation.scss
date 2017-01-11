@@ -24,20 +24,20 @@
 }
 [data-animation="slideInLeft"] {
 	position: relative;
-	@include transform(translate(-200%,0));
-	@include transition(transform 1s $authenticMotion);
+	@include transform(translate(-100%,0));
+	@include transition(transform 0.5s $authenticMotion);
 	&.slideIn {
 		@include transform(translate(0,0));
-		@include transition(transform 1s $authenticMotion);
+		@include transition(transform 0.5s $authenticMotion);
 	}
 }
 [data-animation="slideInRight"] {
 	position: relative;
-	@include transform(translate(200%,0));
-	@include transition(transform 1s $easeInOutBack);
+	@include transform(translate(100%,0));
+	@include transition(transform 0.5s $authenticMotion);
 	&.slideIn {
 		@include transform(translate(0,0));
-		@include transition(transform 1s $easeInOutBack);
+		@include transition(transform 0.5s $authenticMotion);
 	}
 }
 [data-animation="bubble"] {
@@ -51,6 +51,17 @@
 		@include transition(transform 0.5s $easeInOutBack);
 	}
 
+}
+@include keyframes(bounce) {
+    0%, 20%, 50%, 80%, 100% {
+        @include transform(translateY(0));
+    }
+    40% {
+        @include transform(translateY(-10px));
+    }
+    60% {
+        @include transform(translateY(-5px));
+    }
 }
 @media (max-width: 1200px) {
 }

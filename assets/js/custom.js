@@ -136,22 +136,102 @@ var init = {
 	onReady: function() {
 		init.preLoad();
 		init.openMenu();
-		init.bubbleOpen();
-		init.bubbleClose();
+		// init.bubbleOpen();
+		// init.bubbleClose();
 		init.SVG();
 		init.dropdown();
 		init.contactBtn();
 		init.count();
 		init.scooch();
 		init.wizard();
-		init.playVideo();
 		if(!isMobile) {
 			init.topVideos();
+			init.playVideo();
 		}
 		init.tooltip();
-		init.subNav();
 		init.mobileBubbles();
 		init.checkoutBtn();
+		init.newsletterBtn();
+		init.showHeader();
+		init.bubbleTab();
+		init.tabDisplay();
+		init.brandVideo();
+		init.headerDropdown();
+	},
+	headerDropdown: function() {
+		jQuery('.drop a').click(function(e){
+			e.preventDefault();
+			if(jQuery('.drop .sub-menu').hasClass("down")) {
+				jQuery('.drop .sub-menu').removeClass("down");
+				var link = jQuery(this).attr("href");
+				if(link != "#") {
+					jQuery(location).attr("href", link);
+				}
+			} else {
+				jQuery('.drop .sub-menu').addClass("down");
+			}
+		});
+	},
+	brandVideo: function() {
+		jQuery('.brandVideo').click(function(){
+			jQuery('.brandVideoWrap').addClass("in");
+			jQuery('.videoWrap').prepend('<iframe src="https://player.vimeo.com/video/192497090?&amp;autoplay=true" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>');
+			jQuery('body').addClass("freeze");		
+		});
+		jQuery('.brandVideoWrap .exit').click(function(){
+			jQuery('.brandVideoWrap').removeClass("in");
+			jQuery('.videoWrap iframe').remove();
+			jQuery('body').removeClass("freeze");
+		});
+	},
+	tabDisplay: function() {
+		jQuery('.thirds li').click(function(e){
+			e.preventDefault();
+			var pageID = jQuery(this).attr("data-page");
+			if(!jQuery(this).hasClass("active")) {
+				jQuery('#Preview .fa-spin').addClass("load");
+				jQuery('.thirds li').removeClass("active");
+				jQuery(this).addClass("active");
+				jQuery.ajax({
+		            url: ajaxurl,
+		            type: "GET",
+		            data: {
+		                postID: pageID,
+		                action: 'showTab'
+		            },
+		            dataType: 'html',
+		            beforeSend: function() {
+		            	jQuery('#Preview .previewText').removeClass("in");
+		            	jQuery('#Preview .previewImage').removeClass("in");
+		            },
+		            error : function(jqXHR, textStatus, errorThrown) {
+		                window.alert(jqXHR + " :: " + textStatus + " :: " + errorThrown);
+		            },
+		            success: function(data) {
+		            	jQuery('#Preview .fa-spin').removeClass("load");
+		            	jQuery('#Preview').html(data);
+		            },
+		            complete: function() {
+		            	setTimeout(
+		            		function(){
+		            			jQuery('#Preview .previewText').addClass("in");
+		            			jQuery('#Preview .previewImage').addClass("in");
+		            		}, 250
+	            		);
+		            }
+		        });
+			}
+		})
+	},
+	showHeader: function() {
+		jQuery(window).scroll(function() {    
+			var scroll = jQuery(window).scrollTop();
+			if (scroll >= 50) {
+			    jQuery('.extended').addClass("in");
+			} else {
+			    jQuery('.extended').removeClass("in");
+			}
+		});
 	},
 	preLoad: function() {
         // Wait for window load
@@ -183,17 +263,6 @@ var init = {
 				section.slideUp();
 				frame.removeClass("open");
 			}
-		});
-	},
-	subNav: function() {
-		var height = jQuery('#pageBanner').outerHeight();
-		jQuery(window).scroll(function(){
-		    if(jQuery(window).scrollTop() > (height - 50)){
-		       jQuery("#Menu").addClass("blue");
-		    }
-		    else{
-		       jQuery("#Menu").removeClass("blue");
-		    }
 		});
 	},
 	tooltip: function() {
@@ -252,12 +321,12 @@ var init = {
 		var vid = jQuery('#help video');
     	vid.prop('loop', false);
     	playing = false;
-        if (move.isOnScreen(vid)) {
+        if (move.isOnScreen(jQuery('#help .vidPlay'))) {
         	vid[0].play();
         	playing = true;
         } else {
         	jQuery(window).scroll(function(){
-        		if (move.isOnScreen(vid) && !playing) {
+        		if (move.isOnScreen(jQuery('#help .vidPlay')) && !playing) {
             		vid[0].play();
             		playing = true;
             	}
@@ -363,85 +432,151 @@ var init = {
 	    });
 	},
 	openMenu: function() {
-		jQuery('#Menu').click(function(){
+		jQuery('.Menu').click(function(){
 	    	if(jQuery('header').hasClass("open")) {
 	    		jQuery('header').removeClass("open");
-	    		jQuery('.menu ul li').removeClass("in").dequeue();
+	    		jQuery('.menu-dropdown ul li').removeClass("in").dequeue();
 	    	} else {
 	    		jQuery('header').addClass("open");
-	    		jQuery('.menu ul li').each(function(e){
+	    		jQuery('.menu-dropdown ul li').each(function(e){
 	    			jQuery(this).delay(50*e).queue(function(){
 	    				jQuery(this).addClass("in");
 	    			});
 	    		});
 	    	}
 	    });
-	    jQuery('.menu').addClass("outer");
-	    jQuery('.menu ul').addClass("inner");
+	    jQuery('.menu-dropdown').addClass("outer");
+	    jQuery('.menu-dropdown ul').addClass("inner");
 	},
-	bubbleOpen: function() {
+	// bubbleOpen: function() {
+	// 	jQuery('.bubblewrap').click(function(e){
+	// 		e.preventDefault();
+
+	// 		var item = jQuery(this).parent();
+	// 		var icon = item.find("i");
+	// 		var numb = jQuery(this).attr("data-numb");
+
+	// 		item.addClass("open");
+	// 		icon.addClass("hide");
+	// 		jQuery('body').addClass("freeze");
+	// 		setTimeout(
+	// 			function() {
+	// 				jQuery('.frame',item).addClass("in");
+	// 				jQuery('.bubblenav').addClass("in");
+	// 				jQuery('.nav-'+numb).addClass("selected");
+	// 			}, 250
+	// 		);
+	// 	});
+	// },
+	// bubbleClose: function() {
+	// 	jQuery('.bubblenav li').click(function(e){
+	// 		e.preventDefault();
+
+	// 		var numb = jQuery(this).attr("data-numb");
+	// 		var tab = jQuery('.bubble-'+numb).parent();
+
+	// 		jQuery('#Menu').hide();
+
+	// 		if(jQuery(this).hasClass("circleClose")) {
+	// 			jQuery('.frame').removeClass("in");
+	// 			jQuery('.bubblenav').removeClass("in");
+	// 			jQuery('.nav').removeClass("selected");
+	// 			setTimeout(
+	// 				function() {
+	// 					jQuery('#bubbles li').removeClass("open");
+	// 				}, 250
+	// 			);
+	// 			setTimeout(
+	// 				function() {
+	// 					jQuery('#bubbles li').find("i").removeClass("hide");
+	// 				}, 500
+	// 			);
+	// 			jQuery('#Menu').show();
+	// 			jQuery('body').removeClass("freeze");
+	// 		} else {
+	// 			jQuery('.nav').removeClass("selected");
+	// 			jQuery('#bubbles li').removeClass("open");
+	// 			tab.addClass("open");
+	// 			tab.find("i").addClass("hide");
+	// 			setTimeout(
+	// 				function() {
+	// 					jQuery('.frame').removeClass("in");
+	// 					jQuery('.frame',tab).addClass("in");
+	// 					jQuery('.nav-'+numb).addClass("selected");
+	// 				}, 250
+	// 			);
+	// 		}
+	// 	});
+	// },
+	bubbleTab: function() {
+
+		jQuery('.bubble-1').addClass("active");
+		jQuery('.frame-1 .frameCopy').addClass("in");
+		jQuery('.frame-1 .frameImage').addClass("in");
+		jQuery('.frame-1').addClass("in");
+
 		jQuery('.bubblewrap').click(function(e){
 			e.preventDefault();
-
-			var item = jQuery(this).parent();
-			var icon = item.find("i");
 			var numb = jQuery(this).attr("data-numb");
-
-			item.addClass("open");
-			icon.addClass("hide");
-			jQuery('body').addClass("freeze");
-			setTimeout(
-				function() {
-					jQuery('.frame',item).addClass("in");
-					jQuery('.bubblenav').addClass("in");
-					jQuery('.nav-'+numb).addClass("selected");
-				}, 250
-			);
+			// change active tab
+			jQuery('.bubblewrap').removeClass("active");
+			jQuery(this).addClass("active");
+			// remove current tab content
+			jQuery('.frameCopy').removeClass("in");
+			jQuery('.frameImage').removeClass("in");
+			jQuery('.frame').removeClass("in");
+			// scroll into position
+			jQuery('html,body').animate({
+			   	scrollTop: jQuery("#bubbles").offset().top + 65
+			});
+			// animate change
+			jQuery('.frame-'+numb).addClass("in");
+			jQuery('.frame-'+numb+' .frameCopy').addClass("in");
+			jQuery('.frame-'+numb+' .frameImage').addClass("in");
 		});
 	},
-	bubbleClose: function() {
-		jQuery('.bubblenav li').click(function(e){
-			e.preventDefault();
-
-			var numb = jQuery(this).attr("data-numb");
-			var tab = jQuery('.bubble-'+numb).parent();
-
-			jQuery('#Menu').hide();
-
-			if(jQuery(this).hasClass("circleClose")) {
-				jQuery('.frame').removeClass("in");
-				jQuery('.bubblenav').removeClass("in");
-				jQuery('.nav').removeClass("selected");
-				setTimeout(
-					function() {
-						jQuery('#bubbles li').removeClass("open");
-					}, 250
-				);
-				setTimeout(
-					function() {
-						jQuery('#bubbles li').find("i").removeClass("hide");
-					}, 500
-				);
-				jQuery('#Menu').show();
-				jQuery('body').removeClass("freeze");
-			} else {
-				jQuery('.nav').removeClass("selected");
-				jQuery('#bubbles li').removeClass("open");
-				tab.addClass("open");
-				tab.find("i").addClass("hide");
-				setTimeout(
-					function() {
-						jQuery('.frame').removeClass("in");
-						jQuery('.frame',tab).addClass("in");
-						jQuery('.nav-'+numb).addClass("selected");
-					}, 250
-				);
-			}
-		});
+	newsletterSubmit: function() {
+		var Frm = jQuery('#newsletterFrm');
+		jQuery('#newsletterFrm .btn-submit').html('<i class="fa fa-spinner fa-spin"></i>');
+        jQuery.ajax({
+            url: ajaxurl,
+            type: Frm.attr('method'),
+            data: {
+            	email: jQuery('#newsletteremail').val(),
+            	action: 'newsletterSubmit'
+            },
+            dataType: 'html',
+            success: function(data) {
+            	init.newsletterResponse(data);
+            }
+        });
+        return false;
+	},
+	newsletterResponse: function(response) {
+        if (response === "Success") {
+        	jQuery('#newsletterFrm .btn-submit').addClass("success").html('<i class="fa fa-check"></i>');
+        	jQuery("#newsletteremail").val("");
+            setTimeout(
+            	function() {
+            		jQuery('#newsletterFrm .btn-submit').removeClass("success").html('<i class="fa fa-envelope"></i>');
+            	}, 2500
+        	);
+        }
+        if (response === "E") {
+         	jQuery('#newsletterFrm .btn-submit').addClass('error').html('<i class="fa fa-ban"></i>');
+         	setTimeout(
+            	function() {
+            		jQuery('#newsletterFrm .btn-submit').removeClass('error').html('<i class="fa fa-envelope"></i>');
+            	}, 2500
+        	);
+        }
+	},
+	newsletterBtn: function() {
+		jQuery('#newsletterFrm').submit(init.newsletterSubmit);
 	},
 	contactSubmit: function() {
 		var Frm = jQuery('#contactfrm');
-    	jQuery('<i class="fa fa-spinner fa-spin"></i>').prependTo('.btn-submit');
+    	jQuery('#contactfrm .btn-submit').html('<i class="fa fa-spinner fa-spin"></i>');
         jQuery.ajax({
             url: ajaxurl,
             type: Frm.attr('method'),
@@ -466,23 +601,23 @@ var init = {
         return false;
 	},
 	contactResponse: function(response) {
-        jQuery('.btn-submit i').remove();
+        jQuery('#contactfrm .btn-submit i').remove();
         if (response === "Success") {
-        	jQuery('.btn-submit').replaceWith('<button class="btn btn-submit success"><i class="fa fa-check"></i></button>');
+        	jQuery('#contactfrm .btn-submit').replaceWith('<button class="btn btn-submit success"><i class="fa fa-check"></i></button>');
             jQuery("input").val("");
             jQuery("textarea").val("");
             jQuery('.dropdown button').html('Area of interest <i class="fa fa-angle-down"></i>');
             setTimeout(
             	function() {
-            		jQuery('.btn-submit').replaceWith('<button class="btn btn-submit">Submit</button>');
+            		jQuery('#contactfrm .btn-submit').replaceWith('<button class="btn btn-submit">Submit</button>');
             	}, 2500
         	);
         }
         if (response === "E") {
-         	jQuery('.btn-submit').replaceWith('<button class="btn btn-submit error"><i class="fa fa-ban"></i></button>');
+         	jQuery('#contactfrm .btn-submit').replaceWith('<button class="btn btn-submit error"><i class="fa fa-ban"></i></button>');
          	setTimeout(
             	function() {
-            		jQuery('.btn-submit').replaceWith('<button class="btn btn-submit">Submit</button>');
+            		jQuery('#contactfrm .btn-submit').replaceWith('<button class="btn btn-submit">Submit</button>');
             	}, 2500
         	);
         }
@@ -492,21 +627,21 @@ var init = {
 	},
 	checkoutResponse: function(data) {
 		if(data === "Success") {
-            jQuery('.btn-submit').addClass("success").html('<i class="fa fa-check"></i>');
+            jQuery('#checkoutFrm .btn-submit').addClass("success").html('<i class="fa fa-check"></i>');
             jQuery("input").val("");
             jQuery('.month button').html('Month <i class="fa fa-angle-down"></i>');
             jQuery('.year button').html('Year <i class="fa fa-angle-down"></i>');
             setTimeout(
             	function() {
-            		jQuery('.btn-submit').removeClass("success").html('Pay Now');
+            		jQuery('#checkoutFrm .btn-submit').removeClass("success").html('Pay Now');
             		jQuery('.right').addClass("confirm");
             	}, 1500
         	);
 		} else {
-        	jQuery('.btn-submit').addClass("error").html('<i class="fa fa-ban"></i>');
+        	jQuery('#checkoutFrm .btn-submit').addClass("error").html('<i class="fa fa-ban"></i>');
          	setTimeout(
             	function() {
-            		jQuery('.btn-submit').removeClass("error").html('Pay Now');
+            		jQuery('#checkoutFrm .btn-submit').removeClass("error").html('Pay Now');
             	}, 1500
         	);
 		}
@@ -516,11 +651,11 @@ var init = {
         if (response.error) {
         	// Show the errors on the form:
 		    frm.find('.payment-errors').text(response.error.message);
-		    jQuery('.btn-submit').addClass("error").html('<i class="fa fa-ban"></i>');
+		    jQuery('#checkoutFrm .btn-submit').addClass("error").html('<i class="fa fa-ban"></i>');
          	setTimeout(
             	function() {
-            		jQuery('.btn-submit').removeClass("error").html('Pay Now');
-            		jQuery('.btn-submit').prop('disabled', false); // Re-enable submission
+            		jQuery('#checkoutFrm .btn-submit').removeClass("error").html('Pay Now');
+            		jQuery('#checkoutFrm .btn-submit').prop('disabled', false); // Re-enable submission
             		frm.find('.payment-errors').html("");
             	}, 1500
         	);
@@ -553,7 +688,8 @@ var init = {
 		var frm = jQuery('#checkoutFrm');
 		frm.submit(
 			function(e) {
-				jQuery('.btn-submit').html('<i class="fa fa-spinner fa-spin"></i>');
+				e.preventDefault();
+				jQuery('#checkoutFrm .btn-submit').html('<i class="fa fa-spinner fa-spin"></i>');
 				// Disable the submit button to prevent repeated clicks:
 				frm.find('.btn-submit').prop('disabled', true);
 				// Request a token from Stripe:

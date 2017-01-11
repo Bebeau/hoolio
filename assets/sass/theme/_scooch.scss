@@ -22,6 +22,11 @@
             }
         }
     }
+    &.m-scooch-checkout {
+        .m-item {
+            padding: 0 25px 0 15px;
+        }
+    }
     img  {
         -ms-interpolation-mode:  bicubic;  
     }
@@ -77,7 +82,7 @@
         background: white;
         @include border-top-radius(50%);
         @include border-bottom-radius(50%);
-        margin: 0 1px;
+        margin: 0 5px;
         &.m-active {
             background: none;
             border: 1px solid white;
