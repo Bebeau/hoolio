@@ -137,12 +137,13 @@ body {
 	margin: 15px auto;
 	padding: 0 15px;
 	line-height: 60px;
-	font-size: 24pt;
+	font-size: 21pt;
 	color: $white;
 	border: none;
 	background: linear-gradient($blue, darken($blue, 5%));
 	font-family: 'din condensed';
 	letter-spacing: 0;
+	white-space: no-wrap;
 	@include border-top-radius(3px);
 	@include border-bottom-radius(3px);
 	@include transition(all 0.3s $easeInOutBack);

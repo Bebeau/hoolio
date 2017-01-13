@@ -66,7 +66,7 @@
 				<article class="outer">
 					<div class="inner" data-animation="slideUp">
 						<h2>A New Way To Do Market Research</h2>
-						<a href="<?php echo site_url('checkout'); ?>" class="btn">Buy Presale</a>
+						<a href="<?php echo site_url('checkout'); ?>" class="btn">Enroll Now</a>
 					</div>
 				</article>
 			</section>
