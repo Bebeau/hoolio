@@ -25,7 +25,7 @@ endwhile; endif; ?>
 
 <section id="page" class="section">
 	<img class="hoolio_logo" data-animation="slideUp" src="<?php echo bloginfo('template_directory'); ?>/assets/images/logo_icon.svg" alt="Hoolio" />
-	<h2>Hoolio is here to guide<br />you through the use cases.</h2>
+	<h2>Below are some of the best types <br />of feedback data for Hoolio.</h2>
 	<?php
 		$args=array(
 			'post_type' => 'usecases',

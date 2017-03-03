@@ -15,3 +15,4 @@ stripe/test/simpletest/
 stripe/vendor/
 stripe/composer.lock
 stripe/clover.xml
+assets/sass/.sass-cache/

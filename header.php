@@ -185,7 +185,7 @@
 					<button type="submit" class="btn btn-submit"><i class="fa fa-envelope"></i></button>
 				</form>
 				<a href="<?php echo site_url('checkout'); ?>" class="btn">
-					Buy Presale
+					Enroll Now
 				</a>
 			</span>
 
