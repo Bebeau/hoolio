@@ -1166,6 +1166,11 @@ header {
 		}
 	}
 }
+.page-template-about {
+	#page {
+		background: radial-gradient(white, darken(white, 5%));
+	}
+}
 .page-template-use-cases {
 	#page {
 		padding-bottom: 0;
@@ -1469,7 +1474,7 @@ ul#bubbles {
 .pagelax {
 	background: white;
 	position: relative;
-	z-index: 3;
+	z-index: 11;
 	box-shadow: 1px 1px 1px rgba(0,0,0,0.25);
 }
 #testimonials {
@@ -1555,7 +1560,7 @@ ul#bubbles {
 		display: block;
 	}
 	&.default {
-		background: $blue;
+		background: $darkblue;
 		height: auto;
 		&:after {
 			display: none;
@@ -1655,7 +1660,7 @@ ul#bubbles {
 	}
 }
 #apply {
-	padding: 100px 0;
+	padding: 0 0 100px;
 	text-align: center;
 	background: white;
 	position: relative;

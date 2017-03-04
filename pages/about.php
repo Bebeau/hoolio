@@ -18,8 +18,6 @@ get_header(); ?>
 				echo '</div>';
 			?>
 
-		<div class="pagelax" data-parallax='{"y" : -150, "smoothness": 1}'>
-
 		<?php
 			echo '<section id="page" class="section">';
 				echo '<div class="container">';
@@ -27,6 +25,10 @@ get_header(); ?>
 			    echo '</div>';
 			echo '</section>';
 
+			?>
+
+			<div class="pagelax" data-parallax='{"y" : -150, "smoothness": 1}'>
+		<?php
 			echo '<section id="team">';
 				echo '<img src="'.get_bloginfo('template_directory').'/assets/images/team.jpg" alt="" />';
 			echo '</section>';
