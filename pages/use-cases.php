@@ -13,17 +13,12 @@ if (have_posts()) : while (have_posts()) : the_post();
 		<div id="pageBanner" data-parallax='{"y" : 230, "smoothness": 1}' style="background:url(<?php echo $image[0]; ?>) no-repeat scroll center / cover">
 	<?php } else { ?>
 		<div id="pageBanner" class="default" data-parallax='{"y" : 230, "smoothness": 1}'>
-	<?php } ?>
-			<div class="outer">
-				<div class="inner">
-					<?php the_title("<h1>","</h1>"); ?>
-				</div>
-			</div>
-		</div>
-	<?php
+	<?php }
+		the_title("<h1>","</h1>");
+	echo '</div>';
 endwhile; endif; ?>
 
-<section id="page" class="section">
+<section id="page" class="section" data-parallax='{"y" : -150, "smoothness": 1}'>
 	<img class="hoolio_logo" data-animation="slideUp" src="<?php echo bloginfo('template_directory'); ?>/assets/images/logo_icon.svg" alt="Hoolio" />
 	<h2>Below are some of the best types <br />of feedback data for Hoolio.</h2>
 	<?php
@@ -56,7 +51,7 @@ endwhile; endif; ?>
 							echo '<div class="frameCopy">';
 								the_post_thumbnail();
 								the_content();
-								echo '<a href="'.get_site_url('checkout').'" class="btn">Be a Wizard</a>';
+								echo '<a href="'.get_site_url('pricing').'" class="btn">Be a Wizard</a>';
 							echo '</div>';
 						echo '</div>';
 					echo '</div>';
@@ -90,7 +85,7 @@ endwhile; endif; ?>
 									echo '<img class="frame-icon" src="'.$iconURL.'" alt="'.get_the_title().'" />';
 									the_title("<h3>","</h3>");
 									the_content();
-									echo '<a href="'.site_url('checkout').'" class="btn">Be a Wizard</a>';
+									echo '<a href="'.site_url('pricing').'" class="btn">Be a Wizard</a>';
 								echo '</div>';
 								echo '<div class="half frameImage">';
 									$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID), 'large' );

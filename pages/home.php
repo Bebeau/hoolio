@@ -17,9 +17,9 @@ get_header(); ?>
         		echo '<h1>Surveys that dont suck.</h1>';
         	}
         	if(!empty($section1_desc)) {
-        		echo '<p data-animation="slideUp">'.$section1_desc.'</p>';
+        		echo '<p>'.$section1_desc.'</p>';
         	} else {
-        		echo '<p data-animation="slideUp">Create full interactive surveys that look and feel like a game. No market research skills required.</p>';
+        		echo '<p>Create full interactive surveys that look and feel like a game. No market research skills required.</p>';
         	}
         	echo '<iframe src="https://player.vimeo.com/video/192497090" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
         	echo '<div class="client_logos">';

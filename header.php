@@ -143,7 +143,6 @@
 			</a>
 		</div>
 		<div class="header-right">
-
 			<span class="hide_mobile">
 				<?php
 					$menu_args = array(
@@ -166,47 +165,13 @@
 					);
 					wp_nav_menu($menu_args);
 				?>
-				<form role="form" method="POST" action="" id="newsletterFrm">
-					<input type="email" name="newsletteremail" id="newsletteremail" placeholder="Enter Email For Updates" />
-					<button type="submit" class="btn btn-submit"><i class="fa fa-envelope"></i></button>
-				</form>
-				<a href="<?php echo site_url('checkout'); ?>" class="btn">
-					Enroll Now
+				<a href="<?php echo site_url('pricing'); ?>" class="btn">
+					Get Started
+				</a>
+				<a href="#" class="btn-login btn">
+					Login
 				</a>
 			</span>
-
-			<div class="Menu">
-				<span class="bar cross"></span>
-				<span class="bar middle"></span>
-				<span class="bar cross"></span>
-			</div>
 		</div>
 	</div>
-	<?php 
-	echo '<div class="menu-dropdown outer">';
-		$menu_args = array(
-			'theme_location'  => 'main-menu',
-			'menu'            => 'Main Menu',
-			'container'       => '',
-			'container_class' => '',
-			'container_id'    => '',
-			'menu_class'      => 'nav',
-			'menu_id'         => '',
-			'echo'            => true,
-			'fallback_cb'     => 'wp_page_menu',
-			'before'          => '',
-			'after'           => '',
-			'link_before'     => '',
-			'link_after'      => '',
-			'items_wrap'      => '<ul id="%1$s" class="%2$s inner">%3$s</ul>',
-			'depth'           => 0,
-			'walker'          => ''
-		);
-		wp_nav_menu($menu_args);
-		echo '<div class="socialNavWrap">';
-			get_template_part( 'partials/theme/social', 'icons' );
-			echo '<div class="legal">&copy; '.date("Y").' '.get_bloginfo("name").'. All Rights Reserved.</div>';
-		echo '</div>';
-	echo '</div>';
-	?>
 </header>

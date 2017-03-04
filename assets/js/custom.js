@@ -370,7 +370,7 @@ var init = {
 			jQuery('.frame').removeClass("in");
 			// scroll into position
 			jQuery('html,body').animate({
-			   	scrollTop: jQuery("#bubbles").offset().top + 65
+			   	scrollTop: jQuery("#bubbles").offset().top
 			});
 			// animate change
 			jQuery('.frame-'+numb).addClass("in");

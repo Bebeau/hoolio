@@ -61,7 +61,7 @@ body {
 	-moz-font-smoothing: antialiased !important;
 	-o-font-smoothing: antialiased !important;
 	font-smoothing: antialiased !important;
-	text-shadow: 1px 1px 1px rgba(0,0,0,0.04);
+	text-shadow: 0 1px 1px rgba(0,0,0,0.02);
 	font-family: 'din light', sans-serif;
 	overflow-x: hidden;
 	&.page {
@@ -135,11 +135,12 @@ body {
 	margin: 15px auto;
 	padding: 0 15px;
 	line-height: 60px;
-	font-size: 21pt;
+	font-size: 18pt;
 	color: white;
 	border: none;
-	background: linear-gradient($btn, darken($btn, 5%));
-	font-family: 'din condensed';
+	text-transform: uppercase;
+	background: $btn;
+	font-family: 'din medium';
 	letter-spacing: 0;
 	white-space: no-wrap;
 	@include border-top-radius(3px);
@@ -525,6 +526,10 @@ p {
 		h3 {
 			color: $green;
 			font-weight: bold;
+			margin: 0;
+		}
+		p {
+			margin-top: 5px;
 		}
 	}
 }
@@ -546,7 +551,7 @@ header {
 		}
 		#menu-header-menu {
 			list-style: none;
-			margin: 0;
+			margin: 0 5px 0 0;
 			padding: 0;
 			display: inline-block;
 			li {
@@ -555,6 +560,7 @@ header {
 				position: relative;
 				font-size: 12pt;
 				a {
+					font-family: "DIN medium";
 					color: $blue;
 					@include transition(all 0.3s $authenticMotion);
 					&:hover {
@@ -602,22 +608,6 @@ header {
 			}
 		}
 	}
-	.short {
-		padding: 0 25px 0 15px;
-		box-sizing: border-box;
-		.header-left {
-			.logo {
-				border: none;
-			}
-		}
-		.header-right {
-			.Menu {
-				position: absolute;
-				top: 15px;
-				right: 25px;
-			}
-		}
-	}
 	.header-left {
 		display: inline-block;
 		.logo {
@@ -640,6 +630,7 @@ header {
 			margin-left: -4px;
 			color: $blue;
 			font-size: 10pt;
+			font-family: "DIN Medium";
 			@include transition(all 0.3s $authenticMotion);
 			&:hover {
 				border: 1px solid $green;
@@ -660,67 +651,22 @@ header {
 			color: $blue;
 			text-transform: uppercase;
 		}
-		form {
-			display: inline-block;
-			@include border-top-radius(10px);
-			@include border-bottom-radius(10px);
-			overflow: hidden;
-			border: 2px solid $blue;
-			vertical-align: middle;
-			width: 255px;
-			position: relative;
-			margin: 0 15px;
-			line-height: normal;
-			input {
-				display: inline-block;
-				border: none;
-				line-height: 40px;
-				width: 100%;
-				padding: 0 60px 0 10px;
-				box-sizing: border-box;
-				font-size: 12pt;
-				text-transform: none;
-				letter-spacing: normal;
-				color: $blue;
-				&:focus {
-					outline: none;
-				}
-			}
-			.btn {
-				position: absolute;
-				top: 0;
-				right: 0;
-				width: 50px;
-				color: white;
-				border: none;
-				line-height: 40px;
-				background: $green;
-				font-size: 18pt;
-				margin-left: -50px;
-				padding: 0;
-				display: block;
-				@include transition(all 0.3s $authenticMotion);
-				&:hover {
-					background: darken($green, 10%);
-					@include transition(all 0.3s $authenticMotion);
-				}
-				&.error {
-					background: lighten(red, 25%);
-					@include transition(all 0.3s $authenticMotion);
-				}
-			}
-		}
 		.btn {
 			display: inline-block;
 			width: auto;
-			font-size: 16pt;
+			font-size: 14pt;
 			text-transform: uppercase;
 			line-height: 40px;
-			margin: 0 auto;
+			margin: 0 5px;
 			vertical-align: middle;
 			color: white;
 			&:hover {
 				letter-spacing: 0;
+			}
+			&.btn-login {
+				background: none;
+				border: 1px solid $blue;
+				color: $blue;
 			}
 		}
 	}
@@ -916,20 +862,6 @@ header {
 		width: 853px;
 		height: 480px;
 		padding: 25px 0;
-	}
-}
-.cta {
-	position: relative;
-	z-index: 2;
-	background: white;
-	text-align: center;
-	padding: 50px 15px;
-	box-sizing: border-box;
-	h1 {
-		margin: 0;
-	}
-	p {
-		margin: 5px 0 25px;
 	}
 }
 #research {
@@ -1534,12 +1466,24 @@ ul#bubbles {
 		}
 	}
 }
+.pagelax {
+	background: white;
+	position: relative;
+	z-index: 3;
+	box-shadow: 1px 1px 1px rgba(0,0,0,0.25);
+}
 #testimonials {
 	background: radial-gradient(white, darken(white, 5%));
 	margin-top: -150px;
 	position: relative;
 	z-index:2;
-	box-shadow: 1px 1px 1px rgba(0,0,0,0.15);
+	box-shadow: 1px 1px 1px rgba(0,0,0,0.25);
+	h2 {
+		font-size: 36pt;
+		color: $darkblue;
+		line-height: normal;
+		margin-top: 0;
+	}
 	.quotewrap {
 		margin-bottom: 100px;
 		padding: 100px 0;
@@ -1605,9 +1549,14 @@ ul#bubbles {
 #pageBanner {
 	height: 100vh;
 	text-align: center;
+	&:before {
+		content: "";
+		height: 82px;
+		display: block;
+	}
 	&.default {
 		background: $blue;
-		height: 25vh;
+		height: auto;
 		&:after {
 			display: none;
 		}
@@ -1628,6 +1577,27 @@ ul#bubbles {
 		z-index: 2;
 		font-size: 72pt;
 		margin: 0;
+		padding: 50px 0;
+	}
+	h2 {
+
+	}
+}
+.cta {
+	position: relative;
+	z-index: 2;
+	background: white;
+	text-align: center;
+	padding: 50px 15px;
+	box-sizing: border-box;
+	h1 {
+		margin: 0;
+		font-size: 32pt;
+		color: $darkblue;
+		line-height: normal;
+	}
+	p {
+		margin: 5px 0 25px;
 	}
 }
 #page {
@@ -1635,17 +1605,19 @@ ul#bubbles {
 	background: white;
 	position: relative;
 	z-index: 10;
+	box-shadow: 1px 1px 1px rgba(0,0,0,0.25);
 	h2 {
 		margin-top: 0;
 	}
 	.hoolio_logo {
 		height: 100px;
 		width: auto;
+		margin: 0 auto;
 	}
 }
 .section {
 	h2 {
-		color: $grey;
+		color: $darkblue;
 		font-size: 36pt;
 		text-align: center;
 	}
@@ -1685,12 +1657,15 @@ ul#bubbles {
 #apply {
 	padding: 100px 0;
 	text-align: center;
+	background: white;
+	position: relative;
+	z-index: 3;
 	h2 {
 		margin: 0;
 	}
 	p {
 		width: 825px;
-		margin: 50px auto;
+		margin: 25px auto 50px;
 		text-align: center;
 	}
 }
@@ -1903,10 +1878,13 @@ input[placeholder], [placeholder], *[placeholder] {
 	}
 }
 #sectionWrap {
+	position: relative;
+	z-index: 3;
+	background: white;
 	section {
 		width: 1170px;
 		margin: 0 auto;
-		padding: 100px 0;
+		padding: 25px 0;
 		.layout {
 			width: 50%;
 			box-sizing: border-box;

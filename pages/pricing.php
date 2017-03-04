@@ -128,7 +128,7 @@ $contentTitle = get_post_meta($post->ID,'contentTitle', true);
 	</div>
 </section>
 
-<section id="page" class="section checkoutPage">
+<section id="page" class="section checkoutPage" data-parallax='{"y" : -150, "smoothness": 1}'>
 	<div class="container">
 		<h2><?php echo $contentTitle; ?></h2>
 		<?php list_perks($post); ?>
