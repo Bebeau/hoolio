@@ -241,7 +241,6 @@ var user = {
     selectTabPage: function() {
     	jQuery('.copy select').change(function(){
     		var tab = jQuery(this).parent().parent().attr("data-tab");
-    		console.log(tab);
     		jQuery('#section3_tab'+tab+'_page').val(this.value);
     	});
     },

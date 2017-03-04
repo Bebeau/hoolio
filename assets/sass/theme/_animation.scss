@@ -1,6 +1,5 @@
 [data-animation="slideUp"] {
 		display: block;
-		margin: 0 auto;
 		position: relative;
 		opacity: 0;
 		@include transform(translate(0,50px));
@@ -40,18 +39,6 @@
 		@include transition(transform 0.5s $authenticMotion);
 	}
 }
-[data-animation="bubble"] {
-	box-sizing: border-box;
-	opacity: 0;
-	@include transform(scale(.75));
-	@include transition(transform 0.5s $easeInOutBack);
-	&.load {
-		opacity: 1;
-		@include transform(scale(1));
-		@include transition(transform 0.5s $easeInOutBack);
-	}
-
-}
 @include keyframes(bounce) {
     0%, 20%, 50%, 80%, 100% {
         @include transform(translateY(0));
@@ -88,9 +75,5 @@
 	}
 	[data-animation="slideInRight"] {
 		@include transform(translate(0,0));
-	}
-	[data-animation="bubble"] {
-		opacity: 1;
-		@include transform(scale(1));
 	}
 }

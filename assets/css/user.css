@@ -37,9 +37,36 @@
 .column-cite {
   width: 175px; }
 
+#sections .inside, #homepage_sections .inside {
+  margin: 0;
+  padding: 0; }
+
+#sections section, #homepage_sections section {
+  box-sizing: border-box;
+  padding: 25px; }
+  #sections section:nth-child(even), #homepage_sections section:nth-child(even) {
+    background: #f9f9f9; }
+  #sections section h3, #homepage_sections section h3 {
+    margin-top: 0; }
+  #sections section#section2 .tab label, #homepage_sections section#section2 .tab label {
+    margin-top: 0; }
+  #sections section#section2 .tab textarea, #homepage_sections section#section2 .tab textarea {
+    min-height: 110px; }
+
 #sections input, #sections textarea, #homepage_sections input, #homepage_sections textarea {
   display: block;
-  width: 100%; }
+  width: 100%;
+  font-size: 12pt; }
+
+#sections label, #homepage_sections label {
+  line-height: 18pt;
+  margin-top: 5px; }
+
+#sections input, #homepage_sections input {
+  box-shadow: 0 0 0;
+  line-height: 30px;
+  padding: 0 10px;
+  box-sizing: border-box; }
 
 .button-remove {
   opacity: 0;
@@ -91,13 +118,11 @@
   padding: 10px;
   box-sizing: border-box; }
 
-#tabs .tab {
-  padding: 25px;
+.tab {
+  padding: 5px;
   box-sizing: border-box;
   vertical-align: middle; }
-  #tabs .tab:nth-child(even) {
-    background: #ebebeb; }
-  #tabs .tab .icon {
+  .tab .icon {
     width: 200px;
     border: 1px dashed #ccc;
     height: 200px;
@@ -107,21 +132,21 @@
     display: inline-block;
     position: relative;
     vertical-align: middle; }
-    #tabs .tab .icon:hover .remove-image {
+    .tab .icon:hover .remove-image {
       opacity: 1; }
-      #tabs .tab .icon:hover .remove-image:hover {
+      .tab .icon:hover .remove-image:hover {
         cursor: pointer; }
-    #tabs .tab .icon img {
+    .tab .icon img {
       max-height: 100%;
       max-width: 100%;
       width: auto;
       padding: 15px;
       box-sizing: border-box; }
-  #tabs .tab .copy {
+  .tab .copy {
     width: 50%;
     display: inline-block;
     vertical-align: middle; }
-    #tabs .tab .copy label {
+    .tab .copy label {
       display: block; }
 
 #content input, #content label {

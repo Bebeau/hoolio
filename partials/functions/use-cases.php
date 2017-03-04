@@ -78,7 +78,7 @@ function save_use_case_postdata( $post_id ) {
         return;
 
     // check for nonce
-    if ( !isset( $_POST['testimonials_noncename'] ) || !wp_verify_nonce( $_POST['testimonials_noncename'], 'testimonials' ) )
+    if ( !isset( $_POST['icon_noncename'] ) || !wp_verify_nonce( $_POST['icon_noncename'], 'icon' ) )
         return;
 
     // save icon if exists

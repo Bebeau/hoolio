@@ -44,9 +44,44 @@
 }
 
 #sections, #homepage_sections {
+	.inside {
+		margin: 0;
+		padding: 0;
+	}
+	section {
+		box-sizing: border-box;
+		padding: 25px;
+		&:nth-child(even) {
+			background: #f9f9f9;
+		}
+		h3 {
+			margin-top: 0;
+		}
+		&#section2 {
+			.tab {
+				label {
+					margin-top: 0;
+				}
+				textarea {
+					min-height: 110px;
+				}
+			}
+		}
+	}
 	input, textarea {
 		display: block;
 		width: 100%;
+		font-size: 12pt;
+	}
+	label {
+		line-height: 18pt;
+		margin-top: 5px;
+	}
+	input {
+		box-shadow: 0 0 0;
+		line-height: 30px;
+		padding: 0 10px;
+		box-sizing: border-box;
 	}
 }
 .button-remove {
@@ -109,47 +144,42 @@
 		box-sizing: border-box;
 	}
 }
-#tabs {
-	.tab {
-		padding: 25px;
-		box-sizing: border-box;
+.tab {
+	padding: 5px;
+	box-sizing: border-box;
+	vertical-align: middle;
+	.icon {
+		width: 200px;
+		border: 1px dashed #ccc;
+		height: 200px;
+		line-height: 200px;
+		text-align: center;
+		margin: 0 15px 0 0;
+		display: inline-block;
+		position: relative;
 		vertical-align: middle;
-		&:nth-child(even) {
-			background: #ebebeb;
-		}
-		.icon {
-			width: 200px;
-			border: 1px dashed #ccc;
-			height: 200px;
-			line-height: 200px;
-			text-align: center;
-			margin: 0 15px 0 0;
-			display: inline-block;
-			position: relative;
-			vertical-align: middle;
-			&:hover {
-				.remove-image {
-					opacity: 1;
-					&:hover {
-						cursor: pointer;
-					}
+		&:hover {
+			.remove-image {
+				opacity: 1;
+				&:hover {
+					cursor: pointer;
 				}
 			}
-			img {
-				max-height: 100%;
-				max-width: 100%;
-				width: auto;
-				padding: 15px;
-				box-sizing: border-box;
-			}
 		}
-		.copy {
-			width: 50%;
-			display: inline-block;
-			vertical-align: middle;
-			label {
-				display: block;
-			}
+		img {
+			max-height: 100%;
+			max-width: 100%;
+			width: auto;
+			padding: 15px;
+			box-sizing: border-box;
+		}
+	}
+	.copy {
+		width: 50%;
+		display: inline-block;
+		vertical-align: middle;
+		label {
+			display: block;
 		}
 	}
 }

@@ -34,7 +34,7 @@ if (!function_exists( 'load_custom_scripts' ) ) {
 add_action( 'wp_print_styles', 'load_custom_scripts' );
 
 // Thumbnail Support
-add_theme_support( 'post-thumbnails', array('post', 'page', 'usecases') );
+add_theme_support( 'post-thumbnails', array('post', 'page', 'usecases', 'testimonials') );
 
 // Load widget areas
 if ( function_exists('register_sidebar') ) {

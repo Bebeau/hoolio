@@ -133,21 +133,7 @@
 	</div>
 
 <header>
-	<div class="short">
-		<div class="header-left">
-			<a href="<?php echo site_url();?>" class="logo">
-				<img class="svg" src="<?php echo bloginfo('template_directory');?>/assets/images/logo.svg" alt="hoolio" />
-			</a>
-		</div>
-		<div class="header-right">
-			<div class="Menu">
-				<span class="bar cross"></span>
-				<span class="bar middle"></span>
-				<span class="bar cross"></span>
-			</div>
-		</div>
-	</div>
-	<div class="extended">
+	<div class="extended in">
 		<div class="header-left">
 			<a href="<?php echo site_url();?>" class="logo">
 				<img class="svg" src="<?php echo bloginfo('template_directory');?>/assets/images/logo.svg" alt="hoolio" />

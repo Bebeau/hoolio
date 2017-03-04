@@ -1,76 +1,51 @@
-		
-		<div id="clientLogos">
-			<h3>Just A Few Customer's We've Worked With...</h3>
-			<span><img src="<?php echo bloginfo('template_directory');?>/assets/images/client_logos/walmart.png" alt="" /></span>
-			<span><img src="<?php echo bloginfo('template_directory');?>/assets/images/client_logos/kroger.png" alt="" /></span>
-			<span><img src="<?php echo bloginfo('template_directory');?>/assets/images/client_logos/unilever.png" alt="" /></span>
-			<span><img src="<?php echo bloginfo('template_directory');?>/assets/images/client_logos/uc.png" alt="" /></span>
-			<span><img src="<?php echo bloginfo('template_directory');?>/assets/images/client_logos/shopper.png" alt="" /></span>
-			<span><img src="<?php echo bloginfo('template_directory');?>/assets/images/client_logos/cac.png" alt="" /></span>
-		</div>
-
 		<?php
-		if(is_front_page()) {
+		if(!is_front_page()) {
+			
 			query_posts( array(
-		            'order' => 'DESC',
-		            'post_type' => 'testimonials'
+		            'order' => 'RAND',
+		            'post_type' => 'testimonials',
+		            'posts_per_page' => 2
 		        )
 		    );
-		    if (have_posts()) :
-		    	echo '<section id="testimonials">';
-					echo '<div class="outer">';
-						echo '<div class="inner" data-animation="slideUp">';
-		    	echo '<div class="m-scooch m-fluid m-scooch-testimonials">';
-		    	echo '<div class="m-scooch-inner">';
-		    	while (have_posts()) : the_post();
 
-		        $name = get_post_meta($post->ID,'testimonial_name', true);
-		        $title = get_post_meta($post->ID,'testimonial_title', true);
-		        $company = get_post_meta($post->ID,'testimonial_company', true);
+		    if (have_posts()) : while (have_posts()) : the_post();
 
-		        if(!empty($name) && !empty($title) && !empty($company)) {
-		            echo '<div class="m-item active">';
-		                echo '<blockquote>'.get_the_content().'</blockquote>';
-		                echo '<cite>';
-		                    echo '<span class="name">'.$name.'</span>';
-		                    echo '<span class="title">'.$title.'</span>';
-		                    echo '<span class="company">'.$company.'</span>';
-		                echo '</cite>';
-		            echo '</div>';
-		        }
+		        // $name = get_post_meta($post->ID,'testimonial_name', true);
+		        // $title = get_post_meta($post->ID,'testimonial_title', true);
+		        // $company = get_post_meta($post->ID,'testimonial_company', true);
+
+		        the_content();
+
 		        endwhile;
-		        echo '</div>';
 		    endif;
-		?>
-		<?php
-			$c = 1;
-		    if (have_posts()) :
-		    	echo '<div class="m-scooch-controls m-scooch-bulleted">';
-		    	while (have_posts()) : the_post();
-		    	echo '<a href="" data-m-slide="'.$c.'"></a>';
-		    	$c++;
-		    	endwhile;
-		    	echo '</div>';
-		    	echo '</div>';
 
-		    	echo '</div>';
-		        echo '</div>';
-		        echo '</section>';
-		    endif;
 		    wp_reset_query();
-	    }
-	    ?>
+		}
+		?>
+
 	    <?php 
-	    if(!is_page('Checkout')) { ?>
-		    <section id="cta">
-				<article class="outer">
-					<div class="inner" data-animation="slideUp">
-						<h2>A New Way To Do Market Research</h2>
-						<a href="<?php echo site_url('checkout'); ?>" class="btn">Enroll Now</a>
-					</div>
-				</article>
-			</section>
-		<?php } ?>
+	    if(!is_page('Checkout')) {
+	    	echo '<section class="cta">';
+				$cta_title = get_post_meta($post->ID,'cta_title',true);
+	            $cta_desc = get_post_meta($post->ID,'cta_desc',true);
+	            $cta_button = get_post_meta($post->ID,'cta_button',true);
+	            if(!empty($cta_title)) {
+	            	echo '<h1>'.$cta_title.'</h1>';
+	            } else {
+	            	echo '<h1>Sign up now to join our first class of Wizards.</h1>';
+	            }
+				if(!empty($cta_desc)) {
+					echo '<p>'.$cta_desc.'</p>';
+				} else {
+					echo '<p>Join the disruptors saying no more to bad surveys</p>';
+				}
+				if(!empty($cta_button)) {
+					echo '<a href="'.site_url('checkout').'" class="btn">'.$cta_button.'</a>';
+				} else {
+					echo '<a href="'.site_url('checkout').'" class="btn">Buy Presale</a>';
+				}
+			echo '</section>';
+		} ?>
 
 		<footer>
 			<div class="outer">
@@ -103,6 +78,8 @@
 				</div>
 			</div>
 		</footer>
+
+	</div>
 
 	</body>
 </html>

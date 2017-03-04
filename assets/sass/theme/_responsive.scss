@@ -1,26 +1,4 @@
-@media(max-height:900px) {
-	.block {
-		height: auto;
-		padding: 50px 0;
-	}
-	#top {
-		padding: 0;
-		height: 100vh;
-	}
-	#metrics {
-		padding-bottom: 0;
-		.half {
-			article {
-				vertical-align: bottom;
-				&.statsWrap {
-					padding-bottom: 100px;
-				}
-			}
-		}
-	}
-	#cta {
-		padding: 50px 0;
-	}
+@media(max-height:899px) {
 	#meet {
 		.copy {
 			.half {
@@ -133,19 +111,7 @@
 			display: block;
 		}
 	}
-	#metrics {
-		.half {
-			padding: 0 15px;
-			article {
-				&.phone {
-					img {
-						margin: 0 0 0 -175px;
-						max-height: 600px;
-					}
-				}
-			}
-		}
-	}
+
 	#contact {
 		height: auto;
 		padding: 50px 0;
@@ -216,15 +182,8 @@
 	}
 }
 @media(max-width: 1024px) {
-	#metrics {
-		.half {
-			width: 100%;
-			padding: 0;
-			article.statsWrap {
-				position: relative;
-				left: -50px;
-			}
-		}
+	.block {
+		padding: 50px 0;
 	}
 	.thirds {
 		width: 100%;
@@ -241,6 +200,44 @@
 			}
 		}
 	}
+	.client_logos {
+		img {
+			height: 35px;
+			margin: 0 15px;
+		}
+	}
+	#top {
+		padding: 82px 0 150px;
+	}
+	#meet {
+		.squares {
+			article {
+				width: 300px;
+				height: 250px;
+				padding: 25px;
+				p {
+					font-size: 16pt;
+					line-height: normal;
+				}
+			}
+		}
+	} 
+	#testimonials {
+		.quotewrap {
+			padding: 0;
+			.quote {
+				.quote_copy {
+					width: 400px;
+				}
+				.quote_image {
+					display: block;
+				}
+				&:nth-child(even) {
+					@include transform(translate(0,50px));
+				}
+			}
+		} 
+	} 
 	#checkout {
 		height: 530px;
 		.right {
@@ -315,19 +312,6 @@
 			}
 		}
 	}
-	#metrics {
-		.half {
-			article {
-				width: auto;
-				.half {
-					article {
-						width: 50%;
-						vertical-align: top;
-					}
-				}
-			}
-		}
-	}
 	#testimonials {
 		blockquote {
 			width: auto;
@@ -364,76 +348,78 @@
 		height: auto;
 		padding: 50px 0; 
 	}
+	.client_logos {
+		img {
+			height: 30px;
+		}
+	}
 	#top {
-		padding-top: 125px;
 		min-height: auto;
 		height: auto;
+		padding-bottom: 50px;
 		h1 {
 			margin: 25px 0 0;
 		}
-		.half {
-			width: auto;
-			video, video.active {
-				display: none;
-			}
-			&:last-child {
-				padding-bottom: 25px;
-			}
-		}
-		#clientLogos {
-			position: relative;
-			top: auto;
-			left: auto;
-			right: auto;
-			margin: 25px auto;
-			span {
-				width: 105px;
-				@include transform(scale(1));
-				padding: 15px;
-				box-sizing: border-box;
-				vertical-align: middle;
-				img {
-					vertical-align: middle;
-				}
-			}
-		}
-		#clientLogos {
-			margin: 0;
-			top: 25px;
-		}
-	}
-	.brandVideoWrap {
-		.videoWrap {
-			iframe {
-				width: 640px;
-				height: 364px;
-			}
+		iframe {
+			width: 100%;
+			height: 440px;
 		}
 	}
 	#research {
 		#Preview {
 			height: auto;
+			.previewWrap {
+				margin-bottom: 25px;
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+			.half {
+				box-sizing: border-box;
+				padding: 15px;
+			}
+			h3 {
+				margin: 0;
+			}
+			p {
+				font-size: 14pt;
+				line-height: normal;
+				margin-top: 5px;
+			}
+			.btn {
+				margin-top: 0;
+			}
 		}
 	}
+	#testimonials {
+		.quotewrap {
+			padding-top: 50px;
+			.quote {
+				.quote_image {
+					@include transform(translate(0, 6px));
+				}
+				.quote_copy {
+					blockquote {
+						font-size: 14pt;
+					}
+				}
+			}
+		}
+	}
+	#meet {
+		.squares {
+			article {
+				&:last-child {
+					margin: 25px;
+				}
+			}
+		} 
+	} 
 	#help {
 		.copy {
 			img {
 				display: block;
 				margin: 50px auto 0;
-			}
-		}
-	}
-	#metrics {
-		.half {
-			article {
-				&.statsWrap {
-					margin: 0;
-					left: 0;
-					padding: 0 15px;
-				}
-				&.phone {
-					display: none;
-				}
 			}
 		}
 	}
@@ -667,14 +653,12 @@
 	h3 {
 		font-size: 18pt;
 	}
-	p{
-		font-size: 16pt;
-	}
 	.block {
-		padding: 50px 0;
+		padding: 25px 15px;
 		height: auto;
 		h1 {
-			line-height: 38px;
+			line-height: normal;
+			font-size: 21pt;
 		}
 	}
 	.thirds {
@@ -691,6 +675,10 @@
 		}
 	}
 	body {
+		p {
+			font-size: 12pt;
+			line-height: normal;
+		}
 		&.home {
 			header {
 				width: 100%;
@@ -777,87 +765,96 @@
 		}
 	}
 	#top {
-		padding: 100px 0 25px;
+		padding: 100px 15px 25px;
 		min-height: auto;
 		height: auto;
-		.arrow {
-			display: none;
+		iframe {
+			width: 100%;
+			height: 220px;
+			padding: 15px 0;
+		}
+		p {
+			margin: 0;
 		}
 		h1 {
-			margin: 25px 0 0;
-		}
-		.brandVideo {
-			display: none;
-		}
-		.half {
-			width: auto;
 			margin: 0;
-			padding: 0;
-			iframe {
-				width: 360px;
-				height: 200px;
-			}
-			video, video.active {
-				display: none;
-			}
-			&:last-child {
-				padding: 0 15px;
-			}
+			padding-top: 15px;
+		}
+	}
+	.client_logos {
+		p {
+			margin-bottom: 10px;
+		}
+		img {
+			height: 25px;
+			margin: 5px;
 		}
 	}
 	#meet {
-		padding-bottom: 0;
-		.copy {
-			padding: 0 15px 25px;
-			img {
-				width: 150px;
-				height: auto;
-				padding: 0;
-			}
-			h1 {
-				padding: 0;
-				margin-top: 0px;
-			}
+		.desc {
+			margin: 5px 0 15px;
 		}
-		ul {
-			position: relative;
-			overflow: hidden;
-			padding-top: 75px;
-			li {
-				width: 50%;
-				display: inline-block;
-				margin: 0 0 25px -4px;
-			}
-			&.bubblenav {
-				padding: 0;
-				margin: 0;
-				display: inherit;
-				li {
+		.squares {
+			article {
+				width: 100%;
+				height: 150px;
+				margin: 5px 0;
+				padding: 15px;
+				p {
+					strong {
+						font-size: 14pt;
+					}
+				}
+				&:nth-child(2) {
 					margin: 0;
 				}
 			}
-			&#bubbles {
-				li {
-					&.open {
-						@include transform(scale(1));
-					}
-					.frame {
-						position: absolute;
+		}
+	}
+	#testimonials {
+		.quotewrap {
+			padding: 0;
+			margin: 0;
+			@include transform(translate(0,-35px));
+			.quote {
+				width: 100%;
+				display: block;
+				@include transform(translate(0,0));
+				.quote_copy {
+					width: 100%;
+					display: block;
+					@include transform(translate(0,0));
+					position: relative;
+					z-index: 1;
+					blockquote {
 						width: 100%;
-						height: 100%;
-						top: 0;
-						left: 0;
-						right: 0;
-						bottom: 0;
-						.copy {
-							width: auto !important;
-							.half {
-								width: 100%;
-								float: none;
-							}
-						}
+						margin: 0;
+						padding-top: 65px;
+						font-size: 14pt;
+					}
+					cite {
+						margin-top: 5px;
+						font-size: 12pt;
 					}
 				}
+				.quote_image {
+					display: block;
+					text-align: center;
+					position: relative;
+					z-index: 2;
+					@include transform(translate(0,50px));
+				}
+				&:nth-child(2) {
+					@include transform(translate(0,0));
+					.quote_image {
+						text-align: center;
+					}
+				}
+			}
+		}
+		.client_logos {
+			p {
+				margin-bottom: 15px;
 			}
 		}
 	}
@@ -871,6 +868,13 @@
 				.half {
 					width: 100%;
 					padding: 0 15px;
+					box-sizing: border-box;
+					h3 {
+						margin: 15px 0 0;
+					}
+					p {
+						margin-top: 5px;
+					}
 					.btn {
 						margin: 0 auto;
 						display: block;
@@ -879,47 +883,11 @@
 			}
 		}
 	}
-	#metrics {
-		.half {
-			width: auto;
-			article {
-				&.phone {
-					display: none;
-				}
-				.half {
-					margin: 50px auto;
-				}
-				img {
-					padding: 0 15px;
-					box-sizing: border-box;
-				}
-				.stat {
-					padding: 0 15px;
-					span {
-						font-size: 24pt;
-					}
-				}
-				&.statsWrap {
-					padding-bottom: 0;
-				}
-			}
-		}
-	}
-	#testimonials {
-		padding: 25px 0;
-		blockquote {
-			font-size: 18pt;
-		}
-		cite {
-			margin-top: 25px;
-		}
-	}
-	#cta {
-		padding: 25px 0;
-		h2 {
+	.cta {
+		padding: 25px 15px;
+		h1 {
 			line-height: normal;
-			font-size: 24pt;
-			margin-bottom: 25px;
+			font-size: 21pt;
 		}
 	}
 	#signUp {
@@ -928,6 +896,14 @@
 			h2 {
 				font-size: 32pt;
 				line-height: 48px;
+			}
+		}
+	}
+	#help {
+		.copy {
+			padding: 0 0 25px;
+			img {
+				margin-top: 0;
 			}
 		}
 	}
