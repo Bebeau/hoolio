@@ -345,7 +345,7 @@ p {
 	}
 }
 #partnership {
-	padding: 100px 0;
+	padding: 150px 0 50px;
 	background: #ebebeb;
 	position: relative;
 	z-index: 10;
@@ -1767,6 +1767,9 @@ input[placeholder], [placeholder], *[placeholder] {
 	}
 	p {
 		margin: 0;
+		&:last-child {
+			margin-top: 25px;
+		}
 	}
 	img {
 		max-width: 1170px;

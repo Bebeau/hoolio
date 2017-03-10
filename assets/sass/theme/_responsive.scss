@@ -173,9 +173,32 @@
 		}
 	}
 	#introWrap {
-		img {
-			max-width: 100%;
+		article {
+			width: 100%;
+			box-sizing: border-box;
+			padding: 0 50px;
 		}
+		img {
+			max-width: 600px;
+			padding-bottom: 0;
+		}
+	}
+	#sectionWrap {
+		section {
+			width: 100%;
+		}
+		.subFeature {
+			text-align: center;
+			h2 {
+				margin: 0 0 25px;
+			}
+			img {
+				max-width: 800px;
+			}
+		}
+	}
+	#checkout {
+		padding-bottom: 100px;
 	}
 }
 @media(max-width: 1024px) {
@@ -218,7 +241,14 @@
 				}
 			}
 		}
-	} 
+	}
+	#pIntro {
+		article {
+			width: 100%;
+			box-sizing: border-box;
+			padding: 0 50px;
+		}
+	}
 	#testimonials {
 		.quotewrap {
 			padding: 0;
@@ -334,6 +364,33 @@
 	}
 }
 @media(max-width: 768px) {
+	#checkout {
+		article {
+			width: 225px;
+			h2 {
+				margin-top: 0;
+				font-size: 16pt;
+			}
+			p {
+				margin-bottom: 25px;
+				font-size: 14pt;
+			}
+			.btn {
+				width: 100%;
+				padding: 0;
+			}
+			&.blue {
+				ul {
+					margin: 0 0 0 15px;
+					padding: 0;
+					li {
+						font-size: 12pt;
+						line-height: normal;
+					}
+				}
+			}
+		}
+	}
 	video {
 		display: none;
 	}
@@ -472,6 +529,19 @@
 	}
 }
 @media(max-width: 414px) {
+	#checkout {
+		box-sizing: border-box;
+		padding: 125px 15px 250px;
+		p {
+			margin: 5px 0 25px;
+		}
+		article {
+			width: 100%;
+			&.blue {
+				margin: 50px 0 25px;
+			}
+		}
+	}
 	.dropdown {
 		width: 100%;
 		button {
@@ -808,6 +878,9 @@
 		}
 	}
 	#testimonials {
+		h2 {
+			font-size: 18pt;
+		}
 		.quotewrap {
 			padding: 0;
 			margin: 0;
@@ -842,6 +915,7 @@
 				}
 				&:nth-child(2) {
 					@include transform(translate(0,0));
+					display: none;
 					.quote_image {
 						text-align: center;
 					}
@@ -924,8 +998,12 @@
 	#pageBanner {
 		height: auto;
 		padding-top: 94px;
+		&:before {
+			display: none;
+		}
 		h1 {
 			font-size: 32pt;
+			padding: 25px 0;
 		}
 		&.default {
 			height: auto;
@@ -933,16 +1011,38 @@
 	}
 	#introWrap {
 		padding-top: 0;
+		img {
+			max-width: 100%;
+			width: auto;
+			padding-top: 15px;
+		}
+		article {
+			padding: 0 15px;
+		}
 		h2 {
 			&.introTitle {
 				padding: 15px 0 0;
 				font-size: 24pt;
 			}
 		}
-		blockquote {
-			padding: 25px;
+	}
+	blockquote {
+		padding: 25px;
+		font-size: 18pt;
+		line-height: auto;
+	}
+	#pIntro {
+		padding: 25px 0;
+		h2 {
 			font-size: 18pt;
-			line-height: 21pt;
+			margin-top: 0;
+		}
+	}
+	#partnership {
+		box-sizing: border-box;
+		padding: 50px 15px;
+		form {
+			width: 100%;
 		}
 	}
 	#sectionWrap {

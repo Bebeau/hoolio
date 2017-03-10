@@ -2072,7 +2072,7 @@ p {
         color: #919192; }
 
 #partnership {
-  padding: 100px 0;
+  padding: 150px 0 50px;
   background: #ebebeb;
   position: relative;
   z-index: 10;
@@ -3474,6 +3474,8 @@ input[placeholder], [placeholder], *[placeholder] {
     line-height: normal; }
   #introWrap p {
     margin: 0; }
+    #introWrap p:last-child {
+      margin-top: 25px; }
   #introWrap img {
     max-width: 1170px;
     height: auto;
@@ -3859,8 +3861,23 @@ footer {
     width: 991px; }
   #research #Preview .previewWrap {
     width: 100%; }
+  #introWrap article {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 50px; }
   #introWrap img {
-    max-width: 100%; } }
+    max-width: 600px;
+    padding-bottom: 0; }
+  #sectionWrap section {
+    width: 100%; }
+  #sectionWrap .subFeature {
+    text-align: center; }
+    #sectionWrap .subFeature h2 {
+      margin: 0 0 25px; }
+    #sectionWrap .subFeature img {
+      max-width: 800px; }
+  #checkout {
+    padding-bottom: 100px; } }
 
 @media (max-width: 1024px) {
   .block {
@@ -3883,6 +3900,10 @@ footer {
     #meet .squares article p {
       font-size: 16pt;
       line-height: normal; }
+  #pIntro article {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 50px; }
   #testimonials .quotewrap {
     padding: 0; }
     #testimonials .quotewrap .quote .quote_copy {
@@ -3955,6 +3976,23 @@ footer {
     display: none; } }
 
 @media (max-width: 768px) {
+  #checkout article {
+    width: 225px; }
+    #checkout article h2 {
+      margin-top: 0;
+      font-size: 16pt; }
+    #checkout article p {
+      margin-bottom: 25px;
+      font-size: 14pt; }
+    #checkout article .btn {
+      width: 100%;
+      padding: 0; }
+    #checkout article.blue ul {
+      margin: 0 0 0 15px;
+      padding: 0; }
+      #checkout article.blue ul li {
+        font-size: 12pt;
+        line-height: normal; }
   video {
     display: none; }
   .mobile {
@@ -4061,6 +4099,15 @@ footer {
       line-height: normal; } }
 
 @media (max-width: 414px) {
+  #checkout {
+    box-sizing: border-box;
+    padding: 125px 15px 250px; }
+    #checkout p {
+      margin: 5px 0 25px; }
+    #checkout article {
+      width: 100%; }
+      #checkout article.blue {
+        margin: 50px 0 25px; }
   .dropdown {
     width: 100%; }
     .dropdown button {
@@ -4325,6 +4372,8 @@ footer {
       font-size: 14pt; }
     #meet .squares article:nth-child(2) {
       margin: 0; }
+  #testimonials h2 {
+    font-size: 18pt; }
   #testimonials .quotewrap {
     padding: 0;
     margin: 0;
@@ -4374,7 +4423,8 @@ footer {
         -moz-transform: translate(0, 0);
         -ms-transform: translate(0, 0);
         -o-transform: translate(0, 0);
-        transform: translate(0, 0); }
+        transform: translate(0, 0);
+        display: none; }
         #testimonials .quotewrap .quote:nth-child(2) .quote_image {
           text-align: center; }
   #testimonials .client_logos p {
@@ -4421,19 +4471,38 @@ footer {
   #pageBanner {
     height: auto;
     padding-top: 94px; }
+    #pageBanner:before {
+      display: none; }
     #pageBanner h1 {
-      font-size: 32pt; }
+      font-size: 32pt;
+      padding: 25px 0; }
     #pageBanner.default {
       height: auto; }
   #introWrap {
     padding-top: 0; }
+    #introWrap img {
+      max-width: 100%;
+      width: auto;
+      padding-top: 15px; }
+    #introWrap article {
+      padding: 0 15px; }
     #introWrap h2.introTitle {
       padding: 15px 0 0;
       font-size: 24pt; }
-    #introWrap blockquote {
-      padding: 25px;
+  blockquote {
+    padding: 25px;
+    font-size: 18pt;
+    line-height: auto; }
+  #pIntro {
+    padding: 25px 0; }
+    #pIntro h2 {
       font-size: 18pt;
-      line-height: 21pt; }
+      margin-top: 0; }
+  #partnership {
+    box-sizing: border-box;
+    padding: 50px 15px; }
+    #partnership form {
+      width: 100%; }
   #sectionWrap section {
     width: auto;
     padding: 15px; }
