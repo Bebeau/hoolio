@@ -13,7 +13,7 @@ function wyzerr_research_pages() {
         if (
         	$pageName === "Smartforms" && get_post_type($post_id) === "page" || 
         	$pageName === "Builder" && get_post_type($post_id) === "page" || 
-        	$pageName === "Insights" && get_post_type($post_id) === "page" ) {
+        	$pageName === "Reporting" && get_post_type($post_id) === "page" ) {
 
         	remove_post_type_support('page', 'editor');
 
@@ -41,23 +41,47 @@ function wyzerr_research_pages() {
                 wp_nonce_field( 'content', 'content_noncename' );
 
                 $subTitle = get_post_meta($post->ID, 'sub_title', true);
+                $subDesc = get_post_meta($post->ID, 'sub_desc', true);
+                $subDesc2 = get_post_meta($post->ID, 'sub_desc2', true);
                 $quote = get_post_meta($post->ID, 'quote', true);
 
-                echo '<form method="post" action="">';
+                echo '<section>';
 
 	                echo '<label for="sub_title">Extended Title</label>';
 	                echo '<input type="text" name="sub_title" id="sub_title" value="'.$subTitle.'" />';
 
+                    echo '<label for="sub_desc">Paragraph 1</label>';
+                    echo '<input type="text" name="sub_desc" id="sub_desc" value="'.$subDesc.'" />';
+
+                    echo '<label for="sub_desc2">Paragraph 2</label>';
+                    echo '<input type="text" name="sub_desc2" id="sub_desc2" value="'.$subDesc2.'" />';
+
 	                echo '<label for="quote">Quote</label>';
 	                echo '<textarea type="text" name="quote" id="quote">'.$quote.'</textarea>';
 
-	            echo '</form>';
+	            echo '</section>';
 
             }
             function research_sections($post) {
             	wp_nonce_field( 'sections', 'sections_noncename' );
 
 			    $sections = get_post_meta($post->ID,'sections', true);
+
+                $subTitle2 = get_post_meta($post->ID, 'sub_title2', true);
+                $subImage = get_post_meta($post->ID, 'sub_image', true);
+                echo '<section>';
+                    echo '<label for="sub_title2">Secondary Title</label>';
+                    echo '<input type="text" name="sub_title2" id="sub_title" value="'.$subTitle2.'" />';
+                    echo '<label for="sub_image">Feature Image</label>';
+                    echo '<div class="sub_image" data-img="icon" data-input="sub_image" data-post="'.$post->ID.'">';
+                        if(!empty($subImage)) {
+                            echo '<img src="'.$subImage.'" alt="" /><span class="remove-image button-remove" data-text="icon">X</span>';
+                        } else {
+                            echo '<a href="#" class="upload-image">Upload/Set Image</a>';
+                        }
+                        echo '<input type="hidden" name="sub_image" id="" />';
+                    echo '</div>';
+                echo '</section>';
 
 			    echo '<div id="sectionWrap" class="sortable" data-post="'.$post->ID.'">';
 			        $c = 0;
@@ -107,9 +131,22 @@ function wyzerr_research_pages() {
     }
 }
 function list_sections($post) {
-    $sections = get_post_meta($post->ID,'sections', true);
+    $sections = get_post_meta($post->ID,'sections', true); ?>
 
-    echo '<div id="sectionWrap">';
+    <div id="sectionWrap">
+        <?php
+        $subTitle2 = get_post_meta($post->ID, 'sub_title2', true);
+        $subImage = get_post_meta($post->ID, 'sub_image', true);
+        if(!empty($subTitle2) || !empty($subImage)) {
+            echo '<section class="subFeature">';
+                if(!empty($subTitle2)) {
+                    echo '<h2>'.$subTitle2.'</h2>';
+                }
+                if(!empty($subImage)) {
+                    echo '<img src="'.$subImage.'" alt="" />';
+                }
+            echo '</section>';
+        }
         if ( !empty($sections) ) {
             foreach( $sections as $key => $section ) {
 
@@ -121,14 +158,16 @@ function list_sections($post) {
                     echo '<div class="layout">';
                         echo '<img src="'.$image.'" alt="" />';
                     echo '</div>';
-                    echo '<div class="details" data-animation="slideUp">';
+                    echo '<div class="details">';
                         echo '<h3>'.$title.'</h3>';
                         echo '<p>'.$desc.'</p>';
                     echo '</div>';
                 echo '</section>';
             }
         }
-    echo '</div>';
+        ?>
+    </div>
+    <?php
 }
 // ajax response to save case study section
 add_action('wp_ajax_addSection', 'newSection');
@@ -182,16 +221,35 @@ function save_research_section_content( $post_id ) {
         return;
 
     $subTitle = $_POST['sub_title'];
+    $subDesc = $_POST['sub_desc'];
+    $subDesc2 = $_POST['sub_desc2'];
+    $quote = $_POST['quote'];
+
     if(!empty($subTitle)) {
         update_post_meta($post_id,'sub_title',$subTitle);
     }
-    $quote = $_POST['quote'];
+    if(!empty($subDesc)) {
+        update_post_meta($post_id,'sub_desc',$subDesc);
+    }
+    if(!empty($subDesc2)) {
+        update_post_meta($post_id,'sub_desc2',$subDesc2);
+    }
     if(!empty($quote)) {
         update_post_meta($post_id,'quote',$quote);
     }
 
     if ( !isset( $_POST['sections_noncename'] ) || !wp_verify_nonce( $_POST['sections_noncename'], 'sections' ) )
         return;
+
+    $subTitle2 = $_POST['sub_title2'];
+    $subImage = $_POST['sub_image'];
+
+    if(!empty($subTitle)) {
+        update_post_meta($post_id,'sub_title2',$subTitle2);
+    }
+    if(!empty($subImage)) {
+        update_post_meta($post_id,'sub_image',$subImage);
+    }
 
     $sections = $_POST['section'];
     if(!empty($sections)) {

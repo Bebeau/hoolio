@@ -37,36 +37,55 @@
 .column-cite {
   width: 175px; }
 
-#sections .inside, #homepage_sections .inside {
+#sections .inside, #homepage_sections .inside, #content .inside {
   margin: 0;
   padding: 0; }
 
-#sections section, #homepage_sections section {
+#sections section, #homepage_sections section, #content section {
   box-sizing: border-box;
   padding: 25px; }
-  #sections section:nth-child(even), #homepage_sections section:nth-child(even) {
+  #sections section:nth-child(even), #homepage_sections section:nth-child(even), #content section:nth-child(even) {
     background: #f9f9f9; }
-  #sections section h3, #homepage_sections section h3 {
+  #sections section h3, #homepage_sections section h3, #content section h3 {
     margin-top: 0; }
-  #sections section#section2 .tab label, #homepage_sections section#section2 .tab label {
+  #sections section#section2 .tab label, #homepage_sections section#section2 .tab label, #content section#section2 .tab label {
     margin-top: 0; }
-  #sections section#section2 .tab textarea, #homepage_sections section#section2 .tab textarea {
+  #sections section#section2 .tab textarea, #homepage_sections section#section2 .tab textarea, #content section#section2 .tab textarea {
     min-height: 110px; }
 
-#sections input, #sections textarea, #homepage_sections input, #homepage_sections textarea {
+#sections input, #sections textarea, #homepage_sections input, #homepage_sections textarea, #content input, #content textarea {
   display: block;
   width: 100%;
   font-size: 12pt; }
 
-#sections label, #homepage_sections label {
-  line-height: 18pt;
-  margin-top: 5px; }
+#sections label, #homepage_sections label, #content label {
+  line-height: 18pt; }
 
-#sections input, #homepage_sections input {
+#sections input, #homepage_sections input, #content input {
   box-shadow: 0 0 0;
   line-height: 30px;
   padding: 0 10px;
   box-sizing: border-box; }
+
+.sub_image {
+  position: relative;
+  width: 300px;
+  min-height: 100px;
+  height: auto;
+  border: 1px dotted black;
+  text-align: center;
+  padding: 10px;
+  box-sizing: border-box; }
+  .sub_image .upload-image {
+    display: block;
+    padding: 50px 0; }
+  .sub_image img {
+    max-width: 100%; }
+  .sub_image:hover .button-remove {
+    opacity: 1;
+    text-align: center; }
+  .sub_image .button-remove:hover {
+    cursor: pointer; }
 
 .button-remove {
   opacity: 0;
@@ -154,6 +173,9 @@
 
 #content input, #content textarea {
   width: 100%; }
+
+#sections #sectionWrap section:nth-child(even) {
+  background: white; }
 
 #sections .inside {
   margin: 0;

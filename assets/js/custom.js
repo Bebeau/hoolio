@@ -127,7 +127,7 @@ var init = {
 		}
 		init.tooltip();
 		init.mobileBubbles();
-		init.checkoutBtn();
+		// init.checkoutBtn();
 		init.newsletterBtn();
 		init.bubbleTab();
 		init.tabDisplay();
@@ -468,80 +468,80 @@ var init = {
 	contactBtn: function() {
 		jQuery('#contactfrm').submit(init.contactSubmit);
 	},
-	checkoutResponse: function(data) {
-		if(data === "Success") {
-            jQuery('#checkoutFrm .btn-submit').addClass("success").html('<i class="fa fa-check"></i>');
-            jQuery("input").val("");
-            jQuery('.month button').html('Month <i class="fa fa-angle-down"></i>');
-            jQuery('.year button').html('Year <i class="fa fa-angle-down"></i>');
-            setTimeout(
-            	function() {
-            		jQuery('#checkoutFrm .btn-submit').removeClass("success").html('Pay Now');
-            		jQuery('.right').addClass("confirm");
-            	}, 1500
-        	);
-		} else {
-        	jQuery('#checkoutFrm .btn-submit').addClass("error").html('<i class="fa fa-ban"></i>');
-         	setTimeout(
-            	function() {
-            		jQuery('#checkoutFrm .btn-submit').removeClass("error").html('Pay Now');
-            	}, 1500
-        	);
-		}
-	},
-	stripeResponseHandler: function(status, response) {
-		var frm = jQuery('#checkoutFrm');
-        if (response.error) {
-        	// Show the errors on the form:
-		    frm.find('.payment-errors').text(response.error.message);
-		    jQuery('#checkoutFrm .btn-submit').addClass("error").html('<i class="fa fa-ban"></i>');
-         	setTimeout(
-            	function() {
-            		jQuery('#checkoutFrm .btn-submit').removeClass("error").html('Pay Now');
-            		jQuery('#checkoutFrm .btn-submit').prop('disabled', false); // Re-enable submission
-            		frm.find('.payment-errors').html("");
-            	}, 1500
-        	);
-        } else {
-			// Get the token ID:
-		    var token = response.id;
-		    // Submit the form:
-		    jQuery.ajax({
-	            url: ajaxurl,
-	            type: frm.attr('method'),
-	            data: {
-	            	firstname: jQuery('#firstname').val(),
-	            	lastname: jQuery('#lastname').val(),
-	            	emailaddress: jQuery('#emailaddress').val(),
-	            	token: token,
-	            	action: 'charge'
-	            },
-	            dataType: 'html',
-	            beforeSubmit : function(arr, $form, options) {
-		            arr.push( { "charge" : "charge_nonce", "value" : meta.charge_nonce });
-		        },
-	            success: function(data) {
-	            	init.checkoutResponse(data);
-	            }
-	        });
-        }
-	},
-	checkoutBtn: function() {
-		Stripe.setPublishableKey(pKey);
-		var frm = jQuery('#checkoutFrm');
-		frm.submit(
-			function(e) {
-				e.preventDefault();
-				jQuery('#checkoutFrm .btn-submit').html('<i class="fa fa-spinner fa-spin"></i>');
-				// Disable the submit button to prevent repeated clicks:
-				frm.find('.btn-submit').prop('disabled', true);
-				// Request a token from Stripe:
-    			Stripe.card.createToken(frm, init.stripeResponseHandler);
-    			// Prevent the form from being submitted:
-    			return false;
-			}
-		);
-	}
+	// checkoutResponse: function(data) {
+	// 	if(data === "Success") {
+ //            jQuery('#checkoutFrm .btn-submit').addClass("success").html('<i class="fa fa-check"></i>');
+ //            jQuery("input").val("");
+ //            jQuery('.month button').html('Month <i class="fa fa-angle-down"></i>');
+ //            jQuery('.year button').html('Year <i class="fa fa-angle-down"></i>');
+ //            setTimeout(
+ //            	function() {
+ //            		jQuery('#checkoutFrm .btn-submit').removeClass("success").html('Pay Now');
+ //            		jQuery('.right').addClass("confirm");
+ //            	}, 1500
+ //        	);
+	// 	} else {
+ //        	jQuery('#checkoutFrm .btn-submit').addClass("error").html('<i class="fa fa-ban"></i>');
+ //         	setTimeout(
+ //            	function() {
+ //            		jQuery('#checkoutFrm .btn-submit').removeClass("error").html('Pay Now');
+ //            	}, 1500
+ //        	);
+	// 	}
+	// },
+	// stripeResponseHandler: function(status, response) {
+	// 	var frm = jQuery('#checkoutFrm');
+ //        if (response.error) {
+ //        	// Show the errors on the form:
+	// 	    frm.find('.payment-errors').text(response.error.message);
+	// 	    jQuery('#checkoutFrm .btn-submit').addClass("error").html('<i class="fa fa-ban"></i>');
+ //         	setTimeout(
+ //            	function() {
+ //            		jQuery('#checkoutFrm .btn-submit').removeClass("error").html('Pay Now');
+ //            		jQuery('#checkoutFrm .btn-submit').prop('disabled', false); // Re-enable submission
+ //            		frm.find('.payment-errors').html("");
+ //            	}, 1500
+ //        	);
+ //        } else {
+	// 		// Get the token ID:
+	// 	    var token = response.id;
+	// 	    // Submit the form:
+	// 	    jQuery.ajax({
+	//             url: ajaxurl,
+	//             type: frm.attr('method'),
+	//             data: {
+	//             	firstname: jQuery('#firstname').val(),
+	//             	lastname: jQuery('#lastname').val(),
+	//             	emailaddress: jQuery('#emailaddress').val(),
+	//             	token: token,
+	//             	action: 'charge'
+	//             },
+	//             dataType: 'html',
+	//             beforeSubmit : function(arr, $form, options) {
+	// 	            arr.push( { "charge" : "charge_nonce", "value" : meta.charge_nonce });
+	// 	        },
+	//             success: function(data) {
+	//             	init.checkoutResponse(data);
+	//             }
+	//         });
+ //        }
+	// },
+	// checkoutBtn: function() {
+	// 	Stripe.setPublishableKey(pKey);
+	// 	var frm = jQuery('#checkoutFrm');
+	// 	frm.submit(
+	// 		function(e) {
+	// 			e.preventDefault();
+	// 			jQuery('#checkoutFrm .btn-submit').html('<i class="fa fa-spinner fa-spin"></i>');
+	// 			// Disable the submit button to prevent repeated clicks:
+	// 			frm.find('.btn-submit').prop('disabled', true);
+	// 			// Request a token from Stripe:
+ //    			Stripe.card.createToken(frm, init.stripeResponseHandler);
+ //    			// Prevent the form from being submitted:
+ //    			return false;
+	// 		}
+	// 	);
+	// }
 };
 
 jQuery(document).ready(function() {

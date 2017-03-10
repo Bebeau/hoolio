@@ -13,124 +13,42 @@ $contentTitle = get_post_meta($post->ID,'contentTitle', true);
 ?>
 
 <section id="checkout" data-parallax='{"y" : 230, "smoothness": 1}'>
-	<div class="arrow"><i class="fa fa-angle-down"></i></div>
-	<div class="left">
-		<div class="outer">
-			<div class="inner">
-				<?php 
-					$photos = get_post_meta($post->ID,'photos', true);
-					if(!empty($photos)) {
-						echo '<div class="m-scooch m-fluid m-scooch-checkout">';
-		    				echo '<div class="m-scooch-inner">';
-							foreach($photos as $photo) {
-								echo '<div class="m-item">';
-									echo '<img src="'.$photo.'" alt="" />';
-								echo '</div>';
-							}
-							echo '</div>';
-							echo '<div class="m-scooch-controls m-scooch-bulleted">';
-								$c = 1;
-								foreach($photos as $photo) {
-									echo '<a href="" data-m-slide="'.$c.'"></a>';
-			    					$c++;
-								}
-							echo '</div>';
-						echo '</div>';
-					}
-				?>
-			</div>
-		</div>
-	</div>
-	<div class="right">
-		<div class="outer">
-			<div class="inner">
-				<div class="copy">
-					<h2><?php echo $pricingTitle; ?></h2>
-					<form action="" method="POST" id="checkoutFrm">
-						<div class="group half">
-							<article>
-								<label for="firstname">First</label>
-								<input type="text" name="firstname" id="firstname" placeholder="john" />
-							</article>
-							<article>
-								<label for="lastname">Last</label>
-								<input type="text" name="lastname" id="lastname" placeholder="doe" />
-							</article>
-						</div>
-						<div class="group">
-							<label for="name">Email</label>
-							<input type="email" name="emailaddress" id="emailaddress" placeholder="email@address.." />
-						</div>
-						<div class="group">
-							<label for="name">Card Number</label>
-							<input type="number" id="card_numb" placeholder="*****************" pattern="\d*" maxlength="16" data-stripe="number" />
-						</div>
-						<div class="group dropdowns">
-							<label for="expire_month">Expiration Date</label>
-							<span>
-								<div class="dropdown month">
-					                <button>Month <i class="fa fa-angle-down"></i></button>
-					                <ul class="dropdown-menu" data-input="expire_month">
-					                    <li data-value="01">January</li>
-					                    <li data-value="02">February</li>
-					                    <li data-value="03">March</li>
-					                    <li data-value="04">April</li>
-					                    <li data-value="05">May</li>
-					                    <li data-value="06">June</li>
-					                    <li data-value="07">July</li>
-					                    <li data-value="08">August</li>
-					                    <li data-value="09">September</li>
-					                    <li data-value="10">October</li>
-					                    <li data-value="11">November</li>
-					                    <li data-value="12">December</li>
-					                </ul>
-					            </div>
-					            <input type="hidden" id="expire_month" data-stripe="exp_month" />
-					        </span>
-					        <span>
-								<div class="dropdown year">
-					                <button>Year <i class="fa fa-angle-down"></i></button>
-					                <ul class="dropdown-menu" data-input="expire_year">
-					                    <li data-value="2017">2017</li>
-					                    <li data-value="2018">2018</li>
-					                    <li data-value="2019">2019</li>
-					                    <li data-value="2020">2020</li>
-					                    <li data-value="2021">2021</li>
-					                    <li data-value="2022">2022</li>
-					                    <li data-value="2023">2023</li>
-					                    <li data-value="2024">2024</li>
-					                    <li data-value="2025">2025</li>
-					                    <li data-value="2026">2026</li>
-					                    <li data-value="2026">2028</li>
-					                </ul>
-					            </div>
-								<input type="hidden" id="expire_year" data-stripe="exp_year" />
-							</span>
-						</div>
-						<div class="cvc">
-							<label for="cvc">CVC</label>
-							<input type="number" id="cvc" placeholder="***" pattern="\d*" maxlength="4" data-stripe="cvc" />
-						</div>
-						<div class="payment">
-							<span class="price">$99</span>
-							<button type="submit" class="btn btn-submit">Pay Now</button>
-						</div>
-						<span class="payment-errors"></span>
-					</form>
-				</div>
-				<div class="successMessage">
-					<h2>Success!</h2>
-					<p>Thank you for purchasing your pre-paid subscription to Wyzerr!</p>
-					<p>A confirmation email of your order will be sent to you, along with additional information, special perks, and progress updates leading up to our great unveil.</p>
-				</div>
-			</div>
-		</div>
-	</div>
+	<?php
+		if(!empty($pricingTitle)) {
+			echo '<h1>'.$pricingTitle.'</h1>';
+		}
+		if(!empty($contentTitle)) {
+			echo '<p>'.$contentTitle.'</p>';
+		}
+	?>
+	<article class="green">
+		<h2>Professional Plus</h2>
+		<p class="price">$499+<span>a month billed annually</span></p>
+		<p>Work with our team to expore custom options for your business.</p>
+		<a href="" class="btn">Get In Touch</a>
+	</article>
+	<article class="blue">
+		<h2>Professional</h2>
+		<p class="price">$99<span>a month billed annually</span></p>
+		<p>Everything you need to build Smartforms and easily create awesome reports.</p>
+		<a href="" class="btn">Get Started</a>
+		<ul>
+			<li>Ulimited Surveys</li>
+			<li>Unlimited Responses</li>
+			<li>Awesome Support</li>
+			<li>Data Export and Reports</li>
+		</ul>
+	</article>
+	<article class="grey">
+		<h2>Enterprise</h2>
+		<p>If you are looking for a personalized solution to fit your specific needs, we’re here to help. Get in touch with us and we can package Wyzerrto best suit your needs.</p>
+		<a href="" class="btn">Get In Touch</a>
+	</article>
 </section>
 
 <section id="page" class="section checkoutPage" data-parallax='{"y" : -150, "smoothness": 1}'>
 	<div class="container">
-		<h2><?php echo $contentTitle; ?></h2>
+		<h2>Frequently Asked Questions</h2>
 		<?php list_perks($post); ?>
 	</div>
 </section>

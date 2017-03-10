@@ -43,7 +43,7 @@
 	width: 175px;
 }
 
-#sections, #homepage_sections {
+#sections, #homepage_sections, #content {
 	.inside {
 		margin: 0;
 		padding: 0;
@@ -75,13 +75,40 @@
 	}
 	label {
 		line-height: 18pt;
-		margin-top: 5px;
 	}
 	input {
 		box-shadow: 0 0 0;
 		line-height: 30px;
 		padding: 0 10px;
 		box-sizing: border-box;
+	}
+}
+.sub_image {
+	position: relative;
+	width: 300px;
+	min-height: 100px;
+	height: auto;
+	border: 1px dotted black;
+	text-align: center;
+	padding: 10px;
+	box-sizing: border-box;
+	.upload-image {
+		display: block;
+		padding: 50px 0;
+	}
+	img {
+		max-width: 100%;
+	}
+	&:hover {
+		.button-remove {
+			opacity: 1;
+			text-align: center;
+		}
+	}
+	.button-remove {
+		&:hover {
+			cursor: pointer;
+		}
 	}
 }
 .button-remove {
@@ -192,6 +219,13 @@
 	}
 }
 #sections {
+	#sectionWrap {
+		section {
+			&:nth-child(even) {
+				background: white;
+			}
+		}
+	}
 	.inside {
 		margin: 0;
 		padding: 0;

@@ -118,6 +118,11 @@ body {
 			}
 		}
 	}
+	&.page-template-research {
+		#testimonials {
+			margin-top: 0;
+		}
+	}
 	p {
 		line-height: 28px;
 	}
@@ -257,259 +262,69 @@ p {
 	}
 }
 #checkout {
-	background: rgba(0,0,0,0.9);
+	background: $darkblue;
 	text-align: center;
-	height: 100vh;
 	overflow: hidden;
-	.arrow {
-		left: 25%;
-		z-index: 99;
-		i {
+	padding-top: 82px;
+	padding-bottom: 50px;
+	h1 {
+		color: white;
+		margin-bottom: 0;
+	}
+	p {
+		color: white;
+	}
+	article {
+		width: 300px;
+		display: inline-block;
+		@include border-top-radius(10px);
+		@include border-bottom-radius(10px);
+		box-sizing: border-box;
+		padding: 25px;
+		vertical-align: top;
+		h2 {
 			color: white;
+			font-weight: bold;
+			font-size: 24pt;
 		}
-	}
-	.group {
-		margin: 15px auto;
-		&.half {
-			article {
-				width: 49%;
-				display: inline-block;
-				float: left;
-				&:last-child {
-					float: right;
-				}
-			}
-			&:after {
-				content: "";
-				clear: both;
-				display: block;
-			}
-		}
-	}
-	.dropdowns {
-		display: inline-block;
-		width: 78%;
-		margin-top: 0;
-		float: left;
-		label {
-			width: 100%;
-		}
-	}
-	.dropdown {
-		float: none;
-		width: 48%;
-		display: inline-block;
-		line-height: 60px;
-		border: 1px solid $grey;
-		background: lighten($grey, 35%);
-		@include border-top-radius(3px);
-		@include border-bottom-radius(3px);
-		&.month {
-			float: left;
-		}
-	}
-	.payment {
-		text-align: right;
-		display: block;
-		margin-top: 75px;
-		&:after {
-			content: "";
-			clear: both;
-			display: block;
+		p {
+			font-size: 16pt;
+			line-height: normal;
 		}
 		.price {
-			display: inline-block;
-			color: $blue;
 			font-size: 48pt;
-			vertical-align: middle;
-			box-sizing: border-box;
-			padding: 5px 15px;
-			float: left;
-			line-height: 60px;
-		}
-		.btn {
-			display: inline-block;
-			vertical-align: middle;
+			font-weight: bold;
+			line-height: normal;
 			margin: 0;
-			padding: 0 15px;
-			line-height: 60px;
-			height: auto;
-			float: right;
-			font-size: 24pt;
-			width: 150px;
-		}
-	}
-	.close {
-		position: fixed;
-		top: 15px;
-		right: 25px;
-		z-index: 13;
-		height: 58px;
-		display: inline-block;
-		margin: 0 0 0 -4px;
-		overflow: hidden;
-		vertical-align: top;
-		@include transition(all 0.3s $easeInOutBack);
-		.bar {
-			width: 40px;
-			height: 5px;
-			background: $blue;
-			display: block;
-			margin: 10px auto;
-			position: relative;
-			left: 0;
-			@include transition(all 0.3s $easeInOutBack);
-			&:first-child {
-				margin-top: 30px;
-				margin-bottom: -16px;
-				@include transform(rotate(-45deg));
-				@include transition(all 0.3s $easeInOutBack);
-			}
-			&:nth-child(2) {
-				left: 70px;
-				@include transition(all 0.3s $easeInOutBack);
-			}
-			&:last-child {
-				margin-top: -14px;
-				@include transform(rotate(45deg));
-				@include transition(all 0.3s $easeInOutBack);
+			span {
+				display: block;
+				font-size: 12pt;
 			}
 		}
-		&:hover {
-			cursor: pointer;
-		}
-	}
-	.left, .right {
-		width: 50%;
-		height: 100%;
-		display: inline-block;
-		box-sizing: border-box;
-		vertical-align: top;
-	}
-	.left {
-		background: $blue;
-		position: relative;
-		margin: 0;
-		z-index: 1;
-		&:after {
-			content: "";
-			position: absolute;
-			right:0;
-			bottom: 50px;
-			width: 50px;
-			background: $blue;
-			z-index: 1;
-		}
-		img {
-			position: relative;
-			z-index: 2;
-		}
-	}
-	.right {
-		background: white;
-		margin: 0 0 0 -4px;
-		background: #f5f5f5;
-		.outer {
-			overflow: scroll;
-		}
-		.copy {
-			box-sizing: border-box;
-			padding: 0 50px;
-			@include transition(all 0.3s $easeInOutBack);
-			h2 {
-				color: $blue;
-				font-size: 24pt;
-				margin: 0;
-			}
-			ul {
-				text-align: left;
-				color: $grey;
-				font-family: 'din light', sans-serif;
-				font-size: 18pt;
-			}
-			&.out {
-				
-			}
-		}
-		.successMessage {
-			box-sizing: border-box;
-			padding: 0 25px;
-			opacity: 0;
-			height: 0;
-			overflow: hidden;
-			@include transform(translate(0, 100%));
-			@include transition(all 0.3s $easeInOutBack);
-			h2 {
-				font-size: 36pt;
+		&.green {
+			background: $green;
+			.btn {
+				background: white;
 				color: $green;
-				margin-top: 0;
 			}
 		}
-		&.confirm {
-			.copy {
-				height: 0;
-				opacity: 0;
-				@include transform(translate(0, -100%));
-				@include transition(all 0.3s $easeInOutBack);
-			}
-			.successMessage {
-				height: auto;
-				opacity: 1;
-				@include transform(translate(0, 0));
-				@include transition(all 0.5s $easeInOutBack);
-			}
-		}
-	}
-	form {
-		position: relative;
-		margin: 0 auto;
-		label {
-			display: block;
-			text-align: left;
-			text-transform: uppercase;
-			color: lighten($grey,10%);
-			letter-spacing: 3px;
-			font-size: 10pt;
-		}
-		input {
-			display: block;
-			width: 100%;
-			border: none;
-			box-shadow: none;
-			border: 1px solid $grey;
-			background: lighten($grey, 35%);
-			@include border-top-radius(3px);
-			@include border-bottom-radius(3px);
-			line-height: 60px;
-			vertical-align: top;
-			padding: 0 5px;
-			font-size: 18pt;
-			box-sizing: border-box;
-			&:focus {
-				outline: none;
-			}
-		}
-		button {
-			padding: 0 15px 0 5px;
-			border: none;
-			&.success {
-				background: linear-gradient(green, darken(green, 5%));
-				i {
-					padding: 0;
-					margin: 0;
-				}
-			}
-			&.error {
-				background: linear-gradient(red, darken(red, 5%));
-				i {
-					padding: 0;
-					margin: 0;
+		&.blue {
+			background: $blue;
+			ul {
+				color: white;
+				text-align: left;
+				li {
+					font-size: 14pt;
+					line-height: 24pt;
 				}
 			}
 		}
-		.cvc {
-			width: 20%;
-			display: inline-block;
+		&.grey {
+			background: $grey;
+			.btn {
+				background: white;
+				color: $grey;
+			}
 		}
 	}
 }
@@ -1858,38 +1673,69 @@ input[placeholder], [placeholder], *[placeholder] {
 }
 #introWrap {
 	text-align: center;
-	background: white;
 	position: relative;
 	z-index: 2;
-	padding-top: 50px;
+	padding: 50px 0;
+	background: white;
+	article {
+		width: 1170px;
+		margin: 0 auto;
+		background: white;
+	}
 	h2.introTitle {
 		font-size: 32pt;
-		padding: 25px 0;
+		padding: 25px 0 5px;
 		margin: 0 auto;
+		line-height: normal;
+	}
+	p {
+		margin: 0;
 	}
 	img {
 		max-width: 1170px;
 		height: auto;
-		padding: 15px 15px 50px;
+		padding: 50px 0;
 		box-sizing: border-box;
 	}
-	blockquote {
-		background: $blue;
-		padding: 50px;
-		margin: 0;
-		color: white;
-		font-size: 24pt;
-		font-weight: lighter;
-	}
+}
+blockquote {
+	background: $blue;
+	padding: 50px;
+	margin: 0;
+	color: white;
+	font-size: 24pt;
+	font-weight: lighter;
+	text-align: center;
+	position: relative;
+	z-index: 13;
+	box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
 }
 #sectionWrap {
 	position: relative;
 	z-index: 3;
 	background: white;
+	padding: 50px 0;
+	.subFeature {
+		padding-bottom: 50px;
+		h2 {
+			font-size: 36pt;
+			text-align: center;
+		}
+	}
 	section {
 		width: 1170px;
 		margin: 0 auto;
 		padding: 25px 0;
+		&:nth-child(even) {
+			.details {
+				padding-left: 100px;
+			}
+		}
+		&:nth-child(odd) {
+			.details {
+				padding-right: 100px;
+			}
+		}
 		.layout {
 			width: 50%;
 			box-sizing: border-box;
@@ -1909,18 +1755,14 @@ input[placeholder], [placeholder], *[placeholder] {
 			display: inline-block;
 			vertical-align: middle;
 			padding: 0 25px;
-			&:nth-child(even) {
-				padding-right: 100px;
-			}
-			&:nth-child(odd) {
-				padding-left: 100px;
-			}
 			p {
 				color: $blue;
+				margin-top: 5px;
 			}
 			h3 {
-				font-weight: bold;
+				font-weight: bolder;
 				color: $blue;
+				margin-bottom: 0;
 			}
 		}
 		&:nth-child(even) {

@@ -97,6 +97,8 @@ function setUseCaseIcon() {
     $imageURL = (isset($_GET['fieldVal'])) ? $_GET['fieldVal'] : 0;
     $postID = (isset($_GET['postID'])) ? $_GET['postID'] : 0;
 
+    var_dump($imageField);
+    
     if($imageURL !== "") {
         update_post_meta( $postID, $imageField, $imageURL);
     } else {
