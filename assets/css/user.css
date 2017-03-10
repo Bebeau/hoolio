@@ -185,7 +185,7 @@
   display: block;
   width: 100%; }
 
-#sectionTitles input {
+#sectionTitles input, #sectionTitles textarea, #partnershipTitles input, #partnershipTitles textarea {
   line-height: 40px;
   height: 40px;
   display: block;
@@ -195,6 +195,10 @@
   padding: 10px 50px 10px 10px;
   vertical-align: top;
   box-shadow: 0px 0px 0px 0px; }
+
+#sectionTitles textarea, #partnershipTitles textarea {
+  line-height: normal;
+  min-height: 200px; }
 
 #sectionWrap section {
   box-sizing: border-box;

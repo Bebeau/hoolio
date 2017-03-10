@@ -2011,7 +2011,8 @@ p {
     color: white;
     margin-bottom: 0; }
   #checkout p {
-    color: white; }
+    color: white;
+    margin-bottom: 50px; }
   #checkout article {
     width: 300px;
     display: inline-block;
@@ -2043,7 +2044,21 @@ p {
         background: white;
         color: #b1d565; }
     #checkout article.blue {
-      background: #1493cc; }
+      background: #1493cc;
+      margin: 0 10px;
+      position: relative; }
+      #checkout article.blue:before {
+        content: "Most Popular";
+        font-family: "din medium";
+        background: white;
+        color: #496278;
+        text-shadow: none;
+        padding: 5px;
+        box-sizing: border-box;
+        position: absolute;
+        top: -29px;
+        width: 90%;
+        left: 5%; }
       #checkout article.blue ul {
         color: white;
         text-align: left; }
@@ -2055,6 +2070,57 @@ p {
       #checkout article.grey .btn {
         background: white;
         color: #919192; }
+
+#partnership {
+  padding: 100px 0;
+  background: #ebebeb;
+  position: relative;
+  z-index: 10;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25); }
+  #partnership form {
+    display: block;
+    width: 400px;
+    margin: 0 auto; }
+    #partnership form h2 {
+      font-weight: bold;
+      text-align: center;
+      font-size: 21pt; }
+    #partnership form label {
+      display: block; }
+    #partnership form input {
+      width: 100%;
+      display: inline-block;
+      box-sizing: border-box;
+      border: none;
+      border-bottom: 1px solid #919192;
+      font-size: 18pt;
+      height: 60px;
+      line-height: 60px;
+      background: transparent;
+      margin: 10px 0;
+      color: #1493cc; }
+      #partnership form input:last-child {
+        float: right; }
+      #partnership form input:focus {
+        outline: none; }
+    #partnership form .dropdown {
+      width: 100%;
+      float: none; }
+    #partnership form .btn {
+      margin-top: 50px; }
+
+#pIntro {
+  text-align: center;
+  background: white;
+  position: relative;
+  z-index: 14;
+  padding: 50px 0;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25); }
+  #pIntro article {
+    width: 1170px;
+    margin: 0 auto; }
+  #pIntro h2 {
+    font-size: 36pt; }
 
 .checkoutPage h2 {
   color: #1493cc !important; }

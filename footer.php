@@ -76,7 +76,7 @@
 		?>
 
 	    <?php 
-	    if(!is_page('Checkout')) {
+	    if(!is_page('Pricing')) {
 	    	echo '<section class="cta">';
 				$cta_title = get_post_meta($post->ID,'cta_title',true);
 	            $cta_desc = get_post_meta($post->ID,'cta_desc',true);

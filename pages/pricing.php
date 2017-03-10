@@ -25,7 +25,7 @@ $contentTitle = get_post_meta($post->ID,'contentTitle', true);
 		<h2>Professional Plus</h2>
 		<p class="price">$499+<span>a month billed annually</span></p>
 		<p>Work with our team to expore custom options for your business.</p>
-		<a href="" class="btn">Get In Touch</a>
+		<a href="<?php echo site_url('/contact'); ?>" class="btn">Get In Touch</a>
 	</article>
 	<article class="blue">
 		<h2>Professional</h2>
@@ -42,7 +42,7 @@ $contentTitle = get_post_meta($post->ID,'contentTitle', true);
 	<article class="grey">
 		<h2>Enterprise</h2>
 		<p>If you are looking for a personalized solution to fit your specific needs, we’re here to help. Get in touch with us and we can package Wyzerrto best suit your needs.</p>
-		<a href="" class="btn">Get In Touch</a>
+		<a href="<?php echo site_url('/contact'); ?>" class="btn">Get In Touch</a>
 	</article>
 </section>
 
