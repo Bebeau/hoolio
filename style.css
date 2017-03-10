@@ -4372,6 +4372,8 @@ footer {
       font-size: 14pt; }
     #meet .squares article:nth-child(2) {
       margin: 0; }
+    #meet .squares article:last-child {
+      margin: 5px 0; }
   #testimonials h2 {
     font-size: 18pt; }
   #testimonials .quotewrap {
@@ -4429,21 +4431,23 @@ footer {
           text-align: center; }
   #testimonials .client_logos p {
     margin-bottom: 15px; }
-  #research #Preview .previewWrap {
-    margin-top: 50px; }
-    #research #Preview .previewWrap:first-child {
-      margin-top: 0; }
-    #research #Preview .previewWrap .half {
-      width: 100%;
-      padding: 0 15px;
-      box-sizing: border-box; }
-      #research #Preview .previewWrap .half h3 {
-        margin: 15px 0 0; }
-      #research #Preview .previewWrap .half p {
-        margin-top: 5px; }
-      #research #Preview .previewWrap .half .btn {
-        margin: 0 auto;
-        display: block; }
+  #research #Preview {
+    padding: 15px 0; }
+    #research #Preview .previewWrap {
+      margin-top: 50px; }
+      #research #Preview .previewWrap:first-child {
+        margin-top: 0; }
+      #research #Preview .previewWrap .half {
+        width: 100%;
+        padding: 0 15px;
+        box-sizing: border-box; }
+        #research #Preview .previewWrap .half h3 {
+          margin: 15px 0 0; }
+        #research #Preview .previewWrap .half p {
+          margin-top: 5px; }
+        #research #Preview .previewWrap .half .btn {
+          margin: 0 auto;
+          display: block; }
   .cta {
     padding: 25px 15px; }
     .cta h1 {

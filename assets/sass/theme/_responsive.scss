@@ -874,6 +874,9 @@
 				&:nth-child(2) {
 					margin: 0;
 				}
+				&:last-child {
+					margin: 5px 0;
+				}
 			}
 		}
 	}
@@ -930,6 +933,7 @@
 	}
 	#research {
 		#Preview {
+			padding: 15px 0;
 			.previewWrap {
 				margin-top: 50px;
 				&:first-child {
