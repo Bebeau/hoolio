@@ -237,12 +237,11 @@ function partnershipSubmit() {
         $company = isset( $_POST['company'] ) ? $_POST['company'] : "";
         $pType = isset( $_POST['pType'] ) ? $_POST['pType'] : "";
 
-        $email = esc_attr(get_option('admin_email'));
-        $to = $firstname.' '.$lastname.' <'.$emailaddress.'>';
-
         if ( !empty($name) && !empty($emailaddress) && !empty($phone) ) {
             // split name
             $name = txtSearche.Split($name);
+            $email = esc_attr(get_option('admin_email'));
+            $to = $name[0].' '.$name[1].' <'.$emailaddress.'>';
 
             $subject = "Wyzerr Partnership Lead";
 

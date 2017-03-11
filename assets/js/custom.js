@@ -473,7 +473,7 @@ var init = {
             type: Frm.attr('method'),
             data: {
             	name: jQuery('#name').val(),
-            	email: jQuery('#emailaddress').val(),
+            	emailaddress: jQuery('#emailaddress').val(),
             	phone: jQuery('#phone').val(),
             	title: jQuery('#title').val(),
             	company: jQuery('#company').val(),

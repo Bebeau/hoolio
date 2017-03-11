@@ -43,7 +43,7 @@ get_header();
     		<form role="form" method="POST" action="" id="partnershipfrm">
     			<h2>Fill out the form below.</h2>
 		        <input type="text" name="name" id="name" class="form-control" placeholder="name"/>
-	            <input type="email" name="emailaddress" id="emailaddress" class="form-control" placeholder="email@address.."/>
+	            <input type="text" name="emailaddress" id="emailaddress" class="form-control" placeholder="email@address.."/>
 	            <input type="text" name="phone" id="phone" class="form-control" placeholder="(555)-555-5555"/>
 	            <input type="text" name="title" id="title" class="form-control" placeholder="job title"/>
 	            <input type="text" name="company" id="company" class="form-control" placeholder="company"/>
