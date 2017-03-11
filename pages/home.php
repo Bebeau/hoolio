@@ -65,17 +65,17 @@ get_header(); ?>
             echo '</div>';
 
             echo '<div class="squares">';
-            	if(!empty($section2_square1_image && $section2_square1_title && $section2_square1)) {
+            	if(!empty($section2_square1_image) && !empty($section2_square1_title) && !empty($section2_square1)) {
             		echo '<article class="outer" style="background:url('.$section2_square1_image.') no-repeat scroll center / cover;">';
             			echo '<p><strong>'.$section2_square1_title.'</strong>'.$section2_square1.'</p>';
             		echo '</article>';
             	}
-            	if(!empty($section2_square2_image && $section2_square2_title && $section2_square2)) {
+            	if(!empty($section2_square2_image) && !empty($section2_square2_title) && !empty($section2_square2)) {
             		echo '<article class="outer" style="background:url('.$section2_square2_image.') no-repeat scroll center / cover;">';
             			echo '<p><strong>'.$section2_square2_title.'</strong>'.$section2_square2.'</p>';
             		echo '</article>';
             	}
-            	if(!empty($section2_square3_image && $section2_square3_title && $section2_square3)) {
+            	if(!empty($section2_square3_image) && !empty($section2_square3_title) && !empty($section2_square3)) {
             		echo '<article class="outer" style="background:url('.$section2_square3_image.') no-repeat scroll center / cover;">';
             			echo '<p><strong>'.$section2_square3_title.'</strong>'.$section2_square3.'</p>';
             		echo '</article>';
