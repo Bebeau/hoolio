@@ -1878,7 +1878,7 @@ body {
   font-size: 18pt;
   color: white;
   border: none;
-  text-transform: uppercase;
+  text-transform: lowercase;
   background: #F0B200;
   font-family: 'din medium';
   letter-spacing: 0;
@@ -1893,11 +1893,28 @@ body {
   .btn:hover {
     cursor: pointer;
     letter-spacing: 1px;
+    background: #faba00;
     -webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     -moz-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
   .btn:active {
-    background: linear-gradient(#1282b5, #1493cc); }
+    background: linear-gradient(#e6aa00, #F0B200); }
+  .btn.btn-submit {
+    margin-top: 25px; }
+    .btn.btn-submit i {
+      padding-right: 10px;
+      margin: 0 10px 0 0;
+      padding: 0; }
+    .btn.btn-submit.success {
+      background: linear-gradient(green, #006700); }
+      .btn.btn-submit.success i {
+        padding: 0;
+        margin: 0; }
+    .btn.btn-submit.error {
+      background: linear-gradient(red, #e60000); }
+      .btn.btn-submit.error i {
+        padding: 0;
+        margin: 0; }
 
 a, button {
   text-decoration: none;
@@ -2267,11 +2284,11 @@ header .header-right {
     display: inline-block;
     width: auto;
     font-size: 14pt;
-    text-transform: uppercase;
     line-height: 40px;
     margin: 0 5px;
     vertical-align: middle;
-    color: white; }
+    color: white;
+    text-transform: lowercase; }
     header .header-right .btn:hover {
       letter-spacing: 0; }
     header .header-right .btn.btn-login {
@@ -3292,10 +3309,11 @@ ul#bubbles {
     text-align: center; }
 
 #contact {
-  height: 100vh;
+  padding: 100px 0;
   position: relative;
   z-index: 10;
-  background: radial-gradient(white, #f2f2f2); }
+  background: white;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25); }
   #contact .container {
     height: 100%; }
   #contact .half {
@@ -3337,23 +3355,6 @@ ul#bubbles {
       -webkit-transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
       -moz-transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
       transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
-  #contact .btn-submit {
-    float: right;
-    margin-top: 25px; }
-    #contact .btn-submit i {
-      padding-right: 10px;
-      margin: 0 10px 0 0;
-      padding: 0; }
-    #contact .btn-submit.success {
-      background: linear-gradient(green, #006700); }
-      #contact .btn-submit.success i {
-        padding: 0;
-        margin: 0; }
-    #contact .btn-submit.error {
-      background: linear-gradient(red, #e60000); }
-      #contact .btn-submit.error i {
-        padding: 0;
-        margin: 0; }
 
 .payment-errors {
   color: #ff8080; }
@@ -3584,6 +3585,29 @@ footer {
   footer .legal {
     margin-top: 25px;
     color: #093f58; }
+
+#signUp {
+  vertical-align: top; }
+  #signUp input {
+    line-height: 60px;
+    margin: 0;
+    padding: 0 15px;
+    font-size: 16pt;
+    text-transform: capitalize;
+    width: 300px;
+    margin: 0 5px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border: 1px solid #919192;
+    color: #919192; }
+    #signUp input:active, #signUp input:focus {
+      outline: none;
+      border: 1px solid #1493cc; }
+  #signUp a {
+    display: inline-block;
+    width: auto; }
 
 [data-animation="slideUp"] {
   display: block;

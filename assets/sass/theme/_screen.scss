@@ -143,7 +143,7 @@ body {
 	font-size: 18pt;
 	color: white;
 	border: none;
-	text-transform: uppercase;
+	text-transform: lowercase;
 	background: $btn;
 	font-family: 'din medium';
 	letter-spacing: 0;
@@ -154,10 +154,33 @@ body {
 	&:hover {
 		cursor: pointer;
 		letter-spacing: 1px;
+		background: lighten($btn, 2%);
 		@include transition(all 0.3s $easeInOutBack);
 	}
 	&:active {
-		background: linear-gradient(darken($blue, 5%), $blue);
+		background: linear-gradient(darken($btn, 2%), $btn);
+	}
+	&.btn-submit {
+		margin-top: 25px;
+		i {
+			padding-right: 10px;
+			margin: 0 10px 0 0;
+			padding: 0;
+		}
+		&.success {
+			background: linear-gradient(green, darken(green, 5%));
+			i {
+				padding: 0;
+				margin: 0;
+			}
+		}
+		&.error {
+			background: linear-gradient(red, darken(red, 5%));
+			i {
+				padding: 0;
+				margin: 0;
+			}
+		}
 	}
 }
 a, button {
@@ -547,11 +570,11 @@ header {
 			display: inline-block;
 			width: auto;
 			font-size: 14pt;
-			text-transform: uppercase;
 			line-height: 40px;
 			margin: 0 5px;
 			vertical-align: middle;
 			color: white;
+			text-transform: lowercase;
 			&:hover {
 				letter-spacing: 0;
 			}
@@ -1567,10 +1590,11 @@ ul#bubbles {
 	}
 }
 #contact {
-	height: 100vh;
+	padding: 100px 0;
 	position: relative;
 	z-index: 10;
-	background: radial-gradient(white, darken(white, 5%));
+	background: white;
+	box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
 	.container {
 		height: 100%;
 	}
@@ -1613,29 +1637,6 @@ ul#bubbles {
 			outline: none;
 			min-height: 250px;
 			@include transition(all 0.5s $easeInOutBack);
-		}
-	}
-	.btn-submit {
-		float: right;
-		margin-top: 25px;
-		i {
-			padding-right: 10px;
-			margin: 0 10px 0 0;
-			padding: 0;
-		}
-		&.success {
-			background: linear-gradient(green, darken(green, 5%));
-			i {
-				padding: 0;
-				margin: 0;
-			}
-		}
-		&.error {
-			background: linear-gradient(red, darken(red, 5%));
-			i {
-				padding: 0;
-				margin: 0;
-			}
 		}
 	}
 }
@@ -1901,5 +1902,29 @@ footer {
 	.legal {
 		margin-top: 25px;
 		color: darken($blue, 25%);
+	}
+}
+#signUp {
+	vertical-align: top;
+	input {
+		line-height: 60px;
+		margin: 0;
+		padding: 0 15px;
+		font-size: 16pt;
+		text-transform: capitalize;
+		width: 300px;
+		margin: 0 5px;
+		@include border-top-radius(10px);
+		@include border-bottom-radius(10px);
+		border: 1px solid $grey;
+		color: $grey;
+		&:active, &:focus {
+			outline: none;
+			border: 1px solid $blue;
+		}
+	}
+	a {
+		display: inline-block;
+		width: auto;
 	}
 }

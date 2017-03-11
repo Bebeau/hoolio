@@ -78,9 +78,9 @@
 	    <?php 
 	    if(!is_page('Pricing')) {
 	    	echo '<section class="cta">';
-				$cta_title = get_post_meta($post->ID,'cta_title',true);
-	            $cta_desc = get_post_meta($post->ID,'cta_desc',true);
-	            $cta_button = get_post_meta($post->ID,'cta_button',true);
+				$cta_title = get_post_meta(get_option( 'page_on_front' ),'cta_title',true);
+	            $cta_desc = get_post_meta(get_option( 'page_on_front' ),'cta_desc',true);
+	            $cta_button = get_post_meta(get_option( 'page_on_front' ),'cta_button',true);
 	            if(!empty($cta_title)) {
 	            	echo '<h1>'.$cta_title.'</h1>';
 	            } else {
@@ -91,11 +91,15 @@
 				} else {
 					echo '<p>Join the disruptors saying no more to bad surveys</p>';
 				}
-				if(!empty($cta_button)) {
-					echo '<a href="'.site_url('pricing').'" class="btn">'.$cta_button.'</a>';
-				} else {
-					echo '<a href="'.site_url('pricing').'" class="btn">Buy Presale</a>';
-				}
+				echo '<form role="form" method="GET" action="" id="signUp">';
+					echo '<input type="text" name="emailaddress" id="emailaddress" placeholder="Your email address" />';
+					echo '<input type="text" name="pass" id="pass" placeholder="Choose a password"/>';
+					if(!empty($cta_button)) {
+						echo '<a href="'.site_url('pricing').'" class="btn">'.$cta_button.'</a>';
+					} else {
+						echo '<a href="'.site_url('pricing').'" class="btn">Buy Presale</a>';
+					}
+				echo '</form>';
 			echo '</section>';
 		} ?>
 

@@ -119,7 +119,7 @@ var init = {
 		init.openMenu();
 		init.SVG();
 		init.dropdown();
-		init.contactBtn();
+		init.frmBtn();
 		init.scooch();
 		init.wizard();
 		if(!isMobile) {
@@ -465,83 +465,57 @@ var init = {
         	);
         }
 	},
-	contactBtn: function() {
-		jQuery('#contactfrm').submit(init.contactSubmit);
+	partnershipSubmit: function() {
+		var Frm = jQuery('#partnershipfrm');
+    	jQuery('#partnershipfrm .btn-submit').html('<i class="fa fa-spinner fa-spin"></i>');
+        jQuery.ajax({
+            url: ajaxurl,
+            type: Frm.attr('method'),
+            data: {
+            	name: jQuery('#name').val(),
+            	email: jQuery('#emailaddress').val(),
+            	phone: jQuery('#phone').val(),
+            	title: jQuery('#title').val(),
+            	company: jQuery('#company').val(),
+            	pType: jQuery('#pType').val(),
+            	action: 'sendPartnership'
+            },
+            dataType: 'html',
+            beforeSubmit : function(arr, $form, options) {
+	            arr.push( { "name" : "nonce", "value" : meta.nonce });
+	        },
+            success: function(data) {
+            	init.partnershipResponse(data);
+            }
+        });
+        return false;
 	},
-	// checkoutResponse: function(data) {
-	// 	if(data === "Success") {
- //            jQuery('#checkoutFrm .btn-submit').addClass("success").html('<i class="fa fa-check"></i>');
- //            jQuery("input").val("");
- //            jQuery('.month button').html('Month <i class="fa fa-angle-down"></i>');
- //            jQuery('.year button').html('Year <i class="fa fa-angle-down"></i>');
- //            setTimeout(
- //            	function() {
- //            		jQuery('#checkoutFrm .btn-submit').removeClass("success").html('Pay Now');
- //            		jQuery('.right').addClass("confirm");
- //            	}, 1500
- //        	);
-	// 	} else {
- //        	jQuery('#checkoutFrm .btn-submit').addClass("error").html('<i class="fa fa-ban"></i>');
- //         	setTimeout(
- //            	function() {
- //            		jQuery('#checkoutFrm .btn-submit').removeClass("error").html('Pay Now');
- //            	}, 1500
- //        	);
-	// 	}
-	// },
-	// stripeResponseHandler: function(status, response) {
-	// 	var frm = jQuery('#checkoutFrm');
- //        if (response.error) {
- //        	// Show the errors on the form:
-	// 	    frm.find('.payment-errors').text(response.error.message);
-	// 	    jQuery('#checkoutFrm .btn-submit').addClass("error").html('<i class="fa fa-ban"></i>');
- //         	setTimeout(
- //            	function() {
- //            		jQuery('#checkoutFrm .btn-submit').removeClass("error").html('Pay Now');
- //            		jQuery('#checkoutFrm .btn-submit').prop('disabled', false); // Re-enable submission
- //            		frm.find('.payment-errors').html("");
- //            	}, 1500
- //        	);
- //        } else {
-	// 		// Get the token ID:
-	// 	    var token = response.id;
-	// 	    // Submit the form:
-	// 	    jQuery.ajax({
-	//             url: ajaxurl,
-	//             type: frm.attr('method'),
-	//             data: {
-	//             	firstname: jQuery('#firstname').val(),
-	//             	lastname: jQuery('#lastname').val(),
-	//             	emailaddress: jQuery('#emailaddress').val(),
-	//             	token: token,
-	//             	action: 'charge'
-	//             },
-	//             dataType: 'html',
-	//             beforeSubmit : function(arr, $form, options) {
-	// 	            arr.push( { "charge" : "charge_nonce", "value" : meta.charge_nonce });
-	// 	        },
-	//             success: function(data) {
-	//             	init.checkoutResponse(data);
-	//             }
-	//         });
- //        }
-	// },
-	// checkoutBtn: function() {
-	// 	Stripe.setPublishableKey(pKey);
-	// 	var frm = jQuery('#checkoutFrm');
-	// 	frm.submit(
-	// 		function(e) {
-	// 			e.preventDefault();
-	// 			jQuery('#checkoutFrm .btn-submit').html('<i class="fa fa-spinner fa-spin"></i>');
-	// 			// Disable the submit button to prevent repeated clicks:
-	// 			frm.find('.btn-submit').prop('disabled', true);
-	// 			// Request a token from Stripe:
- //    			Stripe.card.createToken(frm, init.stripeResponseHandler);
- //    			// Prevent the form from being submitted:
- //    			return false;
-	// 		}
-	// 	);
-	// }
+	partnershipResponse: function(response) {
+		jQuery('#partnershipfrm .btn-submit i').remove();
+        if (response === "Success") {
+        	jQuery('#partnershipfrm .btn-submit').replaceWith('<button class="btn btn-submit success"><i class="fa fa-check"></i></button>');
+            jQuery("input").val("");
+            jQuery("textarea").val("");
+            jQuery('.dropdown button').html('Type of Partnership <i class="fa fa-angle-down"></i>');
+            setTimeout(
+            	function() {
+            		jQuery('#partnershipfrm .btn-submit').replaceWith('<button class="btn btn-submit">Submit</button>');
+            	}, 2500
+        	);
+        }
+        if (response === "E") {
+         	jQuery('#partnershipfrm .btn-submit').replaceWith('<button class="btn btn-submit error"><i class="fa fa-ban"></i></button>');
+         	setTimeout(
+            	function() {
+            		jQuery('#partnershipfrm .btn-submit').replaceWith('<button class="btn btn-submit">Submit</button>');
+            	}, 2500
+        	);
+        }
+	},
+	frmBtn: function() {
+		jQuery('#contactfrm').submit(init.contactSubmit);
+		jQuery('#partnershipfrm').submit(init.partnershipSubmit);
+	}
 };
 
 jQuery(document).ready(function() {

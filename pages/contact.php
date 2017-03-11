@@ -20,8 +20,9 @@ get_header();
 					</div>
 				</div>
 			</div>
+
+		<section id="contact" class="section" data-parallax='{"y" : -150, "smoothness": 1}'>
 		<?php
-		echo '<section id="contact" class="section">';
 			echo '<div class="container">';
 				echo '<div class="outer">';
 					echo '<div class="inner">';

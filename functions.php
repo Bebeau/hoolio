@@ -222,6 +222,96 @@ function emailSubmit() {
 
 }
 
+add_action('wp_ajax_sendPartnership', 'partnershipSubmit');
+add_action('wp_ajax_nopriv_sendPartnership', 'partnershipSubmit');
+function partnershipSubmit() {
+    global $post;
+    if( empty($_POST['password']) ) {
+
+        $success = false;
+
+        $name = isset( $_POST['name'] ) ? $_POST['name'] : "";
+        $emailaddress = filter_var($_POST['emailaddress'], FILTER_SANITIZE_EMAIL);
+        $phone = isset( $_POST['phone'] ) ? $_POST['phone'] : "";
+        $title = isset( $_POST['title'] ) ? $_POST['title'] : "";
+        $company = isset( $_POST['company'] ) ? $_POST['company'] : "";
+        $pType = isset( $_POST['pType'] ) ? $_POST['pType'] : "";
+
+        $email = esc_attr(get_option('admin_email'));
+        $to = $firstname.' '.$lastname.' <'.$emailaddress.'>';
+
+        if ( !empty($name) && !empty($emailaddress) && !empty($phone) ) {
+            // split name
+            $name = txtSearche.Split($name);
+
+            $subject = "Wyzerr Partnership Lead";
+
+            $headers = 'From:' . $email . "\r\n";
+            $headers .= 'Reply-To:' . $to . "\r\n";
+            $headers .= "MIME-Version: 1.0\r\n";
+            $headers .= "Content-Type: text/html\r\n";
+            $headers .= "charset: ISO-8859-1\r\n";
+            $headers .= "X-Mailer: PHP/".phpversion()."\r\n";
+
+            $formcontent = '<html><body><center>';
+                $formcontent .= '<table rules="all" style="border: 1px solid #cccccc; width: 600px;" cellpadding="10">';
+                $formcontent .= "<tr><td><strong>Name:</strong></td><td>" . $name[0] ." ". $name[1] ."</td></tr>";
+                $formcontent .= "<tr><td><strong>Email:</strong></td><td>" . $emailaddress . "</td></tr>";
+                $formcontent .= "<tr><td><strong>Phone:</strong></td><td>" . $phone . "</td></tr>";
+                $formcontent .= "<tr><td><strong>Title:</strong></td><td>".$title."</td></tr>";
+                $formcontent .= "<tr><td><strong>Company:</strong></td><td>".$company."</td></tr>";
+                $formcontent .= "<tr><td><strong>Partnership Type:</strong></td><td>".$pType."</td></tr>";
+            $formcontent .= '</table></center></body></html>';
+
+            $success = mail( $email, $subject, $formcontent, $headers );
+
+            // $key = esc_attr(get_option('mailchimp_api'));
+            // $list = esc_attr(get_option('mailchimp_list'));
+
+            // if(!empty($key) && !empty($list)) {
+
+            //     $auth = base64_encode( 'user:'.$key );
+
+            //     $data = array(
+            //         'apikey'        => $key,
+            //         'email_address' => $emailaddress,
+            //         'status'        => 'subscribed',
+            //         'merge_fields'  => array(
+            //             'FNAME'     => $name[0],
+            //             'LNAME'     => $name[1],
+            //             'PHONE'     => $phone,
+            //             'COMPANY'   => $company,
+            //             'TITLE'     => $title,
+            //             'PARTNERSHIP'     => $pType
+            //         )
+            //     );
+
+            //     $json_data = json_encode($data);
+
+            //     $ch = curl_init();
+            //     curl_setopt($ch, CURLOPT_URL, 'https://us11.api.mailchimp.com/3.0/lists/'.$list.'/members/');
+            //     curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json',
+            //                                                 'Authorization: Basic '.$auth));
+            //     curl_setopt($ch, CURLOPT_USERAGENT, 'PHP-MCAPI/2.0');
+            //     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            //     curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+            //     curl_setopt($ch, CURLOPT_POST, true);
+            //     curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+            //     curl_setopt($ch, CURLOPT_POSTFIELDS, $json_data);
+
+            //     $result = curl_exec($ch);
+            // }
+        }
+
+        // Return an appropriate response to the browser
+        if ( defined( 'DOING_AJAX' ) ) {
+            echo $success ? "Success" : "E";
+        }
+    }
+    die();
+
+}
+
 add_action('wp_ajax_newsletterSubmit', 'newsletterSubmit');
 add_action('wp_ajax_nopriv_newsletterSubmit', 'newsletterSubmit');
 function newsletterSubmit() {
@@ -276,76 +366,76 @@ function newsletterSubmit() {
     die();
 }   
 
-add_action('wp_ajax_charge', 'checkout');
-add_action('wp_ajax_nopriv_charge', 'checkout');
-function checkout() {
-    require_once('stripe/config.php');
+// add_action('wp_ajax_charge', 'checkout');
+// add_action('wp_ajax_nopriv_charge', 'checkout');
+// function checkout() {
+//     require_once('stripe/config.php');
 
-    // Get the credit card details submitted by the form
-    $token = $_POST['token'];
+//     // Get the credit card details submitted by the form
+//     $token = $_POST['token'];
 
-    $firstname = isset( $_POST['firstname'] ) ? $_POST['firstname'] : "";
-    $lastname = isset( $_POST['lastname'] ) ? $_POST['lastname'] : "";
-    $emailaddress = filter_var($_POST['emailaddress'], FILTER_SANITIZE_EMAIL);
+//     $firstname = isset( $_POST['firstname'] ) ? $_POST['firstname'] : "";
+//     $lastname = isset( $_POST['lastname'] ) ? $_POST['lastname'] : "";
+//     $emailaddress = filter_var($_POST['emailaddress'], FILTER_SANITIZE_EMAIL);
 
-    if(!empty($token) && !empty($emailaddress)) {
-        $customer = false;
-        // create customer from user email
-        $customer = \Stripe\Customer::create(array(
-            "source" => $token,
-            "email" => $emailaddress
-        ));
-        // charge customer by ID
-        $charge = \Stripe\Charge::create(array(
-            "amount" => 9900, // Amount in cents
-            "currency" => "usd",
-            "customer" => $customer->id)
-        );
-        // get mailchimp api and list
-        $key = esc_attr(get_option('mailchimp_api'));
-        $list = esc_attr(get_option('mailchimp_list'));
+//     if(!empty($token) && !empty($emailaddress)) {
+//         $customer = false;
+//         // create customer from user email
+//         $customer = \Stripe\Customer::create(array(
+//             "source" => $token,
+//             "email" => $emailaddress
+//         ));
+//         // charge customer by ID
+//         $charge = \Stripe\Charge::create(array(
+//             "amount" => 9900, // Amount in cents
+//             "currency" => "usd",
+//             "customer" => $customer->id)
+//         );
+//         // get mailchimp api and list
+//         $key = esc_attr(get_option('mailchimp_api'));
+//         $list = esc_attr(get_option('mailchimp_list'));
 
-        if(!empty($key) && !empty($list)) {
+//         if(!empty($key) && !empty($list)) {
 
-            $auth = base64_encode( 'user:'.$key );
+//             $auth = base64_encode( 'user:'.$key );
 
-            $data = array(
-                'apikey'        => $key,
-                'email_address' => $emailaddress,
-                'status'        => 'subscribed',
-                'merge_fields'  => array(
-                    'FNAME'     => $firstname,
-                    'LNAME'     => $lastname,
-                    'INTEREST'  => 'Pre-paid Subscriber'
-                )
-            );
+//             $data = array(
+//                 'apikey'        => $key,
+//                 'email_address' => $emailaddress,
+//                 'status'        => 'subscribed',
+//                 'merge_fields'  => array(
+//                     'FNAME'     => $firstname,
+//                     'LNAME'     => $lastname,
+//                     'INTEREST'  => 'Pre-paid Subscriber'
+//                 )
+//             );
 
-            $json_data = json_encode($data);
+//             $json_data = json_encode($data);
 
-            $ch = curl_init();
-            curl_setopt($ch, CURLOPT_URL, 'https://us11.api.mailchimp.com/3.0/lists/'.$list.'/members/');
-            curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json',
-                                                        'Authorization: Basic '.$auth));
-            curl_setopt($ch, CURLOPT_USERAGENT, 'PHP-MCAPI/2.0');
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-            curl_setopt($ch, CURLOPT_TIMEOUT, 10);
-            curl_setopt($ch, CURLOPT_POST, true);
-            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-            curl_setopt($ch, CURLOPT_POSTFIELDS, $json_data);
+//             $ch = curl_init();
+//             curl_setopt($ch, CURLOPT_URL, 'https://us11.api.mailchimp.com/3.0/lists/'.$list.'/members/');
+//             curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json',
+//                                                         'Authorization: Basic '.$auth));
+//             curl_setopt($ch, CURLOPT_USERAGENT, 'PHP-MCAPI/2.0');
+//             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+//             curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+//             curl_setopt($ch, CURLOPT_POST, true);
+//             curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+//             curl_setopt($ch, CURLOPT_POSTFIELDS, $json_data);
 
-            $result = curl_exec($ch);
-        }
+//             $result = curl_exec($ch);
+//         }
 
-        // Return an appropriate response to the browser
-        if ( defined( 'DOING_AJAX' ) ) {
-            echo $customer ? "Success" : "E";
-        }
-    } else {
-        echo "E";
-    }
+//         // Return an appropriate response to the browser
+//         if ( defined( 'DOING_AJAX' ) ) {
+//             echo $customer ? "Success" : "E";
+//         }
+//     } else {
+//         echo "E";
+//     }
 
-    die();
-}
+//     die();
+// }
 
 // Custom Scripting to Move JavaScript from the Head to the Footer
 function remove_head_scripts() { 

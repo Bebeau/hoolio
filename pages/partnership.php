@@ -49,13 +49,13 @@ get_header();
 	            <input type="text" name="company" id="company" class="form-control" placeholder="company"/>
 	            <div class="dropdown">
 	                <button>Type of Partnership <i class="fa fa-angle-down"></i></button>
-	                <ul class="dropdown-menu" data-input="partnership-type">
+	                <ul class="dropdown-menu" data-input="pType">
 	                    <li data-value="Channel">Channel Partnership</li>
 	                    <li data-value="Reseller">Reseller Partnership</li>
 	                    <li data-value="Both">Both</li>
 	                </ul>
 	            </div>
-	            <input type="hidden" name="partnership-type" id="partnership-type" class="form-control"/>
+	            <input type="hidden" name="pType" id="pType" class="form-control"/>
 		        <button type="submit" class="btn btn-submit">Submit</button>
 		        <input type="hidden" name="password" id="password" val="" />
 		    </form>
