@@ -556,6 +556,15 @@
 	.hide_mobile {
 		display: none;
 	}
+	#newsletterFrm {
+		height: 115px;
+		&.slideIn {
+			height: 115px;
+		}
+		.fa-times {
+			display: none;
+		}
+	}
 	#checkout {
 		box-sizing: border-box;
 		padding: 125px 15px 250px;

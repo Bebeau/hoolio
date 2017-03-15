@@ -315,9 +315,9 @@ add_action('wp_ajax_newsletterSubmit', 'newsletterSubmit');
 add_action('wp_ajax_nopriv_newsletterSubmit', 'newsletterSubmit');
 function newsletterSubmit() {
 
-    if(!empty($_POST['newsletteremail'])) {
+    if(!empty($_POST['email'])) {
 
-        $emailaddress = $_POST['newsletteremail'];
+        $emailaddress = $_POST['email'];
 
         $key = esc_attr(get_option('mailchimp_api'));
         $list = esc_attr(get_option('mailchimp_list'));
@@ -332,8 +332,7 @@ function newsletterSubmit() {
                 'status'        => 'subscribed',
                 'merge_fields'  => array(
                     'FNAME'     => '',
-                    'LNAME'     => '',
-                    'INTEREST'  => 'Newsletter'
+                    'LNAME'     => ''
                 )
             );
 

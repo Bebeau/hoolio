@@ -4289,6 +4289,12 @@ footer {
 @media (max-width: 414px) {
   .hide_mobile {
     display: none; }
+  #newsletterFrm {
+    height: 115px; }
+    #newsletterFrm.slideIn {
+      height: 115px; }
+    #newsletterFrm .fa-times {
+      display: none; }
   #checkout {
     box-sizing: border-box;
     padding: 125px 15px 250px; }
