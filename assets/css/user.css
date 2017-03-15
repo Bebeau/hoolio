@@ -37,6 +37,16 @@
 .column-cite {
   width: 175px; }
 
+#tab_image img {
+  width: 100%; }
+
+#tab_image:hover .button-remove {
+  opacity: 1;
+  text-align: center; }
+
+#tab_image .button-remove:hover {
+  cursor: pointer; }
+
 #sections .inside, #homepage_sections .inside, #content .inside {
   margin: 0;
   padding: 0; }

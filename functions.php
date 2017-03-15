@@ -239,7 +239,7 @@ function partnershipSubmit() {
 
         if ( !empty($name) && !empty($emailaddress) && !empty($phone) ) {
             // split name
-            $name = txtSearche.Split($name);
+            $name = explode($name);
             $email = esc_attr(get_option('admin_email'));
             $to = $name[0].' '.$name[1].' <'.$emailaddress.'>';
 

@@ -135,7 +135,7 @@ body {
 }
 .btn {
 	text-align: center;
-	width: 200px;
+	width: 225px;
 	display: block;
 	margin: 15px auto;
 	padding: 0 15px;
@@ -300,6 +300,7 @@ p {
 	}
 	article {
 		width: 300px;
+		height: 525px;
 		display: inline-block;
 		@include border-top-radius(10px);
 		@include border-bottom-radius(10px);
@@ -310,19 +311,30 @@ p {
 			color: white;
 			font-weight: bold;
 			font-size: 24pt;
+			margin: 0 0 10px;
 		}
 		p {
-			font-size: 16pt;
+			font-size: 14pt;
 			line-height: normal;
+			margin: 15px 0;
+			font-weight: bold;
 		}
 		.price {
-			font-size: 48pt;
+			font-size: 42pt;
 			font-weight: bold;
 			line-height: normal;
 			margin: 0;
 			span {
 				display: block;
 				font-size: 12pt;
+			}
+		}
+		ul {
+			color: white;
+			text-align: left;
+			li {
+				font-size: 14pt;
+				line-height: 21pt;
 			}
 		}
 		&.green {
@@ -348,14 +360,6 @@ p {
 				top: -29px;
 				width: 90%;
 				left: 5%;
-			}
-			ul {
-				color: white;
-				text-align: left;
-				li {
-					font-size: 14pt;
-					line-height: 24pt;
-				}
 			}
 		}
 		&.grey {
@@ -429,6 +433,10 @@ p {
 	}
 }
 .checkoutPage {
+	.cta {
+		margin: 0 0 100px;
+		padding: 0 15px;
+	}
 	h2 {
 		color: $blue !important;
 	}
@@ -773,10 +781,74 @@ header {
 		color: white;
 		margin: 10px 0;
 	}
-	iframe {
+	.featureVid {
+		position: relative;
+		text-transform: center;
 		width: 853px;
-		height: 480px;
-		padding: 25px 0;
+		height: 603px;
+		margin: 25px auto;
+		box-sizing: border-box;
+		@include transition(all 0.3s $easeInOutBack);
+		&.playing {
+			height: 480px;
+			@include transition(all 0.3s $easeInOutBack);
+			&:before {
+				display: none;
+			}
+			.fa-play {
+				display: none;
+			}
+			img {
+				display: none;
+			}
+		}
+		&:before {
+			content:"";
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			width: 100%;
+			background: rgba(0,0,0,0.25);
+			z-index: 2;
+		}
+		.fa-play {
+			position: absolute;
+			z-index: 3;
+			left: 50%;
+			top: 50%;
+			width: 50px;
+			height: 50px;
+			line-height: 50px;
+			padding-left: 5px;
+			box-sizing: border-box;
+			color: white;
+			background: $green;
+			@include border-top-radius(50%);
+			@include border-bottom-radius(50%);
+			@include transform(translate(-50%,-50%));
+			box-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+			@include transition(all 0.3s $easeInOutBack);
+			&:hover {
+				cursor: pointer;
+				background: lighten($green, 5%);
+				@include transition(all 0.3s $easeInOutBack);
+			}
+		}
+		img {
+			width: 100%;
+			height: auto;
+			position: absolute;
+			z-index: 1;
+			top: 0;
+			left: 0;
+		}
+		iframe {
+			width: 853px;
+			height: 480px;
+			padding: 0;
+		}
 	}
 }
 #research {
@@ -1753,7 +1825,7 @@ input[placeholder], [placeholder], *[placeholder] {
 	text-align: center;
 	position: relative;
 	z-index: 2;
-	padding: 50px 0;
+	padding: 100px 0 50px;
 	background: white;
 	article {
 		width: 1170px;

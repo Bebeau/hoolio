@@ -8,13 +8,13 @@ get_header();
 
 global $post; ?>
 
-<div id="pageBanner" class="default" data-parallax='{"y" : 230, "smoothness": 1}'>
+<!-- <div id="pageBanner" class="default" data-parallax='{"y" : 230, "smoothness": 1}'>
 	<div class="outer">
 		<div class="inner">
-			<?php the_title("<h1>","</h1>"); ?>
+			<?php // the_title("<h1>","</h1>"); ?>
 		</div>
 	</div>
-</div>
+</div> -->
 
 <?php
 

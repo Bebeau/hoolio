@@ -165,10 +165,10 @@
 					);
 					wp_nav_menu($menu_args);
 				?>
-				<a href="<?php echo site_url('pricing'); ?>" class="btn">
+				<a href="https://editor.wyzerr.com/signup" class="btn">
 					Get Started
 				</a>
-				<a href="#" class="btn-login btn">
+				<a href="https://editor.wyzerr.com/login" class="btn-login btn">
 					Login
 				</a>
 			</span>

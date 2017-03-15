@@ -35,6 +35,14 @@ function wyzerr_research_pages() {
                     'normal', 
                     'low'
                 );
+                add_meta_box(
+                    'tab_image',
+                    'Tab Image', 
+                    'research_tab_image',
+                    'page', 
+                    'side', 
+                    'low'
+                );
             }
             function research_content($post) {
             	// Use nonce for verification
@@ -127,6 +135,18 @@ function wyzerr_research_pages() {
 			    echo '</div>';
 			    echo '<button class="button button-large btn-section">Add Section</button>';
             }
+            function research_tab_image($post) {
+                wp_nonce_field( 'tab', 'tab_noncename' );
+                $tabImage = get_post_meta($post->ID,'tabImage', true);
+                echo '<div data-img="" data-input="tabImage" data-post="'.$post->ID.'">';
+                    if(!empty($tabImage)) {
+                        echo '<img src="'.$tabImage.'" alt="" /><span class="remove-image button-remove" data-text="icon">X</span>';
+                    } else {
+                        echo '<a href="" class="upload-image">Set Tab Image</a>';
+                    }
+                    echo '<input type="hidden" name="tabImage" id="tabImage" />';
+                echo '</div>';
+            }
         }
     }
 }
@@ -195,6 +215,7 @@ function tabContent() {
 
     $subTitle = get_post_meta($pageID,'sub_title', true);
     $quote = get_post_meta($pageID,'quote', true);
+    $tabImg = get_post_meta($pageID,'tabImage',true);
 
     echo '<i class="fa fa-spinner fa-spin"></i>';
     echo '<div class="previewWrap">';
@@ -204,7 +225,7 @@ function tabContent() {
             echo '<a href="'.get_the_permalink($pageID).'" class="btn">Learn More</a>';
         echo '</div>';
         echo '<div class="half previewImage">';
-            echo '<span>'.get_the_post_thumbnail($pageID).'</span>';
+            echo '<span><img src="'.$tabImg.'" alt="" /></span>';
         echo '</div>';
     echo '</div>';
     

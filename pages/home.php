@@ -10,7 +10,8 @@ get_header(); ?>
 		<?php
 			$section1_title = get_post_meta($post->ID,'section1_title',true);
             $section1_desc = get_post_meta($post->ID,'section1_desc',true);
-            $section1_button = get_post_meta($post->ID,'section1_button',true);
+            $section1_vidThumb = get_post_meta($post->ID,'section1_vidThumb',true);
+            $section1_desc3 = get_post_meta($post->ID,'section1_desc3',true);
             if(!empty($section1_title)) {
         		echo '<h1>'.$section1_title.'</h1>';
         	} else {
@@ -21,9 +22,22 @@ get_header(); ?>
         	} else {
         		echo '<p>Create full interactive surveys that look and feel like a game. No market research skills required.</p>';
         	}
-        	echo '<iframe src="https://player.vimeo.com/video/192497090" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
+        	echo '<div class="featureVid">';
+	        	if(!empty($section1_vidThumb)) {
+	        		if(!wp_is_mobile()) {
+		        		echo '<i class="fa fa-play"></i>';
+		        		echo '<img src="'.$section1_vidThumb.'" alt="" />';
+		        	} else {
+		        		echo '<iframe src="https://player.vimeo.com/video/192497090" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
+		        	}
+	        	}
+        	echo '</div>';
         	echo '<div class="client_logos">';
-        		echo '<p>Trusted by forward thinking individuals at companies of all sizes.</p>';
+        		if(!empty($section1_desc3)) {
+        			echo '<p>'.$section1_desc3.'</p>';
+        		} else {
+        			echo '<p>Trusted by forward thinking individuals at companies of all sizes.</p>';
+        		}
         		echo '<img src="'.get_bloginfo('template_directory').'/assets/images/client_logos/unilever_white.png" alt="Unilever" />';
         		echo '<img src="'.get_bloginfo('template_directory').'/assets/images/client_logos/uc_white.png" alt="University of Cincinnati" />';
         		echo '<img src="'.get_bloginfo('template_directory').'/assets/images/client_logos/walmart_white.png" alt="Walmart" />';

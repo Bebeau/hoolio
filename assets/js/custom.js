@@ -521,4 +521,12 @@ var init = {
 jQuery(document).ready(function() {
 	move.onMove();
 	init.onReady();
+	if(!isMobile) {
+		jQuery('.featureVid').click(function(){
+			jQuery('.featureVid').addClass("playing");
+			jQuery('.featureVid').append('<iframe src="https://player.vimeo.com/video/192497090?autoplay=true" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>');
+		});
+	} else {
+		jQuery('.featureVid').addClass("playing");
+	}
 });

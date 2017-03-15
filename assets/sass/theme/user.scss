@@ -42,7 +42,22 @@
 .column-cite {
 	width: 175px;
 }
-
+#tab_image {
+	img {
+		width: 100%;
+	}
+	&:hover {
+		.button-remove {
+			opacity: 1;
+			text-align: center;
+		}
+	}
+	.button-remove {
+		&:hover {
+			cursor: pointer;
+		}
+	}
+}
 #sections, #homepage_sections, #content {
 	.inside {
 		margin: 0;

@@ -91,15 +91,11 @@
 				} else {
 					echo '<p>Join the disruptors saying no more to bad surveys</p>';
 				}
-				echo '<form role="form" method="GET" action="" id="signUp">';
-					echo '<input type="text" name="emailaddress" id="emailaddress" placeholder="Your email address" />';
-					echo '<input type="text" name="pass" id="pass" placeholder="Choose a password"/>';
-					if(!empty($cta_button)) {
-						echo '<a href="'.site_url('pricing').'" class="btn">'.$cta_button.'</a>';
-					} else {
-						echo '<a href="'.site_url('pricing').'" class="btn">Buy Presale</a>';
-					}
-				echo '</form>';
+				if(!empty($cta_button)) {
+					echo '<a href="https://editor.wyzerr.com/signup" class="btn">'.$cta_button.'</a>';
+				} else {
+					echo '<a href="https://editor.wyzerr.com/signup" class="btn">Buy Presale</a>';
+				}
 			echo '</section>';
 		} ?>
 

@@ -42,7 +42,7 @@ function wyzerr_manage_homepage() {
 
                     $section1_title = get_post_meta($post->ID,'section1_title',true);
                     $section1_desc = get_post_meta($post->ID,'section1_desc',true);
-                    $section1_desc2 = get_post_meta($post->ID,'section1_desc2',true);
+                    $section1_vidThumb = get_post_meta($post->ID,'section1_vidThumb',true);
                     $section1_desc3 = get_post_meta($post->ID,'section1_desc3',true);
 
                     echo '<section>';
@@ -55,10 +55,19 @@ function wyzerr_manage_homepage() {
                         echo '<label for="section1_desc">Paragraph 1</label>';
                         echo '<input type="text" name="section1_desc" id="section1_desc" value="'.$section1_desc.'" />';
 
-                        echo '<label for="section1_desc2">Paragraph 2</label>';
-                        echo '<input type="text" name="section1_desc2" id="section1_desc2" value="'.$section1_desc2.'" />';
+                        echo '<div class="tab">';
+                            echo '<label for="section1_desc">Video Thumbnail</label> <br />';
+                            echo '<div class="icon" data-img="icon" data-input="section1_vidThumb" data-post="'.$post->ID.'">';
+                                if(!empty($section1_vidThumb)) {
+                                    echo '<img src="'.$section1_vidThumb.'" alt="" /><span class="remove-image button-remove" data-text="icon">X</span>';
+                                } else {
+                                    echo '<a href="#" class="upload-image">Upload/Set Image</a>';
+                                }
+                                echo '<input type="hidden" name="section1_vidThumb" id="" />';
+                            echo '</div>';
+                        echo '</div>';
 
-                        echo '<label for="section1_desc3">Paragraph 3</label>';
+                        echo '<label for="section1_desc3">Paragraph 2</label>';
                         echo '<input type="text" name="section1_desc3" id="section1_desc3" value="'.$section1_desc3.'" />';
 
                     echo '</section>';
@@ -348,14 +357,14 @@ function save_homepage_section_content( $post_id ) {
 
     $section1_title = $_POST['section1_title'];
     $section1_desc = $_POST['section1_desc'];
-    $section1_desc2 = $_POST['section1_desc2'];
+    $section1_vidThumb = $_POST['section1_vidThumb'];
     $section1_desc3 = $_POST['section1_desc3'];
 
     if(!empty($section1_title)) {
         update_post_meta($post_id,'section1_title',$section1_title);
     }
-    if(!empty($section1_desc2)) {
-        update_post_meta($post_id,'section1_desc2',$section1_desc2);
+    if(!empty($section1_vidThumb)) {
+        update_post_meta($post_id,'section1_vidThumb',$section1_vidThumb);
     }
     if(!empty($section1_desc3)) {
         update_post_meta($post_id,'section1_desc3',$section1_desc3);
