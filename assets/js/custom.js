@@ -22,6 +22,7 @@ var move = {
 		move.slideDown();
 		move.slideInLeft();
 		move.slideInRight();
+		move.newsletter();
 	},
 	isOnScreen: function(elem) {
 		if(elem.length) {
@@ -110,6 +111,27 @@ var move = {
 				}
 			});
 		}
+	},
+	newsletter: function() {
+		var wrap = jQuery('#newsletterFrm');
+		if(wrap.length > 0){
+			wrap.each(function(){
+				var section = jQuery(this);
+				var parent = jQuery(this);
+				if(move.isOnScreen(parent)) {
+					section.addClass("slideIn");
+				} else {
+					jQuery(window).scroll(function(){
+						if(move.isOnScreen(parent)) {
+							section.addClass("slideIn");
+						}
+					});
+				}
+			});
+		}
+		jQuery('#newsletterFrm .fa-times').click(function(){
+			jQuery('#newsletterFrm').addClass("close");
+		});
 	}
 };
 
@@ -397,19 +419,23 @@ var init = {
 	},
 	newsletterResponse: function(response) {
         if (response === "Success") {
-        	jQuery('#newsletterFrm .btn-submit').addClass("success").html('<i class="fa fa-check"></i>');
+        	jQuery('#newsletterFrm').addClass("success");
+        	jQuery('#newsletterFrm .btn-submit').html('<i class="fa fa-check"></i>');
         	jQuery("#newsletteremail").val("");
             setTimeout(
             	function() {
-            		jQuery('#newsletterFrm .btn-submit').removeClass("success").html('<i class="fa fa-envelope"></i>');
+            		jQuery('#newsletterFrm').removeClass("success");
+            		jQuery('#newsletterFrm .btn-submit').removeClass("success").html('<i class="fa fa-arrow-circle-right"></i>');
             	}, 2500
         	);
         }
         if (response === "E") {
-         	jQuery('#newsletterFrm .btn-submit').addClass('error').html('<i class="fa fa-ban"></i>');
+        	jQuery('#newsletterFrm').addClass('error');
+         	jQuery('#newsletterFrm .btn-submit').html('<i class="fa fa-ban"></i>');
          	setTimeout(
             	function() {
-            		jQuery('#newsletterFrm .btn-submit').removeClass('error').html('<i class="fa fa-envelope"></i>');
+            		jQuery('#newsletterFrm').removeClass('error');
+            		jQuery('#newsletterFrm .btn-submit').html('<i class="fa fa-arrow-circle-right"></i>');
             	}, 2500
         	);
         }

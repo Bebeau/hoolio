@@ -99,6 +99,13 @@
 			echo '</section>';
 		} ?>
 
+		<form id="newsletterFrm">
+			<i class="fa fa-times"></i>
+			<label for="email">Enter your email for updates.</label>
+			<input type="email" name="newsletteremail" id="newsletteremail" placeholder="email@address.." />
+			<button type="submit" class="btn-submit"><i class="fa fa-arrow-circle-right"></i></button>
+		</form>
+
 		<footer>
 			<div class="outer">
 				<div class="inner">

@@ -377,6 +377,9 @@
 	}
 }
 @media(max-width: 768px) {
+	.Menu {
+		display: inline-block;
+	}
 	#checkout {
 		article {
 			width: 225px;
