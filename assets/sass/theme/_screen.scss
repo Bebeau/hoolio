@@ -1941,10 +1941,6 @@ blockquote {
 		height: 50px;
 		@include transition(all 0.3s $easeInOutBack);
 	}
-	&.close {
-		height: 0;
-		@include transition(all 0.3s $easeInOutBack);
-	}
 	&.success {
 		background: darken($green, 5%);
 		@include transition(all 0.3s $authenticMotion);
@@ -1952,16 +1948,6 @@ blockquote {
 	&.error {
 		background: lighten(red,25%);
 		@include transition(all 0.3s $authenticMotion);
-	}
-	.fa-times {
-		position: absolute;
-		right: 25px;
-		top: 50%;
-		@include transform(translate(0,-50%));
-		color: rgba(0,0,0,0.25);
-		&:hover {
-			cursor: pointer;
-		}
 	}
 	::-webkit-input-placeholder {
 		color: white;

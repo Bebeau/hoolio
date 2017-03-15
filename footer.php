@@ -100,7 +100,6 @@
 		} ?>
 
 		<form id="newsletterFrm" method="POST">
-			<i class="fa fa-times"></i>
 			<label for="newsletteremail">Enter your email for updates.</label>
 			<input type="text" name="newsletteremail" id="newsletteremail" placeholder="email@address.." />
 			<button type="submit" class="btn-submit"><i class="fa fa-arrow-circle-right"></i></button>

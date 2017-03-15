@@ -3643,11 +3643,6 @@ blockquote {
     -webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     -moz-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
-  #newsletterFrm.close {
-    height: 0;
-    -webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    -moz-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
   #newsletterFrm.success {
     background: #a7d051;
     -webkit-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -3658,18 +3653,6 @@ blockquote {
     -webkit-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     -moz-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
-  #newsletterFrm .fa-times {
-    position: absolute;
-    right: 25px;
-    top: 50%;
-    -webkit-transform: translate(0, -50%);
-    -moz-transform: translate(0, -50%);
-    -ms-transform: translate(0, -50%);
-    -o-transform: translate(0, -50%);
-    transform: translate(0, -50%);
-    color: rgba(0, 0, 0, 0.25); }
-    #newsletterFrm .fa-times:hover {
-      cursor: pointer; }
   #newsletterFrm ::-webkit-input-placeholder {
     color: white; }
   #newsletterFrm input {
@@ -4293,8 +4276,6 @@ footer {
     height: 115px; }
     #newsletterFrm.slideIn {
       height: 115px; }
-    #newsletterFrm .fa-times {
-      display: none; }
   #checkout {
     box-sizing: border-box;
     padding: 125px 15px 250px; }

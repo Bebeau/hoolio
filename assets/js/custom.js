@@ -129,9 +129,6 @@ var move = {
 				}
 			});
 		}
-		jQuery('#newsletterFrm .fa-times').click(function(){
-			jQuery('#newsletterFrm').addClass("close");
-		});
 	}
 };
 
