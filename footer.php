@@ -19,7 +19,7 @@
 					            'posts_per_page' => 2
 					        )
 					    );
-						$c = 0;
+					    
 					    if (have_posts()) : while (have_posts()) : the_post();
 
 					        $name = get_post_meta($post->ID,'testimonial_name', true);
@@ -28,20 +28,13 @@
 
 					        echo '<div class="quote">';
 					        	if(!wp_is_mobile()) {
-						        	if($c % 2 === 0) {
-							        	echo '<div class="quote_image">';
-							        		the_post_thumbnail();
-							        	echo '</div>';
-							        }
 						        	echo '<div class="quote_copy">';
 							        	echo '<blockquote>'.get_the_content().'</blockquote>';
 							        	echo '<cite>- <strong>'.$name.'</strong> '.$company.'</cite>';
 							        echo '</div>';
-							        if($c % 2 !== 0) {
-							        	echo '<div class="quote_image">';
-							        		the_post_thumbnail();
-							        	echo '</div>';
-							        }
+							        echo '<div class="quote_image">';
+						        		the_post_thumbnail();
+						        	echo '</div>';
 							    } else {
 							    	echo '<div class="quote_image">';
 						        		the_post_thumbnail();
@@ -53,7 +46,6 @@
 							    }
 					        echo '</div>';
 
-					        $c++;
 					        endwhile;
 					    endif;
 

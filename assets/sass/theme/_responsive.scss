@@ -80,29 +80,15 @@
 		}
 	}
 	#meet {
-		ul#bubbles {
-			width: 900px;
-			margin: 50px auto 0;
-			li {
-				.bubblewrap {
-					&:after {
-						top: 108px;
-					}
-					.bubble {
-						width: 125px;
-						height: 125px;
-						.icon {
-							width: 50px;
-							height: 50px;
-						}
-					}
+		.squares {
+			article {
+				width: 300px;
+				height: 250px;
+				padding: 25px;
+				p {
+					font-size: 16pt;
+					line-height: normal;
 				}
-			} 
-		}
-		.copy {
-			img {
-				max-height: 100px;
-				margin-bottom: 25px;
 			}
 		}
 	}
@@ -152,7 +138,7 @@
 			.quote {
 				.quote_image {
 					display: block;
-					@include transform(translate(0,200px));
+					@include transform(translate(0,-100px));
 				}
 				&:last-child {
 					.quote_image {
@@ -184,6 +170,25 @@
 		#Preview {
 			.previewWrap {
 				width: 100%;
+			}
+		}
+	}
+	#testimonials {
+		.quotewrap {
+			padding: 0;
+			.quote {
+				.quote_copy {
+					width: 400px;
+				}
+				.quote_image {
+					display: block;
+					@include transform(translate(0,-50px));
+				}
+				&:last-child {
+					.quote_image {
+						@include transform(translate(0,-50px));
+					}
+				}
 			}
 		}
 	}
@@ -244,43 +249,11 @@
 	#top {
 		padding: 82px 0 150px;
 	}
-	#meet {
-		.squares {
-			article {
-				width: 300px;
-				height: 250px;
-				padding: 25px;
-				p {
-					font-size: 16pt;
-					line-height: normal;
-				}
-			}
-		}
-	}
 	#pIntro {
 		article {
 			width: 100%;
 			box-sizing: border-box;
 			padding: 0 50px;
-		}
-	}
-	#testimonials {
-		.quotewrap {
-			padding: 0;
-			.quote {
-				.quote_copy {
-					width: 400px;
-				}
-				.quote_image {
-					display: block;
-					@include transform(translate(0,50px));
-				}
-				&:last-child {
-					.quote_image {
-						@include transform(translate(0,50px));
-					}
-				}
-			}
 		}
 	}
 	#checkout {

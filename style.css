@@ -2583,6 +2583,76 @@ header.open {
       height: 480px;
       padding: 0; }
 
+#videoModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100vh;
+  background: #1493cc;
+  display: none;
+  z-index: 999; }
+  #videoModal iframe {
+    width: 853px;
+    height: 480px;
+    margin: 0 auto;
+    display: block; }
+  #videoModal.show {
+    display: block; }
+  #videoModal .close {
+    position: absolute;
+    z-index: 9999;
+    width: 35px;
+    top: 25px;
+    right: 25px;
+    vertical-align: middle;
+    -webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    -moz-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+    #videoModal .close .bar {
+      display: block;
+      width: 100%;
+      height: 5px;
+      margin: 5px auto;
+      position: relative;
+      -webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      -moz-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      background: white !important; }
+      #videoModal .close .bar:first-child {
+        margin-top: 5px;
+        margin-bottom: -5px;
+        -webkit-transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+        -webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        -moz-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+      #videoModal .close .bar:nth-child(2) {
+        -webkit-transform: translate(70px, 0);
+        -moz-transform: translate(70px, 0);
+        -ms-transform: translate(70px, 0);
+        -o-transform: translate(70px, 0);
+        transform: translate(70px, 0);
+        -webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        -moz-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+      #videoModal .close .bar:last-child {
+        margin-top: -14px;
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+        transform: rotate(45deg);
+        -webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        -moz-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+    #videoModal .close:hover {
+      cursor: pointer; }
+
 #research {
   position: relative;
   z-index: 10;
@@ -3254,11 +3324,11 @@ ul#bubbles {
       display: inline-block;
       vertical-align: top;
       text-align: right;
-      -webkit-transform: translate(0, -50px);
-      -moz-transform: translate(0, -50px);
-      -ms-transform: translate(0, -50px);
-      -o-transform: translate(0, -50px);
-      transform: translate(0, -50px); }
+      -webkit-transform: translate(0, 50px);
+      -moz-transform: translate(0, 50px);
+      -ms-transform: translate(0, 50px);
+      -o-transform: translate(0, 50px);
+      transform: translate(0, 50px); }
       #testimonials .quotewrap .quote .quote_image {
         text-align: left;
         display: inline-block;
@@ -3597,7 +3667,7 @@ blockquote {
       vertical-align: middle;
       padding: 0 25px; }
       #sectionWrap section .layout img {
-        max-width: 100%;
+        max-width: 250px;
         height: auto;
         margin: 0 auto;
         display: block; }
@@ -3961,20 +4031,13 @@ footer {
     transform: translate(100px, 0); }
   #help video {
     width: 800px; }
-  #meet ul#bubbles {
-    width: 900px;
-    margin: 50px auto 0; }
-    #meet ul#bubbles li .bubblewrap:after {
-      top: 108px; }
-    #meet ul#bubbles li .bubblewrap .bubble {
-      width: 125px;
-      height: 125px; }
-      #meet ul#bubbles li .bubblewrap .bubble .icon {
-        width: 50px;
-        height: 50px; }
-  #meet .copy img {
-    max-height: 100px;
-    margin-bottom: 25px; }
+  #meet .squares article {
+    width: 300px;
+    height: 250px;
+    padding: 25px; }
+    #meet .squares article p {
+      font-size: 16pt;
+      line-height: normal; }
   #video video {
     display: block; }
   #contact {
@@ -4000,11 +4063,11 @@ footer {
       font-size: 32pt; }
   #testimonials .quotewrap .quote .quote_image {
     display: block;
-    -webkit-transform: translate(0, 200px);
-    -moz-transform: translate(0, 200px);
-    -ms-transform: translate(0, 200px);
-    -o-transform: translate(0, 200px);
-    transform: translate(0, 200px); }
+    -webkit-transform: translate(0, -100px);
+    -moz-transform: translate(0, -100px);
+    -ms-transform: translate(0, -100px);
+    -o-transform: translate(0, -100px);
+    transform: translate(0, -100px); }
   #testimonials .quotewrap .quote:last-child .quote_image {
     -webkit-transform: translate(0, -100px);
     -moz-transform: translate(0, -100px);
@@ -4021,6 +4084,23 @@ footer {
     width: 991px; }
   #research #Preview .previewWrap {
     width: 100%; }
+  #testimonials .quotewrap {
+    padding: 0; }
+    #testimonials .quotewrap .quote .quote_copy {
+      width: 400px; }
+    #testimonials .quotewrap .quote .quote_image {
+      display: block;
+      -webkit-transform: translate(0, -50px);
+      -moz-transform: translate(0, -50px);
+      -ms-transform: translate(0, -50px);
+      -o-transform: translate(0, -50px);
+      transform: translate(0, -50px); }
+    #testimonials .quotewrap .quote:last-child .quote_image {
+      -webkit-transform: translate(0, -50px);
+      -moz-transform: translate(0, -50px);
+      -ms-transform: translate(0, -50px);
+      -o-transform: translate(0, -50px);
+      transform: translate(0, -50px); }
   #introWrap article {
     width: 100%;
     box-sizing: border-box;
@@ -4053,34 +4133,10 @@ footer {
     margin: 0 15px; }
   #top {
     padding: 82px 0 150px; }
-  #meet .squares article {
-    width: 300px;
-    height: 250px;
-    padding: 25px; }
-    #meet .squares article p {
-      font-size: 16pt;
-      line-height: normal; }
   #pIntro article {
     width: 100%;
     box-sizing: border-box;
     padding: 0 50px; }
-  #testimonials .quotewrap {
-    padding: 0; }
-    #testimonials .quotewrap .quote .quote_copy {
-      width: 400px; }
-    #testimonials .quotewrap .quote .quote_image {
-      display: block;
-      -webkit-transform: translate(0, 50px);
-      -moz-transform: translate(0, 50px);
-      -ms-transform: translate(0, 50px);
-      -o-transform: translate(0, 50px);
-      transform: translate(0, 50px); }
-    #testimonials .quotewrap .quote:last-child .quote_image {
-      -webkit-transform: translate(0, 50px);
-      -moz-transform: translate(0, 50px);
-      -ms-transform: translate(0, 50px);
-      -o-transform: translate(0, 50px);
-      transform: translate(0, 50px); }
   #checkout .right {
     height: 100%;
     padding: 50px 0; }

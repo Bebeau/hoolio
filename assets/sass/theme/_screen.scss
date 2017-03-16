@@ -851,6 +851,62 @@ header {
 		}
 	}
 }
+#videoModal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 100vh;
+	background: $blue;
+	display: none;
+	z-index: 999;
+	iframe {
+		width: 853px;
+		height: 480px;
+		margin: 0 auto;
+		display: block;
+	}
+	&.show {
+		display: block;
+	}
+	.close {
+		position: absolute;
+		z-index: 9999;
+		width: 35px;
+		top: 25px;
+		right: 25px;
+		vertical-align: middle;
+		@include transition(all 0.3s $easeInOutBack);
+		.bar {
+			display: block;
+			width: 100%;
+			height: 5px;
+			margin: 5px auto;
+			position: relative;
+			@include transition(all 0.3s $easeInOutBack);
+			background: white !important;
+			&:first-child {
+				margin-top: 5px;
+				margin-bottom: -5px;
+				@include transform(rotate(-45deg));
+				@include transition(all 0.3s $easeInOutBack);
+			}
+			&:nth-child(2) {
+				@include transform(translate(70px, 0));
+				@include transition(all 0.3s $easeInOutBack);
+			}
+			&:last-child {
+				margin-top: -14px;
+				@include transform(rotate(45deg));
+				@include transition(all 0.3s $easeInOutBack);
+			}
+		}
+		&:hover {
+			cursor: pointer;
+		}
+	}
+}
 #research {
 	position: relative;
 	z-index: 10;
@@ -1484,7 +1540,7 @@ ul#bubbles {
 			display: inline-block;
 			vertical-align: top;
 			text-align: right;
-			@include transform(translate(0,-50px));
+			@include transform(translate(0,50px));
 			.quote_image {
 				text-align: left;
 				display: inline-block;
@@ -1896,7 +1952,7 @@ blockquote {
 			vertical-align: middle;
 			padding: 0 25px;
 			img {
-				max-width: 100%;
+				max-width: 250px;
 				height: auto;
 				margin: 0 auto;
 				display: block;

@@ -48,6 +48,25 @@ get_header(); ?>
         ?>
 	</section>
 
+	<section id="videoModal">
+		<div class="close">
+			<span class="bar cross"></span>		
+			<span class="bar middle"></span>		
+			<span class="bar cross"></span>		
+		</div>
+		<div class="outer">
+			<div class="inner">
+				<?php
+					$section1_modalBtnText = get_post_meta($post->ID,'section1_modalBtnText',true);
+	    			$section1_modalBtnLink = get_post_meta($post->ID,'section1_modalBtnLink',true);
+					if($section1_modalBtnText && $section1_modalBtnLink) {
+						echo '<a href="'.$section1_modalBtnLink.'" class="btn">'.$section1_modalBtnText.'</a>';
+					}
+				?>
+			</div>
+		</div>
+	</section>
+
 	<section id="meet" class="block">
 		<?php
 			$section2_title = get_post_meta($post->ID,'section2_title',true);
@@ -218,7 +237,7 @@ get_header(); ?>
 			            'posts_per_page' => 2
 			        )
 			    );
-				$c = 0;
+			    
 			    if (have_posts()) : while (have_posts()) : the_post();
 
 			        $name = get_post_meta($post->ID,'testimonial_name', true);
@@ -227,20 +246,13 @@ get_header(); ?>
 
 			        echo '<div class="quote">';
 			        	if(!wp_is_mobile()) {
-				        	if($c % 2 === 0) {
-					        	echo '<div class="quote_image">';
-					        		the_post_thumbnail();
-					        	echo '</div>';
-					        }
 				        	echo '<div class="quote_copy">';
 					        	echo '<blockquote>'.get_the_content().'</blockquote>';
 					        	echo '<cite>- <strong>'.$name.'</strong> '.$company.'</cite>';
 					        echo '</div>';
-					        if($c % 2 !== 0) {
-					        	echo '<div class="quote_image">';
-					        		the_post_thumbnail();
-					        	echo '</div>';
-					        }
+					        echo '<div class="quote_image">';
+				        		the_post_thumbnail();
+				        	echo '</div>';
 					    } else {
 					    	echo '<div class="quote_image">';
 				        		the_post_thumbnail();
@@ -252,7 +264,6 @@ get_header(); ?>
 					    }
 			        echo '</div>';
 
-			        $c++;
 			        endwhile;
 			    endif;
 

@@ -546,10 +546,12 @@ jQuery(document).ready(function() {
 	init.onReady();
 	if(!isMobile) {
 		jQuery('.featureVid').click(function(){
-			jQuery('.featureVid').addClass("playing");
-			jQuery('.featureVid').append('<iframe src="https://player.vimeo.com/video/192497090?autoplay=true" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>');
+			jQuery('#videoModal').addClass("show");
+			jQuery('#videoModal .inner').prepend('<iframe src="https://player.vimeo.com/video/192497090?autoplay=true" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>');
 		});
-	} else {
-		jQuery('.featureVid').addClass("playing");
+		jQuery('#videoModal .close').click(function(){
+			jQuery('#videoModal').removeClass("show");
+			jQuery('#videoModal iframe').remove();
+		});
 	}
 });

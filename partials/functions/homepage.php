@@ -43,6 +43,8 @@ function wyzerr_manage_homepage() {
                     $section1_title = get_post_meta($post->ID,'section1_title',true);
                     $section1_desc = get_post_meta($post->ID,'section1_desc',true);
                     $section1_vidThumb = get_post_meta($post->ID,'section1_vidThumb',true);
+                    $section1_modalBtnText = get_post_meta($post->ID,'section1_modalBtnText',true);
+                    $section1_modalBtnLink = get_post_meta($post->ID,'section1_modalBtnLink',true);
                     $section1_desc3 = get_post_meta($post->ID,'section1_desc3',true);
 
                     echo '<section>';
@@ -56,7 +58,7 @@ function wyzerr_manage_homepage() {
                         echo '<input type="text" name="section1_desc" id="section1_desc" value="'.$section1_desc.'" />';
 
                         echo '<div class="tab">';
-                            echo '<label for="section1_desc">Video Thumbnail</label> <br />';
+                            echo '<label for="section1_vidThumb">Video Thumbnail</label> <br />';
                             echo '<div class="icon" data-img="icon" data-input="section1_vidThumb" data-post="'.$post->ID.'">';
                                 if(!empty($section1_vidThumb)) {
                                     echo '<img src="'.$section1_vidThumb.'" alt="" /><span class="remove-image button-remove" data-text="icon">X</span>';
@@ -66,6 +68,12 @@ function wyzerr_manage_homepage() {
                                 echo '<input type="hidden" name="section1_vidThumb" id="" />';
                             echo '</div>';
                         echo '</div>';
+
+                        echo '<label for="section1_modalBtnText">Modal Button Text</label>';
+                        echo '<input type="text" name="section1_modalBtnText" id="section1_modalBtnText" value="'.$section1_modalBtnText.'" />';
+
+                        echo '<label for="section1_modalBtnLink">Modal Button Link</label>';
+                        echo '<input type="text" name="section1_modalBtnLink" id="section1_modalBtnLink" value="'.$section1_modalBtnLink.'" />';
 
                         echo '<label for="section1_desc3">Paragraph 2</label>';
                         echo '<input type="text" name="section1_desc3" id="section1_desc3" value="'.$section1_desc3.'" />';
@@ -358,13 +366,24 @@ function save_homepage_section_content( $post_id ) {
     $section1_title = $_POST['section1_title'];
     $section1_desc = $_POST['section1_desc'];
     $section1_vidThumb = $_POST['section1_vidThumb'];
+    $section1_modalBtnText = $_POST['section1_modalBtnText'];
+    $section1_modalBtnLink = $_POST['section1_modalBtnLink'];
     $section1_desc3 = $_POST['section1_desc3'];
 
     if(!empty($section1_title)) {
         update_post_meta($post_id,'section1_title',$section1_title);
     }
+    if(!empty($section1_desc)) {
+        update_post_meta($post_id,'section1_desc',$section1_desc);
+    }
     if(!empty($section1_vidThumb)) {
         update_post_meta($post_id,'section1_vidThumb',$section1_vidThumb);
+    }
+    if(!empty($section1_modalBtnText)) {
+        update_post_meta($post_id,'section1_modalBtnText',$section1_modalBtnText);
+    }
+    if(!empty($section1_modalBtnLink)) {
+        update_post_meta($post_id,'section1_modalBtnLink',$section1_modalBtnLink);
     }
     if(!empty($section1_desc3)) {
         update_post_meta($post_id,'section1_desc3',$section1_desc3);
