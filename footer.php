@@ -22,11 +22,11 @@
 			echo '</section>';
 		} ?>
 
-		<form id="newsletterFrm" method="POST">
+		<!-- <form id="newsletterFrm" method="POST">
 			<label for="newsletteremail">Enter your email for updates.</label>
 			<input type="text" name="newsletteremail" id="newsletteremail" placeholder="email@address.." />
 			<button type="submit" class="btn-submit"><i class="fa fa-arrow-circle-right"></i></button>
-		</form>
+		</form> -->
 
 		<footer>
 			<div class="outer">

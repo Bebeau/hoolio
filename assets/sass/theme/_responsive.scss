@@ -182,11 +182,11 @@
 				}
 				.quote_image {
 					display: block;
-					@include transform(translate(0,-50px));
+					@include transform(translate(0,-150px));
 				}
 				&:last-child {
 					.quote_image {
-						@include transform(translate(0,-50px));
+						@include transform(translate(0,-150px));
 					}
 				}
 			}

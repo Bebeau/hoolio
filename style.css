@@ -4095,17 +4095,17 @@ footer {
       width: 400px; }
     #testimonials .quotewrap .quote .quote_image {
       display: block;
-      -webkit-transform: translate(0, -50px);
-      -moz-transform: translate(0, -50px);
-      -ms-transform: translate(0, -50px);
-      -o-transform: translate(0, -50px);
-      transform: translate(0, -50px); }
+      -webkit-transform: translate(0, -150px);
+      -moz-transform: translate(0, -150px);
+      -ms-transform: translate(0, -150px);
+      -o-transform: translate(0, -150px);
+      transform: translate(0, -150px); }
     #testimonials .quotewrap .quote:last-child .quote_image {
-      -webkit-transform: translate(0, -50px);
-      -moz-transform: translate(0, -50px);
-      -ms-transform: translate(0, -50px);
-      -o-transform: translate(0, -50px);
-      transform: translate(0, -50px); }
+      -webkit-transform: translate(0, -150px);
+      -moz-transform: translate(0, -150px);
+      -ms-transform: translate(0, -150px);
+      -o-transform: translate(0, -150px);
+      transform: translate(0, -150px); }
   #introWrap article {
     width: 100%;
     box-sizing: border-box;
