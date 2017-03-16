@@ -3654,7 +3654,9 @@ blockquote {
       text-align: center; }
     #sectionWrap .subFeature img {
       max-width: 800px;
-      height: auto; }
+      height: auto;
+      display: block;
+      margin: 0 auto; }
   #sectionWrap section {
     width: 1170px;
     margin: 0 auto;
