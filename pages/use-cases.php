@@ -18,7 +18,7 @@ if (have_posts()) : while (have_posts()) : the_post();
 	echo '</div>';
 endwhile; endif; ?>
 
-<section id="page" class="section" data-parallax='{"y" : -150, "smoothness": 1}'>
+<section id="page" class="section">
 	<img class="hoolio_logo" data-animation="slideUp" src="<?php echo bloginfo('template_directory'); ?>/assets/images/logo_icon.svg" alt="Hoolio" />
 	<h2>Below are some of the best types <br />of feedback data for Hoolio.</h2>
 	<?php

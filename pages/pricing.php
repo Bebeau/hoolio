@@ -12,7 +12,7 @@ $contentTitle = get_post_meta($post->ID,'contentTitle', true);
 
 ?>
 
-<section id="checkout" data-parallax='{"y" : 230, "smoothness": 1}'>
+<section id="checkout">
 	<?php
 		if(!empty($pricingTitle)) {
 			echo '<h1>'.$pricingTitle.'</h1>';
@@ -58,7 +58,7 @@ $contentTitle = get_post_meta($post->ID,'contentTitle', true);
 	</article>
 </section>
 
-<section id="page" class="section checkoutPage" data-parallax='{"y" : -150, "smoothness": 1}'>
+<section id="page" class="section checkoutPage">
 	<div class="container">
 		<?php
 			echo '<section class="cta">';

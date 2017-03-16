@@ -39,7 +39,7 @@ get_header();
             }
 		?>
 
-		<section id="partnership" data-parallax='{"y" : -150, "smoothness": 1}'>
+		<section id="partnership">
     		<form role="form" method="POST" action="" id="partnershipfrm">
     			<h2>Fill out the form below.</h2>
 		        <input type="text" name="name" id="name" class="form-control" placeholder="name"/>

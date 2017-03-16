@@ -27,7 +27,7 @@ get_header(); ?>
 
 			?>
 
-			<div class="pagelax" data-parallax='{"y" : -150, "smoothness": 1}'>
+			<div class="pagelax">
 		<?php
 			echo '<section id="team">';
 				echo '<img src="'.get_bloginfo('template_directory').'/assets/images/team.jpg" alt="" />';

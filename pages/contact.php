@@ -21,7 +21,7 @@ get_header();
 				</div>
 			</div>
 
-		<section id="contact" class="section" data-parallax='{"y" : -150, "smoothness": 1}'>
+		<section id="contact" class="section" >
 		<?php
 			echo '<div class="container">';
 				echo '<div class="outer">';
