@@ -3671,8 +3671,8 @@ blockquote {
       vertical-align: middle;
       padding: 0 25px; }
       #sectionWrap section .layout img {
-        max-width: 250px;
-        height: auto;
+        max-height: 500px;
+        width: auto;
         margin: 0 auto;
         display: block; }
     #sectionWrap section .details {
