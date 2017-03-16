@@ -1596,6 +1596,7 @@ ul#bubbles {
 #pageBanner {
 	height: 100vh;
 	text-align: center;
+	display: none;
 	&:before {
 		content: "";
 		height: 82px;
