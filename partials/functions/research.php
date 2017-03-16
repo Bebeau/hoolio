@@ -13,7 +13,8 @@ function wyzerr_research_pages() {
         if (
         	$pageName === "Smartforms" && get_post_type($post_id) === "page" || 
         	$pageName === "Builder" && get_post_type($post_id) === "page" || 
-        	$pageName === "Reporting" && get_post_type($post_id) === "page" ) {
+        	$pageName === "Reporting" && get_post_type($post_id) === "page" ||
+            $pageName === "CTA Reporting" && get_post_type($post_id) === "page" ) {
 
         	remove_post_type_support('page', 'editor');
 
