@@ -61,6 +61,8 @@ get_header(); ?>
 	    			$section1_modalBtnLink = get_post_meta($post->ID,'section1_modalBtnLink',true);
 					if($section1_modalBtnText && $section1_modalBtnLink) {
 						echo '<a href="'.$section1_modalBtnLink.'" class="btn">'.$section1_modalBtnText.'</a>';
+					} else {
+						echo '<a href="#" class="btn">Try demo survey</a>';
 					}
 				?>
 			</div>
