@@ -3625,7 +3625,7 @@ input[placeholder], [placeholder], *[placeholder] {
     #introWrap p:last-child {
       margin-top: 25px; }
   #introWrap img {
-    max-width: 1170px;
+    max-width: 800px;
     height: auto;
     padding: 50px 0;
     box-sizing: border-box; }
@@ -3652,6 +3652,9 @@ blockquote {
     #sectionWrap .subFeature h2 {
       font-size: 36pt;
       text-align: center; }
+    #sectionWrap .subFeature img {
+      max-width: 800px;
+      height: auto; }
   #sectionWrap section {
     width: 1170px;
     margin: 0 auto;
