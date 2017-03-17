@@ -785,7 +785,7 @@ header {
 		position: relative;
 		text-transform: center;
 		width: 853px;
-		height: 603px;
+		height: auto;
 		margin: 25px auto;
 		box-sizing: border-box;
 		@include transition(all 0.3s $easeInOutBack);
@@ -839,10 +839,6 @@ header {
 		img {
 			width: 100%;
 			height: auto;
-			position: absolute;
-			z-index: 1;
-			top: 0;
-			left: 0;
 		}
 		iframe {
 			width: 853px;

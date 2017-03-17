@@ -2513,7 +2513,7 @@ header.open {
     position: relative;
     text-transform: center;
     width: 853px;
-    height: 603px;
+    height: auto;
     margin: 25px auto;
     box-sizing: border-box;
     -webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
@@ -2573,11 +2573,7 @@ header.open {
         transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
     #top .featureVid img {
       width: 100%;
-      height: auto;
-      position: absolute;
-      z-index: 1;
-      top: 0;
-      left: 0; }
+      height: auto; }
     #top .featureVid iframe {
       width: 853px;
       height: 480px;
