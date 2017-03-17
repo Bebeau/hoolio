@@ -2997,7 +2997,13 @@ header.open {
   padding-top: 25px; }
   .page-template-use-cases #page h2 {
     margin-top: 25px;
-    color: #1493cc; }
+    color: #1493cc;
+    padding-left: 15px;
+    padding-right: 15px; }
+  .page-template-use-cases #page .desc {
+    padding-left: 15px;
+    padding-right: 15px;
+    text-align: center; }
 
 #frameTabs {
   position: relative;

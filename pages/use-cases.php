@@ -19,9 +19,22 @@ if (have_posts()) : while (have_posts()) : the_post();
 endwhile; endif; ?>
 
 <section id="page" class="section">
-	<img class="hoolio_logo" data-animation="slideUp" src="<?php echo bloginfo('template_directory'); ?>/assets/images/logo_icon.svg" alt="Hoolio" />
-	<h2>Below are some of the best types <br />of feedback data for Hoolio.</h2>
 	<?php
+		$use_case_title = get_post_meta($post->ID, 'use_case_title', true);
+		$use_case_desc = get_post_meta($post->ID, 'use_case_desc', true);
+
+		if(!empty($use_case_title)) {
+			echo '<h2>'.$use_case_title.'</h2>';
+		} else {
+			echo '<h2>Ways other people use smart forms.</h2>';
+		}
+
+		if(!empty($use_case_desc)) {
+			echo '<p class="desc">'.$use_case_desc.'</p>';
+		} else {
+			echo '<p class="desc">You most likely came looking for a survey tool with your own survey in mind but just in case, here are some examples of how others are getting better data with smart forms.</p>';
+		}
+
 		$args=array(
 			'post_type' => 'usecases',
 			'posts_per_page'=> 6,

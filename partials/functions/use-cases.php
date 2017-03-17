@@ -106,4 +106,74 @@ function setUseCaseIcon() {
     }
 }
 
+global $post;
+add_action('admin_init','wyzerr_use_case_page');
+function wyzerr_use_case_page() {
+    if(isset($_GET['action']) && $_GET['action'] === "edit") {
+        // Add custom meta boxes to display photo management
+        if(isset($_GET['post'])) {
+            $post_id = $_GET['post'] ? $_GET['post'] : $_POST['post_ID'];
+        }
+        $pageName = get_the_title($post_id);
+
+        // checks for post/page ID
+        if (
+            $pageName === "Use Cases" && get_post_type($post_id) === "page"  ) {
+
+            remove_post_type_support('page', 'editor');
+
+            add_action( 'add_meta_boxes', 'use_case_copy', 1 );
+            function use_case_copy($post) {
+                add_meta_box(
+                    'content',
+                    'Page Content', 
+                    'use_case_content',
+                    'page', 
+                    'normal', 
+                    'high'
+                );
+            }
+            function use_case_content($post) {
+                // Use nonce for verification
+                wp_nonce_field( 'use_case', 'use_case_noncename' );
+
+                $use_case_title = get_post_meta($post->ID, 'use_case_title', true);
+                $use_case_desc = get_post_meta($post->ID, 'use_case_desc', true);
+
+                echo '<section>';
+
+                    echo '<label for="use_case_title">Title</label>';
+                    echo '<input type="text" name="use_case_title" id="use_case_title" value="'.$use_case_title.'" />';
+
+                    echo '<label for="use_case_desc">Description</label>';
+                    echo '<input type="text" name="use_case_desc" id="use_case_desc" value="'.$use_case_desc.'" />';
+
+                echo '</section>';
+
+            }
+        }
+    }
+    /* When the post is saved, saves our custom data */
+    add_action( 'save_post', 'save_use_case_pagedata' );
+    function save_use_case_pagedata( $post_id ) {
+        if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) 
+            return;
+
+        // check for nonce
+        if ( !isset( $_POST['use_case_noncename'] ) || !wp_verify_nonce( $_POST['use_case_noncename'], 'use_case' ) )
+            return;
+
+        // save icon if exists
+        $use_case_title = $_POST['use_case_title'];
+        $use_case_desc = $_POST['use_case_desc'];
+
+        if(!empty($use_case_title)) {
+            update_post_meta($post_id,'use_case_title',$use_case_title);
+        }
+        if(!empty($use_case_desc)) {
+            update_post_meta($post_id,'use_case_desc',$use_case_desc);
+        }
+    }
+}
+
 ?>
