@@ -1947,12 +1947,12 @@ blockquote {
 		padding: 25px 0;
 		&:nth-child(even) {
 			.details {
-				padding-left: 100px;
+				padding-right: 100px;
 			}
 		}
 		&:nth-child(odd) {
 			.details {
-				padding-right: 100px;
+				padding-left: 100px;
 			}
 		}
 		.layout {
@@ -1986,10 +1986,10 @@ blockquote {
 		}
 		&:nth-child(even) {
 			.layout {
-				@include transform(translate(100%,0));
+				@include transform(translate(-100%,0));
 			}
 			.details {
-				@include transform(translate(-100%,0));
+				@include transform(translate(100%,0));
 			}
 		}
 	}

@@ -3664,9 +3664,9 @@ blockquote {
     margin: 0 auto;
     padding: 25px 0; }
     #sectionWrap section:nth-child(even) .details {
-      padding-left: 100px; }
-    #sectionWrap section:nth-child(odd) .details {
       padding-right: 100px; }
+    #sectionWrap section:nth-child(odd) .details {
+      padding-left: 100px; }
     #sectionWrap section .layout {
       width: 50%;
       box-sizing: border-box;
@@ -3692,17 +3692,17 @@ blockquote {
         color: #1493cc;
         margin-bottom: 0; }
     #sectionWrap section:nth-child(even) .layout {
-      -webkit-transform: translate(100%, 0);
-      -moz-transform: translate(100%, 0);
-      -ms-transform: translate(100%, 0);
-      -o-transform: translate(100%, 0);
-      transform: translate(100%, 0); }
-    #sectionWrap section:nth-child(even) .details {
       -webkit-transform: translate(-100%, 0);
       -moz-transform: translate(-100%, 0);
       -ms-transform: translate(-100%, 0);
       -o-transform: translate(-100%, 0);
       transform: translate(-100%, 0); }
+    #sectionWrap section:nth-child(even) .details {
+      -webkit-transform: translate(100%, 0);
+      -moz-transform: translate(100%, 0);
+      -ms-transform: translate(100%, 0);
+      -o-transform: translate(100%, 0);
+      transform: translate(100%, 0); }
 
 #newsletterFrm {
   text-align: center;

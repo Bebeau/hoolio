@@ -176,12 +176,12 @@ function list_sections($post) {
                 $image = $section['image'];
 
                 echo '<section>';
-                    echo '<div class="layout">';
-                        echo '<img src="'.$image.'" alt="" />';
-                    echo '</div>';
                     echo '<div class="details">';
                         echo '<h3>'.$title.'</h3>';
                         echo '<p>'.$desc.'</p>';
+                    echo '</div>';
+                    echo '<div class="layout">';
+                        echo '<img src="'.$image.'" alt="" />';
                     echo '</div>';
                 echo '</section>';
             }
