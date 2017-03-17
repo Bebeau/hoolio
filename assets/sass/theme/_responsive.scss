@@ -63,15 +63,15 @@
 			}
 		}
 	}
+	.client_logos {
+		img {
+			height: 35px;
+			margin: 0 15px;
+		}
+	}
 	#top {
 		.inner {
 			@include transform(translate(0,0));
-		}
-		#clientLogos {
-			span {
-				@include transform(scale(0.75));
-				margin: 0 5px;
-			}
 		}
 		.half {
 			video {
@@ -245,12 +245,6 @@
 			h3 {
 				margin-top: 0;
 			}
-		}
-	}
-	.client_logos {
-		img {
-			height: 35px;
-			margin: 0 15px;
 		}
 	}
 	#top {

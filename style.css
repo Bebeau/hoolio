@@ -4023,19 +4023,15 @@ footer {
     .thirds article p {
       box-sizing: border-box;
       padding: 0 25px; }
+  .client_logos img {
+    height: 35px;
+    margin: 0 15px; }
   #top .inner {
     -webkit-transform: translate(0, 0);
     -moz-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0); }
-  #top #clientLogos span {
-    -webkit-transform: scale(0.75);
-    -moz-transform: scale(0.75);
-    -ms-transform: scale(0.75);
-    -o-transform: scale(0.75);
-    transform: scale(0.75);
-    margin: 0 5px; }
   #top .half video#laptop {
     -webkit-transform: translate(100px, 0);
     -moz-transform: translate(100px, 0);
@@ -4141,9 +4137,6 @@ footer {
       padding: 0; }
   .checkoutPage article h3 {
     margin-top: 0; }
-  .client_logos img {
-    height: 35px;
-    margin: 0 15px; }
   #top {
     padding: 82px 0 150px; }
   #pIntro article {
