@@ -1533,7 +1533,6 @@ ul#bubbles {
 		margin-top: 0;
 	}
 	.quotewrap {
-		margin-bottom: 100px;
 		.quote {
 			width: 50%;
 			display: inline-block;
@@ -1654,6 +1653,11 @@ ul#bubbles {
 	position: relative;
 	z-index: 10;
 	box-shadow: 1px 1px 1px rgba(0,0,0,0.25);
+	&:before {
+		content: "";
+		height: 82px;
+		display: block;
+	}
 	h2 {
 		margin-top: 0;
 	}

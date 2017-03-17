@@ -13,6 +13,13 @@
 		padding: 100px 0;
 	}
 }
+@media (max-height: 677px) {
+	#top {
+		.client_logos {
+			padding-bottom: 100px;
+		}
+	}
+}
 @media(max-width: 1440px) {
 	#checkout {
 		.right {
@@ -293,7 +300,6 @@
 	}
 	#help {
 		.copy {
-			padding-bottom: 75px;
 			img {
 				padding-top: 25px;
 			}

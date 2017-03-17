@@ -176,7 +176,7 @@ get_header(); ?>
 				            echo '<a href="'.get_the_permalink($section3_tab1_page).'" class="btn">Learn More</a>';
 				        echo '</div>';
 				        echo '<div class="half previewImage in">';
-				            echo '<span>'.get_the_post_thumbnail($section3_tab1_page).'</span>';
+				            echo '<span>'.get_post_meta($section3_tab1_page,'tabImage',true).'</span>';
 				        echo '</div>';
 				    echo '</div>';
 				echo '</div>';

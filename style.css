@@ -3316,63 +3316,61 @@ ul#bubbles {
     color: #496278;
     line-height: normal;
     margin-top: 0; }
-  #testimonials .quotewrap {
-    margin-bottom: 100px; }
-    #testimonials .quotewrap .quote {
-      width: 50%;
+  #testimonials .quotewrap .quote {
+    width: 50%;
+    display: inline-block;
+    vertical-align: top;
+    text-align: right;
+    -webkit-transform: translate(0, 50px);
+    -moz-transform: translate(0, 50px);
+    -ms-transform: translate(0, 50px);
+    -o-transform: translate(0, 50px);
+    transform: translate(0, 50px); }
+    #testimonials .quotewrap .quote .quote_image {
+      text-align: left;
       display: inline-block;
-      vertical-align: top;
-      text-align: right;
       -webkit-transform: translate(0, 50px);
       -moz-transform: translate(0, 50px);
       -ms-transform: translate(0, 50px);
       -o-transform: translate(0, 50px);
       transform: translate(0, 50px); }
-      #testimonials .quotewrap .quote .quote_image {
-        text-align: left;
+      #testimonials .quotewrap .quote .quote_image img {
+        width: 150px;
+        height: 150px; }
+    #testimonials .quotewrap .quote .quote_copy {
+      width: 500px;
+      display: inline-block; }
+      #testimonials .quotewrap .quote .quote_copy blockquote {
+        background: #1493cc;
+        box-sizing: border-box;
+        padding: 25px;
         display: inline-block;
-        -webkit-transform: translate(0, 50px);
-        -moz-transform: translate(0, 50px);
-        -ms-transform: translate(0, 50px);
-        -o-transform: translate(0, 50px);
-        transform: translate(0, 50px); }
-        #testimonials .quotewrap .quote .quote_image img {
-          width: 150px;
-          height: 150px; }
-      #testimonials .quotewrap .quote .quote_copy {
-        width: 500px;
-        display: inline-block; }
-        #testimonials .quotewrap .quote .quote_copy blockquote {
-          background: #1493cc;
-          box-sizing: border-box;
-          padding: 25px;
-          display: inline-block;
-          text-align: left;
-          color: white;
-          font-size: 16pt;
-          border-bottom-left-radius: 10px;
-          border-top-right-radius: 10px;
-          margin: 0 25px 15px; }
-        #testimonials .quotewrap .quote .quote_copy cite {
-          font-style: normal;
-          color: #919192;
-          font-size: 16pt;
-          text-align: center;
-          display: block; }
-      #testimonials .quotewrap .quote:nth-child(even) {
         text-align: left;
-        -webkit-transform: translate(0, 100px);
-        -moz-transform: translate(0, 100px);
-        -ms-transform: translate(0, 100px);
-        -o-transform: translate(0, 100px);
-        transform: translate(0, 100px); }
-        #testimonials .quotewrap .quote:nth-child(even) .quote_image {
-          text-align: right; }
-        #testimonials .quotewrap .quote:nth-child(even) blockquote {
-          border-top-left-radius: 10px;
-          border-bottom-right-radius: 10px;
-          border-bottom-left-radius: 0;
-          border-top-right-radius: 0; }
+        color: white;
+        font-size: 16pt;
+        border-bottom-left-radius: 10px;
+        border-top-right-radius: 10px;
+        margin: 0 25px 15px; }
+      #testimonials .quotewrap .quote .quote_copy cite {
+        font-style: normal;
+        color: #919192;
+        font-size: 16pt;
+        text-align: center;
+        display: block; }
+    #testimonials .quotewrap .quote:nth-child(even) {
+      text-align: left;
+      -webkit-transform: translate(0, 100px);
+      -moz-transform: translate(0, 100px);
+      -ms-transform: translate(0, 100px);
+      -o-transform: translate(0, 100px);
+      transform: translate(0, 100px); }
+      #testimonials .quotewrap .quote:nth-child(even) .quote_image {
+        text-align: right; }
+      #testimonials .quotewrap .quote:nth-child(even) blockquote {
+        border-top-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 0;
+        border-top-right-radius: 0; }
   #testimonials .client_logos p {
     margin: 0 0 50px; }
 
@@ -3427,6 +3425,10 @@ ul#bubbles {
   position: relative;
   z-index: 10;
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25); }
+  #page:before {
+    content: "";
+    height: 82px;
+    display: block; }
   #page h2 {
     margin-top: 0; }
   #page .hoolio_logo {
@@ -3989,6 +3991,10 @@ footer {
     height: auto;
     padding: 100px 0; } }
 
+@media (max-height: 677px) {
+  #top .client_logos {
+    padding-bottom: 100px; } }
+
 @media (max-width: 1440px) {
   #checkout .right .copy {
     padding: 0 100px;
@@ -4161,10 +4167,8 @@ footer {
     padding: 50px 0; }
   #apply .container p {
     width: auto; }
-  #help .copy {
-    padding-bottom: 75px; }
-    #help .copy img {
-      padding-top: 25px; } }
+  #help .copy img {
+    padding-top: 25px; } }
 
 @media (max-width: 991px) {
   #top #clientLogos span {
