@@ -1536,6 +1536,8 @@ ul#bubbles {
 		margin-top: 0;
 	}
 	.quotewrap {
+		width: 1280px;
+		margin: 0 auto;
 		.quote {
 			width: 50%;
 			display: inline-block;
@@ -1544,8 +1546,8 @@ ul#bubbles {
 			@include transform(translate(0,50px));
 			.quote_image {
 				text-align: left;
-				display: inline-block;
-				@include transform(translate(0,50px));
+				display: block;
+				@include transform(translate(0,-150px));
 				img {
 					width: 150px;
 					height: 150px;
