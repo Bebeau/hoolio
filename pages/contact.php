@@ -23,6 +23,14 @@ get_header();
 
 		<section id="contact" class="section" >
 		<?php
+			$title = get_post_meta($post->ID,'contactTitle',true);
+			$desc = get_post_meta($post->ID,'contactDesc',true);
+			if(!empty($title)) {
+				echo '<h1>'.$title.'</h1>';
+			}
+			if(!empty($desc)) {
+				echo '<p class="desc">'.$desc.'</p>';
+			}
 			echo '<div class="container">';
 				echo '<div class="outer">';
 					echo '<div class="inner">';

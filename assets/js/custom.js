@@ -547,7 +547,7 @@ jQuery(document).ready(function() {
 	if(!isMobile) {
 		jQuery('.featureVid').click(function(){
 			jQuery('#videoModal').addClass("show");
-			jQuery('#videoModal .inner').prepend('<iframe src="https://player.vimeo.com/video/192497090?autoplay=true" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>');
+			jQuery('#videoModal .inner').prepend('<iframe src="https://youtube.com/embed/MY59hjU9K3Y?rel=0&autoplay=true" frameborder="0" allowfullscreen></iframe>');
 		});
 		jQuery('#videoModal .close').click(function(){
 			jQuery('#videoModal').removeClass("show");

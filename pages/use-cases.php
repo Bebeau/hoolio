@@ -64,7 +64,7 @@ endwhile; endif; ?>
 							echo '<div class="frameCopy">';
 								the_post_thumbnail();
 								the_content();
-								echo '<a href="'.get_site_url('pricing').'" class="btn">Be a Wizard</a>';
+								echo '<a href="'.get_site_url('pricing').'" class="btn">Get Wyzerr</a>';
 							echo '</div>';
 						echo '</div>';
 					echo '</div>';
@@ -98,7 +98,7 @@ endwhile; endif; ?>
 									echo '<img class="frame-icon" src="'.$iconURL.'" alt="'.get_the_title().'" />';
 									the_title("<h3>","</h3>");
 									the_content();
-									echo '<a href="'.site_url('pricing').'" class="btn">Be a Wizard</a>';
+									echo '<a href="'.site_url('pricing').'" class="btn">Get Wyzerr</a>';
 								echo '</div>';
 								echo '<div class="half frameImage">';
 									$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID), 'large' );

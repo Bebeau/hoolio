@@ -227,6 +227,13 @@
 	#checkout {
 		padding-bottom: 100px;
 	}
+	.page-template-use-cases {
+		#page {
+			.desc {
+				width: 100%;
+			}
+		}
+	}
 }
 @media(max-width: 1024px) {
 	.block {

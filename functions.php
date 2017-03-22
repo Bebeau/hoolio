@@ -474,3 +474,4 @@ include(TEMPLATEPATH.'/partials/functions/use-cases.php');
 include(TEMPLATEPATH.'/partials/functions/research.php');
 include(TEMPLATEPATH.'/partials/functions/checkout.php');
 include(TEMPLATEPATH.'/partials/functions/partnership.php');
+include(TEMPLATEPATH.'/partials/functions/contact.php');
