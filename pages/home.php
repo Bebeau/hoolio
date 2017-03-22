@@ -167,7 +167,7 @@ get_header(); ?>
             		}
                 echo '</ul>';
 
-                echo '<div id="Preview">';
+                echo '<div id="Preview" class="hide_mobile">';
                 	echo '<i class="fa fa-spinner fa-spin"></i>';
                     echo '<div class="previewWrap">';
 				        echo '<div class="half previewText in">';
@@ -187,7 +187,7 @@ get_header(); ?>
 				echo '<div id="Preview" class="noTablet mobile">';
                     echo '<div class="previewWrap">';
                     	echo '<div class="half previewImage in">';
-				            echo '<span>'.get_the_post_thumbnail($section3_tab1_page).'</span>';
+				            echo '<span>'.get_post_meta($section3_tab1_page,'tabImage',true).'</span>';
 				        echo '</div>';
 				        echo '<div class="half previewText in">';
 				            echo '<h3>'.get_post_meta($section3_tab1_page,'sub_title', true).'</h3>';
@@ -197,7 +197,7 @@ get_header(); ?>
 				    echo '</div>';
 				    echo '<div class="previewWrap">';
 				    	echo '<div class="half previewImage in">';
-				            echo '<span>'.get_the_post_thumbnail($section3_tab2_page).'</span>';
+				            echo '<span>'.get_post_meta($section3_tab2_page,'tabImage',true).'</span>';
 				        echo '</div>';
 				        echo '<div class="half previewText in">';
 				            echo '<h3>'.get_post_meta($section3_tab2_page,'sub_title', true).'</h3>';
@@ -207,7 +207,7 @@ get_header(); ?>
 				    echo '</div>';
 				    echo '<div class="previewWrap">';
 				        echo '<div class="half previewImage in">';
-				            echo '<span>'.get_the_post_thumbnail($section3_tab3_page).'</span>';
+				            echo '<span>'.get_post_meta($section3_tab3_page,'tabImage',true).'</span>';
 				        echo '</div>';
 				        echo '<div class="half previewText in">';
 				            echo '<h3>'.get_post_meta($section3_tab3_page,'sub_title', true).'</h3>';

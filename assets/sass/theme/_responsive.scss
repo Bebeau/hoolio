@@ -142,7 +142,9 @@
 	}
 	#testimonials {
 		.quotewrap {
+			width: auto;
 			.quote {
+				@include transform(translate(0,50px));
 				.quote_image {
 					display: block;
 					@include transform(translate(0,-100px));
@@ -306,6 +308,21 @@
 			}
 		}
 	}
+	#testimonials {
+		.quotewrap {
+			margin-bottom: 150px;
+			.quote {
+				.quote_image {
+					@include transform(translate(0,6px));
+				}
+				&:last-child {
+					.quote_image {
+						@include transform(translate(0,6px));
+					}
+				}
+			}
+		}
+	}
 }
 @media(max-width: 991px) {
 	#top {
@@ -390,9 +407,6 @@
 	video {
 		display: none;
 	}
-	.mobile {
-		display: block;
-	}
 	.block {
 		height: auto;
 		padding: 50px 0; 
@@ -445,7 +459,6 @@
 	}
 	#testimonials {
 		.quotewrap {
-			padding-top: 50px;
 			.quote {
 				.quote_image {
 					@include transform(translate(0, 6px));
@@ -535,6 +548,9 @@
 @media(max-width: 414px) {
 	.hide_mobile {
 		display: none;
+	}
+	.mobile {
+		display: block;
 	}
 	#newsletterFrm {
 		height: 115px;

@@ -3322,61 +3322,64 @@ ul#bubbles {
     color: #496278;
     line-height: normal;
     margin-top: 0; }
-  #testimonials .quotewrap .quote {
-    width: 50%;
-    display: inline-block;
-    vertical-align: top;
-    text-align: right;
-    -webkit-transform: translate(0, 50px);
-    -moz-transform: translate(0, 50px);
-    -ms-transform: translate(0, 50px);
-    -o-transform: translate(0, 50px);
-    transform: translate(0, 50px); }
-    #testimonials .quotewrap .quote .quote_image {
-      text-align: left;
+  #testimonials .quotewrap {
+    width: 1280px;
+    margin: 0 auto; }
+    #testimonials .quotewrap .quote {
+      width: 50%;
       display: inline-block;
+      vertical-align: top;
+      text-align: right;
       -webkit-transform: translate(0, 50px);
       -moz-transform: translate(0, 50px);
       -ms-transform: translate(0, 50px);
       -o-transform: translate(0, 50px);
       transform: translate(0, 50px); }
-      #testimonials .quotewrap .quote .quote_image img {
-        width: 150px;
-        height: 150px; }
-    #testimonials .quotewrap .quote .quote_copy {
-      width: 500px;
-      display: inline-block; }
-      #testimonials .quotewrap .quote .quote_copy blockquote {
-        background: #1293CC;
-        box-sizing: border-box;
-        padding: 25px;
-        display: inline-block;
+      #testimonials .quotewrap .quote .quote_image {
         text-align: left;
-        color: white;
-        font-size: 16pt;
-        border-bottom-left-radius: 10px;
-        border-top-right-radius: 10px;
-        margin: 0 25px 15px; }
-      #testimonials .quotewrap .quote .quote_copy cite {
-        font-style: normal;
-        color: #919192;
-        font-size: 16pt;
-        text-align: center;
-        display: block; }
-    #testimonials .quotewrap .quote:nth-child(even) {
-      text-align: left;
-      -webkit-transform: translate(0, 100px);
-      -moz-transform: translate(0, 100px);
-      -ms-transform: translate(0, 100px);
-      -o-transform: translate(0, 100px);
-      transform: translate(0, 100px); }
-      #testimonials .quotewrap .quote:nth-child(even) .quote_image {
-        text-align: right; }
-      #testimonials .quotewrap .quote:nth-child(even) blockquote {
-        border-top-left-radius: 10px;
-        border-bottom-right-radius: 10px;
-        border-bottom-left-radius: 0;
-        border-top-right-radius: 0; }
+        display: block;
+        -webkit-transform: translate(0, -150px);
+        -moz-transform: translate(0, -150px);
+        -ms-transform: translate(0, -150px);
+        -o-transform: translate(0, -150px);
+        transform: translate(0, -150px); }
+        #testimonials .quotewrap .quote .quote_image img {
+          width: 150px;
+          height: 150px; }
+      #testimonials .quotewrap .quote .quote_copy {
+        width: 500px;
+        display: inline-block; }
+        #testimonials .quotewrap .quote .quote_copy blockquote {
+          background: #1293CC;
+          box-sizing: border-box;
+          padding: 25px;
+          display: inline-block;
+          text-align: left;
+          color: white;
+          font-size: 16pt;
+          border-bottom-left-radius: 10px;
+          border-top-right-radius: 10px;
+          margin: 0 25px 15px; }
+        #testimonials .quotewrap .quote .quote_copy cite {
+          font-style: normal;
+          color: #919192;
+          font-size: 16pt;
+          text-align: center;
+          display: block; }
+      #testimonials .quotewrap .quote:nth-child(even) {
+        text-align: left;
+        -webkit-transform: translate(0, 100px);
+        -moz-transform: translate(0, 100px);
+        -ms-transform: translate(0, 100px);
+        -o-transform: translate(0, 100px);
+        transform: translate(0, 100px); }
+        #testimonials .quotewrap .quote:nth-child(even) .quote_image {
+          text-align: right; }
+        #testimonials .quotewrap .quote:nth-child(even) blockquote {
+          border-top-left-radius: 10px;
+          border-bottom-right-radius: 10px;
+          border-bottom-left-radius: 0;
+          border-top-right-radius: 0; }
   #testimonials .client_logos p {
     margin: 0 0 50px; }
 
@@ -4084,19 +4087,27 @@ footer {
     margin-top: 25px; }
     #checkout .payment .price {
       font-size: 32pt; }
-  #testimonials .quotewrap .quote .quote_image {
-    display: block;
-    -webkit-transform: translate(0, -100px);
-    -moz-transform: translate(0, -100px);
-    -ms-transform: translate(0, -100px);
-    -o-transform: translate(0, -100px);
-    transform: translate(0, -100px); }
-  #testimonials .quotewrap .quote:last-child .quote_image {
-    -webkit-transform: translate(0, -100px);
-    -moz-transform: translate(0, -100px);
-    -ms-transform: translate(0, -100px);
-    -o-transform: translate(0, -100px);
-    transform: translate(0, -100px); } }
+  #testimonials .quotewrap {
+    width: auto; }
+    #testimonials .quotewrap .quote {
+      -webkit-transform: translate(0, 50px);
+      -moz-transform: translate(0, 50px);
+      -ms-transform: translate(0, 50px);
+      -o-transform: translate(0, 50px);
+      transform: translate(0, 50px); }
+      #testimonials .quotewrap .quote .quote_image {
+        display: block;
+        -webkit-transform: translate(0, -100px);
+        -moz-transform: translate(0, -100px);
+        -ms-transform: translate(0, -100px);
+        -o-transform: translate(0, -100px);
+        transform: translate(0, -100px); }
+      #testimonials .quotewrap .quote:last-child .quote_image {
+        -webkit-transform: translate(0, -100px);
+        -moz-transform: translate(0, -100px);
+        -ms-transform: translate(0, -100px);
+        -o-transform: translate(0, -100px);
+        transform: translate(0, -100px); } }
 
 @media (max-width: 1170px) {
   .container {
@@ -4179,7 +4190,21 @@ footer {
   #apply .container p {
     width: auto; }
   #help .copy img {
-    padding-top: 25px; } }
+    padding-top: 25px; }
+  #testimonials .quotewrap {
+    margin-bottom: 150px; }
+    #testimonials .quotewrap .quote .quote_image {
+      -webkit-transform: translate(0, 6px);
+      -moz-transform: translate(0, 6px);
+      -ms-transform: translate(0, 6px);
+      -o-transform: translate(0, 6px);
+      transform: translate(0, 6px); }
+    #testimonials .quotewrap .quote:last-child .quote_image {
+      -webkit-transform: translate(0, 6px);
+      -moz-transform: translate(0, 6px);
+      -ms-transform: translate(0, 6px);
+      -o-transform: translate(0, 6px);
+      transform: translate(0, 6px); } }
 
 @media (max-width: 991px) {
   #top #clientLogos span {
@@ -4234,8 +4259,6 @@ footer {
         line-height: normal; }
   video {
     display: none; }
-  .mobile {
-    display: block; }
   .block {
     height: auto;
     padding: 50px 0; }
@@ -4269,22 +4292,20 @@ footer {
       margin-top: 5px; }
     #research #Preview .btn {
       margin-top: 0; }
-  #testimonials .quotewrap {
-    padding-top: 50px; }
-    #testimonials .quotewrap .quote .quote_image {
-      -webkit-transform: translate(0, 6px);
-      -moz-transform: translate(0, 6px);
-      -ms-transform: translate(0, 6px);
-      -o-transform: translate(0, 6px);
-      transform: translate(0, 6px); }
-    #testimonials .quotewrap .quote .quote_copy blockquote {
-      font-size: 14pt; }
-    #testimonials .quotewrap .quote:last-child .quote_image {
-      -webkit-transform: translate(0, 6px);
-      -moz-transform: translate(0, 6px);
-      -ms-transform: translate(0, 6px);
-      -o-transform: translate(0, 6px);
-      transform: translate(0, 6px); }
+  #testimonials .quotewrap .quote .quote_image {
+    -webkit-transform: translate(0, 6px);
+    -moz-transform: translate(0, 6px);
+    -ms-transform: translate(0, 6px);
+    -o-transform: translate(0, 6px);
+    transform: translate(0, 6px); }
+  #testimonials .quotewrap .quote .quote_copy blockquote {
+    font-size: 14pt; }
+  #testimonials .quotewrap .quote:last-child .quote_image {
+    -webkit-transform: translate(0, 6px);
+    -moz-transform: translate(0, 6px);
+    -ms-transform: translate(0, 6px);
+    -o-transform: translate(0, 6px);
+    transform: translate(0, 6px); }
   #meet .squares article:last-child {
     margin: 25px; }
   #help .copy img {
@@ -4348,6 +4369,8 @@ footer {
 @media (max-width: 414px) {
   .hide_mobile {
     display: none; }
+  .mobile {
+    display: block; }
   #newsletterFrm {
     height: 115px; }
     #newsletterFrm.slideIn {

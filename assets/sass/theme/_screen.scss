@@ -1540,6 +1540,8 @@ ul#bubbles {
 		margin-top: 0;
 	}
 	.quotewrap {
+		width: 1280px;
+		margin: 0 auto;
 		.quote {
 			width: 50%;
 			display: inline-block;
@@ -1548,8 +1550,8 @@ ul#bubbles {
 			@include transform(translate(0,50px));
 			.quote_image {
 				text-align: left;
-				display: inline-block;
-				@include transform(translate(0,50px));
+				display: block;
+				@include transform(translate(0,-150px));
 				img {
 					width: 150px;
 					height: 150px;
@@ -1688,33 +1690,6 @@ ul#bubbles {
 		text-align: center;
 	}
 }
-// #team {
-// 	background: radial-gradient(darken($blue, 10%), darken($blue, 20%));
-// 	padding: 100px 0;
-// 	.thirds {
-// 		margin: 0;
-// 	}
-// 	h2 {
-// 		margin: 0 0 50px;
-// 		color: white;
-// 	}
-// 	img {
-// 		margin: 0 auto;
-// 		display: block;
-// 	}
-// 	h3 {
-// 		text-align: center;
-// 		margin: 10px 0;
-// 		color: white;
-// 	}
-// 	.title {
-// 		text-align: center;
-// 		font-weight: bold;
-// 		color: $green;
-// 		text-transform: uppercase;
-// 		letter-spacing: 1px;
-// 	}
-// }
 #team {
 	img {
 		width: 100%;
