@@ -3005,6 +3005,54 @@ header.open {
     width: 1170px;
     margin: 0 auto; }
 
+.page-template-thankyou #page {
+  padding-top: 100px;
+  padding-bottom: 0; }
+  .page-template-thankyou #page:before {
+    display: none; }
+  .page-template-thankyou #page section {
+    padding: 50px 0; }
+    .page-template-thankyou #page section h1 {
+      margin: 0; }
+    .page-template-thankyou #page section .copy {
+      width: 1170px;
+      margin: 0 auto;
+      text-align: center; }
+    .page-template-thankyou #page section.squares {
+      background: radial-gradient(white, #f2f2f2); }
+      .page-template-thankyou #page section.squares .squareWrap {
+        box-sizing: border-box;
+        padding: 0 15px;
+        width: 25%;
+        display: inline-block;
+        vertical-align: top; }
+      .page-template-thankyou #page section.squares article {
+        padding: 25px;
+        box-sizing: border-box;
+        vertical-align: top;
+        height: 300px;
+        border-top-left-radius: 25px;
+        border-top-right-radius: 25px;
+        border-bottom-left-radius: 25px;
+        border-bottom-right-radius: 25px; }
+        .page-template-thankyou #page section.squares article.square1 {
+          background: #ce58a2; }
+        .page-template-thankyou #page section.squares article.square2 {
+          background: #03bdd4; }
+        .page-template-thankyou #page section.squares article.square3 {
+          background: #f36235; }
+        .page-template-thankyou #page section.squares article.square4 {
+          background: #29a95c; }
+        .page-template-thankyou #page section.squares article h3 {
+          margin: 0;
+          font-weight: bold; }
+        .page-template-thankyou #page section.squares article h3, .page-template-thankyou #page section.squares article p {
+          color: white; }
+    .page-template-thankyou #page section.reporting {
+      background: radial-gradient(white, #f2f2f2); }
+    .page-template-thankyou #page section.smartforms img, .page-template-thankyou #page section.reporting img {
+      max-width: 800px; }
+
 #frameTabs {
   position: relative;
   height: 500px; }
@@ -4110,6 +4158,15 @@ footer {
         transform: translate(0, -100px); } }
 
 @media (max-width: 1170px) {
+  .page-template-thankyou #page section .copy {
+    width: 100%;
+    padding: 0 15px;
+    box-sizing: border-box; }
+  .page-template-thankyou #page section.smartforms img, .page-template-thankyou #page section.reporting img {
+    max-width: 600px; }
+  .page-template-thankyou #page section.squares .squareWrap article p {
+    font-size: 14pt;
+    line-height: normal; }
   .container {
     width: 100%;
     box-sizing: border-box;
@@ -4207,6 +4264,11 @@ footer {
       transform: translate(0, 6px); } }
 
 @media (max-width: 991px) {
+  .page-template-thankyou #page section.squares .squareWrap {
+    width: 50%;
+    padding: 15px; }
+    .page-template-thankyou #page section.squares .squareWrap article {
+      height: 225px; }
   #top #clientLogos span {
     -webkit-transform: scale(0.5);
     -moz-transform: scale(0.5);
@@ -4238,8 +4300,28 @@ footer {
     display: none; } }
 
 @media (max-width: 768px) {
+  .page-template-thankyou #page section .copy {
+    padding: 0; }
+  .page-template-thankyou #page section h1 {
+    font-size: 21pt; }
+  .page-template-thankyou #page section .cta {
+    padding: 25px 0 0; }
+  .page-template-thankyou #page section.smartforms, .page-template-thankyou #page section.reporting {
+    margin: 0 -15px;
+    padding: 25px 15px; }
+    .page-template-thankyou #page section.smartforms img, .page-template-thankyou #page section.reporting img {
+      max-width: 100%; }
+  .page-template-thankyou #page section.squares {
+    margin: 0 -15px;
+    padding: 25px 15px; }
+    .page-template-thankyou #page section.squares .squareWrap {
+      padding: 5px;
+      width: 100%; }
+      .page-template-thankyou #page section.squares .squareWrap article {
+        padding: 15px;
+        height: auto; }
   .Menu {
-    display: inline-block; }
+    display: inline-block !important; }
   #checkout article {
     width: 225px; }
     #checkout article h2 {

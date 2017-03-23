@@ -159,6 +159,32 @@
 	}
 }
 @media(max-width: 1170px) {
+	.page-template-thankyou {
+		#page {
+			section {
+				.copy {
+					width: 100%;
+					padding: 0 15px;
+					box-sizing: border-box;
+				}
+				&.smartforms, &.reporting {
+					img {
+						max-width: 600px;
+					}
+				}
+				&.squares {
+					.squareWrap {
+						article {
+							p {
+								font-size: 14pt;
+								line-height: normal;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 	.container {
 		width: 100%;
 		box-sizing: border-box;
@@ -325,6 +351,21 @@
 	}
 }
 @media(max-width: 991px) {
+	.page-template-thankyou {
+		#page {
+			section {
+				&.squares {
+					.squareWrap {
+						width: 50%;
+						padding: 15px;
+						article {
+							height: 225px;
+						}
+					}
+				}
+			}
+		}
+	}
 	#top {
 		#clientLogos {
 			span {
@@ -374,8 +415,42 @@
 	}
 }
 @media(max-width: 768px) {
+	.page-template-thankyou {
+		#page {
+			section {
+				.copy {
+					padding: 0;
+				}
+				h1 {
+					font-size: 21pt;
+				}
+				.cta {
+					padding: 25px 0 0;
+				}
+				&.smartforms, &.reporting {
+					margin: 0 -15px;
+					padding: 25px 15px;
+					img {
+						max-width: 100%;
+					}
+				}
+				&.squares {
+					margin: 0 -15px;
+					padding: 25px 15px;
+					.squareWrap {
+						padding: 5px;
+						width: 100%;
+						article {
+							padding: 15px;
+							height: auto;
+						}
+					}
+				}
+			}
+		}
+	}
 	.Menu {
-		display: inline-block;
+		display: inline-block !important;
 	}
 	#checkout {
 		article {

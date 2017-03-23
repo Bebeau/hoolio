@@ -1231,6 +1231,71 @@ header {
 		}
 	}
 }
+.page-template-thankyou {
+	#page {
+		padding-top: 100px;
+		padding-bottom: 0;
+		&:before {
+			display: none;
+		}
+		section {
+			padding: 50px 0;
+			h1 {
+				margin: 0;
+			}
+			.copy {
+				width: 1170px;
+				margin: 0 auto;
+				text-align: center;
+			}
+			&.squares {
+				background: radial-gradient(white, darken(white, 5%));
+				.squareWrap {
+					box-sizing: border-box;
+					padding: 0 15px;
+					width: 25%;
+					display: inline-block;
+					vertical-align: top;
+				}
+				article {
+					padding: 25px;
+					box-sizing: border-box;
+					vertical-align: top;
+					height: 300px;
+					@include border-top-radius(25px);
+					@include border-bottom-radius(25px);
+					&.square1 {
+						background: #ce58a2;
+					}
+					&.square2 {
+						background: #03bdd4;
+					}
+					&.square3 {
+						background: #f36235;
+					}
+					&.square4 {
+						background: #29a95c;
+					}
+					h3 {
+						margin: 0;
+						font-weight: bold;
+					}
+					h3, p {
+						color: white;
+					}
+				}
+			}
+			&.reporting {
+				background: radial-gradient(white, darken(white, 5%));
+			}
+			&.smartforms, &.reporting {
+				img {
+					max-width: 800px;
+				}
+			}
+		}
+	}
+}
 #frameTabs {
 	position: relative;
 	height: 500px;

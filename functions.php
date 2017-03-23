@@ -1,7 +1,5 @@
 <?php
 
-require_once('stripe/config.php');
-
 // Hide admin bar
 add_filter('show_admin_bar', '__return_false');
 
@@ -475,3 +473,4 @@ include(TEMPLATEPATH.'/partials/functions/research.php');
 include(TEMPLATEPATH.'/partials/functions/checkout.php');
 include(TEMPLATEPATH.'/partials/functions/partnership.php');
 include(TEMPLATEPATH.'/partials/functions/contact.php');
+include(TEMPLATEPATH.'/partials/functions/thankyou.php');
